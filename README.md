@@ -8,9 +8,9 @@ Part of [Skills IL](https://github.com/skills-il) - curated AI agent skills for 
 
 | Skill | Description | Scripts | References |
 |-------|-------------|---------|------------|
-| [hebrew-seo-toolkit](./hebrew-seo-toolkit/) | Hebrew SEO: morphological keyword analysis, .co.il optimization, hreflang he-IL, Hebrew schema markup. | `analyze_keywords.py` | `hebrew-seo.md` |
-| [israeli-linkedin-strategy](./israeli-linkedin-strategy/) | Israeli tech LinkedIn strategy: bilingual posting, Hebrew hashtags, ecosystem topics, cultural timing. | -- | `linkedin-patterns.md` |
-| [israeli-product-launch](./israeli-product-launch/) | Israeli tech ecosystem launch playbook: media contacts, VC demo days, 8200 networks, Hebrew press releases. | -- | `tech-media.md` |
+| [hebrew-seo-toolkit](./hebrew-seo-toolkit/) | Hebrew keyword research with morphological analysis, .co.il domain optimization, hreflang setup, and Israeli business schema markup for Google.co.il | `analyze_keywords.py` | `hebrew-seo.md` |
+| [israeli-product-launch](./israeli-product-launch/) | Israeli tech ecosystem launch playbook covering media outreach (Geektime, Calcalist), VC demo day prep, 8200 alumni networks, and Hebrew press releases | -- | `tech-media.md` |
+| [israeli-linkedin-strategy](./israeli-linkedin-strategy/) | Bilingual Hebrew/English LinkedIn content strategy with Israeli posting times, Hebrew hashtags, and tech ecosystem engagement patterns | -- | `linkedin-patterns.md` |
 
 ## Install
 
@@ -20,6 +20,29 @@ claude install github:skills-il/marketing-growth/hebrew-seo-toolkit
 
 # Or clone the full repo
 git clone https://github.com/skills-il/marketing-growth.git
+```
+
+## Structure
+
+```
+marketing-growth/
+├── hebrew-seo-toolkit/          # Hebrew SEO optimization and keyword research
+│   ├── SKILL.md
+│   ├── SKILL_HE.md
+│   ├── scripts/
+│   └── references/
+├── israeli-product-launch/      # Israeli tech product launch playbook
+│   ├── SKILL.md
+│   ├── SKILL_HE.md
+│   └── references/
+├── israeli-linkedin-strategy/   # Israeli LinkedIn content strategy
+│   ├── SKILL.md
+│   ├── SKILL_HE.md
+│   └── references/
+├── scripts/validate-skill.sh
+├── CLAUDE.md
+├── LICENSE
+└── README.md
 ```
 
 ## Contributing
