@@ -66,3 +66,44 @@ Key holidays for campaigns: Rosh Hashana, Hanukkah, Purim, Pesach, Yom Ha'atzmau
 
 ### Sequence Types
 Welcome (5 emails over 10 days), Cart Abandonment (3 emails: 1h, 24h, 72h), Re-engagement (3 emails: 30, 45, 60 days).
+
+## Examples
+
+### Example 1: Build Hebrew Welcome Email Sequence
+User says: "Create a 5-email welcome sequence for Israeli subscribers"
+Actions:
+1. Email 1: Welcome + brand story (send immediately, Hebrew RTL)
+2. Email 2: Value proposition + free resource (Day 2)
+3. Email 3: Social proof with Israeli customers (Day 4)
+4. Email 4: Product showcase with NIS pricing (Day 7)
+5. Email 5: Limited offer + urgency (Day 10)
+6. Include unsubscribe link per Israeli spam law (Chok HaSpam)
+Result: 5-email Hebrew welcome sequence with Chok HaSpam compliance
+
+### Example 2: Create Hebrew Abandoned Cart Recovery
+User says: "Set up abandoned cart emails for our Israeli e-commerce store"
+Actions:
+1. Email 1: Reminder with cart items (1 hour after abandonment)
+2. Email 2: Social proof + urgency (24 hours)
+3. Email 3: Discount offer in NIS (48 hours)
+4. All emails: RTL layout, NIS pricing, Hebrew subject lines
+5. Include proper opt-out mechanism per Chok HaSpam
+Result: 3-email Hebrew cart recovery sequence with Israeli compliance
+
+## Bundled Resources
+
+### Scripts
+- `scripts/email_compliance_checker.py` -- Validates email content against Israeli Chok HaSpam requirements. Run: `python scripts/email_compliance_checker.py --help`
+
+### References
+- `references/chok-haspam-guide.md` -- Complete guide to Israeli anti-spam law (Chok HaSpam, 2008), opt-in requirements, penalties (up to 1,000 NIS per message), and compliance checklist. Consult when building any email marketing for Israeli audiences.
+
+## Troubleshooting
+
+### Error: "Hebrew email renders LTR in some clients"
+Cause: Email client ignoring dir="rtl" attribute
+Solution: Add `dir="rtl"` to the outermost table AND each content cell. Use inline CSS `direction: rtl; text-align: right;` as fallback. Test in Outlook (common in Israeli businesses).
+
+### Error: "Unsubscribe link not meeting legal requirements"
+Cause: Chok HaSpam requires specific unsubscribe format
+Solution: Unsubscribe link must be clearly visible, work with one click, and process within 5 business days. Include physical address and sender identification in Hebrew.

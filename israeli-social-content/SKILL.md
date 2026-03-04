@@ -65,3 +65,43 @@ No underscores in Hebrew hashtags. Mix popular and niche. Popular: #ישראל #
 
 ### Content Calendar
 Jewish holidays, national days, weekly rhythm (Sunday = new week, Friday = Shabbat content). Peak posting: Sunday-Thursday 8-9 AM, 12-1 PM, 7-9 PM.
+
+## Examples
+
+### Example 1: Create Hebrew LinkedIn Content Strategy
+User says: "Plan LinkedIn content for our Israeli B2B startup"
+Actions:
+1. Profile: Hebrew + English bilingual company page
+2. Content mix: 40% industry insights, 30% company culture, 20% product, 10% hiring
+3. Posting schedule: Sunday-Thursday, 8-9am Israel time
+4. Hebrew hashtags: #הייטק #סטארטאפ #טכנולוגיה + English tech hashtags
+5. Engage with Israeli tech community (Startup Nation Central, IVC)
+Result: LinkedIn content strategy tailored for Israeli B2B audience
+
+### Example 2: Build Hebrew Instagram Campaign
+User says: "Create Instagram content for our Tel Aviv restaurant"
+Actions:
+1. Visual style: bright, Mediterranean aesthetic, Hebrew text overlays
+2. Content: food photos with Hebrew captions, behind-the-scenes reels
+3. Stories: daily specials with NIS pricing, polls in Hebrew
+4. Hashtags: #תלאביב #אוכל #מסעדות + neighborhood-specific tags
+5. Post timing: lunch (11am-1pm) and dinner (6pm-8pm) Israeli time
+Result: Instagram content plan for Israeli food business
+
+## Bundled Resources
+
+### Scripts
+- `scripts/social_scheduler.py` -- Generates optimal posting schedules based on Israeli timezone and audience patterns. Run: `python scripts/social_scheduler.py --help`
+
+### References
+- `references/israeli-social-landscape.md` -- Israeli social media platform demographics, usage statistics, popular Israeli hashtags, and cultural content norms. Consult when planning social media strategy for Israeli audiences.
+
+## Troubleshooting
+
+### Error: "Hebrew hashtags not trending"
+Cause: Hebrew hashtags have different discovery patterns than English
+Solution: Mix Hebrew and English hashtags. Use Hebrew for local reach (#תלאביב) and English for broader tech/business reach (#StartupNation). Monitor trending hashtags on each platform.
+
+### Error: "Post engagement drops on Fridays/Saturdays"
+Cause: Shabbat significantly reduces Israeli social media activity
+Solution: Avoid posting Friday afternoon through Saturday evening. Schedule important content for Sunday morning (start of Israeli work week) for maximum reach.

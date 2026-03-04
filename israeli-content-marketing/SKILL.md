@@ -68,3 +68,42 @@ Google SEO, Facebook groups (value-first), LinkedIn (B2B), email newsletter (Cho
 
 ### Repurposing
 Blog post -> social snippets -> email summary -> LinkedIn article -> video -> infographic.
+
+## Examples
+
+### Example 1: Create Hebrew Blog Content Calendar
+User says: "Plan a 3-month content calendar for our Israeli SaaS blog"
+Actions:
+1. Identify Hebrew keyword clusters for the industry
+2. Map content to Israeli business calendar (avoid holidays, leverage events)
+3. Plan weekly cadence: 1 long-form post + 2 social snippets
+4. Include Hebrew SEO optimization for each piece
+5. Assign distribution channels (LinkedIn IL, Facebook groups, Calcalist)
+Result: 12-week Hebrew content calendar with SEO targets and distribution plan
+
+### Example 2: Write Hebrew Thought Leadership Article
+User says: "Write an article about AI trends for Israeli tech audience"
+Actions:
+1. Research trending topics in Israeli tech press (Geektime, Calcalist Tech)
+2. Write 1500-word Hebrew article with data and expert quotes
+3. Optimize for Hebrew SEO with meta description and headers
+4. Create social snippets for LinkedIn and Twitter
+Result: Publishable Hebrew tech article with social distribution kit
+
+## Bundled Resources
+
+### Scripts
+- `scripts/content_calendar.py` -- Generates content calendars accounting for Israeli holidays and business cycles. Run: `python scripts/content_calendar.py --help`
+
+### References
+- `references/israeli-media-landscape.md` -- Israeli media outlets, tech publications, content distribution channels, and audience demographics. Consult when planning content distribution or media outreach.
+
+## Troubleshooting
+
+### Error: "Content not ranking for Hebrew keywords"
+Cause: Hebrew SEO requires different optimization than English
+Solution: Use exact Hebrew phrases (not transliterations), include common misspellings, and ensure proper hreflang tags for he-IL locale.
+
+### Error: "Low engagement on Israeli social platforms"
+Cause: Content timing or format mismatch with Israeli audience habits
+Solution: Post Sunday-Thursday (Israeli work week), peak times 8-9am and 12-1pm. Israeli audiences prefer informal tone and local references over corporate language.

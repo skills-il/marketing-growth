@@ -68,3 +68,43 @@ Prices must include VAT (17%). Sponsored content must be labeled. Health and fin
 
 ### Budget and Bidding
 Israeli CPC benchmarks by vertical: Legal 15-40 NIS, Insurance 10-30 NIS, Ecommerce 2-8 NIS. Start with Manual CPC, switch to Target CPA after 30+ conversions.
+
+## Examples
+
+### Example 1: Set Up Hebrew Google Ads Campaign
+User says: "Create a Google Ads campaign targeting Israeli customers"
+Actions:
+1. Set campaign location to Israel, language Hebrew + English
+2. Write Hebrew ad copy (30 chars headline, 90 chars description)
+3. Set budget in NIS, expect CPC of 2-8 NIS (varies by industry)
+4. Add Hebrew negative keywords to avoid wasted spend
+5. Set up conversion tracking with NIS values (include 17% VAT in ROAS)
+Result: Hebrew Google Ads campaign with Israeli market targeting
+
+### Example 2: Launch Facebook Ads for Israeli Audience
+User says: "Create Facebook ad campaigns for our Israeli restaurant chain"
+Actions:
+1. Target: Israel, age 25-54, Hebrew speakers, food interests
+2. Create Hebrew ad copy with local references and NIS pricing
+3. Use carousel format with Hebrew RTL text overlays
+4. Set daily budget in NIS, expect CPM of 15-40 NIS
+5. Schedule ads for Israeli peak hours (Sunday-Thursday evenings)
+Result: Localized Facebook campaign targeting Israeli food audience
+
+## Bundled Resources
+
+### Scripts
+- `scripts/cpc_calculator.py` -- Calculates CPC benchmarks and budget estimates for Israeli ad campaigns. Run: `python scripts/cpc_calculator.py --help`
+
+### References
+- `references/israeli-ad-benchmarks.md` -- Israeli digital advertising benchmarks by industry, platform CPCs in NIS, VAT implications, and regulatory requirements. Consult when planning ad budgets or setting performance targets.
+
+## Troubleshooting
+
+### Error: "Hebrew ad text truncated"
+Cause: Hebrew characters may have different display widths than Latin
+Solution: Test ad preview in Hebrew. Google Ads headline limit is 30 characters -- Hebrew words are often shorter. Use the ad preview tool to verify display.
+
+### Error: "VAT not accounted for in ROAS calculation"
+Cause: Israeli ads charge 17% VAT which affects true cost
+Solution: Always calculate ROAS including VAT. If ad spend is 1,000 NIS, true cost is 1,170 NIS. Set ROAS targets accordingly.
