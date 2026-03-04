@@ -64,7 +64,7 @@ Headlines: up to 30 characters. Use informal register. Price transparency and lo
 Gush Dan (~40% of ad spend), mobile-first (>70%), avoid Shabbat hours. Military service shifts age demographics.
 
 ### Ad Regulations (Chok Haganat HaTzarchan)
-Prices must include VAT (17%). Sponsored content must be labeled. Health and financial claims have stricter requirements.
+Prices must include VAT (18%). Sponsored content must be labeled. Health and financial claims have stricter requirements.
 
 ### Budget and Bidding
 Israeli CPC benchmarks by vertical: Legal 15-40 NIS, Insurance 10-30 NIS, Ecommerce 2-8 NIS. Start with Manual CPC, switch to Target CPA after 30+ conversions.
@@ -78,7 +78,7 @@ Actions:
 2. Write Hebrew ad copy (30 chars headline, 90 chars description)
 3. Set budget in NIS, expect CPC of 2-8 NIS (varies by industry)
 4. Add Hebrew negative keywords to avoid wasted spend
-5. Set up conversion tracking with NIS values (include 17% VAT in ROAS)
+5. Set up conversion tracking with NIS values (include 18% VAT in ROAS)
 Result: Hebrew Google Ads campaign with Israeli market targeting
 
 ### Example 2: Launch Facebook Ads for Israeli Audience
@@ -106,5 +106,5 @@ Cause: Hebrew characters may have different display widths than Latin
 Solution: Test ad preview in Hebrew. Google Ads headline limit is 30 characters -- Hebrew words are often shorter. Use the ad preview tool to verify display.
 
 ### Error: "VAT not accounted for in ROAS calculation"
-Cause: Israeli ads charge 17% VAT which affects true cost
-Solution: Always calculate ROAS including VAT. If ad spend is 1,000 NIS, true cost is 1,170 NIS. Set ROAS targets accordingly.
+Cause: Israeli ads charge 18% VAT which affects true cost
+Solution: Always calculate ROAS including VAT. If ad spend is 1,000 NIS, true cost is 1,180 NIS. Set ROAS targets accordingly.

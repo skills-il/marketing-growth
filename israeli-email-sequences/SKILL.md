@@ -53,7 +53,7 @@ metadata:
 ## Instructions
 
 ### Chok HaSpam Compliance (Amendment 40)
-Israeli anti-spam law requires explicit opt-in consent before sending commercial email. Every email must identify the sender, include a working unsubscribe mechanism (honored within 3 business days), and maintain consent records. Penalties up to 50,000 NIS per violation.
+Israeli anti-spam law requires explicit opt-in consent before sending commercial email. Every email must identify the sender, include a working unsubscribe mechanism (honored within 2 business days), and maintain consent records. Penalties up to 1,000 NIS per message (civil, without proof of damages).
 
 ### Hebrew RTL Email Rendering
 Use dir="rtl" on html element and every table/td. Gmail (~45% market share) has good RTL support. Outlook needs MSO conditional comments. Font stack: Arial, Tahoma, sans-serif (not Google Fonts). Wrap numbers in span dir="ltr".
@@ -106,4 +106,4 @@ Solution: Add `dir="rtl"` to the outermost table AND each content cell. Use inli
 
 ### Error: "Unsubscribe link not meeting legal requirements"
 Cause: Chok HaSpam requires specific unsubscribe format
-Solution: Unsubscribe link must be clearly visible, work with one click, and process within 5 business days. Include physical address and sender identification in Hebrew.
+Solution: Unsubscribe link must be clearly visible, work with one click, and process within 2 business days. Include physical address and sender identification in Hebrew.
