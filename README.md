@@ -1,20 +1,35 @@
 # Marketing & Growth Skills
 
-AI agent skills for Israeli marketing, advertising, SEO, and growth strategies.
+AI agent skills for Israeli marketing, growth hacking, and content strategy.
 
 Part of [Skills IL](https://github.com/skills-il) - curated AI agent skills for Israeli developers.
 
-## Structure
+## Skills
 
-Each subdirectory is a self-contained skill following the open [Agent Skills](https://github.com/anthropics/agent-skills) standard.
+| Skill | Description | Scripts | References |
+|-------|-------------|---------|------------|
+| [hebrew-seo-toolkit](./hebrew-seo-toolkit/) | Hebrew SEO: morphological keyword analysis, .co.il optimization, hreflang he-IL, Hebrew schema markup. | `analyze_keywords.py` | `hebrew-seo.md` |
+| [israeli-linkedin-strategy](./israeli-linkedin-strategy/) | Israeli tech LinkedIn strategy: bilingual posting, Hebrew hashtags, ecosystem topics, cultural timing. | -- | `linkedin-patterns.md` |
+| [israeli-product-launch](./israeli-product-launch/) | Israeli tech ecosystem launch playbook: media contacts, VC demo days, 8200 networks, Hebrew press releases. | -- | `tech-media.md` |
 
-## Adding Skills
+## Install
 
-1. Create a new directory with your skill name (kebab-case)
-2. Add `SKILL.md` with required frontmatter and instructions
-3. Add `SKILL_HE.md` with Hebrew content
-4. Open a PR - CI will validate your skill automatically
+```bash
+# Claude Code
+claude install github:skills-il/marketing-growth/hebrew-seo-toolkit
+
+# Or clone the full repo
+git clone https://github.com/skills-il/marketing-growth.git
+```
+
+## Contributing
+
+See the org-level [Contributing Guide](https://github.com/skills-il/.github/blob/main/CONTRIBUTING.md).
 
 ## License
 
 MIT
+
+---
+
+Built with care in Israel.

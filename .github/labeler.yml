@@ -1,35 +1,11 @@
-cloudinary-assets:
+hebrew-seo-toolkit:
   - changed-files:
-    - any-glob-to-any-file: 'cloudinary-assets/**'
+    - any-glob-to-any-file: 'hebrew-seo-toolkit/**'
 
-idf-date-converter:
+israeli-linkedin-strategy:
   - changed-files:
-    - any-glob-to-any-file: 'idf-date-converter/**'
+    - any-glob-to-any-file: 'israeli-linkedin-strategy/**'
 
-israeli-agritech-advisor:
+israeli-product-launch:
   - changed-files:
-    - any-glob-to-any-file: 'israeli-agritech-advisor/**'
-
-israeli-id-validator:
-  - changed-files:
-    - any-glob-to-any-file: 'israeli-id-validator/**'
-
-israeli-phone-formatter:
-  - changed-files:
-    - any-glob-to-any-file: 'israeli-phone-formatter/**'
-
-israeli-startup-toolkit:
-  - changed-files:
-    - any-glob-to-any-file: 'israeli-startup-toolkit/**'
-
-israeli-marketplace-seller:
-  - changed-files:
-    - any-glob-to-any-file: 'israeli-marketplace-seller/**'
-
-israeli-shipping-manager:
-  - changed-files:
-    - any-glob-to-any-file: 'israeli-shipping-manager/**'
-
-jfrog-devops:
-  - changed-files:
-    - any-glob-to-any-file: 'jfrog-devops/**'
+    - any-glob-to-any-file: 'israeli-product-launch/**'
