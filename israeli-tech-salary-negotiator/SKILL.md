@@ -102,7 +102,7 @@ If the offer includes equity, analyze it:
 1. **Stock options (ISO/NSO)**: Calculate potential value based on strike price, current valuation, and vesting schedule (typically 4 years with 1-year cliff in Israel)
 2. **RSUs**: Calculate current value and projected value
 3. **For startups**: Apply a standard discount (50-80% for early stage, 20-40% for late stage) to account for illiquidity risk
-4. **Tax implications**: Note the Israeli tax treatment (capital gains tax on options at 25%, ordinary income on RSUs)
+4. **Tax implications**: Note the Israeli tax treatment (capital gains tax on options at 25%, RSUs under Section 102 trust can also qualify for 25% capital gains tax)
 
 ### Step 5: Identify Negotiation Leverage Points
 
@@ -167,7 +167,7 @@ Result: A side-by-side comparison table showing Offer A at approximately 900K NI
 
 ### Example 3: Negotiating Keren Hishtalmut and Benefits
 
-User says: "I'm a mid-level DevOps engineer in Haifa. My company offers the minimum pension (5%+5%) and no keren hishtalmut. I want to negotiate better benefits."
+User says: "I'm a mid-level DevOps engineer in Haifa. My company offers the minimum pension (6%+6.5%) and no keren hishtalmut. I want to negotiate better benefits."
 
 Actions:
 1. Look up Mid DevOps salary ranges in Haifa
