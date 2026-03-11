@@ -37,7 +37,11 @@ metadata:
       האשטגים, לוח זמנים לפרסום וקבוצות פייסבוק
     en: >-
       Create social media content optimized for Israeli audiences across
-      Facebook, Instagram, TikTok, and LinkedIn
+      Facebook, Instagram, TikTok, and LinkedIn. Use when user asks about
+      Israeli social media strategy, Hebrew social posts, posting schedules for
+      Israel, Hebrew hashtags, or Israeli Facebook group marketing. Covers
+      platform-specific best practices, Israeli cultural references, and Hebrew
+      copywriting for social.
   supported_agents:
     - claude-code
     - cursor
