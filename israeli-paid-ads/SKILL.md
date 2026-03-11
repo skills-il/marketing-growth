@@ -37,7 +37,11 @@ metadata:
       מילות מפתח, ציות לחוק הגנת הצרכן ואסטרטגיות הצעת מחיר
     en: >-
       Create and optimize paid advertising campaigns for the Israeli market
-      across Google Ads, Meta, and local platforms
+      across Google Ads, Meta (Facebook/Instagram), and local platforms. Use
+      when user asks about Israeli PPC, Hebrew ad copy, Israeli audience
+      targeting, or ad budget optimization. Covers Hebrew keyword research,
+      Israeli Consumer Protection Law ad regulations, local bidding strategies,
+      and audience segmentation.
   supported_agents:
     - claude-code
     - cursor
