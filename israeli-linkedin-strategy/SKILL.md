@@ -39,9 +39,15 @@ metadata:
       אסטרטגיית תוכן דו-לשונית עברית/אנגלית ללינקדאין, כולל תזמון פוסטים,
       האשטגים בעברית, ונושאים מובילים באקוסיסטם הטכנולוגי הישראלי
     en: >-
-      Bilingual Hebrew/English LinkedIn content strategy for the Israeli tech
-      ecosystem, including post timing, Hebrew hashtags, cultural scheduling
-      around Israeli holidays, and engagement patterns for Israeli professionals
+      Develop bilingual Hebrew/English LinkedIn content strategies for the
+      Israeli tech ecosystem, including post timing, Hebrew hashtags, and
+      audience engagement patterns. Use when user asks about LinkedIn strategy
+      for Israel, Hebrew LinkedIn posts, Israeli tech networking, or asks about
+      "linkedin", "reshet mitkademet", "tוכן", bilingual posting, or Israeli
+      professional branding. Covers Hebrew/English post optimization, Israeli
+      tech topic trends, cultural timing around holidays and work week, and
+      Hebrew hashtag research. Do NOT use for general international LinkedIn
+      strategy, paid LinkedIn advertising, or non-Israeli market targeting.
   supported_agents:
     - claude-code
     - cursor
