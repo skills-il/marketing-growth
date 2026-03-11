@@ -1,55 +1,60 @@
 ---
 name: israeli-product-launch
 description: >-
-  Plan and execute product launches targeting the Israeli tech market, including
-  media outreach, VC demo day preparation, and community engagement. Use when
-  user asks about launching a product in Israel, pitching Israeli media, Hebrew
-  press releases, or asks about "hashkaa", "hasakat mutzar", "Geektime",
-  "Calcalist", Israeli tech PR, or startup launch strategy. Covers Israeli tech
-  media outlets, holiday timing, 8200 alumni networks, and early-adopter
-  communities. Do NOT use for general global product launches, non-Israeli
-  markets, or paid advertising campaigns.
+  Plan and execute product launches targeting the Israeli tech market, including media
+  outreach, VC demo day preparation, and community engagement. Use when user asks
+  about launching a product in Israel, pitching Israeli media, Hebrew press releases,
+  or asks about "hashkaa", "hasakat mutzar", "Geektime", "Calcalist", Israeli tech
+  PR, or startup launch strategy. Covers Israeli tech media outlets, holiday timing,
+  8200 alumni networks, and early-adopter communities. Do NOT use for general global
+  product launches, non-Israeli markets, or paid advertising campaigns.
 license: MIT
 compatibility: >-
-  Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
-  Network access helpful for media research.
+  Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex. Network
+  access helpful for media research.
 metadata:
   author: skills-il
   version: 1.0.0
   category: marketing-growth
   tags:
     he:
-      - השקה
-      - שיווק
-      - סטארטאפ
-      - מדיה-טכנולוגית
-      - ישראל
+    - השקה
+    - שיווק
+    - סטארטאפ
+    - מדיה-טכנולוגית
+    - ישראל
     en:
-      - launch
-      - marketing
-      - startup
-      - tech-media
-      - israel
+    - launch
+    - marketing
+    - startup
+    - tech-media
+    - israel
   display_name:
     he: השקת מוצר ישראלי
     en: Israeli Product Launch
   display_description:
     he: >-
-      תכנון וביצוע השקות מוצר בשוק הטכנולוגיה הישראלי כולל יחסי מדיה, הכנה
-      ליום דמו, ומעורבות קהילתית
+      תכנון וביצוע השקות מוצר בשוק הטכנולוגיה הישראלי כולל יחסי מדיה, הכנה ליום דמו,
+      ומעורבות קהילתית
     en: >-
-      Plan and execute product launches for the Israeli tech market including
-      media outreach to Geektime and Calcalist, VC demo day prep, 8200 alumni
-      networks, and Hebrew press release templates
+      Plan and execute product launches targeting the Israeli tech market, including
+      media outreach, VC demo day preparation, and community engagement. Use when
+      user asks about launching a product in Israel, pitching Israeli media, Hebrew
+      press releases, or asks about "hashkaa", "hasakat mutzar", "Geektime", "Calcalist",
+      Israeli tech PR, or startup launch strategy. Covers Israeli tech media outlets,
+      holiday timing, 8200 alumni networks, and early-adopter communities. Do NOT
+      use for general global product launches, non-Israeli markets, or paid advertising
+      campaigns.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
-    - antigravity
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
+  - antigravity
 ---
+
 
 # Israeli Product Launch
 
