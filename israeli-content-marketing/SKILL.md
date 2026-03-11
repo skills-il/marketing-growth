@@ -37,7 +37,11 @@ metadata:
       טכנולוגי לאתרים כמו Geektime וכלכליסט, ותוכן B2B
     en: >-
       Plan and execute content marketing strategies for the Israeli market
-      including Hebrew SEO content, tech media outreach, and B2B content
+      including Hebrew SEO content, tech media outreach to Geektime and
+      Calcalist, and B2B content. Use when user asks about Israeli content
+      strategy, Hebrew blog posts, Israeli tech PR, or Hebrew B2B content.
+      Covers Israeli tech media landscape, Hebrew content SEO, and bilingual
+      content strategies.
   supported_agents:
     - claude-code
     - cursor
