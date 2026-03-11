@@ -38,7 +38,11 @@ metadata:
       רינדור RTL ותזמון סביב חגים יהודיים
     en: >-
       Design email marketing sequences for the Israeli market with Hebrew RTL
-      rendering, Jewish holiday scheduling, and anti-spam law compliance
+      rendering, Jewish and national holiday scheduling, and anti-spam law
+      compliance. Use when user asks about Israeli email marketing, Hebrew email
+      campaigns, Chok HaSpam compliance, Hebrew newsletter design, or
+      holiday-triggered email sequences. Covers Amendment 40 compliance, RTL
+      rendering, and subject line optimization.
   supported_agents:
     - claude-code
     - cursor
