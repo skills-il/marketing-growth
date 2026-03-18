@@ -11,7 +11,7 @@ compatibility: >-
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: marketing-growth
   tags:
     he:
@@ -102,6 +102,14 @@ Result: Publishable Hebrew tech article with social distribution kit
 
 ### References
 - `references/israeli-media-landscape.md` -- Israeli media outlets, tech publications, content distribution channels, and audience demographics. Consult when planning content distribution or media outreach.
+
+## Gotchas
+
+- Israeli content consumption is heavily mobile-first (over 70%). Agents may produce desktop-optimized content with long paragraphs that perform poorly on mobile screens.
+- Facebook groups remain the dominant content discovery channel in Israel, unlike the US where search and social feeds dominate. Agents may deprioritize Facebook group strategy.
+- Hebrew URL slugs should be transliterated or in English, not URL-encoded Hebrew characters. Agents may generate encoded Hebrew URLs that are unreadable and hurt SEO.
+- Israeli work week runs Sunday-Thursday, not Monday-Friday. Content publishing schedules must be adjusted accordingly. Friday afternoon through Saturday is very low engagement.
+- Hebrew content must be written natively, not translated from English. Machine-translated Hebrew sounds unnatural and Israeli audiences will disengage immediately.
 
 ## Troubleshooting
 

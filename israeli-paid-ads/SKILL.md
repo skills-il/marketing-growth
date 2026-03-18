@@ -11,7 +11,7 @@ compatibility: >-
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: marketing-growth
   tags:
     he:
@@ -103,6 +103,14 @@ Result: Localized Facebook campaign targeting Israeli food audience
 
 ### References
 - `references/israeli-ad-benchmarks.md` -- Israeli digital advertising benchmarks by industry, platform CPCs in NIS, VAT implications, and regulatory requirements. Consult when planning ad budgets or setting performance targets.
+
+## Gotchas
+
+- Israeli ad prices must include VAT (18%) by law under Chok Haganat HaTzarchan (Consumer Protection Law). Agents may generate ad copy with pre-VAT prices, which violates Israeli advertising regulations.
+- ROAS calculations must account for 18% VAT on ad spend. If you spend 1,000 NIS on ads, the true cost is 1,180 NIS. Agents often calculate ROAS without this adjustment.
+- The Gush Dan metropolitan area (Tel Aviv area) accounts for approximately 40% of Israeli digital ad spend. Agents may set nationwide targeting when the business only serves a specific region, wasting budget.
+- Israeli ad scheduling must avoid Shabbat (Friday afternoon through Saturday evening). Agents may run campaigns 24/7 and burn budget during zero-engagement hours.
+- Hebrew ad headlines have a 30-character limit in Google Ads, but Hebrew words are often shorter than English equivalents. Agents may not take advantage of the extra room available in Hebrew headlines.
 
 ## Troubleshooting
 

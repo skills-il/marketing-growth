@@ -11,7 +11,7 @@ compatibility: >-
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: marketing-growth
   tags:
     he:
@@ -100,6 +100,14 @@ Result: Instagram content plan for Israeli food business
 
 ### References
 - `references/israeli-social-landscape.md` -- Israeli social media platform demographics, usage statistics, popular Israeli hashtags, and cultural content norms. Consult when planning social media strategy for Israeli audiences.
+
+## Gotchas
+
+- Facebook remains the #1 social platform in Israel with ~6.5M users, unlike the US where it skews older. Agents may deprioritize Facebook in favor of Instagram or TikTok based on US trends.
+- Israeli social media engagement drops dramatically from Friday afternoon through Saturday evening (Shabbat). Agents may schedule posts during this period and see near-zero engagement.
+- Hebrew social copy must use spoken Hebrew (ivrit meduberet), not formal written Hebrew. Agents often produce overly formal Hebrew that feels robotic to Israeli audiences.
+- Hebrew hashtags must not contain underscores or spaces. The correct format is #סטארטאפישראלי not #סטארטאפ_ישראלי. Agents may apply English hashtag formatting conventions.
+- Israeli audiences respond strongly to personal stories and "dugri" (blunt, honest) content. Corporate-polished messaging that works in the US consistently underperforms in Israeli social media.
 
 ## Troubleshooting
 

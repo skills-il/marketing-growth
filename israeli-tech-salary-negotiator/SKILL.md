@@ -13,7 +13,7 @@ allowed-tools: "Bash(python:*) WebFetch Read"
 compatibility: "Requires Claude Code or compatible AI coding agent"
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: marketing-growth
   tags:
     he:
@@ -186,6 +186,14 @@ Result: A clear breakdown showing that upgrading to full benefits adds approxima
 ### References
 - `references/israeli-tech-salary-data.md` - Comprehensive salary ranges by role, seniority, and city for Israeli tech positions. Consult when benchmarking any salary offer or comparing compensation across roles.
 - `references/israeli-benefits-guide.md` - Detailed guide to Israeli employment benefits including pension, keren hishtalmut, vacation, car allowance, and meal benefits. Consult when evaluating the non-salary components of a compensation package.
+
+## Gotchas
+
+- Keren Hishtalmut (education fund) is a major Israeli benefit worth 7.5% of base salary from the employer, tax-exempt after 6 years. Agents unfamiliar with Israeli compensation may omit it entirely, undervaluing total compensation by tens of thousands of NIS annually.
+- Israeli sick day payment structure differs from the US: day 1 is unpaid, days 2-3 at 50%, day 4+ at 100%. Agents may apply US-style sick leave when comparing packages.
+- Stock options in Israeli startups typically use Section 102 trustee arrangements for favorable 25% capital gains tax treatment. Agents may apply US tax rates (which can be higher) when evaluating equity value.
+- Israeli tech salaries are quoted as gross monthly (bruto chodshi), not annual. An offer of "40K" means 40,000 NIS per month. Agents may interpret this as annual, drastically miscalculating the package.
+- The Israeli tech salary market shifts rapidly, especially in hot domains like AI/ML and cybersecurity. Salary benchmarks from even 12 months ago may be significantly outdated.
 
 ## Troubleshooting
 

@@ -11,7 +11,7 @@ compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCod
   Codex.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: marketing-growth
   tags:
     he:
@@ -102,6 +102,14 @@ Result: Culturally adapted Google Play listing for Israeli market
 
 ### References
 - `references/israeli-app-market.md` -- Israeli app market statistics, popular app categories, pricing benchmarks in NIS, and Hebrew keyword research data. Consult when researching Israeli app market or planning ASO strategy.
+
+## Gotchas
+
+- Hebrew has two spelling conventions (ktiv maleh and ktiv chaser) that produce different search terms. Agents may optimize for only one spelling, missing users who search the other way.
+- Apple App Store keyword field is 100 characters with comma separation and no spaces. Agents often include spaces after commas, wasting precious character budget.
+- Israeli app store screenshots must flow right-to-left. The first screenshot users see is the rightmost one. Agents may arrange screenshots in LTR reading order.
+- NIS pricing must appear on screenshots and descriptions. Agents may default to USD pricing, which reduces trust with Israeli users.
+- Israeli Android market share (~70%) is significantly higher than iOS (~30%). Agents trained on US data may over-index on App Store optimization and under-invest in Google Play.
 
 ## Troubleshooting
 

@@ -16,7 +16,7 @@ compatibility: >-
   Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
   author: skills-il
-  version: 2.0.0
+  version: 2.0.1
   category: marketing-growth
   tags:
     he:
@@ -411,6 +411,14 @@ Result: Prioritized SEO + GEO improvement plan for the Israeli market
 - `references/tools-and-apis.md` -- Curated list of free and paid SEO/GEO tools, APIs, browser extensions, and command-line utilities. Consult when recommending tools or setting up automation.
 - `references/eeat-principles.md` -- Google's EEAT framework (Experience, Expertise, Authoritativeness, Trustworthiness) with implementation patterns and YMYL considerations. Consult when evaluating or improving content quality.
 - `references/aeo-considerations.md` -- Answer Engine Optimization (AEO) guide: how AI selects answers, content structure for AI, Google AI Overviews, AI crawler management, measuring AEO success. Consult when optimizing content for AI answer selection.
+
+## Gotchas
+
+- Hebrew morphology creates keyword variants that agents miss. The word "nadlan" (real estate) has prefixes like "hanadlan," "benadlan," "lenadlan" that are separate search queries. Agents may optimize for a single form and miss the majority of search traffic.
+- Israeli business hours in schema.org must reflect the Sunday-Thursday work week with Friday early close. Agents default to Monday-Friday schedules.
+- The hreflang tag for Israeli Hebrew must be `he-IL`, not just `he`. Agents often omit the country code, which affects Google's geo-targeting for google.co.il.
+- Israeli phone numbers in structured data must use the `+972` prefix. Agents may format numbers in local 0X-XXX-XXXX format, which fails schema validation.
+- GEO (Generative Engine Optimization) is a rapidly evolving field. AI platform ranking factors (which bots to allow, content freshness windows, citation formats) change frequently. Agents may recommend outdated GEO strategies from even 6 months ago.
 
 ## Troubleshooting
 

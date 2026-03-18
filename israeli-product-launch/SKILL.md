@@ -14,7 +14,7 @@ compatibility: >-
   access helpful for media research.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: marketing-growth
   tags:
     he:
@@ -209,6 +209,14 @@ Result: Dual-language press release pair ready for Israeli and international med
 
 ### References
 - `references/tech-media.md` -- Israeli tech media outlet contact patterns and pitch format guidelines. Covers Geektime, Calcalist Tech, Globes Tech, TheMarker, and CTech with preferred pitch formats, editorial calendars, and exclusive vs. mass distribution strategies. Consult when planning media outreach for an Israeli product launch.
+
+## Gotchas
+
+- The Tishrei holiday cluster (Rosh Hashana through Sukkot, September-October) effectively shuts down Israel for 2-3 weeks. Agents may schedule launches during this period without checking the Hebrew calendar, which shifts dates every year.
+- Hebrew press releases must be written natively in Hebrew, not translated from English. Israeli tech journalists can immediately tell translated content and will deprioritize it.
+- Israeli VC pitches should be 5-7 minutes and lead with traction/metrics, not vision. Agents trained on US pitch conventions may produce longer, vision-first presentations that lose Israeli investor attention.
+- WhatsApp follow-ups after media pitches are culturally acceptable and expected in Israel. Agents may suggest only email follow-ups, missing the most effective Israeli outreach channel.
+- Israeli tech media outlets (Geektime, Calcalist Tech) expect Hebrew pitches for Hebrew coverage. Agents may draft English pitches for these outlets, which will be ignored.
 
 ## Troubleshooting
 

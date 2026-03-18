@@ -12,7 +12,7 @@ compatibility: >-
   Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: marketing-growth
   tags:
     he:
@@ -102,6 +102,14 @@ Result: 3-email Hebrew cart recovery sequence with Israeli compliance
 
 ### References
 - `references/chok-haspam-guide.md` -- Complete guide to Israeli anti-spam law (Chok HaSpam, 2008), opt-in requirements, penalties (up to 1,000 NIS per message), and compliance checklist. Consult when building any email marketing for Israeli audiences.
+
+## Gotchas
+
+- Israeli anti-spam law (Chok HaSpam, Amendment 40) requires explicit opt-in consent, not just opt-out. Agents trained on US CAN-SPAM rules may suggest opt-out-only flows, which violate Israeli law.
+- Penalties under Chok HaSpam are up to 1,000 NIS per message without requiring proof of damages. Agents may understate the legal risk of non-compliance.
+- Commercial email must never be sent on Yom Kippur or Yom HaZikaron. Agents may not have these dates in their calendar and could schedule campaigns during these sensitive periods.
+- Hebrew email RTL requires `dir="rtl"` on both the HTML element and every table/td cell. Agents may only set it at the top level, causing rendering issues in Outlook which is common in Israeli businesses.
+- Numbers and English text within Hebrew emails need `dir="ltr"` span wrappers to display correctly. Agents often forget this, causing phone numbers and prices to render in reverse order.
 
 ## Troubleshooting
 
