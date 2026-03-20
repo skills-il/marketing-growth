@@ -223,7 +223,7 @@ Result: Authentic Hebrew career story post highlighting the Israeli military-to-
 - Sunday morning is the Israeli "Monday morning" with peak LinkedIn engagement. Agents default to Monday-Friday scheduling and miss the highest-engagement window of the Israeli work week.
 - Hebrew hashtags must not contain spaces or underscores. Agents may format Hebrew hashtags like English ones with underscores, which breaks the hashtag functionality.
 - Military unit references (8200, Mamram, Talpiot) are powerful networking signals in Israeli tech. Agents unfamiliar with Israeli culture may not leverage these connections or may confuse unit names.
-- Israeli LinkedIn has one of the highest per-capita penetration rates globally (~3.5M users in a 9M population). Agents may underestimate the platform's importance in the Israeli professional market.
+- Israeli LinkedIn has one of the highest per-capita penetration rates globally (~3.1M users in a 9M population). Agents may underestimate the platform's importance in the Israeli professional market.
 
 ## Troubleshooting
 

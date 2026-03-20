@@ -57,7 +57,7 @@ metadata:
 ## Instructions
 
 ### Israeli Social Media Landscape
-Facebook (~6.5M users, ages 25-55) remains #1 in Israel. Instagram (~4M), TikTok (~3M growing), LinkedIn (~3.5M highest per-capita penetration). Facebook groups are the dominant discovery channel.
+Facebook (~7.6M users, ages 25-55) remains #1 in Israel. Instagram (~5.3M), TikTok (~4M growing), LinkedIn (~3.1M highest per-capita penetration). Facebook groups are the dominant discovery channel.
 
 ### Platform-Specific Strategy
 **Facebook:** Groups are king. Post types that work: personal stories, hot takes, advice requests. **Instagram:** Reels dominate reach. Hebrew captions with line breaks. **TikTok:** Hebrew audio performs best. 15-60 seconds ideal. **LinkedIn:** Tech ecosystem content performs exceptionally.
@@ -103,7 +103,7 @@ Result: Instagram content plan for Israeli food business
 
 ## Gotchas
 
-- Facebook remains the #1 social platform in Israel with ~6.5M users, unlike the US where it skews older. Agents may deprioritize Facebook in favor of Instagram or TikTok based on US trends.
+- Facebook remains the #1 social platform in Israel with ~7.6M users, unlike the US where it skews older. Agents may deprioritize Facebook in favor of Instagram or TikTok based on US trends.
 - Israeli social media engagement drops dramatically from Friday afternoon through Saturday evening (Shabbat). Agents may schedule posts during this period and see near-zero engagement.
 - Hebrew social copy must use spoken Hebrew (ivrit meduberet), not formal written Hebrew. Agents often produce overly formal Hebrew that feels robotic to Israeli audiences.
 - Hebrew hashtags must not contain underscores or spaces. The correct format is #סטארטאפישראלי not #סטארטאפ_ישראלי. Agents may apply English hashtag formatting conventions.

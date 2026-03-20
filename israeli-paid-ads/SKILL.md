@@ -57,7 +57,7 @@ metadata:
 ## Instructions
 
 ### Choose Platform and Campaign Type
-Google Ads (Search) for high-intent traffic, Meta (Facebook) for B2C with ~6.5M Israeli users, Instagram for lifestyle, LinkedIn for B2B, TikTok for Gen Z.
+Google Ads (Search) for high-intent traffic, Meta (Facebook) for B2C with ~7.6M Israeli users, Instagram for lifestyle, LinkedIn for B2B, TikTok for Gen Z.
 
 ### Hebrew Keyword Research
 Hebrew is morphologically rich; target all inflections of root words. Use Google Keyword Planner with Israel location. Check both Hebrew and English variants.
