@@ -1,55 +1,8 @@
 ---
 name: israeli-paid-ads
-description: >-
-  Create and optimize paid advertising campaigns for the Israeli market across
-  Google Ads, Meta (Facebook/Instagram), and local platforms. Use when user asks
-  about Israeli PPC, Hebrew ad copy, Israeli audience targeting, or ad budget
-  optimization. Covers Hebrew keyword research, Israeli Consumer Protection Law
-  ad regulations, local bidding strategies, and audience segmentation.
+description: Create and optimize paid advertising campaigns for the Israeli market across Google Ads, Meta (Facebook/Instagram), and local platforms. Use when user asks about Israeli PPC, Hebrew ad copy, Israeli audience targeting, or ad budget optimization. Covers Hebrew keyword research, Israeli Consumer Protection Law ad regulations, local bidding strategies, and audience segmentation.
 license: MIT
-compatibility: >-
-  Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: marketing-growth
-  tags:
-    he:
-      - פרסום-ממומן
-      - גוגל-אדס
-      - מטא
-      - PPC
-      - קידום-ממומן
-      - שיווק-דיגיטלי
-    en:
-      - paid-ads
-      - google-ads
-      - meta
-      - ppc
-      - paid-promotion
-      - digital-marketing
-  display_name:
-    he: "פרסום ממומן ישראלי"
-    en: "Israeli Paid Ads"
-  display_description:
-    he: >-
-      יצירת קמפיינים ממומנים בגוגל ומטא לשוק הישראלי עם קופי בעברית, מחקר
-      מילות מפתח, ציות לחוק הגנת הצרכן ואסטרטגיות הצעת מחיר
-    en: >-
-      Create and optimize paid advertising campaigns for the Israeli market
-      across Google Ads, Meta (Facebook/Instagram), and local platforms. Use
-      when user asks about Israeli PPC, Hebrew ad copy, Israeli audience
-      targeting, or ad budget optimization. Covers Hebrew keyword research,
-      Israeli Consumer Protection Law ad regulations, local bidding strategies,
-      and audience segmentation.
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
-    - antigravity
+compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 ---
 
 # Israeli Paid Ads

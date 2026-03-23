@@ -1,0 +1,40 @@
+{
+  "author": "skills-il",
+  "version": "1.0.1",
+  "category": "marketing-growth",
+  "tags": {
+    "he": [
+      "רשתות-חברתיות",
+      "פייסבוק",
+      "אינסטגרם",
+      "טיקטוק",
+      "תוכן-שיווקי",
+      "שיווק-דיגיטלי"
+    ],
+    "en": [
+      "social-media",
+      "facebook",
+      "instagram",
+      "tiktok",
+      "marketing-content",
+      "digital-marketing"
+    ]
+  },
+  "display_name": {
+    "he": "תוכן לרשתות חברתיות ישראליות",
+    "en": "Israeli Social Content"
+  },
+  "display_description": {
+    "he": "יצירת תוכן לרשתות חברתיות מותאם לקהל הישראלי כולל קופי בעברית, האשטגים, לוח זמנים לפרסום וקבוצות פייסבוק",
+    "en": "Create social media content optimized for Israeli audiences across Facebook, Instagram, TikTok, and LinkedIn. Use when user asks about Israeli social media strategy, Hebrew social posts, posting schedules for Israel, Hebrew hashtags, or Israeli Facebook group marketing. Covers platform-specific best practices, Israeli cultural references, and Hebrew copywriting for social."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "antigravity"
+  ]
+}

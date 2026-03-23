@@ -1,54 +1,8 @@
 ---
 name: israeli-aso
-description: >-
-  Optimize mobile app listings for Israeli users on Apple App Store and Google Play
-  with Hebrew metadata, keywords, and screenshots. Use when user asks about Israeli
-  app store optimization, Hebrew app listing, Hebrew keywords for app store, or localizing
-  app metadata for Israel. Covers Hebrew keyword research, RTL screenshot design,
-  and category-specific benchmarks.
+description: Optimize mobile app listings for Israeli users on Apple App Store and Google Play with Hebrew metadata, keywords, and screenshots. Use when user asks about Israeli app store optimization, Hebrew app listing, Hebrew keywords for app store, or localizing app metadata for Israel. Covers Hebrew keyword research, RTL screenshot design, and category-specific benchmarks.
 license: MIT
-compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode,
-  Codex.
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: marketing-growth
-  tags:
-    he:
-    - אופטימיזציה-לחנות
-    - אפליקציות
-    - ASO
-    - גוגל-פליי
-    - אפל-סטור
-    - מובייל
-    en:
-    - app-store-optimization
-    - apps
-    - aso
-    - google-play
-    - apple-store
-    - mobile
-  display_name:
-    he: ASO ישראלי
-    en: Israeli ASO
-  display_description:
-    he: >-
-      אופטימיזציה של אפליקציות לחנויות האפליקציות עם מטאדאטה בעברית, מחקר מילות מפתח,
-      עיצוב צילומי מסך RTL ומדדי קטגוריות ישראליות
-    en: >-
-      Optimize mobile app listings for Israeli users on Apple App Store and Google
-      Play with Hebrew metadata, keywords, and screenshots. Use when user asks about
-      Israeli app store optimization, Hebrew app listing, Hebrew keywords for app
-      store, or localizing app metadata for Israel. Covers Hebrew keyword research,
-      RTL screenshot design, and category-specific benchmarks.
-  supported_agents:
-  - claude-code
-  - cursor
-  - github-copilot
-  - windsurf
-  - opencode
-  - codex
-  - antigravity
+compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 ---
 
 

@@ -1,0 +1,38 @@
+{
+  "author": "skills-il",
+  "version": "1.0.1",
+  "category": "marketing-growth",
+  "tags": {
+    "he": [
+      "לינקדאין",
+      "שיווק",
+      "תוכן",
+      "רשתות-חברתיות",
+      "ישראל"
+    ],
+    "en": [
+      "linkedin",
+      "marketing",
+      "content",
+      "social-media",
+      "israel"
+    ]
+  },
+  "display_name": {
+    "he": "אסטרטגיית לינקדאין ישראלית",
+    "en": "Israeli LinkedIn Strategy"
+  },
+  "display_description": {
+    "he": "אסטרטגיית תוכן דו-לשונית עברית/אנגלית ללינקדאין, כולל תזמון פוסטים, האשטגים בעברית, ונושאים מובילים באקוסיסטם הטכנולוגי הישראלי",
+    "en": "Develop bilingual Hebrew/English LinkedIn content strategies for the Israeli tech ecosystem, including post timing, Hebrew hashtags, and audience engagement patterns. Use when user asks about LinkedIn strategy for Israel, Hebrew LinkedIn posts, Israeli tech networking, or asks about \"linkedin\", \"reshet mitkademet\", \"tוכן\", bilingual posting, or Israeli professional branding. Covers Hebrew/English post optimization, Israeli tech topic trends, cultural timing around holidays and work week, and Hebrew hashtag research. Do NOT use for general international LinkedIn strategy, paid LinkedIn advertising, or non-Israeli market targeting."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "antigravity"
+  ]
+}

@@ -1,46 +1,9 @@
 ---
 name: israeli-tech-salary-negotiator
-description: >-
-  Benchmark tech salaries in the Israeli market and craft data-driven negotiation strategies.
-  Use when preparing for a salary negotiation, evaluating a job offer, or comparing total
-  compensation packages at Israeli tech companies (startups, enterprises, multinational R&D
-  centers). Covers base salary ranges by role and seniority, equity and options valuation,
-  Israeli benefits analysis (pension, keren hishtalmut, car allowance, vacation), and
-  counter-offer scripting with market data. Do NOT use for non-tech roles, freelance rate
-  setting, or salary negotiations outside Israel.
+description: Benchmark tech salaries in the Israeli market and craft data-driven negotiation strategies. Use when preparing for a salary negotiation, evaluating a job offer, or comparing total compensation packages at Israeli tech companies (startups, enterprises, multinational R&D centers). Covers base salary ranges by role and seniority, equity and options valuation, Israeli benefits analysis (pension, keren hishtalmut, car allowance, vacation), and counter-offer scripting with market data. Do NOT use for non-tech roles, freelance rate setting, or salary negotiations outside Israel.
 license: MIT
-allowed-tools: "Bash(python:*) WebFetch Read"
-compatibility: "Requires Claude Code or compatible AI coding agent"
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: marketing-growth
-  tags:
-    he:
-      - משא-ומתן-שכר
-      - משרות-הייטק
-      - תגמול
-      - קריירה
-      - משאבי-אנוש
-    en:
-      - salary-negotiation
-      - tech-jobs
-      - compensation
-      - career
-      - HR
-  display_name:
-    he: "מו\"מ שכר הייטק ישראלי"
-    en: "Israeli Tech Salary Negotiator"
-  display_description:
-    he: "השוואת שכר והכנת אסטרטגיית משא ומתן לתפקידי הייטק בישראל, כולל ניתוח הטבות, אופציות והשוואה לשוק"
-    en: "Benchmark tech salaries in the Israeli market and craft data-driven negotiation strategies. Use when preparing for a salary negotiation, evaluating a job offer, or comparing total compensation packages at Israeli tech companies (startups, enterprises, multinational R&D centers). Covers base salary ranges by role and seniority, equity and options valuation, Israeli benefits analysis (pension, keren hishtalmut, car allowance, vacation), and counter-offer scripting with market data. Do NOT use for non-tech roles, freelance rate setting, or salary negotiations outside Israel."
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+allowed-tools: Bash(python:*) WebFetch Read
+compatibility: Requires Claude Code or compatible AI coding agent
 ---
 
 # Israeli Tech Salary Negotiator

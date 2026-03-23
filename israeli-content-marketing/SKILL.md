@@ -1,55 +1,8 @@
 ---
 name: israeli-content-marketing
-description: >-
-  Plan and execute content marketing strategies for the Israeli market including
-  Hebrew SEO content, tech media outreach to Geektime and Calcalist, and B2B
-  content. Use when user asks about Israeli content strategy, Hebrew blog posts,
-  Israeli tech PR, or Hebrew B2B content. Covers Israeli tech media landscape,
-  Hebrew content SEO, and bilingual content strategies.
+description: Plan and execute content marketing strategies for the Israeli market including Hebrew SEO content, tech media outreach to Geektime and Calcalist, and B2B content. Use when user asks about Israeli content strategy, Hebrew blog posts, Israeli tech PR, or Hebrew B2B content. Covers Israeli tech media landscape, Hebrew content SEO, and bilingual content strategies.
 license: MIT
-compatibility: >-
-  Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: marketing-growth
-  tags:
-    he:
-      - שיווק-תוכן
-      - בלוג
-      - SEO
-      - יחסי-ציבור
-      - B2B
-      - תוכן-שיווקי
-    en:
-      - content-marketing
-      - blog
-      - seo
-      - public-relations
-      - b2b
-      - marketing-content
-  display_name:
-    he: "שיווק תוכן ישראלי"
-    en: "Israeli Content Marketing"
-  display_description:
-    he: >-
-      תכנון וביצוע אסטרטגיית שיווק תוכן לשוק הישראלי כולל SEO בעברית, PR
-      טכנולוגי לאתרים כמו Geektime וכלכליסט, ותוכן B2B
-    en: >-
-      Plan and execute content marketing strategies for the Israeli market
-      including Hebrew SEO content, tech media outreach to Geektime and
-      Calcalist, and B2B content. Use when user asks about Israeli content
-      strategy, Hebrew blog posts, Israeli tech PR, or Hebrew B2B content.
-      Covers Israeli tech media landscape, Hebrew content SEO, and bilingual
-      content strategies.
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
-    - antigravity
+compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 ---
 
 # Israeli Content Marketing
