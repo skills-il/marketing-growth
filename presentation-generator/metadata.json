@@ -5,8 +5,8 @@
     "en": "Generate RTL-first Hebrew presentations with full right-to-left support. Use when you need to create a business presentation, startup pitch deck, quarterly report, or educational slideshow in Hebrew. Produces slides with Hebrew fonts, right-aligned bullets, and bilingual support in a single deck. Prevents hours of manual formatting and RTL issues that other tools fail to solve. Do NOT use for non-Hebrew presentations, video creation, or interactive web slideshows."
   },
   "tags": {
-    "he": ["מצגות", "שקפים", "פיץ׳-דק", "פאוורפוינט", "עברית", "עסקים", "RTL"],
-    "en": ["presentations", "slides", "pitch-deck", "powerpoint", "marp", "rtl", "hebrew", "business"]
+    "he": ["מצגות", "שקפים", "פיץ׳-דק", "פאוורפוינט", "marp", "עברית", "עסקים", "RTL"],
+    "en": ["presentations", "slides", "pitch-deck", "powerpoint", "marp", "hebrew", "business", "rtl"]
   },
   "author": "skills-il",
   "version": "1.0.0",
