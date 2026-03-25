@@ -1,0 +1,16 @@
+{
+  "display_name": { "he": "יוצר מצגות", "en": "Presentation Generator" },
+  "display_description": {
+    "he": "יצירת מצגות RTL בעברית עם תמיכה מלאה בכיוון ימין-לשמאל. השתמשו כשצריך ליצור מצגת עסקית, פיץ׳ דק לסטארטאפ, דוח רבעוני, או מצגת לימודית בעברית. מייצר שקפים עם פונטים עבריים, תבליטים מיושרים לימין, ותמיכה דו-לשונית באותו מסמך. מונע שעות של עיצוב ידני ובעיות RTL שכלים אחרים לא פותרים.",
+    "en": "Generate RTL-first Hebrew presentations with full right-to-left support. Use when you need to create a business presentation, startup pitch deck, quarterly report, or educational slideshow in Hebrew. Produces slides with Hebrew fonts, right-aligned bullets, and bilingual support in a single deck. Prevents hours of manual formatting and RTL issues that other tools fail to solve. Do NOT use for non-Hebrew presentations, video creation, or interactive web slideshows."
+  },
+  "tags": {
+    "he": ["מצגות", "שקפים", "פיץ׳-דק", "פאוורפוינט", "עברית", "עסקים", "RTL"],
+    "en": ["presentations", "slides", "pitch-deck", "powerpoint", "marp", "rtl", "hebrew", "business"]
+  },
+  "author": "skills-il",
+  "version": "1.0.0",
+  "category": "marketing-growth",
+  "supported_agents": ["claude-desktop", "claude-code", "cursor", "windsurf", "chatgpt"],
+  "openclaw": true
+}
