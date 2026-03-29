@@ -5,7 +5,7 @@ Creates a weekly posting calendar optimized for Israeli audience
 engagement patterns across Facebook, Instagram, TikTok, and LinkedIn.
 
 Usage:
-    python posting_scheduler.py --platform facebook --posts-per-week 5
+    python posting_scheduler.py --platform facebook
     python posting_scheduler.py --all
     python posting_scheduler.py --help
 """
