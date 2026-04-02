@@ -1,7 +1,7 @@
 # Israeli Advertising Regulations
 
 ## Consumer Protection Law (Chok Haganat HaTzarchan)
-- All prices MUST include VAT (17%)
+- All prices MUST include VAT (18%)
 - Sponsored content must be clearly labeled ("פרסומת" or "תוכן ממומן")
 - Comparative advertising allowed but must be accurate
 - Misleading advertising carries criminal penalties

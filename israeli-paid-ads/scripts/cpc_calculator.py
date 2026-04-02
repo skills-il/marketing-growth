@@ -26,7 +26,7 @@ CPC_BENCHMARKS = {
     "food": {"min": 2, "max": 6, "avg": 3, "name_he": "מזון"},
 }
 
-VAT_RATE = 0.17
+VAT_RATE = 0.18
 
 def show_benchmarks():
     print("Israeli Google Ads CPC Benchmarks (NIS)")
