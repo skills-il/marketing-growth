@@ -1,0 +1,42 @@
+{
+  "author": "skills-il",
+  "version": "1.0.0",
+  "category": "marketing-growth",
+  "tags": {
+    "he": [
+      "פודקאסט",
+      "פוסט-פרודקשן",
+      "הערות-פרק",
+      "כתוביות",
+      "רשתות-חברתיות",
+      "ffmpeg",
+      "עברית"
+    ],
+    "en": [
+      "podcast",
+      "post-production",
+      "show-notes",
+      "subtitles",
+      "social-media",
+      "ffmpeg",
+      "hebrew"
+    ]
+  },
+  "display_name": {
+    "he": "חבילת פוסט-פרודקשן לפודקאסט בעברית",
+    "en": "Hebrew Podcast Post-Production Kit"
+  },
+  "display_description": {
+    "he": "חבילה שלמה של פוסט-פרודקשן לפודקאסט בעברית: הערות הפרק ב-RTL עם סימוני פרקים ל-Spotify ול-Apple, זיהוי 3-5 קליפים של 30-90 שניות לשיתוף ברשתות, פקודות FFmpeg לחיתוך והדבקת כתוביות בעברית, וכיתובים מותאמים לאינסטגרם, טיקטוק, X ולינקדאין. השתמשו כשצריך להפיק פרק פודקאסט עד הסוף מתמליל של Whisper או קובץ SRT, בלי להתקע על בעיות RTL וניקוד שהכלים הגנריים לא יודעים לפתור, בלי לעבוד עם 5 אפליקציות שונות, ובלי לחשוב איך לפורמט חותמות זמן לכל פלטפורמה. לא מיועד לתמלול עצמאי של אודיו (השתמשו ב-video-subtitles), בניית פיד RSS, מיקס ואודיו מסטרינג, או פודקאסטים באנגלית בלבד.",
+    "en": "Complete post-production package for Hebrew podcasts: RTL show notes with Spotify and Apple chapter markers, identification of 3-5 shareable 30-90 second clips, FFmpeg commands for extraction and Hebrew subtitle burn-in, and platform-tuned captions for Instagram Reels, TikTok, X, and LinkedIn. Use when shipping a Hebrew podcast episode from a Whisper transcript or SRT file and you need show notes, chapters, clips, and social captions in one coherent output without stitching together 4-5 separate tools and without tripping over RTL, nikud, and Hebrew subtitle burn-in bugs that generic tools (Kapwing, Maestra, Descript, Podsqueeze) mishandle. Do NOT use for standalone audio transcription (use video-subtitles), podcast RSS feed generation, audio mixing and mastering, or English-only podcasts."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "gemini-cli"
+  ]
+}
