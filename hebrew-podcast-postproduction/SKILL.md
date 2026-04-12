@@ -311,3 +311,4 @@ The `<podcast:chapters>` tag must be inside each `<item>` (episode) in the RSS f
 **"Agent picked 5 clips but 3 of them overlap or contain pronoun references without context."**
 Increase the standalone-comprehensibility weight in the scoring function (Step B1), and add a minimum 60-second gap enforcement between selected clips. Pronouns without antecedents ("he said this") fail the comprehensibility check and should be rejected.
 
+
