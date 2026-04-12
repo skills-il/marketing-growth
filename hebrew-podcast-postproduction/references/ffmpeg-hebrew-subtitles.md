@@ -21,8 +21,8 @@ If any of these three is missing, reinstall FFmpeg from a source that includes t
 | Platform | Command | Notes |
 |----------|---------|-------|
 | macOS | `brew install ffmpeg` | Homebrew ships all three by default |
-| Ubuntu 22.04+ | `sudo apt install ffmpeg` | Main package in recent Ubuntu |
-| Debian 12+ | `sudo apt install ffmpeg` | Main package in recent Debian |
+| Ubuntu 22.04+ | `apt install ffmpeg` (as root) | Main package in recent Ubuntu |
+| Debian 12+ | `apt install ffmpeg` (as root) | Main package in recent Debian |
 | Windows | Download from `ffmpeg.org` builds | Use the full-feature build, not minimal |
 | Docker | `jrottenberg/ffmpeg:latest` | Full-feature image |
 
