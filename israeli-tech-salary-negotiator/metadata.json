@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "category": "marketing-growth",
   "tags": {
     "he": [
@@ -23,7 +23,7 @@
     "en": "Israeli Tech Salary Negotiator"
   },
   "display_description": {
-    "he": "השוואת שכר והכנת אסטרטגיית משא ומתן לתפקידי הייטק בישראל, כולל ניתוח הטבות, אופציות והשוואה לשוק",
+    "he": "השוואת שכר בשוק ההייטק הישראלי ובניית אסטרטגיית משא ומתן מבוססת נתונים. השתמש כשאתה מתכונן למו\"מ שכר, מעריך הצעת עבודה, או משווה חבילות תגמול בחברות סטארטאפ, חברות גדולות ומרכזי פיתוח בינלאומיים בישראל. כולל טווחי שכר לפי תפקיד ובכירות, הערכת אופציות סעיף 102 ו-RSUs, ניתוח הטבות ישראליות (פנסיה, קרן השתלמות, הבראה, רכב) וניסוח הצעת נגד. אל תשתמש בכישור זה לתפקידים שאינם הייטק, לתמחור פרילנסרים או למשא ומתן על שכר מחוץ לישראל.",
     "en": "Benchmark tech salaries in the Israeli market and craft data-driven negotiation strategies. Use when preparing for a salary negotiation, evaluating a job offer, or comparing total compensation packages at Israeli tech companies (startups, enterprises, multinational R&D centers). Covers base salary ranges by role and seniority, equity and options valuation, Israeli benefits analysis (pension, keren hishtalmut, car allowance, vacation), and counter-offer scripting with market data. Do NOT use for non-tech roles, freelance rate setting, or salary negotiations outside Israel."
   },
   "supported_agents": [

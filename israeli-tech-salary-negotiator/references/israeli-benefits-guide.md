@@ -6,21 +6,25 @@ A comprehensive guide to Israeli tech employment benefits, covering mandatory an
 
 ## 1. Pension (Pensia)
 
-### Mandatory Contributions (as of 2024)
+### Mandatory Contributions (2026)
 
-By Israeli law, employers must provide pension contributions after a qualifying period.
+By Israeli law, employers must provide pension contributions after a qualifying period. Rates below have been in force since the 2017 expansion order.
 
 | Component | Minimum | Common in Tech | Maximum |
 |---|---|---|---|
 | Employee contribution | 6.0% | 6.0% | 7.0% |
-| Employer contribution | 6.5% | 6.5% | 7.5% |
+| Employer contribution (tagmulim) | 6.5% | 6.5% | 7.5% |
 | Employer severance component | 6.0% | 8.33% | 8.33% |
 
 **Key notes**:
 - The severance component (Pitzuim) at 8.33% means the employer pre-funds severance pay (1 month per year of employment, which equals 8.33% monthly)
 - When the employer contributes 8.33% to severance via the pension fund, this is called "Section 14" (Sif 14), meaning the pension fund balance replaces the statutory severance obligation
 - Total employer cost for pension: 6.5% + 8.33% = 14.83% of salary
-- Pension is calculated on the base salary up to a ceiling (currently approximately 47,465 NIS/month in 2025)
+- The 6.5% employer tagmulim includes disability insurance. If disability costs less than 2.5%, the employer must top up the difference into the tagmulim component.
+- Multiple pension "ceilings" exist in Israel — do not confuse them:
+  - **Tax-qualifying salary ceiling**: ~47,465 NIS/month in 2026. Above this, certain tax benefits on contributions are lost.
+  - **Comprehensive fund max insurable salary**: ~24,700–30,500 NIS/month in 2026 (varies with total contribution rate). Salary above flows to a supplementary fund.
+  - **Comprehensive fund monthly premium ceiling**: 5,645 NIS/month in 2026 (20.5% of 2x average wage, 13,769 NIS).
 
 ### Pension Types
 - **Comprehensive pension fund (Kupat Gemel)**: Most common, includes savings + insurance + severance
@@ -49,8 +53,8 @@ An Israeli-specific savings/investment fund with significant tax advantages. Thi
 ### Tax Benefits
 - Withdrawals after 6 years: **completely tax-exempt** (up to a ceiling)
 - Withdrawals after 3 years: tax-exempt only if used for education/professional development
-- The tax-exempt ceiling for monthly salary is approximately 15,712 NIS (2025), meaning employer contributions on salary above this are taxable
-- For the tech sector, this ceiling usually does not matter as contributions are often capped at the ceiling anyway
+- The tax-exempt qualifying salary ceiling is **15,751 NIS/month in 2026** (max tax-benefited employer deposit: 1,571 NIS/month at 10%). Employer contributions on salary above this ceiling become taxable income for the employee.
+- Many tech salaries sit above this ceiling, so you should verify whether your employer contributes the full 7.5% on actual salary or only up to the tax-benefited ceiling.
 
 ### Monetary Value Example
 For a 40K NIS/month base salary:
@@ -68,16 +72,20 @@ This benefit is one of the most valuable in the Israeli market. An employer who 
 
 ### Statutory Minimums (by seniority)
 
+Per the 2016–2017 amendment to the Annual Vacation Law, the minimum for a 5-day workweek is:
+
 | Years of Employment | Vacation Days (law) | Common in Tech |
 |---|---|---|
-| 1-4 years | 12 days | 15-18 days |
-| 5 years | 14 days | 18-20 days |
-| 6 years | 16 days | 20-22 days |
-| 7+ years | 18+ days | 22-26 days |
+| 1-4 years | 14 days (calendar), ~12 working days | 15-18 working days |
+| 5 years | 16 days (calendar), ~14 working days | 18-20 working days |
+| 6 years | 18 days (calendar), ~16 working days | 20-22 working days |
+| 7+ years | 18+ days, growing with tenure | 22-26 working days |
+
+Note: Israeli law expresses vacation in gross calendar days including the weekly rest day. Tech contracts almost always quote net working days, which is the smaller number.
 
 ### Additional Time Off
 - **Sick days**: 1.5 days per month (18 per year), accumulating up to 90 days. First day unpaid, days 2-3 at 50%, day 4+ at 100%.
-- **Recuperation pay (Dmey Havra'a)**: Annual lump sum based on tenure. Approximately 378 NIS per day of entitlement (2025). Typical: 5-10 days per year depending on tenure.
+- **Recuperation pay (Dmey Havra'a)**: Annual lump sum based on tenure. **418 NIS per day (private sector, 2026 — rate frozen since 2023)**. Typical: 5-10 days per year depending on tenure.
 - **Jewish holidays**: 9 paid holiday days per year (Rosh Hashana, Yom Kippur, Sukkot, Simchat Torah, Pesach, Shavuot, Independence Day, etc.)
 - **Reserve duty (Miluim)**: Employer must maintain salary during reserve duty; the state reimburses the employer.
 - **Unlimited vacation**: Increasingly common in Israeli tech (especially startups), but verify the actual culture around taking time off.
@@ -167,8 +175,8 @@ For a Senior Engineer in Tel Aviv earning 42,000 NIS/month base:
 | Keren Hishtalmut employer (7.5%) | 3,150 | 37,800 |
 | Car allowance | 3,000 | 36,000 |
 | Meal benefit | 1,000 | 12,000 |
-| Recuperation pay | - | 2,268 |
-| **Total employer cost** | **55,379** | **666,814** |
+| Recuperation pay (6 days x 418) | - | 2,508 |
+| **Total employer cost** | **~55,400** | **~667,050** |
 
 This means an employer offering 42K base is actually spending approximately 55K/month, and the employee's total compensation package is worth approximately 667K NIS/year before equity and bonuses.
 
@@ -196,7 +204,8 @@ When negotiating, prioritize benefits in this order (by financial impact and tax
 Watch for these warning signs:
 
 - **No Keren Hishtalmut**: standard in tech, absence is a 7.5% pay cut
-- **Pension at minimum (5%+5%)**: should be at least 6%+6.5% in tech
+- **Pension below statutory minimum**: the 2017 expansion order fixed the floor at 6% employee + 6.5% tagmulim + 6% severance. Any offer below this is non-compliant, not a negotiation point.
+- **Tech offers at the statutory floor**: should be at least 6%+6.5% tagmulim + 8.33% severance in tech, with Section 14 applied
 - **No severance fund (Pitzuim)**: or less than 8.33% employer contribution
 - **Section 14 not applied**: means severance is not guaranteed via the pension fund
 - **"Global" salary with no Israeli benefits**: common in remote roles for foreign companies, but you lose significant tax-advantaged benefits

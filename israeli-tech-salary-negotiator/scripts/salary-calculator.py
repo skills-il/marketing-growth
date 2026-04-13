@@ -107,8 +107,8 @@ class CompensationPackage:
 
     @property
     def recuperation_annual(self) -> float:
-        # Dmey Havra'a: approximately 378 NIS per day (2025 rate)
-        return self.recuperation_days * 378
+        # Dmey Havra'a: 418 NIS per day (private sector, 2026 — frozen since 2023)
+        return self.recuperation_days * 418
 
     @property
     def bonus_annual(self) -> float:

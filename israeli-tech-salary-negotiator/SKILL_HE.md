@@ -10,36 +10,6 @@ description: >-
 license: MIT
 allowed-tools: "Bash(python:*) WebFetch Read"
 compatibility: "דורש Claude Code או סוכן AI תואם"
-metadata:
-  author: skills-il
-  version: 1.0.0
-  category: marketing-growth
-  tags:
-    he:
-      - משא-ומתן-שכר
-      - משרות-הייטק
-      - תגמול
-      - קריירה
-      - משאבי-אנוש
-    en:
-      - salary-negotiation
-      - tech-jobs
-      - compensation
-      - career
-      - HR
-  display_name:
-    he: "מו\"מ שכר הייטק ישראלי"
-    en: "Israeli Tech Salary Negotiator"
-  display_description:
-    he: "השוואת שכר והכנת אסטרטגיית משא ומתן לתפקידי הייטק בישראל, כולל ניתוח הטבות, אופציות והשוואה לשוק"
-    en: "Benchmark salaries and craft negotiation strategies for Israeli tech roles, including benefits analysis, equity valuation, and market comparison"
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
 ---
 
 # מו"מ שכר הייטק ישראלי
@@ -193,6 +163,19 @@ python scripts/salary-calculator.py --base <שכר_בסיס> --pension-employee 
 - אופציות למניות בסטארטאפים ישראליים משתמשות בדרך כלל בהסדר נאמנות סעיף 102 לקבלת מס רווחי הון מועדף של 25%. סוכנים עלולים להחיל שיעורי מס אמריקאיים בעת הערכת שווי אקוויטי.
 - שכר בהייטק ישראלי מצוטט כברוטו חודשי, לא שנתי. הצעה של "40K" פירושה 40,000 ש"ח לחודש. סוכנים עלולים לפרש את זה כשנתי ולחשב את החבילה בצורה שגויה באופן דרמטי.
 - שוק השכר בהייטק הישראלי משתנה מהר, במיוחד בתחומים חמים כמו AI/ML וסייבר. נתוני שכר מלפני אפילו 12 חודשים עלולים להיות מיושנים משמעותית.
+
+## קישורי עזר
+
+לאימות עדכני של אחוזי הפרשות, תקרות ומספרי שכר. הנתונים בישראל משתנים שנה בשנה, בדוק תמיד מול המקור הרשמי לפני שאתה מסתמך על נתון במשא ומתן.
+
+| מקור | קישור | מה לבדוק |
+|---|---|---|
+| כל-זכות: חופשה שנתית | https://www.kolzchut.org.il/he/חופשה_שנתית | מינימום ימי חופשה לפי ותק לשבוע 5 ימים |
+| כל-זכות: קרן השתלמות | https://www.kolzchut.org.il/he/קרן_השתלמות | תקרת שכר מוטב, אחוזי הפקדה, פטור ממס לאחר 6 שנים |
+| Pensuni: תקרות 2026 | https://pensuni.com/?p=827 | תקרות פנסיה, שכר ממוצע במשק, אחוזי הפקדה מחייבים |
+| ביטוח לאומי | https://www.btl.gov.il/ | שיעורי ביטוח לאומי ומס בריאות ששונים בין ברוטו לנטו |
+| רשות המסים | https://www.gov.il/he/departments/israel_tax_authority | מדרגות מס הכנסה, נקודות זיכוי, מיסוי אופציות סעיף 102 |
+| Supermarker (TheMarker) | https://www.supermarker.themarker.com/Gemel/HishtalmutFundTaxBenefits2017.aspx | תקרות הפקדה שנתיות לקרן השתלמות ולקופות גמל |
 
 ## פתרון בעיות
 

@@ -158,6 +158,19 @@ Result: A clear breakdown showing that upgrading to full benefits adds approxima
 - Israeli tech salaries are quoted as gross monthly (bruto chodshi), not annual. An offer of "40K" means 40,000 NIS per month. Agents may interpret this as annual, drastically miscalculating the package.
 - The Israeli tech salary market shifts rapidly, especially in hot domains like AI/ML and cybersecurity. Salary benchmarks from even 12 months ago may be significantly outdated.
 
+## Reference Links
+
+Use these official and authoritative sources to verify contribution rates, ceilings, and other legal figures before quoting them in a negotiation. Israeli thresholds update annually, so always cross-check.
+
+| Source | URL | What to Check |
+|---|---|---|
+| Kol-Zchut: Annual Vacation | https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%A4%D7%A9%D7%94_%D7%A9%D7%A0%D7%AA%D7%99%D7%AA | Statutory minimum vacation days by tenure for a 5-day workweek |
+| Kol-Zchut: Keren Hishtalmut | https://www.kolzchut.org.il/he/%D7%A7%D7%A8%D7%9F_%D7%94%D7%A9%D7%AA%D7%9C%D7%9E%D7%95%D7%AA | Tax-qualifying salary ceiling, contribution rates, 6-year tax exemption rules |
+| Pensuni: 2026 Ceilings | https://pensuni.com/?p=827 | Current-year pension ceilings, average wage, mandatory contribution rates |
+| Bituach Leumi | https://www.btl.gov.il/ | National Insurance and health tax rates that drive gross-to-net deltas |
+| Israel Tax Authority | https://www.gov.il/en/departments/israel_tax_authority | Income tax brackets, credit points, Section 102 trustee option taxation |
+| Supermarker (TheMarker) | https://www.supermarker.themarker.com/Gemel/HishtalmutFundTaxBenefits2017.aspx | Annual deposit ceilings for keren hishtalmut and kupot gemel |
+
 ## Troubleshooting
 
 ### Error: "Salary data seems outdated or does not match my experience"
