@@ -1,6 +1,6 @@
 ---
 name: hebrew-survey-builder
-description: "יצירת סקרי Google Forms חיים בעברית עם תבניות RTL ל-NPS, CSAT, משוב מאירועים, ראיונות גילוי מוצר ומחקר שוק, וגם ייעוץ על תזמון (ימים, שעות וחגים שלא כדאי להפיץ בהם). השתמשו כשמשתמש מבקש לבנות סקר בעברית, להפיץ NPS או CSAT ללקוחות ישראלים, לאסוף משוב אחרי אירוע, לראיין משתמשים בעברית, או להחליט מתי להפיץ סקר לקהל ישראלי. מחזיר קישור עובד ל-Google Form, לא מסמך סטטי. Use when user asks to build a Hebrew survey or run NPS in Israel. אל תשתמשו עבור Typeform, SurveyMonkey, Tally או טפסי ממשלה."
+description: "כתיבת סקרים בעברית (NPS, CSAT, CES, משוב מאירועים, ראיונות גילוי מוצר, מחקר שוק) עם ניסוח ישראלי טבעי, והרצה דרך Google Forms בעזרת Google Workspace CLI (gws) או הדבקה ל-Typeform, SurveyMonkey, Tally, Microsoft Forms, או אימייל/סלאק. כולל גם ייעוץ על תזמון לקהל ישראלי (ימים, שעות וחגים שלא כדאי להפיץ בהם). השתמשו כשמשתמש מבקש לבנות סקר בעברית, להפיץ NPS או CSAT ללקוחות ישראלים, לאסוף משוב אחרי אירוע, לראיין משתמשים בעברית, או להחליט מתי להפיץ סקר לקהל ישראלי. Use when user asks to build a Hebrew survey or run NPS in Israel. אל תשתמשו עבור טפסי ממשלה ישראליים (ראו israeli-gov-form-automator)."
 license: MIT
 ---
 
@@ -14,15 +14,20 @@ license: MIT
 
 ## הוראות
 
-### שלב 0: לוודא ש-gws מותקן ומחובר
+### שלב 0: להחליט אם Google Forms זו הפלטפורמה הנכונה
 
-לפני הכל, לבדוק שהכלי זמין ומוגדר:
+קודם כל לשאול את המשתמש לאיזה כלי הוא רוצה להפיץ את הסקר:
+
+- **Google Forms** — להשתמש בזרימת `gws` למטה (שלבים 1–7). מחזיר קישור חי לשיתוף.
+- **Typeform, SurveyMonkey, Tally, Microsoft Forms, אימייל, סלאק, וואטסאפ** — לדלג על שלבי `gws`. לעבור ישר לשלב 1 (בחירת תבנית) ואז ל-`references/export-to-other-platforms.md` להנחיות הדבקה לפי כלי. ניסוח השאלות בעברית וכללי התזמון הישראליים תקפים בכל מקרה.
+
+אם המשתמש כן הולך ל-Google Forms, לוודא ש-`gws` מותקן ומחובר:
 
 ```bash
 gws forms --help
 ```
 
-אם הפקודה לא נמצאת, להפנות את המשתמש להתקין את Google Workspace CLI מ-`github.com/googleworkspace/cli` ולהתחבר. לא להמציא תשובה ולא להשתמש בכלי אחר.
+אם הפקודה לא נמצאת, להפנות את המשתמש להתקין את Google Workspace CLI מ-`github.com/googleworkspace/cli` ולהתחבר. לא להמציא תשובה ולא להשתמש בכלי אחר. אם המשתמש לא רוצה להתקין את `gws`, אפשר להציע לייצר את התבניות ב-Markdown ולהפנות ל-`references/export-to-other-platforms.md`.
 
 ### שלב 1: לבחור תבנית סקר
 
@@ -168,6 +173,7 @@ gws schema forms.forms.setPublishSettings
 | תיעוד batchUpdate | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate | מבני הבקשות (CreateItemRequest וכו') |
 | תבניות סקרים בעברית | `references/hebrew-survey-templates.md` | ניסוחי NPS, CSAT, CES בעברית טבעית |
 | מדריך תזמון לקהל ישראלי | `references/israeli-send-timing.md` | ימי שבוע, שעות, שבועות של חג שכדאי להימנע מהם, קצבים לפי סוג סקר |
+| הדבקה לכלים שאינם Google | `references/export-to-other-platforms.md` | איך לקחת את אותן תבניות עברית ל-Typeform, SurveyMonkey, Tally, Microsoft Forms, או אימייל/סלאק |
 
 ## משאבים מצורפים
 
@@ -178,6 +184,7 @@ gws schema forms.forms.setPublishSettings
 - `references/hebrew-survey-templates.md` — רשימת שאלות לכל תבנית בעברית ישראלית טבעית, עם תוויות סולם, סוגי שאלות והערות מתי כל תבנית מתאימה.
 - `references/gws-forms-cheatsheet.md` — המתודות המדויקות של `gws forms`, מבנה הפקודות, ופקודות הגילוי — משוכפל מה-SKILL.md הרשמי של gws-forms כדי שתוכלו לעבוד גם בלי אינטרנט.
 - `references/israeli-send-timing.md` — מתי להפיץ סקרים לקהל ישראלי (ימי שבוע, שעות, שבועות של חג, וקצבים לפי סוג סקר).
+- `references/export-to-other-platforms.md` — איך להשתמש באותן תבניות עברית וכללי תזמון עם Typeform, SurveyMonkey, Tally, Microsoft Forms, או אימייל/סלאק במקרה ש-Google Forms לא הכלי הנכון.
 
 ## מלכודות נפוצות
 

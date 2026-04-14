@@ -1,6 +1,6 @@
 ---
 name: hebrew-survey-builder
-description: "Create live Google Forms in Hebrew with RTL-aware templates for NPS, CSAT, event feedback, product discovery, and market research, using the Google Workspace CLI (gws). Also advises on Israeli-specific send timing (days, hours, chagim to avoid). Use when the user asks to build a survey in Hebrew, run an NPS or CSAT for Israeli customers, collect event feedback, run user interviews in Hebrew, decide when to send a survey to Israeli audiences, or asks about \"סקר\", \"שאלון\", \"משוב\", \"NPS\", \"CSAT\", or survey cadence. Produces a real, shareable Google Form URL with questions that render right-to-left, not a static document. Do NOT use for Typeform, SurveyMonkey, Tally, or Israeli government forms (see israeli-gov-form-automator)."
+description: "Write Hebrew surveys (NPS, CSAT, CES, event feedback, product discovery, market research) with natural Israeli phrasing, and either deploy them as live Google Forms via the Google Workspace CLI (gws) or paste them into Typeform, SurveyMonkey, Tally, Microsoft Forms, or email/Slack. Also advises on Israeli-specific send timing (days, hours, chagim to avoid) and cadence. Use when the user asks to build a survey in Hebrew, run an NPS or CSAT for Israeli customers, collect event feedback, run user interviews in Hebrew, decide when to send a survey to Israeli audiences, or asks about \"סקר\", \"שאלון\", \"משוב\", \"NPS\", \"CSAT\", or survey cadence. Do NOT use for Israeli government forms (see israeli-gov-form-automator)."
 license: MIT
 compatibility: Requires the Google Workspace CLI (gws) to be installed and authenticated, plus a Google account with Forms access. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, and openclaw.
 ---
@@ -15,15 +15,20 @@ This skill lets an agent build a complete Hebrew survey end-to-end using `gws fo
 
 ## Instructions
 
-### Step 0: Verify gws is installed and authenticated
+### Step 0: Decide if Google Forms is the right target
 
-Before doing anything, confirm the agent has the tool and it is wired up:
+Start by asking which tool the user wants the survey deployed on:
+
+- **Google Forms** — use the `gws` flow below (Steps 1–7). Produces a live, shareable URL.
+- **Typeform, SurveyMonkey, Tally, Microsoft Forms, email, Slack, WhatsApp** — skip the `gws` steps. Go straight to Step 1 (pick template), then jump to `references/export-to-other-platforms.md` for per-tool paste-in instructions. The Hebrew question wording and Israeli timing rules apply regardless of platform.
+
+If the user is deploying to Google Forms, confirm the `gws` CLI is installed and authenticated:
 
 ```bash
 gws forms --help
 ```
 
-If the command is not found, tell the user to install the Google Workspace CLI from `github.com/googleworkspace/cli` and authenticate it. Do not attempt to fabricate a response. Do not use a different CLI.
+If the command is not found, tell the user to install the Google Workspace CLI from `github.com/googleworkspace/cli` and authenticate it. Do not attempt to fabricate a response. Do not use a different CLI. If the user does not want to install `gws`, offer to generate the templates in Markdown and point them to `references/export-to-other-platforms.md` instead.
 
 ### Step 1: Pick the survey template
 
@@ -169,6 +174,7 @@ to see the exact `publishSettings` shape, then call `gws forms setPublishSetting
 | Forms batchUpdate reference | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate | Request types (CreateItemRequest, UpdateItemRequest, etc.) |
 | Hebrew survey templates (local) | `references/hebrew-survey-templates.md` | NPS, CSAT, CES, event, product discovery wording |
 | Israeli send-time guide (local) | `references/israeli-send-timing.md` | Day/hour guidance, chag weeks to avoid, cadence rules |
+| Export to non-Google platforms (local) | `references/export-to-other-platforms.md` | How to paste the Hebrew templates into Typeform, SurveyMonkey, Tally, Microsoft Forms, email/Slack |
 
 ## Bundled Resources
 
@@ -179,6 +185,7 @@ to see the exact `publishSettings` shape, then call `gws forms setPublishSetting
 - `references/hebrew-survey-templates.md` — every template's question list in natural Israeli Hebrew, with scale labels, question types, and notes on when each template is appropriate.
 - `references/gws-forms-cheatsheet.md` — the exact gws forms methods, command structure, and discovery commands, mirrored from the upstream `gws-forms` skill so you can work offline.
 - `references/israeli-send-timing.md` — when to send surveys to Israeli audiences (day of week, time of day, chag weeks to avoid, per-survey-type cadence rules).
+- `references/export-to-other-platforms.md` — how to use the same Hebrew templates and timing rules with Typeform, SurveyMonkey, Tally, Microsoft Forms, or plain email/Slack when Google Forms is not the right tool.
 
 ## Gotchas
 
