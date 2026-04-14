@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "marketing-growth",
   "tags": {
     "he": [
@@ -9,6 +9,7 @@
       "CSAT",
       "משוב",
       "גוגל-פורמס",
+      "תזמון",
       "ישראל"
     ],
     "en": [
@@ -17,6 +18,7 @@
       "csat",
       "feedback",
       "google-forms",
+      "timing",
       "israel"
     ]
   },
@@ -25,8 +27,8 @@
     "en": "Hebrew Survey Builder"
   },
   "display_description": {
-    "he": "יצירת סקרי Google Forms חיים בעברית עם תבניות RTL ל-NPS, CSAT, משוב מאירועים, ראיונות גילוי מוצר ומחקר שוק, דרך ממשק השורה של Google Workspace (gws). מתי להשתמש: כשצריך להפיץ סקר ללקוחות ישראלים, לבדוק שביעות רצון אחרי אירוע, לראיין משתמשים בעברית, או לבנות NPS. למה זה חשוב: ניסוח מילולי מאנגלית פוגע משמעותית באחוז ההיענות של ישראלים, והסקיל נותן ניסוחים שנכתבו בעברית מההתחלה. התוצר: קישור עובד לסקר Google Forms, לא מסמך סטטי. אל תשתמש עבור Typeform, SurveyMonkey, Tally או טפסים ממשלתיים (ראו israeli-gov-form-automator).",
-    "en": "Create live Google Forms in Hebrew with RTL-aware templates for NPS, CSAT, CES, event feedback, product discovery, and market research, driven through the Google Workspace CLI (gws). Use when the user asks to run an NPS or CSAT for Israeli customers, build a Hebrew survey, collect event feedback, or interview users in Hebrew. Matters because literal English-to-Hebrew survey translations are the #1 cause of low response rates in Israel. Produces a real, shareable Google Form URL via gws forms create + gws forms batchUpdate, not a static document. Do NOT use for Typeform, SurveyMonkey, Tally, or Israeli government forms (see israeli-gov-form-automator)."
+    "he": "יצירת סקרי Google Forms חיים בעברית עם תבניות RTL ל-NPS, CSAT, משוב מאירועים, ראיונות גילוי מוצר ומחקר שוק, דרך ממשק השורה של Google Workspace (gws), כולל מדריך תזמון לקהל ישראלי (ימים, שעות וחגים שלא כדאי להפיץ בהם). מתי להשתמש: כשצריך להפיץ סקר ללקוחות ישראלים, לבדוק שביעות רצון אחרי אירוע, לראיין משתמשים בעברית, לבנות NPS, או להחליט מתי להפיץ סקר לקהל ישראלי. למה זה חשוב: ניסוח מילולי מאנגלית ותזמון שגוי (שישי אחר הצהריים, שבוע של חג) פוגעים משמעותית באחוז ההיענות של ישראלים. התוצר: קישור עובד לסקר Google Forms, לא מסמך סטטי. אל תשתמש עבור Typeform, SurveyMonkey, Tally או טפסים ממשלתיים (ראו israeli-gov-form-automator).",
+    "en": "Create live Google Forms in Hebrew with RTL-aware templates for NPS, CSAT, CES, event feedback, product discovery, and market research, driven through the Google Workspace CLI (gws), plus Israeli-specific send-time guidance (days, hours, and chagim to avoid). Use when the user asks to run an NPS or CSAT for Israeli customers, build a Hebrew survey, collect event feedback, interview users in Hebrew, or decide when to send a survey to an Israeli audience. Matters because literal English-to-Hebrew translations plus wrong timing (Friday afternoon, chag weeks) are the #1 causes of low response rates in Israel. Produces a real, shareable Google Form URL via gws forms create + gws forms batchUpdate, not a static document. Do NOT use for Typeform, SurveyMonkey, Tally, or Israeli government forms (see israeli-gov-form-automator)."
   },
   "supported_agents": [
     "claude-code",

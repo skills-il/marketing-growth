@@ -1,6 +1,6 @@
 ---
 name: hebrew-survey-builder
-description: "Create live Google Forms in Hebrew with RTL-aware templates for NPS, CSAT, event feedback, product discovery, and market research, using the Google Workspace CLI (gws). Use when the user asks to build a survey in Hebrew, run an NPS or CSAT for Israeli customers, collect event feedback, run user interviews in Hebrew, or asks about \"סקר\", \"שאלון\", \"משוב\", \"NPS\", or \"CSAT\". Produces a real, shareable Google Form URL and sets up questions that render right-to-left, not a static document. Do NOT use for Typeform, SurveyMonkey, Tally, or Israeli government forms (see israeli-gov-form-automator)."
+description: "Create live Google Forms in Hebrew with RTL-aware templates for NPS, CSAT, event feedback, product discovery, and market research, using the Google Workspace CLI (gws). Also advises on Israeli-specific send timing (days, hours, chagim to avoid). Use when the user asks to build a survey in Hebrew, run an NPS or CSAT for Israeli customers, collect event feedback, run user interviews in Hebrew, decide when to send a survey to Israeli audiences, or asks about \"סקר\", \"שאלון\", \"משוב\", \"NPS\", \"CSAT\", or survey cadence. Produces a real, shareable Google Form URL with questions that render right-to-left, not a static document. Do NOT use for Typeform, SurveyMonkey, Tally, or Israeli government forms (see israeli-gov-form-automator)."
 license: MIT
 compatibility: Requires the Google Workspace CLI (gws) to be installed and authenticated, plus a Google account with Forms access. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, and openclaw.
 ---
@@ -131,7 +131,19 @@ Tell the user this is a one-time click, and that after it's done, every new resp
 
 If the user wants API-level response access instead, use `gws forms responses list --params formId=<FORM_ID>` to pull responses and pipe them into `gws sheets` yourself.
 
-### Step 6: Publish and share
+### Step 6: Pick the right send time for Israeli audiences
+
+A perfectly worded survey sent at the wrong time tanks your response rate. Before you push the form, think about *when* it will land in people's inboxes:
+
+- **Avoid Friday afternoon and Shabbat.** Observant recipients are offline; by Sunday it's buried.
+- **Avoid chag weeks entirely** — Sukkot, Pesach, Rosh Hashanah, Yom Kippur period, Shavuot, Yom HaZikaron/Yom HaAtzmaut. Response rates collapse during these weeks.
+- **Best days**: Sunday (fresh inboxes), Tuesday–Wednesday (strongest B2B engagement). Thursday is acceptable but drifts softer late in the day.
+- **Best hours**: 09:00–11:00 morning window, 13:00–14:00 post-lunch lull. Avoid before 08:30 or after 20:00.
+- **Transactional surveys** (post-ticket CSAT, post-event feedback) should fire immediately after the interaction, not on a batch schedule — but still hold them for Sunday morning if the event ended Thursday evening.
+
+The full decision tree and per-survey-type cadence (NPS quarterly vs monthly, CSAT per-ticket vs batched, etc.) is in `references/israeli-send-timing.md`. Consult it before committing to a cadence.
+
+### Step 7: Publish and share
 
 By default, a newly created form is accessible to anyone with the responder link, inside the creator's Google account rules (Workspace domain restrictions still apply). If the user needs to change who can respond, use:
 
@@ -156,6 +168,7 @@ to see the exact `publishSettings` shape, then call `gws forms setPublishSetting
 | Google Forms API v1 reference | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms | Authoritative method list (create, get, batchUpdate, setPublishSettings) |
 | Forms batchUpdate reference | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate | Request types (CreateItemRequest, UpdateItemRequest, etc.) |
 | Hebrew survey templates (local) | `references/hebrew-survey-templates.md` | NPS, CSAT, CES, event, product discovery wording |
+| Israeli send-time guide (local) | `references/israeli-send-timing.md` | Day/hour guidance, chag weeks to avoid, cadence rules |
 
 ## Bundled Resources
 
@@ -165,6 +178,7 @@ to see the exact `publishSettings` shape, then call `gws forms setPublishSetting
 ### References
 - `references/hebrew-survey-templates.md` — every template's question list in natural Israeli Hebrew, with scale labels, question types, and notes on when each template is appropriate.
 - `references/gws-forms-cheatsheet.md` — the exact gws forms methods, command structure, and discovery commands, mirrored from the upstream `gws-forms` skill so you can work offline.
+- `references/israeli-send-timing.md` — when to send surveys to Israeli audiences (day of week, time of day, chag weeks to avoid, per-survey-type cadence rules).
 
 ## Gotchas
 

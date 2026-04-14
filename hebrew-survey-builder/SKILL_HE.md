@@ -1,6 +1,6 @@
 ---
 name: hebrew-survey-builder
-description: "יצירת סקרי Google Forms חיים בעברית עם תבניות RTL ל-NPS, CSAT, משוב מאירועים, ראיונות גילוי מוצר ומחקר שוק. השתמשו כשמשתמש מבקש לבנות סקר בעברית, להפיץ NPS או CSAT ללקוחות ישראלים, לאסוף משוב אחרי אירוע, או לראיין משתמשים בעברית. מחזיר קישור עובד ל-Google Form, לא מסמך סטטי. Use when user asks to build a Hebrew survey or run NPS in Israel. אל תשתמשו עבור Typeform, SurveyMonkey, Tally או טפסי ממשלה."
+description: "יצירת סקרי Google Forms חיים בעברית עם תבניות RTL ל-NPS, CSAT, משוב מאירועים, ראיונות גילוי מוצר ומחקר שוק, וגם ייעוץ על תזמון (ימים, שעות וחגים שלא כדאי להפיץ בהם). השתמשו כשמשתמש מבקש לבנות סקר בעברית, להפיץ NPS או CSAT ללקוחות ישראלים, לאסוף משוב אחרי אירוע, לראיין משתמשים בעברית, או להחליט מתי להפיץ סקר לקהל ישראלי. מחזיר קישור עובד ל-Google Form, לא מסמך סטטי. Use when user asks to build a Hebrew survey or run NPS in Israel. אל תשתמשו עבור Typeform, SurveyMonkey, Tally או טפסי ממשלה."
 license: MIT
 ---
 
@@ -130,7 +130,19 @@ gws forms get --params formId=<FORM_ID>
 
 אם המשתמש רוצה גישה תכנותית לתגובות במקום, אפשר להשתמש ב-`gws forms responses list --params formId=<FORM_ID>` ולשפוך את התוצאות לגיליון דרך `gws sheets`.
 
-### שלב 6: פרסום ושיתוף
+### שלב 6: לבחור מתי להפיץ — לקהל ישראלי
+
+סקר מנוסח מצוין שמופץ בזמן הלא נכון יקבל אחוז היענות עלוב. לפני שלוחצים על שיתוף, כדאי לחשוב מתי הסקר ייפול לתיבות:
+
+- **לא להפיץ אחרי הצהריים ביום שישי ובשבת.** שומרי מסורת לא יראו את זה, ועד יום ראשון הסקר נקבר בתיבה.
+- **לא להפיץ בשבועות של חג** — סוכות, פסח, ראש השנה, עשרת ימי תשובה, שבועות, יום הזיכרון/יום העצמאות. אחוז ההיענות קורס בשבועות האלה.
+- **הימים הכי טובים**: ראשון (תיבות פתוחות לשבוע חדש), שלישי–רביעי (היומיים החזקים ביותר ב-B2B). חמישי עובד אבל נחלש לקראת הצהריים.
+- **השעות הכי טובות**: 09:00–11:00 בבוקר, ו-13:00–14:00 אחרי הצהריים. להימנע מלפני 08:30 או אחרי 20:00.
+- **סקרים טרנזקציוניים** (CSAT אחרי פנייה לתמיכה, משוב אחרי אירוע) להפיץ מיד אחרי האינטראקציה ולא בבאץ' יומי — אבל אם האירוע נגמר בחמישי בערב, עדיף לחכות עד ראשון בבוקר.
+
+עץ החלטה מלא וקצבים לפי סוג סקר (NPS רבעוני מול חודשי, CSAT לפי פנייה מול באץ', וכו') נמצאים ב-`references/israeli-send-timing.md`. כדאי להציץ שם לפני שסוגרים קצב.
+
+### שלב 7: פרסום ושיתוף
 
 כברירת מחדל, טופס שנוצר דרך ה-API נגיש לכל מי שמקבל את ה-responder link, בכפוף להגבלות הדומיין של חשבון Google Workspace. אם צריך לשנות מי יכול להשיב:
 
@@ -155,6 +167,7 @@ gws schema forms.forms.setPublishSettings
 | תיעוד Google Forms API v1 | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms | רשימת המתודות (create, get, batchUpdate, setPublishSettings) |
 | תיעוד batchUpdate | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate | מבני הבקשות (CreateItemRequest וכו') |
 | תבניות סקרים בעברית | `references/hebrew-survey-templates.md` | ניסוחי NPS, CSAT, CES בעברית טבעית |
+| מדריך תזמון לקהל ישראלי | `references/israeli-send-timing.md` | ימי שבוע, שעות, שבועות של חג שכדאי להימנע מהם, קצבים לפי סוג סקר |
 
 ## משאבים מצורפים
 
@@ -164,6 +177,7 @@ gws schema forms.forms.setPublishSettings
 ### מסמכי עזר
 - `references/hebrew-survey-templates.md` — רשימת שאלות לכל תבנית בעברית ישראלית טבעית, עם תוויות סולם, סוגי שאלות והערות מתי כל תבנית מתאימה.
 - `references/gws-forms-cheatsheet.md` — המתודות המדויקות של `gws forms`, מבנה הפקודות, ופקודות הגילוי — משוכפל מה-SKILL.md הרשמי של gws-forms כדי שתוכלו לעבוד גם בלי אינטרנט.
+- `references/israeli-send-timing.md` — מתי להפיץ סקרים לקהל ישראלי (ימי שבוע, שעות, שבועות של חג, וקצבים לפי סוג סקר).
 
 ## מלכודות נפוצות
 
