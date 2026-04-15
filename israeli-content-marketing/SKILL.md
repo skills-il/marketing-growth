@@ -64,6 +64,17 @@ Result: Publishable Hebrew tech article with social distribution kit
 - Israeli work week runs Sunday-Thursday, not Monday-Friday. Content publishing schedules must be adjusted accordingly. Friday afternoon through Saturday is very low engagement.
 - Hebrew content must be written natively, not translated from English. Machine-translated Hebrew sounds unnatural and Israeli audiences will disengage immediately.
 
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Geektime | https://www.geektime.co.il | Israeli tech news, guest post opportunities |
+| Calcalist | https://www.calcalist.co.il | Israeli business and tech coverage |
+| Globes | https://www.globes.co.il | Israeli financial daily |
+| TheMarker | https://www.themarker.com | Business newspaper (Haaretz group) |
+| Google Search Central | https://developers.google.com/search/docs | Hebrew SEO, hreflang, structured data |
+| Academy of the Hebrew Language | https://hebrew-academy.org.il | Authoritative Hebrew spelling and terminology |
+
 ## Troubleshooting
 
 ### Error: "Content not ranking for Hebrew keywords"

@@ -65,6 +65,16 @@ Result: Culturally adapted Google Play listing for Israeli market
 - NIS pricing must appear on screenshots and descriptions. Agents may default to USD pricing, which reduces trust with Israeli users.
 - Israeli Android market share (~70%) is significantly higher than iOS (~30%). Agents trained on US data may over-index on App Store optimization and under-invest in Google Play.
 
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| App Store Review Guidelines | https://developer.apple.com/app-store/review/guidelines/ | Metadata, screenshot, and localization rules |
+| App Store Connect Help | https://developer.apple.com/help/app-store-connect/ | Adding localizations, keywords field limits |
+| Google Play Console Help | https://support.google.com/googleplay/android-developer | Store listing optimization, policy rules |
+| Google Play Policy Center | https://support.google.com/googleplay/android-developer/topic/9858052 | Developer program policies |
+| Apple HIG Right-to-Left | https://developer.apple.com/design/human-interface-guidelines/right-to-left | RTL layout guidelines for screenshots |
+
 ## Troubleshooting
 
 ### Error: "Hebrew keywords not ranking"

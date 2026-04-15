@@ -63,6 +63,16 @@ Result: 3-email Hebrew cart recovery sequence with Israeli compliance
 - Hebrew email RTL requires `dir="rtl"` on both the HTML element and every table/td cell. Agents may only set it at the top level, causing rendering issues in Outlook which is common in Israeli businesses.
 - Numbers and English text within Hebrew emails need `dir="ltr"` span wrappers to display correctly. Agents often forget this, causing phone numbers and prices to render in reverse order.
 
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Israel Communications Law (Amendment 40) | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205 | Chok HaSpam text, opt-in requirements, penalties |
+| Privacy Protection Authority | https://www.gov.il/en/departments/the_privacy_protection_authority | Consent, database registration, marketing data |
+| Hebcal API | https://www.hebcal.com/home/developer-apis | Jewish holiday dates for campaign scheduling |
+| Kol Zchut – Consumer Rights | https://www.kolzchut.org.il/en | Bilingual explanations of anti-spam rights |
+| MJML Email Framework | https://mjml.io/documentation | RTL email templates, Gmail/Outlook rendering |
+
 ## Troubleshooting
 
 ### Error: "Hebrew email renders LTR in some clients"

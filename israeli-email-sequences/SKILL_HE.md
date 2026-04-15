@@ -56,6 +56,16 @@
 - RTL באימייל בעברית דורש `dir="rtl"` גם על אלמנט ה-HTML וגם על כל תא table/td. סוכנים עלולים להגדיר את זה רק ברמה העליונה, מה שגורם לבעיות תצוגה ב-Outlook שנפוץ בעסקים ישראליים.
 - מספרים וטקסט באנגלית בתוך אימיילים בעברית צריכים עטיפת span עם `dir="ltr"` כדי להציג נכון. סוכנים לעתים שוכחים את זה, מה שגורם למספרי טלפון ומחירים להופיע בסדר הפוך.
 
+## קישורי עזר
+
+| מקור | כתובת | מה לבדוק |
+|------|-------|----------|
+| חוק התקשורת תיקון 40 | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205 | חוק הספאם, דרישות הסכמה, סנקציות |
+| רשות הגנת הפרטיות | https://www.gov.il/he/departments/the_privacy_protection_authority | הסכמה, רישום מאגרים, נתוני שיווק |
+| Hebcal API | https://www.hebcal.com/home/developer-apis | תאריכי חגים יהודיים לתזמון קמפיינים |
+| כל זכות – זכויות צרכן | https://www.kolzchut.org.il | הסברים דו-לשוניים על זכויות נגד ספאם |
+| MJML Email Framework | https://mjml.io/documentation | תבניות אימייל RTL, תצוגה ב-Gmail ובאאוטלוק |
+
 ## פתרון בעיות
 
 ### שגיאה: "אימייל בעברית מוצג LTR בחלק מהלקוחות"

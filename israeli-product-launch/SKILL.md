@@ -168,6 +168,17 @@ Result: Dual-language press release pair ready for Israeli and international med
 - WhatsApp follow-ups after media pitches are culturally acceptable and expected in Israel. Agents may suggest only email follow-ups, missing the most effective Israeli outreach channel.
 - Israeli tech media outlets (Geektime, Calcalist Tech) expect Hebrew pitches for Hebrew coverage. Agents may draft English pitches for these outlets, which will be ignored.
 
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Geektime | https://www.geektime.co.il | Leading Israeli tech news outlet, PR pitching |
+| Calcalist | https://www.calcalist.co.il | Israeli business and tech coverage |
+| TheMarker | https://www.themarker.com | Israeli business newspaper (Haaretz group) |
+| Globes | https://www.globes.co.il | Israeli financial daily, enterprise coverage |
+| Start-Up Nation Central | https://www.startupnationcentral.org | Israeli startup ecosystem data and trends |
+| Israel Innovation Authority | https://innovationisrael.org.il/en | Grants, programs, ecosystem support |
+
 ## Troubleshooting
 
 ### Error: "No media response to pitch"
