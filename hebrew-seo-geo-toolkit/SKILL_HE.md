@@ -356,6 +356,17 @@ open "https://www.bing.com/search?q=site:{domain}"
 - מספרי טלפון ישראליים ב-structured data חייבים להשתמש בקידומת `972+`. סוכנים עלולים לעצב מספרים בפורמט מקומי 0X-XXX-XXXX, שנכשל באימות Schema.
 - GEO (אופטימיזציה למנועים גנרטיביים) הוא תחום שמתפתח במהירות. גורמי הדירוג של פלטפורמות AI משתנים תדיר. סוכנים עלולים להמליץ על אסטרטגיות GEO מיושנות אפילו מלפני חצי שנה.
 
+
+## קישורי עזר
+
+| מקור | כתובת | מה לבדוק |
+|------|-------|----------|
+| Google Search Central | https://developers.google.com/search | גורמי דירוג, נתונים מובנים, Core Web Vitals |
+| Schema.org | https://schema.org | סימון JSON-LD ל-LocalBusiness, FAQ, Article |
+| Google Keyword Planner | https://ads.google.com/home/tools/keyword-planner/ | נפחי חיפוש בעברית, רעיונות למילות מפתח |
+| האקדמיה ללשון העברית | https://hebrew-academy.org.il | מינוח עברי תקני, כללי כתיב |
+| מאמר GEO של אוניברסיטת פרינסטון | https://arxiv.org/abs/2311.09735 | שיטות GEO למנועי חיפוש מבוססי AI |
+
 ## פתרון בעיות
 
 ### שגיאה: "hreflang mismatch detected"

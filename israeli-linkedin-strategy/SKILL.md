@@ -172,6 +172,17 @@ Result: Authentic Hebrew career story post highlighting the Israeli military-to-
 - Military unit references (8200, Mamram, Talpiot) are powerful networking signals in Israeli tech. Agents unfamiliar with Israeli culture may not leverage these connections or may confuse unit names.
 - Israeli LinkedIn has one of the highest per-capita penetration rates globally (~3.1M users in a 9M population). Agents may underestimate the platform's importance in the Israeli professional market.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| LinkedIn Help Center | https://www.linkedin.com/help/linkedin | Posting rules, algorithm guidance, creator mode |
+| LinkedIn Business Solutions | https://business.linkedin.com | Organic strategy, content best practices |
+| Geektime | https://www.geektime.co.il | Israeli tech news, trending topics for posts |
+| Calcalist | https://www.calcalist.co.il | Business news angles for LinkedIn content |
+| Startup Nation Central | https://startupnationcentral.org | Ecosystem data, trending sectors |
+
 ## Troubleshooting
 
 ### Error: "Low engagement on Hebrew posts"

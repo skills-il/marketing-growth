@@ -364,6 +364,17 @@ Result: Prioritized SEO + GEO improvement plan for the Israeli market
 - Israeli phone numbers in structured data must use the `+972` prefix. Agents may format numbers in local 0X-XXX-XXXX format, which fails schema validation.
 - GEO (Generative Engine Optimization) is a rapidly evolving field. AI platform ranking factors (which bots to allow, content freshness windows, citation formats) change frequently. Agents may recommend outdated GEO strategies from even 6 months ago.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Google Search Central | https://developers.google.com/search | Ranking factors, structured data, Core Web Vitals |
+| Schema.org | https://schema.org | JSON-LD markup for LocalBusiness, FAQ, Article |
+| Google Keyword Planner | https://ads.google.com/home/tools/keyword-planner/ | Hebrew search volumes, keyword ideas |
+| Academy of the Hebrew Language | https://hebrew-academy.org.il | Correct Hebrew terminology, spelling rules |
+| Princeton GEO paper | https://arxiv.org/abs/2311.09735 | GEO methods for AI search engines |
+
 ## Troubleshooting
 
 ### Error: "hreflang mismatch detected"
