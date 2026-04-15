@@ -257,6 +257,17 @@ def set_paragraph_rtl(paragraph):
 
 לתאימות מקסימלית עם מקבלי מצגות עסקיות ישראליות (שכמעט כולם משתמשים בWindows + PowerPoint או Google Slides), עדיף python-pptx. ייצוא PDF מ-Marp הכי טוב לשיתוף לקריאה בלבד (קבצים מצורפים לאימייל, מייל פיץ׳).
 
+
+## קישורי עזר
+
+| מקור | כתובת | מה לבדוק |
+|------|-------|----------|
+| pptxgenjs (מחולל PPTX ב-JavaScript) | https://gitbrent.github.io/PptxGenJS/ | ספריית Node.js ליצירת קבצי PowerPoint, תמיכה ב-RTL |
+| python-pptx | https://python-pptx.readthedocs.io/en/latest/ | ספריית פייתון ליצירת PowerPoint, API לצורות וטקסט |
+| Reveal.js | https://revealjs.com | מצגות מבוססות HTML, קיצורי מקלדת, פריסות RTL |
+| Marp (מצגות Markdown) | https://marp.app | CLI מ-Markdown לשקופיות, ערכות נושא, ייצוא PDF |
+| Google Slides API | https://developers.google.com/slides/api | Slides REST API, batchUpdate, placeholders, כיוון טקסט |
+
 ## פתרון בעיות
 
 **טקסט נראה הפוך**: הפונט מרנדר אבל הכיוון לא מוגדר. הוסיפו `dir="rtl"` לאלמנט ה-HTML (ייצוא HTML מ-Marp) או ודאו ש-`<a:rtl val="1"/>` קיים על כל `<a:pPr>` ב-XML של ה-PPTX.

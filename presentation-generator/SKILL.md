@@ -308,6 +308,17 @@ In RTL mode, table columns are displayed right to left. A table with columns [Da
 
 For maximum compatibility with Israeli business recipients (who almost universally use Windows + PowerPoint or Google Slides), prefer python-pptx output. Marp PDF export is best for read-only sharing (email attachments, pitch email).
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| pptxgenjs (JavaScript PPTX generator) | https://gitbrent.github.io/PptxGenJS/ | Node.js library for creating PowerPoint files, RTL support |
+| python-pptx | https://python-pptx.readthedocs.io/en/latest/ | Python library for PowerPoint generation, shape and text API |
+| Reveal.js | https://revealjs.com | HTML-based presentations, keyboard shortcuts, RTL layouts |
+| Marp (Markdown presentations) | https://marp.app | Markdown-to-slides CLI, themes, PDF export |
+| Google Slides API | https://developers.google.com/slides/api | Slides REST API, batchUpdate, placeholders, text direction |
+
 ## Troubleshooting
 
 **Text appears mirrored or reversed**: The font is rendering but direction is not set. Add `dir="rtl"` to the HTML element (Marp HTML export) or verify `<a:rtl val="1"/>` is present on each `<a:pPr>` in the PPTX XML.
