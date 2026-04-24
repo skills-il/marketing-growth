@@ -21,7 +21,7 @@ By Israeli law, employers must provide pension contributions after a qualifying 
 - When the employer contributes 8.33% to severance via the pension fund, this is called "Section 14" (Sif 14), meaning the pension fund balance replaces the statutory severance obligation
 - Total employer cost for pension: 6.5% + 8.33% = 14.83% of salary
 - The 6.5% employer tagmulim includes disability insurance. If disability costs less than 2.5%, the employer must top up the difference into the tagmulim component.
-- Multiple pension "ceilings" exist in Israel — do not confuse them:
+- Multiple pension "ceilings" exist in Israel (do not confuse them):
   - **Tax-qualifying salary ceiling**: ~47,465 NIS/month in 2026. Above this, certain tax benefits on contributions are lost.
   - **Comprehensive fund max insurable salary**: ~24,700–30,500 NIS/month in 2026 (varies with total contribution rate). Salary above flows to a supplementary fund.
   - **Comprehensive fund monthly premium ceiling**: 5,645 NIS/month in 2026 (20.5% of 2x average wage, 13,769 NIS).
@@ -36,6 +36,60 @@ For a 40K NIS/month base salary:
 - Employer pension: 40,000 x 6.5% = 2,600 NIS/month
 - Employer severance: 40,000 x 8.33% = 3,332 NIS/month
 - **Total employer pension cost: 5,932 NIS/month (71,184 NIS/year)**
+
+---
+
+## 1.1 Section 45a Pension Tax Credit (Net-Pay Impact)
+
+Employer pension contributions are only half of the story. The employee's own pension contribution also drives a tax benefit, and it shows up on the payslip as a credit (not a deduction). This is governed by Section 45a (סעיף 45א) of the Income Tax Ordinance and applies to every salaried employee (שכיר) whose payslip includes a pension deduction.
+
+### Mechanics
+
+When the employee files **Tofes 101** (Form 101) at the start of employment and declares the active pension arrangement, payroll automatically applies a 35% credit on the qualifying portion of the employee's contribution. The credit is deducted directly from the monthly income-tax liability, so it reduces net-to-pocket tax, not the taxable base.
+
+### Ceilings (2026)
+
+| Parameter | 2026 value |
+|---|---|
+| Credit rate | 35% of qualifying employee contribution |
+| Qualifying salary ceiling (`הכנסה מזכה`) | 9,700 NIS/month (116,400 NIS/year) |
+| Qualifying contribution ceiling | 679 NIS/month (8,148 NIS/year), equal to 7% of the qualifying salary |
+| Maximum annual credit | 8,148 x 35% = **2,851.8 NIS/year** (~238 NIS/month) |
+
+### Where the credit stops helping
+
+Contributions above the 679 NIS/month ceiling do **not** generate additional Section 45a credit. They are also not eligible for a Section 47 deduction (Section 47 is scoped to self-employed pension contributions only). The excess contribution is funded from after-tax net pay.
+
+For a 40,000 NIS/month tech salary, the employee's mandatory 6% contribution is 2,400 NIS/month. Only the first 679 NIS of that produces a 238 NIS credit. The remaining 1,721 NIS is effectively after-tax savings into the pension fund.
+
+### Who does Section 45a help the most
+
+| Employee situation | Effect of Section 45a |
+|---|---|
+| Full-time Israeli tech employee with standard 6% employee pension | Fully receives the maximum credit (238 NIS/month ~ 2,852 NIS/year) |
+| Employee below the 9,700 NIS/month ceiling with 7% pension contributions | Credit is smaller in absolute terms but covers 100% of the marginal tax on the contribution slice |
+| Employee on a foreign-remote "global" contract with no Israeli pension | **Zero 45a credit.** Loses ~2,852 NIS/year on top of the missing pension and severance |
+| Employee with multiple concurrent employers | The ceiling is per person, not per employer. HR must coordinate or the employee claims via annual tax return |
+| Part-time employee below the contribution ceiling | Credit is proportional to actual contribution (35% of whatever was deducted, capped at 679 NIS/month) |
+
+### How to factor Section 45a into an offer comparison
+
+1. Compute the **monthly employee pension contribution** in NIS for each offer (employee-pension-rate x base salary).
+2. If contribution >= 679 NIS/month, assume **238 NIS/month credit**.
+3. If contribution < 679 NIS/month, credit is **35% of the actual monthly contribution**.
+4. Add this credit to the net pay of Israeli-contract offers. Zero it out for foreign-contract offers that pay gross cash with no Israeli pension.
+5. Present both gross and post-credit net figures when walking the user through the comparison.
+
+### Common pitfalls
+
+- Payroll systems need the Form 101 declaration to apply the credit. A new hire who forgets to tick the pension section on Form 101 will see the credit missing from their first payslip until corrected (the difference refunds via the annual תיאום מס or Tofes 135 at year-end).
+- The 45a credit is separate from the Keren Hishtalmut tax treatment. Keren Hishtalmut gives tax-exempt growth on the fund itself; 45a gives a front-loaded monthly credit on the pension contribution. They stack.
+- "Section 47" (סעיף 47) often comes up in the same breath. Section 47 is a **deduction** from taxable income, scoped to self-employed pension contributions (and to salaried employees only on the portion of their salary that comes from non-pensioned income). Most salaried tech employees only claim Section 45a.
+
+### Sources
+- Kol-Zchut: [Pension tax credit (Section 45a)](https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99)
+- Pensuni: [Tax benefits for salaried employees in pension funds 2026](https://pensuni.com/?p=1532)
+- Supermarker: [Section 45a and 47 tax benefits in 2026](https://www.supermarker.themarker.com/Gemel/TaxBenefitsForKupatGemelAndHishtalmut.aspx)
 
 ---
 
@@ -85,7 +139,7 @@ Note: Israeli law expresses vacation in gross calendar days including the weekly
 
 ### Additional Time Off
 - **Sick days**: 1.5 days per month (18 per year), accumulating up to 90 days. First day unpaid, days 2-3 at 50%, day 4+ at 100%.
-- **Recuperation pay (Dmey Havra'a)**: Annual lump sum based on tenure. **418 NIS per day (private sector, 2026 — rate frozen since 2023)**. Typical: 5-10 days per year depending on tenure.
+- **Recuperation pay (Dmey Havra'a)**: Annual lump sum based on tenure. **418 NIS per day (private sector, 2026, rate frozen since 2023)**. Typical: 5-10 days per year depending on tenure.
 - **Jewish holidays**: 9 paid holiday days per year (Rosh Hashana, Yom Kippur, Sukkot, Simchat Torah, Pesach, Shavuot, Independence Day, etc.)
 - **Reserve duty (Miluim)**: Employer must maintain salary during reserve duty; the state reimburses the employer.
 - **Unlimited vacation**: Increasingly common in Israeli tech (especially startups), but verify the actual culture around taking time off.
@@ -179,6 +233,8 @@ For a Senior Engineer in Tel Aviv earning 42,000 NIS/month base:
 | **Total employer cost** | **~55,400** | **~667,050** |
 
 This means an employer offering 42K base is actually spending approximately 55K/month, and the employee's total compensation package is worth approximately 667K NIS/year before equity and bonuses.
+
+**Employee-side net-pay bonus**: the Section 45a pension tax credit adds about **238 NIS/month (2,852 NIS/year)** in net pay on top of the gross salary, as long as the employee pension contribution is at least 679 NIS/month (see Section 1.1). This credit is lost entirely under foreign-remote "global" contracts.
 
 ---
 

@@ -58,6 +58,29 @@ Break down the package into:
 
 Present the total annual compensation and compare it to market benchmarks.
 
+### Step 3.5: Factor in the Section 45a Pension Tax Credit (Net Pay)
+
+When a user is comparing two offers, or weighing a raise that crosses the pension-credit ceiling, the gross number alone is misleading. Income Tax Ordinance Section 45a (סעיף 45א) gives the employee a **35% tax credit** on the employee's mandatory pension contribution, up to an annual contribution ceiling. In 2026:
+
+- **Pension-credit qualifying salary ceiling**: 9,700 NIS/month (116,400 NIS/year)
+- **Qualifying contribution ceiling**: 679 NIS/month (8,148 NIS/year), equal to 7% of the qualifying salary
+- **Maximum annual credit**: 35% x 8,148 = **2,851.8 NIS/year** (~238 NIS/month off income tax)
+
+The credit is applied on the payslip automatically when the employee files Tofes 101 with pension data, so both offers below the ceiling typically give the same credit, and the net-pay comparison reduces to the usual marginal-rate math. Where the credit materially changes the comparison:
+
+1. **Offers that replace pension with "global" cash salary** (common in foreign-remote roles). The employee loses the 45a credit entirely. That is ~2,850 NIS/year of lost net pay on top of the lost pension savings themselves.
+2. **Low-base-salary offers paired with aggressive equity**. If the base is below the 9,700 NIS/month ceiling and the employee maxes out 7% pension contributions, the 45a credit fully offsets income tax on that contribution slice. Comparing a 9K/month base (with full credit) to a 12K/month base (partial credit) requires computing net, not gross.
+3. **Severance-only ("pitzuim only") deals, or employer-only pension with no employee contribution**. The employee has no contribution to claim the credit on, which quietly shifts the net-pay calculation.
+
+**Worked example**: Senior Backend Engineer comparing two offers, both nominally 40,000 NIS/month gross.
+
+- **Offer A** (standard Israeli tech package): base 40,000, employee pension 6%, full 45a credit. Employee pension contribution 40,000 x 6% = 2,400 NIS/month, but only the first 679 NIS/month is credit-qualifying. Monthly 45a credit = 679 x 35% = **238 NIS**. The remaining 1,721 NIS of contribution is neither credited nor deducted (it is above the 45a cap, and employees cannot claim a Section 47 deduction on this slice since 47 is scoped to self-employed contributions). Net-of-credit cost to the employee of the mandatory 6% pension: 2,400 - 238 = 2,162 NIS.
+- **Offer B** (foreign remote, "global" contract): base 40,000 paid as cash salary, no Israeli pension, no Section 14 severance. No 45a credit. The employee could open a voluntary pension plan on their own and claim a different tax benefit under Section 47 (deduction, not credit), but the employer contribution is gone. **Annual net-pay delta vs Offer A: 2,851 NIS from the lost 45a credit alone, plus ~71K/year of lost employer pension + severance.**
+
+Run `scripts/salary-calculator.py` with `--pension-employee` set to the actual employee share, then manually subtract the 45a credit (238 NIS/month if contribution >= 679, or 35% of actual contribution if below) to get a net-pay comparison. Present both the gross and post-credit net numbers to the user so they understand what a "same base salary" offer really pays.
+
+See `references/israeli-benefits-guide.md` Section 1.1 for the full 45a mechanics and edge cases (above-ceiling salary, part-time work, multiple employers).
+
 ### Step 4: Evaluate Equity and Options
 
 If the offer includes equity, analyze it:
@@ -157,6 +180,7 @@ Result: A clear breakdown showing that upgrading to full benefits adds approxima
 - Stock options in Israeli startups typically use Section 102 trustee arrangements for favorable 25% capital gains tax treatment. Agents may apply US tax rates (which can be higher) when evaluating equity value.
 - Israeli tech salaries are quoted as gross monthly (bruto chodshi), not annual. An offer of "40K" means 40,000 NIS per month. Agents may interpret this as annual, drastically miscalculating the package.
 - The Israeli tech salary market shifts rapidly, especially in hot domains like AI/ML and cybersecurity. Salary benchmarks from even 12 months ago may be significantly outdated.
+- The Section 45a pension tax credit (35% on employee contributions, capped at 679 NIS/month in 2026) is easy to omit when comparing Israeli employment against foreign-remote "global" contracts. Agents that only compare gross salary miss roughly 2,851 NIS/year of net pay plus the entire employer pension and severance stack (about 14.83% of gross). Any comparison between an Israeli local contract and a foreign employer-of-record contract must account for 45a explicitly.
 
 ## Reference Links
 
@@ -166,6 +190,7 @@ Use these official and authoritative sources to verify contribution rates, ceili
 |---|---|---|
 | Kol-Zchut: Annual Vacation | https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%A4%D7%A9%D7%94_%D7%A9%D7%A0%D7%AA%D7%99%D7%AA | Statutory minimum vacation days by tenure for a 5-day workweek |
 | Kol-Zchut: Keren Hishtalmut | https://www.kolzchut.org.il/he/%D7%A7%D7%A8%D7%9F_%D7%94%D7%A9%D7%AA%D7%9C%D7%9E%D7%95%D7%AA | Tax-qualifying salary ceiling, contribution rates, 6-year tax exemption rules |
+| Kol-Zchut: Pension Tax Credit (Section 45a) | https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99 | 35% tax credit rate, annual contribution ceiling, qualifying-salary ceiling for Section 45a |
 | Pensuni: 2026 Ceilings | https://pensuni.com/?p=827 | Current-year pension ceilings, average wage, mandatory contribution rates |
 | Bituach Leumi | https://www.btl.gov.il/ | National Insurance and health tax rates that drive gross-to-net deltas |
 | Israel Tax Authority | https://www.gov.il/en/departments/israel_tax_authority | Income tax brackets, credit points, Section 102 trustee option taxation |
