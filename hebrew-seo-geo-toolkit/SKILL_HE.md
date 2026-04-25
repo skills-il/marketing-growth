@@ -127,17 +127,28 @@ WebSearch: "{keyword} search volume 2026"
 
 ### שלב 6: אופטימיזציה לכל פלטפורמת AI
 
-לכל מנוע חיפוש AI יש גורמי דירוג ייחודיים. הבדלים מרכזיים:
+לכל מנוע חיפוש AI יש גורמי דירוג ייחודיים. תמונת מצב 2026:
 
 | פלטפורמה | אינדקס ראשי | גורם מפתח | דרישה קריטית |
 |----------|-------------|-----------|-------------|
-| ChatGPT | אינטרנט (מבוסס Bing) | סמכות דומיין | התאמת תוכן-תשובה, רעננות 30 יום |
-| Perplexity | עצמי + Google | רלוונטיות סמנטית | FAQ Schema, מסמכי PDF |
-| Google AI Overview | Google | E-E-A-T | Knowledge Graph, נתונים מובנים |
-| Copilot | Bing | אינדקס Bing | אקוסיסטם Microsoft (LinkedIn, GitHub) |
-| Claude | Brave | צפיפות עובדתית | אינדוקס Brave Search |
+| ChatGPT (חיפוש) | סורק עצמי (`OAI-SearchBot`) + Bing כגיבוי | סמכות דומיין + התאמת תוכן-תשובה | חייבים לאשר את `OAI-SearchBot` בנפרד מ-`GPTBot` (אימון); רעננות 30 יום |
+| Perplexity | סורק עצמי (`PerplexityBot`) + Google כגיבוי | רלוונטיות סמנטית | FAQ Schema, נתונים מובנים, מקורות PDF/markdown |
+| Google AI Overview | אינדקס Google | E-E-A-T + Knowledge Graph | AI Overview בעברית הושק ל-google.co.il במהלך 2024-2025; נתונים מובנים ופסקאות תשובה ברורות עוזרים |
+| Gemini (Google) | אינדקס Google + ווב בזמן אמת | E-E-A-T + רעננות | זהה ל-Google Search; נהנה מ-llms.txt ו-markdown נקי |
+| Copilot (Microsoft) | אינדקס Bing | דירוג Bing + אותות אקוסיסטם MS | Bing Webmaster Tools מאומת, נוכחות ב-LinkedIn/GitHub |
+| Claude (עם web search) | אינדקס Brave Search | צפיפות עובדתית + ציטוטים | אינדוקס ב-Brave + URL מקור נקי |
 
-**דרישות אוניברסליות:** תאפשרו את כל בוטי ה-AI ב-robots.txt, תטמיעו Schema (FAQPage, Article), תכניסו סטטיסטיקות וציטוטים, תרעננו תוכן תוך 30 יום.
+**טבלת בוטים (2026):**
+- `GPTBot`, סורק האימון של OpenAI. תחסמו אם לא רוצים אימון; תאשרו אם רוצים נוכחות רחבה ב-OpenAI.
+- `OAI-SearchBot`, סורק נפרד של OpenAI לתוצאות חיפוש ChatGPT. תאשרו אותו גם אם חוסמים את `GPTBot`, אחרת חיפוש ChatGPT לא יצטט אתכם.
+- `ChatGPT-User`, נורה כשמשתמש מפעיל גלישה בצ'אט. תאשרו.
+- `PerplexityBot` ו-`Perplexity-User`, אינדקס + שליפה לפי דרישה. תאשרו את שניהם.
+- `ClaudeBot`, `anthropic-ai`, `Claude-Web`, סורקי Anthropic. תאשרו.
+- `Google-Extended`, opt-out לאימון Gemini/Bard (לא משפיע על דירוג Google Search או על ציטוטים ב-AI Overview).
+- `CCBot`, Common Crawl, משמש מאמני מודלים רבים.
+- `Applebot-Extended`, opt-out לאימון Apple Intelligence.
+
+**דרישות אוניברסליות:** תאשרו את בוטי זמן-החיפוש (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) ב-robots.txt, תטמיעו Schema (FAQPage, Article, Organization עם sameAs), תכניסו סטטיסטיקות וציטוטים, תרעננו תוכן תוך 30 יום, תחשפו `/llms.txt` ו-`/llms-full.txt` נקיים לצריכת AI.
 
 תסתכלו על [references/platform-algorithms.md](./references/platform-algorithms.md) לרשימות בדיקה מפורטות לכל פלטפורמה.
 
@@ -208,9 +219,9 @@ WebSearch: "{keyword} search volume 2026"
 
 תסתכלו על [references/schema-templates.md](./references/schema-templates.md) לתבניות JSON-LD מלאות (FAQ, Article, Product, HowTo, Organization, דפוסי @graph משולבים).
 
-### שלב 9: הגדרת גישת בוטי AI
+### שלב 9: הגדרת גישת בוטי AI ו-llms.txt
 
-תגדירו את `robots.txt` לאפשר את כל בוטי החיפוש וה-AI העיקריים:
+תגדירו את `robots.txt` לאפשר את כל בוטי החיפוש המסורתיים וה-AI העיקריים:
 
 ```
 User-agent: Googlebot
@@ -219,28 +230,47 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# OpenAI: בוטים נפרדים לאימון ולחיפוש
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Anthropic
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+# Common Crawl (משמש מאמני מודלים רבים)
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://example.co.il/sitemap.xml
 ```
 
 **החלטות שצריך לקבל:**
-- אפשור סורקי AI מגדיל סיכויים להיות מצוטטים בתגובות AI
-- חסימת `Google-Extended` מונעת שימוש לאימון AI תוך שמירה על אינדוקס ב-Google Search
-- תבדקו את המדיניות שלכם באופן קבוע כי התחום הזה מתפתח מהר
+- אפשור סורקי זמן-חיפוש (`OAI-SearchBot`, `Perplexity-User`, `ChatGPT-User`) מגדיל סיכויים להיות מצוטטים בתגובות AI.
+- חסימת `Google-Extended` היא opt-out לאימון Gemini בלי לפגוע בדירוג Google Search או בציטוטים ב-AI Overview.
+- חסימת `GPTBot` היא opt-out לאימון מודלים של OpenAI אבל שומרת אתכם זכאים לחיפוש ChatGPT, בתנאי ש-`OAI-SearchBot` ו-`ChatGPT-User` נשארים מאושרים.
+- תבדקו את המדיניות שלכם באופן קבוע. התחום מתפתח מהר.
+
+**הוסיפו `/llms.txt` ו-`/llms-full.txt`:** llms.txt (הוצע על ידי Jeremy Howard, 2024) הופך לאינדקס דה-פקטו קריא ל-AI. תניחו קובץ markdown קצר ב-`https://example.co.il/llms.txt` שמסכם את מטרת האתר ואת ה-URLים המרכזיים, ועוד `llms-full.txt` ארוך יותר עם התוכן המלא. סורקי חיפוש AI וסוכנים משתמשים בזה יותר ויותר במקום לנחש מבנה מ-HTML.
 
 ### שלב 10: אימות וניטור
 
@@ -362,10 +392,17 @@ open "https://www.bing.com/search?q=site:{domain}"
 | מקור | כתובת | מה לבדוק |
 |------|-------|----------|
 | Google Search Central | https://developers.google.com/search | גורמי דירוג, נתונים מובנים, Core Web Vitals |
+| Google Search Status Dashboard | https://status.search.google.com | עדכוני ליבה פעילים, סטטוס AI Overview |
 | Schema.org | https://schema.org | סימון JSON-LD ל-LocalBusiness, FAQ, Article |
 | Google Keyword Planner | https://ads.google.com/home/tools/keyword-planner/ | נפחי חיפוש בעברית, רעיונות למילות מפתח |
 | האקדמיה ללשון העברית | https://hebrew-academy.org.il | מינוח עברי תקני, כללי כתיב |
-| מאמר GEO של אוניברסיטת פרינסטון | https://arxiv.org/abs/2311.09735 | שיטות GEO למנועי חיפוש מבוססי AI |
+| מאמר GEO של פרינסטון (Aggarwal et al., 2023) | https://arxiv.org/abs/2311.09735 | שיטות GEO למנועי חיפוש מבוססי AI |
+| תיעוד בוטים של OpenAI | https://platform.openai.com/docs/bots | התנהגות `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` |
+| תיעוד סורקי Anthropic | https://docs.anthropic.com/en/docs/agents-and-tools/web-crawler | `ClaudeBot`, `anthropic-ai`, `Claude-Web` |
+| מידע על סורקי Perplexity | https://docs.perplexity.ai/guides/bots | `PerplexityBot`, `Perplexity-User` |
+| הצעת llms.txt | https://llmstxt.org | קונבנציה לאינדקס אתר קריא ל-AI |
+| Bing Webmaster Tools | https://www.bing.com/webmasters | נדרש לאינדוקס Copilot |
+| Brave Search | https://search.brave.com | האינדקס ש-Claude מסתמך עליו |
 
 ## פתרון בעיות
 

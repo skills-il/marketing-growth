@@ -135,17 +135,28 @@ Apply the **9 Princeton GEO Methods** (see [references/geo-research.md](./refere
 
 ### Step 6: Optimize for Each AI Platform
 
-Each AI search engine has unique ranking factors. Key differences:
+Each AI search engine has unique ranking factors. Snapshot for 2026:
 
 | Platform | Primary Index | Key Factor | Critical Requirement |
 |----------|--------------|------------|---------------------|
-| ChatGPT | Web (Bing-based) | Domain Authority | Content-Answer Fit, 30-day freshness |
-| Perplexity | Own + Google | Semantic Relevance | FAQ Schema, PDF documents |
-| Google AI Overview | Google | E-E-A-T | Knowledge Graph, structured data |
-| Copilot | Bing | Bing Index | MS Ecosystem (LinkedIn, GitHub) |
-| Claude | Brave | Factual Density | Brave Search indexing |
+| ChatGPT (search) | Own crawler (`OAI-SearchBot`) + Bing fallback | Domain authority + content-answer fit | Allow `OAI-SearchBot` separately from `GPTBot` (training); 30-day freshness |
+| Perplexity | Own crawler (`PerplexityBot`) + Google fallback | Semantic relevance | FAQ Schema, structured data, PDF/markdown sources |
+| Google AI Overview | Google index | E-E-A-T + Knowledge Graph | Hebrew AI Overview rolled out to google.co.il during 2024-2025; structured data and clear answer paragraphs help |
+| Gemini (Google) | Google index + real-time web | E-E-A-T + recency | Same as Google Search; benefits from llms.txt and clean markdown |
+| Copilot (Microsoft) | Bing index | Bing rank + MS ecosystem signals | Bing Webmaster Tools verified, LinkedIn/GitHub presence |
+| Claude (with web search) | Brave Search index | Factual density + citations | Brave indexing + clean source URLs |
 
-**Universal requirements:** Allow all AI bots in robots.txt, implement Schema markup (FAQPage, Article), include statistics and citations, update content within 30 days.
+**Bot table (2026):**
+- `GPTBot`, OpenAI training crawler. Block if you do not want training; allow if you want broader OpenAI presence.
+- `OAI-SearchBot`, OpenAI's separate crawler for ChatGPT search results. Allow this even if you block `GPTBot`, otherwise ChatGPT search will not cite you.
+- `ChatGPT-User`, fired when a user invokes browsing during a chat. Allow.
+- `PerplexityBot` and `Perplexity-User`, index + on-demand fetch. Allow both.
+- `ClaudeBot`, `anthropic-ai`, `Claude-Web`, Anthropic crawlers. Allow.
+- `Google-Extended`, opt-out token for Gemini/Bard training (does NOT affect Google Search ranking or AI Overview citations).
+- `CCBot`, Common Crawl, used by many model trainers downstream.
+- `Applebot-Extended`, Apple Intelligence training opt-out.
+
+**Universal requirements:** allow the search-time bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) in robots.txt, implement Schema markup (FAQPage, Article, Organization with sameAs), include statistics and citations, update content within 30 days, expose a clean `/llms.txt` and `/llms-full.txt` for AI consumption.
 
 See [references/platform-algorithms.md](./references/platform-algorithms.md) for detailed per-platform optimization checklists.
 
@@ -216,9 +227,9 @@ Create JSON-LD markup optimized for Israeli businesses:
 
 See [references/schema-templates.md](./references/schema-templates.md) for complete JSON-LD templates (FAQ, Article, Product, HowTo, Organization, combined @graph patterns).
 
-### Step 9: Configure AI Bot Access
+### Step 9: Configure AI Bot Access and llms.txt
 
-Set up `robots.txt` to allow all major search and AI bots:
+Set up `robots.txt` to allow all major search-time and traditional bots:
 
 ```
 User-agent: Googlebot
@@ -227,28 +238,47 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# OpenAI: separate bots for training vs search
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Anthropic
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+# Common Crawl (used by many trainers)
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://example.co.il/sitemap.xml
 ```
 
 **Decisions to make:**
-- Allowing AI crawlers increases chances of being cited in AI responses
-- Blocking `Google-Extended` prevents AI training use while keeping Google Search indexing
-- Review your policy regularly as this landscape evolves rapidly
+- Allowing search-time crawlers (`OAI-SearchBot`, `Perplexity-User`, `ChatGPT-User`) increases chances of being cited in AI responses.
+- Blocking `Google-Extended` opts out of Gemini training without affecting Google Search ranking or AI Overview citations.
+- Blocking `GPTBot` opts out of OpenAI model training but keeps you eligible for ChatGPT search if `OAI-SearchBot` and `ChatGPT-User` remain allowed.
+- Review your policy regularly. This landscape evolves rapidly.
+
+**Add `/llms.txt` and `/llms-full.txt`:** llms.txt (proposed by Jeremy Howard, 2024) is becoming a de facto AI-readable index. Place a short markdown file at `https://example.co.il/llms.txt` summarizing the site's purpose and key URLs, plus a longer `llms-full.txt` with the full content. AI search crawlers and agents increasingly use these instead of guessing structure from HTML.
 
 ### Step 10: Validate and Monitor
 
@@ -370,10 +400,17 @@ Result: Prioritized SEO + GEO improvement plan for the Israeli market
 | Source | URL | What to Check |
 |--------|-----|---------------|
 | Google Search Central | https://developers.google.com/search | Ranking factors, structured data, Core Web Vitals |
+| Google Search Status Dashboard | https://status.search.google.com | Active core updates, AI Overview rollout status |
 | Schema.org | https://schema.org | JSON-LD markup for LocalBusiness, FAQ, Article |
 | Google Keyword Planner | https://ads.google.com/home/tools/keyword-planner/ | Hebrew search volumes, keyword ideas |
 | Academy of the Hebrew Language | https://hebrew-academy.org.il | Correct Hebrew terminology, spelling rules |
-| Princeton GEO paper | https://arxiv.org/abs/2311.09735 | GEO methods for AI search engines |
+| Princeton GEO paper (Aggarwal et al., 2023) | https://arxiv.org/abs/2311.09735 | GEO methods for AI search engines |
+| OpenAI bot docs | https://platform.openai.com/docs/bots | `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` behavior |
+| Anthropic crawler docs | https://docs.anthropic.com/en/docs/agents-and-tools/web-crawler | `ClaudeBot`, `anthropic-ai`, `Claude-Web` |
+| Perplexity crawler info | https://docs.perplexity.ai/guides/bots | `PerplexityBot`, `Perplexity-User` |
+| llms.txt proposal | https://llmstxt.org | Convention for AI-readable site index |
+| Bing Webmaster Tools | https://www.bing.com/webmasters | Required for Copilot indexing |
+| Brave Search | https://search.brave.com | Index Claude relies on |
 
 ## Troubleshooting
 

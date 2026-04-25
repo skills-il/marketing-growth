@@ -130,7 +130,7 @@ Make conscious decisions about which AI systems can crawl your content:
 - **robots.txt directives:** Use `User-agent: GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended` to control access.
 - **Allowing crawlers** increases chances of being cited as a source in AI responses.
 - **Blocking crawlers** prevents content from being used in AI training (but may reduce AI citations).
-- Review your policy regularly — this is one of the most actively evolving areas of SEO.
+- Review your policy regularly. This is one of the most actively evolving areas of SEO.
 
 ## Measuring AEO Success
 
@@ -149,7 +149,7 @@ Featured snippets often become AI answers. Track which you own.
 
 ## AEO vs SEO Balance
 
-AEO and SEO largely align—quality content serves both. Key differences:
+AEO and SEO largely align: quality content serves both. Key differences:
 
 | Aspect | SEO Focus | AEO Focus |
 |--------|-----------|-----------|
