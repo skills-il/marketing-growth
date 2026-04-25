@@ -18,8 +18,8 @@ license: MIT
 
 קודם כל לשאול את המשתמש לאיזה כלי הוא רוצה להפיץ את הסקר:
 
-- **Google Forms** — להשתמש בזרימת `gws` למטה (שלבים 1–7). מחזיר קישור חי לשיתוף.
-- **Typeform, SurveyMonkey, Tally, Microsoft Forms, אימייל, סלאק, וואטסאפ** — לדלג על שלבי `gws`. לעבור ישר לשלב 1 (בחירת תבנית) ואז ל-`references/export-to-other-platforms.md` להנחיות הדבקה לפי כלי. ניסוח השאלות בעברית וכללי התזמון הישראליים תקפים בכל מקרה.
+- **Google Forms**, להשתמש בזרימת `gws` למטה (שלבים 1–7). מחזיר קישור חי לשיתוף.
+- **Typeform, SurveyMonkey, Tally, Microsoft Forms, אימייל, סלאק, וואטסאפ**, לדלג על שלבי `gws`. לעבור ישר לשלב 1 (בחירת תבנית) ואז ל-`references/export-to-other-platforms.md` להנחיות הדבקה לפי כלי. ניסוח השאלות בעברית וכללי התזמון הישראליים תקפים בכל מקרה.
 
 אם המשתמש כן הולך ל-Google Forms, לוודא ש-`gws` מותקן ומחובר:
 
@@ -46,7 +46,7 @@ gws forms --help
 
 ### שלב 2: ליצור טופס ריק
 
-המתודה `create` מקבלת רק `info.title` ו-`info.documentTitle`, לפי Google Forms API. כל שאר השדות (description, items, settings) חייבים להיכנס ב-batchUpdate נפרד. זו מגבלה קשיחה — אל תנסו להעביר שאלות בשלב היצירה.
+המתודה `create` מקבלת רק `info.title` ו-`info.documentTitle`, לפי Google Forms API. כל שאר השדות (description, items, settings) חייבים להיכנס ב-batchUpdate נפרד. זו מגבלה קשיחה, אל תנסו להעביר שאלות בשלב היצירה.
 
 ```bash
 gws forms create --json '{
@@ -111,7 +111,7 @@ gws forms batchUpdate --params formId=<FORM_ID> --json '{
 }'
 ```
 
-השדה `location.index` הוא מיקום השאלה בטופס (מתחיל מ-0). חייבים להגדיר אותו גם בהוספת שאלה בודדת — אחרת הבקשה נדחית.
+השדה `location.index` הוא מיקום השאלה בטופס (מתחיל מ-0). חייבים להגדיר אותו גם בהוספת שאלה בודדת, אחרת הבקשה נדחית.
 
 ### שלב 4: לקבל קישור שיתוף
 
@@ -121,7 +121,7 @@ gws forms batchUpdate --params formId=<FORM_ID> --json '{
 gws forms get --params formId=<FORM_ID>
 ```
 
-שדה `responderUri` הוא ה-URL הציבורי שמשתפים עם המשיבים. זה מה שהמשתמש באמת רוצה — להתחיל איתו בתשובה. להחזיר גם את ה-`formId` כדי שיוכל לפתוח מחדש את הטופס בממשק אחר כך.
+שדה `responderUri` הוא ה-URL הציבורי שמשתפים עם המשיבים. זה מה שהמשתמש באמת רוצה, להתחיל איתו בתשובה. להחזיר גם את ה-`formId` כדי שיוכל לפתוח מחדש את הטופס בממשק אחר כך.
 
 ### שלב 5: חיבור ל-Sheets (פעולת ממשק, לא API)
 
@@ -135,15 +135,15 @@ gws forms get --params formId=<FORM_ID>
 
 אם המשתמש רוצה גישה תכנותית לתגובות במקום, אפשר להשתמש ב-`gws forms responses list --params formId=<FORM_ID>` ולשפוך את התוצאות לגיליון דרך `gws sheets`.
 
-### שלב 6: לבחור מתי להפיץ — לקהל ישראלי
+### שלב 6: לבחור מתי להפיץ, לקהל ישראלי
 
 סקר מנוסח מצוין שמופץ בזמן הלא נכון יקבל אחוז היענות עלוב. לפני שלוחצים על שיתוף, כדאי לחשוב מתי הסקר ייפול לתיבות:
 
 - **לא להפיץ אחרי הצהריים ביום שישי ובשבת.** שומרי מסורת לא יראו את זה, ועד יום ראשון הסקר נקבר בתיבה.
-- **לא להפיץ בשבועות של חג** — סוכות, פסח, ראש השנה, עשרת ימי תשובה, שבועות, יום הזיכרון/יום העצמאות. אחוז ההיענות קורס בשבועות האלה.
+- **לא להפיץ בשבועות של חג**, סוכות, פסח, ראש השנה, עשרת ימי תשובה, שבועות, יום הזיכרון/יום העצמאות. אחוז ההיענות קורס בשבועות האלה.
 - **הימים הכי טובים**: ראשון (תיבות פתוחות לשבוע חדש), שלישי–רביעי (היומיים החזקים ביותר ב-B2B). חמישי עובד אבל נחלש לקראת הצהריים.
 - **השעות הכי טובות**: 09:00–11:00 בבוקר, ו-13:00–14:00 אחרי הצהריים. להימנע מלפני 08:30 או אחרי 20:00.
-- **סקרים טרנזקציוניים** (CSAT אחרי פנייה לתמיכה, משוב אחרי אירוע) להפיץ מיד אחרי האינטראקציה ולא בבאץ' יומי — אבל אם האירוע נגמר בחמישי בערב, עדיף לחכות עד ראשון בבוקר.
+- **סקרים טרנזקציוניים** (CSAT אחרי פנייה לתמיכה, משוב אחרי אירוע) להפיץ מיד אחרי האינטראקציה ולא בבאץ' יומי, אבל אם האירוע נגמר בחמישי בערב, עדיף לחכות עד ראשון בבוקר.
 
 עץ החלטה מלא וקצבים לפי סוג סקר (NPS רבעוני מול חודשי, CSAT לפי פנייה מול באץ', וכו') נמצאים ב-`references/israeli-send-timing.md`. כדאי להציץ שם לפני שסוגרים קצב.
 
@@ -178,13 +178,13 @@ gws schema forms.forms.setPublishSettings
 ## משאבים מצורפים
 
 ### סקריפטים
-- `scripts/build_batchupdate_payload.py` — מקבל שם תבנית (`nps`, `csat`, `ces`, `event-feedback`, `product-discovery`, `market-research`) ומחזיר JSON מוכן לזרוק ל-`gws forms batchUpdate --json`. שימוש: `python3 scripts/build_batchupdate_payload.py --template nps`.
+- `scripts/build_batchupdate_payload.py`, מקבל שם תבנית (`nps`, `csat`, `ces`, `event-feedback`, `product-discovery`, `market-research`) ומחזיר JSON מוכן לזרוק ל-`gws forms batchUpdate --json`. שימוש: `python3 scripts/build_batchupdate_payload.py --template nps`.
 
 ### מסמכי עזר
-- `references/hebrew-survey-templates.md` — רשימת שאלות לכל תבנית בעברית ישראלית טבעית, עם תוויות סולם, סוגי שאלות והערות מתי כל תבנית מתאימה.
-- `references/gws-forms-cheatsheet.md` — המתודות המדויקות של `gws forms`, מבנה הפקודות, ופקודות הגילוי — משוכפל מה-SKILL.md הרשמי של gws-forms כדי שתוכלו לעבוד גם בלי אינטרנט.
-- `references/israeli-send-timing.md` — מתי להפיץ סקרים לקהל ישראלי (ימי שבוע, שעות, שבועות של חג, וקצבים לפי סוג סקר).
-- `references/export-to-other-platforms.md` — איך להשתמש באותן תבניות עברית וכללי תזמון עם Typeform, SurveyMonkey, Tally, Microsoft Forms, או אימייל/סלאק במקרה ש-Google Forms לא הכלי הנכון.
+- `references/hebrew-survey-templates.md`, רשימת שאלות לכל תבנית בעברית ישראלית טבעית, עם תוויות סולם, סוגי שאלות והערות מתי כל תבנית מתאימה.
+- `references/gws-forms-cheatsheet.md`, המתודות המדויקות של `gws forms`, מבנה הפקודות, ופקודות הגילוי, משוכפל מה-SKILL.md הרשמי של gws-forms כדי שתוכלו לעבוד גם בלי אינטרנט.
+- `references/israeli-send-timing.md`, מתי להפיץ סקרים לקהל ישראלי (ימי שבוע, שעות, שבועות של חג, וקצבים לפי סוג סקר).
+- `references/export-to-other-platforms.md`, איך להשתמש באותן תבניות עברית וכללי תזמון עם Typeform, SurveyMonkey, Tally, Microsoft Forms, או אימייל/סלאק במקרה ש-Google Forms לא הכלי הנכון.
 
 ## מלכודות נפוצות
 
@@ -193,9 +193,9 @@ gws schema forms.forms.setPublishSettings
 1. **לנסות להעביר items בזמן `create`.** המתודה `create` מעתיקה רק את `info.title` ואת `info.documentTitle`. כל השאר (description, items, settings) לא מותר. חייב לעשות `batchUpdate` אחרי זה כדי להוסיף שאלות.
 2. **לקרוא ל-`forms.update` במקום ל-`forms.batchUpdate`.** ב-Google Forms API v1 אין מתודה `forms.update`. המתודות היחידות על המשאב `forms` הן `create`, `get`, `batchUpdate` ו-`setPublishSettings`. אם רואים `update` בבלוגים ישנים, זה באמת `batchUpdate`.
 3. **להניח שה-API מחבר תגובות ל-Google Sheet.** הוא לא. הכפתור "קישור ל-Sheets" הוא ממשק בלבד. צריך להגיד למשתמש לעשות את זה פעם אחת בלחיצה, או למשוך תגובות דרך `forms.responses.list` ולכתוב ל-Sheet עם `gws sheets`.
-4. **לתרגם ניסוחי NPS מאנגלית מילולית.** "How likely are you to recommend us to a friend or colleague?" בתרגום מילה-במילה נשמע פאסיבי ומוזר בעברית. להשתמש בניסוחים מ-`references/hebrew-survey-templates.md` — הם נכתבו בעברית מההתחלה, לא תורגמו. זו הסיבה מספר אחת להיענות נמוכה לסקרים בישראל.
+4. **לתרגם ניסוחי NPS מאנגלית מילולית.** "How likely are you to recommend us to a friend or colleague?" בתרגום מילה-במילה נשמע פאסיבי ומוזר בעברית. להשתמש בניסוחים מ-`references/hebrew-survey-templates.md`, הם נכתבו בעברית מההתחלה, לא תורגמו. זו הסיבה מספר אחת להיענות נמוכה לסקרים בישראל.
 5. **לשכוח את `location.index` בבקשת `createItem`.** גם בהוספת שאלה בודדת, `location.index` חובה. להתחיל מ-0 ולהעלות.
-6. **להשתמש בעברית ב-`documentTitle`.** `documentTitle` הוא שם הקובץ ב-Drive. חלק מתהליכי החיפוש ב-Drive מתמודדים פחות טוב עם שמות בעברית — עדיף להשאיר את `documentTitle` ב-ASCII ולשים את הגרסה העברית ב-`info.title` (הכותרת שהמשתמשים רואים).
+6. **להשתמש בעברית ב-`documentTitle`.** `documentTitle` הוא שם הקובץ ב-Drive. חלק מתהליכי החיפוש ב-Drive מתמודדים פחות טוב עם שמות בעברית, עדיף להשאיר את `documentTitle` ב-ASCII ולשים את הגרסה העברית ב-`info.title` (הכותרת שהמשתמשים רואים).
 
 ## דוגמאות
 

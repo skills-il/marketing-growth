@@ -19,8 +19,8 @@ This skill lets an agent build a complete Hebrew survey end-to-end using `gws fo
 
 Start by asking which tool the user wants the survey deployed on:
 
-- **Google Forms** — use the `gws` flow below (Steps 1–7). Produces a live, shareable URL.
-- **Typeform, SurveyMonkey, Tally, Microsoft Forms, email, Slack, WhatsApp** — skip the `gws` steps. Go straight to Step 1 (pick template), then jump to `references/export-to-other-platforms.md` for per-tool paste-in instructions. The Hebrew question wording and Israeli timing rules apply regardless of platform.
+- **Google Forms**, use the `gws` flow below (Steps 1–7). Produces a live, shareable URL.
+- **Typeform, SurveyMonkey, Tally, Microsoft Forms, email, Slack, WhatsApp**, skip the `gws` steps. Go straight to Step 1 (pick template), then jump to `references/export-to-other-platforms.md` for per-tool paste-in instructions. The Hebrew question wording and Israeli timing rules apply regardless of platform.
 
 If the user is deploying to Google Forms, confirm the `gws` CLI is installed and authenticated:
 
@@ -47,7 +47,7 @@ If the user's intent doesn't fit cleanly, ask one clarifying question. Don't for
 
 ### Step 2: Create the empty form
 
-The `create` method only accepts the form title and document_title, per the Google Forms API. All other fields (description, items, settings) must be added in a separate `batchUpdate` call. This is a hard constraint — do not try to pass items at creation time.
+The `create` method only accepts the form title and document_title, per the Google Forms API. All other fields (description, items, settings) must be added in a separate `batchUpdate` call. This is a hard constraint, do not try to pass items at creation time.
 
 ```bash
 gws forms create --json '{
@@ -112,7 +112,7 @@ gws forms batchUpdate --params formId=<FORM_ID> --json '{
 }'
 ```
 
-`location.index` is the zero-based position of the item in the form. Always set it, even for a single-item insert — the API rejects the request otherwise.
+`location.index` is the zero-based position of the item in the form. Always set it, even for a single-item insert, the API rejects the request otherwise.
 
 ### Step 4: Get the share URL
 
@@ -122,7 +122,7 @@ Fetch the form metadata and return the `responderUri` to the user:
 gws forms get --params formId=<FORM_ID>
 ```
 
-The `responderUri` field is the public URL to share with respondents. This is what the user actually wants — lead with it in your reply. Also include the `formId` so the user can re-open the form in the Forms UI later.
+The `responderUri` field is the public URL to share with respondents. This is what the user actually wants, lead with it in your reply. Also include the `formId` so the user can re-open the form in the Forms UI later.
 
 ### Step 5: Guide Sheets linking (UI step, not API)
 
@@ -141,10 +141,10 @@ If the user wants API-level response access instead, use `gws forms responses li
 A perfectly worded survey sent at the wrong time tanks your response rate. Before you push the form, think about *when* it will land in people's inboxes:
 
 - **Avoid Friday afternoon and Shabbat.** Observant recipients are offline; by Sunday it's buried.
-- **Avoid chag weeks entirely** — Sukkot, Pesach, Rosh Hashanah, Yom Kippur period, Shavuot, Yom HaZikaron/Yom HaAtzmaut. Response rates collapse during these weeks.
+- **Avoid chag weeks entirely**, Sukkot, Pesach, Rosh Hashanah, Yom Kippur period, Shavuot, Yom HaZikaron/Yom HaAtzmaut. Response rates collapse during these weeks.
 - **Best days**: Sunday (fresh inboxes), Tuesday–Wednesday (strongest B2B engagement). Thursday is acceptable but drifts softer late in the day.
 - **Best hours**: 09:00–11:00 morning window, 13:00–14:00 post-lunch lull. Avoid before 08:30 or after 20:00.
-- **Transactional surveys** (post-ticket CSAT, post-event feedback) should fire immediately after the interaction, not on a batch schedule — but still hold them for Sunday morning if the event ended Thursday evening.
+- **Transactional surveys** (post-ticket CSAT, post-event feedback) should fire immediately after the interaction, not on a batch schedule, but still hold them for Sunday morning if the event ended Thursday evening.
 
 The full decision tree and per-survey-type cadence (NPS quarterly vs monthly, CSAT per-ticket vs batched, etc.) is in `references/israeli-send-timing.md`. Consult it before committing to a cadence.
 
@@ -156,7 +156,7 @@ By default, a newly created form is accessible to anyone with the responder link
 gws schema forms.forms.setPublishSettings
 ```
 
-to see the exact `publishSettings` shape, then call `gws forms setPublishSettings` with the right flags. The Google Forms API notes that legacy forms do not support `publish_settings` — newly created API forms do.
+to see the exact `publishSettings` shape, then call `gws forms setPublishSettings` with the right flags. The Google Forms API notes that legacy forms do not support `publish_settings`, newly created API forms do.
 
 ## Recommended MCP Servers
 
@@ -179,13 +179,13 @@ to see the exact `publishSettings` shape, then call `gws forms setPublishSetting
 ## Bundled Resources
 
 ### Scripts
-- `scripts/build_batchupdate_payload.py` — take a template name (`nps`, `csat`, `ces`, `event-feedback`, `product-discovery`, `market-research`) and emit a ready-to-pipe JSON payload for `gws forms batchUpdate --json`. Usage: `python3 scripts/build_batchupdate_payload.py --template nps`.
+- `scripts/build_batchupdate_payload.py`, take a template name (`nps`, `csat`, `ces`, `event-feedback`, `product-discovery`, `market-research`) and emit a ready-to-pipe JSON payload for `gws forms batchUpdate --json`. Usage: `python3 scripts/build_batchupdate_payload.py --template nps`.
 
 ### References
-- `references/hebrew-survey-templates.md` — every template's question list in natural Israeli Hebrew, with scale labels, question types, and notes on when each template is appropriate.
-- `references/gws-forms-cheatsheet.md` — the exact gws forms methods, command structure, and discovery commands, mirrored from the upstream `gws-forms` skill so you can work offline.
-- `references/israeli-send-timing.md` — when to send surveys to Israeli audiences (day of week, time of day, chag weeks to avoid, per-survey-type cadence rules).
-- `references/export-to-other-platforms.md` — how to use the same Hebrew templates and timing rules with Typeform, SurveyMonkey, Tally, Microsoft Forms, or plain email/Slack when Google Forms is not the right tool.
+- `references/hebrew-survey-templates.md`, every template's question list in natural Israeli Hebrew, with scale labels, question types, and notes on when each template is appropriate.
+- `references/gws-forms-cheatsheet.md`, the exact gws forms methods, command structure, and discovery commands, mirrored from the upstream `gws-forms` skill so you can work offline.
+- `references/israeli-send-timing.md`, when to send surveys to Israeli audiences (day of week, time of day, chag weeks to avoid, per-survey-type cadence rules).
+- `references/export-to-other-platforms.md`, how to use the same Hebrew templates and timing rules with Typeform, SurveyMonkey, Tally, Microsoft Forms, or plain email/Slack when Google Forms is not the right tool.
 
 ## Gotchas
 
@@ -194,9 +194,9 @@ These are the mistakes an agent will most likely make on first try:
 1. **Trying to pass items at `create` time.** The `create` method only copies `info.title` and `info.documentTitle`. Everything else (description, items, settings) is silently disallowed. You MUST follow up with `batchUpdate` to add questions.
 2. **Calling `forms.update` instead of `forms.batchUpdate`.** Google Forms API v1 does NOT have a `forms.update` method. The only methods on the forms resource are `create`, `get`, `batchUpdate`, and `setPublishSettings`. If you see `update` in older docs or blog posts, substitute `batchUpdate`.
 3. **Assuming the API links responses to a Google Sheet.** It doesn't. The "Link to Sheets" button is UI-only. Tell the user to do it once by hand, or poll `forms.responses.list` and write to a Sheet yourself via `gws sheets`.
-4. **Translating English NPS phrasing literally.** "How likely are you to recommend us to a friend or colleague?" translated word-for-word sounds stiff and passive in Hebrew. Use the wording in `references/hebrew-survey-templates.md` — it was written in Hebrew first, not translated. This is the main reason bad surveys get bad response rates in Israel.
+4. **Translating English NPS phrasing literally.** "How likely are you to recommend us to a friend or colleague?" translated word-for-word sounds stiff and passive in Hebrew. Use the wording in `references/hebrew-survey-templates.md`, it was written in Hebrew first, not translated. This is the main reason bad surveys get bad response rates in Israel.
 5. **Forgetting `location.index` in a `createItem` request.** Even for a single-question insert, `location.index` is required. Start at `0` and increment.
-6. **Using Hebrew in `documentTitle`.** `documentTitle` is the Drive filename. Some Drive search flows handle Hebrew filenames awkwardly — keep `documentTitle` in ASCII, put the Hebrew version in `info.title` (the user-facing form title).
+6. **Using Hebrew in `documentTitle`.** `documentTitle` is the Drive filename. Some Drive search flows handle Hebrew filenames awkwardly, keep `documentTitle` in ASCII, put the Hebrew version in `info.title` (the user-facing form title).
 
 ## Examples
 
