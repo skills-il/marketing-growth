@@ -291,7 +291,7 @@ Israeli convention uses comma as the thousands separator for financial figures (
 
 **4. Font fallback silently degrades quality**
 
-If Heebo or David Libre are not installed on the rendering machine, Marp and PPTX viewers fall back to Arial or Times New Roman. Both support Hebrew but are visually inferior and may have different line-height metrics that break slide layouts. Always verify font availability before presenting. For Marp PDF export, fonts are embedded via Chromium, so the export is safe. For PPTX shared to other machines, embed fonts: File > Options > Save > Embed fonts in the file (PowerPoint), or set the `EmbedTrueTypeFonts` property when saving via python-pptx (this requires python-pptx >= 0.6.21).
+If Heebo or David Libre are not installed on the rendering machine, Marp and PPTX viewers fall back to Arial or Times New Roman. Both support Hebrew but are visually inferior and may have different line-height metrics that break slide layouts. Always verify font availability before presenting. For Marp PDF export, fonts are embedded via Chromium, so the export is safe. For PPTX shared to other machines, embed fonts via File > Options > Save > Embed fonts in the file (PowerPoint). python-pptx 1.0.x does not expose a high-level `EmbedTrueTypeFonts` property; embedding via the library still requires direct XML edits to the .pptx package.
 
 **5. Mixed-direction tables flip column order**
 
@@ -340,6 +340,6 @@ For maximum compatibility with Israeli business recipients (who almost universal
 - [Unicode Bidirectional Algorithm (UAX #9)](https://unicode.org/reports/tr9/)
 - [Google Fonts: Heebo](https://fonts.google.com/specimen/Heebo)
 - [Google Fonts: David Libre](https://fonts.google.com/specimen/David+Libre)
-- [OOXML spec: paragraph RTL attribute](https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oi29500/rtl-attribute)
+- [OOXML spec (ECMA-376)](https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/)
 - `references/marp-rtl-guide.md` in this skill folder
 - `references/pptx-rtl-patches.md` in this skill folder
