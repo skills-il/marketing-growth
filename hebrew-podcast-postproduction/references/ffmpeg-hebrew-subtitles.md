@@ -20,11 +20,21 @@ If any of these three is missing, reinstall FFmpeg from a source that includes t
 
 | Platform | Command | Notes |
 |----------|---------|-------|
-| macOS | `brew install ffmpeg` | Homebrew ships all three by default |
-| Ubuntu 22.04+ | `apt install ffmpeg` (as root) | Main package in recent Ubuntu |
-| Debian 12+ | `apt install ffmpeg` (as root) | Main package in recent Debian |
+| macOS (default brew) | `brew install ffmpeg` | Does NOT include libass/FriBidi/HarfBuzz as of 2026; burn-in will fail. Use one of the rows below instead. |
+| macOS (recommended) | `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-libass` | Includes libass with FriBidi + HarfBuzz |
+| macOS (alternative) | `brew install ffmpeg-full` (community tap) | Same effect, more dependencies |
+| Ubuntu 22.04+ | `apt install ffmpeg` (as root) | Main package ships all three |
+| Debian 12+ | `apt install ffmpeg` (as root) | Main package ships all three |
 | Windows | Download from `ffmpeg.org` builds | Use the full-feature build, not minimal |
 | Docker | `jrottenberg/ffmpeg:latest` | Full-feature image |
+
+After install, always verify three lines come back from:
+
+```bash
+ffmpeg -version 2>&1 | grep -E 'libass|fribidi|harfbuzz'
+```
+
+If any line is missing, the burn-in pipeline will silently produce mirrored or boxed Hebrew.
 
 ## Burn-in command
 

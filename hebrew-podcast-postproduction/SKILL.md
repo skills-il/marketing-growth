@@ -213,7 +213,7 @@ The `subtitles` filter passes the SRT through libass, which requires libass to b
 ffmpeg -version 2>&1 | grep -E 'libass|fribidi|harfbuzz'
 ```
 
-On macOS, `brew install ffmpeg` ships libass with both dependencies. On Debian/Ubuntu, the `ffmpeg` package in main ships with them since Ubuntu 22.04.
+On macOS, the default `brew install ffmpeg` formula does NOT include libass / FriBidi / HarfBuzz, so subtitle burn-in fails silently or produces mirrored Hebrew. Use `brew install ffmpeg-full` from the homebrew-ffmpeg tap, or `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-libass`. On Debian/Ubuntu, the `ffmpeg` package in main ships with all three since Ubuntu 22.04. After install, always verify with `ffmpeg -version | grep -E 'libass|fribidi|harfbuzz'` (expect three matching lines).
 
 For `FontName`, use a Hebrew-capable font that fontconfig can resolve. **Heebo**, **Rubik**, **Assistant**, and **Open Sans Hebrew** are Google Fonts options that cover the full Hebrew + Latin range. Install them system-wide before running FFmpeg, otherwise fontconfig falls back to a default that may not contain Hebrew glyphs.
 
@@ -254,6 +254,45 @@ Example Instagram caption:
 #פודקאסטישראלי #יזמותישראלית #סטארטאפ #podcast #israelitech
 ```
 
+## Examples
+
+### Example 1: 35-minute solo interview, Whisper JSON input
+
+Input: `episode-12.json` (Whisper output, Hebrew, 2,108 segments) + `episode-12.mp3`.
+
+Run `scripts/generate_bundle.py --transcript episode-12.json --audio episode-12.mp3 --episode 12 --out episode-12/`.
+
+Output bundle:
+
+```
+episode-12/
+├── show-notes.md            (RTL Hebrew + EN summary, 7 chapters)
+├── chapters/
+│   ├── spotify-chapters.txt  (7 lines, all under 40 chars, first at 00:00, gaps >= 60s)
+│   └── chapters.json         (Podcasting 2.0 v1.2.0)
+├── clips/
+│   ├── clip-01.srt           (00:08:42 - 00:09:48 in original, rebased to 00:00)
+│   ├── clip-01.ffmpeg.sh     (mode 2: video burn-in command)
+│   ├── clip-02.{srt,ffmpeg.sh}
+│   ├── clip-03.{srt,ffmpeg.sh}
+│   └── clip-04.{srt,ffmpeg.sh}  (4 clips, 60-75s each, >= 60s gap)
+└── social/
+    ├── clip-01-{instagram,tiktok,x,linkedin}.txt   (4 platforms x 4 clips = 16 caption files)
+    └── ...
+```
+
+A 7-chapter, 4-clip bundle is the median for a 30-45 minute solo interview.
+
+### Example 2: 60-minute panel with 3 speakers, SRT input
+
+Input: `episode-23.srt` (timestamped cues only, no speaker labels) + `episode-23.mp4` (filmed for video repurposing).
+
+Run `scripts/generate_bundle.py --transcript episode-23.srt --video episode-23.mp4 --episode 23 --out episode-23/`.
+
+Output bundle includes 9 chapters (panel format triggers more topic shifts), 5 clips, and the `clips/clip-NN.ffmpeg.sh` files default to mode 2 (video burn-in) because the input has a video track. Each clip captures one speaker's standout moment, with the scoring function favoring segments where the standalone-comprehensibility signal is high (the script penalizes clips that open with "and then he said" or other antecedent-dependent phrasing).
+
+Show notes will tag each chapter with the speaker if speaker labels are present. Without speaker labels, chapters are titled by topic. The Hebrew show-notes Quotes section pulls the top 3 emotional-peak segments by score, which for a panel often surfaces the most-shared exchange of the episode.
+
 ## Bundled Resources
 
 ### References
@@ -276,7 +315,7 @@ No podcast or audio MCP servers are currently available in the skills-il directo
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| Spotify chapter rules | https://support.spotify.com/us/creators/article/enabling-chapters/ | Timestamp format, minimum chapter count, title length limit |
+| Spotify chapter rules | https://support.spotify.com/us/creators/article/episode-chapters/ | Timestamp format, minimum chapter count, title length limit |
 | Podcasting 2.0 Chapters JSON | https://podcasting2.org/docs/podcast-namespace/tags/chapters | Chapters JSON schema, RSS tag format |
 | Apple Podcasts audio requirements | https://podcasters.apple.com/support/893-audio-requirements | Accepted formats, ID3 tag rules |
 | FFmpeg subtitles filter docs | https://ffmpeg.org/ffmpeg-filters.html#subtitles-1 | libass options, force_style syntax |
@@ -292,7 +331,9 @@ No podcast or audio MCP servers are currently available in the skills-il directo
 
 4. **Hebrew subtitle burn-in looks correct in VLC but wrong in FFmpeg output.** VLC renders SRTs at playback time using its own libass, so preview is not a truth signal. The burn-in is the truth. If libass was built without FriBidi, the burned-in text is a mirror image of the logical string - correct-looking in source files, reversed in output video. Always verify with `ffmpeg -version | grep fribidi`.
 
-5. **Nikud destroys Spotify chapter titles.** Points (kametz, patach, etc.) count as separate Unicode codepoints against the 40-character limit, and Spotify's title parser truncates mid-codepoint, corrupting the first visible word. Strip nikud from chapter titles; keep it only in SRT files if reading comprehension matters for the target audience.
+5. **Apple Podcasts transcripts do not support Hebrew yet.** Apple ingests `<podcast:transcript>` (VTT/SRT) since March 2024, but the supported-language list (en, da, nl, fi, fr, de, it, no, pt, es, sv) excludes Hebrew. The transcript file you produce can still be hosted in your RSS feed via `<podcast:transcript>`, and other Podcasting 2.0 players (Fountain, Podverse, Castamatic) will render it; Apple just will not. Spotify auto-generates English-only transcripts; for Hebrew shows, your hosted SRT is the only option.
+
+6. **Nikud destroys Spotify chapter titles.** Points (kametz, patach, etc.) count as separate Unicode codepoints against the 40-character limit, and Spotify's title parser truncates mid-codepoint, corrupting the first visible word. Strip nikud from chapter titles; keep it only in SRT files if reading comprehension matters for the target audience.
 
 ## Troubleshooting
 
