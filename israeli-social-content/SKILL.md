@@ -11,14 +11,16 @@ compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCod
 
 ### Step 1: Identify the Platform Mix
 
-Choose platforms based on audience and goals. Israeli platform landscape (early 2026 data):
+Choose platforms based on audience and goals. Israeli platform landscape (DataReportal Digital 2026, figures for late 2025):
 
 | Platform | Users (IL) | Primary Age | Best For |
 |----------|-----------|-------------|----------|
 | Facebook | ~7.6M | 25-55 | Community, groups, local discovery |
 | Instagram | ~5M | 18-35 | Visual brands, Reels, lifestyle |
-| TikTok | ~4.5M (18+) | 16-30 | Viral reach, younger audiences |
+| TikTok | ~4.49M (18+) | 16-30 | Viral reach, younger audiences |
 | LinkedIn | ~3.1M | 25-55 | B2B, tech, hiring |
+
+Methodology notes: Facebook and TikTok counts are 18+ ad-reach figures reported by the platforms' own ad tools, so under-18 users are not included and the true totals are higher. LinkedIn counts registered members, not monthly active users. Treat all four as directional, not exact. Re-verify against the current DataReportal Israel report before quoting a number to a client.
 
 Decision criteria:
 - B2C local business (restaurant, salon, shop) -> Facebook groups + Instagram
@@ -46,6 +48,28 @@ Write in spoken Hebrew (ivrit meduberet), not formal written Hebrew. Key rules:
 
 **LinkedIn:** Israeli tech ecosystem content performs exceptionally. Mix: industry insights (40%), company culture (30%), product (20%), hiring (10%). Hebrew posts get higher engagement from Israeli audience but English extends global reach.
 
+### Step 3b: Format Specs for Vertical Video and Overlays
+
+Current specs for Reels and TikTok (verify against the platform docs in Reference Links before a production handoff):
+
+- **Reels and TikTok video:** 1080 x 1920 px, 9:16 aspect ratio, MP4 (H.264). This fills a phone screen edge to edge.
+- **Hebrew text overlays:** keep them inside the central safe zone. The bottom ~20% of the frame is covered by the caption, audio credit, and interaction buttons, and the top ~10% by the platform UI, so do not place Hebrew copy there. Center Hebrew text horizontally so RTL alignment does not collide with the right-side action rail.
+- **TikTok caption:** the field allows up to 4,000 characters (it includes hashtags and mentions), but only roughly the first 80-100 characters show before truncation, so front-load the Hebrew hook.
+- **Instagram caption:** up to 2,200 characters. Instagram allows up to 30 hashtags but recommends a small targeted set (3-5 is the practical sweet spot, see Step 4).
+
+### Step 3c: RTL Caption Formatting (Hebrew, English, Emoji, Hashtags)
+
+This is the most common Israel-specific technical failure. A caption that mixes Hebrew, English words, emoji, and Latin-script hashtags often flips reading direction mid-line, and punctuation (a period, comma, or `!`) lands on the wrong side of the line.
+
+The failure mode: the first strong-directional character in a line decides the base direction. If a Hebrew caption opens with an English word, a digit, an emoji, or a `#hashtag`, the line renders left-to-right and the Hebrew looks broken. Trailing punctuation after a Hebrew clause can jump to the left edge.
+
+The fix:
+- Start every Hebrew line with a Hebrew letter. Never lead a line with an English word, a number, an emoji, or a hashtag.
+- Put Latin-script hashtags and mentions on their own lines at the end of the caption, not inline inside Hebrew sentences.
+- For an unavoidable inline English term or number inside a Hebrew sentence, wrap it with directional marks: a Right-to-Left Mark (RLM, U+200F) before and after the foreign run keeps the surrounding Hebrew base direction. A Left-to-Right Mark (LRM, U+200E) does the inverse inside English text.
+- Keep punctuation tight against the Hebrew word it belongs to; if it still jumps, add an RLM right after the punctuation.
+- Test the caption in the actual app composer (not just a desktop editor) before publishing, on both iOS and Android.
+
 ### Step 4: Build Hashtag Strategy
 
 Hebrew hashtag rules:
@@ -61,6 +85,13 @@ Hebrew hashtag rules:
 - **Shabbat:** No posting Friday afternoon through Saturday evening. Engagement drops to near-zero.
 - **Holidays to avoid commercial content:** Yom Kippur (total blackout), Yom HaZikaron (memorial day)
 - **Holidays to leverage:** Rosh Hashana (greetings), Hanukkah (promotions), Purim (fun content), Yom Ha'atzmaut (national pride)
+
+Calendar dynamics to plan around:
+- **Hebrew-calendar dates shift every Gregorian year.** Do not hardcode a fixed date for any Jewish holiday. Pull the current year's dates from a Hebrew-calendar source (for example Hebcal) when you build a schedule.
+- **Sukkot and Pesach are week-long low-engagement windows,** not single days. Many Israelis take the whole week off (chol hamoed). Treat the full span as reduced reach, and plan a content push for "after the chagim" instead.
+- **The Tishrei cluster** (Rosh Hashana, Yom Kippur, Sukkot, usually September-October) is a multi-week slowdown. "Acharei hachagim" (after the holidays) is a real planning unit Israelis use.
+- **August** is a summer slowdown (school break, vacations).
+- **Election days** are national holidays in Israel and engagement patterns shift; commercial content underperforms and political content is sensitive. Check whether an election or campaign period overlaps your calendar.
 
 ## Examples
 
@@ -109,6 +140,23 @@ Result: TikTok launch plan optimized for Israeli fashion audience
 - Hebrew social copy must use spoken Hebrew (ivrit meduberet), not formal written Hebrew. Agents often produce overly formal Hebrew that feels robotic to Israeli audiences.
 - Hebrew hashtags must not contain underscores or spaces. The correct format is #סטארטאפישראלי not #סטארטאפ_ישראלי. Agents may apply English hashtag formatting conventions.
 - Israeli audiences respond strongly to personal stories and "dugri" (blunt, honest) content. Corporate-polished messaging that works in the US consistently underperforms in Israeli social media.
+- Mixed Hebrew/English/emoji/hashtag captions flip reading direction and misplace punctuation. The first strong-directional character in a line sets its base direction, so a Hebrew line that starts with a hashtag, emoji, or English word renders left-to-right and looks broken. Always lead Hebrew lines with a Hebrew letter.
+- TikTok's US operations moved to a majority-American joint venture (Oracle, Silver Lake, MGX) that closed January 2026. Any TikTok policy, data-handling, or feature claim should be re-verified against current TikTok documentation rather than assumed from older sources.
+
+## Recommended MCP Servers
+
+No MCP server applies to this skill. Social content creation, scheduling, and Hebrew copywriting are reasoning and writing tasks that the agent performs directly with the bundled script and references. There is no Israeli social-platform API in the skills-il MCP directory that this workflow depends on.
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Meta Business Help Center | https://www.facebook.com/business/help | Facebook and Instagram page/group rules, content policies |
+| Instagram for Creators | https://creators.instagram.com | Reels specs, caption and hashtag guidance |
+| Instagram Help Center | https://help.instagram.com | Account, posting, and feature documentation |
+| TikTok for Business | https://ads.tiktok.com/business/en | TikTok content formats, video specs, business features |
+| LinkedIn Business Solutions | https://business.linkedin.com | Organic content best practices for LinkedIn |
+| DataReportal Digital 2026 Israel | https://datareportal.com/reports/digital-2026-israel | Current Israeli social platform user counts and methodology |
 
 ## Troubleshooting
 

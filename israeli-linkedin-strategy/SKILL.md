@@ -1,11 +1,13 @@
 ---
 name: israeli-linkedin-strategy
-description: Develop bilingual Hebrew/English LinkedIn content strategies for the Israeli tech ecosystem, including post timing, Hebrew hashtags, and audience engagement patterns. Use when user asks about LinkedIn strategy for Israel, Hebrew LinkedIn posts, Israeli tech networking, or asks about "linkedin", "reshet mitkademet", "tוכן", bilingual posting, or Israeli professional branding. Covers Hebrew/English post optimization, Israeli tech topic trends, cultural timing around holidays and work week, and Hebrew hashtag research. Do NOT use for general international LinkedIn strategy, paid LinkedIn advertising, or non-Israeli market targeting.
+description: Develop bilingual Hebrew/English LinkedIn content strategies for the Israeli tech ecosystem, including post timing, Hebrew hashtags, and audience engagement patterns. Use when user asks about LinkedIn strategy for Israel, Hebrew LinkedIn posts, Israeli tech networking, or asks about "linkedin", "reshet mitkademet", "tochen" (content), bilingual posting, or Israeli professional branding. Covers Hebrew/English post optimization, Israeli tech topic trends, cultural timing around holidays and work week, and Hebrew hashtag research. Do NOT use for general international LinkedIn strategy, paid LinkedIn advertising, or non-Israeli market targeting.
 license: MIT
 compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex. Network access helpful for trend research.
 ---
 
 # Israeli LinkedIn Strategy
+
+Build bilingual Hebrew/English LinkedIn content that fits the Israeli tech ecosystem: its Sunday-Thursday work week, its dugri tone, its military-to-tech networking signals, and its 2026 algorithm reality.
 
 ## Instructions
 
@@ -58,13 +60,13 @@ Build a hashtag strategy that works for the Israeli ecosystem:
 | Tech topics | #טכנולוגיה #חדשנות #AI | #Innovation #TechIsrael |
 | Community | #קהילהטכנולוגית #ישראל | #IsraeliTech #TechCommunity |
 
-Hashtag guidelines:
-1. Use 3-5 hashtags per post (Israeli LinkedIn norms)
-2. Mix Hebrew and English hashtags for maximum reach
-3. Hebrew hashtags without spaces: #סטארטאפישראלי not #סטארטאפ_ישראלי
-4. Include one broad English hashtag for international discoverability
-5. Track trending Israeli tech hashtags weekly through LinkedIn search
-6. Consult `references/linkedin-patterns.md` for seasonal hashtag trends
+Hashtag guidelines (updated for the 2026 algorithm):
+1. **Use 0-3 hashtags per post, not more.** As of 2026 LinkedIn's algorithm is keyword-driven, not hashtag-driven, and it removed hashtag following entirely. Hashtags no longer boost reach; posts with no hashtags often perform slightly better than posts stuffed with them, and posts with 6+ hashtags tend to see lower engagement.
+2. Use hashtags only for topical grouping and search discoverability, not as a reach lever. The text of the post itself (keywords, dwell time, comments) drives distribution.
+3. If you do use hashtags, the Hebrew-hashtag formatting rule still applies: no spaces and no underscores, for example #סטארטאפישראלי not #סטארטאפ_ישראלי.
+4. A single broad English hashtag can still help an international reader find the post via search; that is the main remaining reason to add one.
+5. Put effort into the hook and the first two lines instead of into hashtag research. That is where reach is actually won now.
+6. Consult `references/linkedin-patterns.md` for which Hebrew tags are still in active use for topical grouping.
 
 ### Step 4: Craft Israeli Tech Content Themes
 Focus on topics that resonate with the Israeli tech LinkedIn audience:
@@ -87,20 +89,29 @@ Content creation approach:
 5. Engage with current Israeli tech discourse: layoffs, AI adoption, global expansion
 
 ### Step 5: Structure Posts for Israeli Engagement
-Israeli LinkedIn posts follow engagement patterns:
+Israeli LinkedIn posts follow engagement patterns. Note the 2026 algorithm shift first, because it changes what "anatomy" should optimize for:
 
-Post anatomy for maximum reach:
-1. **Hook (first 2 lines):** Bold statement or question in the reader's primary language
-2. **Story/Value (3-8 lines):** Personal anecdote or actionable insight
-3. **Key takeaway:** One clear lesson or call to action
-4. **Hashtags:** 3-5 relevant tags, mixed Hebrew/English
-5. **Language note:** If bilingual, add "English below" or "עברית למטה"
+2026 algorithm and format reality:
+- LinkedIn now leans on the **Interest Graph over the Relationship Graph** -- it surfaces a post to people interested in the topic, not just to your connections. Topic consistency matters more than network size.
+- **Document/PDF carousels and native video far outperform plain text posts** for reach. A military-to-tech career story works better as a short native video or a carousel than as a wall of text.
+- **External links cost reach.** LinkedIn deprioritizes posts that send users off-platform; put the link in the first comment, not the post body.
+- **"Saves" are the top engagement signal,** ahead of likes. Write posts worth saving: frameworks, checklists, "how I did X" breakdowns relevant to Israeli founders and operators.
+- **Dwell time matters.** A longer, genuinely useful post that holds the reader beats a short one that gets a quick like.
+
+Post anatomy for Israeli reach:
+1. **Hook (first 2 lines):** Bold statement or question in the reader's primary language, dugri and specific. This is what decides dwell time.
+2. **Story/Value (3-8 lines):** A personal anecdote anchored in shared Israeli experience -- army service, an exit, a layoff round, navigating reserve duty as a founder.
+3. **Key takeaway:** One clear lesson worth saving.
+4. **Format choice:** Prefer a carousel or native video over plain text when the content allows it.
+5. **Hashtags:** 0-3 max, for topical grouping only (see Step 3).
+6. **Language note:** If bilingual, add "English below" or "עברית למטה".
+7. **Links:** If you must link out, put the link in the first comment, not the post.
 
 Formatting tips:
 1. Use line breaks generously (Israeli LinkedIn favors scannable content)
 2. Emojis are acceptable but use sparingly (1-3 per post)
-3. Tag relevant Israeli tech figures or companies to boost reach
-4. Ask questions to encourage comments -- Israeli audiences are highly interactive
+3. Tag relevant Israeli tech figures or companies only when genuinely relevant -- irrelevant tagging is penalized
+4. Ask questions to encourage comments -- Israeli audiences are highly interactive, and comments drive distribution
 5. Posts about failures and lessons learned perform exceptionally well in Israeli culture
 
 ### Step 6: Build Israeli Professional Network
@@ -168,10 +179,14 @@ Result: Authentic Hebrew career story post highlighting the Israeli military-to-
 
 - Israeli LinkedIn culture is significantly more informal than US or European norms. Agents may produce overly polished corporate content that gets low engagement. Israelis respond to "dugri" (direct, honest) communication.
 - Sunday morning is the Israeli "Monday morning" with peak LinkedIn engagement. Agents default to Monday-Friday scheduling and miss the highest-engagement window of the Israeli work week.
-- Hebrew hashtags must not contain spaces or underscores. Agents may format Hebrew hashtags like English ones with underscores, which breaks the hashtag functionality.
+- Hebrew hashtags must not contain spaces or underscores. Agents may format Hebrew hashtags like English ones with underscores, which breaks the hashtag functionality. But note (see Step 3) that as of 2026 hashtags no longer boost reach at all -- the bigger mistake is over-relying on them.
+- As of 2026, agents trained on older guidance still push "3-5 hashtags for reach." LinkedIn's algorithm is now keyword-driven and removed hashtag following; 0-3 hashtags for topical grouping is the current norm and hashtags do not extend reach.
 - Military unit references (8200, Mamram, Talpiot) are powerful networking signals in Israeli tech. Agents unfamiliar with Israeli culture may not leverage these connections or may confuse unit names.
-- Israeli LinkedIn has one of the highest per-capita penetration rates globally (~3.1M users in a 9M population). Agents may underestimate the platform's importance in the Israeli professional market.
+- Israeli LinkedIn has one of the highest per-capita penetration rates globally (~3.1M registered members per DataReportal Digital 2026, equal to roughly a third of the population). Note this is registered members, not monthly active users -- LinkedIn's ad tools report registered members, unlike most platforms that report active users. Agents may underestimate the platform's importance in the Israeli professional market.
 
+## Recommended MCP Servers
+
+No MCP server applies to this skill. LinkedIn content strategy, bilingual post drafting, and Hebrew hashtag formatting are reasoning and writing tasks the agent performs directly with the bundled reference file. There is no LinkedIn API integration in the skills-il MCP directory that this workflow depends on.
 
 ## Reference Links
 
@@ -198,5 +213,5 @@ Cause: Using global LinkedIn timing recommendations instead of Israeli schedule
 Solution: Shift to Israeli work week (Sunday-Thursday). Post between 07:00-08:30 or 12:00-13:30 Israel time. Avoid Friday afternoon and Saturday entirely.
 
 ### Error: "Hashtags not gaining traction"
-Cause: Using only English hashtags or incorrect Hebrew hashtag formatting
-Solution: Mix Hebrew and English hashtags. Write Hebrew hashtags without spaces or underscores. Use 3-5 hashtags per post. Check trending Israeli hashtags weekly.
+Cause: Expecting hashtags to drive reach. As of 2026 LinkedIn's algorithm is keyword-driven and removed hashtag following, so hashtags no longer boost distribution.
+Solution: Stop treating hashtags as a reach lever. Use 0-3 hashtags only for topical grouping and search. If you do use any Hebrew hashtag, format it without spaces or underscores. Put your effort into the hook, post keywords, and a format (carousel or native video) that earns dwell time and saves.

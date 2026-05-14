@@ -2,7 +2,7 @@
 name: israeli-aso
 description: Optimize mobile app listings for Israeli users on Apple App Store and Google Play with Hebrew metadata, keywords, and screenshots. Use when user asks about Israeli app store optimization, Hebrew app listing, Hebrew keywords for app store, or localizing app metadata for Israel. Covers Hebrew keyword research, RTL screenshot design, and category-specific benchmarks.
 license: MIT
-compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
+compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex, Antigravity, Gemini CLI.
 ---
 
 
@@ -19,14 +19,27 @@ Israel has ~8.5M smartphone users (~85% penetration). iOS ~30%, Android ~70%. He
 ### Hebrew Keyword Research
 Apple: 100 character keyword field. Separate with commas, no spaces. Include morphological variants and bilingual terms (transliterations like דליברי for delivery).
 
+### Where Each Platform Pulls Keywords From
+The two stores index different fields, so the same Hebrew metadata is not interchangeable:
+
+- **Apple App Store** indexes the app name, the subtitle, and the dedicated 100-character keyword field. It does NOT index the description, so keywords placed only in the description are wasted on Apple.
+- **The Apple keyword field is per-localization.** The Hebrew (`he`) localization gets its own separate 100-character keyword field, independent of the English field. Hebrew keywords do not compete with English ones for character budget, and English keywords do not rank you for Hebrew searches. Fill the Hebrew field with Hebrew terms only.
+- **Google Play** has no keyword field. It indexes the title, the short description, and the full 4,000-character description. On Play, keyword research feeds directly into how you write the Hebrew description, and repetition density in the description matters.
+
 ### RTL Screenshot Design
 Text overlays must be RTL-aligned. Reading flow starts from RIGHT screenshot. Recommended fonts: Heebo, Rubik, Assistant. Include NIS prices.
+
+Screenshot sizes (verify against Apple's screenshot specifications page in Reference Links before export):
+- **iPhone 6.9" (primary required size):** 1320 x 2868 px portrait. This is App Store Connect's main required iPhone size as of 2026 (iPhone 16 Pro Max class). If you upload only this size, Apple scales it for smaller devices.
+- **iPhone 6.7":** 1290 x 2796 px portrait, still accepted; provide it separately if your app renders differently on those devices.
+- **iPad 13":** 2064 x 2752 px portrait.
+- **Google Play phone:** 1080 x 1920 px minimum, up to 8 screenshots.
 
 ### Hebrew App Description
 Write in informal Hebrew. Include social proof: "מומלצת על ידי גלובס/כלכליסט". Address Israeli concerns: privacy, no hidden fees.
 
 ### Ratings and Reviews
-Israeli users leave more negative reviews. Respond in Hebrew within 24-48 hours. Request ratings after positive in-app moments.
+Israeli users leave more negative reviews than the global average and are blunt in them, so a single unanswered 1-star review reads as a red flag to the next Israeli browsing the listing. Respond in Hebrew within 24-48 hours. Trigger the rating prompt after a clear in-app win (a completed order, a saved document), never mid-task.
 
 ## Examples
 
@@ -52,10 +65,14 @@ Result: Culturally adapted Google Play listing for Israeli market
 ## Bundled Resources
 
 ### Scripts
-- `scripts/aso_keyword_analyzer.py` -- Analyzes Hebrew keyword density and suggests ASO improvements. Run: `python scripts/aso_keyword_analyzer.py --help`
+- `scripts/keyword_analyzer.py` -- Generates Hebrew keyword variants with attached-prefix morphology and reports the Apple keyword-field character budget. Run: `python scripts/keyword_analyzer.py --keywords "דליברי,משלוחים,אוכל"` or `python scripts/keyword_analyzer.py --help`
 
 ### References
 - `references/israeli-app-market.md` -- Israeli app market statistics, popular app categories, pricing benchmarks in NIS, and Hebrew keyword research data. Consult when researching Israeli app market or planning ASO strategy.
+
+## Recommended MCP Servers
+
+No MCP server applies to this skill. Hebrew keyword research, RTL screenshot planning, and metadata writing are reasoning tasks the agent performs directly with the bundled script and reference file. There is no App Store Connect or Google Play API in the skills-il MCP directory that this workflow depends on.
 
 ## Gotchas
 

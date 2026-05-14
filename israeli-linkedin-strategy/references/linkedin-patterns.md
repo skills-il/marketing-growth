@@ -81,19 +81,21 @@ Reference guide for LinkedIn engagement patterns, posting strategies, and conten
 
 ## Content Format Performance
 
+Updated for the 2026 algorithm: LinkedIn now leans on the Interest Graph (topic interest) over the Relationship Graph (your connections), document/PDF carousels and native video are the top-reach formats, external links cost reach, and "saves" are the strongest engagement signal ahead of dwell time, comments, and likes.
+
 | Format | Israeli Engagement | Best For |
 |--------|-------------------|----------|
-| Personal story (text) | Very High | Career journeys, lessons learned |
-| Carousel/document | High | How-to guides, data summaries |
+| Document/PDF carousel | Very High | How-to guides, frameworks, data summaries (top reach format) |
+| Native video (short) | Very High | Career stories, product demos, event highlights |
+| Personal story (text) | High | Career journeys, lessons learned |
 | Poll | High | Community opinions, market research |
 | Image with text | Medium-High | Event recaps, team photos |
-| Video (short) | Medium | Product demos, event highlights |
-| Link share | Medium-Low | Article sharing (LinkedIn deprioritizes) |
 | Newsletter | Growing | Recurring thought leadership |
+| Link share | Low | Article sharing -- LinkedIn deprioritizes off-platform links; put the link in the first comment |
 
 ## Israeli LinkedIn Audience Insights
 
-- Israeli LinkedIn has ~3 million users (high penetration for population size)
+- Israeli LinkedIn has ~3.1 million registered members (DataReportal Digital 2026), equal to roughly a third of the population, one of the highest per-capita rates globally. This counts registered members, not monthly active users.
 - Tech professionals are the most active segment
 - Content in Hebrew generates higher engagement from local audience
 - Israelis engage heavily in comments (more so than global average)

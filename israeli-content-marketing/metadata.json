@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "category": "marketing-growth",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli Content Marketing"
   },
   "display_description": {
-    "he": "תכנון וביצוע אסטרטגיית שיווק תוכן לשוק הישראלי, כולל SEO בעברית, PR טכנולוגי ל-Geektime ולכלכליסט, ותוכן B2B שעובד בישראל. השתמשו כשצריך לוח תוכן ישראלי, פוסטים בבלוג בעברית, פיצ'ים לתקשורת טכנולוגית, או אסטרטגיית הפצה בקבוצות פייסבוק ובוואטסאפ.",
-    "en": "Plan and execute content marketing strategies for the Israeli market including Hebrew SEO content, tech media outreach to Geektime and Calcalist, and B2B content. Use when user asks about Israeli content strategy, Hebrew blog posts, Israeli tech PR, or Hebrew B2B content. Covers Israeli tech media landscape, Hebrew content SEO, and bilingual content strategies."
+    "he": "תכנון וביצוע אסטרטגיית שיווק תוכן לשוק הישראלי, כולל SEO בעברית, AEO בעברית לחיפוש מבוסס AI, PR טכנולוגי ל-Geektime ולכלכליסט, ותוכן B2B שעובד בישראל. השתמשו כשצריך לוח תוכן ישראלי, פוסטים בבלוג בעברית, פיצ'ים לתקשורת טכנולוגית, או אסטרטגיית הפצה בקבוצות פייסבוק ובוואטסאפ. לא מיועד לקמפיינים ממומנים, ניהול קהילה ברשתות חברתיות, או ביקורות SEO טכניות.",
+    "en": "Plan and execute content marketing strategies for the Israeli market including Hebrew SEO content, Hebrew AEO for AI search, tech media outreach to Geektime and Calcalist, and B2B content. Use when user asks about Israeli content strategy, Hebrew blog posts, Israeli tech PR, or Hebrew B2B content. Covers Israeli tech media landscape, Hebrew content SEO, Hebrew keyword research, and bilingual content strategies. Do NOT use for paid ad campaigns, social-media community management, or technical SEO audits."
   },
   "supported_agents": [
     "claude-code",
