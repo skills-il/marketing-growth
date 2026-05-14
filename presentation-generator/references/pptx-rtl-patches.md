@@ -307,5 +307,5 @@ if pPr is not None:
 ## Reference
 
 - [OOXML spec: CT_TextParagraphProperties (a:pPr)](https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oi29500/)
-- [python-pptx source: pptx/oxml/text.py](https://github.com/scanny/python-pptx/blob/master/pptx/oxml/text.py)
+- [python-pptx source: src/pptx/oxml/text.py](https://github.com/scanny/python-pptx/blob/master/src/pptx/oxml/text.py)
 - [Unicode Bidirectional Algorithm](https://unicode.org/reports/tr9/)

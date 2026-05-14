@@ -10,6 +10,17 @@ license: MIT
 
 למצגות עבריות יש דרישות טכניות ייחודיות שכלים גנריים פשוט מתעלמים מהן. יישור תבליטים מוגדר ברירת מחדל כ-LTR. סימני פיסוק קופצים לקצה הלא נכון של השורה. עיצוב מספרים בהקשר עסקי ישראלי פועל לפי מוסכמות שונות ממה שתבניות אמריקניות מניחות. הסקיל הזה פותר את כל הבעיות האלה עם קוד עובד והגדרות ברורות.
 
+## הוראות
+
+עברו על השלבים האלה כדי להפיק מצגת RTL עברית תקינה:
+
+1. **בחרו את נתיב הפלט**: Marp Markdown לשקפים מבוססי-טקסט שניתן לנהל בגיט, או python-pptx לקובץ `.pptx` שנפתח נקי ב-PowerPoint וב-Google Slides. למקבלים עסקיים ישראליים עדיף python-pptx (RTL ברמת XML אמין יותר), והשתמשו ב-Marp PDF לשיתוף לקריאה בלבד.
+2. **בחרו את הפונט**: Heebo למצגות עסקיות וטכנולוגיות, David Libre לדוחות פורמליים, Assistant לחינוך, Rubik למצגות סטארטאפ בולטות. טענו דרך `@import` ב-CSS של Marp, או ודאו שהפונט מותקן על המכונה שמריצה את python-pptx.
+3. **צרו את התוכן**: כתבו את טקסט השקפים בעברית. בנו פיץ׳ דקים לפי סדר ה-VC הישראלי שמופיע למטה, השתמשו בעיצוב שקלי ובלוח השנה הפיסקלי הישראלי.
+4. **החילו את תיקוני ה-RTL**: ב-Marp הגדירו `direction: rtl; text-align: right` ב-CSS של ה-theme. ב-python-pptx קראו ל-`set_paragraph_rtl()` על כל פסקה עם טקסט עברי, בנוסף לעוזרי תאי הטבלה ורמת ה-run שב-`references/pptx-rtl-patches.md`. לגרפים, הערות מרצה ותבנית האב, ראו את הסעיפים הייעודיים למטה.
+5. **ייצאו**: הריצו `marp presentation.md --pptx` (או `--pdf`/`--html`), או `prs.save(output_path)` ב-python-pptx.
+6. **בדקו**: פתחו את הקובץ וודאו שהתבליטים מיושרים לימין, שסימני הפיסוק נמצאים בקצה הנכון של כל שורה, שסימן המטבע ממוקם נכון, ושהטבלאות נקראות מימין לשמאל. בדקו את ה-XML אם פסקה עדיין מרנדרת LTR (כל `<a:pPr>` חייב להכיל `<a:rtl val="1"/>`).
+
 ## מתי להשתמש
 
 - **פיץ׳ דק לסטארטאפ**: בניית מצגת לקרנות ישראליות (יוטה, גרוב, פיטנגו, OurCrowd) כשהשפה העיקרית היא עברית.
@@ -90,6 +101,10 @@ pip install python-pptx
 
 ראו `scripts/create-presentation.py` לדוגמה עובדת מלאה עם כל תיקוני ה-RTL.
 
+### Google Slides API
+
+לפלט של Google Slides, השתמשו ב-Slides API עם `WritingDirection: RIGHT_TO_LEFT` על runs של טקסט. זה מורכב יותר ודורש OAuth. השתמשו ב-python-pptx וייבאו ל-Google Slides כשתהליך עבודה תכנותי של Google Slides אינו הכרחי.
+
 ## הגדרת RTL עברית
 
 ### CSS Theme עבור Marp
@@ -159,6 +174,48 @@ def set_paragraph_rtl(paragraph):
 | Assistant | מעוגל ונגיש | חינוך, מצגות צרכניות. זמין ב-Google Fonts. |
 | Rubik | גאומטרי, חזק | מצגות סטארטאפ, כותרות בולטות. זמין ב-Google Fonts. |
 
+## גרפים מובנים ב-python-pptx
+
+דוחות רבעוניים ופיץ׳ דקים צריכים גרפים אמיתיים, לא מקומות שמורים לתמונה. python-pptx יוצר גרפים מובנים וניתנים לעריכה ב-PowerPoint דרך `slide.shapes.add_chart`. אובייקט הגרף נשאר ניתן לעריכה ב-PowerPoint, וזה מה שמקבלים ישראליים מצפים לו.
+
+```python
+from pptx.chart.data import CategoryChartData
+from pptx.enum.chart import XL_CHART_TYPE, XL_LEGEND_POSITION
+from pptx.util import Inches, Pt
+
+def add_revenue_chart(slide):
+    chart_data = CategoryChartData()
+    # תוויות הקטגוריות בעברית. הופכים את הסדר כדי שהציר ייקרא
+    # מימין לשמאל ויזואלית (רבעון 1 מימין, רבעון 4 משמאל).
+    chart_data.categories = ['רבעון 4', 'רבעון 3', 'רבעון 2', 'רבעון 1']
+    chart_data.add_series('הכנסות (מיליוני ש"ח)', (4.8, 3.9, 3.1, 2.4))
+
+    graphic_frame = slide.shapes.add_chart(
+        XL_CHART_TYPE.COLUMN_CLUSTERED,
+        Inches(0.6), Inches(1.6), Inches(8.8), Inches(4.0),
+        chart_data,
+    )
+    chart = graphic_frame.chart
+    chart.has_legend = True
+    chart.legend.position = XL_LEGEND_POSITION.BOTTOM
+    chart.legend.include_in_layout = False
+
+    # מגדירים פונט עברי לציר הקטגוריות כדי שהתוויות ירונדרו.
+    category_axis = chart.category_axis
+    category_axis.tick_labels.font.name = 'Heebo'
+    category_axis.tick_labels.font.size = Pt(12)
+    chart.value_axis.tick_labels.font.name = 'Heebo'
+    return chart
+```
+
+### מוזרויות בגרפים עבריים
+
+- **תוויות ציר הקטגוריות**: python-pptx לא חושף מתג RTL לאזור התרשים. הפכו את רשימת ה-`categories` כדי שהסדר הויזואלי משמאל לימין יתאים לציפייה של הקורא מימין לשמאל (הפריט הראשון מופיע בימין הציר). זה מקביל לכלל סדר העמודות בטבלה.
+- **תוויות עבריות צריכות פונט עברי**: הגדירו במפורש `chart.category_axis.tick_labels.font.name` ו-`chart.value_axis.tick_labels.font.name`. הגרף לא יורש את פונט ה-theme של השקף, וברירת המחדל נופלת לפונט לא-עברי שמרנדר ריבועים.
+- **שמות סדרות**: שם סדרה עברי במקרא מרנדר נכון עם פונט עברי, אבל שמות סדרה מעורבים עברית/לטינית (למשל `הכנסות ARR`) עלולים להציג את המילה הלטינית מוזזת. שמרו על שמות סדרה בכתב אחד כשאפשר.
+- **ערכי `XL_CHART_TYPE` שימושיים**: `COLUMN_CLUSTERED` ו-`BAR_CLUSTERED` להשוואות (גרפי עמודות אופקיים נקראים טבעי ב-RTL כשהופכים את הקטגוריות), `LINE` למגמות, `PIE` ו-`DOUGHNUT` לחלק מתוך השלם. לרשת KPI, כמה גרפי `COLUMN_CLUSTERED` קטנים נקראים טוב יותר מגרף אחד צפוף.
+- **עיצוב מספרים**: הגדירו את `chart.value_axis.tick_labels.number_format` למחרוזת פורמט מודעת-שקל (למשל `'₪#,##0'`) ו-`number_format_is_linked = False` כדי שמפריד האלפים בפסיק יוצג.
+
 ## מוסכמות מצגות ישראליות
 
 ### מבנה פיץ׳ דק לסטארטאפ (פורמט VC ישראלי)
@@ -218,11 +275,70 @@ def set_paragraph_rtl(paragraph):
 - שימוש ב-<span style="direction:ltr;display:inline-block">API endpoint: /v1/users</span>
 ```
 
-ב-python-pptx, הגדירו runs נפרדים באותה פסקה, עם RTL ל-runs עבריים ו-LTR ל-runs אנגליים.
+ב-python-pptx, הגדירו runs נפרדים באותה פסקה, עם RTL ל-runs עבריים ו-LTR ל-runs אנגליים:
+```python
+from pptx.util import Pt
+from pptx.oxml.ns import qn
+from lxml import etree
+
+def add_mixed_paragraph(text_frame, hebrew_text, english_term):
+    para = text_frame.add_paragraph()
+    set_paragraph_rtl(para)  # RTL לכל הפסקה
+
+    # run עברי
+    run_he = para.add_run()
+    run_he.text = hebrew_text
+    run_he.font.name = 'Heebo'
+
+    # run למונח אנגלי (LTR בתוך פסקת RTL)
+    run_en = para.add_run()
+    run_en.text = f' {english_term}'
+    run_en.font.name = 'Calibri'
+    # ביטול bidi ל-LTR inline בתוך פסקת RTL
+    rPr = run_en._r.get_or_add_rPr()
+    rtl_attr = rPr.find(qn('a:rtl'))
+    if rtl_attr is None:
+        rtl_attr = etree.SubElement(rPr, qn('a:rtl'))
+    rtl_attr.set('val', '0')
+```
 
 ### שקף כותרת דו-לשוני
 
 תבנית עסקית ישראלית נפוצה: כותרת עברית בשורה אחת, כותרת משנה באנגלית בשורה שנייה. שניהם יטופלו נכון אם תגדירו את מסגרת הטקסט כ-RTL ותבטלו את ההגדרה לשורה האנגלית.
+
+### עברית ולטינית מעורבות בתוך מילה או טוקן צמוד
+
+ביטולי הכיוון ברמת הפסקה וה-run למעלה מטפלים במשפט עברי עם מילים אנגליות נפרדות. הבאג הקשה יותר, והנפוץ הרבה יותר בעולם האמיתי, הוא טוקן בודד שמערבב כתבים בלי גבול רווח: `B2B-חברות`, `חברת-SaaS`, מחרוזת גרסה כמו `גרסה-2.0`, או האשטאג כמו `#עברית2026`. אלגוריתם ה-bidi מסדר מחדש את ה-run בכל גבול כתב בתוך הטוקן, אז `B2B-חברות` יכול להופיע כ-`חברות-B2B` למרות שזו מילה ויזואלית אחת.
+
+זה קורה כי שבירת run היא גבול *כיוון*, לא גבול *מילה*. פיצול `B2B-חברות` ל-run של LTR ו-run של RTL נותן לאלגוריתם ה-bidi למקם כל run בנפרד, והמקף (תו ניטרלי) נצמד לצד שהאלגוריתם מעדיף, לא לאן שהקלדתם.
+
+תיקונים, לפי סדר אמינות:
+
+1. **עגנו תווים ניטרליים עם סימני bidi**. עטפו את הקטע הלטיני בבידוד כיווני כדי שלא ידלוף לעברית שמסביב: `⁦` (LRI) לפני ו-`⁩` (PDI) אחרי. ל-run לטיני בודד בתוך פסקת RTL, `‎` (LRM) מיד אחרי הקטע הלטיני מעגן את התו הניטרלי שאחריו. דוגמה: `f'⁦B2B⁩-חברות'`.
+2. **שמרו את כל הטוקן ב-run אחד** עם כיוון הפסקה מוגדר נכון, ותנו לסימנים שלמעלה לעשות את הסידור, במקום לפצל בנקודת שינוי הכתב. run אחד עם בידוד מוטמע מסתדר בצורה צפויה, שניים לא.
+3. **למחרוזות גרסה ומזהים**, התייחסו לטוקן כולו כ-LTR: שימו `‎` לפניו ו-`‏` (RLM) אחריו כך שיֵשב כאי LTR בתוך שורת RTL. `‏‎Ver 2.0‏` שומר על `Ver 2.0` שלם וממוקם נכון.
+
+```python
+def add_intratoken_run(paragraph, hebrew_part, latin_part, sep='-'):
+    """הוספת טוקן כמו 'B2B-חברות' עם הקטע הלטיני מבודד ב-bidi.
+
+    מטמיע LRI/PDI סביב הקטע הלטיני כך שגבול הכתב
+    לא נותן לאלגוריתם ה-bidi לסדר מחדש את הטוקן.
+    """
+    run = paragraph.add_run()
+    # ⁦ = LRI, ⁩ = PDI. המפריד נשאר בצד העברי.
+    run.text = f'⁦{latin_part}⁩{sep}{hebrew_part}'
+    run.font.name = 'Heebo'
+    return run
+```
+
+ב-Marp, עטפו את הקטע הלטיני ב-`<span dir="ltr">` (דורש `html: true`), או השתמשו באותם תווי `⁦`/`⁩` ישירות ב-Markdown. CSS `unicode-bidi: isolate` על span inline משיג את אותה תוצאה בלי תווי בקרה מפורשים.
+
+### הערות מרצה, תבנית אב ומיקום תמונות
+
+- **RTL להערות מרצה**: להערות יש מסגרת טקסט משלהן, שמגיעים אליה דרך `slide.notes_slide.notes_text_frame`. הן לא מתוקנות על ידי עוזרי ה-RTL של גוף השקף. קראו ל-`set_text_frame_rtl(slide.notes_slide.notes_text_frame)` אחרי כתיבת ההערות, אחרת הערות עבריות ירונדרו LTR בתצוגת המרצה.
+- **ברירות מחדל בתבנית אב ובפריסות**: הגדרת RTL על כל פסקה אמינה אבל חוזרת על עצמה. כדי להפוך RTL לברירת המחדל של פריסה, תקנו את ה-`<a:lstStyle>` בתוך ה-`<p:txBody>` של ה-placeholder בפריסת השקף (`prs.slide_layouts[i]`) או בתבנית האב (`prs.slide_masters[0]`), והוסיפו `<a:rtl val="1"/>` ל-`<a:defRPr>`/`<a:lvlNpPr>` של כל רמה. placeholders חדשים שיורשים מהפריסה הזו מתחילים אז כ-RTL. זה לא מתקן רטרואקטיבית שקפים קיימים, רק משנה את ברירת המחדל ל-placeholders שנוצרים אחר כך.
+- **מיקום תמונות ולוגו ב-RTL**: `add_picture` ממקם תמונות לפי קואורדינטות EMU מוחלטות, אז RTL לא מזיז אותן אוטומטית. לפי מוסכמה ישראלית, הלוגו של החברה יושב בפינה הימנית העליונה (תחילת זרימת הקריאה). חשבו את מיקום הקצה הימני כ-`prs.slide_width - Inches(logo_width) - Inches(margin)` במקום לקבע offset שמאלי, כך שהלוגו נשאר מעוגן לתחילת השקף הויזואלית ללא תלות ברוחב השקף.
 
 ## מלכודות נפוצות
 
@@ -257,16 +373,54 @@ def set_paragraph_rtl(paragraph):
 
 לתאימות מקסימלית עם מקבלי מצגות עסקיות ישראליות (שכמעט כולם משתמשים בWindows + PowerPoint או Google Slides), עדיף python-pptx. ייצוא PDF מ-Marp הכי טוב לשיתוף לקריאה בלבד (קבצים מצורפים לאימייל, מייל פיץ׳).
 
+## דוגמאות
+
+### דוגמה 1: פיץ׳ דק לסטארטאפ עם python-pptx
+
+קלט: "צור פיץ׳ דק של 5 שקפים בעברית לחברת B2B SaaS בתחום הלגל-טק. כלול כותרת, בעיה, פתרון, אינטגרציה טכנית, וטבלת מדדים לרבעון ראשון. פלט קובץ .pptx."
+
+תהליך:
+1. בחירת python-pptx (המקבל הוא קרן ישראלית שתפתח את הקובץ ב-PowerPoint).
+2. בחירת Heebo (מצגת עסקית/טכנולוגית).
+3. כתיבת תוכן עברי לפי סדר ה-VC הישראלי של 10 שקפים, מקוצר ל-5 שקפים.
+4. בניית כל שקף עם דפוסי `scripts/create-presentation.py`: `set_paragraph_rtl()` על כל כותרת ותבליט, `add_english_run()` לשמות מוצר לטיניים inline, וטבלת RTL עם סדר עמודות הפוך לשקף המדדים.
+5. ייצוא דרך `prs.save('pitch-deck.pptx')`.
+6. פתיחה ב-PowerPoint, ווידוא שהתבליטים מיושרים לימין, ש-`₪3.4M` מציג את הסימן בצד הנכון, ושהטבלה נקראת מימין לשמאל.
+
+פלט: קובץ `.pptx` שבו שקף 2 ("הבעיה") מציג ארבעה תבליטים עבריים מיושרים לימין, שקף 4 מערבב את `הפלטפורמה שלנו מתחברת ישירות ל-Salesforce CRM` עם שם המוצר הלטיני כאי LTR, ושקף 5 מרנדר טבלת מדדים עם `מדד` כעמודה הימנית ביותר. הרצת `python scripts/create-presentation.py --output pitch-deck.pptx --title "שם החברה"` מפיקה בדיוק את הדק הזה.
+
+### דוגמה 2: דוח רבעוני עם גרף מובנה ב-Marp
+
+קלט: "בנה דוח עסקי רבעוני בעברית. שקף 1 כותרת, שקף 2 מציג הכנסות רבעון 1 עד 4 כגרף, שקף 3 טבלה פיננסית. פורמט Marp, ייצוא ל-PDF."
+
+תהליך:
+1. בחירת Marp (מבוסס-טקסט, מנוהל בגיט, ייצוא PDF להפצה במייל).
+2. בחירת Heebo, נטען דרך `@import` ב-`themes/rtl-hebrew.css`.
+3. כתיבת ה-Markdown של הדק עם `marp: true`, `theme: rtl-hebrew`, `dir: rtl`, `lang: he`.
+4. החלת RTL דרך ה-CSS של ה-theme (`direction: rtl; text-align: right`). לגרף ההכנסות, ל-Marp אין מנוע גרפים מובנה, אז או מטמיעים תמונת גרף מרונדרת מראש או מייצרים את שקף הגרף עם python-pptx ודפוס `add_revenue_chart`, ואז ממזגים. כותבים את הטבלה הפיננסית עם עמודות בסדר ויזואלי מימין לשמאל במקור ה-Markdown.
+5. ייצוא דרך `marp report.md --pdf --allow-local-files -o report.pdf`.
+6. פתיחת ה-PDF, ווידוא שהעברית מרונדרת עם Heebo (פונטים מוטמעים דרך Chromium), שהתבליטים ועמודות הטבלה זורמים מימין לשמאל, ושאין שקפים ריקים.
+
+פלט: PDF של 3 שקפים שבו שקף הכותרת מיושר לימין, שקף ההכנסות מציג רבעון 1 עד רבעון 4 כשהרבעון הראשון מימין, והטבלה הפיננסית נקראת `מדד | ממוצע ענף | החברה שלנו | שינוי` מימין לשמאל.
+
+## משאבים מצורפים
+
+- `scripts/create-presentation.py` - סקריפט python-pptx עובד שבונה פיץ׳ דק RTL עברי שלם של 5 שקפים (כותרת, בעיה, פתרון, שקף טכני דו-לשוני, טבלה פיננסית). כל תיקוני ה-XML ל-RTL מוחלים. הריצו `python scripts/create-presentation.py --output deck.pptx --title "שם החברה"`. השתמשו בו כהפניה הקנונית לפונקציות התיקון.
+- `references/marp-rtl-guide.md` - הפניה מהירה להגדרת RTL ב-Marp: theme מינימלי, הגדרת פרויקט, תבניות שקפים (כותרת, תוכן, דו-עמודי, בלוק קוד, טבלה פיננסית), פקודות ייצוא, אפשרויות טעינת פונטים, theme עסקי מלא, ומגבלות ידועות.
+- `references/pptx-rtl-patches.md` - סט התיקונים המלא של RTL ב-python-pptx: תיקוני פסקה, מסגרת טקסט, רמת run, תא טבלה וטבלה, דפוס בניית השקף המלא, עוזר טבלה עם עמודות הפוכות, הטמעת פונטים, וקטעי דיבאג של XML.
 
 ## קישורי עזר
 
 | מקור | כתובת | מה לבדוק |
 |------|-------|----------|
+| python-pptx | https://python-pptx.readthedocs.io/en/latest/ | ספריית פייתון ליצירת PowerPoint, API לצורות, טקסט וגרפים |
+| Marp | https://marp.app | CLI מ-Markdown לשקופיות, ערכות נושא, ייצוא PDF/HTML/PPTX |
 | pptxgenjs (מחולל PPTX ב-JavaScript) | https://gitbrent.github.io/PptxGenJS/ | ספריית Node.js ליצירת קבצי PowerPoint, תמיכה ב-RTL |
-| python-pptx | https://python-pptx.readthedocs.io/en/latest/ | ספריית פייתון ליצירת PowerPoint, API לצורות וטקסט |
 | Reveal.js | https://revealjs.com | מצגות מבוססות HTML, קיצורי מקלדת, פריסות RTL |
-| Marp (מצגות Markdown) | https://marp.app | CLI מ-Markdown לשקופיות, ערכות נושא, ייצוא PDF |
 | Google Slides API | https://developers.google.com/slides/api | Slides REST API, batchUpdate, placeholders, כיוון טקסט |
+| אלגוריתם הדו-כיווניות של Unicode (UAX #9) | https://unicode.org/reports/tr9/ | כללי סידור bidi, בידודים (LRI/PDI), סימני כיוון |
+| Google Fonts: Heebo | https://fonts.google.com/specimen/Heebo | סאנס-סריף עברי, משקלים, הורדה להטמעה מקומית |
+| מפרט OOXML (ECMA-376) | https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/ | אלמנטים של טקסט ומאפייני פסקה ב-Office Open XML |
 
 ## פתרון בעיות
 
@@ -281,13 +435,3 @@ def set_paragraph_rtl(paragraph):
 **PPTX נפתח עם אזהרת החלפת פונט**: הפונט העברי המוגדר ב-PPTX לא מותקן על המכונה של המקבל. הטמיעו פונטים או הנחו את המקבלים להתקין Heebo מ-Google Fonts לפני הפתיחה.
 
 **סימן מטבע מרנדר בצד הלא נכון**: הוסיפו `\u200e` (LRM) ממש לפני `₪` בטקסט עברי כדי לייצב אותו נכון באלגוריתם הדו-כיווני.
-
-## מקורות
-
-- [תיעוד Marp](https://marp.app/)
-- [תיעוד python-pptx](https://python-pptx.readthedocs.io/)
-- [אלגוריתם הדו-כיווניות של Unicode (UAX #9)](https://unicode.org/reports/tr9/)
-- [Google Fonts: Heebo](https://fonts.google.com/specimen/Heebo)
-- [Google Fonts: David Libre](https://fonts.google.com/specimen/David+Libre)
-- `references/marp-rtl-guide.md` בתיקיית הסקיל
-- `references/pptx-rtl-patches.md` בתיקיית הסקיל

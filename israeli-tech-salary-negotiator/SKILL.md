@@ -58,6 +58,8 @@ Break down the package into:
 
 Present the total annual compensation and compare it to market benchmarks.
 
+**On the "13th salary" and Q4 bonuses**: Israel has no statutory 13th-month salary (unlike some European markets). What candidates call a "13th salary" in Israeli tech is almost always a **discretionary annual bonus**, typically 0-20% of base, often paid in Q4 or Q1 and frequently tied to company and individual performance. Some companies do structure a fixed "13th salary" as a contractual term, but it is a negotiated benefit, not a legal entitlement. When a candidate mentions a 13th salary, clarify whether it is contractual (guaranteed, goes into the base comparison) or discretionary (a variable bonus, modeled separately with a probability haircut). Do not assume it exists.
+
 ### Step 3.5: Factor in the Section 45a Pension Tax Credit (Net Pay)
 
 When a user is comparing two offers, or weighing a raise that crosses the pension-credit ceiling, the gross number alone is misleading. Income Tax Ordinance Section 45a (סעיף 45א) gives the employee a **35% tax credit** on the employee's mandatory pension contribution, up to an annual contribution ceiling. In 2026:
@@ -81,6 +83,19 @@ Run `scripts/salary-calculator.py` with `--pension-employee` set to the actual e
 
 See `references/israeli-benefits-guide.md` Section 1.1 for the full 45a mechanics and edge cases (above-ceiling salary, part-time work, multiple employers).
 
+### Step 3.6: Estimate Gross-to-Net Take-Home Pay
+
+The single most common candidate question is "what will I actually take home?" A gross salary figure (`bruto chodshi`) is not what lands in the bank account. After computing employer cost and pre-tax effective pay, walk the user through the tax layer that converts gross into net-to-bank:
+
+1. **Income tax** (`mas hachnasa`) on the progressive 2026 brackets, reduced by **credit points** (242 NIS per point per month in 2026, frozen) and the Section 45a credit.
+2. **National Insurance** (`Bituach Leumi`), employee side, two-tier: 1.04% up to 7,522 NIS/month, 7% above.
+3. **Health tax** (`mas briut`), collected together with Bituach Leumi, also two-tier: 3.23% up to 7,522 NIS/month, 5.17% above.
+4. **Employee pension and keren contributions** are withheld too, but they are savings, not taxes (the calculator already reports "pre-tax effective pay" after these).
+
+For a 40,000 NIS/month gross offer (male, 2.25 credit points, standard contributions), net-to-bank lands around **23,000-23,500 NIS**. Always present **both** the gross figure and the net-to-bank estimate, because two offers with the same gross can produce different net pay once company-car tax value (`shovi rechev`), allowance taxability, and credit-point differences (a candidate with children claims more points) are factored in.
+
+Consult `references/gross-to-net-2026.md` for the full bracket table, the two-tier Bituach Leumi and health-tax rates, credit-point entitlements, and step-by-step worked examples. Verify the figures against the official sources before quoting a number, since Israeli thresholds update annually and sometimes mid-year.
+
 ### Step 4: Evaluate Equity and Options
 
 If the offer includes equity, analyze it:
@@ -88,7 +103,22 @@ If the offer includes equity, analyze it:
 1. **Stock options (ISO/NSO)**: Calculate potential value based on strike price, current valuation, and vesting schedule (typically 4 years with 1-year cliff in Israel)
 2. **RSUs**: Calculate current value and projected value
 3. **For startups**: Apply a standard discount (50-80% for early stage, 20-40% for late stage) to account for illiquidity risk
-4. **Tax implications**: Note the Israeli tax treatment (capital gains tax on options at 25%, RSUs under Section 102 trust can also qualify for 25% capital gains tax)
+4. **Tax implications**: see the Section 102 detail below.
+
+#### Section 102 Options Taxation (the detail that matters)
+
+Most Israeli tech equity is granted under **Section 102** (`Sa'if 102`) of the Income Tax Ordinance via a trustee. Section 102 offers two tracks, and the offer letter should state which one applies:
+
+- **Capital-gains track (`maslul revach hon`)** - the common, favorable track. The gain on the grant is taxed at the **25% capital-gains rate** instead of the employee's marginal income-tax rate (which tops out at 47% plus the 3% surtax). To qualify, the securities must be held by the trustee for a **24-month holding period** from the grant date. Selling before 24 months forfeits the capital-gains treatment and the whole gain is taxed as ordinary income.
+- **Ordinary-income track (`maslul hachnasat avoda`)** - the gain is taxed at the employee's marginal rate. Companies sometimes pick this because it lets the company deduct the expense; the employee almost always prefers the capital-gains track.
+- **The embedded-value catch**: even on the capital-gains track, if the grant has a "ready value" at the grant date (for example a discount-priced option on an already-valuable share, or RSUs which have no strike price), the **portion equal to the company's value at grant is taxed as ordinary income**, and only the appreciation above that is taxed at 25%. For RSUs this means a meaningful slice is ordinary income, not the headline 25%.
+
+When evaluating an equity offer, ask the user: which Section 102 track, and what is the grant date (the 24-month clock starts then, not at vesting). RSUs under Section 102 capital-gains track still qualify for the 25% rate on appreciation, but expect the grant-date value to be ordinary income. For a deeper walk-through of Section 102 mechanics, exercise timing, and the trustee process, cross-reference the `israeli-stock-options-tax` skill.
+
+#### Sign-On Equity vs RSU Refresh Grants
+
+- **Sign-on grant**: the equity stated in the offer letter, vesting over (typically) 4 years with a 1-year cliff. This is what most candidates focus on.
+- **Refresh grants**: at larger companies and multinational R&D centers, additional RSU grants are issued periodically (often annually) on top of the sign-on grant, to keep total equity competitive as the sign-on grant vests down. A candidate comparing a big-tech offer to a startup offer should ask about the **refresh policy** explicitly: a sign-on-only number understates a multinational's real equity trajectory, while many startups give no refresh at all until a promotion or a new funding round. Treat refresh expectations as a separate negotiable line, not part of the sign-on number.
 
 ### Step 5: Identify Negotiation Leverage Points
 
@@ -172,6 +202,7 @@ Result: A clear breakdown showing that upgrading to full benefits adds approxima
 ### References
 - `references/israeli-tech-salary-data.md` - Comprehensive salary ranges by role, seniority, and city for Israeli tech positions. Consult when benchmarking any salary offer or comparing compensation across roles.
 - `references/israeli-benefits-guide.md` - Detailed guide to Israeli employment benefits including pension, keren hishtalmut, vacation, car allowance, and meal benefits. Consult when evaluating the non-salary components of a compensation package.
+- `references/gross-to-net-2026.md` - 2026 gross-to-net tax reference: income tax brackets, credit point value, two-tier Bituach Leumi and health-tax rates, and worked take-home examples. Consult when the user asks "what will I actually take home?" or when comparing offers in net rather than gross terms.
 
 ## Gotchas
 

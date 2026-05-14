@@ -2,7 +2,11 @@
 
 Comprehensive salary ranges for Israeli tech positions, organized by role, seniority, and location. All figures are in NIS (gross monthly salary) unless otherwise noted.
 
-**Data sources**: Israeli tech salary surveys, Glassdoor Israel, LinkedIn Salary Insights, levels.fyi Israel, CBS (Central Bureau of Statistics) average wage data.
+**Data sources**: Israeli tech salary surveys, Glassdoor Israel, LinkedIn Salary Insights, levels.fyi Israel, CBS (Central Bureau of Statistics) average wage data. For verification and recalibration, cross-check against:
+- levels.fyi Israel: https://www.levels.fyi/t/software-engineer/locations/israel
+- CBS (Central Bureau of Statistics) wages and income data: https://www.cbs.gov.il/en/subjects/Pages/Wages-and-Income-from-Work.aspx
+- CBS media releases (average wage updates): https://www.cbs.gov.il/en/mediarelease/Pages/default.aspx
+- Glassdoor Israel and levels.fyi also publish per-company and per-role data; access them directly in a browser since their salary pages block automated requests.
 
 **Last updated**: Q1 2026
 
