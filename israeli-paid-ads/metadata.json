@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "category": "marketing-growth",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli Paid Ads"
   },
   "display_description": {
-    "he": "הקמה ואופטימיזציה של קמפיינים ממומנים ב-Google, Meta (פייסבוק/אינסטגרם), לינקדאין וטיקטוק לשוק הישראלי, עם קופי בעברית, מחקר מילות מפתח עם וריאציות מורפולוגיות, ציות לחוק הגנת הצרכן (כולל מע\"מ בכל מחיר), ואסטרטגיות הצעת מחיר שמתחשבות ב-18% מע\"מ ב-ROAS.",
-    "en": "Create and optimize paid advertising campaigns for the Israeli market across Google Ads, Meta (Facebook/Instagram), and local platforms. Use when user asks about Israeli PPC, Hebrew ad copy, Israeli audience targeting, or ad budget optimization. Covers Hebrew keyword research, Israeli Consumer Protection Law ad regulations, local bidding strategies, and audience segmentation."
+    "he": "הקמה ואופטימיזציה של קמפיינים ממומנים ב-Google, Meta (פייסבוק/אינסטגרם), לינקדאין, טיקטוק ופלטפורמות ישראליות (טאבולה, אאוטבריין, יד2) לשוק הישראלי, עם קופי בעברית, מחקר מילות מפתח עם וריאציות מורפולוגיות, ציות לחוק הגנת הצרכן ולתיקון 13 לחוק הגנת הפרטיות (הסכמה לטרגוט פרסומי), ואסטרטגיות הצעת מחיר שמתחשבות ב-18% מע\"מ ב-ROAS. לא מתאים לרשתות חברתיות אורגניות, SEO, שיווק במייל או שווקי פרסום מחוץ לישראל.",
+    "en": "Create and optimize paid advertising campaigns for the Israeli market across Google Ads, Meta (Facebook/Instagram), and Israeli platforms (Taboola, Outbrain, Yad2, publisher networks). Use when user asks about Israeli PPC, Hebrew ad copy, Israeli audience targeting, or ad budget optimization. Covers Hebrew keyword research, Israeli Consumer Protection Law ad regulations, Amendment 13 consent rules for ad targeting, local bidding strategies, and audience segmentation. Do NOT use for organic social media, SEO, email marketing, or non-Israeli ad markets."
   },
   "supported_agents": [
     "claude-code",

@@ -1,6 +1,6 @@
 ---
 name: israeli-paid-ads
-description: Create and optimize paid advertising campaigns for the Israeli market across Google Ads, Meta (Facebook/Instagram), and local platforms. Use when user asks about Israeli PPC, Hebrew ad copy, Israeli audience targeting, or ad budget optimization. Covers Hebrew keyword research, Israeli Consumer Protection Law ad regulations, local bidding strategies, and audience segmentation.
+description: Create and optimize paid advertising campaigns for the Israeli market across Google Ads, Meta (Facebook/Instagram), and Israeli platforms (Taboola, Outbrain, Yad2, publisher networks). Use when user asks about Israeli PPC, Hebrew ad copy, Israeli audience targeting, or ad budget optimization. Covers Hebrew keyword research, Israeli Consumer Protection Law ad regulations, Amendment 13 consent rules for ad targeting, local bidding strategies, and audience segmentation. Do NOT use for organic social media, SEO, email marketing, or non-Israeli ad markets.
 license: MIT
 compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
 ---
@@ -29,7 +29,22 @@ Select the right platform based on business type, audience, and campaign objecti
 - **App installs**: Meta App Install campaigns or Google App campaigns (UAC)
 - **Brand awareness**: YouTube pre-roll, Meta reach campaigns, TikTok
 - **Local business**: Google Local campaigns, Meta radius targeting around the business
+
+Recent Google campaign-type changes: Discovery campaigns and Video Action campaigns have been folded into **Demand Gen** (the Video Action migration completed by mid-2025). Standalone **Call ads** can no longer be created as of February 2026; use responsive search ads with call assets instead.
 - **B2B**: LinkedIn Sponsored Content + Google Search for branded/non-branded terms
+
+**Israeli publisher and native networks:**
+
+Beyond the global platforms, Israel has its own ad inventory worth considering, especially for brand reach and native content:
+
+| Platform | Type | Best For |
+|----------|------|----------|
+| Taboola | Native content recommendation | Native ads on Ynet, Walla, Globes, and other major Israeli news sites. Israeli company. PPC model. |
+| Outbrain | Native content recommendation | Native ads on Haaretz, TheMarker, Calcalist, Mako, Times of Israel. Israeli company. PPC model. |
+| Yad2 | Classifieds marketplace | Real estate, automotive, second-hand goods, local services; high-intent local audience. |
+| Walla, Ynet, Globes (direct) | Publisher display / sponsored content | Direct media buys and branded content on Israel's largest news properties; strong for brand campaigns and PR-adjacent content. |
+
+Taboola and Outbrain both run a pay-per-click model and cover most of the Israeli premium-publisher landscape between them. Direct buys with a publisher's ad sales team make sense for larger brand budgets or sponsored-content campaigns. All Israeli-platform campaigns are still subject to the VAT-inclusive pricing and labeling rules in Step 5.
 
 ### Step 2: Hebrew Keyword Research
 
@@ -113,8 +128,20 @@ Israeli audience targeting requires understanding the country's unique geographi
 **Behavioral targeting on Meta:**
 
 - Interest-based: Target Hebrew speakers, Israeli TV shows, local brands, Israeli news outlets
-- Lookalike audiences: Build from Israeli customer lists (minimum 100 users from Israel)
-- Custom audiences: Upload customer phone lists (Israeli format: 05X-XXXXXXX)
+- Custom audiences: Upload customer phone lists or emails only with documented consent (Israeli phone format: 05X-XXXXXXX). See "Consent for ad targeting under Amendment 13" below before any list upload.
+- Advantage+ audiences: Meta's predictive, AI-driven targeting. Meta is phasing out static Lookalike Audiences through 2026 in favor of Advantage+. In an Advantage+ campaign you can still feed a customer list or a former lookalike seed as an "audience suggestion," but Meta treats it as a soft signal and expands beyond it. Pair broad Advantage+ targeting with diverse creative rather than narrow interest stacks.
+- Advantage+ Shopping campaigns (ASC): for e-commerce, the default Meta structure now; the algorithm handles audience discovery from the catalog and pixel/CAPI signals.
+- Lookalike audiences: still creatable but effectively deprecated. Meta's own documentation now points to Advantage+ audience instead. Treat any existing lookalike as a seed, not a hard constraint.
+
+**Consent for ad targeting under Amendment 13:**
+
+Amendment 13 to the Privacy Protection Law came into force on August 14, 2025. It directly affects how you can build ad audiences from personal data:
+
+- Uploading a customer phone or email list for Meta Custom Audiences (or Google Customer Match) requires explicit, informed, freely given consent from those contacts for that use. A generic "we may contact you" checkbox is not enough.
+- Consent must be granular. Bundled or pre-ticked consent is invalid. Marketing consent has to be separable from consent to the core service.
+- The same applies to using a customer list as a lookalike or Advantage+ seed, and to pixel / Conversions API (CAPI) tracking that builds remarketing audiences.
+- Keep documentation of when and how each contact consented. Large marketing databases (10,000+ records) and sensitive-data databases still carry registration and notification duties.
+- This is a compliance area, not advertising advice. Verify the current Privacy Protection Authority (PPA) guidance and have a privacy lawyer review your consent flow. See `references/israeli-ad-regulations.md`.
 
 ### Step 5: Ad Regulations (Chok Haganat HaTzarchan)
 
@@ -190,10 +217,12 @@ The calculator automatically accounts for 18% VAT when computing effective budge
 | Stage | Strategy | When to Use |
 |-------|----------|-------------|
 | Launch (Week 1-2) | Manual CPC | Gathering data, fewer than 15 conversions |
-| Learning (Week 3-4) | Enhanced CPC | 15-30 conversions, letting Google adjust |
+| Learning (Week 3-4) | Maximize Conversions (add Target CPA once stable) | 15-30 conversions, letting Google's Smart Bidding adjust |
 | Optimization (Month 2+) | Target CPA | 30+ conversions, stable conversion rate |
 | Scale (Month 3+) | Target ROAS | Sufficient revenue data, e-commerce focused |
 | Max performance | Maximize Conversions | High budget, broad targeting, trust the algorithm |
+
+Note: Enhanced CPC (ECPC) is no longer available for Search and Display campaigns. Google stopped offering it for new Search and Display campaigns in October 2024 and completed the forced migration the week of March 31, 2025. Campaigns not migrated proactively defaulted to Manual CPC. For the Learning stage, use Maximize Conversions (optionally with a Target CPA) instead. Verify against the Google Ads Help "About Smart Bidding" page.
 
 **VAT impact on ROAS:**
 
@@ -253,7 +282,24 @@ Result: Data-driven budget recommendation with conversion estimates
 - `scripts/cpc_calculator.py` -- Calculates CPC benchmarks and budget estimates for Israeli ad campaigns. Supports all major verticals with min/avg/max CPC data. Automatically accounts for 18% VAT. Run: `python scripts/cpc_calculator.py --help`
 
 ### References
-- `references/israeli-ad-regulations.md` -- Israeli advertising regulations including Consumer Protection Law requirements, digital advertising rules, restricted categories, Shabbat scheduling best practices, and audience targeting tips. Consult when verifying ad compliance or planning campaign schedules.
+- `references/israeli-ad-regulations.md` -- Israeli advertising regulations including Consumer Protection Law requirements, Amendment 13 consent rules for ad targeting, digital advertising rules, restricted categories, Shabbat scheduling best practices, and audience targeting tips. Consult when verifying ad compliance or planning campaign schedules.
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Google Ads Help, About Smart Bidding | https://support.google.com/google-ads/answer/2459326 | Current automated bidding strategies (Maximize Conversions, Target CPA, Target ROAS); confirms ECPC is gone |
+| Google Ads policies | https://support.google.com/google-ads/answer/6008942 | Advertising policies and restricted-content rules |
+| Meta Advertising Standards | https://transparency.meta.com/policies/ad-standards/ | Meta's ad content rules, applies to Israeli campaigns |
+| Privacy Protection Authority (Amendment 13) | https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page | Amendment 13 consent guidance for customer lists, lookalike seeds, pixel/CAPI tracking |
+| Consumer Protection (gov.il) | https://www.gov.il/he/departments/units/consumer_protection_unit | Consumer Protection Law, VAT-inclusive pricing, sponsored-content labeling |
+| Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page | VAT rate (currently 18%) applied to ad spend and pricing |
+
+## Recommended MCP Servers
+
+| MCP Server | Why It Helps |
+|------------|--------------|
+| `hebcal` | Step 4 scheduling depends on the Hebrew calendar: campaigns should pause on Yom Kippur and during Shabbat hours, and budgets shift before holidays. Holiday dates move every year. The hebcal MCP returns Hebrew holiday and Shabbat dates so dayparting and budget pacing can be automated against accurate dates. |
 
 ## Gotchas
 
@@ -264,6 +310,9 @@ Result: Data-driven budget recommendation with conversion estimates
 - Hebrew ad headlines have a 30-character limit in Google Ads, but Hebrew words are often shorter than English equivalents. Agents may not take advantage of the extra room available in Hebrew headlines.
 - Hebrew keyword research must account for morphological variants. A single root can produce dozens of word forms. Agents may target only one inflection and miss significant search volume from other forms.
 - Mixed Hebrew/English text in ads can reorder unexpectedly in RTL rendering. Always preview ads in the platform's ad preview tool before publishing.
+- Uploading customer phone or email lists for Meta Custom Audiences or Google Customer Match without explicit, granular, documented consent violates Amendment 13 to the Privacy Protection Law (in force since August 2025). Agents may suggest list uploads, lookalike seeds, or pixel/CAPI remarketing with no consent caveat.
+- Enhanced CPC (ECPC) is no longer a selectable bidding strategy for Search and Display campaigns. Agents trained on older Google Ads material may still recommend it; use Maximize Conversions or Target CPA instead.
+- Static Lookalike Audiences on Meta are being phased out through 2026 in favor of Advantage+ predictive targeting. Agents may present lookalikes as the current standard; treat them as soft seeds, not hard targeting.
 
 ## Troubleshooting
 

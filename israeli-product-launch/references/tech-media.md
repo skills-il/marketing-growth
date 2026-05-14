@@ -47,23 +47,19 @@ Reference guide for Israeli tech media outlets, pitch formats, and outreach stra
 ### English-Language Israeli Tech Media
 
 **CTech (Calcalist English)**
+- URL: https://www.calcalistech.com
 - Focus: Israeli tech for international audience
 - Audience: International investors, global tech community
-- Best for: Stories with international relevance, dual-market products
+- Best for: Stories with international relevance, dual-market products, global launches
 - Pitch format: English, include Israeli ecosystem context
-
-**Geektime English**
-- Focus: Israeli startups for global audience
-- Audience: International VC community, tech scouts
-- Best for: Global launches from Israeli companies
-- Pitch format: English, emphasize the Israeli innovation angle
+- Note: CTech is now the dominant English-language Israeli tech outlet. The standalone "Geektime English" edition is defunct, so route all English-language pitches here.
 
 ## Pitch Strategy
 
 ### Exclusive vs. Mass Distribution
 - **Exclusive:** Offer one outlet first access for 24-48 hours. Best for major announcements (funding, exits). Results in deeper coverage and better placement.
 - **Mass release:** Send to all outlets simultaneously. Best for product updates, event announcements. Lower individual coverage quality.
-- **Tiered approach:** Give Hebrew exclusive to top outlet, then release English version to CTech/Geektime English separately.
+- **Tiered approach:** Give Hebrew exclusive to top outlet, then release the English version to CTech separately.
 
 ### Timing Guidelines
 - **Best days:** Sunday-Tuesday (beginning of Israeli work week)
@@ -105,4 +101,4 @@ Reference guide for Israeli tech media outlets, pitch formats, and outreach stra
 | Enterprise deal | Globes Tech | TheMarker |
 | Consumer app | Walla Tech | Geektime |
 | Exit/IPO | Calcalist Tech | TheMarker |
-| International expansion | CTech | Geektime English |
+| International expansion | CTech | Geektime |

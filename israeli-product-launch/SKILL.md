@@ -40,9 +40,10 @@ Identify target publications and their pitch preferences:
 | Calcalist Tech | Business + tech | Hebrew | Funding rounds, established startups |
 | Globes Tech | Business + tech | Hebrew | Enterprise, B2B, financial tech |
 | TheMarker | Economy + tech | Hebrew | Market analysis, larger companies |
-| CTech (Calcalist) | Israeli tech | English | International audience |
+| CTech (Calcalist) | Israeli tech | English | International audience, dominant English-language Israeli tech outlet |
 | Walla Tech | Consumer tech | Hebrew | Consumer products, mass market |
-| Geektime English | Israeli startups | English | Global reach from Israeli angle |
+
+CTech (`https://www.calcalistech.com`) is now the primary English-language outlet for Israeli tech news. The standalone "Geektime English" edition is defunct, so route English-language pitches to CTech.
 
 Pitch guidelines:
 1. Hebrew outlets expect Hebrew pitches (not translated English)
@@ -125,6 +126,38 @@ Engagement approach:
 4. Engage in existing discussions before self-promoting
 5. Offer to present at local meetups (Tel Aviv, Herzliya, Raanana tech hubs)
 
+Community-size figures shift over time. Treat any subscriber count as a starting estimate and verify the current size on the group page before relying on it for reach planning.
+
+### Step 7: Run a Founder-Led LinkedIn Launch
+As of 2026, LinkedIn is a primary organic distribution channel for Israeli B2B and founder launches. A founder post often outperforms a company-page post for reach.
+
+Launch post approach:
+1. Post from the founder's personal profile, not (only) the company page. Company pages get lower organic reach.
+2. Write two versions: Hebrew for the local network, English for international investors and customers. Pick the version that matches the primary audience for that post; some founders post both, spaced a day or two apart.
+3. Open with a personal story or the problem, not a product announcement. Save the link or CTA for a comment or the end of the post.
+4. Employee amplification: ask the team to comment (not just react) in the first hour. Comments drive reach more than reactions. Avoid identical copy-paste comments.
+5. Timing: post Sunday to Tuesday morning, Israel time, to match the start of the local work week. Avoid Friday and Saturday.
+6. Tag relevant investors, partners, or design partners only when genuinely relevant. Over-tagging suppresses reach.
+
+### Step 8: Coordinate a Product Hunt or Global Launch Day
+Many Israeli startups run a Product Hunt launch alongside local press. The two need to be sequenced so they reinforce each other instead of competing.
+
+Coordination guidance:
+1. Product Hunt's ranking day runs on US Pacific time (a launch "day" starts at 00:01 PT). Plan for the PH day to span parts of two Israel-time calendar days.
+2. Set the Israeli media embargo to lift the same morning the PH launch goes live, so Hebrew coverage and the PH page point at each other.
+3. Give an Israeli outlet (Hebrew exclusive) and CTech (English) the story under embargo a few days ahead; brief them that the PH launch is part of the same news beat.
+4. Mobilize the Israeli community (Step 6) and the founder's LinkedIn network (Step 7) to support the PH launch during PT daytime, which is Israel evening.
+5. Avoid launching on a Friday or during a Hebrew-calendar holiday cluster (Step 1) even if the PH calendar slot looks open.
+
+### Step 9: Decide DIY vs PR Agency
+Israel has a deep bench of boutique PR agencies that specialize in tech and startups, and using one is a common norm rather than an exception.
+
+Decision guidance:
+1. DIY works when the founder already has Israeli media relationships, the story is straightforward (a feature or a small round), and budget is tight.
+2. A boutique PR agency is worth it for a major milestone (large funding round, exit, category-defining launch), when you need embargoed exclusives placed fast, or when no one on the team has press contacts.
+3. Boutique agencies in Israel typically work on a monthly retainer; one-off launch projects are also available. Get a clear scope (which outlets, Hebrew vs English, how many pitches) before signing.
+4. Even with an agency, the founder still writes or heavily edits quotes. Israeli journalists can tell agency-templated quotes from authentic founder voice.
+
 ## Examples
 
 ### Example 1: B2B SaaS Launch in Israel
@@ -174,10 +207,17 @@ Result: Dual-language press release pair ready for Israeli and international med
 |--------|-----|---------------|
 | Geektime | https://www.geektime.co.il | Leading Israeli tech news outlet, PR pitching |
 | Calcalist | https://www.calcalist.co.il | Israeli business and tech coverage |
+| CTech | https://www.calcalistech.com | Calcalist's English edition, dominant English-language Israeli tech outlet |
 | TheMarker | https://www.themarker.com | Israeli business newspaper (Haaretz group) |
 | Globes | https://www.globes.co.il | Israeli financial daily, enterprise coverage |
 | Start-Up Nation Central | https://www.startupnationcentral.org | Israeli startup ecosystem data and trends |
 | Israel Innovation Authority | https://innovationisrael.org.il/en | Grants, programs, ecosystem support |
+
+## Recommended MCP Servers
+
+| MCP Server | Why It Helps |
+|------------|--------------|
+| `hebcal` | Step 1 timing logic depends on exact Hebrew-calendar holiday dates, which shift every year. The hebcal MCP returns Hebrew holiday and Shabbat dates so launch scheduling avoids the Tishrei cluster, Passover, and other low-attention windows without guesswork. |
 
 ## Troubleshooting
 
