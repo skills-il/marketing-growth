@@ -147,6 +147,10 @@ WebSearch: "{keyword} search volume 2026"
 - `Google-Extended`, opt-out לאימון Gemini/Bard (לא משפיע על דירוג Google Search או על ציטוטים ב-AI Overview).
 - `CCBot`, Common Crawl, משמש מאמני מודלים רבים.
 - `Applebot-Extended`, opt-out לאימון Apple Intelligence.
+- `MistralAI-User`, fetcher לפי דרישה ל-Le Chat עם חיפוש ווב. תאשרו אם רוצים ציטוטים מ-Mistral.
+- `Meta-ExternalAgent`, crawler של מטא למוצרי Meta AI. ניתן לחסום ב-robots.txt כדי לעשות opt-out.
+
+**הסתייגות לגבי llms.txt (עדכון 2026):** llms.txt צובר תאוצה אצל crawlers של AI כרמז, אבל הוא לא תחליף ל-HTML תקין ו-Schema.org. העמדה הרשמית של Google היא ש-llms.txt הוא המלצתי בלבד ולא משמש כסיגנל דירוג. תתייחסו אליו כתוספת nice-to-have על אתר נקי, לא כתחליף. תניחו קובץ אינדקס קצר ב-`/llms.txt` ועוד `/llms-full.txt` ארוך עם התוכן המלא, אבל תשמרו על תוכן ההורות מצד שרת וגלוי ל-crawlers מסורתיים.
 
 **דרישות אוניברסליות:** תאשרו את בוטי זמן-החיפוש (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) ב-robots.txt, תטמיעו Schema (FAQPage, Article, Organization עם sameAs), תכניסו סטטיסטיקות וציטוטים, תרעננו תוכן תוך 30 יום, תחשפו `/llms.txt` ו-`/llms-full.txt` נקיים לצריכת AI.
 
@@ -259,6 +263,14 @@ Allow: /
 
 # Common Crawl (משמש מאמני מודלים רבים)
 User-agent: CCBot
+Allow: /
+
+# Mistral (Le Chat web search)
+User-agent: MistralAI-User
+Allow: /
+
+# Meta AI external agent (תשנו ל-Disallow כדי לעשות opt-out)
+User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://example.co.il/sitemap.xml
@@ -384,7 +396,9 @@ open "https://www.bing.com/search?q=site:{domain}"
 - שעות הפעילות העסקיות ב-schema.org חייבות לשקף שבוע עבודה ראשון-חמישי עם סגירה מוקדמת ביום שישי. סוכנים מגדירים כברירת מחדל לוח זמנים של שני-שישי.
 - תג hreflang לעברית ישראלית חייב להיות `he-IL`, לא רק `he`. סוכנים לעתים קרובות משמיטים את קוד המדינה, מה שפוגע בטירגוט הגיאוגרפי של Google ל-google.co.il.
 - מספרי טלפון ישראליים ב-structured data חייבים להשתמש בקידומת `972+`. סוכנים עלולים לעצב מספרים בפורמט מקומי 0X-XXX-XXXX, שנכשל באימות Schema.
-- GEO (אופטימיזציה למנועים גנרטיביים) הוא תחום שמתפתח במהירות. גורמי הדירוג של פלטפורמות AI משתנים תדיר. סוכנים עלולים להמליץ על אסטרטגיות GEO מיושנות אפילו מלפני חצי שנה.
+- GEO (אופטימיזציה למנועים גנרטיביים) הוא תחום שמתפתח במהירות. גורמי הדירוג של פלטפורמות AI משתנים תדיר. סוכנים עלולים להמליץ על אסטרטגיות GEO מיושנות אפילו מלפני חצי שנה. נכון לאמצע 2026, Google AI Overview פעיל בהרחבה לשאילתות he-IL ב-google.co.il אבל ההטמעה עדיין מדלגת על חלק משאילתות YMYL; תתייחסו לציטוט ב-AI Overview כסיגנל שאיפתי ולא כמנוף מובטח.
+- AI Overview מוריד עדיפות לתוכן עם H1/H2 ממולאים במילות מפתח. אתרים שמדורגים טוב ב-Google הקלאסי יכולים לאבד ציטוטים ב-AI Overview לטובת מתחרים בעלי תנועה נמוכה יותר אך עם פסקת תשובה ישירה נקייה. הפתרון הוא מבני (שכתוב הפתיח לפורמט answer-first), לא עוד מילות מפתח.
+- LLMs ישראליים מצטטים תוכן בעברית באופן לא אחיד. דפי נחיתה SaaS פיוניריים בעברית מצוטטים פחות ב-ChatGPT/Claude מאשר דפים מקבילים עם גרסה אנגלית. תשמרו URL אנגלי חלופי עם אותו תוכן ל-AI surface, פלוס URL עברי עם hreflang תקין לדירוג ב-Google.co.il.
 
 
 ## קישורי עזר

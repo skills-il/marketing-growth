@@ -155,6 +155,10 @@ Each AI search engine has unique ranking factors. Snapshot for 2026:
 - `Google-Extended`, opt-out token for Gemini/Bard training (does NOT affect Google Search ranking or AI Overview citations).
 - `CCBot`, Common Crawl, used by many model trainers downstream.
 - `Applebot-Extended`, Apple Intelligence training opt-out.
+- `MistralAI-User`, on-demand fetcher for Le Chat with web search. Allow if you want Mistral citations.
+- `Meta-ExternalAgent`, Meta's web crawler for Meta AI products. Block via robots.txt if you want to opt out.
+
+**llms.txt advisory caveat (2026 update):** llms.txt has gained adoption among AI crawlers as a hint but it is NOT a substitute for proper HTML and Schema.org. Google's official position is that llms.txt is advisory only and is not used as a ranking signal. Treat it as a nice-to-have on top of a clean site, not a replacement. Place a short `/llms.txt` index plus a longer `/llms-full.txt` with the full content, but keep the actual content rendered server-side and discoverable to traditional crawlers.
 
 **Universal requirements:** allow the search-time bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) in robots.txt, implement Schema markup (FAQPage, Article, Organization with sameAs), include statistics and citations, update content within 30 days, expose a clean `/llms.txt` and `/llms-full.txt` for AI consumption.
 
@@ -267,6 +271,14 @@ Allow: /
 
 # Common Crawl (used by many trainers)
 User-agent: CCBot
+Allow: /
+
+# Mistral (Le Chat web search)
+User-agent: MistralAI-User
+Allow: /
+
+# Meta AI external agent (opt-out by setting Disallow if you don't want Meta AI presence)
+User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://example.co.il/sitemap.xml
@@ -392,7 +404,9 @@ Result: Prioritized SEO + GEO improvement plan for the Israeli market
 - Israeli business hours in schema.org must reflect the Sunday-Thursday work week with Friday early close. Agents default to Monday-Friday schedules.
 - The hreflang tag for Israeli Hebrew must be `he-IL`, not just `he`. Agents often omit the country code, which affects Google's geo-targeting for google.co.il.
 - Israeli phone numbers in structured data must use the `+972` prefix. Agents may format numbers in local 0X-XXX-XXXX format, which fails schema validation.
-- GEO (Generative Engine Optimization) is a rapidly evolving field. AI platform ranking factors (which bots to allow, content freshness windows, citation formats) change frequently. Agents may recommend outdated GEO strategies from even 6 months ago.
+- GEO (Generative Engine Optimization) is a rapidly evolving field. AI platform ranking factors (which bots to allow, content freshness windows, citation formats) change frequently. Agents may recommend outdated GEO strategies from even 6 months ago. As of mid-2026 Google AI Overview is widely live for he-IL queries on google.co.il but rollout still skips some YMYL queries; treat AI Overview citation as an aspirational signal rather than a guaranteed lever.
+- AI Overview de-prioritizes content with stuffed H1/H2 keywords. Sites that rank well in classic Google can lose AI Overview citations to lower-traffic competitors that have a cleaner answer-first paragraph. The fix is structural (rewrite intro for direct-answer format), not more keywords.
+- Hebrew-language LLMs cite Hebrew content unevenly. Pure-Hebrew SaaS landing pages get cited less by ChatGPT/Claude than equivalent EN+HE pages. Maintain an English alternate URL with the same content for the AI surface, plus the Hebrew URL with proper hreflang for Google.co.il ranking.
 
 
 ## Reference Links
