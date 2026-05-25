@@ -10,7 +10,7 @@ compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCod
 ## Instructions
 
 ### Chok HaSpam Compliance (Amendment 40)
-Israeli anti-spam law (Amendment 40 to the Communications Law, in force since Dec 2008) requires explicit opt-in consent before sending commercial email, SMS, or fax. Every message must identify the sender, include a working one-click unsubscribe mechanism honored upon receipt (2 business days is the safe default), and maintain provable consent records (timestamp, source, IP). Statutory damages: up to 1,000 NIS per message without proof of harm, and class actions are common (Knesset bill in 2024 proposed raising the cap to 5,000 NIS but as of 2026-04-25 has not passed).
+Israeli anti-spam law (Amendment 40 to the Communications Law, in force since Dec 2008) requires explicit opt-in consent before sending commercial email, SMS, or fax. Every message must identify the sender, include a working one-click unsubscribe mechanism honored upon receipt (2 business days is the safe default), and maintain provable consent records (timestamp, source, IP). Statutory damages: up to 1,000 NIS per message without proof of harm, and class actions are common. The Knesset bill that proposed raising the cap to 5,000 NIS in 2024 has been advancing in committee but as of mid-2026 it has NOT passed into law; track Knesset.gov.il for status before quoting any number higher than 1,000 NIS to a client.
 
 ### Privacy Protection Law Amendment 13 (in force August 14, 2025)
 On top of Chok HaSpam, Amendment 13 to the Privacy Protection Law tightens marketing-data rules. Marketing email lists are a "database" subject to the law: you must (1) inform subjects at collection time why you collect data and who receives it, (2) honor erasure and access requests within 30 days, (3) document a Data Protection Officer (DPO) for businesses with 100k+ subjects or sensitive data, (4) report serious breaches to the Privacy Protection Authority (PPA) within 24 hours. Administrative fines under Amendment 13 reach 3.2M NIS (capped at 5% of annual turnover) for severe violations. Apply both Chok HaSpam (consent + unsubscribe) AND Amendment 13 (data rights + breach reporting) when designing sequences.
@@ -25,7 +25,16 @@ Keep subject lines 40-50 characters (mobile cuts off after ~30 in Hebrew due to 
 Active campaign windows: Rosh Hashana (Tishrei 1, Sep/Oct), Hanukkah (Kislev 25, Dec), Tu BiShvat (Shvat 15, Jan/Feb), Purim (Adar 14, Feb/Mar), Pesach (Nisan 15, Apr), Lag BaOmer (Iyar 18, May), Shavuot (Sivan 6, May/Jun), Yom Ha'atzmaut (Iyar 5, Apr/May). NEVER send commercial email on Yom Kippur (Tishrei 10), Yom HaZikaron (Iyar 4), Yom HaShoah (Nisan 27), or during the 7-day shiva period after a national tragedy. Tisha B'Av (Av 9, Jul/Aug) is also avoided by religious audiences. Use the Hebcal API to compute Gregorian dates per year.
 
 ### ESP Availability in Israel (2026)
-Mailchimp, Brevo (formerly Sendinblue), SendGrid, Resend, Customer.io, Klaviyo, ActiveCampaign all serve Israel without restrictions (no GDPR-style data residency requirement after Amendment 13; Israel is recognized by the EU as having adequate protection). HubSpot, Iterable, Constant Contact also work. Local Israeli ESPs (Smoove at smoove.io, ActiveTrail, Rav Messer, InWise) ship native Hebrew RTL templates and Israeli holiday calendars by default. For Hebrew-first deliverability and SMS combined, ActiveTrail or Smoove typically beat US-based ESPs.
+Mailchimp, Brevo (formerly Sendinblue), SendGrid, Resend, Customer.io, Klaviyo, ActiveCampaign all serve Israel without restrictions (no GDPR-style data residency requirement after Amendment 13; Israel was confirmed by the EU as having adequate protection, and the post-Amendment-13 adequacy review concluded favorably for marketing-data flows). HubSpot, Iterable, Constant Contact also work. Local Israeli ESPs (Smoove at smoove.io, ActiveTrail, Rav Messer, InWise) ship native Hebrew RTL templates and Israeli holiday calendars by default. For Hebrew-first deliverability and SMS combined, ActiveTrail or Smoove typically beat US-based ESPs. ActiveTrail completed a Bird (formerly MessageBird) acquisition discussion in 2024 but as of mid-2026 still operates under the ActiveTrail brand; verify current ownership in your contract before assuming pricing stability.
+
+### DMARC and Authentication (mandatory at scale in 2026)
+Yahoo and Google enforced DMARC requirements for bulk senders starting February 2024. Any business sending more than 5,000 commercial emails per day to either inbox provider MUST have:
+- **SPF**: pass aligned with the From domain.
+- **DKIM**: pass aligned with the From domain (DKIM2 rollout in progress; legacy DKIM still accepted).
+- **DMARC**: published policy at minimum `p=none` (Google requirement), with `rua` aggregate reporting.
+- **One-click unsubscribe**: RFC 8058 `List-Unsubscribe-Post: List-Unsubscribe=One-Click` plus a working `mailto:` / HTTPS endpoint.
+- **Complaint rate**: kept under 0.3% (Google soft threshold).
+Israeli ESPs (Smoove, ActiveTrail) ship this configured by default; US-based ESPs require you to set custom-domain DKIM and align the From domain explicitly. Failing these for bulk traffic results in spam folder placement or outright rejection in 2026.
 
 ### Sequence Types
 - **Welcome (5 emails over 10 days):** Day 0 brand intro, Day 2 value prop + lead magnet, Day 4 social proof with Israeli customers, Day 7 product showcase with NIS pricing, Day 10 limited offer.
@@ -75,6 +84,8 @@ Result: 3-email Hebrew cart recovery sequence with Israeli compliance
 - Hebrew email RTL requires `dir="rtl"` on both the HTML element and every table/td cell. Agents may only set it at the top level, causing rendering issues in Outlook (common in Israeli businesses) and Walla Mail.
 - Numbers and English text within Hebrew emails need `dir="ltr"` span wrappers to display correctly. Agents often forget this, causing phone numbers and prices to render in reverse order.
 - Israeli ESPs (Smoove, ActiveTrail, InWise, Rav Messer) ship Hebrew-RTL templates and Israeli holiday calendars out of the box. Agents default-recommending Mailchimp/SendGrid leave Hebrew users with worse defaults and broken Outlook rendering.
+- DMARC enforcement for bulk senders (Yahoo + Google, since February 2024) catches Israeli businesses sending without aligned authentication. SPF and DKIM must match the From domain, plus a published DMARC policy (`p=none` is enough to pass acceptance, `p=quarantine` or `p=reject` recommended for established senders). If your campaign suddenly lands in spam, check DMARC alignment first.
+- Israeli businesses often send transactional email from a different domain (e.g., support@) than their marketing email (marketing@) and forget to publish DKIM for both. Both must authenticate independently or the marketing domain will silently lose deliverability while the transactional one stays fine.
 
 ## Reference Links
 

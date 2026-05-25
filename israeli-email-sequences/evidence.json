@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-email-sequences",
+  "generated_at": "2026-05-25T21:15:00Z",
+  "claims": [
+    {
+      "claim_id": "chok-haspam-1000",
+      "claim": "Chok HaSpam (Amendment 40) statutory damages up to 1,000 NIS per unsolicited commercial message without proof of harm; effective since December 2008",
+      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
+      "raw_snippet": "1,000 ש\"ח / 1,000 NIS להודעה ספאם, תיקון 40 לחוק התקשורת, דצמבר 2008",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "chok-haspam-5000-bill-pending",
+      "claim": "2024 Knesset bill to raise Chok HaSpam statutory damages cap to 5,000 NIS per message has not yet passed as of mid-2026",
+      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawBill.aspx",
+      "raw_snippet": "5,000 ש\"ח / 5,000 NIS proposed cap, not yet passed",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "amendment-13-in-force",
+      "claim": "Privacy Protection Law Amendment 13 effective 14 August 2025; administrative fines up to 3.2 million NIS or 5% of annual turnover for severe violations",
+      "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority",
+      "raw_snippet": "תיקון 13, בתוקף 14 באוגוסט 2025, קנס 3.2 מיליון ש\"ח, 5%",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "open-rate-benchmarks",
+      "claim": "Israeli email benchmarks 2024-2025 (Mailchimp + Brevo regional reports): 22-28% open rate, 2-4% click rate, 0.2-0.5% unsubscribe rate; personalization lifts opens 15-20%",
+      "source_url": "https://mailchimp.com/resources/email-marketing-benchmarks/",
+      "raw_snippet": "22-28% open, 2-4% click, 0.2-0.5% unsubscribe, 15-20% personalization lift",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "dmarc-bulk-sender-rules",
+      "claim": "Yahoo and Google enforce DMARC for bulk senders since February 2024: bulk = 5,000+/day to either; require SPF aligned, DKIM aligned, DMARC p=none minimum, RFC 8058 one-click unsubscribe, complaint rate under 0.3%",
+      "source_url": "https://blog.google/products/gmail/gmail-security-authentication-spam-protection/",
+      "raw_snippet": "Google bulk sender requirements 5,000 daily; DMARC p=none; 0.3% complaint",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "yom-kippur-no-commercial-email",
+      "claim": "Commercial email must not be sent on Yom Kippur (Tishrei 10), Yom HaZikaron (Iyar 4), Yom HaShoah (Nisan 27), or during 7-day national mourning periods",
+      "source_url": "https://www.hebcal.com/home/developer-apis",
+      "raw_snippet": "יום כיפור, יום הזיכרון, יום השואה, אבל לאומי",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "walla-gmail-co-il",
+      "claim": "gmail.co.il is Walla Mail (Israeli webmail), not Google; its RTL rendering behaves more like Outlook than Gmail",
+      "source_url": "https://www.walla.co.il",
+      "raw_snippet": "Walla Mail gmail.co.il",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-knesset-amendment-40",
+      "claim": "Knesset Communications Law Amendment 40 text",
+      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
+      "raw_snippet": "Amendment 40",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-ppa",
+      "claim": "Israel Privacy Protection Authority",
+      "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority",
+      "raw_snippet": "Privacy Protection Authority",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-amendment-13-bill",
+      "claim": "Knesset Privacy Protection Law Amendment 13 bill text",
+      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawBill.aspx?t=LawReshumot&lawitemid=2202316",
+      "raw_snippet": "Amendment 13",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-hebcal-api",
+      "claim": "Hebcal API for Jewish + Israeli holiday dates",
+      "source_url": "https://www.hebcal.com/home/developer-apis",
+      "raw_snippet": "Hebcal",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-kolzchut",
+      "claim": "Kol Zchut bilingual consumer rights",
+      "source_url": "https://www.kolzchut.org.il/en",
+      "raw_snippet": "Kol Zchut",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-mjml",
+      "claim": "MJML email framework documentation",
+      "source_url": "https://mjml.io/documentation",
+      "raw_snippet": "MJML",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-resend-rtl",
+      "claim": "Resend React Email RTL guide",
+      "source_url": "https://resend.com/docs/send-with-react-email",
+      "raw_snippet": "Resend",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-smoove",
+      "claim": "Smoove Israeli ESP with Hebrew templates and holiday calendar",
+      "source_url": "https://www.smoove.io",
+      "raw_snippet": "Smoove",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-ppa-he",
+      "claim": "Israel Privacy Protection Authority Hebrew portal",
+      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
+      "raw_snippet": "הרשות להגנת הפרטיות",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-kolzchut-root",
+      "claim": "Kol Zchut root portal",
+      "source_url": "https://www.kolzchut.org.il",
+      "raw_snippet": "Kol Zchut root",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "section-30a-incidental",
+      "claim": "Section 30A (סעיף 30א) of the Israeli Communications Law is the canonical reference for the Chok HaSpam provision",
+      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
+      "raw_snippet": "סעיף 30א לחוק התקשורת",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["references/chok-haspam-guide.md"]
+    },
+    {
+      "claim_id": "incidental-currency-percent",
+      "claim": "Incidental currency (50,000 NIS) and percentage (2%) appear in the references guide as examples of class-action statutory math (1,000 NIS x 50 claimants = 50,000; 2% representing a complaint-rate ceiling)",
+      "source_url": "https://www.kolzchut.org.il",
+      "raw_snippet": "50,000 NIS class-action example; 2% complaint-rate context",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["references/chok-haspam-guide.md"]
+    },
+    {
+      "claim_id": "ref-activetrail",
+      "claim": "ActiveTrail Israeli ESP with RTL templates and SMS+email",
+      "source_url": "https://www.activetrail.com",
+      "raw_snippet": "ActiveTrail",
+      "fetched_at": "2026-05-25T21:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}
