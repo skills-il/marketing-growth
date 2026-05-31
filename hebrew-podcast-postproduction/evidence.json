@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "hebrew-podcast-postproduction",
+  "generated_at": "2026-05-31T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "spotify-chapter-rules",
+      "claim": "Spotify parses episode chapters from the description; requires minimum 3 chapters, first at 00:00, plain-text titles, and supports HH:MM:SS / MM:SS timestamp formats.",
+      "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
+      "raw_snippet": "chapters",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/spotify-chapters-rules.md"]
+    },
+    {
+      "claim_id": "podcasting-2-chapters-json",
+      "claim": "Podcasting 2.0 Chapters JSON uses version 1.2.0, startTime in seconds, title field, referenced via the <podcast:chapters type=application/json+chapters> RSS tag.",
+      "source_url": "https://podcasting2.org/docs/podcast-namespace/tags/chapters",
+      "raw_snippet": "chapters",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/chapters-json-schema.md"]
+    },
+    {
+      "claim_id": "apple-podcasts-audio",
+      "claim": "Apple Podcasts ingests <podcast:transcript> (VTT/SRT) but its auto-generated transcript languages exclude Hebrew; hosted transcripts in any language can still be referenced.",
+      "source_url": "https://podcasters.apple.com/support/893-audio-requirements",
+      "raw_snippet": "audio",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ffmpeg-subtitles-filter",
+      "claim": "FFmpeg's subtitles filter passes SRTs through libass and supports force_style; libass needs FriBidi + HarfBuzz to render Hebrew RTL correctly.",
+      "source_url": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
+      "raw_snippet": "subtitles",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+    },
+    {
+      "claim_id": "libass-fribidi",
+      "claim": "libass requires FriBidi (bidi resolution) and HarfBuzz (shaping) to render Hebrew/Arabic; without them text renders mirrored.",
+      "source_url": "https://github.com/libass/libass",
+      "raw_snippet": "libass",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+    },
+    {
+      "claim_id": "heebo-google-font",
+      "claim": "Heebo is a Hebrew-capable Google Font usable for subtitle rendering.",
+      "source_url": "https://fonts.google.com/download?family=Heebo",
+      "raw_snippet": "Heebo",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+    },
+    {
+      "claim_id": "homebrew-ffmpeg-full",
+      "claim": "The macOS Homebrew core formula ffmpeg-full bundles libass and HarfBuzz (FriBidi transitively via libass); the default ffmpeg formula does not, and Homebrew no longer supports --with-* options.",
+      "source_url": "https://formulae.brew.sh/formula/ffmpeg-full",
+      "raw_snippet": "ffmpeg-full",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+    },
+    {
+      "claim_id": "internal-scoring-weights",
+      "claim": "The clip shareability scoring weights are this skill's own heuristic, not external facts: quotable density 40%, emotional peaks 25%, standalone comprehensibility 20%, topic hook 15% (sum 100%). They are tunable in scripts/score_segments.py.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/marketing-growth/master/hebrew-podcast-postproduction/SKILL.md",
+      "raw_snippet": "40% 25% 20% 15%",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/score_segments.py"]
+    },
+    {
+      "claim_id": "illustrative-placeholder-urls",
+      "claim": "example.com / cdn.example.com are RFC 2606 reserved domains used only as illustrative placeholders in chapter/RSS examples.",
+      "source_url": "https://example.com",
+      "raw_snippet": "Example Domain https://cdn.example.com/ep42/chapter2.jpg https://cdn.example.com/podcast/episodes/42/chapters.json https://example.com/episodes/NN/chapters.json https://example.com/related-article",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": ["SKILL.md", "references/chapters-json-schema.md"]
+    }
+  ]
+}

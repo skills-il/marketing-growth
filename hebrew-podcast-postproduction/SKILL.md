@@ -213,9 +213,9 @@ The `subtitles` filter passes the SRT through libass, which requires libass to b
 ffmpeg -version 2>&1 | grep -E 'libass|fribidi|harfbuzz'
 ```
 
-On macOS, the default `brew install ffmpeg` formula does NOT include libass / FriBidi / HarfBuzz, so subtitle burn-in fails silently or produces mirrored Hebrew. Use `brew install ffmpeg-full` from the homebrew-ffmpeg tap, or `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-libass`. On Debian/Ubuntu, the `ffmpeg` package in main ships with all three since Ubuntu 22.04. After install, always verify with `ffmpeg -version | grep -E 'libass|fribidi|harfbuzz'` (expect three matching lines).
+On macOS, the default `brew install ffmpeg` formula does NOT include libass / FriBidi / HarfBuzz, so subtitle burn-in fails silently or produces mirrored Hebrew. The cleanest fix that puts a working `ffmpeg` on your PATH is the homebrew-ffmpeg tap, which enables libass (with FriBidi + HarfBuzz) by default: `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg` (do NOT append `--with-libass`, that option no longer exists in Homebrew and will error out; if the core `ffmpeg` is already installed, run `brew unlink ffmpeg` first so the tap build links). The homebrew-core `ffmpeg-full` formula also bundles libass + HarfBuzz, but it is **keg-only** (Homebrew does not symlink it onto PATH), so after `brew install ffmpeg-full` the bare `ffmpeg` command still points at the non-libass build, you must call it by full path, e.g. `"$(brew --prefix ffmpeg-full)/bin/ffmpeg"`, or prepend that `bin` dir to PATH. On Debian/Ubuntu, the `ffmpeg` package in main ships with all three since Ubuntu 22.04. After install, always verify with `ffmpeg -version | grep -E 'libass|fribidi|harfbuzz'` (the three names appear in the build-configuration line).
 
-For `FontName`, use a Hebrew-capable font that fontconfig can resolve. **Heebo**, **Rubik**, **Assistant**, and **Open Sans Hebrew** are Google Fonts options that cover the full Hebrew + Latin range. Install them system-wide before running FFmpeg, otherwise fontconfig falls back to a default that may not contain Hebrew glyphs.
+For `FontName`, use a Hebrew-capable font that fontconfig can resolve. **Heebo**, **Rubik**, **Assistant**, and **Open Sans Hebrew** are Google Fonts options that cover the full Hebrew + Latin range. Install them system-wide before running FFmpeg, otherwise fontconfig falls back to a default that may not contain Hebrew glyphs. For multi-word family names like `Open Sans Hebrew`, the `FontName=` value must match the exact fontconfig family string, check it with `fc-list | grep -i hebrew` first, otherwise libass silently falls back to a non-Hebrew face and renders boxes.
 
 #### Step B4: Generate social captions
 
@@ -343,8 +343,11 @@ Check: (1) first chapter is `(00:00)`, (2) minimum 3 chapters, (3) each chapter 
 **"FFmpeg burn-in produces Hebrew text that is visually reversed."**
 libass is missing FriBidi support. Rebuild FFmpeg with `--enable-libass --enable-libfribidi --enable-libharfbuzz`, or install the Homebrew / official Debian package which ships with all three.
 
+**"Hebrew burn-in is still scrambled even though `ffmpeg -version` shows fribidi."**
+On macOS, libass + SRT can still mis-order mixed Hebrew/Latin/digit lines even with FriBidi compiled in. Pre-shape each cue with `python-bidi` (apply `bidi.algorithm.get_display` to the cue text before burn-in), or convert the SRT to `.ass` with the runs pre-ordered. The `video-use-best-practices` skill documents the full python-bidi pre-shape recipe for this exact macOS failure.
+
 **"Hebrew characters render as boxes in the burned-in subtitles."**
-Fontconfig cannot find a font with Hebrew glyphs. Install a Hebrew font system-wide: `brew install font-heebo` on macOS, or download Heebo/Rubik from Google Fonts and copy to `~/.fonts/` on Linux, then run `fc-cache -fv`.
+Fontconfig cannot find a font with Hebrew glyphs. Install a Hebrew font system-wide: `brew install --cask font-heebo` on macOS, or download Heebo/Rubik from Google Fonts and copy to `~/.fonts/` on Linux, then run `fc-cache -fv`.
 
 **"The Chapters JSON file validates but Apple Podcasts does not show chapters."**
 The `<podcast:chapters>` tag must be inside each `<item>` (episode) in the RSS feed, not at the channel level. The `url` attribute must be publicly accessible over HTTPS. Apple may take up to 24 hours to re-ingest a modified RSS feed.

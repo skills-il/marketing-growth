@@ -213,9 +213,9 @@ ffmpeg -ss 00:12:34 -to 00:13:45 -i episode-NN.mp4 \
 ffmpeg -version 2>&1 | grep -E 'libass|fribidi|harfbuzz'
 ```
 
-ב-macOS, פקודת `brew install ffmpeg` ברירת המחדל **לא** מתקינה libass / FriBidi / HarfBuzz, אז הדבקת הכתוביות נכשלת בשקט או מייצרת עברית במראה. השתמשו ב-`brew install ffmpeg-full` מה-tap קהילתי, או `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-libass`. ב-Debian/Ubuntu החבילה הרשמית כוללת את שלוש התלויות מאז 22.04. לאחר ההתקנה תמיד אמתו עם `ffmpeg -version | grep -E 'libass|fribidi|harfbuzz'` (צריך לקבל שלוש שורות).
+ב-macOS, פקודת `brew install ffmpeg` ברירת המחדל **לא** מתקינה libass / FriBidi / HarfBuzz, אז הדבקת הכתוביות נכשלת בשקט או מייצרת עברית במראה. הפתרון הנקי ביותר שמכניס `ffmpeg` עובד ל-PATH הוא ה-tap של homebrew-ffmpeg, שמפעיל libass (עם FriBidi ו-HarfBuzz) כברירת מחדל: `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg` (אל תוסיפו `--with-libass`, האופציה הזו כבר לא קיימת ב-Homebrew ותיכשל; אם ffmpeg של core כבר מותקן, הריצו קודם `brew unlink ffmpeg` כדי שבניית ה-tap תקושר). נוסחת `ffmpeg-full` של homebrew-core גם כוללת libass ו-HarfBuzz, אבל היא **keg-only** (Homebrew לא מקשר אותה ל-PATH), אז אחרי `brew install ffmpeg-full` הפקודה הסתמית `ffmpeg` עדיין מצביעה על הבנייה בלי libass, וצריך לקרוא לה בנתיב מלא, למשל `"$(brew --prefix ffmpeg-full)/bin/ffmpeg"`, או להוסיף את תיקיית ה-`bin` הזו ל-PATH. ב-Debian/Ubuntu החבילה הרשמית כוללת את שלוש התלויות מאז 22.04. לאחר ההתקנה תמיד אמתו עם `ffmpeg -version | grep -E 'libass|fribidi|harfbuzz'` (שלושת השמות מופיעים בשורת תצורת הבנייה).
 
-לשדה `FontName`, השתמשו בפונט שתומך בעברית ושפונטקונפיג יכול לפתור. **Heebo**, **Rubik**, **Assistant** ו-**Open Sans Hebrew** הן אופציות של Google Fonts שמכסות עברית + לטינית במלואן. התקינו את הפונט במערכת לפני הרצת FFmpeg, אחרת fontconfig חוזר לברירת מחדל שאולי לא מכילה glyphs של עברית.
+לשדה `FontName`, השתמשו בפונט שתומך בעברית ושפונטקונפיג יכול לפתור. **Heebo**, **Rubik**, **Assistant** ו-**Open Sans Hebrew** הן אופציות של Google Fonts שמכסות עברית + לטינית במלואן. התקינו את הפונט במערכת לפני הרצת FFmpeg, אחרת fontconfig חוזר לברירת מחדל שאולי לא מכילה glyphs של עברית. לשמות משפחה מרובי-מילים כמו `Open Sans Hebrew`, הערך של `FontName=` חייב להתאים בדיוק למחרוזת המשפחה של fontconfig, בדקו עם `fc-list | grep -i hebrew` קודם, אחרת libass נסוג בשקט לפונט שאינו עברי ומרנדר ריבועים.
 
 #### שלב ב4: הפקת כיתובים לרשתות
 
@@ -343,8 +343,11 @@ episode-12/
 **"הדבקת FFmpeg מייצרת טקסט עברי הפוך."**
 libass בלי תמיכה ב-FriBidi. תבנו מחדש את FFmpeg עם `--enable-libass --enable-libfribidi --enable-libharfbuzz`, או התקינו את החבילה של Homebrew / Debian שכבר מגיעה עם שלושתם.
 
+**"הדבקת העברית עדיין מבולגנת למרות ש-`ffmpeg -version` מראה fribidi."**
+ב-macOS, libass עם SRT עדיין יכול לסדר לא נכון שורות מעורבות של עברית/לטינית/ספרות גם כש-FriBidi מקומפל פנימה. עצבו מראש כל כתובית עם `python-bidi` (החילו `bidi.algorithm.get_display` על טקסט הכתובית לפני ההדבקה), או המירו את ה-SRT ל-`.ass` עם הרצף מסודר מראש. הסקיל `video-use-best-practices` מתעד את המתכון המלא של python-bidi לכשל הזה ב-macOS.
+
 **"התווים העבריים מופיעים כריבועים בכתוביות המודבקות."**
-פונטקונפיג לא מוצא פונט עם glyphs של עברית. התקינו פונט עברי במערכת: `brew install font-heebo` ב-macOS, או תורידו את Heebo/Rubik מ-Google Fonts ותעתיקו ל-`~/.fonts/` ב-Linux, ואז תריצו `fc-cache -fv`.
+פונטקונפיג לא מוצא פונט עם glyphs של עברית. התקינו פונט עברי במערכת: `brew install --cask font-heebo` ב-macOS, או תורידו את Heebo/Rubik מ-Google Fonts ותעתיקו ל-`~/.fonts/` ב-Linux, ואז תריצו `fc-cache -fv`.
 
 **"קובץ ה-Chapters JSON עובר ולידציה אבל ב-Apple Podcasts אין פרקים."**
 התגית `<podcast:chapters>` צריכה להיות בתוך כל `<item>` (פרק) ב-RSS feed, לא ברמת הערוץ. שדה ה-`url` חייב להיות נגיש פומבית ב-HTTPS. Apple צריך עד 24 שעות כדי לקלוט מחדש RSS שעבר שינוי.

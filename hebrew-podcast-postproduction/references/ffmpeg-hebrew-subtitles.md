@@ -21,8 +21,8 @@ If any of these three is missing, reinstall FFmpeg from a source that includes t
 | Platform | Command | Notes |
 |----------|---------|-------|
 | macOS (default brew) | `brew install ffmpeg` | Does NOT include libass/FriBidi/HarfBuzz as of 2026; burn-in will fail. Use one of the rows below instead. |
-| macOS (recommended) | `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-libass` | Includes libass with FriBidi + HarfBuzz |
-| macOS (alternative) | `brew install ffmpeg-full` (community tap) | Same effect, more dependencies |
+| macOS (recommended) | `brew tap homebrew-ffmpeg/ffmpeg && brew install homebrew-ffmpeg/ffmpeg/ffmpeg` | Links `ffmpeg` on PATH with libass + FriBidi + HarfBuzz. Do NOT append `--with-libass` (removed, errors out). If core ffmpeg is installed, `brew unlink ffmpeg` first |
+| macOS (alternative) | `brew install ffmpeg-full` | homebrew-core, bundles libass + HarfBuzz, but KEG-ONLY: bare `ffmpeg` still points at the non-libass build. Call `"$(brew --prefix ffmpeg-full)/bin/ffmpeg"` or add that bin dir to PATH |
 | Ubuntu 22.04+ | `apt install ffmpeg` (as root) | Main package ships all three |
 | Debian 12+ | `apt install ffmpeg` (as root) | Main package ships all three |
 | Windows | Download from `ffmpeg.org` builds | Use the full-feature build, not minimal |
@@ -89,7 +89,7 @@ fc-list | grep -i heebo
 FriBidi missing from libass. Reinstall FFmpeg with a build that includes `--enable-libfribidi`.
 
 **Hebrew characters render as empty boxes.**
-Fontconfig cannot find a font with Hebrew glyphs. Install a Hebrew-capable font, run `fc-cache -fv`, and reference it by exact name in `force_style`.
+Fontconfig cannot find a font with Hebrew glyphs. Install a Hebrew-capable font, run `fc-cache -fv`, and reference it by exact name in `force_style`. For multi-word family names like `Open Sans Hebrew`, the `FontName=` value must match the exact fontconfig family string, confirm it with `fc-list | grep -i hebrew` first, otherwise libass silently falls back to a non-Hebrew face and renders boxes.
 
 **Punctuation appears on the wrong side of the line.**
 Actually, this is usually correct. Hebrew bidi rules place LTR punctuation after (visually: to the left of) the last Hebrew character in a line. If it looks wrong to you, it is probably right to a Hebrew reader - verify with a native speaker before trying to "fix" it.
