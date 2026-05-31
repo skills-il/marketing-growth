@@ -28,7 +28,7 @@ If the user is deploying to Google Forms, confirm the `gws` CLI is installed and
 gws forms --help
 ```
 
-If the command is not found, tell the user to install the Google Workspace CLI from `github.com/googleworkspace/cli` and authenticate it. Do not attempt to fabricate a response. Do not use a different CLI. If the user does not want to install `gws`, offer to generate the templates in Markdown and point them to `references/export-to-other-platforms.md` instead.
+If the command is not found, tell the user to install the Google Workspace CLI from `github.com/googleworkspace/cli` (a pre-built binary, or via a package manager such as npm, Homebrew, or cargo, see the repo's install section for the current commands) and authenticate it. Do not attempt to fabricate a response. Do not use a different CLI. If the user does not want to install `gws`, offer to generate the templates in Markdown and point them to `references/export-to-other-platforms.md` instead.
 
 ### Step 1: Pick the survey template
 
@@ -158,6 +158,15 @@ gws schema forms.forms.setPublishSettings
 
 to see the exact `publishSettings` shape, then call `gws forms setPublishSettings` with the right flags. The Google Forms API notes that legacy forms do not support `publish_settings`, newly created API forms do.
 
+**Consent and privacy.** Keep NPS, CSAT, and CES responses anonymous by default, it both protects respondents and lifts response rates. Israel's Privacy Protection Law Amendment 13 (in force since August 2025) requires explicit, specific consent whenever a response can be tied to a person, so before you share the form, check whether it is *actually* anonymous, not just anonymous-looking:
+
+- **A form with no identifying field can still be identifiable.** Emailing a personalized survey link to a customer list, or pre-filling a respondent token, re-identifies every answer even if the form asks for no name or email. Treat that flow as identifiable: tell recipients what you collect and why, give an opt-out, and don't reuse the list beyond this survey.
+- **Turn off "Collect email addresses" for anonymous external surveys.** Inside a Google Workspace domain, Google Forms can auto-capture the respondent's account email, which silently breaks an "anonymous" promise. Disable it unless you actually need identity.
+- **Watch small samples.** A segment question (עצמאי / שכיר / בעל עסק) plus a free-text comment on a small list (a meetup, a niche B2B audience) re-identifies people. Don't cross-tab or report segments with only a handful of responses.
+- **If you do need identity** (e.g. a follow-up-contact NPS), add a leading required consent item ("אני מאשר/ת שאפשר ליצור איתי קשר בעקבות התשובות") *before* any identifying field, and never pre-tick it.
+
+For a genuinely anonymous survey, a one-line intro ("התשובות אנונימיות" / "Responses are anonymous") is enough. For the identifiable flows above, give the fuller notice (what you collect, why, and an opt-out) rather than a single line. For forms that gather sensitive or government data, defer to `israeli-gov-form-automator`.
+
 ## Recommended MCP Servers
 
 | MCP | When to pair |
@@ -223,7 +232,7 @@ Actions:
 
 ### Error: `gws: command not found`
 Cause: Google Workspace CLI is not installed on PATH.
-Solution: Install from https://github.com/googleworkspace/cli (download the pre-built binary for your OS), then re-authenticate. Do not attempt to substitute another CLI or `curl` the REST API directly unless the user explicitly asks.
+Solution: Install from https://github.com/googleworkspace/cli (download the pre-built binary for your OS, or use a package manager such as npm, Homebrew, or cargo, see the repo's install section), then re-authenticate. Do not attempt to substitute another CLI or `curl` the REST API directly unless the user explicitly asks.
 
 ### Error: `INVALID_ARGUMENT` on `gws forms create` when passing items
 Cause: `create` rejects everything except `info.title` and `info.documentTitle`.
