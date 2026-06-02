@@ -1,0 +1,56 @@
+{
+  "author": "skills-il",
+  "version": "1.0.0",
+  "category": "marketing-growth",
+  "volatility": "annual",
+  "domain_checklist_version": 1,
+  "authoritative_sources": [
+    { "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2025/422/01_25_422b.pdf", "type": "statistics", "language": "he" },
+    { "url": "https://www.idi.org.il/haredi/2025/?chapter=62168", "type": "research", "language": "he" },
+    { "url": "https://taxsummaries.pwc.com/israel/corporate/other-taxes", "type": "reference", "language": "en" },
+    { "url": "https://www.gov.il/he/pages/13_amendment", "type": "regulator", "language": "he" }
+  ],
+  "tags": {
+    "he": [
+      "חקר-שוק",
+      "התאמת-מוצר",
+      "אווטאר-קונה",
+      "כניסה-לשוק",
+      "פילוח-שוק",
+      "כדאיות",
+      "ישראל"
+    ],
+    "en": [
+      "market-research",
+      "product-market-fit",
+      "buyer-persona",
+      "market-entry",
+      "segmentation",
+      "go-to-market",
+      "israel"
+    ]
+  },
+  "display_name": {
+    "he": "מנתח התאמת מוצר לשוק הישראלי",
+    "en": "Israeli Market Fit Analyzer"
+  },
+  "display_description": {
+    "he": "עוזר לבדוק אם מוצר או שירות מתאים לשוק הישראלי, עוד לפני שבונים, משיקים או מתרגמים אותו. מתאים כשיזם או משווק שואל 'האם זה יעבוד בישראל', 'מי הקונה הישראלי', רוצה אווטאר קונה, חקר שוק, הערכת פוטנציאל או החלטה אם להיכנס לשוק (go / pivot / no-go). הסקיל מפיק דוח מסודר: גודל השוק לפי פלחים (חילוני, חרדי, ערבי, עולים חדשים, פריפריה), כרטיסי אווטאר לכל פלח, זוויות שיווק מקומיות, ופסיקה לגבי כדאיות שמשווה בין השוק העולמי למציאות הישראלית (עברית וכיווניות, תמחור בשקלים, הרגלי תשלום, רגולציה ועונתיות החגים). למה זה חשוב: ישראל היא שוק קטן ומפולח, ותוכנית גלובלית כמו שהיא בדרך כלל מבזבזת תקציב. לא מיועד לכתיבת השאלון עצמו (hebrew-survey-builder), להרצת קמפיינים (israeli-paid-ads), לתוכן SEO (israeli-content-marketing) או ליחסי ציבור להשקה (israeli-product-launch).",
+    "en": "Assess whether a product or service fits the Israeli market before you build, launch, or localize it. Use when a founder or marketer asks 'will this work in Israel', 'who is the Israeli buyer', wants buyer personas or avatars for Israel, market sizing, product-market-fit, or a go / pivot / no-go decision, or asks in Hebrew about התאמת מוצר לשוק הישראלי, חקר שוק, or אווטאר קונה. Produces a structured market-fit report: segment sizing (secular, Haredi, Arab-Israeli, olim, periphery), buyer-avatar cards, localized positioning angles, and a viability verdict that contrasts the global market with Israeli reality (Hebrew and RTL, shekel pricing, payment habits, regulatory gates, holiday seasonality). Why it matters: Israel is a small, segmented market where a global thesis usually needs to change, and shipping an unchanged global plan wastes budget. Do NOT use for writing the survey itself (hebrew-survey-builder), running paid ads (israeli-paid-ads), SEO content (israeli-content-marketing), or launch PR (israeli-product-launch)."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "openclaw",
+    "antigravity",
+    "gemini-cli",
+    "chatgpt",
+    "claude-ai",
+    "claude-desktop",
+    "manus"
+  ]
+}

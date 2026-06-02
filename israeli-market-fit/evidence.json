@@ -1,0 +1,169 @@
+{
+  "skill_slug": "israeli-market-fit",
+  "schemaVersion": "1.0",
+  "generated_at": "2026-06-02",
+  "claims": [
+    {
+      "id": "population-end-2025",
+      "claim": "Israel's population was estimated at about 10.178 million residents at the end of December 2025 (eve of 2026), per CBS.",
+      "claim_type": "threshold",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2025/422/01_25_422b.pdf",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "ב-31 בדצמבר 2025 אוכלוסיית ישראל נאמדת בכ-10.178 מיליון תושבים.",
+      "confidence": "high"
+    },
+    {
+      "id": "population-split",
+      "claim": "On the eve of 2026, 7.771 million are Jews and others (76.3%) and 2.147 million are Arabs (21.1%), with 0.260 million foreigners (2.6%).",
+      "claim_type": "percentage",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2025/422/01_25_422b.pdf",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "7.771 מיליון הם יהודים ואחרים (76.3% מכלל האוכלוסייה), 2.147 מיליון - ערבים (21.1%) ו-0.260 מיליון - זרים (2.6%).",
+      "confidence": "high"
+    },
+    {
+      "id": "population-growth",
+      "claim": "Israel's population grew about 1.1% during 2025, per CBS.",
+      "claim_type": "percentage",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2025/422/01_25_422b.pdf",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "במהלך שנת 2025 גדלה אוכלוסיית ישראל ב-1.1%.",
+      "confidence": "high"
+    },
+    {
+      "id": "haredi-share",
+      "claim": "The Haredi (ultra-Orthodox) population in Israel numbered 1,452,350 at the end of 2025, 14.3% of the total population, per the Israel Democracy Institute Haredi Yearbook 2025.",
+      "claim_type": "percentage",
+      "source_url": "https://www.idi.org.il/haredi/2025/?chapter=62168",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "בסוף שנת 2025 האוכלוסייה החרדית בישראל מונה 1,452,350 נפש ... בשנת 2025 שיעורה של האוכלוסייה החרדית בישראל הוא 14.3% מכלל האוכלוסייה.",
+      "confidence": "high"
+    },
+    {
+      "id": "haredi-age",
+      "claim": "The Haredi population is much younger than the general Jewish population: 57% are aged 0-19 (vs 31%) and the median age is 16 (vs 36).",
+      "claim_type": "percentage",
+      "source_url": "https://www.idi.org.il/haredi/2025/?chapter=62168",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "שיעור הצעירים בגילים 19-0 באוכלוסייה החרדית הוא 57%, לעומת 31% באוכלוסייה היהודית הכללית, והגיל החציוני בה הוא 16, לעומת 36 באוכלוסייה היהודית הכללית.",
+      "confidence": "high"
+    },
+    {
+      "id": "vat-18",
+      "claim": "Israel's standard VAT rate is 18% (the 2025 increase from 17% to 18% remains in effect in 2026).",
+      "claim_type": "percentage",
+      "source_url": "https://taxsummaries.pwc.com/israel/corporate/other-taxes",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "The 2025 current rate of VAT is 18%.",
+      "confidence": "high"
+    },
+    {
+      "id": "vat-19-cancelled",
+      "claim": "A Ministry of Finance proposal to raise Israel's standard VAT rate to 19% from 1 January 2026 was opposed and did not take effect; the rate remained at 18%.",
+      "claim_type": "percentage",
+      "source_url": "https://www.vatcalc.com/vat/israel-vat-rise-to-19-jan-2026-proposal/",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "Israel avoids VAT rise to 19% Jan 2026 proposal",
+      "confidence": "medium"
+    },
+    {
+      "id": "bit-users",
+      "claim": "Bit is the largest payment app in Israel, with roughly 3 million users, developed by Bank Hapoalim.",
+      "claim_type": "company",
+      "source_url": "https://en.globes.co.il/en/article-hapoalim-reveals-bit-app-charges-from-january-1001494038",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "the fee is not relevant to 90% of the 3 million people who use the payment app",
+      "confidence": "high"
+    },
+    {
+      "id": "paybox-users",
+      "claim": "paybox is the rival payment app to Bit, launched by Israel Discount Bank, with about 1.4 million customers.",
+      "claim_type": "company",
+      "source_url": "https://en.globes.co.il/en/article-payment-apps-bit-and-paybox-to-charge-fees-from-january-1001483104",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "Israel Discount Bank ... Paybox has 1.4 million customers but only 10% of the amount of transfers.",
+      "confidence": "medium"
+    },
+    {
+      "id": "yad2",
+      "claim": "Yad2 is the dominant Israeli horizontal classifieds marketplace covering second-hand goods, cars, real estate, jobs and professionals.",
+      "claim_type": "company",
+      "source_url": "https://en.wikipedia.org/wiki/Yad2",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "Yad2 (Hebrew: יד2, 'hand two') is an Israeli website that publishes ads for buying and selling second-hand products (such as electrical goods, furniture, or free things), as well as a car, real estate, pets, job portal, and professionals.",
+      "confidence": "high"
+    },
+    {
+      "id": "official-standard",
+      "claim": "An Israeli standard set by the SII is voluntary, but the Minister of Economy and Industry may declare a standard (in whole or part) an official standard (תקן רשמי), making compliance mandatory.",
+      "claim_type": "law",
+      "source_url": "https://www.sii.org.il/he/israelistandards/",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "שר הכלכלה והתעשייה רשאי, לאחר התייעצות עם נציגי היצרנים והצרכנים, להכריז על תקן מסוים, כולו או חלקו, כ'תקן רשמי'",
+      "confidence": "high"
+    },
+    {
+      "id": "hebrew-labeling",
+      "claim": "Every consumer-product package in Israel must include clear labeling in Hebrew, even if the product is imported (per the Consumer Protection (Goods Labeling) Order, 1983).",
+      "claim_type": "law",
+      "source_url": "https://weksler-davidovich.co.il/consumer-protection-labeling/",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "על פי הצו, כל אריזת מוצר חייבת לכלול סימון ברור בעברית, אף אם מדובר במוצר שמקורו בייבוא.",
+      "confidence": "high"
+    },
+    {
+      "id": "amendment-13-date",
+      "claim": "Amendment 13 to Israel's Privacy Protection Law entered into force on 14 August 2025.",
+      "claim_type": "date",
+      "source_url": "https://www.gov.il/he/pages/13_amendment",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "תיקון 13 לחוק הגנת הפרטיות נכנס לתוקף ב־14 באוגוסט 2025.",
+      "confidence": "high"
+    },
+    {
+      "id": "antispam-consent",
+      "claim": "Israel's anti-spam law forbids sending advertising by fax, automated dialing, email or SMS without the recipient's prior explicit written consent.",
+      "claim_type": "law",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "לא ישלח מפרסם דבר פרסומת באמצעות פקסימיליה, מערכת חיוג אוטומטי, הודעה אלקטרונית או הודעת מסר קצר, בלא קבלת הסכמה מפורשת מראש בכתב מהנמען.",
+      "confidence": "high"
+    },
+    {
+      "id": "antispam-damages",
+      "claim": "Under Israel's anti-spam law, a court may award the recipient of unlawful spam statutory damages of up to 1,000 NIS per message without proof of damage.",
+      "claim_type": "currency",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "פיצוי של עד 1,000 שקלים ללא הוכחת נזק",
+      "confidence": "high"
+    },
+    {
+      "id": "consumer-protection-deception",
+      "claim": "Israel's Consumer Protection Law (1981) prohibits a dealer from deceiving consumers, by act or omission, on any material matter in a transaction.",
+      "claim_type": "law",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "חל איסור על עוסק להטעות צרכנים במעשה או במחדל בכל עניין מהותי בעסקה.",
+      "confidence": "high"
+    },
+    {
+      "id": "consumer-protection-price",
+      "claim": "Displaying a non-final price or omitting mandatory components from the displayed price constitutes price deception under the Consumer Protection Law.",
+      "claim_type": "law",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "הצגת מחיר שאינו סופי או אי-הכללת רכיבים חובה במחיר המוצג מהווים הטעיה בנוגע למחיר.",
+      "confidence": "high"
+    },
+    {
+      "id": "average-wage-2026",
+      "claim": "Effective January 2026, the average wage in Israel under s.1 of the National Insurance Law is 13,566 NIS (s.2: 13,769 NIS).",
+      "claim_type": "currency",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%A9%D7%9B%D7%A8_%D7%94%D7%9E%D7%9E%D7%95%D7%A6%D7%A2",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "נכון לינואר 2026 השכר הממוצע לפי סעיף 1 הוא 13,566 ₪ ... נכון לינואר 2026 השכר הממוצע לפי סעיף 2 הוא 13,769 ₪",
+      "confidence": "high"
+    }
+  ]
+}
