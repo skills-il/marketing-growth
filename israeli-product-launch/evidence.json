@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-product-launch",
+  "generated_at": "2026-06-23T11:30:00Z",
+  "claims": [
+    {
+      "claim_id": "techstars-tel-aviv-closed",
+      "claim": "Techstars no longer runs a Tel Aviv accelerator program. After its 2024 cohort, Techstars ('Techstars 2.0') consolidated onto high-VC-density US cities; Tel Aviv is absent from all 2025/2026 Techstars program lists (including Spring 2026). It also never ran 'quarterly' cohorts.",
+      "source_url": "https://www.techstars.com/blog/program-news/applications-are-now-open-for-techstars-spring-2026-accelerator-programs",
+      "raw_snippet": "Techstars Spring 2026 accelerator programs cover a consolidated set of US-centric cities plus Anywhere; Tel Aviv is not among Techstars' 2025-2026 programs.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "active-israeli-accelerators-2026",
+      "claim": "Active Israeli accelerators / startup programs in 2026: 8200 EISP (8200 for Startups, nonprofit accelerator, Feb-Jul cohort with a large annual Demo Day, 14+ cohorts); MassChallenge Israel (zero-equity, Jerusalem, annual cohort + showcases); TheHive by Gvahim (accelerator for olim/immigrant founders, Tel Aviv and Ashdod); Google for Startups (Campus Tel Aviv) and Microsoft for Startups (Israel).",
+      "source_url": "https://eisp.8200.org.il/program",
+      "raw_snippet": "8200 EISP runs a Feb-Jul accelerator cohort ending in a large annual Demo Day; MassChallenge Israel is an active zero-equity accelerator in Jerusalem; TheHive by Gvahim accelerates immigrant founders.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "startup-nation-central-restructure-finder",
+      "claim": "Startup Nation Central restructured in early 2026 (laid off roughly 65 of ~80 staff, refocused on fewer high-impact initiatives), downsizing its live-event footprint. Startup Nation Finder remains its durable canonical database of Israeli investors, programs, and events.",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/skszcohdwg",
+      "raw_snippet": "Startup Nation Central announced (Feb 2026) it laid off about 65 of its ~80 employees and refocused on a smaller set of initiatives; Startup Nation Finder remains its core database product.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "geektime-english-defunct-ctech",
+      "claim": "Geektime's standalone English edition (geektime.com) is defunct/inactive; the Hebrew geektime.co.il remains a leading Israeli tech outlet. CTech (calcalistech.com) is the dominant English-language Israeli tech outlet, so English pitches route to CTech.",
+      "source_url": "https://www.similarweb.com/website/geektime.co.il/",
+      "raw_snippet": "geektime.com (English) is inactive/under construction; geektime.co.il (Hebrew) is a top Israeli tech site; CTech (calcalistech.com) is the established English-language Israeli tech outlet.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/tech-media.md"]
+    },
+    {
+      "claim_id": "product-hunt-mechanics",
+      "claim": "Product Hunt launches go live at 12:01 AM PT (00:01 PT) and run a single ~24-hour daily ranking window (Product of the Day / Week structure), so an Israeli launch day spans parts of two Israel-time calendar days. Unchanged in 2026.",
+      "source_url": "https://smollaunch.com/guides/launching-on-product-hunt",
+      "raw_snippet": "Product Hunt launches start at 12:01 AM PT and run until 11:59 PM PT; the daily Product of the Day ranking and weekly structure remain in 2026.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "8200-alumni-idf-signals",
+      "claim": "The 8200 alumni network numbers in the tens of thousands (10,000+ is a conservative figure; EISP cites ~14,000 alumni worldwide). Unit 8200, Unit 81, and Mamram are elite IDF tech units used as founder-quality signals.",
+      "source_url": "https://www.8200.org.il/english",
+      "raw_snippet": "The 8200 Alumni Association numbers in the tens of thousands; Unit 8200, Unit 81 and Mamram are recognized elite IDF technology units.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "israeli-tech-media-outlets",
+      "claim": "Israeli tech/business outlets operating in 2026 (verified): Geektime (Hebrew, tech/startups), Calcalist Tech (Hebrew business+tech) with CTech as its English edition, Globes (Hebrew financial/enterprise), The Marker, No Camels.",
+      "source_url": "https://www.calcalistech.com",
+      "raw_snippet": "Geektime, Calcalist/Calcalist Tech, CTech, Globes, The Marker, and No Camels are active Israeli tech/business outlets in 2026.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/tech-media.md"]
+    },
+    {
+      "claim_id": "illustrative-community-sizes-and-pricing",
+      "claim": "Non-regulatory illustrative figures (the skill's own approximate community sizes and pricing guidance, not external facts): Israeli founder/alumni community sizes such as 8200 Alumni 10,000+, Mamram 5,000+, Talpiot 1,000+, Israeli Tech Startups 50,000+, Tech Careers Israel 100,000+, Israel Product Managers 15,000+, DevOps Israel 3,000+, Frontend Israel 5,000+. The skill advises showing budget and pricing amounts in both USD and NIS (Convert USD to NIS, add Israeli market context), e.g. local pricing in NIS, 3 to NIS 6 figures vary. Unit *8200 / **8200** appears in bold as a unit name.",
+      "source_url": "https://www.8200.org.il/english",
+      "raw_snippet": "Israeli tech communities range from ~1,000+ to 100,000+ members; pitch budgets should show both USD and NIS; *8200 and **8200** denote the elite IDF unit. NIS 3 to NIS 6 figures are illustrative.",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "reference-doc-urls",
+      "claim": "Official reference URLs in the skill.",
+      "source_url": "https://www.geektime.co.il",
+      "raw_snippet": "Reference URLs: https://www.geektime.co.il https://www.calcalist.co.il https://www.calcalistech.com https://www.globes.co.il https://www.themarker.com https://www.startupnationcentral.org https://innovationisrael.org.il https://innovationisrael.org.il/en",
+      "fetched_at": "2026-06-23T11:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}

@@ -30,6 +30,7 @@ Guidelines:
 3. Israeli work week starts Sunday (yom rishon) -- launch Sunday or Monday
 4. Avoid Friday afternoon (erev Shabbat) for any announcements
 5. Post-Rosh Hashana (November) is the prime Israeli launch window
+6. **Check the security calendar, not just the religious one.** Since late 2023, large-scale reserve-duty (miluim) call-ups and security escalations have rivaled the holiday calendar as a launch-timing risk: they pull founders, engineers, and journalists away for weeks, and Home Front Command (Pikud HaOref) restrictions can cancel in-person demo days and meetups overnight. Before locking a date, check for an active large-scale call-up or escalation, and keep a contingency to shift to a digital-only launch or postpone in-person events. The Hebrew calendar (hebcal) does not cover this.
 
 ### Step 2: Map Israeli Tech Media Landscape
 Identify target publications and their pitch preferences:
@@ -50,17 +51,20 @@ Pitch guidelines:
 2. Lead with the Israeli angle: founders, R&D center, local impact
 3. Funding announcements get highest coverage priority
 4. Exclusive stories get better placement than mass press releases
-5. Consult `references/tech-media.md` for detailed pitch templates and timing
+5. **Outreach is relationship-driven, not form-driven.** A warm intro or a direct WhatsApp/email to a specific named reporter lands far better than a website contact form, which mostly goes unanswered. Build (or borrow, via an agency, see Step 9) a personal contact at the target desk in advance, that relationship is the real channel.
+6. Consult `references/tech-media.md` for detailed pitch templates and timing
 
 ### Step 3: Prepare Israeli VC Demo Day Materials
 Israeli VC demo days follow specific conventions:
 
-Demo day calendar (recurring events):
-- **Techstars Tel Aviv** -- Quarterly cohort demos
-- **8200 EISP** -- Annual accelerator demo day
-- **MassChallenge Israel** -- Semi-annual showcase
-- **TheHive by Gvahim** -- Immigrant founder demos
-- **Startup Nation Central events** -- Various throughout the year
+Demo day calendar (confirm each program is still running for the current year, the Israeli accelerator landscape shifts):
+- **8200 EISP (8200 for Startups)** -- Active nonprofit accelerator, Feb-Jul cohort culminating in a large annual Demo Day. The strongest recurring anchor.
+- **MassChallenge Israel** -- Zero-equity accelerator (Jerusalem), annual core cohort plus corporate showcases and demo days.
+- **TheHive by Gvahim** -- Accelerator and demo days for olim and immigrant founders (Tel Aviv, Ashdod).
+- **Google for Startups (Campus Tel Aviv) and Microsoft for Startups (Israel)** -- Corporate startup programs with periodic cohorts and showcase events.
+- **Startup Nation Finder** -- Not an event, but the canonical database for finding active investors, programs, and demo days; especially useful since Startup Nation Central downsized its live-event arm in its 2026 restructuring.
+
+Note: Techstars no longer runs a Tel Aviv program (Techstars consolidated onto US VC hubs after its 2024 cohort), so do not pitch a "Techstars Tel Aviv" demo day.
 
 Pitch conventions for Israeli audiences:
 1. Keep pitches to 5-7 minutes (Israelis value directness -- "dugri")
