@@ -1,0 +1,18 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-23",
+      "lessons": [
+        "Most 2026 algorithm claims verified CORRECT: keyword-driven algorithm, hashtag following removed, 0-3 hashtags, saves as a top signal, dwell time, carousel/video over text, interest-graph shift, Hebrew no-space/no-underscore hashtag formatting, and the Israeli Sun-Thu timing logic.",
+        "Fixed STALE: the external-link 'first comment' workaround was presented as a clean reach-neutral fix; in 2026 it is partially patched and now carries its own (smaller) penalty. Reworded Step 5 + the links step in both languages to 'reduces, not eliminates; native content wins'.",
+        "Fixed STALE: the 'creator mode' reference (retired March 2024, creator tools now default) in both Reference-Links tables.",
+        "Added (Expert/research MAJOR): a Step 5.5 on AI-assisted drafting authenticity and disclosure (LinkedIn 2026 'Keeping conversations real' policy expects AI-assistance disclosure and attribution; AI-'slop'-flagged pages drop toward ~2% reach; human-AI hybrid outperforms pure AI). Essential because this skill IS an AI post-drafting tool.",
+        "Added the hashtag-following removal date (late 2024) for verifiability.",
+        "CRITICAL fixed (Expert): added a Golden Hour section (Step 5.6) covering the first ~60 minutes as an algorithmic test window, reply fast in 15-60 min, seed 2-3 genuine comments, do not bury with a same-day second post (~1/day ceiling), warm up by commenting on others before posting. This also folds in the two MINORs (posting cadence and pre-post engagement-warming).",
+        "Fixed the dead gromming external-links source_url (added '-penalty' suffix per the live page).",
+        "Deferred (MINOR): note that LinkedIn newsletters bypass the feed and deliver via subscriber notification; native-video specifics (30-90s clips, native upload not external video links). Also populate the empty `avoid` enriched field (done in Phase 9)."
+      ]
+    }
+  ]
+}

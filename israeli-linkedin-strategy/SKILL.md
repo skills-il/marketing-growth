@@ -61,7 +61,7 @@ Build a hashtag strategy that works for the Israeli ecosystem:
 | Community | #קהילהטכנולוגית #ישראל | #IsraeliTech #TechCommunity |
 
 Hashtag guidelines (updated for the 2026 algorithm):
-1. **Use 0-3 hashtags per post, not more.** As of 2026 LinkedIn's algorithm is keyword-driven, not hashtag-driven, and it removed hashtag following entirely. Hashtags no longer boost reach; posts with no hashtags often perform slightly better than posts stuffed with them, and posts with 6+ hashtags tend to see lower engagement.
+1. **Use 0-3 hashtags per post, not more.** As of 2026 LinkedIn's algorithm is keyword-driven, not hashtag-driven, and it removed hashtag following entirely (phased out through late 2024). Hashtags no longer boost reach; posts with no hashtags often perform slightly better than posts stuffed with them, and posts with 6+ hashtags tend to see lower engagement.
 2. Use hashtags only for topical grouping and search discoverability, not as a reach lever. The text of the post itself (keywords, dwell time, comments) drives distribution.
 3. If you do use hashtags, the Hebrew-hashtag formatting rule still applies: no spaces and no underscores, for example #סטארטאפישראלי not #סטארטאפ_ישראלי.
 4. A single broad English hashtag can still help an international reader find the post via search; that is the main remaining reason to add one.
@@ -94,7 +94,7 @@ Israeli LinkedIn posts follow engagement patterns. Note the 2026 algorithm shift
 2026 algorithm and format reality:
 - LinkedIn now leans on the **Interest Graph over the Relationship Graph** -- it surfaces a post to people interested in the topic, not just to your connections. Topic consistency matters more than network size.
 - **Document/PDF carousels and native video far outperform plain text posts** for reach. A military-to-tech career story works better as a short native video or a carousel than as a wall of text.
-- **External links cost reach.** LinkedIn deprioritizes posts that send users off-platform; put the link in the first comment, not the post body.
+- **External links cost reach** (roughly half the reach of a native post in 2026). Prefer native content. Putting the link in the first comment instead of the body REDUCES the penalty but no longer removes it, since LinkedIn now also dampens first-comment links, treat it as mitigation, not a free pass.
 - **"Saves" are the top engagement signal,** ahead of likes. Write posts worth saving: frameworks, checklists, "how I did X" breakdowns relevant to Israeli founders and operators.
 - **Dwell time matters.** A longer, genuinely useful post that holds the reader beats a short one that gets a quick like.
 
@@ -105,7 +105,7 @@ Post anatomy for Israeli reach:
 4. **Format choice:** Prefer a carousel or native video over plain text when the content allows it.
 5. **Hashtags:** 0-3 max, for topical grouping only (see Step 3).
 6. **Language note:** If bilingual, add "English below" or "עברית למטה".
-7. **Links:** If you must link out, put the link in the first comment, not the post.
+7. **Links:** If you must link out, put the link in the first comment rather than the post body. In 2026 this only reduces the link penalty (it is partially patched), it does not remove it, so native content still wins.
 
 Formatting tips:
 1. Use line breaks generously (Israeli LinkedIn favors scannable content)
@@ -113,6 +113,19 @@ Formatting tips:
 3. Tag relevant Israeli tech figures or companies only when genuinely relevant -- irrelevant tagging is penalized
 4. Ask questions to encourage comments -- Israeli audiences are highly interactive, and comments drive distribution
 5. Posts about failures and lessons learned perform exceptionally well in Israeli culture
+
+### Step 5.5: AI-Assisted Drafting, Authenticity, and Disclosure (2026)
+This skill drafts posts with an AI agent, so respect LinkedIn's 2026 authenticity expectations or the post will be suppressed:
+1. **Write in a real human dugri voice.** LinkedIn demotes formulaic "AI slop" (generic openers, listicle filler, "in today's fast-paced world" boilerplate). Pages flagged as AI-generated have seen organic reach collapse toward 2%, while human-AI hybrid posts outperform pure-AI ones. Use the agent to draft, then rewrite in your own voice with a specific Israeli anecdote (a real unit, exit, funding round, or reserve-duty story).
+2. **Disclose AI assistance** when AI materially generated or transformed the post, per LinkedIn's "Keeping conversations real" policy. A short line early in the post, or a note in the comments, is enough.
+3. **Attribute factual claims** (funding figures, market data, percentages) to a real source. Do not let the agent invent numbers, fabricated stats are exactly what the authenticity policy flags.
+
+### Step 5.6: Work the First Hour (Golden Hour)
+The first ~60 minutes after you publish are an algorithmic test window: LinkedIn shows the post to a small slice of your network and decides whether to amplify it based on early engagement. This is the most controllable reach lever, and it completes the timing advice in Step 2 (posting at 07:00-08:30 only pays off if you are then free 08:00-09:00 to work the post):
+1. **Be present and reply fast.** Answer every comment in the first 15-60 minutes, each reply is a fresh engagement event that extends distribution. Do not post and ghost.
+2. **Seed 2-3 genuine comments early.** Ask a colleague a real question or add a substantive follow-up of your own. Israeli audiences are highly interactive, the golden hour is where you capitalize on that.
+3. **Do not bury it.** Avoid publishing a second post within a few hours, a second post cannibalizes the first one's golden-hour reach. Roughly one post per day is the practical ceiling.
+4. **Warm it up.** Commenting on a few other relevant posts shortly before you publish can help your own distribution.
 
 ### Step 6: Build Israeli Professional Network
 Leverage Israeli networking culture on LinkedIn:
@@ -192,7 +205,7 @@ No MCP server applies to this skill. LinkedIn content strategy, bilingual post d
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| LinkedIn Help Center | https://www.linkedin.com/help/linkedin | Posting rules, algorithm guidance, creator mode |
+| LinkedIn Help Center | https://www.linkedin.com/help/linkedin | Posting rules, algorithm guidance, creator tools and newsletters, AI-content best practices |
 | LinkedIn Business Solutions | https://business.linkedin.com | Organic strategy, content best practices |
 | Geektime | https://www.geektime.co.il | Israeli tech news, trending topics for posts |
 | Calcalist | https://www.calcalist.co.il | Business news angles for LinkedIn content |
