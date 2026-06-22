@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-social-content",
+  "generated_at": "2026-06-23T13:00:00Z",
+  "claims": [
+    {
+      "claim_id": "israel-platform-audiences-2026",
+      "claim": "Israeli social audiences (DataReportal Digital 2026 ad reach): Facebook 5.05M (~53%), Instagram 5.00M (~52%), TikTok 4.49M of adults 18+ (~69%), LinkedIn 3.10M (~33%), YouTube ~7.01M (largest). Facebook and Instagram are roughly tied; YouTube is the largest single platform. The ~7.6M Facebook figure is NapoleonCat's all-ages count (different methodology). X/Twitter has fallen to ~0.88M (about -16% YoY); Threads is small but emerging (~0.35M).",
+      "source_url": "https://datareportal.com/reports/digital-2026-israel",
+      "raw_snippet": "DataReportal Digital 2026 Israel: Facebook ad reach 5.05M, Instagram 5.00M, TikTok 4.49M (18+), LinkedIn 3.10M, YouTube ~7.01M; X audience ~0.88M and shrinking; NapoleonCat reports Facebook all-ages ~7.6M.",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-social-platforms.md"]
+    },
+    {
+      "claim_id": "platform-ai-content-labeling-2026",
+      "claim": "In 2026 both Meta (Facebook/Instagram/Threads) and TikTok require disclosure of AI-generated/altered visuals and audio depicting realistic people or scenes, and automatically detect and label them via C2PA Content Credentials even without self-disclosure. Repeated non-disclosure can lead to demotion, ad rejection, or account restriction.",
+      "source_url": "https://influencermarketinghub.com/ai-disclosure-rules/",
+      "raw_snippet": "Meta and TikTok use C2PA Content Credentials to automatically detect and label AI-generated content in 2026; creators are expected to disclose AI-generated realistic media, and platforms apply 'AI Info' / 'Made with AI' labels.",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "caption-and-video-specs-2026",
+      "claim": "Format limits (2026): TikTok caption up to 4,000 characters (only ~80-150 shown before truncation); Instagram caption up to 2,200 characters with up to 30 hashtags (3-10 is the practical sweet spot); Reels and TikTok video 1080x1920 px, 9:16, MP4/H.264.",
+      "source_url": "https://www.outfy.com/blog/instagram-character-limit/",
+      "raw_snippet": "TikTok captions allow up to 4,000 characters; Instagram captions up to 2,200 characters and up to 30 hashtags; vertical video standard is 1080x1920 (9:16).",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-social-platforms.md"]
+    },
+    {
+      "claim_id": "instagram-tiktok-2026-signals",
+      "claim": "2026 algorithm signals: Instagram Reels lead reach but watch time and 'sends' (DM shares per reach) are the dominant ranking signals (likes downgraded), and carousels now edge out Reels on engagement rate. TikTok rewards retention over raw length (~21-34s for entertainment, 60-90s for informative/search content); Hebrew audio outperforms English for Israeli audiences.",
+      "source_url": "https://blog.hootsuite.com/instagram-algorithm/",
+      "raw_snippet": "In 2026 Instagram weights watch time and shares/sends above likes; Reels lead reach (~1.36x carousels) while carousels lead engagement rate; TikTok favors retention, with ~21-34s entertainment and 60-90s informative as sweet spots.",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "tiktok-us-jv-and-hebrew-audio",
+      "claim": "TikTok's US operations moved to a majority-American joint venture (Oracle, Silver Lake, MGX), closing January 2026; the skill flags this as a reason to re-verify TikTok policy claims and does not over-claim Israel impact. For Israeli audiences, Hebrew audio outperforms English.",
+      "source_url": "https://www.nbcnews.com/tech/tech-news/tiktok-will-automatically-label-ai-generated-content-rcna151446",
+      "raw_snippet": "TikTok's US ownership restructured into a majority-American joint venture closing in January 2026; TikTok continues to auto-label AI content via Content Credentials.",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "mobile-first-70",
+      "claim": "Over 70% of Israeli social traffic is mobile.",
+      "source_url": "https://datareportal.com/reports/digital-2026-israel",
+      "raw_snippet": "Israel is majority-mobile for social and web traffic (well over 70%).",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "external-link-reach-suppression",
+      "claim": "A clickable external link in the caption costs organic reach: Meta applies a roughly 15% reach reduction to Instagram caption links and Facebook suppresses external-link feed posts (recommending links in comments); TikTok keeps users on-platform. The phrase 'link in bio' in a caption does NOT hurt reach (Instagram head Adam Mosseri confirmed this is a myth); only the clickable in-caption URL is penalized.",
+      "source_url": "https://www.socialmediaexaminer.com/what-facebooks-new-link-rules-mean-for-your-2026-strategy/",
+      "raw_snippet": "Facebook suppresses external-link posts in the feed and recommends moving links to comments; Instagram caption links carry about a 15% reach reduction; Mosseri confirmed 'link in bio' as a caption phrase does not affect reach.",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "penetration-figures-and-content-mix",
+      "claim": "Reference penetration figures (DataReportal/ISOC-IL): Instagram +13.6% YoY growth; YouTube ~73% of population; Telegram ~71% usage rate (ISOC-IL); WhatsApp ~99% of population. The LinkedIn content-mix heuristic (industry insights 40%, company culture 30%, product 20%, hiring 10%) is conventional B2B guidance, not a measured benchmark.",
+      "source_url": "https://datareportal.com/reports/digital-2026-israel",
+      "raw_snippet": "Per DataReportal/ISOC-IL 2026: Instagram grew ~13.6% YoY; YouTube reaches ~73% of the population; Telegram ~71% usage; WhatsApp ~99%. A 40%/30%/20%/10% LinkedIn content mix is a common B2B rule of thumb.",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-social-platforms.md"]
+    },
+    {
+      "claim_id": "reference-doc-urls",
+      "claim": "Official reference URLs in the skill.",
+      "source_url": "https://datareportal.com/reports/digital-2026-israel",
+      "raw_snippet": "Reference URLs: https://datareportal.com/reports/digital-2026-israel https://www.facebook.com/business/help https://creators.instagram.com https://help.instagram.com https://ads.tiktok.com/business/en https://business.linkedin.com",
+      "fetched_at": "2026-06-23T12:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}

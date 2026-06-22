@@ -6,11 +6,13 @@ Sources: NapoleonCat (Jan 2026), DataReportal Digital 2025/2026 Israel, ISOC-IL 
 
 | Platform | Users (IL) | Primary Age | Penetration | Notes |
 |----------|-----------|-------------|-------------|-------|
-| Facebook | ~7.6M | 25-55 | ~80% of population | Groups are #1 discovery channel |
-| Instagram | ~5M | 18-35 | ~52% of population | Reels driving growth, +5.7% YoY |
-| TikTok | ~4.5M (18+) | 16-30 | ~69% of adults 18+ | Fastest growing, total users higher |
-| LinkedIn | ~3.1M | 25-55 | ~33% of population | Highest per-capita globally |
-| Twitter/X | ~1.5M | 25-45 | ~16% of population | Tech/politics niche |
+| Facebook | ~5.05M ad reach (~7.6M all-ages, NapoleonCat) | 25-55 | ~53% (ad reach) | Groups are #1 community channel; roughly tied with Instagram on scale |
+| Instagram | ~5M | 18-35 | ~52% of population | Reels driving growth, +13.6% YoY |
+| TikTok | ~4.49M (18+) | 16-30 | ~69% of adults 18+ | Fastest growing, total users higher |
+| LinkedIn | ~3.1M | 25-55 | ~33% of population | One of the highest per-capita globally |
+| YouTube | ~7M | All ages | ~73% of population | Largest single platform in Israel by reach |
+| Twitter/X | ~0.88M | 25-45 | ~9% of population | Tech/politics niche, shrinking (about -16% YoY) |
+| Threads | ~0.35M | 18-40 | small but emerging | Meta's text app, growing off Instagram |
 | Telegram | ~2M+ | 20-40 | ~71% usage rate (ISOC-IL) | Developer communities, news channels |
 | WhatsApp | ~9.4M | All ages | ~99% of population | Universal, not a marketing platform |
 

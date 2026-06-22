@@ -15,12 +15,12 @@ Choose platforms based on audience and goals. Israeli platform landscape (DataRe
 
 | Platform | Users (IL) | Primary Age | Best For |
 |----------|-----------|-------------|----------|
-| Facebook | ~7.6M | 25-55 | Community, groups, local discovery |
+| Facebook | ~5.05M ad reach (~7.6M all-ages, NapoleonCat) | 25-55 | Community, groups, local discovery |
 | Instagram | ~5M | 18-35 | Visual brands, Reels, lifestyle |
 | TikTok | ~4.49M (18+) | 16-30 | Viral reach, younger audiences |
 | LinkedIn | ~3.1M | 25-55 | B2B, tech, hiring |
 
-Methodology notes: Facebook and TikTok counts are 18+ ad-reach figures reported by the platforms' own ad tools, so under-18 users are not included and the true totals are higher. LinkedIn counts registered members, not monthly active users. Treat all four as directional, not exact. Re-verify against the current DataReportal Israel report before quoting a number to a client.
+Methodology notes: the Facebook, Instagram, and TikTok figures are DataReportal Digital 2026 ad-reach numbers (TikTok's is the 18+ figure), so some under-18 users are excluded and true totals are higher. The ~7.6M Facebook figure is NapoleonCat's all-ages count (a different methodology), shown for context. LinkedIn counts registered members, not monthly active users. For raw scale, YouTube is actually Israel's largest platform (~7M); Facebook (~5.05M) and Instagram (~5M) are roughly tied. Treat all as directional and re-verify against the current DataReportal Israel report before quoting a number to a client.
 
 Decision criteria:
 - B2C local business (restaurant, salon, shop) -> Facebook groups + Instagram
@@ -38,13 +38,22 @@ Write in spoken Hebrew (ivrit meduberet), not formal written Hebrew. Key rules:
 4. **Dugri tone wins.** Israeli audiences respond to direct, honest, personal content. Corporate-polished copy underperforms consistently.
 5. **Bilingual when relevant.** Tech and business terms stay in English (SaaS, ROI, B2B). Do not transliterate.
 
+### Step 2b: Disclose AI-Generated Content (2026)
+
+If you use AI to generate or substantially alter visuals or audio (images, video, voiceover), both Meta (Facebook/Instagram/Threads) and TikTok require disclosure in 2026, and both auto-detect and label realistic AI media via C2PA Content Credentials whether or not you self-disclose:
+
+1. **Toggle the platform's "AI-generated" / "Made with AI" label** when you publish AI visuals or audio, especially anything photorealistic.
+2. Expect an automatic "AI Info" label if your file carries C2PA provenance metadata (most AI image and video tools now embed it).
+3. Repeated non-disclosure of realistic AI content can get posts demoted, ads rejected, or the account restricted.
+4. Lightly stylized graphics, text overlays, and obvious illustrations generally do not need a label; realistic depictions of people, voices, or events do. Verify the current Meta and TikTok policies before a campaign.
+
 ### Step 3: Apply Platform-Specific Strategy
 
 **Facebook:** Groups are the primary channel. Post types that perform: personal stories, hot takes, advice requests, polls. Page-only strategies underperform. Identify and join relevant groups (city, professional, interest-based).
 
-**Instagram:** Reels dominate organic reach. Hebrew captions with line breaks. Carousel posts for educational content. Stories for daily engagement (polls, Q&A, behind-the-scenes). Use Hebrew text overlays on visuals.
+**Instagram:** Reels still lead organic reach, but in 2026 the dominant ranking signals are watch time and "sends" (DM shares per reach), with likes downgraded, so make content worth sending to a friend. Carousels now edge out Reels on engagement rate, use them for educational, save-worthy content. Hebrew captions with line breaks. Stories for daily engagement (polls, Q&A, behind-the-scenes). Use Hebrew text overlays on visuals.
 
-**TikTok:** Hebrew audio performs significantly better than English audio for Israeli audiences. Ideal length: 15-60 seconds. Trends move fast, localize global trends with Israeli context. Duets and Stitches drive engagement.
+**TikTok:** Hebrew audio performs significantly better than English audio for Israeli audiences. The algorithm rewards retention, not raw length: roughly 21-34 seconds works for entertainment and 60-90 seconds for informative or search-driven content, so match length to intent rather than always cutting to 15-60 seconds. Trends move fast, localize global trends with Israeli context. Duets and Stitches drive engagement.
 
 **LinkedIn:** Israeli tech ecosystem content performs exceptionally. Mix: industry insights (40%), company culture (30%), product (20%), hiring (10%). Hebrew posts get higher engagement from Israeli audience but English extends global reach.
 
@@ -135,13 +144,14 @@ Result: TikTok launch plan optimized for Israeli fashion audience
 
 ## Gotchas
 
-- Facebook remains the #1 social platform in Israel with ~7.6M users, unlike the US where it skews older. Agents may deprioritize Facebook in favor of Instagram or TikTok based on US trends.
+- Facebook is still central in Israel, and its groups are the #1 community/discovery channel, unlike the US where it skews older. On raw scale it is now roughly tied with Instagram (~5M ad reach each, behind YouTube), so the case for Facebook is the groups, not headline user count. Agents may wrongly deprioritize Facebook groups based on US trends.
 - Israeli social media engagement drops dramatically from Friday afternoon through Saturday evening (Shabbat). Agents may schedule posts during this period and see near-zero engagement.
 - Hebrew social copy must use spoken Hebrew (ivrit meduberet), not formal written Hebrew. Agents often produce overly formal Hebrew that feels robotic to Israeli audiences.
 - Hebrew hashtags must not contain underscores or spaces. The correct format is #סטארטאפישראלי not #סטארטאפ_ישראלי. Agents may apply English hashtag formatting conventions.
 - Israeli audiences respond strongly to personal stories and "dugri" (blunt, honest) content. Corporate-polished messaging that works in the US consistently underperforms in Israeli social media.
 - Mixed Hebrew/English/emoji/hashtag captions flip reading direction and misplace punctuation. The first strong-directional character in a line sets its base direction, so a Hebrew line that starts with a hashtag, emoji, or English word renders left-to-right and looks broken. Always lead Hebrew lines with a Hebrew letter.
 - TikTok's US operations moved to a majority-American joint venture (Oracle, Silver Lake, MGX) that closed January 2026. Any TikTok policy, data-handling, or feature claim should be re-verified against current TikTok documentation rather than assumed from older sources.
+- A clickable external link in the caption costs organic reach. Meta applies a reach reduction to Instagram caption links (around 15%) and Facebook suppresses external-link feed posts, and TikTok keeps users on-platform too. Put the link in the first comment or send people to the bio/profile, and use teaser content that earns a profile visit. Nuance: Instagram's head confirmed the phrase "link in bio" in a caption does NOT hurt reach (that is a myth), it is the clickable URL in the caption that gets the reach penalty, so writing "link in bio" is fine.
 
 ## Recommended MCP Servers
 
