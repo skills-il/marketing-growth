@@ -18,7 +18,7 @@ Select the right platform based on business type, audience, and campaign objecti
 | Google Ads (Search) | High-intent traffic, lead gen | ~95% search market share in Israel | N/A (CPC model) | Text ads, responsive search ads |
 | Google Ads (Display) | Brand awareness, retargeting | Google Display Network reach in IL | 5-15 | Banner, responsive display |
 | Meta (Facebook) | B2C, community, local business | ~7.6M Israeli users | 15-40 | Image, video, carousel, collection |
-| Instagram | Lifestyle, fashion, food, travel | ~4.5M Israeli users | 20-50 | Stories, reels, feed, shopping |
+| Instagram | Lifestyle, fashion, food, travel | ~5M Israeli users | 20-50 | Stories, reels, feed, shopping |
 | LinkedIn | B2B, SaaS, enterprise, recruiting | ~3M Israeli professionals | 40-120 | Sponsored content, InMail, lead gen |
 | TikTok | Gen Z, viral content, brand awareness | Growing Israeli user base (18-34) | 10-30 | In-feed video, branded effects |
 
@@ -39,12 +39,12 @@ Beyond the global platforms, Israel has its own ad inventory worth considering, 
 
 | Platform | Type | Best For |
 |----------|------|----------|
-| Taboola | Native content recommendation | Native ads on Ynet, Walla, Globes, and other major Israeli news sites. Israeli company. PPC model. |
-| Outbrain | Native content recommendation | Native ads on Haaretz, TheMarker, Calcalist, Mako, Times of Israel. Israeli company. PPC model. |
+| Taboola (Realize) | Native content recommendation | Native ads on Ynet, Walla, Globes, and other major Israeli news sites. Israeli company. PPC model. Advertisers now buy through Taboola's performance platform "Realize" (ads.realizeperformance.com), which replaced the old Taboola Ads UI in 2025. |
+| Outbrain (now Teads) | Native content recommendation | Native ads on Haaretz, TheMarker, Calcalist, Mako, Times of Israel. Israeli-founded. PPC model. Outbrain merged with Teads (closed Feb 2025) and the company rebranded to Teads; the Outbrain native product is now bought through the Teads platform. |
 | Yad2 | Classifieds marketplace | Real estate, automotive, second-hand goods, local services; high-intent local audience. |
 | Walla, Ynet, Globes (direct) | Publisher display / sponsored content | Direct media buys and branded content on Israel's largest news properties; strong for brand campaigns and PR-adjacent content. |
 
-Taboola and Outbrain both run a pay-per-click model and cover most of the Israeli premium-publisher landscape between them. Direct buys with a publisher's ad sales team make sense for larger brand budgets or sponsored-content campaigns. All Israeli-platform campaigns are still subject to the VAT-inclusive pricing and labeling rules in Step 5.
+Taboola (now sold through its Realize platform) and Outbrain (now part of Teads after the 2025 merger) both run a pay-per-click model and cover most of the Israeli premium-publisher landscape between them. They remain two separate competitors, the long-rumored Taboola-Outbrain merger never closed, so do not treat them as one company, just expect the newer brand/platform names. Direct buys with a publisher's ad sales team make sense for larger brand budgets or sponsored-content campaigns. All Israeli-platform campaigns are still subject to the VAT-inclusive pricing and labeling rules in Step 5.
 
 ### Step 2: Hebrew Keyword Research
 
@@ -142,6 +142,9 @@ Amendment 13 to the Privacy Protection Law came into force on August 14, 2025. I
 - The same applies to using a customer list as a lookalike or Advantage+ seed, and to pixel / Conversions API (CAPI) tracking that builds remarketing audiences.
 - Keep documentation of when and how each contact consented. Large marketing databases (10,000+ records) and sensitive-data databases still carry registration and notification duties.
 - This is a compliance area, not advertising advice. Verify the current Privacy Protection Authority (PPA) guidance and have a privacy lawyer review your consent flow. See `references/israeli-ad-regulations.md`.
+- **Google Consent Mode v2** (required since March 2024) is a separate, technical obligation: if you target or measure users in the EEA/UK (common for Israeli companies selling to Europe), you must pass consent signals to Google via Consent Mode or you lose conversion measurement and remarketing for that traffic. It complements Amendment 13, it does not replace the documented consent you need for Israeli contacts.
+
+**Contacting the leads you collect (Spam Law):** Amendment 13 governs the DATA; Israel's Spam Law (Section 30A of the Communications Law) governs the MESSAGING. Before you SMS, email, or auto-call a lead captured from a Lead Ad or landing-page form, you need prior opt-in consent, the message must identify the sender and carry the word "פרסומת" (advertisement) with a working opt-out, and a violation carries statutory damages of up to about 1,000 NIS per message with no proof of harm. Treat list-building (Amendment 13) and lead-contacting (Spam Law) as two separate consent gates.
 
 ### Step 5: Ad Regulations (Chok Haganat HaTzarchan)
 
@@ -210,7 +213,7 @@ python scripts/cpc_calculator.py --vertical ecommerce --budget 5000
 python scripts/cpc_calculator.py --vertical legal --budget 10000 --cpc 30
 ```
 
-The calculator automatically accounts for 18% VAT when computing effective budget and estimates conversions at multiple conversion rates (1%, 2%, 3%, 5%).
+The calculator treats the entered budget as ex-VAT ad spend (the amount that buys clicks), shows the reclaimable input VAT separately, and estimates conversions at multiple conversion rates (1%, 2%, 3%, 5%).
 
 **Bidding strategy progression:**
 
@@ -224,15 +227,16 @@ The calculator automatically accounts for 18% VAT when computing effective budge
 
 Note: Enhanced CPC (ECPC) is no longer available for Search and Display campaigns. Google stopped offering it for new Search and Display campaigns in October 2024 and completed the forced migration the week of March 31, 2025. Campaigns not migrated proactively defaulted to Manual CPC. For the Learning stage, use Maximize Conversions (optionally with a Target CPA) instead. Verify against the Google Ads Help "About Smart Bidding" page.
 
-**VAT impact on ROAS:**
+**VAT and ROAS:**
 
-All ROAS calculations in Israel must account for 18% VAT on ad spend. Example:
+For a VAT-registered business (osek murshe, the standard advertiser here), the 18% VAT on your Google/Meta invoice is input VAT (mas tashumot) that you reclaim against your output VAT on your bimonthly return. It is NOT a real cost, so it must NOT go into your ROAS denominator. Use the ex-VAT ad spend:
 
-- Ad spend: 1,000 NIS (your invoice from Google/Meta)
-- True cost including VAT: 1,180 NIS
+- Ad spend (ex-VAT): 1,000 NIS (the amount billed for clicks)
+- VAT on the invoice: 180 NIS, reclaimed as input VAT, so the net cost stays 1,000 NIS
 - Revenue generated: 5,000 NIS
-- Naive ROAS: 5,000 / 1,000 = 5.0x (incorrect)
-- True ROAS: 5,000 / 1,180 = 4.24x (correct for Israeli reporting)
+- ROAS: 5,000 / 1,000 = 5.0x
+
+Only divide by 1.18 (5,000 / 1,180 = 4.24x) if you are an osek patur or otherwise cannot reclaim input VAT, or when you are explicitly modeling short-term cash flow (you front the VAT now and reclaim it on the next bimonthly return). Do not bake it into headline ROAS for a registered business.
 
 **Monthly budget minimums (recommended):**
 
@@ -253,7 +257,7 @@ Actions:
 2. Write Hebrew ad copy (30 chars headline, 90 chars description)
 3. Set budget in NIS, expect CPC of 2-8 NIS (varies by industry)
 4. Add Hebrew negative keywords to avoid wasted spend
-5. Set up conversion tracking with NIS values (include 18% VAT in ROAS)
+5. Set up conversion tracking with NIS values (use ex-VAT ad spend in ROAS for a registered business)
 Result: Hebrew Google Ads campaign with Israeli market targeting
 
 ### Example 2: Launch Facebook Ads for Israeli Audience
@@ -270,7 +274,7 @@ Result: Localized Facebook campaign targeting Israeli food audience
 User says: "How much should I spend on Google Ads for my Israeli law firm?"
 Actions:
 1. Run `python scripts/cpc_calculator.py --vertical legal --budget 10000` to estimate clicks and conversions
-2. Legal vertical CPC range: 15-40 NIS (avg 25 NIS), so 10,000 NIS budget yields ~340 clicks after VAT
+2. Legal vertical CPC range: 15-40 NIS (avg 25 NIS), so a 10,000 NIS ex-VAT ad budget yields ~400 clicks (the 18% VAT is reclaimable, see Step 6)
 3. At 3% conversion rate: ~10 leads per month at ~1,000 NIS per lead
 4. Recommend starting with 8,000-12,000 NIS/month, scaling based on CPA targets
 5. Set up Manual CPC bidding initially, move to Target CPA after accumulating 30+ conversions
@@ -279,7 +283,7 @@ Result: Data-driven budget recommendation with conversion estimates
 ## Bundled Resources
 
 ### Scripts
-- `scripts/cpc_calculator.py` -- Calculates CPC benchmarks and budget estimates for Israeli ad campaigns. Supports all major verticals with min/avg/max CPC data. Automatically accounts for 18% VAT. Run: `python scripts/cpc_calculator.py --help`
+- `scripts/cpc_calculator.py` -- Calculates CPC benchmarks and budget estimates for Israeli ad campaigns. Supports all major verticals with min/avg/max CPC data. Treats the budget as ex-VAT ad spend and shows the reclaimable input VAT separately. Run: `python scripts/cpc_calculator.py --help`
 
 ### References
 - `references/israeli-ad-regulations.md` -- Israeli advertising regulations including Consumer Protection Law requirements, Amendment 13 consent rules for ad targeting, digital advertising rules, restricted categories, Shabbat scheduling best practices, and audience targeting tips. Consult when verifying ad compliance or planning campaign schedules.
@@ -304,7 +308,7 @@ Result: Data-driven budget recommendation with conversion estimates
 ## Gotchas
 
 - Israeli ad prices must include VAT (18%) by law under Chok Haganat HaTzarchan (Consumer Protection Law). Agents may generate ad copy with pre-VAT prices, which violates Israeli advertising regulations.
-- ROAS calculations must account for 18% VAT on ad spend. If you spend 1,000 NIS on ads, the true cost is 1,180 NIS. Agents often calculate ROAS without this adjustment.
+- Do NOT inflate ROAS by 18% VAT for a VAT-registered business (osek murshe). The VAT on your ad invoice is reclaimable input VAT, so true ROAS uses ex-VAT spend (5,000 / 1,000 = 5.0x, not 5,000 / 1,180). Only an osek patur, who cannot reclaim it, or a cash-flow model adds the 18%. Agents often wrongly divide ad spend by 1.18.
 - The Gush Dan metropolitan area (Tel Aviv area) accounts for approximately 40% of Israeli digital ad spend. Agents may set nationwide targeting when the business only serves a specific region, wasting budget.
 - Israeli ad scheduling must avoid Shabbat (Friday afternoon through Saturday evening). Agents may run campaigns 24/7 and burn budget during zero-engagement hours.
 - Hebrew ad headlines have a 30-character limit in Google Ads, but Hebrew words are often shorter than English equivalents. Agents may not take advantage of the extra room available in Hebrew headlines.
@@ -320,9 +324,9 @@ Result: Data-driven budget recommendation with conversion estimates
 Cause: Hebrew characters may have different display widths than Latin characters in certain fonts.
 Solution: Test ad preview in Hebrew using the platform's built-in preview tool. Google Ads headline limit is 30 characters, and Hebrew words are often shorter than English equivalents, so you likely have room to expand. Check for mixed Hebrew/English strings that may cause unexpected RTL reordering.
 
-### Error: "VAT not accounted for in ROAS calculation"
-Cause: Israeli ads charge 18% VAT which affects true cost and distorts ROAS if not included.
-Solution: Always calculate ROAS including VAT. If ad spend is 1,000 NIS, true cost is 1,180 NIS. Adjust ROAS targets accordingly. Use the formula: True ROAS = Revenue / (Ad Spend * 1.18).
+### Error: "Unsure how VAT affects ROAS"
+Cause: Israeli ad invoices add 18% VAT, but for a VAT-registered business that VAT is reclaimable input tax, so adding it to the ROAS denominator understates ROAS by ~18%.
+Solution: For an osek murshe, compute ROAS on ex-VAT ad spend (Revenue / Ad Spend), because the 18% input VAT is offset against your output VAT. Add the 18% (Revenue / (Ad Spend * 1.18)) only for an osek patur who cannot reclaim it, or when modeling short-term cash flow.
 
 ### Error: "Low click-through rate on Hebrew ads"
 Cause: Ad copy may be too formal or translated literally from English, which does not resonate with Israeli audiences.

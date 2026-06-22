@@ -45,13 +45,16 @@ def calculate_campaign(vertical, budget, cpc=None):
     if cpc is None:
         cpc = bench["avg"]
 
-    budget_ex_vat = budget / (1 + VAT_RATE)
-    clicks = int(budget_ex_vat / cpc)
+    # Treat --budget as ex-VAT ad spend (the amount that actually buys clicks).
+    # The 18% VAT on the invoice is reclaimable input VAT for an osek murshe, so
+    # it is reported separately, NOT deducted from the click-buying budget.
+    clicks = int(budget / cpc)
+    vat = budget * VAT_RATE
 
     print(f"\nCampaign Estimate: {bench['name_he']} ({vertical})")
     print("=" * 40)
-    print(f"Monthly budget: {budget:,.0f} NIS (inc. VAT)")
-    print(f"Budget ex-VAT: {budget_ex_vat:,.0f} NIS")
+    print(f"Ad spend (ex-VAT): {budget:,.0f} NIS")
+    print(f"VAT on invoice: {vat:,.0f} NIS (reclaimable input VAT for an osek murshe)")
     print(f"CPC: {cpc:.1f} NIS")
     print(f"Estimated clicks: {clicks:,}")
 
@@ -64,7 +67,7 @@ def main():
     parser = argparse.ArgumentParser(description="Israeli PPC campaign calculator")
     parser.add_argument("--benchmarks", action="store_true", help="Show CPC benchmarks")
     parser.add_argument("--vertical", choices=list(CPC_BENCHMARKS.keys()))
-    parser.add_argument("--budget", type=float, help="Monthly budget in NIS")
+    parser.add_argument("--budget", type=float, help="Monthly ad spend in NIS (ex-VAT)")
     parser.add_argument("--cpc", type=float, help="Custom CPC (default: vertical average)")
     args = parser.parse_args()
 

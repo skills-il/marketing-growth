@@ -1,0 +1,17 @@
+{
+  "cycles": [
+    {
+      "version": "1.3.0",
+      "date": "2026-06-23",
+      "lessons": [
+        "CRITICAL/STALE fixed: the native-ads section treated 'Taboola' and 'Outbrain' as the current buying brands. In 2026 both are outdated: Taboola's advertiser platform is now 'Realize' (replaced Taboola Ads, Feb 2025); Outbrain acquired Teads (closed Feb 2025) and the company rebranded to Teads, so Outbrain native is bought via Teads. Relabeled both while keeping the (still-true) fact that they remain two separate competitors, the long-rumored Taboola-Outbrain merger never closed (do NOT state Taboola owns Outbrain).",
+        "MAJOR added: a Google Consent Mode v2 note (required since March 2024 for EEA/UK ad measurement) as a companion to the Amendment 13 section, relevant for Israeli advertisers serving European audiences.",
+        "Verified CORRECT (no change): Amendment 13 in force Aug 14 2025 (consent/DPO/data-broker rules accurate; DPO grace ended Oct 31 2025), VAT 18% (2026), Google ~95-98% search share, mobile >70%, the Meta Advantage+/lookalike + ECPC-removal + Demand-Gen platform notes, and the CPC benchmarks (directional, already hedged).",
+        "CRITICAL fixed (Expert): the skill treated 18% VAT on ad spend as a real cost that deflates ROAS ('True ROAS = Revenue / (Ad Spend * 1.18)') across Step 6, two gotchas, a troubleshooting entry, two descriptions, and the calculator. For an osek murshe (the standard advertiser) input VAT on advertising is reclaimable, so the rule understated ROAS by ~18%. Corrected everywhere: ROAS uses ex-VAT spend (5.0x, not 4.24x); the 1.18 adjustment applies only to osek patur or cash-flow timing. Rewrote cpc_calculator.py to treat --budget as ex-VAT ad spend and show the reclaimable VAT separately (verified against kolzchut/BDO that input VAT on advertising is a recoverable expense for a registered dealer).",
+        "MAJOR added (Expert): a note that contacting collected leads by SMS/email/auto-call is governed by the Spam Law (Section 30A of the Communications Law) - prior opt-in, sender ID, 'פרסומת' label + opt-out, up to ~1,000 NIS/message statutory damages - distinct from Amendment 13 (which governs the data).",
+        "Fixed MINOR (Judge): Instagram Israel audience ~4.5M -> ~5M.",
+        "Deferred (MINOR): bump Gush Dan to ~40-45% and Google search share to ~98% for precision; note the Amendment 13 DPO enforcement grace period ended Oct 31 2025."
+      ]
+    }
+  ]
+}

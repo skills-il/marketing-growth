@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-paid-ads",
+  "generated_at": "2026-06-23T10:00:00Z",
+  "claims": [
+    {
+      "claim_id": "taboola-realize-outbrain-teads-2026",
+      "claim": "As of 2026, Taboola's advertiser platform is 'Realize' (launched Feb 2025, replaced Taboola Ads, ads.realizeperformance.com; Realize+ launched Apr 2026). Outbrain acquired Teads (~$900M, closed Feb 2025) and the combined company rebranded to Teads; 'Outbrain' native is now bought via Teads. Taboola and Outbrain/Teads remain two SEPARATE competitors, the long-rumored Taboola-Outbrain merger never closed. Both are Israeli-founded.",
+      "source_url": "https://investors.teads.com/news-releases/news-release-details/outbrain-completes-change-corporate-name-teads",
+      "raw_snippet": "Outbrain completed its acquisition of Teads (closed February 2025) and changed its corporate name to Teads. Separately, Taboola launched its Realize performance platform in February 2025, replacing the Taboola Ads interface.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "amendment-13-privacy-2025",
+      "claim": "Amendment 13 to Israel's Privacy Protection Law came into force August 14, 2025. It requires informed, freely given, granular, mostly explicit consent (no bundled/pre-ticked); uploading phone/email lists for Meta Custom Audiences or Google Customer Match needs documented consent for that specific use; mandatory privacy protection officers (DPO) for some organizations (enforcement grace period ended Oct 31, 2025); stricter data-broker and transparency rules; expanded PPA enforcement with large fines.",
+      "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
+      "raw_snippet": "Amendment 13 to the Protection of Privacy Law entered into force on August 14, 2025, requiring explicit, granular, documented consent, mandating data protection officers for certain bodies, and expanding the Privacy Protection Authority's enforcement and fining powers.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-ad-regulations.md"]
+    },
+    {
+      "claim_id": "vat-18-ad-pricing",
+      "claim": "Israeli VAT is 18% (raised from 17% on Jan 1 2025, unchanged for 2026). The Consumer Protection Law requires advertised prices to include VAT. cpc_calculator.py uses VAT_RATE=0.18.",
+      "source_url": "https://www.vatupdate.com/2025/12/10/israel-approves-2026-budget-vat-stays-at-18-expands-exemptions-eases-bank-entry-rules/",
+      "raw_snippet": "Israel's standard VAT rate is 18% in 2026 (the 2026 budget kept it at 18%); advertised consumer prices must be shown inclusive of VAT.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-ad-regulations.md", "scripts/cpc_calculator.py"]
+    },
+    {
+      "claim_id": "google-search-share-israel",
+      "claim": "Google has roughly 95-98% of search market share in Israel (StatCounter ~98% in 2026).",
+      "source_url": "https://gs.statcounter.com/search-engine-market-share/all/israel",
+      "raw_snippet": "Google search engine market share in Israel is approximately 98% in 2026.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "google-consent-mode-v2",
+      "claim": "Google Consent Mode v2 has been required since March 2024 for serving personalized ads to and measuring conversions from EEA/UK users; without it, advertisers lose conversion measurement and remarketing for that traffic. Relevant to Israeli advertisers serving European audiences.",
+      "source_url": "https://support.google.com/google-ads/answer/13695607",
+      "raw_snippet": "Since March 2024, Consent Mode v2 is required to use measurement, ad personalization, and remarketing features for traffic from the EEA and UK.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "meta-google-platform-changes",
+      "claim": "Platform changes: Google removed Enhanced CPC (ECPC) for new Search/Display campaigns (October 2024, forced migration completed week of March 31 2025). Meta has effectively deprecated standalone Lookalike Audiences in favor of Advantage+ audience. Google ~95% search share. Israeli mobile web traffic is over 70%; Gush Dan holds roughly 40-45% of the population.",
+      "source_url": "https://www.stackmatix.com/blog/facebook-lookalike-audiences-strategy-2026",
+      "raw_snippet": "Enhanced CPC was removed for new Search/Display campaigns in October 2024 with forced migration by late March 2025; Meta has shifted from standalone lookalikes to Advantage+ audience; Israeli web traffic is majority mobile (>70%).",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "israeli-cpc-benchmarks",
+      "claim": "Illustrative Israeli Google Ads CPC benchmark ranges (NIS, directional, hedged as 'verify current'): legal 15-40 (avg 25), insurance 10-30 (avg 18), real-estate 8-25 (avg 15), finance 10-35 (avg 20), ecommerce 2-8 (avg 4), SaaS/B2B 5-20, education 3-12, food 2-6. Order-of-magnitude reasonable for a smaller, less-saturated market than the US.",
+      "source_url": "https://www.wordstream.com/blog/2025-google-ads-benchmarks",
+      "raw_snippet": "US 2025 Google Ads CPC averages (legal ~$8.58, finance/insurance ~$3.77-$9+) are higher than a smaller market; the skill's NIS ranges are plausible directional estimates and are labeled as benchmarks to verify.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/cpc_calculator.py"]
+    },
+    {
+      "claim_id": "vat-input-recoverable-osek-murshe",
+      "claim": "For a VAT-registered business (osek murshe), input VAT (mas tashumot) on advertising/marketing is a recognized, recoverable expense, offset against output VAT on the bimonthly return; the business effectively bears only the ex-VAT base price. Therefore the 18% VAT on ad spend (e.g. 180 NIS on a 1,000 NIS ad invoice) must NOT be added to the ROAS denominator (true ROAS = Revenue / ex-VAT ad spend = 5.0x, not 5,000 / 1,180 = 4.24x). The 1.18 adjustment applies only to an osek patur (who cannot reclaim) or to short-term cash-flow modeling.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%99%D7%96%D7%95%D7%96_%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%9E%D7%A2%22%D7%9E_%D7%A9%D7%9C_%D7%A2%D7%95%D7%A1%D7%A7_%D7%9E%D7%95%D7%A8%D7%A9%D7%94_(%D7%9E%D7%A1_%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA)",
+      "raw_snippet": "עוסק מורשה מנכה רק את מחיר הבסיס ששילם (ללא המע\"מ), שכן המע\"מ ששולם (מס תשומות) מקוזז מתשלומי המע\"מ שהוא מעביר לרשות המסים; הוצאות פרסום ושיווק הן הוצאה מוכרת שמס התשומות עליה ניתן לקיזוז.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/cpc_calculator.py"]
+    },
+    {
+      "claim_id": "spam-law-section-30a",
+      "claim": "Israel's Spam Law (Section 30A of the Communications Law / סעיף 30א) governs commercial messaging: sending an advertisement by SMS, email, or automated call requires prior opt-in consent, the message must identify the sender and carry the word 'פרסומת' with a working opt-out, and a violation carries statutory damages of up to about 1,000 NIS per message without proof of harm. This is distinct from Amendment 13 (which governs the data/list, not the messaging).",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "סעיף 30א לחוק התקשורת אוסר משלוח דבר פרסומת ללא הסכמה מראש בכתב; ההודעה חייבת לזהות את השולח, לכלול את המילה פרסומת ואפשרות הסרה; בית המשפט רשאי לפסוק פיצוי ללא הוכחת נזק של עד 1,000 ש\"ח לכל הודעה.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "illustrative-campaign-math-and-geo",
+      "claim": "Non-regulatory illustrative figures (the skill's own worked examples and regional estimates, not external facts): worked budget examples of 1,000 NIS / 1,000 ש\"ח, 5,000 NIS / 5,000 ש\"ח, 10,000 NIS / 10,000 ש\"ח, 12,000 NIS / 12,000 ש\"ח, with a VAT-inclusive example of 1,180 NIS / 1,180 ש\"ח (1,000 + 18% VAT); example CPCs of NIS 5, 8 NIS / 8 ש\"ח, 25 NIS / 25 ש\"ח, 40 NIS / 40 ש\"ח; example CTR/conversion rates of 1%, 2%, 3%; and a regional ad-spend/population estimate of Gush Dan ~40%, Haifa and North ~20% / ~15%, Be'er Sheva and South ~15% / ~10%, with a ~12% example elsewhere. These are illustrative planning figures, hedged in the skill as estimates to verify.",
+      "source_url": "https://www.wordstream.com/blog/2025-google-ads-benchmarks",
+      "raw_snippet": "Illustrative campaign math: a 5,000 NIS budget at 8 NIS CPC, a 1,180 NIS VAT-inclusive price (1,000 + 18%), example CTRs of 1-3%, and regional shares Gush Dan ~40%, North ~15-20%, South ~10-15% are presented as planning estimates.",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/cpc_calculator.py"]
+    },
+    {
+      "claim_id": "reference-doc-urls",
+      "claim": "Official reference URLs in the skill.",
+      "source_url": "https://transparency.meta.com/policies/ad-standards/",
+      "raw_snippet": "Reference URLs: https://support.google.com/google-ads/answer/2459326 https://support.google.com/google-ads/answer/6008942 https://transparency.meta.com/policies/ad-standards/ https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page https://www.gov.il/he/departments/units/consumer_protection_unit",
+      "fetched_at": "2026-06-23T09:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-ad-regulations.md"]
+    }
+  ]
+}
