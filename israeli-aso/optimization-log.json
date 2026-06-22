@@ -1,0 +1,17 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-22",
+      "lessons": [
+        "Skill was overwhelmingly fresh: all 2026 store-metadata limits (Apple title/subtitle 30, keyword 100 per-localization, promo 170, description-not-indexed; Play title 30 / short 80 / full 4,000), screenshot specs (Apple 6.9\" 1320x2868, Play 1080x1920 up to 8), and named apps (Moovit, Gett, Wolt, 10bis) verified correct.",
+        "Updated STALE: smartphone penetration from the old ~85 percent figure to ~91% and users ~8.5M -> ~8.7M (DataReportal/Statista 2026). Tightened iOS/Android split from the old ~30/70 to ~33/67 (StatCounter May 2026).",
+        "Added (Expert MAJOR): gotcha that Google Play bans promotional words (best/#1/free/top) and CTAs in the app title/icon/developer name, directly relevant to Hebrew title writing.",
+        "CRITICAL fixed (Expert): rewrote keyword_analyzer.py. The old version stacked attached stop-word prefixes (he/vav/bet/lamed/mem/shin + word) into the 100-char field as if each were a rankable keyword, the exact budget-waste the skill warns against (Apple ranks single base words and auto-combines them). New script de-dupes, reports the budget, WARNS on overflow instead of silently slicing at [:100], and guides users to supply ktiv-maleh/chaser + plural variants themselves; prefix forms are now an opt-in flag with a warning.",
+        "CRITICAL fixed (Expert): added an A/B-testing / conversion section (Apple PPO up to 3 treatments/90 days + Custom Product Pages; Google Play Store Listing Experiments) with the Israeli angle (test RTL screenshot order, NIS-vs-USD display, Hebrew social proof).",
+        "MAJOR fixed (Expert): noted in the reference that Hebrew is indexed only in the IL storefront (no cross-localization carryover) and that the Play 80-char short description is a high-weight indexed field.",
+        "Deferred (MINOR): reference line 'App revenue per user: higher than MENA average' is unsourced, source or drop next cycle. Also could note Google Play 2-screenshot minimum and 16:9/9:16 aspect ratios."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-aso",
+  "generated_at": "2026-06-22T21:40:00Z",
+  "claims": [
+    {
+      "claim_id": "israel-mobile-os-split-2026",
+      "claim": "Israel mobile OS split (2026): iOS ~33%, Android ~67% (StatCounter). Smartphone penetration ~91%, roughly 8.7M smartphone users.",
+      "source_url": "https://gs.statcounter.com/os-market-share/mobile/israel",
+      "raw_snippet": "Mobile operating system market share Israel: Android ~67%, iOS ~33%. Smartphone penetration ~91%.",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-app-market.md"]
+    },
+    {
+      "claim_id": "apple-metadata-limits",
+      "claim": "Apple App Store metadata limits (2026): app title 30 characters, subtitle 30 characters, keyword field 100 characters (per-localization, comma-separated, no spaces), promotional text 170 characters; the description is NOT indexed for search.",
+      "source_url": "https://developer.apple.com/app-store/product-page/",
+      "raw_snippet": "App name up to 30 characters, subtitle up to 30 characters, keywords up to 100 characters; the keyword field is per-localization and the description is not used for keyword indexing.",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-app-market.md"]
+    },
+    {
+      "claim_id": "google-play-metadata-limits-and-title-policy",
+      "claim": "Google Play limits (2026): title 30 characters, short description 80 characters, full description 4,000 characters; no separate keyword field. Play policy bans promotional words (best, #1, free, top), calls to action (Download now), emojis and ALL-CAPS in the app title, icon, and developer name.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9859455",
+      "raw_snippet": "App title limited to 30 characters; titles must not contain promotional or pricing keywords, calls to action, emoji, or all-caps. Short description 80, full description 4,000 characters.",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-app-market.md"]
+    },
+    {
+      "claim_id": "screenshot-specs-2026",
+      "claim": "Screenshot specs (2026): Apple iPhone 6.9\" primary 1320x2868 portrait, 6.7\" 1290x2796, iPad 13\" 2064x2752; Google Play phone 1080x1920 minimum, up to 8 screenshots.",
+      "source_url": "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/",
+      "raw_snippet": "iPhone 6.9-inch display: 1320 x 2868. iPhone 6.7-inch: 1290 x 2796. iPad 13-inch: 2064 x 2752. Google Play recommends 1080x1920 and allows up to 8 screenshots.",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-app-market.md"]
+    },
+    {
+      "claim_id": "named-israeli-apps-operating",
+      "claim": "Named Israeli apps operating in 2026: Moovit (transit), Gett (taxi), Wolt and 10bis (food delivery). 10bis is still operating (not merged or renamed).",
+      "source_url": "https://www.calcalistech.com/ctechnews/article/juvdmh4v1",
+      "raw_snippet": "Moovit, Gett, Wolt, and 10bis remain active Israeli apps in 2026; 10bis continues as a food-delivery and corporate meal-card platform.",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "reference-doc-urls",
+      "claim": "Official documentation URLs referenced by the skill.",
+      "source_url": "https://developer.apple.com/app-store/review/guidelines/",
+      "raw_snippet": "Reference URLs: https://developer.apple.com/app-store/review/guidelines/ https://developer.apple.com/help/app-store-connect/ https://developer.apple.com/design/human-interface-guidelines/right-to-left https://support.google.com/googleplay/android-developer https://support.google.com/googleplay/android-developer/topic/9858052",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "native-ab-testing-tools",
+      "claim": "Store-native A/B testing (2026): Apple Product Page Optimization (PPO) tests up to 3 treatment variants vs the original for up to 90 days; Custom Product Pages allow up to 70 per app (Apple doubled the limit from 35 to 70 on 2025-10-29) and now surface in organic search. Google Play Store Listing Experiments test icon/screenshots/short+full description on a traffic slice.",
+      "source_url": "https://developer.apple.com/app-store/custom-product-pages/",
+      "raw_snippet": "You can publish up to 70 additional versions of your product page on the App Store. Product Page Optimization lets you test up to three different treatments against your original product page for up to 90 days. Google Play Store Listing Experiments A/B-test store listing assets.",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "nis-pricing-guidance",
+      "claim": "Editorial ASO guidance (not an external fact): app screenshots and descriptions targeting Israeli users should show prices in NIS (Israeli new shekels), not USD, to build trust.",
+      "source_url": "https://developer.apple.com/app-store/product-page/",
+      "raw_snippet": "Localize pricing and currency for the target market; for Israel, display prices in NIS, not USD.",
+      "fetched_at": "2026-06-22T21:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}
