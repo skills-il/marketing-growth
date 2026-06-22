@@ -44,7 +44,7 @@ Plan publishing around the Israeli rhythm, not the Gregorian/US one. The bundled
 - **August summer boom or slowdown.** School is out and many take vacation, so B2B engagement dips, but B2C and consumer content can spike. Plan content type by audience.
 - **Election cycles.** Israeli elections are frequent and unpredictable; campaign periods make commercial content underperform and political topics sensitive. Check whether an election overlaps your calendar.
 - **Hebrew-calendar dates shift every Gregorian year.** Never hardcode a holiday date. Pull the current year's dates from a Hebrew-calendar source.
-- **Yom Kippur and Yom HaZikaron:** absolute no-commercial-content days.
+- **Yom Kippur, Yom HaShoah, and Yom HaZikaron:** absolute no-commercial-content days. Yom HaShoah (Holocaust Remembrance Day, ~a week before Yom HaZikaron) and Yom HaZikaron are siren days where advertising is suspended and venues close, never schedule promotional content on them.
 
 ### Israeli Tech PR
 Keep pitches brief and direct. WhatsApp follow-ups acceptable. Include quick facts: founding, team size, funding, traction. Hebrew pitches for Hebrew outlets; English for CTech, No Camels.
@@ -79,7 +79,7 @@ Result: Publishable Hebrew tech article with social distribution kit
 ## Bundled Resources
 
 ### Scripts
-- `scripts/content_planner.py` -- Generates content calendars accounting for Israeli holidays and business cycles. Run: `python scripts/content_planner.py --month 9 --year 2026` or `python scripts/content_planner.py --help`. Note: the holiday table is hardcoded per year (2025 and 2026 included); verify the dates and extend the table for future years before relying on it.
+- `scripts/content_planner.py` -- Generates content calendars accounting for Israeli holidays and business cycles. Run: `python scripts/content_planner.py --month 9 --year 2026` or `python scripts/content_planner.py --help`. Note: the holiday table is hardcoded per year (2025, 2026, and 2027 included); verify the dates against hebcal.com and extend the table for future years before relying on it.
 
 ### References
 - `references/israeli-media-landscape.md` -- Israeli media outlets, tech publications, content distribution channels, and audience demographics. Consult when planning content distribution or media outreach.
