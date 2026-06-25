@@ -20,7 +20,7 @@ By Israeli law, employers must provide pension contributions after a qualifying 
 - The severance component (Pitzuim) at 8.33% means the employer pre-funds severance pay (1 month per year of employment, which equals 8.33% monthly)
 - When the employer contributes 8.33% to severance via the pension fund, this is called "Section 14" (Sif 14), meaning the pension fund balance replaces the statutory severance obligation
 - Total employer cost for pension: 6.5% + 8.33% = 14.83% of salary
-- The 6.5% employer tagmulim includes disability insurance. If disability costs less than 2.5%, the employer must top up the difference into the tagmulim component.
+- The 6.5% employer tagmulim includes work-disability cover. By law the tagmulim (benefits) portion must stay at least 5%, and the employer's combined tagmulim-plus-disability contribution is capped at 7.5%; if the disability cover costs more, the employer tops up tagmulim so it never drops below the 5% floor.
 - Multiple pension "ceilings" exist in Israel (do not confuse them):
   - **Tax-qualifying salary ceiling**: ~47,465 NIS/month in 2026. Above this, certain tax benefits on contributions are lost.
   - **Comprehensive fund max insurable salary**: ~24,700–30,500 NIS/month in 2026 (varies with total contribution rate). Salary above flows to a supplementary fund.
@@ -87,7 +87,7 @@ For a 40,000 NIS/month tech salary, the employee's mandatory 6% contribution is 
 - "Section 47" (סעיף 47) often comes up in the same breath. Section 47 is a **deduction** from taxable income, scoped to self-employed pension contributions (and to salaried employees only on the portion of their salary that comes from non-pensioned income). Most salaried tech employees only claim Section 45a.
 
 ### Sources
-- Kol-Zchut: [Pension tax credit (Section 45a)](https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99)
+- Kol-Zchut: [Pension tax credit (Section 45a)](https://www.kolzchut.org.il/he/זיכוי_ממס_הכנסה_בגין_הפרשות_לביטוח_פנסיוני)
 - Pensuni: [Tax benefits for salaried employees in pension funds 2026](https://pensuni.com/?p=1532)
 - Supermarker: [Section 45a and 47 tax benefits in 2026](https://www.supermarker.themarker.com/Gemel/TaxBenefitsForKupatGemelAndHishtalmut.aspx)
 
@@ -107,7 +107,7 @@ An Israeli-specific savings/investment fund with significant tax advantages. Thi
 ### Tax Benefits
 - Withdrawals after 6 years: **completely tax-exempt** (up to a ceiling)
 - Withdrawals after 3 years: tax-exempt only if used for education/professional development
-- The tax-exempt qualifying salary ceiling is **15,751 NIS/month in 2026** (max tax-benefited employer deposit: 1,571 NIS/month at 10%). Employer contributions on salary above this ceiling become taxable income for the employee.
+- The tax-exempt qualifying salary ceiling is **15,712 NIS/month in 2026** (max tax-benefited employer deposit: 1,178 NIS/month at 7.5%; the combined employer-plus-employee tax-benefited deposit is 1,571 NIS/month at 10%). Employer contributions on salary above this ceiling become taxable income for the employee, and the investment growth on the above-ceiling portion does NOT get the after-6-years capital-gains exemption either. So for a 40K+ tech salary the keren is only fully tax-advantaged on roughly the first 15,712 NIS of salary, factor that in before valuing a "7.5% on full salary" offer at face value.
 - Many tech salaries sit above this ceiling, so you should verify whether your employer contributes the full 7.5% on actual salary or only up to the tax-benefited ceiling.
 
 ### Monetary Value Example

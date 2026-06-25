@@ -70,22 +70,22 @@ Income tax is computed on the salary after the employee pension contribution is 
 
 ## 2. National Insurance + 3. Health tax (employee side, 2026)
 
-Bituach Leumi and `mas briut` are collected together and have the **same two-tier structure**. The split point in 2026 is **7,522 NIS/month** (the "reduced collection bracket"). 2026 rates are unchanged from 2025.
+Bituach Leumi and `mas briut` are collected together and have the **same two-tier structure**. The split point in 2026 is **7,703 NIS/month** (the "reduced collection bracket", 60% of the average wage, raised from 7,522 in 2025). 2026 rates are unchanged from 2025; the threshold and ceiling rise each year with the average wage.
 
 | Salary portion | National Insurance | Health tax | Combined |
 |---|---|---|---|
-| Up to 7,522 NIS/month | 1.04% | 3.23% | **4.27%** |
-| 7,523 NIS/month up to the ceiling | 7.00% | 5.17% | **12.17%** |
+| Up to 7,703 NIS/month | 1.04% | 3.23% | **4.27%** |
+| 7,704 NIS/month up to the ceiling | 7.00% | 5.17% | **12.17%** |
 
-The monthly contribution ceiling is **50,695 NIS** in 2026. Salary above the ceiling is not charged Bituach Leumi or health tax.
+The monthly contribution ceiling is **51,910 NIS** in 2026. Salary above the ceiling is not charged Bituach Leumi or health tax.
 
 ### Worked example: 40,000 NIS/month gross
 
 | Slice | Amount | Combined rate | Charge |
 |---|---|---|---|
-| 0 - 7,522 | 7,522 | 4.27% | 321.2 |
-| 7,523 - 40,000 | 32,478 | 12.17% | 3,952.6 |
-| **Total Bituach Leumi + health tax** | | | **~4,273.8 NIS/month** |
+| 0 - 7,703 | 7,703 | 4.27% | 328.9 |
+| 7,704 - 40,000 | 32,297 | 12.17% | 3,930.5 |
+| **Total Bituach Leumi + health tax** | | | **~4,259.4 NIS/month** |
 
 ---
 
@@ -97,10 +97,10 @@ For a male Senior Backend Engineer, 40,000 NIS/month gross, 2.25 credit points, 
 |---|---|
 | Gross salary | 40,000.0 |
 | Less: income tax (net of credit points + Section 45a) | -9,239.5 |
-| Less: Bituach Leumi + health tax | -4,273.8 |
+| Less: Bituach Leumi + health tax | -4,259.4 |
 | Less: employee pension (6%) | -2,400.0 |
 | Less: employee keren hishtalmut (2.5%) | -1,000.0 |
-| **Net to bank account** | **~23,086.7** |
+| **Net to bank account** | **~23,101.1** |
 
 So a "40K offer" lands as roughly **23,000-23,500 NIS** in the bank, before factoring in any taxable benefits (`shovi rechev` for a company car, partially taxable meal allowances) that would push the tax up. Pension and keren are not lost money, they are forced savings, but they are not spendable take-home this month.
 
@@ -129,6 +129,6 @@ Use `scripts/salary-calculator.py` for the employer-cost and pre-tax effective-p
 ## Sources
 
 - Israel Tax Authority (income tax brackets, credit points): https://www.gov.il/en/departments/israel_tax_authority
-- Bituach Leumi, employee contribution rates: https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx
-- Kol-Zchut, credit points (`nekudot zikui`): https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94
+- Bituach Leumi, employee contribution rates: https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים שכירים.aspx
+- Kol-Zchut, credit points (`nekudot zikui`): https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה
 - Globes, April 2026 revised income tax brackets: https://en.globes.co.il/en/article-revised-income-tax-brackets-boost-march-salary-1001539434

@@ -123,6 +123,11 @@ class CompensationPackage:
 
     @property
     def total_employer_cost_monthly(self) -> float:
+        # NOTE: this is the compensation-side employer cost. It does NOT include
+        # the employer-side National Insurance contribution (2026: ~4.51%
+        # reduced / 7.6% full on salary; the employer pays NI only, not health
+        # tax, which is employee-side), so true fully-loaded employer cost is a
+        # few percent higher. Pension/severance/keren and allowances only.
         return (
             self.base_monthly
             + self.pension_employer_monthly

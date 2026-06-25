@@ -88,8 +88,8 @@ See `references/israeli-benefits-guide.md` Section 1.1 for the full 45a mechanic
 The single most common candidate question is "what will I actually take home?" A gross salary figure (`bruto chodshi`) is not what lands in the bank account. After computing employer cost and pre-tax effective pay, walk the user through the tax layer that converts gross into net-to-bank:
 
 1. **Income tax** (`mas hachnasa`) on the progressive 2026 brackets, reduced by **credit points** (242 NIS per point per month in 2026, frozen) and the Section 45a credit.
-2. **National Insurance** (`Bituach Leumi`), employee side, two-tier: 1.04% up to 7,522 NIS/month, 7% above.
-3. **Health tax** (`mas briut`), collected together with Bituach Leumi, also two-tier: 3.23% up to 7,522 NIS/month, 5.17% above.
+2. **National Insurance** (`Bituach Leumi`), employee side, two-tier: 1.04% up to 7,703 NIS/month, 7% above.
+3. **Health tax** (`mas briut`), collected together with Bituach Leumi, also two-tier: 3.23% up to 7,703 NIS/month, 5.17% above.
 4. **Employee pension and keren contributions** are withheld too, but they are savings, not taxes (the calculator already reports "pre-tax effective pay" after these).
 
 For a 40,000 NIS/month gross offer (male, 2.25 credit points, standard contributions), net-to-bank lands around **23,000-23,500 NIS**. Always present **both** the gross figure and the net-to-bank estimate, because two offers with the same gross can produce different net pay once company-car tax value (`shovi rechev`), allowance taxability, and credit-point differences (a candidate with children claims more points) are factored in.
@@ -129,6 +129,8 @@ Based on the analysis, identify the user's strongest negotiation points:
 3. **Unique skills**: Identify high-demand skills (e.g., ML, security, distributed systems) that justify premium
 4. **Location arbitrage**: Remote work from lower cost-of-living areas while being paid Tel Aviv rates
 5. **Benefits optimization**: Sometimes easier to negotiate benefits than base salary (extra vacation, keren hishtalmut ceiling, signing bonus)
+
+**Read the market before you anchor.** This skill's tactics assume some candidate leverage, but the 2025-2026 Israeli tech market has cooled (layoffs, slower comp growth, repriced and down-round startup equity), so leverage is weaker than in the 2021-2022 peak and lowball anchors and exploding offers are more common. Gauge your real position first: a competing offer in hand is far stronger than market data alone, and in a soft market protecting the offer (and negotiating benefits/equity terms) can beat pushing hard on base. Do not coach an aggressive counter when the candidate has no alternative and the role is scarce.
 
 ### Step 6: Draft the Counter-Offer
 
@@ -219,9 +221,9 @@ Use these official and authoritative sources to verify contribution rates, ceili
 
 | Source | URL | What to Check |
 |---|---|---|
-| Kol-Zchut: Annual Vacation | https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%A4%D7%A9%D7%94_%D7%A9%D7%A0%D7%AA%D7%99%D7%AA | Statutory minimum vacation days by tenure for a 5-day workweek |
-| Kol-Zchut: Keren Hishtalmut | https://www.kolzchut.org.il/he/%D7%A7%D7%A8%D7%9F_%D7%94%D7%A9%D7%AA%D7%9C%D7%9E%D7%95%D7%AA | Tax-qualifying salary ceiling, contribution rates, 6-year tax exemption rules |
-| Kol-Zchut: Pension Tax Credit (Section 45a) | https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99 | 35% tax credit rate, annual contribution ceiling, qualifying-salary ceiling for Section 45a |
+| Kol-Zchut: Annual Vacation | https://www.kolzchut.org.il/he/חופשה_שנתית | Statutory minimum vacation days by tenure for a 5-day workweek |
+| Kol-Zchut: Keren Hishtalmut | https://www.kolzchut.org.il/he/קרן_השתלמות | Tax-qualifying salary ceiling, contribution rates, 6-year tax exemption rules |
+| Kol-Zchut: Pension Tax Credit (Section 45a) | https://www.kolzchut.org.il/he/זיכוי_ממס_הכנסה_בגין_הפרשות_לביטוח_פנסיוני | 35% tax credit rate, annual contribution ceiling, qualifying-salary ceiling for Section 45a |
 | Pensuni: 2026 Ceilings | https://pensuni.com/?p=827 | Current-year pension ceilings, average wage, mandatory contribution rates |
 | Bituach Leumi | https://www.btl.gov.il/ | National Insurance and health tax rates that drive gross-to-net deltas |
 | Israel Tax Authority | https://www.gov.il/en/departments/israel_tax_authority | Income tax brackets, credit points, Section 102 trustee option taxation |
