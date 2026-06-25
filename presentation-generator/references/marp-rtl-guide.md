@@ -164,9 +164,15 @@ marp presentation.md --pdf --allow-local-files -o output.pdf
 # HTML (self-contained, opens in browser)
 marp presentation.md --html --allow-local-files -o output.html
 
-# PPTX (requires Chromium; RTL may need post-processing in PowerPoint)
+# PPTX (default: each slide is a raster IMAGE, so RTL looks correct but text is not editable)
 marp presentation.md --pptx --allow-local-files -o output.pptx
+
+# PPTX with editable text (Marp CLI 4.1.0+, experimental, routes through LibreOffice Impress).
+# Text becomes editable, but RTL fidelity then depends on LibreOffice (can revert bullets to LTR).
+marp presentation.md --pptx --pptx-editable --allow-local-files -o output.pptx
 ```
+
+Note on the browser binary: Marp CLI 4.0+ exposes first-class `--browser`, `--browser-path`, and `--browser-protocol` flags (it also supports Firefox via WebDriver BiDi). On CI or restricted environments prefer `--browser-path /path/to/chromium` (or `--browser auto`) over the older `PUPPETEER_EXECUTABLE_PATH` env var, which is still honored but is the legacy knob.
 
 ## Font Loading Options
 
@@ -268,6 +274,6 @@ blockquote {
 
 ## Known Limitations
 
-- **PPTX RTL fidelity**: Marp's PPTX export does not inject `<a:rtl val="1"/>` XML attributes. The exported PPTX will display Hebrew text but bullet alignment may revert to LTR when opened in PowerPoint. For PPTX with guaranteed RTL, use python-pptx directly.
+- **PPTX RTL fidelity**: by default Marp's `--pptx` export renders each slide as a raster IMAGE, so the RTL layout is baked in visually (it looks correct) but the text is not editable and carries no `rtl` paragraph attribute. With `--pptx-editable` (Marp CLI 4.1.0+, experimental, via LibreOffice Impress) you get editable text, but RTL fidelity then depends on LibreOffice and bullet alignment can revert to LTR. For an editable PPTX with guaranteed RTL, generate it with python-pptx directly (set the `rtl="1"` attribute on each `<a:pPr>`).
 - **Table column order**: Marp renders tables with column order matching the Markdown source, rendered visually left-to-right even in RTL mode. Write table columns in the order you want them to appear visually from right to left.
-- **Chromium required for PDF/PPTX**: Marp bundles a Chromium instance. On CI or restricted environments, set `PUPPETEER_EXECUTABLE_PATH` to a system Chromium binary.
+- **Chromium required for PDF/PPTX**: Marp bundles a Chromium instance. On CI or restricted environments, point Marp at a system browser with `--browser-path /path/to/chromium` (or `--browser auto`), the documented Marp CLI 4.0+ flags; the older `PUPPETEER_EXECUTABLE_PATH` env var still works but is the legacy fallback.

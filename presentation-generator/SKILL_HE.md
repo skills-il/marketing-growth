@@ -19,7 +19,7 @@ license: MIT
 3. **צרו את התוכן**: כתבו את טקסט השקפים בעברית. בנו פיץ׳ דקים לפי סדר ה-VC הישראלי שמופיע למטה, השתמשו בעיצוב שקלי ובלוח השנה הפיסקלי הישראלי.
 4. **החילו את תיקוני ה-RTL**: ב-Marp הגדירו `direction: rtl; text-align: right` ב-CSS של ה-theme. ב-python-pptx קראו ל-`set_paragraph_rtl()` על כל פסקה עם טקסט עברי, בנוסף לעוזרי תאי הטבלה ורמת ה-run שב-`references/pptx-rtl-patches.md`. לגרפים, הערות מרצה ותבנית האב, ראו את הסעיפים הייעודיים למטה.
 5. **ייצאו**: הריצו `marp presentation.md --pptx` (או `--pdf`/`--html`), או `prs.save(output_path)` ב-python-pptx.
-6. **בדקו**: פתחו את הקובץ וודאו שהתבליטים מיושרים לימין, שסימני הפיסוק נמצאים בקצה הנכון של כל שורה, שסימן המטבע ממוקם נכון, ושהטבלאות נקראות מימין לשמאל. בדקו את ה-XML אם פסקה עדיין מרנדרת LTR (כל `<a:pPr>` חייב להכיל `<a:rtl val="1"/>`).
+6. **בדקו**: פתחו את הקובץ וודאו שהתבליטים מיושרים לימין, שסימני הפיסוק נמצאים בקצה הנכון של כל שורה, שסימן המטבע ממוקם נכון, ושהטבלאות נקראות מימין לשמאל. בדקו את ה-XML אם פסקה עדיין מרנדרת LTR (כל `<a:pPr>` חייב לשאת את המאפיין `rtl="1"`).
 
 ## מתי להשתמש
 
@@ -92,7 +92,7 @@ marp presentation.md --pptx         # ייצוא ל-PPTX (דורש Chromium)
 
 ### python-pptx (PPTX ישירות)
 
-python-pptx יוצר קבצי `.pptx` ישירות. תמיכת RTL דורשת תיקוני XML כי ה-API של python-pptx לא חושף את מאפיין ה-RTL של פסקאות. צריך להזריק `<a:rtl val="1"/>` לתוך כל אלמנט פסקה אחרי הוספת טקסט.
+python-pptx יוצר קבצי `.pptx` ישירות. תמיכת RTL דורשת תיקוני XML כי ה-API של python-pptx לא חושף את מאפיין ה-RTL של פסקאות. צריך להגדיר את המאפיין `rtl="1"` על ה-`<a:pPr>` של כל פסקה אחרי הוספת טקסט (זה מה ש-PowerPoint עצמו כותב). ל-DrawingML אין מתג כיוון ברמת ה-run, אז קטעי אנגלית inline מרונדרים כ-LTR דרך אלגוריתם ה-bidi בלי תיקון XML לכל run.
 
 התקנה:
 ```bash
@@ -103,7 +103,7 @@ pip install python-pptx
 
 ### Google Slides API
 
-לפלט של Google Slides, השתמשו ב-Slides API עם `WritingDirection: RIGHT_TO_LEFT` על runs של טקסט. זה מורכב יותר ודורש OAuth. השתמשו ב-python-pptx וייבאו ל-Google Slides כשתהליך עבודה תכנותי של Google Slides אינו הכרחי.
+לפלט של Google Slides, ה-Slides REST API יכול להגדיר כיוון טקסט לפסקה (בדקו את התמיכה הנוכחית ב-`batchUpdate` לכיוון טקסט במדריך ה-API לפני שמסתמכים על שם שדה מסוים, משטח ה-RTL של ה-API צר יותר מזה של PowerPoint). הנתיב הזה מורכב יותר ודורש OAuth. ברוב המקרים פשוט יותר לייצר את המצגת עם python-pptx ולייבא את ה-`.pptx` ל-Google Slides.
 
 ## הגדרת RTL עברית
 
@@ -148,19 +148,19 @@ ul, ol {
 
 ### תיקוני XML עבור python-pptx
 
-python-pptx חושף את `paragraph.alignment` אבל לא את מאפיין ה-`rtl` ב-XML. הפתרון הוא הזרקת צומת XML ישירות:
+python-pptx חושף את `paragraph.alignment` אבל לא את מאפיין ה-`rtl` שעל `<a:pPr>`. הפתרון הוא הגדרת המאפיין הזה ישירות:
 
 ```python
 from pptx.oxml.ns import qn
 from lxml import etree
 
 def set_paragraph_rtl(paragraph):
-    """הזרקת <a:rtl val="1"/> לתוך אלמנט pPr של פסקה."""
+    """הגדרת המאפיין rtl="1" על אלמנט ה-pPr של הפסקה."""
     pPr = paragraph._p.get_or_add_pPr()
-    rtl_elem = pPr.find(qn('a:rtl'))
-    if rtl_elem is None:
-        rtl_elem = etree.SubElement(pPr, qn('a:rtl'))
-    rtl_elem.set('val', '1')
+    pPr.set('rtl', '1')  # RTL ברמת הפסקה הוא מאפיין, לא אלמנט בן
+    stale = pPr.find(qn('a:rtl'))  # מחיקת אלמנט בן <a:rtl> לא תקין מגרסאות ישנות
+    if stale is not None:
+        pPr.remove(stale)
 ```
 
 קראו לפונקציה הזו על כל פסקה שמכילה טקסט עברי. ראו `references/pptx-rtl-patches.md` לסט התיקונים המלא כולל תאי טבלה ומסגרות טקסט.
@@ -290,16 +290,14 @@ def add_mixed_paragraph(text_frame, hebrew_text, english_term):
     run_he.text = hebrew_text
     run_he.font.name = 'Heebo'
 
-    # run למונח אנגלי (LTR בתוך פסקת RTL)
+    # run למונח אנגלי בתוך פסקת RTL: ב-DrawingML אין מאפיין כיוון ברמת ה-run,
+    # אז אלגוריתם ה-bidi מרנדר את ה-run הלטיני כ-LTR מעצמו. מגדירים lang רק
+    # כרמז לבדיקת איות. אם הקטע הלטיני צמוד לעברית בלי רווח, עוטפים אותו
+    # בבידוד כיווני (LRI U+2066 ... PDI U+2069) בתוך הטקסט.
     run_en = para.add_run()
     run_en.text = f' {english_term}'
     run_en.font.name = 'Calibri'
-    # ביטול bidi ל-LTR inline בתוך פסקת RTL
-    rPr = run_en._r.get_or_add_rPr()
-    rtl_attr = rPr.find(qn('a:rtl'))
-    if rtl_attr is None:
-        rtl_attr = etree.SubElement(rPr, qn('a:rtl'))
-    rtl_attr.set('val', '0')
+    run_en._r.get_or_add_rPr().set('lang', 'en-US')
 ```
 
 ### שקף כותרת דו-לשוני
@@ -308,7 +306,7 @@ def add_mixed_paragraph(text_frame, hebrew_text, english_term):
 
 ### עברית ולטינית מעורבות בתוך מילה או טוקן צמוד
 
-ביטולי הכיוון ברמת הפסקה וה-run למעלה מטפלים במשפט עברי עם מילים אנגליות נפרדות. הבאג הקשה יותר, והנפוץ הרבה יותר בעולם האמיתי, הוא טוקן בודד שמערבב כתבים בלי גבול רווח: `B2B-חברות`, `חברת-SaaS`, מחרוזת גרסה כמו `גרסה-2.0`, או האשטאג כמו `#עברית2026`. אלגוריתם ה-bidi מסדר מחדש את ה-run בכל גבול כתב בתוך הטוקן, אז `B2B-חברות` יכול להופיע כ-`חברות-B2B` למרות שזו מילה ויזואלית אחת.
+מאפיין ה-RTL ברמת הפסקה יחד עם אלגוריתם ה-bidi למעלה מטפלים במשפט עברי עם מילים אנגליות נפרדות. הבאג הקשה יותר, והנפוץ הרבה יותר בעולם האמיתי, הוא טוקן בודד שמערבב כתבים בלי גבול רווח: `B2B-חברות`, `חברת-SaaS`, מחרוזת גרסה כמו `גרסה-2.0`, או האשטאג כמו `#עברית2026`. אלגוריתם ה-bidi מסדר מחדש את ה-run בכל גבול כתב בתוך הטוקן, אז `B2B-חברות` יכול להופיע כ-`חברות-B2B` למרות שזו מילה ויזואלית אחת.
 
 זה קורה כי שבירת run היא גבול *כיוון*, לא גבול *מילה*. פיצול `B2B-חברות` ל-run של LTR ו-run של RTL נותן לאלגוריתם ה-bidi למקם כל run בנפרד, והמקף (תו ניטרלי) נצמד לצד שהאלגוריתם מעדיף, לא לאן שהקלדתם.
 
@@ -337,14 +335,14 @@ def add_intratoken_run(paragraph, hebrew_part, latin_part, sep='-'):
 ### הערות מרצה, תבנית אב ומיקום תמונות
 
 - **RTL להערות מרצה**: להערות יש מסגרת טקסט משלהן, שמגיעים אליה דרך `slide.notes_slide.notes_text_frame`. הן לא מתוקנות על ידי עוזרי ה-RTL של גוף השקף. קראו ל-`set_text_frame_rtl(slide.notes_slide.notes_text_frame)` אחרי כתיבת ההערות, אחרת הערות עבריות ירונדרו LTR בתצוגת המרצה.
-- **ברירות מחדל בתבנית אב ובפריסות**: הגדרת RTL על כל פסקה אמינה אבל חוזרת על עצמה. כדי להפוך RTL לברירת המחדל של פריסה, תקנו את ה-`<a:lstStyle>` בתוך ה-`<p:txBody>` של ה-placeholder בפריסת השקף (`prs.slide_layouts[i]`) או בתבנית האב (`prs.slide_masters[0]`), והוסיפו `<a:rtl val="1"/>` ל-`<a:defRPr>`/`<a:lvlNpPr>` של כל רמה. placeholders חדשים שיורשים מהפריסה הזו מתחילים אז כ-RTL. זה לא מתקן רטרואקטיבית שקפים קיימים, רק משנה את ברירת המחדל ל-placeholders שנוצרים אחר כך.
+- **ברירות מחדל בתבנית אב ובפריסות**: הגדרת RTL על כל פסקה אמינה אבל חוזרת על עצמה. כדי להפוך RTL לברירת המחדל של פריסה, תקנו את ה-`<a:lstStyle>` בתוך ה-`<p:txBody>` של ה-placeholder בפריסת השקף (`prs.slide_layouts[i]`) או בתבנית האב (`prs.slide_masters[0]`), הגדירו את המאפיין `rtl="1"` על אלמנט מאפייני הפסקה של כל רמה (`<a:lvl1pPr>` עד `<a:lvl9pPr>`). placeholders חדשים שיורשים מהפריסה הזו מתחילים אז כ-RTL. זה לא מתקן רטרואקטיבית שקפים קיימים, רק משנה את ברירת המחדל ל-placeholders שנוצרים אחר כך.
 - **מיקום תמונות ולוגו ב-RTL**: `add_picture` ממקם תמונות לפי קואורדינטות EMU מוחלטות, אז RTL לא מזיז אותן אוטומטית. לפי מוסכמה ישראלית, הלוגו של החברה יושב בפינה הימנית העליונה (תחילת זרימת הקריאה). חשבו את מיקום הקצה הימני כ-`prs.slide_width - Inches(logo_width) - Inches(margin)` במקום לקבע offset שמאלי, כך שהלוגו נשאר מעוגן לתחילת השקף הויזואלית ללא תלות ברוחב השקף.
 
 ## מלכודות נפוצות
 
 **1. סימני פיסוק קופצים במיצוא ל-PPTX**
 
-כשמייצאים ל-PPTX מכלים שלא מגדירים RTL ברמת ה-XML, נקודות ופסיקים קופצים לקצה הנגדי של השורה. משפט כמו `הפתרון שלנו.` יוצג כ-`.הפתרון שלנו`. התיקון הוא `<a:rtl val="1"/>` על כל אלמנט פסקה ב-XML, לא רק ברמת מסגרת הטקסט. מאפיין ה-`txBody` ברמת המסגרת לא מספיק. כל `<a:pPr>` צריך אותו.
+כשמייצאים ל-PPTX מכלים שלא מגדירים RTL ברמת ה-XML, נקודות ופסיקים קופצים לקצה הנגדי של השורה. משפט כמו `הפתרון שלנו.` יוצג כ-`.הפתרון שלנו`. התיקון הוא המאפיין `rtl="1"` על ה-`<a:pPr>` של כל פסקה ב-XML, לא רק ברמת מסגרת הטקסט. מאפיין ה-`txBody` ברמת המסגרת לא מספיק. כל `<a:pPr>` צריך אותו.
 
 **2. יישור תבליטים מוגדר ברירת מחדל כ-LTR**
 
@@ -368,7 +366,7 @@ def add_intratoken_run(paragraph, hebrew_part, latin_part, sep='-'):
 |------|-------|---------------|------------|
 | Marp CLI | `.md` | PDF, HTML, PPTX | טוב (ברמת CSS) |
 | python-pptx | סקריפט Python | `.pptx` | מצוין (ברמת XML) |
-| Google Slides API | קריאות API | Google Slides, PDF | טוב (מאפיין WritingDirection) |
+| Google Slides API | קריאות API | Google Slides, PDF | חלקי (שליטת RTL צרה יותר מ-PPTX; אמתו במדריך ה-API) |
 | LibreOffice Impress | `.odp` / `.pptx` | PDF, PPTX | חלקי (משתנה לפי גרסה) |
 
 לתאימות מקסימלית עם מקבלי מצגות עסקיות ישראליות (שכמעט כולם משתמשים בWindows + PowerPoint או Google Slides), עדיף python-pptx. ייצוא PDF מ-Marp הכי טוב לשיתוף לקריאה בלבד (קבצים מצורפים לאימייל, מייל פיץ׳).
@@ -420,11 +418,11 @@ def add_intratoken_run(paragraph, hebrew_part, latin_part, sep='-'):
 | Google Slides API | https://developers.google.com/slides/api | Slides REST API, batchUpdate, placeholders, כיוון טקסט |
 | אלגוריתם הדו-כיווניות של Unicode (UAX #9) | https://unicode.org/reports/tr9/ | כללי סידור bidi, בידודים (LRI/PDI), סימני כיוון |
 | Google Fonts: Heebo | https://fonts.google.com/specimen/Heebo | סאנס-סריף עברי, משקלים, הורדה להטמעה מקומית |
-| מפרט OOXML (ECMA-376) | https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/ | אלמנטים של טקסט ומאפייני פסקה ב-Office Open XML |
+| סכמת טקסט DrawingML (ECMA-376) | https://www.datypic.com/sc/ooxml/e-a_pPr-1.html | CT_TextParagraphProperties: המאפיין `rtl` יושב על `<a:pPr>`, לא על runs |
 
 ## פתרון בעיות
 
-**טקסט נראה הפוך**: הפונט מרנדר אבל הכיוון לא מוגדר. הוסיפו `dir="rtl"` לאלמנט ה-HTML (ייצוא HTML מ-Marp) או ודאו ש-`<a:rtl val="1"/>` קיים על כל `<a:pPr>` ב-XML של ה-PPTX.
+**טקסט נראה הפוך**: הפונט מרנדר אבל הכיוון לא מוגדר. הוסיפו `dir="rtl"` לאלמנט ה-HTML (ייצוא HTML מ-Marp) או ודאו שהמאפיין `rtl="1"` קיים על כל `<a:pPr>` ב-XML של ה-PPTX.
 
 **סמני תבליטים בצד הלא נכון**: CSS `list-style-position: inside` בשילוב עם `direction: rtl` מתקן ב-Marp. ב-PPTX, סמן התבליט עוקב אחרי כיוון הפסקה, אז הגדרת RTL לפסקה מספיקה.
 

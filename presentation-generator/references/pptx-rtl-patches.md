@@ -11,8 +11,7 @@ A `.pptx` file is a ZIP archive of XML files. The relevant XML hierarchy for tex
   <p:txBody>                  # Text body
     <a:bodyPr rtlCol="1"/>    # Body-level RTL (columns, not text direction)
     <a:p>                     # Paragraph
-      <a:pPr>                 # Paragraph properties
-        <a:rtl val="1"/>      # RTL text direction (THIS is what you need)
+      <a:pPr algn="r" rtl="1"># Paragraph props: rtl="1" ATTRIBUTE (THIS is what you need)
         <a:buFont .../>       # Bullet font
       </a:pPr>
       <a:r>                   # Run
@@ -24,7 +23,7 @@ A `.pptx` file is a ZIP archive of XML files. The relevant XML hierarchy for tex
 </p:sp>
 ```
 
-The `<a:rtl val="1"/>` element inside `<a:pPr>` is the critical patch. It must appear on every paragraph containing Hebrew text. The body-level `rtlCol` attribute controls column layout, not text direction, and is insufficient on its own.
+The `rtl="1"` ATTRIBUTE on `<a:pPr>` is the critical patch (this is exactly what PowerPoint itself writes). Per OOXML (ISO/IEC 29500), text direction in DrawingML is a boolean attribute on the paragraph-properties element `<a:pPr>` (CT_TextParagraphProperties) and on the list-style levels `<a:lvl1pPr>`..`<a:lvl9pPr>`. There is NO `<a:rtl>` element anywhere in the DrawingML namespace and `<a:rPr>` (run properties) has no `rtl` attribute, so DrawingML has no run-level direction toggle (this is unlike WordprocessingML's `<w:rtl/>`, which is a common source of confusion). Setting the attribute keeps the file round-trip-clean and honored by LibreOffice and Google Slides import. The attribute must appear on every paragraph containing Hebrew text. The body-level `rtlCol` attribute controls column layout, not text direction, and is insufficient on its own.
 
 ## Patch Functions
 
@@ -40,12 +39,17 @@ def set_paragraph_rtl(paragraph):
 
     Must be called on every paragraph with Hebrew text. The python-pptx
     API does not expose this attribute, so we patch the XML directly.
+    Text direction in DrawingML is the `rtl` ATTRIBUTE on <a:pPr> (what
+    PowerPoint writes); there is no <a:rtl> element in DrawingML at all, so
+    nothing sets direction at the run level (the bidi algorithm handles it).
     """
     pPr = paragraph._p.get_or_add_pPr()
-    rtl_elem = pPr.find(qn('a:rtl'))
-    if rtl_elem is None:
-        rtl_elem = etree.SubElement(pPr, qn('a:rtl'))
-    rtl_elem.set('val', '1')
+    pPr.set('rtl', '1')
+    # Remove any stale child <a:rtl> a previous version may have injected;
+    # no such element is valid in DrawingML, so strip it if present.
+    stale = pPr.find(qn('a:rtl'))
+    if stale is not None:
+        pPr.remove(stale)
 ```
 
 ### 2. Set All Paragraphs in a Text Frame to RTL
@@ -105,24 +109,31 @@ def add_hebrew_run(paragraph, text, font_name='Heebo', font_size_pt=24, bold=Fal
     return run
 ```
 
-### 5. Override a Single Run to LTR (for English within Hebrew paragraph)
+### 5. Inline English (LTR) within a Hebrew paragraph
+
+DrawingML has **no run-level direction toggle** (no `<a:rtl>` element, no `rtl`
+attribute on `<a:rPr>`), so you do not force a run to LTR with XML. Inline
+English terms, URLs, code, and numbers already render left-to-right inside an
+RTL paragraph because of the Unicode bidi algorithm (Latin and digits are
+inherently LTR). Set `lang="en-US"` only as a proofing hint.
+
+For the genuinely hard case -- a Latin fragment glued to Hebrew with no space
+(`B2B-חברות`, `חברת-SaaS`, a version string), or digits whose grouping the
+bidi algorithm reorders -- fix it in the TEXT, not the XML, by wrapping the
+fragment in Unicode bidi isolates: LRI (U+2066) ... PDI (U+2069), or an LRM
+(U+200E) anchor.
 
 ```python
-def set_run_ltr(run):
-    """
-    Force a text run to LTR direction within an RTL paragraph.
+def add_english_run(paragraph, text, font_name='Calibri'):
+    """Add an English run; no RTL element needed (bidi handles direction)."""
+    run = paragraph.add_run()
+    run.text = text
+    run.font.name = font_name
+    run._r.get_or_add_rPr().set('lang', 'en-US')  # proofing hint only
+    return run
 
-    Use for inline English terms, URLs, code snippets, or numbers
-    that should read left-to-right inside an otherwise Hebrew paragraph.
-    """
-    rPr = run._r.get_or_add_rPr()
-    rtl_elem = rPr.find(qn('a:rtl'))
-    if rtl_elem is None:
-        rtl_elem = etree.SubElement(rPr, qn('a:rtl'))
-    rtl_elem.set('val', '0')
-
-    # Also set language to English
-    rPr.set('lang', 'en-US')
+LRI, PDI = '⁦', '⁩'
+text = f"קראתי על {LRI}B2B-SaaS{PDI} אתמול"  # isolate the mixed token
 ```
 
 ### 6. Set Table Cell Text to RTL
@@ -293,19 +304,18 @@ shape = slide.shapes[0]
 print(etree.tostring(shape.text_frame._txBody, pretty_print=True).decode())
 ```
 
-Check that each `<a:pPr>` element has `<a:rtl val="1"/>` as a child. If it is missing on any paragraph, that paragraph will render LTR.
+Check that each `<a:pPr>` element carries the `rtl="1"` attribute. If it is missing on any paragraph, that paragraph will render LTR.
 
 To check a specific paragraph:
 ```python
 para = text_frame.paragraphs[0]
 pPr = para._p.find(qn('a:pPr'))
 if pPr is not None:
-    rtl = pPr.find(qn('a:rtl'))
-    print(f"RTL set: {rtl is not None}, val: {rtl.get('val') if rtl is not None else 'N/A'}")
+    print(f"RTL set: {pPr.get('rtl') == '1'} (rtl attribute = {pPr.get('rtl')})")
 ```
 
 ## Reference
 
-- [OOXML spec: CT_TextParagraphProperties (a:pPr)](https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oi29500/)
+- [DrawingML text schema: CT_TextParagraphProperties (a:pPr), rtl attribute](https://www.datypic.com/sc/ooxml/e-a_pPr-1.html)
 - [python-pptx source: src/pptx/oxml/text.py](https://github.com/scanny/python-pptx/blob/master/src/pptx/oxml/text.py)
 - [Unicode Bidirectional Algorithm](https://unicode.org/reports/tr9/)

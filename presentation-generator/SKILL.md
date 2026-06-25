@@ -17,9 +17,9 @@ Follow these steps to produce a correct RTL Hebrew deck:
 1. **Choose the output path**: Marp markdown for version-controlled, text-based slides, or python-pptx for a `.pptx` file that opens cleanly in PowerPoint and Google Slides. For Israeli business recipients, prefer python-pptx (XML-level RTL is reliable); use Marp PDF for read-only sharing.
 2. **Pick the font**: Heebo for business and tech decks, David Libre for formal reports, Assistant for education, Rubik for bold startup decks. Load via `@import` in Marp CSS, or ensure the font is installed on the machine running python-pptx.
 3. **Generate the content**: write the slide text in Hebrew. Structure pitch decks per the Israeli VC ordering below; use NIS formatting and the Israeli fiscal calendar.
-4. **Apply the RTL patches**: for Marp, set `direction: rtl; text-align: right` in the theme CSS. For python-pptx, call `set_paragraph_rtl()` on every paragraph that holds Hebrew text, plus the table-cell and run-level helpers in `references/pptx-rtl-patches.md`. For charts, speaker notes, and the slide master, see the dedicated sections below.
+4. **Apply the RTL patches**: for Marp, set `direction: rtl; text-align: right` in the theme CSS. For python-pptx, call `set_paragraph_rtl()` on every paragraph that holds Hebrew text, plus the table-cell and inline-English helpers in `references/pptx-rtl-patches.md`. For charts, speaker notes, and the slide master, see the dedicated sections below.
 5. **Export**: run `marp presentation.md --pptx` (or `--pdf`/`--html`), or `prs.save(output_path)` in python-pptx.
-6. **Verify**: open the file and confirm bullets align right, punctuation sits at the correct end of each line, the currency symbol is placed correctly, and tables read right-to-left. Inspect the XML if a paragraph still renders LTR (each `<a:pPr>` must contain `<a:rtl val="1"/>`).
+6. **Verify**: open the file and confirm bullets align right, punctuation sits at the correct end of each line, the currency symbol is placed correctly, and tables read right-to-left. Inspect the XML if a paragraph still renders LTR (each `<a:pPr>` must carry the `rtl="1"` attribute).
 
 ## When to Use
 
@@ -92,7 +92,7 @@ marp presentation.md --pptx         # Export to PPTX (requires Chromium)
 
 ### python-pptx (Native PPTX)
 
-python-pptx creates `.pptx` files directly. RTL support requires XML-level patches because python-pptx's Python API does not expose the RTL paragraph attribute. You must inject `<a:rtl val="1"/>` into each paragraph element after adding text.
+python-pptx creates `.pptx` files directly. RTL support requires XML-level patches because python-pptx's Python API does not expose the RTL paragraph attribute. You set the `rtl="1"` attribute on each paragraph's `<a:pPr>` element after adding text (this is what PowerPoint itself writes). DrawingML has no run-level direction toggle, so inline English runs render LTR via the Unicode bidi algorithm with no per-run XML patch.
 
 Install:
 ```bash
@@ -103,7 +103,7 @@ See `scripts/create-presentation.py` for a complete working example with all RTL
 
 ### Google Slides API
 
-For Google Slides output, use the Slides API with `WritingDirection: RIGHT_TO_LEFT` on text runs. This is more involved and requires OAuth; use python-pptx and import into Google Slides when a programmatic Google Slides workflow is not strictly necessary.
+For Google Slides output, the Slides REST API can set paragraph text direction (check the current `batchUpdate` text-direction support in the API reference before relying on a specific field name, the API's RTL surface is narrower than PowerPoint's). This path is more involved and requires OAuth; in most cases it is simpler to generate the deck with python-pptx and import the `.pptx` into Google Slides.
 
 ## Hebrew RTL Configuration
 
@@ -160,19 +160,19 @@ html: true
 
 ### python-pptx XML Patches
 
-python-pptx exposes the `paragraph.alignment` property but not the `rtl` XML attribute. The patch inserts the XML node directly:
+python-pptx exposes the `paragraph.alignment` property but not the `rtl` XML attribute on `<a:pPr>`. The patch sets that attribute directly:
 
 ```python
 from pptx.oxml.ns import qn
 from lxml import etree
 
 def set_paragraph_rtl(paragraph):
-    """Inject <a:rtl val="1"/> into a paragraph's pPr element."""
+    """Set the rtl="1" attribute on a paragraph's pPr element."""
     pPr = paragraph._p.get_or_add_pPr()
-    rtl_elem = pPr.find(qn('a:rtl'))
-    if rtl_elem is None:
-        rtl_elem = etree.SubElement(pPr, qn('a:rtl'))
-    rtl_elem.set('val', '1')
+    pPr.set('rtl', '1')  # paragraph-level RTL is an attribute, not a child element
+    stale = pPr.find(qn('a:rtl'))  # drop any invalid child <a:rtl> from old versions
+    if stale is not None:
+        pPr.remove(stale)
 ```
 
 Call this on every paragraph that contains Hebrew text. See `references/pptx-rtl-patches.md` for the full patch set including table cells and text frames.
@@ -312,16 +312,15 @@ def add_mixed_paragraph(text_frame, hebrew_text, english_term):
     run_he.text = hebrew_text
     run_he.font.name = 'Heebo'
 
-    # English term run (LTR within RTL paragraph)
+    # English term run within an RTL paragraph: no run-level RTL XML exists
+    # in DrawingML, so the bidi algorithm renders the Latin run LTR on its
+    # own. Set lang only as a proofing hint. If the Latin fragment is glued
+    # to Hebrew with no space, wrap it in bidi isolates (LRI U+2066 ...
+    # PDI U+2069) in the text instead.
     run_en = para.add_run()
     run_en.text = f' {english_term}'
     run_en.font.name = 'Calibri'
-    # Bidi override for inline LTR in RTL paragraph
-    rPr = run_en._r.get_or_add_rPr()
-    rtl_attr = rPr.find(qn('a:rtl'))
-    if rtl_attr is None:
-        rtl_attr = etree.SubElement(rPr, qn('a:rtl'))
-    rtl_attr.set('val', '0')
+    run_en._r.get_or_add_rPr().set('lang', 'en-US')
 ```
 
 ### Title Slides with Both Languages
@@ -330,7 +329,7 @@ A common Israeli business pattern: Hebrew title on line one, English subtitle on
 
 ### Mixed Hebrew and Latin Inside a Single Word or Tight Token
 
-The paragraph-level and run-level direction overrides above handle Hebrew sentences with separate English words. The harder, and far more common, real-world bug is a single token that mixes scripts with no whitespace boundary: `B2B-חברות`, `חברת-SaaS`, a version string like `גרסה-2.0`, or a hashtag like `#עברית2026`. The bidi algorithm reorders the run at every script boundary inside the token, so `B2B-חברות` can display as `חברות-B2B` even though it is one visual word.
+The paragraph-level RTL attribute plus the bidi algorithm above handle Hebrew sentences with separate English words. The harder, and far more common, real-world bug is a single token that mixes scripts with no whitespace boundary: `B2B-חברות`, `חברת-SaaS`, a version string like `גרסה-2.0`, or a hashtag like `#עברית2026`. The bidi algorithm reorders the run at every script boundary inside the token, so `B2B-חברות` can display as `חברות-B2B` even though it is one visual word.
 
 This happens because a run break is a *direction* boundary, not a *word* boundary. Splitting `B2B-חברות` into an LTR run and an RTL run lets the bidi algorithm place each run independently, and the hyphen (a neutral character) attaches to whichever side the algorithm prefers, not where you typed it.
 
@@ -359,14 +358,14 @@ In Marp, wrap the Latin fragment in `<span dir="ltr">` (requires `html: true`), 
 ### Speaker Notes, Slide Master, and Image Placement
 
 - **Speaker notes RTL**: notes have their own text frame, reached via `slide.notes_slide.notes_text_frame`. They are not patched by slide-body RTL helpers. Call `set_text_frame_rtl(slide.notes_slide.notes_text_frame)` after writing notes, or Hebrew notes render LTR in the presenter view.
-- **Slide master and layout defaults**: setting RTL on each paragraph is reliable but repetitive. To make RTL the default for a layout, patch the `<a:lstStyle>` (list style) inside the placeholder's `<p:txBody>` on the slide layout (`prs.slide_layouts[i]`) or slide master (`prs.slide_masters[0]`), adding `<a:rtl val="1"/>` to each level's `<a:defRPr>`/`<a:lvlNpPr>`. New placeholders that inherit from that layout then start RTL. This does not retroactively fix existing slides; it only changes the default for placeholders created afterward.
+- **Slide master and layout defaults**: setting RTL on each paragraph is reliable but repetitive. To make RTL the default for a layout, patch the `<a:lstStyle>` (list style) inside the placeholder's `<p:txBody>` on the slide layout (`prs.slide_layouts[i]`) or slide master (`prs.slide_masters[0]`): set the `rtl="1"` attribute on each level's paragraph-properties element (`<a:lvl1pPr>` ... `<a:lvl9pPr>`). New placeholders that inherit from that layout then start RTL. This does not retroactively fix existing slides; it only changes the default for placeholders created afterward.
 - **Image and logo placement in RTL**: `add_picture` positions images by absolute EMU coordinates, so RTL does not move them automatically. By Israeli convention, the company logo sits in the top-right corner (the start of the reading flow). Compute the right-edge position as `prs.slide_width - Inches(logo_width) - Inches(margin)` rather than hardcoding a left offset, so the logo stays anchored to the visual start of the slide regardless of slide width.
 
 ## Gotchas
 
 **1. Hebrew punctuation displacement in PPTX exports**
 
-When exporting to PPTX from tools that do not set RTL at the XML level, periods and commas jump to the opposite end of the line. A sentence like `הפתרון שלנו.` renders as `.הפתרון שלנו` visually. The fix is `<a:rtl val="1"/>` on every paragraph element in the XML, not just at the text-frame level. The text-frame-level `txBody` attribute is insufficient; each `<a:pPr>` needs it.
+When exporting to PPTX from tools that do not set RTL at the XML level, periods and commas jump to the opposite end of the line. A sentence like `הפתרון שלנו.` renders as `.הפתרון שלנו` visually. The fix is the `rtl="1"` attribute on every paragraph's `<a:pPr>` in the XML, not just at the text-frame level. The text-frame-level `txBody` attribute is insufficient; each `<a:pPr>` needs it.
 
 **2. Default bullet alignment is LTR**
 
@@ -390,7 +389,7 @@ In RTL mode, table columns are displayed right to left. A table with columns [Da
 |------|-------|---------------|-------------|
 | Marp CLI | `.md` | PDF, HTML, PPTX | Good (CSS-level) |
 | python-pptx | Python script | `.pptx` | Excellent (XML-level) |
-| Google Slides API | API calls | Google Slides, PDF | Good (WritingDirection property) |
+| Google Slides API | API calls | Google Slides, PDF | Partial (narrower RTL control than PPTX; verify in API docs) |
 | LibreOffice Impress | `.odp` / `.pptx` | PDF, PPTX | Partial (varies by version) |
 
 For maximum compatibility with Israeli business recipients (who almost universally use Windows + PowerPoint or Google Slides), prefer python-pptx output. Marp PDF export is best for read-only sharing (email attachments, pitch email).
@@ -429,7 +428,7 @@ Output: a 3-slide PDF where the title slide is right-aligned, the revenue slide 
 
 - `scripts/create-presentation.py` - Working python-pptx script that builds a complete 5-slide RTL Hebrew pitch deck (title, problem, solution, mixed-language technical slide, financial table). All RTL XML patches are applied. Run `python scripts/create-presentation.py --output deck.pptx --title "שם החברה"`. Use it as the canonical reference for the patch functions.
 - `references/marp-rtl-guide.md` - Marp RTL configuration quick reference: minimum viable theme, project config, slide templates (title, content, two-column, code block, financial table), export commands, font loading options, a full business-grade theme, and known limitations.
-- `references/pptx-rtl-patches.md` - The complete python-pptx RTL patch set: paragraph, text-frame, run-level, table-cell, and table patches, the full slide-building pattern, reversed-column table helper, font embedding, and XML debugging snippets.
+- `references/pptx-rtl-patches.md` - The complete python-pptx RTL patch set: paragraph, text-frame, inline-English, table-cell, and table patches, the full slide-building pattern, reversed-column table helper, font embedding, and XML debugging snippets.
 
 ## Reference Links
 
@@ -442,11 +441,11 @@ Output: a 3-slide PDF where the title slide is right-aligned, the revenue slide 
 | Google Slides API | https://developers.google.com/slides/api | Slides REST API, batchUpdate, placeholders, text direction |
 | Unicode Bidirectional Algorithm (UAX #9) | https://unicode.org/reports/tr9/ | Bidi reordering rules, isolates (LRI/PDI), directional marks |
 | Google Fonts: Heebo | https://fonts.google.com/specimen/Heebo | Hebrew sans-serif, weights, download for local embedding |
-| OOXML spec (ECMA-376) | https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/ | Office Open XML text and paragraph property elements |
+| DrawingML text schema (ECMA-376) | https://www.datypic.com/sc/ooxml/e-a_pPr-1.html | CT_TextParagraphProperties: the `rtl` attribute lives on `<a:pPr>`, not on runs |
 
 ## Troubleshooting
 
-**Text appears mirrored or reversed**: The font is rendering but direction is not set. Add `dir="rtl"` to the HTML element (Marp HTML export) or verify `<a:rtl val="1"/>` is present on each `<a:pPr>` in the PPTX XML.
+**Text appears mirrored or reversed**: The font is rendering but direction is not set. Add `dir="rtl"` to the HTML element (Marp HTML export) or verify the `rtl="1"` attribute is present on each `<a:pPr>` in the PPTX XML.
 
 **Bullet markers appear on the wrong side**: CSS `list-style-position: inside` combined with `direction: rtl` fixes Marp. For PPTX, the bullet marker follows paragraph direction, so setting paragraph RTL is sufficient.
 

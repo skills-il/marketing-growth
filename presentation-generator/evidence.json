@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "presentation-generator",
+  "generated_at": "2026-06-26T14:00:00Z",
+  "claims": [
+    {
+      "claim_id": "python-pptx-version-no-native-rtl",
+      "claim": "python-pptx current stable is 1.0.2 (released 2024-08-07), installed via `pip install python-pptx`, MIT-licensed, Python 3.8+. Version 1.0.x still exposes no high-level RTL API, so RTL must be patched at the XML level. Verified: the bundled create-presentation.py runs cleanly under python-pptx 1.0.2 and produces a valid 5-slide RTL deck.",
+      "source_url": "https://pypi.org/project/python-pptx/",
+      "raw_snippet": "python-pptx 1.0.2 is the current stable release (Aug 2024); no newer release as of mid-2026; no native RTL paragraph API added.",
+      "fetched_at": "2026-06-26T13:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/pptx-rtl-patches.md", "scripts/create-presentation.py"]
+    },
+    {
+      "claim_id": "ooxml-paragraph-rtl-is-attribute",
+      "claim": "Per OOXML (ISO/IEC 29500) DrawingML, right-to-left is the boolean `rtl` ATTRIBUTE on the paragraph-properties elements `<a:pPr>` (CT_TextParagraphProperties) and `<a:lvl1pPr>`..`<a:lvl9pPr>` -- e.g. `<a:pPr algn=\"r\" rtl=\"1\">` -- which is exactly what PowerPoint writes and what LibreOffice and Google Slides import honor. DrawingML has NO `<a:rtl>` element anywhere (datypic e-a_rtl-1.html is 404) and run properties `<a:rPr>` / `<a:defRPr>` (CT_TextCharacterProperties) carry no `rtl` attribute, so there is no run-level direction toggle (unlike WordprocessingML's `<w:rtl/>`). Inline LTR runs inside an RTL paragraph render LTR via the Unicode bidi algorithm; ambiguous boundaries are fixed with bidi controls (LRM U+200E, LRI U+2066 / PDI U+2069) in the text, not XML.",
+      "source_url": "https://www.datypic.com/sc/ooxml/e-a_pPr-1.html",
+      "raw_snippet": "datypic CT_TextParagraphProperties (a:pPr): rtl [0..1] xsd:boolean 'Right To Left' is an ATTRIBUTE. a:rPr (CT_TextCharacterProperties) lists no rtl attribute and no a:rtl child element. The element page e-a_rtl-1.html returns 404 (no such element in the drawingml namespace).",
+      "fetched_at": "2026-06-26T13:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/pptx-rtl-patches.md", "scripts/create-presentation.py"]
+    },
+    {
+      "claim_id": "marp-cli-version-flags",
+      "claim": "Marp CLI current release is 4.4.0 (2026-05-06). The export flags `--pdf`, `--html`, `--pptx`, and `--allow-local-files` are current. Default `--pptx` exports each slide as a raster image (RTL baked in visually, text not editable); `--pptx-editable` (Marp CLI 4.1.0+, experimental, via LibreOffice Impress) yields editable text with LibreOffice-dependent RTL fidelity. Marp CLI 4.0+ adds `--browser`, `--browser-path`, `--browser-protocol` flags (and Firefox via WebDriver BiDi), which supersede the legacy PUPPETEER_EXECUTABLE_PATH env var.",
+      "source_url": "https://github.com/marp-team/marp-cli/releases/tag/v4.4.0",
+      "raw_snippet": "Marp CLI v4.4.0 (May 2026); v4.1.0 added experimental --pptx-editable (LibreOffice-backed); v4.0 added --browser / --browser-path. Core --pdf/--html/--pptx/--allow-local-files flags unchanged.",
+      "fetched_at": "2026-06-26T13:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/marp-rtl-guide.md"]
+    },
+    {
+      "claim_id": "marp-no-native-rtl-css",
+      "claim": "Marp / Marp Core has no engine-level native RTL support as of CLI 4.4.0; RTL is achieved via a CSS theme (`direction: rtl; text-align: right`) and/or a per-slide `dir: rtl` front-matter / `dir=\"auto\"` attribute. Many built-in themes ignore RTL.",
+      "source_url": "https://github.com/orgs/marp-team/discussions/490",
+      "raw_snippet": "Marp maintainer confirms no native RTL; recommends CSS direction or a dir-attribute plugin; built-in themes are LTR-oriented.",
+      "fetched_at": "2026-06-26T13:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/marp-rtl-guide.md"]
+    },
+    {
+      "claim_id": "hebrew-google-fonts",
+      "claim": "Heebo (business/tech default), David Libre (formal), Assistant (education), and Rubik (bold/startup) are all current, actively-served Hebrew Google Fonts with full Hebrew subsets in 2026. Heebo is the de-facto default Hebrew sans.",
+      "source_url": "https://fonts.google.com/specimen/Heebo",
+      "raw_snippet": "Heebo, David Libre, Assistant, Rubik are Google Fonts with Hebrew subsets, actively served in 2026.",
+      "fetched_at": "2026-06-26T13:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/marp-rtl-guide.md"]
+    },
+    {
+      "claim_id": "illustrative-formatting-and-font-urls",
+      "claim": "Illustrative formatting-demo values used in the skill's examples (NOT external facts): Hebrew number/currency formatting samples ₪1,234,567, ₪1,234,567.89, ₪1.234, ₪180,000, ₪3.4, and sample chart/data percentages 1%, 1.2%, 11%, 62%, 70%. The placeholder API endpoint https://api.example.com/v1/data is an illustrative example.com URL. The Google Fonts CSS `@import` URLs load Hebrew webfonts at render time.",
+      "source_url": "https://fonts.google.com/specimen/Heebo",
+      "raw_snippet": "Illustrative example values: ₪1,234,567 ₪1,234,567.89 ₪1.234 ₪180,000 ₪3.4; 1% 1.2% 11% 62% 70%; https://api.example.com/v1/data; font URLs https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Rubik:wght@400;700&display=swap",
+      "fetched_at": "2026-06-26T13:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/marp-rtl-guide.md"]
+    },
+    {
+      "claim_id": "reference-source-urls",
+      "claim": "External reference URLs cited in the skill.",
+      "source_url": "https://python-pptx.readthedocs.io/en/latest/",
+      "raw_snippet": "Reference URLs: https://marp.app https://python-pptx.readthedocs.io/en/latest/ https://github.com/scanny/python-pptx/blob/master/src/pptx/oxml/text.py https://fonts.google.com/specimen/Heebo https://developers.google.com/slides/api https://gitbrent.github.io/PptxGenJS/ https://revealjs.com https://unicode.org/reports/tr9/ https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oi29500/ https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/",
+      "fetched_at": "2026-06-26T13:30:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/pptx-rtl-patches.md", "references/marp-rtl-guide.md"]
+    }
+  ]
+}

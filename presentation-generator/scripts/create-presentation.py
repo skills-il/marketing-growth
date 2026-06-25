@@ -29,18 +29,29 @@ from pptx.util import Inches, Pt, Emu
 
 def set_paragraph_rtl(paragraph):
     """
-    Inject <a:rtl val="1"/> into a paragraph's pPr element.
+    Set rtl="1" on a paragraph's pPr element.
 
-    This is the core fix for Hebrew text direction. Without this patch,
-    bullet alignment and punctuation placement are wrong regardless of
-    what the parent text frame says. Must be applied to EVERY paragraph
-    that contains Hebrew text.
+    This is the core fix for Hebrew text direction. Without it, bullet
+    alignment and punctuation placement are wrong regardless of what the
+    parent text frame says. Must be applied to EVERY paragraph that
+    contains Hebrew text.
+
+    Per OOXML (ISO/IEC 29500), text-direction in DrawingML is the boolean
+    `rtl` ATTRIBUTE on the paragraph-properties element <a:pPr> (and on the
+    list-style levels <a:lvl1pPr>..<a:lvl9pPr>) -- this is exactly what
+    PowerPoint itself writes, so the file round-trips cleanly and is honored
+    by LibreOffice and Google Slides import. DrawingML has NO run-level
+    direction toggle at all: there is no <a:rtl> element anywhere in the
+    drawingml namespace, and <a:rPr> has no rtl attribute. Inline LTR runs
+    rely on the Unicode bidi algorithm (see add_english_run).
     """
     pPr = paragraph._p.get_or_add_pPr()
-    rtl_elem = pPr.find(qn('a:rtl'))
-    if rtl_elem is None:
-        rtl_elem = etree.SubElement(pPr, qn('a:rtl'))
-    rtl_elem.set('val', '1')
+    pPr.set('rtl', '1')
+    # Drop any stale child <a:rtl> a previous version may have injected:
+    # there is no valid <a:rtl> element in DrawingML, so strip it if present.
+    stale = pPr.find(qn('a:rtl'))
+    if stale is not None:
+        pPr.remove(stale)
 
 
 def set_text_frame_rtl(text_frame):
@@ -83,11 +94,17 @@ def add_hebrew_run(paragraph, text, font_name='Heebo', font_size_pt=24, bold=Fal
 
 def add_english_run(paragraph, text, font_name='Calibri', font_size_pt=24, bold=False):
     """
-    Add an LTR English run within an RTL paragraph.
+    Add an English (Latin) run within an RTL paragraph.
 
-    When a Hebrew paragraph contains English terms, URLs, or code, this
-    run-level override forces LTR rendering for just that run via
-    <a:rtl val="0"/> on the run properties.
+    DrawingML has NO run-level direction toggle (unlike WordprocessingML's
+    <w:rtl/>): there is no <a:rtl> element or rtl attribute on <a:rPr>. So
+    inline English terms, URLs, or code do not need (and cannot take) a
+    run-level RTL patch -- the Unicode bidi algorithm already renders Latin
+    runs left-to-right inside an RTL paragraph. For ambiguous boundaries
+    (a Latin fragment glued to Hebrew with no space, or digits next to
+    Hebrew), wrap the fragment in bidi isolates in the TEXT itself: LRI
+    (U+2066) ... PDI (U+2069), or an LRM (U+200E) anchor. We set lang so
+    PowerPoint's proofing tools treat the run as English.
     """
     run = paragraph.add_run()
     run.text = text
@@ -97,12 +114,6 @@ def add_english_run(paragraph, text, font_name='Calibri', font_size_pt=24, bold=
 
     rPr = run._r.get_or_add_rPr()
     rPr.set('lang', 'en-US')
-
-    # Force LTR on this specific run (overrides the paragraph's RTL setting)
-    rtl_elem = rPr.find(qn('a:rtl'))
-    if rtl_elem is None:
-        rtl_elem = etree.SubElement(rPr, qn('a:rtl'))
-    rtl_elem.set('val', '0')
 
     return run
 
@@ -337,7 +348,7 @@ def add_table_slide(prs, title_text, accent_color):
     # So index 0 (rightmost visual) = מדד, index 3 (leftmost visual) = שינוי
     headers = ['מדד', 'ערך נוכחי', 'יעד שנתי', 'שינוי']
     rows = [
-        ['הכנסות ARR',    '\u200a\u20aa3.4M', '\u200a\u20aa5.0M',  '+62%'],
+        ['הכנסות ARR',    '\u200e\u20aa3.4M', '\u200e\u20aa5.0M',  '+62%'],
         ['לקוחות פעילים', '47',               '80',                '+70%'],
         ['NPS',           '72',               '80',                '+11%'],
         ['Churn חודשי',   '1.2%',             '<1%',               '-0.2pp'],
