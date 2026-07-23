@@ -1,0 +1,38 @@
+{
+  "author": "bardogo7",
+  "version": "1.0.0",
+  "category": "marketing-growth",
+  "tags": {
+    "he": [
+      "וידאו",
+      "יוטיוב",
+      "שורטס",
+      "פייסלס",
+      "אוטומציה",
+      "ffmpeg",
+      "AI"
+    ],
+    "en": [
+      "video",
+      "youtube",
+      "shorts",
+      "faceless",
+      "automation",
+      "ffmpeg",
+      "ai-generated"
+    ]
+  },
+  "display_name": {
+    "he": "מפרומפט לסרטון ושורט",
+    "en": "Prompt to Video & Short"
+  },
+  "display_description": {
+    "he": "הופכים נושא אחד לסרטון יוטיוב פייסלס מלא או שורט, מקצה לקצה: תסריט, קריינות, תמונות סצנה עם נעילת דמות עקבית לאורך זמן, הנפשה, הרכבת FFmpeg עם כתוביות שרופות, וכותרת/תיאור/תגיות מוכנים. כולל את כללי הסיווג המדויקים שגורמים לשורט להופיע במדף ה-Shorts של יוטיוב, ותהליך בדיקה חזותית דו-שלבי (לפני ואחרי הנפשה) שמונע פרסום תמונות/קליפים שבורים. אגנוסטי לספק לחלוטין — לא כולל שום מפתח API או חשבון; כל משתמש מחבר את המודלים והחשבונות שלו. לא מיועד לוידאו עם מארח אנושי אמיתי, פודקאסטים באודיו בלבד, או פלטפורמות שאינן יוטיוב.",
+    "en": "Turns one topic into a full faceless YouTube video or Short, end to end: script, narration, character-locked scene images that stay visually consistent across an entire series, AI animation, FFmpeg assembly with burned-in captions, and ready title/description/tags. Includes the exact classification rules that get a Short to actually show up in YouTube's Shorts shelf, and a two-stage visual QA process (before and after animation) that catches broken images/clips before they get published. Fully provider-agnostic — contains no API keys or accounts; every user connects their own models and accounts. Not for live-action/human-hosted video, audio-only podcasts, or non-YouTube platforms."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot"
+  ]
+}
