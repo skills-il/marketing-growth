@@ -9,7 +9,10 @@
       "source_url": "https://arxiv.org/abs/2311.09735",
       "raw_snippet": "GEO methods: cite, statistics, quotation, authoritative, easy, technical, unique, fluency",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openai-bots",
@@ -17,7 +20,10 @@
       "source_url": "https://platform.openai.com/docs/bots",
       "raw_snippet": "GPTBot, OAI-SearchBot, ChatGPT-User",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "anthropic-bots",
@@ -25,7 +31,10 @@
       "source_url": "https://docs.anthropic.com/en/docs/agents-and-tools/web-crawler",
       "raw_snippet": "ClaudeBot, anthropic-ai, Claude-Web",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "perplexity-bots",
@@ -33,15 +42,21 @@
       "source_url": "https://docs.perplexity.ai/guides/bots",
       "raw_snippet": "PerplexityBot, Perplexity-User",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "llms-txt-proposal",
-      "claim": "llms.txt is a convention proposed by Jeremy Howard (Sep 2024) for AI-readable site indexes; Google's position is that llms.txt is advisory and not a ranking signal",
-      "source_url": "https://llmstxt.org",
-      "raw_snippet": "llms.txt",
+      "claim": "llms.txt is a convention proposed by Jeremy Howard (September 2024): a /llms.txt markdown file added to a website to provide LLM-friendly content.",
+      "source_url": "https://llmstxt.org/index.md",
+      "raw_snippet": "We propose adding a `/llms.txt` markdown file to websites to provide\nLLM-friendly content.",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "hreflang-he-il",
@@ -49,23 +64,32 @@
       "source_url": "https://developers.google.com/search",
       "raw_snippet": "hreflang he-IL",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "schema-org",
-      "claim": "Schema.org defines JSON-LD types including FAQPage, LocalBusiness, Organization, Article, SpeakableSpecification",
-      "source_url": "https://schema.org",
-      "raw_snippet": "schema.org JSON-LD",
+      "claim": "Schema.org defines the FAQPage JSON-LD type (Thing > CreativeWork > WebPage > FAQPage) used in the skill's structured-data examples.",
+      "source_url": "https://schema.org/FAQPage",
+      "raw_snippet": "A FAQPage is a WebPage presenting one or more “Frequently asked questions”",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "google-ai-overview-status",
-      "claim": "Google AI Overview is widely live for he-IL queries on google.co.il in 2026 but skips some YMYL queries; rollout status visible on Search Status Dashboard",
-      "source_url": "https://status.search.google.com",
-      "raw_snippet": "AI Overview",
+      "claim": "Google lists AI Overviews as available to all users in Israel and in Hebrew.",
+      "source_url": "https://support.google.com/websearch/answer/13572151",
+      "raw_snippet": "AI Overviews are currently available:",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-google-search-central",
@@ -73,7 +97,10 @@
       "source_url": "https://developers.google.com/search",
       "raw_snippet": "Google Search Central",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-keyword-planner",
@@ -81,7 +108,10 @@
       "source_url": "https://ads.google.com/home/tools/keyword-planner/",
       "raw_snippet": "Keyword Planner",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-hebrew-academy",
@@ -89,7 +119,10 @@
       "source_url": "https://hebrew-academy.org.il",
       "raw_snippet": "Academy of the Hebrew Language",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-bing-webmaster",
@@ -97,7 +130,10 @@
       "source_url": "https://www.bing.com/webmasters",
       "raw_snippet": "Bing Webmaster Tools",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-brave-search",
@@ -105,7 +141,10 @@
       "source_url": "https://search.brave.com",
       "raw_snippet": "Brave Search",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "mistral-le-chat-bot",
@@ -113,7 +152,10 @@
       "source_url": "https://docs.mistral.ai/",
       "raw_snippet": "MistralAI-User",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "meta-external-agent",
@@ -121,7 +163,10 @@
       "source_url": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
       "raw_snippet": "Meta-ExternalAgent",
       "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
