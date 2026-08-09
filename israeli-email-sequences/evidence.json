@@ -9,7 +9,10 @@
       "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
       "raw_snippet": "1,000 ש\"ח / 1,000 NIS להודעה ספאם, תיקון 40 לחוק התקשורת, דצמבר 2008",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "chok-haspam-5000-bill-pending",
@@ -17,7 +20,10 @@
       "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawBill.aspx",
       "raw_snippet": "5,000 ש\"ח / 5,000 NIS proposed cap, not yet passed",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "amendment-13-in-force",
@@ -25,7 +31,10 @@
       "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority",
       "raw_snippet": "תיקון 13, בתוקף 14 באוגוסט 2025, קנס 3.2 מיליון ש\"ח, 5%",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "open-rate-benchmarks",
@@ -33,7 +42,10 @@
       "source_url": "https://mailchimp.com/resources/email-marketing-benchmarks/",
       "raw_snippet": "22-28% open, 2-4% click, 0.2-0.5% unsubscribe, 15-20% personalization lift",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "dmarc-bulk-sender-rules",
@@ -41,7 +53,10 @@
       "source_url": "https://blog.google/products/gmail/gmail-security-authentication-spam-protection/",
       "raw_snippet": "Google bulk sender requirements 5,000 daily; DMARC p=none; 0.3% complaint",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "yom-kippur-no-commercial-email",
@@ -49,7 +64,10 @@
       "source_url": "https://www.hebcal.com/home/developer-apis",
       "raw_snippet": "יום כיפור, יום הזיכרון, יום השואה, אבל לאומי",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "walla-gmail-co-il",
@@ -57,7 +75,10 @@
       "source_url": "https://www.walla.co.il",
       "raw_snippet": "Walla Mail gmail.co.il",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-knesset-amendment-40",
@@ -65,7 +86,10 @@
       "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
       "raw_snippet": "Amendment 40",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-ppa",
@@ -73,7 +97,10 @@
       "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority",
       "raw_snippet": "Privacy Protection Authority",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-amendment-13-bill",
@@ -81,7 +108,10 @@
       "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawBill.aspx?t=LawReshumot&lawitemid=2202316",
       "raw_snippet": "Amendment 13",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-hebcal-api",
@@ -89,7 +119,10 @@
       "source_url": "https://www.hebcal.com/home/developer-apis",
       "raw_snippet": "Hebcal",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-kolzchut",
@@ -97,7 +130,10 @@
       "source_url": "https://www.kolzchut.org.il/en",
       "raw_snippet": "Kol Zchut",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-mjml",
@@ -105,7 +141,10 @@
       "source_url": "https://mjml.io/documentation",
       "raw_snippet": "MJML",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-resend-rtl",
@@ -113,7 +152,10 @@
       "source_url": "https://resend.com/docs/send-with-react-email",
       "raw_snippet": "Resend",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-smoove",
@@ -121,7 +163,10 @@
       "source_url": "https://www.smoove.io",
       "raw_snippet": "Smoove",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-ppa-he",
@@ -129,7 +174,9 @@
       "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
       "raw_snippet": "הרשות להגנת הפרטיות",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL_HE.md"]
+      "appears_in": [
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-kolzchut-root",
@@ -137,7 +184,9 @@
       "source_url": "https://www.kolzchut.org.il",
       "raw_snippet": "Kol Zchut root",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL_HE.md"]
+      "appears_in": [
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "section-30a-incidental",
@@ -145,15 +194,9 @@
       "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
       "raw_snippet": "סעיף 30א לחוק התקשורת",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["references/chok-haspam-guide.md"]
-    },
-    {
-      "claim_id": "incidental-currency-percent",
-      "claim": "Incidental currency (50,000 NIS) and percentage (2%) appear in the references guide as examples of class-action statutory math (1,000 NIS x 50 claimants = 50,000; 2% representing a complaint-rate ceiling)",
-      "source_url": "https://www.kolzchut.org.il",
-      "raw_snippet": "50,000 NIS class-action example; 2% complaint-rate context",
-      "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["references/chok-haspam-guide.md"]
+      "appears_in": [
+        "references/chok-haspam-guide.md"
+      ]
     },
     {
       "claim_id": "ref-activetrail",
@@ -161,7 +204,10 @@
       "source_url": "https://www.activetrail.com",
       "raw_snippet": "ActiveTrail",
       "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

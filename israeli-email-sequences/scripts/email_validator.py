@@ -28,7 +28,7 @@ def validate_email(html_content):
 
     # Check unsubscribe
     if "unsubscribe" not in html_content.lower() and "הסרה" not in html_content:
-        issues.append("MISSING: Unsubscribe mechanism (Chok HaSpam violation, up to 50,000 NIS fine)")
+        issues.append("MISSING: Unsubscribe mechanism (Chok HaSpam violation: up to 1,000 NIS statutory damages per message)")
 
     # Check sender identification
     if not re.search(r'<address|footer|class="?sender', html_content, re.I):

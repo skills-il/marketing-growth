@@ -44,7 +44,7 @@ On top of Chok HaSpam, marketing email lists are a "database" subject to additio
 | Open rate | 22-28% |
 | Click rate | 2-4% |
 | Unsubscribe rate | 0.2-0.5% |
-| Bounce rate | < 2% (over 5% triggers Gmail/Yahoo throttling) |
+| Spam complaint rate | Gmail bulk-sender rule: keep under 0.3% |
 | Best send day | Tuesday/Wednesday |
 | Best send time | 9-10 AM or 7-8 PM Israel time |
 | Avoid | Friday afternoon, Saturday, all national memorial days |
