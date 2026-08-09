@@ -4,20 +4,76 @@
   "generated_at": "2026-05-31T00:00:00Z",
   "claims": [
     {
-      "claim_id": "spotify-chapter-rules",
-      "claim": "Spotify parses episode chapters from the description; requires minimum 3 chapters, first at 00:00, plain-text titles, and supports HH:MM:SS / MM:SS timestamp formats.",
+      "claim_id": "spotify-chapter-rules-a",
+      "claim": "Spotify requires at least 3 chapters per episode and the first chapter must start at 00:00.",
       "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
-      "raw_snippet": "chapters",
+      "raw_snippet": "Your first chapter should start at 00:00 or 00:00:00",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/spotify-chapters-rules.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/spotify-chapters-rules.md"
+      ]
     },
     {
-      "claim_id": "podcasting-2-chapters-json",
-      "claim": "Podcasting 2.0 Chapters JSON uses version 1.2.0, startTime in seconds, title field, referenced via the <podcast:chapters type=application/json+chapters> RSS tag.",
-      "source_url": "https://podcasting2.org/docs/podcast-namespace/tags/chapters",
-      "raw_snippet": "chapters",
+      "claim_id": "spotify-chapter-rules-b",
+      "claim": "Spotify accepts (MM:SS), MM:SS, (HH:MM:SS) and HH:MM:SS chapter timestamp formats written in the episode description.",
+      "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
+      "raw_snippet": "(MM:SS); MM:SS; (HH:MM:SS); and HH:MM:SS are all accepted timestamp formats",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/chapters-json-schema.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/spotify-chapters-rules.md"
+      ]
+    },
+    {
+      "claim_id": "spotify-chapter-min-3",
+      "claim": "Spotify requires a minimum of 3 chapters.",
+      "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
+      "raw_snippet": "You need at least 3 chapters",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/spotify-chapters-rules.md"
+      ]
+    },
+    {
+      "claim_id": "podcasting-2-chapters-json-a",
+      "claim": "The Podcasting 2.0 JSON Chapters format requires a version string and an array of chapters; startTime is expressed in seconds.",
+      "source_url": "https://raw.githubusercontent.com/Podcastindex-org/podcast-namespace/main/docs/examples/chapters/jsonChapters.md",
+      "raw_snippet": "- `startTime` (required - float) The starting time of the chapter, expressed in seconds with float precision for fractions of a second.",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chapters-json-schema.md"
+      ]
+    },
+    {
+      "claim_id": "podcasting-2-chapters-json-b",
+      "claim": "The JSON Chapters example in the Podcasting 2.0 spec uses version 1.2.0.",
+      "source_url": "https://raw.githubusercontent.com/Podcastindex-org/podcast-namespace/main/docs/examples/chapters/jsonChapters.md",
+      "raw_snippet": "\"version\": \"1.2.0\",",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chapters-json-schema.md"
+      ]
+    },
+    {
+      "claim_id": "podcasting-2-chapters-tag",
+      "claim": "The <podcast:chapters> RSS tag references the chapters file with a required url attribute and the application/json+chapters mime type.",
+      "source_url": "https://podcasting2.org/docs/podcast-namespace/tags/chapters",
+      "raw_snippet": "Mime type of file - JSON prefered, ‘application/json+chapters’.",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chapters-json-schema.md"
+      ]
     },
     {
       "claim_id": "apple-podcasts-audio",
@@ -25,7 +81,10 @@
       "source_url": "https://podcasters.apple.com/support/893-audio-requirements",
       "raw_snippet": "audio",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ffmpeg-subtitles-filter",
@@ -33,7 +92,11 @@
       "source_url": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
       "raw_snippet": "subtitles",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
     },
     {
       "claim_id": "libass-fribidi",
@@ -41,7 +104,11 @@
       "source_url": "https://github.com/libass/libass",
       "raw_snippet": "libass",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
     },
     {
       "claim_id": "heebo-google-font",
@@ -49,7 +116,11 @@
       "source_url": "https://fonts.google.com/download?family=Heebo",
       "raw_snippet": "Heebo",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
     },
     {
       "claim_id": "homebrew-ffmpeg-full",
@@ -57,7 +128,11 @@
       "source_url": "https://formulae.brew.sh/formula/ffmpeg-full",
       "raw_snippet": "ffmpeg-full",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/ffmpeg-hebrew-subtitles.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
     },
     {
       "claim_id": "internal-scoring-weights",
@@ -65,15 +140,33 @@
       "source_url": "https://raw.githubusercontent.com/skills-il/marketing-growth/master/hebrew-podcast-postproduction/SKILL.md",
       "raw_snippet": "40% 25% 20% 15%",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/score_segments.py"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/score_segments.py"
+      ]
+    },
+    {
+      "claim_id": "rfc2606-reserved-example-domains",
+      "claim": "example.com is an IANA-reserved second-level domain name (RFC 2606) intended only for use as an example.",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc2606.html",
+      "raw_snippet": "example.com\n   example.net\n   example.org",
+      "fetched_at": "2026-05-31T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "references/chapters-json-schema.md"
+      ]
     },
     {
       "claim_id": "illustrative-placeholder-urls",
-      "claim": "example.com / cdn.example.com are RFC 2606 reserved domains used only as illustrative placeholders in chapter/RSS examples.",
-      "source_url": "https://example.com",
-      "raw_snippet": "Example Domain https://cdn.example.com/ep42/chapter2.jpg https://cdn.example.com/podcast/episodes/42/chapters.json https://example.com/episodes/NN/chapters.json https://example.com/related-article",
+      "claim": "The example.com / cdn.example.com URLs in the chapter and RSS examples are illustrative placeholders on an RFC 2606 reserved domain, not live endpoints.",
+      "source_url": "https://example.com/episodes/NN/chapters.json",
+      "raw_snippet": "https://cdn.example.com/ep42/chapter2.jpg https://cdn.example.com/podcast/episodes/42/chapters.json https://example.com/episodes/NN/chapters.json https://example.com/related-article",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "references/chapters-json-schema.md"]
+      "appears_in": [
+        "SKILL.md",
+        "references/chapters-json-schema.md"
+      ]
     }
   ]
 }
