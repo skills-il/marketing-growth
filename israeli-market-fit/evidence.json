@@ -31,12 +31,21 @@
       "confidence": "high"
     },
     {
-      "id": "haredi-share",
-      "claim": "The Haredi (ultra-Orthodox) population in Israel numbered 1,452,350 at the end of 2025, 14.3% of the total population, per the Israel Democracy Institute Haredi Yearbook 2025.",
+      "id": "haredi-share-a",
+      "claim": "The Haredi population in Israel numbered 1,452,350 at the end of 2025, per the Israel Democracy Institute Haredi Yearbook 2025.",
       "claim_type": "percentage",
       "source_url": "https://www.idi.org.il/haredi/2025/?chapter=62168",
       "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "בסוף שנת 2025 האוכלוסייה החרדית בישראל מונה 1,452,350 נפש ... בשנת 2025 שיעורה של האוכלוסייה החרדית בישראל הוא 14.3% מכלל האוכלוסייה.",
+      "raw_snippet": "בסוף שנת 2025 האוכלוסייה החרדית בישראל מונה 1,452,350 נפש (לעומת כ־750,000 ב־2009).",
+      "confidence": "high"
+    },
+    {
+      "id": "haredi-share-b",
+      "claim": "The Haredi population is 14.3% of Israel's total population in 2025.",
+      "claim_type": "percentage",
+      "source_url": "https://www.idi.org.il/haredi/2025/?chapter=62168",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "האוכלוסייה החרדית בישראל מונה בשנת 2025 כ־1,450,000 נפש, שהן 14.3% מכלל האוכלוסייה",
       "confidence": "high"
     },
     {
@@ -77,11 +86,20 @@
     },
     {
       "id": "paybox-users",
-      "claim": "paybox is the rival payment app to Bit, launched by Israel Discount Bank, with about 1.4 million customers.",
+      "claim": "paybox is the rival payment app to Bit, with about 1.4 million customers and about 10% of transfer volume.",
       "claim_type": "company",
       "source_url": "https://en.globes.co.il/en/article-payment-apps-bit-and-paybox-to-charge-fees-from-january-1001483104",
       "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "Israel Discount Bank ... Paybox has 1.4 million customers but only 10% of the amount of transfers.",
+      "raw_snippet": "Paybox has 1.4 million customers but only 10% of the amount of transfers.",
+      "confidence": "medium"
+    },
+    {
+      "id": "paybox-discount-bank",
+      "claim": "paybox is owned by Israel Discount Bank, which bought it from Shufersal (it was not launched by the bank).",
+      "claim_type": "company",
+      "source_url": "https://en.globes.co.il/en/article-payment-apps-bit-and-paybox-to-charge-fees-from-january-1001483104",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "Discount Bank completes buyout of PayBox from Shufersal",
       "confidence": "medium"
     },
     {
@@ -157,12 +175,21 @@
       "confidence": "high"
     },
     {
-      "id": "average-wage-2026",
-      "claim": "Effective January 2026, the average wage in Israel under s.1 of the National Insurance Law is 13,566 NIS (s.2: 13,769 NIS).",
+      "id": "average-wage-2026-s1",
+      "claim": "Effective January 2026, the average wage under s.1 of the National Insurance Law is 13,566 NIS.",
       "claim_type": "currency",
       "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%A9%D7%9B%D7%A8_%D7%94%D7%9E%D7%9E%D7%95%D7%A6%D7%A2",
       "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "נכון לינואר 2026 השכר הממוצע לפי סעיף 1 הוא 13,566 ₪ ... נכון לינואר 2026 השכר הממוצע לפי סעיף 2 הוא 13,769 ₪",
+      "raw_snippet": "נכון לינואר 2026 השכר הממוצע לפי סעיף 1 הוא 13,566 ₪.",
+      "confidence": "high"
+    },
+    {
+      "id": "average-wage-2026-s2",
+      "claim": "Effective January 2026, the average wage under s.2 of the National Insurance Law is 13,769 NIS.",
+      "claim_type": "currency",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%A9%D7%9B%D7%A8_%D7%94%D7%9E%D7%9E%D7%95%D7%A6%D7%A2",
+      "source_fetched_at": "2026-06-02T00:00:00Z",
+      "raw_snippet": "נכון לינואר 2026 השכר הממוצע לפי סעיף 2 הוא 13,769 ₪.",
       "confidence": "high"
     }
   ]
