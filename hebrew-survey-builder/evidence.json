@@ -9,7 +9,11 @@
       "source_url": "https://github.com/googleworkspace/cli",
       "raw_snippet": "Google Workspace CLI",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/gws-forms-cheatsheet.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gws-forms-cheatsheet.md"
+      ]
     },
     {
       "claim_id": "gws-forms-create-constraint",
@@ -17,15 +21,23 @@
       "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-forms/SKILL.md",
       "raw_snippet": "Only the form.info.title and form.info.document_title fields are copied to the new form. All other fields including the form description, items and settings are disallowed.",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/gws-forms-cheatsheet.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gws-forms-cheatsheet.md"
+      ]
     },
     {
       "claim_id": "forms-api-methods",
       "claim": "Google Forms API v1 exposes exactly four methods on the forms resource: create, get, batchUpdate, setPublishSettings. There is no forms.update method.",
       "source_url": "https://developers.google.com/workspace/forms/api/reference/rest/v1/forms",
-      "raw_snippet": "setPublishSettings",
+      "raw_snippet": "Forms with publishSettings value set can call forms.setPublishSettings API to publish or unpublish the form.",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/gws-forms-cheatsheet.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gws-forms-cheatsheet.md"
+      ]
     },
     {
       "claim_id": "forms-batchupdate-endpoint",
@@ -33,7 +45,10 @@
       "source_url": "https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate",
       "raw_snippet": "POST https://forms.googleapis.com/v1/forms/{formId}:batchUpdate",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "references/gws-forms-cheatsheet.md"]
+      "appears_in": [
+        "SKILL.md",
+        "references/gws-forms-cheatsheet.md"
+      ]
     },
     {
       "claim_id": "privacy-amendment-13",
@@ -41,7 +56,10 @@
       "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
       "raw_snippet": "Amendment 13",
       "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
