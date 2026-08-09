@@ -96,19 +96,23 @@ Rules for Israeli sites:
 
 Apply the **9 Princeton GEO Methods** (see [references/geo-research.md](./references/geo-research.md)):
 
-| Method | Visibility Boost | How to Apply |
-|--------|-----------------|--------------|
-| **Cite Sources** | +40% | Add authoritative citations and references |
-| **Statistics Addition** | +37% | Include specific numbers and data points |
-| **Quotation Addition** | +30% | Add expert quotes with attribution |
-| **Authoritative Tone** | +25% | Use confident, expert language |
-| **Easy-to-understand** | +20% | Simplify complex concepts |
-| **Technical Terms** | +18% | Include domain-specific terminology |
-| **Unique Words** | +15% | Increase vocabulary diversity |
-| **Fluency Optimization** | +15-30% | Improve readability and flow |
-| ~~Keyword Stuffing~~ | **-10%** | **AVOID: hurts AI visibility** |
+Ordered by the paper's own Table 1, strongest first. A per-method percentage table circulates widely online (usually as "Cite Sources +40%"); it does not match the paper, which reports Quotation Addition as the strongest method and gives 40% as a headline ceiling for GEO overall, not a figure for any one method.
 
-**Best combination:** Fluency + Statistics = Maximum boost
+| Method | Effect vs no optimization | How to Apply |
+|--------|--------------------------|--------------|
+| **Quotation Addition** | Strongest | Add expert quotes with attribution |
+| **Statistics Addition** | Very strong | Include specific numbers and data points |
+| **Fluency Optimization** | Strong | Improve readability and flow |
+| **Cite Sources** | Strong | Add authoritative citations and references |
+| **Technical Terms** | Moderate | Include domain-specific terminology |
+| **Easy-to-understand** | Moderate | Simplify complex concepts |
+| **Authoritative Tone** | Modest | Use confident, expert language |
+| **Unique Words** | Negligible | The paper groups this with the non-performing methods |
+| ~~Keyword Stuffing~~ | **Below baseline** | **AVOID: scores worse than doing nothing** |
+
+The paper's headline: the best methods improve on the baseline by 41% on Position-Adjusted Word Count and 28% on Subjective Impression.
+
+**Best combination:** Fluency Optimization + Statistics Addition, which the paper reports as the strongest pairing.
 
 **Content structure for AI extraction:**
 - Use "answer-first" format (direct answer at top of each section)
@@ -117,7 +121,7 @@ Apply the **9 Princeton GEO Methods** (see [references/geo-research.md](./refere
 - Short paragraphs (2-3 sentences max)
 - FAQ format for common questions
 
-**FAQPage Schema (+40% AI visibility):**
+**FAQPage Schema:**
 ```json
 {
   "@context": "https://schema.org",
@@ -151,11 +155,11 @@ Each AI search engine has unique ranking factors. Snapshot for 2026:
 - `OAI-SearchBot`, OpenAI's separate crawler for ChatGPT search results. Allow this even if you block `GPTBot`, otherwise ChatGPT search will not cite you.
 - `ChatGPT-User`, fired when a user invokes browsing during a chat. Allow.
 - `PerplexityBot` and `Perplexity-User`, index + on-demand fetch. Allow both.
-- `ClaudeBot`, `anthropic-ai`, `Claude-Web`, Anthropic crawlers. Allow.
+- `ClaudeBot`, Anthropic's officially documented crawler. Allow. `anthropic-ai` and `Claude-Web` are older names that still appear in robots.txt examples but not in Anthropic's current documentation.
 - `Google-Extended`, opt-out token for Gemini/Bard training (does NOT affect Google Search ranking or AI Overview citations).
 - `CCBot`, Common Crawl, used by many model trainers downstream.
 - `Applebot-Extended`, Apple Intelligence training opt-out.
-- `MistralAI-User`, on-demand fetcher for Le Chat with web search. Allow if you want Mistral citations.
+- `MistralAI-User`, circulated as the on-demand fetcher for Le Chat. We could not find it in Mistral's published docs, so verify before relying on it. Leaving it allowed in robots.txt costs nothing.
 - `Meta-ExternalAgent`, Meta's web crawler for Meta AI products. Block via robots.txt if you want to opt out.
 
 **llms.txt advisory caveat (2026 update):** llms.txt has gained adoption among AI crawlers as a hint but it is NOT a substitute for proper HTML and Schema.org. Google has published no support for llms.txt in its Search documentation, so treat it as advisory only and not as a ranking signal. Treat it as a nice-to-have on top of a clean site, not a replacement. Place a short `/llms.txt` index per the llmstxt.org spec. A longer companion file, commonly named llms-full.txt, is a tooling convention and is not part of that spec. Either way, keep the actual content rendered server-side and discoverable to traditional crawlers.
@@ -416,15 +420,15 @@ Result: Prioritized SEO + GEO improvement plan for the Israeli market
 | Google Search Central | https://developers.google.com/search | Ranking factors, structured data, Core Web Vitals |
 | Google Search Status Dashboard | https://status.search.google.com | Active core updates, AI Overview rollout status |
 | Schema.org | https://schema.org | JSON-LD markup for LocalBusiness, FAQ, Article |
-| Google Keyword Planner | https://ads.google.com/home/tools/keyword-planner/ | Hebrew search volumes, keyword ideas |
+| Google Keyword Planner | https://ads.google.com/intl/en/home/tools/keyword-planner/ | Hebrew search volumes, keyword ideas |
 | Academy of the Hebrew Language | https://hebrew-academy.org.il | Correct Hebrew terminology, spelling rules |
 | Princeton GEO paper (Aggarwal et al., 2023) | https://arxiv.org/abs/2311.09735 | GEO methods for AI search engines |
 | OpenAI bot docs | https://platform.openai.com/docs/bots | `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` behavior |
-| Anthropic crawler docs | https://docs.anthropic.com/en/docs/agents-and-tools/web-crawler | `ClaudeBot`, `anthropic-ai`, `Claude-Web` |
+| Anthropic crawler docs | https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot` and how to block it |
 | Perplexity crawler info | https://docs.perplexity.ai/guides/bots | `PerplexityBot`, `Perplexity-User` |
 | llms.txt proposal | https://llmstxt.org | Convention for AI-readable site index |
-| Bing Webmaster Tools | https://www.bing.com/webmasters | Required for Copilot indexing |
-| Brave Search | https://search.brave.com | Index Claude relies on |
+| Bing Webmaster Tools AI Performance | https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview | AI Performance reporting shows when Copilot cites you |
+| Brave Search | https://brave.com/search/ | Independent index Claude relies on |
 
 ## Troubleshooting
 
@@ -450,4 +454,4 @@ Solution: Check robots.txt allows GPTBot, PerplexityBot, ClaudeBot. Apply GEO me
 
 ### Error: "AI citing competitors instead of my site"
 Cause: Competitor content has higher factual density, better structure, or more authoritative citations
-Solution: Apply Princeton GEO methods: add specific statistics with sources (+37%), authoritative citations (+40%), expert quotes (+30%). Use answer-first format and FAQPage schema. Build topical authority through content clusters.
+Solution: Apply the Princeton GEO methods in the order the paper found effective: expert quotes with attribution first, then specific statistics with sources, then fluency and citations. Use answer-first format and FAQPage schema. Build topical authority through content clusters.

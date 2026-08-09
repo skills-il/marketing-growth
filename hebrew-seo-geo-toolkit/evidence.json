@@ -5,21 +5,23 @@
   "claims": [
     {
       "claim_id": "princeton-geo-paper",
-      "claim": "Princeton GEO methods paper (Aggarwal et al., 2023): Cite Sources +40%, Statistics Addition +37%, Quotation +30%, Authoritative Tone +25%, Easy-to-understand +20%, Technical Terms +18%, Unique Words +15%, Fluency +15-30%, Keyword Stuffing -10%",
-      "source_url": "https://arxiv.org/abs/2311.09735",
-      "raw_snippet": "GEO methods: cite, statistics, quotation, authoritative, easy, technical, unique, fluency",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "claim": "Princeton GEO paper (Aggarwal et al., KDD 2024): the best GEO methods improve on the baseline by 41% on Position-Adjusted Word Count and 28% on Subjective Impression; Quotation Addition and Statistics Addition are the strongest, Keyword Stuffing and Unique Words are non-performing.",
+      "source_url": "https://arxiv.org/pdf/2311.09735",
+      "raw_snippet": "The best methods improve upon baseline by 41% and 28% on Position-Adjusted Word Count and Subjective Impression respectively.",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-08-10"
     },
     {
       "claim_id": "openai-bots",
-      "claim": "OpenAI maintains separate user agents: GPTBot (training), OAI-SearchBot (ChatGPT search), ChatGPT-User (on-demand user-triggered browsing)",
+      "claim": "OpenAI uses OAI-SearchBot and GPTBot robots.txt tags, set independently, so a site can allow search indexing while disallowing training crawls.",
       "source_url": "https://platform.openai.com/docs/bots",
-      "raw_snippet": "GPTBot, OAI-SearchBot, ChatGPT-User",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "raw_snippet": "OpenAI uses OAI-SearchBot and GPTBot robots.txt tags to enable webmasters to manage how their sites and content work with AI.",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -27,10 +29,10 @@
     },
     {
       "claim_id": "anthropic-bots",
-      "claim": "Anthropic web crawlers include ClaudeBot, anthropic-ai, and Claude-Web",
-      "source_url": "https://docs.anthropic.com/en/docs/agents-and-tools/web-crawler",
-      "raw_snippet": "ClaudeBot, anthropic-ai, Claude-Web",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "claim": "Anthropic's web crawler is ClaudeBot, which collects web content that may contribute to model training; a site can restrict it in robots.txt.",
+      "source_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "raw_snippet": "ClaudeBot helps enhance the utility and safety of our generative AI models by collecting web content that could potentially contribute to their training.",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -60,10 +62,10 @@
     },
     {
       "claim_id": "hreflang-he-il",
-      "claim": "Israeli Hebrew content should use hreflang=\"he-IL\" not just \"he\" for proper Google geo-targeting on google.co.il",
-      "source_url": "https://developers.google.com/search",
-      "raw_snippet": "hreflang he-IL",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "claim": "Google supports hreflang values built from an ISO 639-1 language code plus an optional ISO 3166-1 Alpha 2 region code, which is what makes he-IL a valid value for Israeli Hebrew pages.",
+      "source_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "raw_snippet": "Only language codes listed in ISO 639-1 and region codes",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -82,10 +84,10 @@
     },
     {
       "claim_id": "google-ai-overview-status",
-      "claim": "Google lists AI Overviews as available to all users in Israel and in Hebrew.",
+      "claim": "Google's help page lists the countries where AI Overviews are available, and Israel appears in that list (between the Isle of Man and Italy).",
       "source_url": "https://support.google.com/websearch/answer/13572151",
-      "raw_snippet": "AI Overviews are currently available:",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "raw_snippet": "האי מאן ישראל איטליה",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -104,10 +106,10 @@
     },
     {
       "claim_id": "ref-keyword-planner",
-      "claim": "Google Keyword Planner",
-      "source_url": "https://ads.google.com/home/tools/keyword-planner/",
-      "raw_snippet": "Keyword Planner",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "claim": "Google Keyword Planner is Google Ads' keyword research tool for campaign planning.",
+      "source_url": "https://ads.google.com/intl/en/home/tools/keyword-planner/",
+      "raw_snippet": "Research Keywords for Campaigns with Keyword Planner",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -115,21 +117,25 @@
     },
     {
       "claim_id": "ref-hebrew-academy",
-      "claim": "Academy of the Hebrew Language official terminology source",
+      "claim": "The Academy of the Hebrew Language publishes at hebrew-academy.org.il.",
       "source_url": "https://hebrew-academy.org.il",
-      "raw_snippet": "Academy of the Hebrew Language",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "raw_snippet": "האקדמיה ללשון העברית",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "archive",
+      "verified_at": "2026-08-10",
+      "archive_snapshot": "https://web.archive.org/web/20260311080819/https://hebrew-academy.org.il/",
+      "note": "Live site returns HTTP 403 to non-browser fetches; confirmed against the 2026-03-11 Wayback capture. Claim is the site's identity, which does not drift."
     },
     {
       "claim_id": "ref-bing-webmaster",
-      "claim": "Bing Webmaster Tools required for Copilot indexing",
-      "source_url": "https://www.bing.com/webmasters",
-      "raw_snippet": "Bing Webmaster Tools",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "claim": "Bing Webmaster Tools reports when a site is cited in AI-generated answers across Microsoft Copilot and Bing AI summaries, which is why it matters for Copilot visibility.",
+      "source_url": "https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview",
+      "raw_snippet": "Bing Webmaster Tools has long helped website owners understand indexing, crawl health, and search performance.",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -137,21 +143,10 @@
     },
     {
       "claim_id": "ref-brave-search",
-      "claim": "Brave Search is the search index Claude relies on",
-      "source_url": "https://search.brave.com",
-      "raw_snippet": "Brave Search",
-      "fetched_at": "2026-05-25T20:10:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "mistral-le-chat-bot",
-      "claim": "Mistral Le Chat web-search fetcher user agent is MistralAI-User",
-      "source_url": "https://docs.mistral.ai/",
-      "raw_snippet": "MistralAI-User",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "claim": "Brave Search runs an independent web index.",
+      "source_url": "https://brave.com/search/",
+      "raw_snippet": "An independent index delivering actually useful results",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -159,14 +154,18 @@
     },
     {
       "claim_id": "meta-external-agent",
-      "claim": "Meta's web crawler for Meta AI products is identified as Meta-ExternalAgent",
+      "claim": "Meta's crawler for training foundation AI models and indexing content for Meta AI products is Meta-ExternalAgent.",
       "source_url": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
-      "raw_snippet": "Meta-ExternalAgent",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "raw_snippet": "The Meta-ExternalAgent crawler crawls the web for use cases such as training foundation AI models or improving products by indexing content directly.",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "archive",
+      "verified_at": "2026-08-10",
+      "archive_snapshot": "https://web.archive.org/web/20260616005830/https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "note": "developers.facebook.com returns HTTP 400 to non-browser fetches; confirmed against the 2026-06-16 Wayback capture."
     },
     {
       "claim_id": "url-llmstxt-org",
@@ -181,10 +180,10 @@
     },
     {
       "claim_id": "url-schema-org",
-      "claim": "Schema.org publishes the structured-data vocabulary at schema.org.",
-      "source_url": "https://schema.org",
-      "raw_snippet": "Schema.org - Schema.org",
-      "fetched_at": "2026-08-09",
+      "claim": "The schema.org vocabulary is identified by the URI https://schema.org, which is the value JSON-LD blocks use for @context.",
+      "source_url": "https://schema.org/docs/gs.html",
+      "raw_snippet": "https://schema.org",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "references/schema-templates.md"
@@ -222,14 +221,18 @@
     },
     {
       "claim_id": "url-google-search-status",
-      "claim": "Google publishes a Search Status Dashboard at status.search.google.com.",
+      "claim": "Google publishes a Search Status Dashboard giving status information on the services that are part of Google Search.",
       "source_url": "https://status.search.google.com",
-      "raw_snippet": "Google Search Status Dashboard",
-      "fetched_at": "2026-08-09",
+      "raw_snippet": "This page provides status information on the services that are part of Google Search.",
+      "fetched_at": "2026-08-10",
       "appears_in": [
         "SKILL.md",
         "references/seo-checklist.md"
-      ]
+      ],
+      "verified_via": "archive",
+      "verified_at": "2026-08-10",
+      "archive_snapshot": "https://web.archive.org/web/20250112005313/https://status.search.google.com/",
+      "note": "Live dashboard is client-rendered, so a plain fetch returns a shell; confirmed against the 2025-01-12 Wayback capture. Claim is the dashboard's existence and purpose, not any status value."
     },
     {
       "claim_id": "geo-lower-ranked-115",
@@ -263,6 +266,29 @@
       "fetched_at": "2026-08-10",
       "appears_in": [
         "scripts/dataforseo_api.py"
+      ]
+    },
+    {
+      "claim_id": "openai-chatgpt-user",
+      "claim": "ChatGPT-User is the user-triggered fetcher, not an automatic crawler, and is separate from the search crawler OAI-SearchBot.",
+      "source_url": "https://platform.openai.com/docs/bots",
+      "raw_snippet": "ChatGPT-User is not used for crawling the web in an automatic fashion.",
+      "fetched_at": "2026-08-10",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "geo-headline-40pct",
+      "claim": "The Princeton GEO paper's headline result is that GEO can boost visibility by up to 40% in generative engine responses.",
+      "source_url": "https://arxiv.org/abs/2311.09735",
+      "raw_snippet": "we demonstrate that GEO can boost visibility by up to $40\\%$ in generative engine responses.",
+      "fetched_at": "2026-08-10",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/geo-research.md"
       ]
     }
   ]

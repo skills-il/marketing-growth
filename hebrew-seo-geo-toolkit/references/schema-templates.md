@@ -4,7 +4,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
 
 ---
 
-## 1. FAQPage Schema (+40% AI Visibility)
+## 1. FAQPage Schema
 
 **Best for:** FAQ sections, knowledge base pages, product pages with Q&A.
 

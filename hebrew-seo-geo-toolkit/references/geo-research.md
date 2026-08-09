@@ -20,9 +20,11 @@ Unlike traditional SEO (ranking in search results), GEO focuses on **being cited
 
 ### Core Results
 
+The methods below are listed in the paper's own order of effectiveness (Table 1): Quotation Addition, Statistics Addition, Fluency Optimization, Cite Sources, Technical Terms, Easy-to-Understand, Authoritative Tone, then Unique Words and Keyword Stuffing, which the paper groups as non-performing. Per-method percentage figures circulating online do not match the paper and are not reproduced here.
+
 | Metric | Result |
 |--------|--------|
-| **Maximum Visibility Boost** | Up to 40% (Aggarwal et al., GEO, 2023) |
+| **Maximum Visibility Boost** | Up to 40% overall; the best individual methods improve on the baseline by 41% on Position-Adjusted Word Count and 28% on Subjective Impression (Aggarwal et al., GEO, 2023) |
 | **Low-ranking Sites Boost** | Cite Sources gave a 115.1% visibility increase for sites ranked fifth in the SERP (Aggarwal et al., GEO, 2023) |
 | **GEO-bench Dataset** | 10,000+ queries across domains |
 | **Tested on** | Perplexity.ai (commercial GE) |
@@ -38,7 +40,7 @@ Unlike traditional SEO (ranking in search results), GEO focuses on **being cited
 
 ## The 9 Optimization Methods
 
-### Method 1: Cite Sources (+40%)
+### Method 1: Cite Sources
 
 **What:** Add authoritative citations and references to your content.
 
@@ -58,7 +60,7 @@ productivity by <N>% on average (Author et al., <year>)."
 
 ---
 
-### Method 2: Statistics Addition (+37%)
+### Method 2: Statistics Addition
 
 **What:** Include specific numbers, data points, and quantitative information.
 
@@ -78,7 +80,7 @@ handling an average of <N>% of routine inquiries without human intervention."
 
 ---
 
-### Method 3: Quotation Addition (+30%)
+### Method 3: Quotation Addition
 
 **What:** Add expert quotes with proper attribution.
 
@@ -99,7 +101,7 @@ great equalizer for small businesses.'"
 
 ---
 
-### Method 4: Authoritative Tone (+25%)
+### Method 4: Authoritative Tone
 
 **What:** Write with confidence and expertise.
 
@@ -120,7 +122,7 @@ organic traffic by an average of 30%."
 
 ---
 
-### Method 5: Easy-to-Understand (+20%)
+### Method 5: Easy-to-Understand
 
 **What:** Simplify complex concepts for broader accessibility.
 
@@ -142,7 +144,7 @@ coherent answer based on what it found."
 
 ---
 
-### Method 6: Technical Terms (+18%)
+### Method 6: Technical Terms
 
 **What:** Include domain-specific terminology appropriately.
 
@@ -163,7 +165,7 @@ indicating significant layout instability."
 
 ---
 
-### Method 7: Unique Words (+15%)
+### Method 7: Unique Words
 
 **What:** Increase vocabulary diversity and use distinctive phrasing.
 
@@ -179,7 +181,7 @@ indicating significant layout instability."
 
 ---
 
-### Method 8: Fluency Optimization (+15-30%)
+### Method 8: Fluency Optimization
 
 **What:** Improve readability, flow, and grammatical quality.
 
@@ -196,7 +198,7 @@ indicating significant layout instability."
 
 ---
 
-### Method 9: Keyword Stuffing (-10%) ⚠️
+### Method 9: Keyword Stuffing (non-performing) ⚠️
 
 **What:** Overloading content with target keywords.
 
@@ -285,7 +287,7 @@ Percentage of AI response that comes from your content vs. competitors.
 
 ### Schema Optimization
 
-- [ ] Implement FAQPage schema (+40% AI visibility)
+- [ ] Implement FAQPage schema
 - [ ] Add Article schema with author info
 - [ ] Include datePublished and dateModified
 - [ ] Add SpeakableSpecification for voice search

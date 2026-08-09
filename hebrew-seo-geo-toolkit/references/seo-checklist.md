@@ -99,7 +99,7 @@ Complete checklist for auditing and optimizing websites for both traditional SEO
 
 ### P2 - Recommended - GEO Enhanced
 
-- [ ] **P2** FAQPage schema on FAQ sections (+40% AI visibility)
+- [ ] **P2** FAQPage schema on FAQ sections
 - [ ] **P2** BreadcrumbList schema for navigation
 - [ ] **P2** SpeakableSpecification for voice search
 - [ ] **P2** datePublished and dateModified included
@@ -113,18 +113,18 @@ Complete checklist for auditing and optimizing websites for both traditional SEO
 
 ### P1 - Important - Princeton GEO Methods
 
-- [ ] **P1** Content includes authoritative citations (+40%)
-- [ ] **P1** Statistics and data points included (+37%)
-- [ ] **P1** Expert quotes with attribution (+30%)
-- [ ] **P1** NO keyword stuffing (causes -10%)
+- [ ] **P1** Content includes authoritative citations
+- [ ] **P1** Statistics and data points included (one of the two strongest GEO methods)
+- [ ] **P1** Expert quotes with attribution (the strongest GEO method in the paper)
+- [ ] **P1** NO keyword stuffing (scores below doing nothing at all)
 
 ### P2 - Recommended - GEO Enhancement
 
-- [ ] **P2** Authoritative, confident tone (+25%)
-- [ ] **P2** Content is accessible/easy to understand (+20%)
-- [ ] **P2** Appropriate technical terminology (+18%)
-- [ ] **P2** Diverse vocabulary throughout (+15%)
-- [ ] **P2** High fluency and readability (+15-30%)
+- [ ] **P2** Authoritative, confident tone
+- [ ] **P2** Content is accessible/easy to understand
+- [ ] **P2** Appropriate technical terminology
+- [ ] **P2** Diverse vocabulary throughout (least effective of the nine)
+- [ ] **P2** High fluency and readability
 
 ### Content Structure for AI
 
@@ -243,7 +243,7 @@ curl "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://exa
 | **Critical** | HTTPS enabled | Trust + ranking |
 | **High** | Core Web Vitals | UX + ranking |
 | **High** | Mobile-friendly | Most Israeli traffic is mobile |
-| **High** | FAQPage schema | +40% AI visibility |
+| **High** | FAQPage schema | Helps AI answer extraction |
 | **Medium** | Meta descriptions | CTR improvement |
 | **Medium** | Internal linking | Authority distribution |
 | **Low** | Social meta tags | Share appearance |

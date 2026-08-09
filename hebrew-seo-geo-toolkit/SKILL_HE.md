@@ -88,19 +88,23 @@ WebSearch: "{keyword} search volume 2026"
 
 תיישמו את **9 שיטות GEO של פרינסטון** (תסתכלו על [references/geo-research.md](./references/geo-research.md)):
 
-| שיטה | שיפור נראות | כיצד ליישם |
-|-------|-------------|------------|
-| **ציטוט מקורות** | +40% | הוסיפו ציטוטים והפניות סמכותיים |
-| **הוספת סטטיסטיקות** | +37% | כללו מספרים ונתונים ספציפיים |
-| **הוספת ציטוטים** | +30% | הוסיפו ציטוטי מומחים עם ייחוס |
-| **טון סמכותי** | +25% | השתמשו בשפה בטוחה ומומחית |
-| **נגיש להבנה** | +20% | פשטו מושגים מורכבים |
-| **מונחים מקצועיים** | +18% | כללו טרמינולוגיה תחומית |
-| **מילים ייחודיות** | +15% | הגדילו גיוון אוצר מילים |
-| **אופטימיזציית שטף** | +15-30% | שפרו קריאות וזרימה |
-| ~~דחיסת מילות מפתח~~ | **-10%** | **הימנעו: פוגע בנראות AI** |
+מסודר לפי טבלה 1 במאמר עצמו, מהחזק לחלש. באינטרנט מסתובבת טבלת אחוזים לכל שיטה (בדרך כלל "ציטוט מקורות 40%+"), אבל היא לא תואמת את המאמר: המאמר מדווח שהוספת ציטוטים היא השיטה החזקה ביותר, ו-40% הוא תקרה כללית ל-GEO ולא נתון של שיטה בודדת.
 
-**שילוב מיטבי:** שטף + סטטיסטיקות = שיפור מרבי
+| שיטה | עוצמת ההשפעה | כיצד ליישם |
+|-------|---------------|------------|
+| **הוספת ציטוטים** | החזקה ביותר | הוסיפו ציטוטי מומחים עם ייחוס |
+| **הוספת סטטיסטיקות** | חזקה מאוד | כללו מספרים ונתונים ספציפיים |
+| **אופטימיזציית שטף** | חזקה | שפרו קריאות וזרימה |
+| **ציטוט מקורות** | חזקה | הוסיפו ציטוטים והפניות סמכותיים |
+| **מונחים מקצועיים** | בינונית | כללו טרמינולוגיה תחומית |
+| **נגיש להבנה** | בינונית | פשטו מושגים מורכבים |
+| **טון סמכותי** | מתונה | השתמשו בשפה בטוחה ומומחית |
+| **מילים ייחודיות** | זניחה | המאמר משייך אותה לשיטות שלא עובדות |
+| ~~דחיסת מילות מפתח~~ | **מתחת לבסיס** | **הימנעו: התוצאה גרועה מלא לעשות כלום** |
+
+הנתון המרכזי במאמר: השיטות הטובות ביותר משפרות על הבסיס ב-41% במדד Position-Adjusted Word Count וב-28% במדד Subjective Impression.
+
+**שילוב מיטבי:** אופטימיזציית שטף יחד עם הוספת סטטיסטיקות, שהמאמר מדווח עליו כצמד החזק ביותר.
 
 **מבנה תוכן לחילוץ AI:**
 - תשתמשו בפורמט "תשובה קודם" (תשובה ישירה בראש כל סעיף)
@@ -109,7 +113,7 @@ WebSearch: "{keyword} search volume 2026"
 - פסקאות קצרות (2-3 משפטים מקסימום)
 - פורמט שאלות ותשובות לשאלות נפוצות
 
-**FAQPage Schema (+40% נראות AI):**
+**FAQPage Schema:**
 ```json
 {
   "@context": "https://schema.org",
@@ -143,11 +147,11 @@ WebSearch: "{keyword} search volume 2026"
 - `OAI-SearchBot`, סורק נפרד של OpenAI לתוצאות חיפוש ChatGPT. תאשרו אותו גם אם חוסמים את `GPTBot`, אחרת חיפוש ChatGPT לא יצטט אתכם.
 - `ChatGPT-User`, נורה כשמשתמש מפעיל גלישה בצ'אט. תאשרו.
 - `PerplexityBot` ו-`Perplexity-User`, אינדקס + שליפה לפי דרישה. תאשרו את שניהם.
-- `ClaudeBot`, `anthropic-ai`, `Claude-Web`, סורקי Anthropic. תאשרו.
+- `ClaudeBot`, הסורק של Anthropic שמתועד רשמית. תאשרו. `anthropic-ai` ו-`Claude-Web` הם שמות ישנים שעדיין מופיעים בדוגמאות robots.txt אבל לא בתיעוד הנוכחי של Anthropic.
 - `Google-Extended`, opt-out לאימון Gemini/Bard (לא משפיע על דירוג Google Search או על ציטוטים ב-AI Overview).
 - `CCBot`, Common Crawl, משמש מאמני מודלים רבים.
 - `Applebot-Extended`, opt-out לאימון Apple Intelligence.
-- `MistralAI-User`, fetcher לפי דרישה ל-Le Chat עם חיפוש ווב. תאשרו אם רוצים ציטוטים מ-Mistral.
+- `MistralAI-User`, שם שמסתובב כ-fetcher לפי דרישה של Le Chat. לא מצאנו אותו בתיעוד הפומבי של Mistral, אז אמתו לפני שאתם מסתמכים עליו. אין נזק להשאיר אותו מאושר ב-robots.txt.
 - `Meta-ExternalAgent`, crawler של מטא למוצרי Meta AI. ניתן לחסום ב-robots.txt כדי לעשות opt-out.
 
 **הסתייגות לגבי llms.txt (עדכון 2026):** llms.txt צובר תאוצה אצל crawlers של AI כרמז, אבל הוא לא תחליף ל-HTML תקין ו-Schema.org. Google לא מזכירה את llms.txt בתיעוד החיפוש שלה, אז תתייחסו אליו כהמלצה בלבד ולא כסיגנל דירוג. תתייחסו אליו כתוספת nice-to-have על אתר נקי, לא כתחליף. תניחו קובץ אינדקס קצר ב-`/llms.txt` לפי המפרט של llmstxt.org. קובץ נלווה ארוך יותר, שנהוג לקרוא לו llms-full.txt, הוא מוסכמה של כלים ולא חלק מהמפרט. בכל מקרה, תשמרו על התוכן עצמו מרונדר בצד השרת וגלוי ל-crawlers מסורתיים.
@@ -408,15 +412,15 @@ open "https://www.bing.com/search?q=site:{domain}"
 | Google Search Central | https://developers.google.com/search | גורמי דירוג, נתונים מובנים, Core Web Vitals |
 | Google Search Status Dashboard | https://status.search.google.com | עדכוני ליבה פעילים, סטטוס AI Overview |
 | Schema.org | https://schema.org | סימון JSON-LD ל-LocalBusiness, FAQ, Article |
-| Google Keyword Planner | https://ads.google.com/home/tools/keyword-planner/ | נפחי חיפוש בעברית, רעיונות למילות מפתח |
+| Google Keyword Planner | https://ads.google.com/intl/en/home/tools/keyword-planner/ | נפחי חיפוש בעברית, רעיונות למילות מפתח |
 | האקדמיה ללשון העברית | https://hebrew-academy.org.il | מינוח עברי תקני, כללי כתיב |
 | מאמר GEO של פרינסטון (Aggarwal et al., 2023) | https://arxiv.org/abs/2311.09735 | שיטות GEO למנועי חיפוש מבוססי AI |
 | תיעוד בוטים של OpenAI | https://platform.openai.com/docs/bots | התנהגות `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` |
-| תיעוד סורקי Anthropic | https://docs.anthropic.com/en/docs/agents-and-tools/web-crawler | `ClaudeBot`, `anthropic-ai`, `Claude-Web` |
+| תיעוד סורקי Anthropic | https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot`, `anthropic-ai`, `Claude-Web` |
 | מידע על סורקי Perplexity | https://docs.perplexity.ai/guides/bots | `PerplexityBot`, `Perplexity-User` |
 | הצעת llms.txt | https://llmstxt.org | קונבנציה לאינדקס אתר קריא ל-AI |
-| Bing Webmaster Tools | https://www.bing.com/webmasters | נדרש לאינדוקס Copilot |
-| Brave Search | https://search.brave.com | האינדקס ש-Claude מסתמך עליו |
+| דוח AI Performance של Bing Webmaster Tools | https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview | דוח AI Performance מראה מתי Copilot מצטט אתכם |
+| Brave Search | https://brave.com/search/ | אינדקס עצמאי ש-Claude מסתמך עליו |
 
 ## פתרון בעיות
 
@@ -442,4 +446,4 @@ open "https://www.bing.com/search?q=site:{domain}"
 
 ### שגיאה: "AI מצטט מתחרים במקום את האתר שלי"
 סיבה: לתוכן של המתחרה יש צפיפות עובדתית גבוהה יותר, מבנה טוב יותר או ציטוטים סמכותיים יותר
-פתרון: תיישמו שיטות GEO של פרינסטון: תוסיפו סטטיסטיקות ספציפיות עם מקורות (+37%), ציטוטים סמכותיים (+40%), ציטוטי מומחים (+30%). תשתמשו בפורמט תשובה קודם וב-FAQPage schema. תבנו סמכות נושאית דרך אשכולות תוכן.
+פתרון: תיישמו את שיטות GEO של פרינסטון לפי הסדר שהמאמר מצא כיעיל: קודם ציטוטי מומחים עם ייחוס, אחר כך סטטיסטיקות ספציפיות עם מקורות, ואז שטף וציטוט מקורות. תשתמשו בפורמט תשובה קודם וב-FAQPage schema. תבנו סמכות נושאית דרך אשכולות תוכן.
