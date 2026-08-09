@@ -167,6 +167,69 @@
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "url-llmstxt-org",
+      "claim": "The llms.txt proposal is published at llmstxt.org.",
+      "source_url": "https://llmstxt.org",
+      "raw_snippet": "The /llms.txt file",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "url-schema-org",
+      "claim": "Schema.org publishes the structured-data vocabulary at schema.org.",
+      "source_url": "https://schema.org",
+      "raw_snippet": "Schema.org - Schema.org",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "references/schema-templates.md"
+      ]
+    },
+    {
+      "claim_id": "url-schema-org-instock",
+      "claim": "schema.org/InStock is a defined ItemAvailability enumeration member.",
+      "source_url": "https://schema.org/InStock",
+      "raw_snippet": "InStock - Schema.org Enumeration Member",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "references/schema-templates.md"
+      ]
+    },
+    {
+      "claim_id": "url-opc-dev",
+      "claim": "opc.dev publishes agent skills for solopreneurs.",
+      "source_url": "https://opc.dev",
+      "raw_snippet": "AI Agent Skills for Solopreneurs | Claude Code & Cursor",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "url-opc-skills-repo",
+      "claim": "The opc-skills repository is at github.com/ReScienceLab/opc-skills.",
+      "source_url": "https://github.com/ReScienceLab/opc-skills",
+      "raw_snippet": "ReScienceLab/opc-skills: Agent Skills for Solopreneurs",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "url-google-search-status",
+      "claim": "Google publishes a Search Status Dashboard at status.search.google.com.",
+      "source_url": "https://status.search.google.com",
+      "raw_snippet": "Google Search Status Dashboard",
+      "fetched_at": "2026-08-09",
+      "appears_in": [
+        "SKILL.md",
+        "references/seo-checklist.md"
+      ]
     }
   ]
 }

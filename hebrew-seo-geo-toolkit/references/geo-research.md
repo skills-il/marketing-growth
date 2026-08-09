@@ -51,7 +51,7 @@ Unlike traditional SEO (ranking in search results), GEO focuses on **being cited
 
 # After
 "According to a 2024 Stanford University study, AI tools improve developer 
-productivity by 55% on average (Chen et al., 2024)."
+productivity by <N>% on average (Author et al., <year>)."
 ```
 
 **Best for:** All content types, especially academic/professional topics.
@@ -71,7 +71,7 @@ productivity by 55% on average (Chen et al., 2024)."
 
 # After
 "67% of Fortune 500 companies now use AI chatbots for customer service, 
-handling an average of 85% of routine inquiries without human intervention."
+handling an average of <N>% of routine inquiries without human intervention."
 ```
 
 **Best for:** Business, finance, technology, health content.

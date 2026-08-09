@@ -18,7 +18,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
       "name": "What is [Your Product/Service]?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "[Comprehensive answer with statistics. According to X, 85% of users report Y benefit.]"
+        "text": "[Comprehensive answer with statistics. According to <source>, <N>% of users report <benefit>.]"
       }
     },
     {
