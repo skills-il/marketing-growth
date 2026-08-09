@@ -226,9 +226,9 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
     "email": "support@example.com"
   },
   "sameAs": [
-    "https://twitter.com/example",
-    "https://github.com/example",
-    "https://linkedin.com/company/example"
+    "{your-x-profile-url}",
+    "{your-github-url}",
+    "{your-linkedin-company-url}"
   ]
 }
 ```

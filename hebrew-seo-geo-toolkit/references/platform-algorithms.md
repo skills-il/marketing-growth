@@ -14,40 +14,48 @@ ChatGPT uses a **two-phase system**:
 
 ### Ranking Factor Weights
 
-| Factor | Weight | Details |
-|--------|--------|---------|
-| **Authority & Credibility** | 40% | Branded domains preferred over third-party |
-| **Content Quality & Utility** | 35% | Clear structure, comprehensive answers |
-| **Platform Trust** | 25% | Wikipedia, Reddit, Forbes prioritized |
+No published weighting for these factors is traceable to a named study, so treat the order as a rough priority, not a formula.
 
-### Key Findings (SE Ranking Study - 129K domains)
+| Factor | Priority | Details |
+|--------|----------|---------|
+| **Authority & Credibility** | Highest | Branded domains preferred over third-party |
+| **Content Quality & Utility** | High | Clear structure, comprehensive answers |
+| **Platform Trust** | Moderate | Wikipedia, Reddit, Forbes prioritized |
 
-| Metric | Impact |
-|--------|--------|
-| **Referring Domains** | Strongest predictor. >350K domains = 8.4 avg citations |
-| **Domain Trust Score** | 91-96 score = 6 citations; 97-100 = 8.4 citations |
-| **Content Recency** | 30-day old content gets 3.2x more citations |
-| **Branded vs Third-party** | Branded domains cited 11.1 points more than third-party |
+### Directional Findings
+
+These are directional patterns reported across industry write-ups. We could not trace them to a study we can cite, so use them to prioritise work, not as targets.
+
+| Metric | Direction |
+|--------|-----------|
+| **Referring Domains** | Strongest single predictor of being cited |
+| **Domain Trust Score** | Higher trust score correlates with more citations |
+| **Content Recency** | Recently updated content is cited more often |
+| **Branded vs Third-party** | Branded domains are cited more than third-party pages |
 
 ### ChatGPT Top Citation Sources
 
-| Rank | Source | % of Citations |
-|------|--------|---------------|
-| 1 | Wikipedia | 7.8% |
-| 2 | Reddit | 1.8% |
-| 3 | Forbes | 1.1% |
-| 4 | Brand Official Sites | Variable |
-| 5 | Academic Sources | Variable |
+Ordering only. We could not trace the underlying citation-share figures to a publishable source, so they are omitted rather than guessed.
 
-### Content-Answer Fit Analysis (400K pages study)
+| Rank | Source |
+|------|--------|
+| 1 | Wikipedia |
+| 2 | Reddit |
+| 3 | Forbes |
+| 4 | Brand Official Sites |
+| 5 | Academic Sources |
 
-| Factor | Relevance |
-|--------|-----------|
-| **Content-Answer Fit** | 55% - Most important! Match ChatGPT's response style |
-| **On-Page Structure** | 14% - Clear headings, formatting |
-| **Domain Authority** | 12% - Helps retrieval, not citation |
-| **Query Relevance** | 12% - Match user intent |
-| **Content Consensus** | 7% - Agreement among sources |
+### Content-Answer Fit
+
+Ranked by observed importance. The weightings previously printed here were not traceable to a named study and have been removed.
+
+| Factor | Importance | Note |
+|--------|-----------|------|
+| **Content-Answer Fit** | Most important | Match ChatGPT's response style |
+| **On-Page Structure** | Secondary | Clear headings, formatting |
+| **Domain Authority** | Secondary | Helps retrieval, not citation |
+| **Query Relevance** | Secondary | Match user intent |
+| **Content Consensus** | Minor | Agreement among sources |
 
 ### Optimization Checklist
 
@@ -130,15 +138,14 @@ Google AI Overviews use multiple AI models:
 4. **E-E-A-T Evaluation** - Filter for expertise/authority/trust
 5. **Data Fusion** - Synthesize from multiple sources with citations
 
-### Key Statistics
+### What This Means in Practice
 
-| Metric | Value |
-|--------|-------|
-| AI Overviews in searches | 85%+ |
-| Overlap with traditional Top 10 | Only 15% |
-| Traditional factors weight | 62% |
-| Novel AI signals weight | 38% |
-| SGE-optimized visibility boost | 340% |
+The percentages that used to sit here (AI Overview coverage, overlap with the traditional top ten, an SGE visibility multiplier) came from vendor write-ups we could not trace to a publisher, so they have been removed. The directional picture that survives:
+
+- AI Overviews now appear on a large and growing share of Google queries.
+- The set of pages cited in an AI Overview overlaps only partly with the traditional top ten, so a strong classic ranking does not guarantee a citation.
+- Classic ranking signals still carry most of the weight, with newer AI-specific signals layered on top.
+- Pages written for AI answer formats can gain substantial visibility they would not get from classic ranking alone.
 
 ### Ranking Factors
 
@@ -149,8 +156,8 @@ Google AI Overviews use multiple AI models:
 | **Knowledge Graph** | Being in Google's Knowledge Graph = boost |
 | **Topical Authority** | Content clusters + internal linking |
 | **Multimedia** | Images/videos in multi-modal responses |
-| **Authoritative Citations** | +132% visibility with trusted references |
-| **Authoritative Tone** | +89% visibility improvement |
+| **Authoritative Citations** | Trusted references are one of the strongest levers on whether you get cited |
+| **Authoritative Tone** | A confident, expert voice helps, though the Princeton GEO paper found the effect small on its own |
 
 ### Content Requirements
 

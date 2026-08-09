@@ -158,9 +158,9 @@ Each AI search engine has unique ranking factors. Snapshot for 2026:
 - `MistralAI-User`, on-demand fetcher for Le Chat with web search. Allow if you want Mistral citations.
 - `Meta-ExternalAgent`, Meta's web crawler for Meta AI products. Block via robots.txt if you want to opt out.
 
-**llms.txt advisory caveat (2026 update):** llms.txt has gained adoption among AI crawlers as a hint but it is NOT a substitute for proper HTML and Schema.org. Google has published no support for llms.txt in its Search documentation, so treat it as advisory only and not as a ranking signal. Treat it as a nice-to-have on top of a clean site, not a replacement. Place a short `/llms.txt` index plus a longer `/llms-full.txt` with the full content, but keep the actual content rendered server-side and discoverable to traditional crawlers.
+**llms.txt advisory caveat (2026 update):** llms.txt has gained adoption among AI crawlers as a hint but it is NOT a substitute for proper HTML and Schema.org. Google has published no support for llms.txt in its Search documentation, so treat it as advisory only and not as a ranking signal. Treat it as a nice-to-have on top of a clean site, not a replacement. Place a short `/llms.txt` index per the llmstxt.org spec. A longer companion file, commonly named llms-full.txt, is a tooling convention and is not part of that spec. Either way, keep the actual content rendered server-side and discoverable to traditional crawlers.
 
-**Universal requirements:** allow the search-time bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) in robots.txt, implement Schema markup (FAQPage, Article, Organization with sameAs), include statistics and citations, update content within 30 days, expose a clean `/llms.txt` and `/llms-full.txt` for AI consumption.
+**Universal requirements:** allow the search-time bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) in robots.txt, implement Schema markup (FAQPage, Article, Organization with sameAs), include statistics and citations, update content within 30 days, expose a clean `/llms.txt` and llms-full.txt for AI consumption.
 
 See [references/platform-algorithms.md](./references/platform-algorithms.md) for detailed per-platform optimization checklists.
 
@@ -290,7 +290,7 @@ Sitemap: https://example.co.il/sitemap.xml
 - Blocking `GPTBot` opts out of OpenAI model training but keeps you eligible for ChatGPT search if `OAI-SearchBot` and `ChatGPT-User` remain allowed.
 - Review your policy regularly. This landscape evolves rapidly.
 
-**Add `/llms.txt` and `/llms-full.txt`:** llms.txt (proposed by Jeremy Howard, 2024) is becoming a de facto AI-readable index. Place a short markdown file at `https://example.co.il/llms.txt` summarizing the site's purpose and key URLs, plus a longer `llms-full.txt` with the full content. AI search crawlers and agents increasingly use these instead of guessing structure from HTML.
+**Add `/llms.txt` and a llms-full.txt companion:** llms.txt (proposed by Jeremy Howard, 2024) is becoming a de facto AI-readable index. Place a short markdown file at `https://example.co.il/llms.txt` summarizing the site's purpose and key URLs, plus a longer `llms-full.txt` with the full content. AI search crawlers and agents increasingly use these instead of guessing structure from HTML.
 
 ### Step 10: Validate and Monitor
 

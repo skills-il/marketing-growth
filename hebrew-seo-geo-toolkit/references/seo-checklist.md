@@ -242,7 +242,7 @@ curl "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://exa
 | **Critical** | Fix crawl errors | Blocks indexing |
 | **Critical** | HTTPS enabled | Trust + ranking |
 | **High** | Core Web Vitals | UX + ranking |
-| **High** | Mobile-friendly | 60%+ traffic |
+| **High** | Mobile-friendly | Most Israeli traffic is mobile |
 | **High** | FAQPage schema | +40% AI visibility |
 | **Medium** | Meta descriptions | CTR improvement |
 | **Medium** | Internal linking | Authority distribution |

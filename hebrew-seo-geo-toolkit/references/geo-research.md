@@ -22,8 +22,8 @@ Unlike traditional SEO (ranking in search results), GEO focuses on **being cited
 
 | Metric | Result |
 |--------|--------|
-| **Maximum Visibility Boost** | Up to 40% |
-| **Low-ranking Sites Boost** | Up to 115% with citations |
+| **Maximum Visibility Boost** | Up to 40% (Aggarwal et al., GEO, 2023) |
+| **Low-ranking Sites Boost** | Cite Sources gave a 115.1% visibility increase for sites ranked fifth in the SERP (Aggarwal et al., GEO, 2023) |
 | **GEO-bench Dataset** | 10,000+ queries across domains |
 | **Tested on** | Perplexity.ai (commercial GE) |
 
@@ -296,12 +296,7 @@ Percentage of AI response that comes from your content vs. competitors.
 
 The researchers validated GEO methods on **Perplexity.ai**, a commercial generative engine:
 
-| Method | Visibility Increase |
-|--------|-------------------|
-| Cite Sources | Up to 37% |
-| Statistics | Up to 35% |
-| Quotations | Up to 28% |
-| Combined methods | Up to 40% |
+The paper reports that on Perplexity.ai the best-performing methods improved on the baseline by 22% on Position-Adjusted Word Count and 37% on Subjective Impression, with Statistics Addition and Quotation Addition strongest. An earlier per-method table printed here did not match the paper and has been removed.
 
 These results confirm that GEO methods work on real-world AI search engines, not just research benchmarks.
 

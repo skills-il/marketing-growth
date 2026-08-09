@@ -63,7 +63,7 @@
 ### Technical Signals
 - Page speed: Israeli mobile networks vary; optimize for 3G/4G
 - Core Web Vitals: LCP, FID, CLS thresholds apply equally
-- Mobile-first indexing: essential for the Israeli market (70%+ mobile)
+- Mobile-first indexing: essential for the Israeli market, where mobile is the dominant device
 - HTTPS required for all .co.il domains
 
 ### Local Signals

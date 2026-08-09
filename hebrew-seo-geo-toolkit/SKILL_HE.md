@@ -150,9 +150,9 @@ WebSearch: "{keyword} search volume 2026"
 - `MistralAI-User`, fetcher לפי דרישה ל-Le Chat עם חיפוש ווב. תאשרו אם רוצים ציטוטים מ-Mistral.
 - `Meta-ExternalAgent`, crawler של מטא למוצרי Meta AI. ניתן לחסום ב-robots.txt כדי לעשות opt-out.
 
-**הסתייגות לגבי llms.txt (עדכון 2026):** llms.txt צובר תאוצה אצל crawlers של AI כרמז, אבל הוא לא תחליף ל-HTML תקין ו-Schema.org. Google לא מזכירה את llms.txt בתיעוד החיפוש שלה, אז תתייחסו אליו כהמלצה בלבד ולא כסיגנל דירוג. תתייחסו אליו כתוספת nice-to-have על אתר נקי, לא כתחליף. תניחו קובץ אינדקס קצר ב-`/llms.txt` ועוד `/llms-full.txt` ארוך עם התוכן המלא, אבל תשמרו על תוכן ההורות מצד שרת וגלוי ל-crawlers מסורתיים.
+**הסתייגות לגבי llms.txt (עדכון 2026):** llms.txt צובר תאוצה אצל crawlers של AI כרמז, אבל הוא לא תחליף ל-HTML תקין ו-Schema.org. Google לא מזכירה את llms.txt בתיעוד החיפוש שלה, אז תתייחסו אליו כהמלצה בלבד ולא כסיגנל דירוג. תתייחסו אליו כתוספת nice-to-have על אתר נקי, לא כתחליף. תניחו קובץ אינדקס קצר ב-`/llms.txt` לפי המפרט של llmstxt.org. קובץ נלווה ארוך יותר, שנהוג לקרוא לו llms-full.txt, הוא מוסכמה של כלים ולא חלק מהמפרט. בכל מקרה, תשמרו על התוכן עצמו מרונדר בצד השרת וגלוי ל-crawlers מסורתיים.
 
-**דרישות אוניברסליות:** תאשרו את בוטי זמן-החיפוש (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) ב-robots.txt, תטמיעו Schema (FAQPage, Article, Organization עם sameAs), תכניסו סטטיסטיקות וציטוטים, תרעננו תוכן תוך 30 יום, תחשפו `/llms.txt` ו-`/llms-full.txt` נקיים לצריכת AI.
+**דרישות אוניברסליות:** תאשרו את בוטי זמן-החיפוש (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) ב-robots.txt, תטמיעו Schema (FAQPage, Article, Organization עם sameAs), תכניסו סטטיסטיקות וציטוטים, תרעננו תוכן תוך 30 יום, תחשפו `/llms.txt` ו-llms-full.txt נקיים לצריכת AI.
 
 תסתכלו על [references/platform-algorithms.md](./references/platform-algorithms.md) לרשימות בדיקה מפורטות לכל פלטפורמה.
 
@@ -282,7 +282,7 @@ Sitemap: https://example.co.il/sitemap.xml
 - חסימת `GPTBot` היא opt-out לאימון מודלים של OpenAI אבל שומרת אתכם זכאים לחיפוש ChatGPT, בתנאי ש-`OAI-SearchBot` ו-`ChatGPT-User` נשארים מאושרים.
 - תבדקו את המדיניות שלכם באופן קבוע. התחום מתפתח מהר.
 
-**הוסיפו `/llms.txt` ו-`/llms-full.txt`:** llms.txt (הוצע על ידי Jeremy Howard, 2024) הופך לאינדקס דה-פקטו קריא ל-AI. תניחו קובץ markdown קצר ב-`https://example.co.il/llms.txt` שמסכם את מטרת האתר ואת ה-URLים המרכזיים, ועוד `llms-full.txt` ארוך יותר עם התוכן המלא. סורקי חיפוש AI וסוכנים משתמשים בזה יותר ויותר במקום לנחש מבנה מ-HTML.
+**הוסיפו `/llms.txt` וקובץ llms-full.txt נלווה:** llms.txt (הוצע על ידי Jeremy Howard, 2024) הופך לאינדקס דה-פקטו קריא ל-AI. תניחו קובץ markdown קצר ב-`https://example.co.il/llms.txt` שמסכם את מטרת האתר ואת ה-URLים המרכזיים, ועוד `llms-full.txt` ארוך יותר עם התוכן המלא. סורקי חיפוש AI וסוכנים משתמשים בזה יותר ויותר במקום לנחש מבנה מ-HTML.
 
 ### שלב 10: אימות וניטור
 

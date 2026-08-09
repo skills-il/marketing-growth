@@ -230,6 +230,40 @@
         "SKILL.md",
         "references/seo-checklist.md"
       ]
+    },
+    {
+      "claim_id": "geo-lower-ranked-115",
+      "claim": "In the Princeton GEO paper (Aggarwal et al., 2023), the Cite Sources method produced a 115.1% visibility increase for websites ranked fifth in the SERP.",
+      "source_url": "https://arxiv.org/pdf/2311.09735",
+      "raw_snippet": "For example, the Cite Sources method led to a substantial 115.1% increase in visibility for websites ranked fifth in SERP, while on average, the visibility of the top-ranked website decreased by 30.3%.",
+      "verified_via": "pdf",
+      "verified_at": "2026-08-10",
+      "fetched_at": "2026-08-10",
+      "appears_in": [
+        "references/geo-research.md"
+      ]
+    },
+    {
+      "claim_id": "geo-perplexity-validation",
+      "claim": "On Perplexity.ai the best-performing GEO methods improved on the baseline by 22% on Position-Adjusted Word Count and 37% on Subjective Impression (Aggarwal et al., 2023, Table 7).",
+      "source_url": "https://arxiv.org/pdf/2311.09735",
+      "raw_snippet": "The best performing methods improve upon baseline by 22% on Position-Adjusted Word Count and 37% on Subjective Impression.",
+      "verified_via": "pdf",
+      "verified_at": "2026-08-10",
+      "fetched_at": "2026-08-10",
+      "appears_in": [
+        "references/geo-research.md"
+      ]
+    },
+    {
+      "claim_id": "dataforseo-api-base",
+      "claim": "The DataForSEO REST API is served from https://api.dataforseo.com/v3, which the skill's scripts use as their API base.",
+      "source_url": "https://docs.dataforseo.com/v3/",
+      "raw_snippet": "https://api.dataforseo.com/v3/appendix/user_data.xml",
+      "fetched_at": "2026-08-10",
+      "appears_in": [
+        "scripts/dataforseo_api.py"
+      ]
     }
   ]
 }
