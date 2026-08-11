@@ -116,7 +116,7 @@ AI prefers content that fully answers questions.
 
 ## Google AI Overviews and AI Mode
 
-These are two distinct surfaces. AI Overviews appear inside ordinary results pages; AI Mode is a separate conversational experience, available in Hebrew since November 2025. Google states there are no additional requirements or special optimizations needed to appear in either, so the entry ticket is ordinary indexable, helpful content rather than a new file format or markup.
+These are two distinct surfaces. AI Overviews appear inside ordinary results pages; AI Mode is a separate conversational experience, and Hebrew and Israel both appear on Google's AI Mode availability list. Google states there are no additional requirements or special optimizations needed to appear in either, so the entry ticket is ordinary indexable, helpful content rather than a new file format or markup.
 
 - **Be the cited source:** both surfaces link out to specific pages. Concise, authoritative answers increase citation likelihood.
 - **Structure for extraction:** Use clear headings, direct answers, and lists that AI can easily parse.

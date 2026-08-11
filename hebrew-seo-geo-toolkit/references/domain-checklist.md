@@ -16,7 +16,7 @@ is MISSING rather than what is wrong. Updated 2026-08-11 (v2.3.0).
 | Training vs search-index crawler split, per platform | `GPTBot` vs `OAI-SearchBot`, and `ClaudeBot` vs `Claude-SearchBot`. Allowing only the training bot leaves the site ineligible for search citations. This is the highest-consequence configuration error in the whole domain. |
 | Live/user fetchers as a third bot category | `ChatGPT-User`, `Claude-User`, `Perplexity-User`. Perplexity documents that `Perplexity-User` generally ignores robots.txt. |
 | `Google-Extended` as an opt-out token, not a crawler | Blocking it does not affect Search ranking or AI Overview citations. |
-| Google AI Overviews AND AI Mode as two distinct surfaces | Hebrew is supported in both; they behave differently and are reported together but are not the same product. |
+| Google AI Overviews AND AI Mode as two distinct surfaces | Hebrew and Israel both appear on Google's AI Mode availability list; they behave differently and are reported together but are not the same product. |
 | Query fan-out and its content implication | Both surfaces may issue several related searches per query, which is the reason to answer adjacent sub-questions on-page. |
 | Honest statement of what Google requires for AI surfaces | Google states no additional requirements or special optimizations are needed. Any claim of a secret AI-ranking lever contradicts the primary source. |
 | Search Console generative AI reports: what they actually expose | Impressions, pages, countries, devices, dates. No clicks/CTR/position/queries in this version, subset rollout. Overstating this misleads clients. |

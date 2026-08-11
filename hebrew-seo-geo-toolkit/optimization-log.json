@@ -1,6 +1,17 @@
 {
   "cycles": [
     {
+      "version": "2.3.1",
+      "date": "2026-08-11",
+      "lessons": [
+        "Shipped 2.3.0 without an independent reviewer: all four review subagents went idle without returning output. A /code-review pass afterwards found 4 real defects. LESSON: when the verification panel does not return, the mechanical gates are NOT a substitute for an independent read, and the honest move is to hold or to get a review by another route BEFORE pushing, not after.",
+        "seo_audit.py checked for bot NAMES appearing anywhere in robots.txt rather than parsing rules. This meant a bot under 'Disallow: /' counted as present (our own agentskills.co.il robots.txt reported GPTBot as present while actually blocking it), and the most damaging misconfiguration, an explicitly blocked Claude-SearchBot, produced NO warning at all. Replaced with a real group parser resolving allow/disallow per user agent, including wildcard fallback and longest-match precedence.",
+        "I extended an inherited substring heuristic instead of fixing it. LESSON: when adding a check on top of existing logic, verify the existing logic is sound first; extending a broken check inherits and amplifies the bug.",
+        "'Hebrew supported since Nov 2025' for AI Mode was both unsourced AND wrong: Google's own post is dated Oct 07 2025. The substance held up (Hebrew and Israel are both on Google's AI Mode availability list) but the date was invented. Replaced with the sourced availability statement. Same defect class as the '30-day freshness' figure removed in 2.3.0.",
+        "evidence.json still cited platform.openai.com and support.anthropic.com in three PRE-EXISTING claims after 2.3.0 fixed those URLs in the prose. LESSON: a URL migration must sweep evidence.json too, not just the body; otherwise evidence and body cite different canonical sources for the same fact."
+      ]
+    },
+    {
       "version": "2.3.0",
       "date": "2026-08-11",
       "lessons": [

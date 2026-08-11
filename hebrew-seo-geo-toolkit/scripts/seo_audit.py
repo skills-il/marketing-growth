@@ -59,28 +59,97 @@ def extract_meta(html: str) -> dict:
     return result
 
 
+# Search-index crawlers govern AI citation eligibility. Allowing only the
+# training crawlers (GPTBot, ClaudeBot) leaves a site ineligible to be cited in
+# ChatGPT search and Claude search, which is the single most common
+# misconfiguration in this area.
+SEARCH_BOTS = ["OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
+TRAINING_BOTS = ["GPTBot", "ClaudeBot"]
+LIVE_FETCHERS = ["ChatGPT-User", "Claude-User", "Perplexity-User"]
+
+
+def parse_robots(content: str) -> dict:
+    """Parse robots.txt into {user-agent (lowercased): [(directive, path), ...]}.
+
+    Consecutive User-agent lines share the group that follows them, per the
+    robots.txt convention.
+    """
+    groups: dict = {}
+    current: list = []
+    expecting_agents = False
+    for raw in content.splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if not line or ":" not in line:
+            continue
+        field, _, value = line.partition(":")
+        field = field.strip().lower()
+        value = value.strip()
+        if field == "user-agent":
+            if not expecting_agents:
+                current = []
+                expecting_agents = True
+            current.append(value.lower())
+            groups.setdefault(value.lower(), [])
+        elif field in ("allow", "disallow"):
+            expecting_agents = False
+            for agent in current:
+                groups[agent].append((field, value))
+    return groups
+
+
+def is_allowed(groups: dict, agent: str, path: str = "/") -> tuple:
+    """Return (allowed: bool, matched_group: str) for `agent` fetching `path`.
+
+    A crawler obeys the group matching its own name; only if no such group
+    exists does it fall back to the wildcard group. Longest matching rule wins,
+    and Allow beats Disallow on an equal-length match.
+    """
+    key = agent.lower()
+    matched = key if key in groups else ("*" if "*" in groups else None)
+    if matched is None:
+        return True, "none"
+    best_len, best_allow = -1, True
+    for directive, value in groups[matched]:
+        # An empty Disallow value means "allow everything".
+        if directive == "disallow" and value == "":
+            if 0 > best_len:
+                best_len, best_allow = 0, True
+            continue
+        if value and path.startswith(value.rstrip("*")):
+            length = len(value)
+            if length > best_len or (length == best_len and directive == "allow"):
+                best_len, best_allow = length, directive == "allow"
+    return best_allow, matched
+
+
 def check_robots(url: str) -> dict:
-    """Check robots.txt"""
+    """Check robots.txt and resolve AI-bot access by parsing rules, not by
+    looking for bot names in the text. A bot listed under `Disallow: /` is
+    blocked, not present, and a bot with no rule of its own inherits the
+    wildcard group."""
     parsed = urllib.parse.urlparse(url)
     robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
     content, _, _ = fetch_url(robots_url)
-    
-    result = {"exists": False, "ai_bots": [], "missing_search_bots": []}
+
+    result = {
+        "exists": False,
+        "ai_bots": [],
+        "blocked_search_bots": [],
+        "implicit_search_bots": [],
+    }
     if content:
         result["exists"] = True
-        # Search-index crawlers govern citation eligibility. Allowing only the
-        # training crawlers (GPTBot, ClaudeBot) leaves a site ineligible to be
-        # cited in ChatGPT search and Claude search, which is the single most
-        # common misconfiguration in this area.
-        search_bots = ["OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
-        other_bots = ["GPTBot", "ClaudeBot", "ChatGPT-User", "Claude-User", "Perplexity-User"]
-        lowered = content.lower()
-        for bot in search_bots + other_bots:
-            if bot.lower() in lowered:
-                result["ai_bots"].append(bot)
-        result["missing_search_bots"] = [
-            b for b in search_bots if b.lower() not in lowered
-        ]
+        groups = parse_robots(content)
+        for bot in SEARCH_BOTS + TRAINING_BOTS + LIVE_FETCHERS:
+            allowed, matched = is_allowed(groups, bot)
+            state = "allowed" if allowed else "BLOCKED"
+            source = "explicit" if matched == bot.lower() else f"via '{matched}'"
+            result["ai_bots"].append(f"{bot}={state} ({source})")
+            if bot in SEARCH_BOTS:
+                if not allowed:
+                    result["blocked_search_bots"].append(bot)
+                elif matched != bot.lower():
+                    result["implicit_search_bots"].append(bot)
     return result
 
 
@@ -142,15 +211,25 @@ def main():
     robots = check_robots(url)
     print(f"exists: {'yes' if robots['exists'] else 'no'}")
     if robots["ai_bots"]:
-        print(f"ai_bots_mentioned: {', '.join(robots['ai_bots'])}")
+        for entry in robots["ai_bots"]:
+            print(f"  {entry}")
     else:
-        print("ai_bots_mentioned: none")
-    if robots["exists"] and robots["missing_search_bots"]:
+        print("ai_bots: no robots.txt to evaluate")
+    if robots["blocked_search_bots"]:
         print(
-            "WARNING: no robots.txt rule mentions "
-            f"{', '.join(robots['missing_search_bots'])}. "
-            "These are the search-index crawlers that govern AI citation "
-            "eligibility. Verify they are not blocked by a wildcard rule."
+            "CRITICAL: "
+            f"{', '.join(robots['blocked_search_bots'])} "
+            "cannot fetch this site. These are the search-index crawlers that "
+            "govern AI citation eligibility, so the site is not eligible to be "
+            "cited on those platforms."
+        )
+    if robots["implicit_search_bots"]:
+        print(
+            "NOTE: "
+            f"{', '.join(robots['implicit_search_bots'])} "
+            "are allowed only by the wildcard group, with no rule of their own. "
+            "That works today, but tightening the wildcard would silently drop "
+            "AI citations. Consider listing them explicitly."
         )
     print()
     

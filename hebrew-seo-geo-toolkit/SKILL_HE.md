@@ -138,7 +138,7 @@ WebSearch: "{keyword} search volume 2026"
 | ChatGPT (חיפוש) | סורק עצמי (`OAI-SearchBot`) + Bing כגיבוי | סמכות דומיין + התאמת תוכן-תשובה | חייבים לאשר את `OAI-SearchBot` בנפרד מ-`GPTBot` (אימון); לשמור על תוכן עדכני באמת |
 | Perplexity | סורק עצמי (`PerplexityBot`) + Google כגיבוי | רלוונטיות סמנטית | FAQ Schema, נתונים מובנים, מקורות PDF/markdown |
 | Google AI Overview | אינדקס Google | E-E-A-T + Knowledge Graph | זמין לכל המשתמשים בישראל ובעברית; נתונים מובנים ופסקאות תשובה ברורות עוזרים |
-| Google AI Mode | אינדקס Google | E-E-A-T + כיסוי תת-שאלות | משטח נפרד מ-AI Overviews, עברית נתמכת מנובמבר 2025. משתמש ב-query fan-out, אז כסו בדף גם את תת-השאלות הנלוות |
+| Google AI Mode | אינדקס Google | E-E-A-T + כיסוי תת-שאלות | משטח נפרד מ-AI Overviews. גם עברית וגם ישראל מופיעות ברשימת הזמינות הרשמית של AI Mode. משתמש ב-query fan-out, אז כסו בדף גם את תת-השאלות הנלוות |
 | Gemini (Google) | אינדקס Google + ווב בזמן אמת | E-E-A-T + רעננות | זהה ל-Google Search |
 | Copilot (Microsoft) | אינדקס Bing | דירוג Bing + אותות אקוסיסטם MS | Bing Webmaster Tools מאומת, נוכחות ב-LinkedIn/GitHub |
 | Claude (עם web search) | אינדקס עצמי של Anthropic דרך `Claude-SearchBot`, בשילוב מנוע חיפוש חיצוני | צפיפות עובדתית + ציטוטים | אישור `Claude-SearchBot` + URL מקור נקי |

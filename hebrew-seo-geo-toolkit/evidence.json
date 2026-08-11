@@ -19,7 +19,7 @@
     {
       "claim_id": "openai-bots",
       "claim": "OpenAI uses OAI-SearchBot and GPTBot robots.txt tags, set independently, so a site can allow search indexing while disallowing training crawls.",
-      "source_url": "https://platform.openai.com/docs/bots",
+      "source_url": "https://developers.openai.com/api/docs/bots",
       "raw_snippet": "OpenAI uses OAI-SearchBot and GPTBot robots.txt tags to enable webmasters to manage how their sites and content work with AI.",
       "fetched_at": "2026-08-10",
       "appears_in": [
@@ -30,7 +30,7 @@
     {
       "claim_id": "anthropic-bots",
       "claim": "Anthropic's web crawler is ClaudeBot, which collects web content that may contribute to model training; a site can restrict it in robots.txt.",
-      "source_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "source_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
       "raw_snippet": "ClaudeBot helps enhance the utility and safety of our generative AI models by collecting web content that could potentially contribute to their training.",
       "fetched_at": "2026-08-10",
       "appears_in": [
@@ -271,7 +271,7 @@
     {
       "claim_id": "openai-chatgpt-user",
       "claim": "ChatGPT-User is the user-triggered fetcher, not an automatic crawler, and is separate from the search crawler OAI-SearchBot.",
-      "source_url": "https://platform.openai.com/docs/bots",
+      "source_url": "https://developers.openai.com/api/docs/bots",
       "raw_snippet": "ChatGPT-User is not used for crawling the web in an automatic fashion.",
       "fetched_at": "2026-08-10",
       "appears_in": [
@@ -444,6 +444,19 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-ai-mode-availability",
+      "claim": "Hebrew and Israel both appear on Google's published list of AI Mode supported languages and countries.",
+      "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
+      "raw_snippet": "Hebrew",
+      "fetched_at": "2026-08-11T12:55:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md",
         "references/domain-checklist.md"
       ]
     }

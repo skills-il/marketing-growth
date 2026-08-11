@@ -146,7 +146,7 @@ Each AI search engine has unique ranking factors. Snapshot for 2026:
 | ChatGPT (search) | Own crawler (`OAI-SearchBot`) + Bing fallback | Domain authority + content-answer fit | Allow `OAI-SearchBot` separately from `GPTBot` (training); keep content genuinely current |
 | Perplexity | Own crawler (`PerplexityBot`) + Google fallback | Semantic relevance | FAQ Schema, structured data, PDF/markdown sources |
 | Google AI Overview | Google index | E-E-A-T + Knowledge Graph | Available to all users in Israel and in Hebrew; structured data and clear answer paragraphs help |
-| Google AI Mode | Google index | E-E-A-T + sub-question coverage | A distinct surface from AI Overviews, Hebrew supported since Nov 2025. Uses "query fan-out", so cover the related sub-questions on the page |
+| Google AI Mode | Google index | E-E-A-T + sub-question coverage | A distinct surface from AI Overviews. Hebrew and Israel are both on Google's AI Mode availability list. Uses "query fan-out", so cover the related sub-questions on the page |
 | Gemini (Google) | Google index + real-time web | E-E-A-T + recency | Same as Google Search |
 | Copilot (Microsoft) | Bing index | Bing rank + MS ecosystem signals | Bing Webmaster Tools verified, LinkedIn/GitHub presence |
 | Claude (with web search) | Anthropic's own `Claude-SearchBot` index; a third-party search backend is also involved | Factual density + citations | Allow `Claude-SearchBot`, clean source URLs |
