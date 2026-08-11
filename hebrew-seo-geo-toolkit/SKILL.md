@@ -81,12 +81,12 @@ See [references/hebrew-seo.md](./references/hebrew-seo.md) for domain strategy a
 ```html
 <link rel="alternate" hreflang="he-IL" href="https://example.co.il/page" />
 <link rel="alternate" hreflang="en" href="https://example.co.il/en/page" />
-<link rel="alternate" hreflang="x-default" href="https://example.co.il/en/page" />
+<link rel="alternate" hreflang="x-default" href="https://example.co.il/page" />
 ```
 
 Rules for Israeli sites:
 1. Always use `he-IL` (not just `he`) for Israeli Hebrew content
-2. Set `x-default` to the English version for international visitors
+2. Point `x-default` at whichever version best serves a visitor whose language matches none of your variants. For an Israel-first site that is usually the Hebrew page; for a site whose Hebrew content is a localized branch of an English original it is usually the English page. Nothing in Google's spec requires `x-default` to be English, so decide it from your audience rather than by default
 3. Every page must link bidirectionally to its counterpart in all languages
 4. Use consistent absolute URLs across all hreflang declarations
 

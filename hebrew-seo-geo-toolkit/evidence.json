@@ -459,6 +459,17 @@
         "references/aeo-considerations.md",
         "references/domain-checklist.md"
       ]
+    },
+    {
+      "claim_id": "google-x-default-definition",
+      "claim": "Google defines x-default as matching any language not explicitly listed by an hreflang tag on the page; it does not require the x-default target to be English.",
+      "source_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "raw_snippet": "or x-default to match any language not explicitly listed by an",
+      "fetched_at": "2026-08-11T13:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

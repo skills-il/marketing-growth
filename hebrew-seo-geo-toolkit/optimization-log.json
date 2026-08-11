@@ -1,6 +1,16 @@
 {
   "cycles": [
     {
+      "version": "2.3.2",
+      "date": "2026-08-11",
+      "lessons": [
+        "Found by DOGFOODING the skill against our own site (agentskills.co.il) rather than by any gate: the skill stated 'Set x-default to the English version' as an absolute rule. Google's own spec defines x-default as matching any language not explicitly listed, and says nothing about English. The rule would have led an agent to 'fix' a correct Israel-first configuration into a worse one. Softened to an audience-dependent decision. LESSON: absolute rules about another vendor's spec are the same defect class as PermaBot and the Brave claim; check whether the spec actually mandates what the skill asserts.",
+        "seo_audit.py sent 'User-Agent: SEO-Audit/1.0' and was refused by real sites, including our own, reporting a bare 'Could not fetch URL'. This blocked two genuine audits before anyone treated it as a bug. Now sends a browser UA with the tool name appended, plus Accept and Accept-Language headers, and reports the actual failure reason on stderr.",
+        "The TLS branch as first written caught ssl.SSLError directly, which never fires because urllib wraps it in URLError. Caught only by running the script against a real failing host. LESSON: exception branches need to be exercised, not just written.",
+        "Running the skill on our own project surfaced more real defects in one pass than the automated review gates did. Dogfood every skill against agentskills.co.il as a standing step."
+      ]
+    },
+    {
       "version": "2.3.1",
       "date": "2026-08-11",
       "lessons": [

@@ -9,19 +9,60 @@ import urllib.parse
 import re
 import time
 import sys
+import ssl
+import urllib.error
+
+
+# A bare tool token gets refused by a large share of real sites (CDN and WAF bot
+# rules), which made this script report "Could not fetch URL" for sites that are
+# perfectly reachable in a browser. Identify as a normal browser, with the tool
+# name appended so the traffic is still attributable in a server log.
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36 SEO-Audit/1.1"
+)
 
 
 def fetch_url(url: str, timeout: int = 30) -> tuple:
-    """Fetch URL and return (content, headers, load_time)"""
+    """Fetch URL and return (content, headers, load_time).
+
+    On failure returns (None, None, None) plus the reason on stderr, so a
+    blocked or TLS-failed fetch is distinguishable from an empty page instead
+    of surfacing as a bare "Could not fetch URL".
+    """
     try:
         start = time.time()
-        req = urllib.request.Request(url, headers={"User-Agent": "SEO-Audit/1.0"})
+        req = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "he-IL,he;q=0.9,en;q=0.8",
+            },
+        )
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             content = resp.read().decode("utf-8", errors="ignore")
             headers = dict(resp.headers)
             load_time = time.time() - start
             return content, headers, load_time
+    except urllib.error.HTTPError as e:
+        print(f"  [fetch] HTTP {e.code} for {url}", file=sys.stderr)
+        return None, None, None
+    except urllib.error.URLError as e:
+        # urllib wraps TLS failures inside URLError, so check the cause rather
+        # than catching ssl.SSLError directly, which never fires here.
+        if isinstance(getattr(e, "reason", None), ssl.SSLError):
+            print(
+                f"  [fetch] TLS failure for {url}: {e.reason}. If this is a "
+                "local Python without root certificates, run the 'Install "
+                "Certificates' step for your Python installation.",
+                file=sys.stderr,
+            )
+        else:
+            print(f"  [fetch] network error for {url}: {e.reason}", file=sys.stderr)
+        return None, None, None
     except Exception as e:
+        print(f"  [fetch] {type(e).__name__} for {url}: {e}", file=sys.stderr)
         return None, None, None
 
 

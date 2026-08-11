@@ -73,12 +73,12 @@ WebSearch: "{keyword} search volume 2026"
 ```html
 <link rel="alternate" hreflang="he-IL" href="https://example.co.il/page" />
 <link rel="alternate" hreflang="en" href="https://example.co.il/en/page" />
-<link rel="alternate" hreflang="x-default" href="https://example.co.il/en/page" />
+<link rel="alternate" hreflang="x-default" href="https://example.co.il/page" />
 ```
 
 כללים לאתרים ישראליים:
 1. תשתמשו תמיד ב-`he-IL` (לא רק `he`) לתוכן עברי ישראלי
-2. תגדירו `x-default` לגרסה האנגלית למבקרים בינלאומיים
+2. תפנו את `x-default` לגרסה שהכי משרתת מבקר שהשפה שלו לא מתאימה לאף אחת מהגרסאות שלכם. באתר שממוקד קודם כול בישראל זאת בדרך כלל הגרסה העברית, ובאתר שהעברית בו היא ענף מתורגם של מקור אנגלי זאת בדרך כלל הגרסה האנגלית. שום דבר במפרט של גוגל לא מחייב ש-`x-default` יהיה אנגלית, אז תחליטו לפי הקהל שלכם ולא לפי ברירת מחדל
 3. כל דף חייב לקשר דו-כיוונית למקבילו בכל השפות
 4. תשתמשו בכתובות URL מוחלטות ועקביות בכל הצהרות ה-hreflang
 
