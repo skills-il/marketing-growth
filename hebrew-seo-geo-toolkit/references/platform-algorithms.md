@@ -60,7 +60,7 @@ Ranked by observed importance. The weightings previously printed here were not t
 ### Optimization Checklist
 
 - [ ] Build strong backlink profile (quality > quantity)
-- [ ] Update content within 30 days
+- [ ] Keep content substantively current (no vendor-published freshness threshold exists; treat any specific day-count you see quoted as folklore)
 - [ ] Use clear H1/H2/H3 structure
 - [ ] Include verifiable statistics with citations
 - [ ] Write in ChatGPT's conversational style
@@ -121,7 +121,7 @@ Sitemap: https://example.com/sitemap.xml
 
 ---
 
-## 3. Google AI Overview (SGE) Ranking Factors
+## 3. Google AI Overviews and AI Mode Ranking Factors
 
 ### Architecture
 
@@ -199,7 +199,7 @@ Uses **Bing Index** as primary data source.
 |--------|---------|
 | **Bing Index** | Must be indexed by Bing to be cited |
 | **Microsoft Ecosystem** | LinkedIn, GitHub mentions provide boost |
-| **Crawlability** | BingBot + PermaBot must have access |
+| **Crawlability** | `bingbot` must have access. The other Microsoft agents you can control in robots.txt are `adidxbot` (Bing Ads) and `MicrosoftPreview` |
 | **Page Speed** | < 2 seconds load time |
 | **Schema Markup** | Helps Copilot understand content |
 | **Entity Clarity** | Clear definitions of entities/concepts |
@@ -211,7 +211,7 @@ Uses **Bing Index** as primary data source.
 User-agent: Bingbot
 Allow: /
 
-User-agent: msnbot
+User-agent: adidxbot
 Allow: /
 
 # Submit to Bing Webmaster Tools
@@ -233,7 +233,7 @@ Allow: /
 
 ### Architecture
 
-**Important:** Claude uses **Brave Search**, NOT Google or Bing!
+**Important:** Anthropic operates its own search-index crawler, `Claude-SearchBot`, and that is what you optimize against. Separately, Brave is widely reported to supply Claude's web search (Brave sits on Anthropic's published subprocessor list, and a `BraveSearchParams` parameter appears in the web-search tool definition), but Anthropic has never officially named a provider. Treat Brave as strongly evidenced, not confirmed, and never state it as fact to a client.
 
 Claude decides when to search based on:
 - Query freshness requirements
@@ -244,7 +244,7 @@ Claude decides when to search based on:
 
 | Factor | Details |
 |--------|---------|
-| **Brave Index** | Must be indexed by Brave Search |
+| **Crawler access** | `Claude-SearchBot` must be allowed in robots.txt. Allowing only `ClaudeBot` covers training and leaves you ineligible for search citations |
 | **Query Rewriting** | Claude reformulates queries for search |
 | **Factual Density** | Data-rich content preferred |
 | **Structural Clarity** | Easy to extract information |
@@ -260,18 +260,21 @@ Claude decides when to search based on:
 ### Technical Requirements
 
 ```
-# robots.txt
+# robots.txt -- Anthropic runs three separate bots
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 ```
 
 ### Optimization Checklist
 
-- [ ] Ensure Brave Search indexing
-- [ ] Allow ClaudeBot in robots.txt
+- [ ] Allow `Claude-SearchBot` in robots.txt (this is the one that governs citation eligibility)
+- [ ] Allow `ClaudeBot` if you also want training use, and `Claude-User` for user-triggered fetches
 - [ ] Create high factual density content
 - [ ] Use clear, extractable structure
 - [ ] Include verifiable data points
@@ -344,9 +347,10 @@ Allow: /
 |----------|--------------|------------|-------------------|
 | ChatGPT | Web (Bing-based) | Domain Authority | Content-Answer Fit |
 | Perplexity | Own + Google | Semantic Relevance | FAQ Schema |
-| Google SGE | Google | E-E-A-T | Knowledge Graph |
+| Google AI Overviews | Google | E-E-A-T | Knowledge Graph |
+| Google AI Mode | Google | E-E-A-T | Cover sub-questions (query fan-out) |
 | Copilot | Bing | Bing Index | MS Ecosystem |
-| Claude | Brave | Factual Density | Brave Indexing |
+| Claude | Anthropic `Claude-SearchBot` index | Factual Density | Allow `Claude-SearchBot` |
 | Google (traditional) | Google | Backlinks | Core Web Vitals |
 
 ### Universal Best Practices
@@ -354,7 +358,7 @@ Allow: /
 1. **Allow all major bots** in robots.txt
 2. **Implement Schema markup** (FAQPage, Article, Organization)
 3. **Build authoritative backlinks**
-4. **Update content regularly** (within 30 days)
+4. **Update content regularly** with substantive revisions, not date-stamp churn
 5. **Use clear structure** (H1 > H2 > H3, lists, tables)
 6. **Include statistics and citations**
 7. **Optimize page speed** (< 2 seconds)

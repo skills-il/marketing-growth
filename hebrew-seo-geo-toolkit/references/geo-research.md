@@ -14,7 +14,7 @@
 
 ### What is GEO?
 
-**Generative Engine Optimization (GEO)** is a novel framework to help content creators improve their visibility in **generative engine responses** (AI search engines like ChatGPT, Perplexity, Google SGE).
+**Generative Engine Optimization (GEO)** is a novel framework to help content creators improve their visibility in **generative engine responses** (AI search engines like ChatGPT, Perplexity, Google AI Overviews and AI Mode).
 
 Unlike traditional SEO (ranking in search results), GEO focuses on **being cited** by AI systems.
 

@@ -180,20 +180,31 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# AI Bots
-User-agent: GPTBot
+# AI bots: search-index crawlers first, these govern citation eligibility
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: ClaudeBot
+# Live, user-triggered fetchers
+User-agent: ChatGPT-User
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Training crawlers, decide deliberately
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: Applebot-Extended

@@ -25,7 +25,8 @@ Complete checklist for auditing and optimizing websites for both traditional SEO
 
 ### P1 - Important
 
-- [ ] **P1** `robots.txt` allows AI bots (GPTBot, PerplexityBot, ClaudeBot)
+- [ ] **P0** `robots.txt` allows the SEARCH-INDEX AI bots (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`). These govern citation eligibility and are the ones most often missing
+- [ ] **P1** `robots.txt` allows the training crawlers you are happy with (`GPTBot`, `ClaudeBot`) and the live fetchers (`ChatGPT-User`, `Claude-User`, `Perplexity-User`)
 - [ ] **P1** XML sitemap exists and is submitted
 - [ ] **P1** Site is indexed in Bing (for Copilot visibility)
 - [ ] **P1** Canonical tags properly implemented
@@ -136,11 +137,12 @@ Complete checklist for auditing and optimizing websites for both traditional SEO
 
 ### AI Bot Access
 
-- [ ] GPTBot allowed in robots.txt
-- [ ] PerplexityBot allowed in robots.txt
-- [ ] ClaudeBot allowed in robots.txt
-- [ ] Anthropic-ai allowed in robots.txt
-- [ ] Bingbot allowed in robots.txt
+- [ ] `OAI-SearchBot` allowed in robots.txt (ChatGPT search citations)
+- [ ] `Claude-SearchBot` allowed in robots.txt (Claude search citations)
+- [ ] `PerplexityBot` allowed in robots.txt (Perplexity indexing)
+- [ ] `ChatGPT-User`, `Claude-User`, `Perplexity-User` allowed (live user-triggered fetches)
+- [ ] `GPTBot` and `ClaudeBot` decided deliberately (training opt-in or opt-out; blocking these does NOT block search citations)
+- [ ] Bingbot allowed in robots.txt (required for Copilot)
 
 ---
 
@@ -178,7 +180,7 @@ Complete checklist for auditing and optimizing websites for both traditional SEO
 - [ ] All pages have unique, valuable content
 - [ ] No thin content (< 300 words for main pages)
 - [ ] Content matches search intent
-- [ ] Content is up-to-date (within 30 days for news/tech)
+- [ ] Content is genuinely up-to-date (fast-moving topics need more frequent substantive revision; no published engine threshold exists)
 - [ ] Content provides unique value vs competitors
 
 ### Keyword Strategy

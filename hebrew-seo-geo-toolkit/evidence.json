@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "hebrew-seo-geo-toolkit",
-  "generated_at": "2026-05-25T20:10:00Z",
+  "generated_at": "2026-08-11T12:20:00Z",
   "claims": [
     {
       "claim_id": "princeton-geo-paper",
@@ -41,7 +41,7 @@
     {
       "claim_id": "perplexity-bots",
       "claim": "Perplexity uses PerplexityBot (indexing) and Perplexity-User (on-demand fetch)",
-      "source_url": "https://docs.perplexity.ai/guides/bots",
+      "source_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
       "raw_snippet": "PerplexityBot, Perplexity-User",
       "fetched_at": "2026-05-25T20:10:00Z",
       "appears_in": [
@@ -289,6 +289,162 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/geo-research.md"
+      ]
+    },
+    {
+      "claim_id": "anthropic-three-bots",
+      "claim": "Anthropic documents three crawlers: ClaudeBot (training), Claude-SearchBot (search indexing) and Claude-User (user-triggered fetch).",
+      "source_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "raw_snippet": "Claude-SearchBot navigates the web to improve search result quality for users. It analyzes online content specifically to enhance the relevance and accuracy of search responses.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "references/aeo-considerations.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "anthropic-claude-user",
+      "claim": "Claude-User is the agent used when a Claude user asks a question that requires visiting a website.",
+      "source_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "raw_snippet": "Claude-User supports Claude AI users. When individuals ask questions to Claude, it may access websites using a Claude-User agent.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "anthropic-robots-respect",
+      "claim": "Anthropic's bots honor robots.txt directives.",
+      "source_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "raw_snippet": "Anthropic’s Bots respect “do not crawl” signals by honoring industry standard directives in robots.txt.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "openai-ads-bot",
+      "claim": "OAI-AdsBot validates the safety of web pages submitted as ads on ChatGPT.",
+      "source_url": "https://developers.openai.com/api/docs/bots",
+      "raw_snippet": "used to validate the safety of web pages submitted as ads on ChatGPT",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "openai-searchbot-purpose",
+      "claim": "OAI-SearchBot surfaces websites in ChatGPT's search features.",
+      "source_url": "https://developers.openai.com/api/docs/bots",
+      "raw_snippet": "used to surface websites in search results in ChatGPT's search features",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "perplexity-user-ignores-robots",
+      "claim": "Perplexity documents that Perplexity-User generally ignores robots.txt because the fetch was user-requested.",
+      "source_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "raw_snippet": "Since a user requested the fetch, this fetcher generally ignores robots.txt rules.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "perplexitybot-purpose",
+      "claim": "PerplexityBot surfaces and links websites in Perplexity search results and is not a foundation-model training crawler.",
+      "source_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "raw_snippet": "designed to surface and link websites in search results on Perplexity. It is not used to crawl content for AI foundation models.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-ai-no-extra-requirements",
+      "claim": "Google states there are no additional requirements or special optimizations needed to appear in AI Overviews or AI Mode.",
+      "source_url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "raw_snippet": "There are no additional requirements to appear in AI Overviews or AI Mode,",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-query-fan-out",
+      "claim": "Both AI Overviews and AI Mode may use a query fan-out technique, issuing multiple related searches behind one user query.",
+      "source_url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "raw_snippet": "Both AI Overviews and AI Mode may use a \"query fan-out\" technique",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "gsc-genai-reports-launch",
+      "claim": "Google launched Search Generative AI performance reports in Search Console on 3 June 2026, covering AI Overviews, AI Mode and generative AI features in Discover.",
+      "source_url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "raw_snippet": "The new Search Console reports are designed to give you dedicated views of your impressions within generative AI features on Search, such as AI Overviews and AI Mode, as well as generative AI features in Discover.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "gsc-genai-subset-rollout",
+      "claim": "The Search Console generative AI reports rolled out to a subset of websites, not all site owners.",
+      "source_url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "raw_snippet": "We are rolling these reports out to a subset of websites, allowing us to thoroughly test them and receive feedback before making them widely available.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md"
+      ]
+    },
+    {
+      "claim_id": "gsc-genai-impressions-metric",
+      "claim": "The Search Console generative AI reports expose impressions, pages, countries, devices and dates, with no click data in this version.",
+      "source_url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "raw_snippet": "Impressions: How often URLs from your site appeared in generative AI features in Search and Discover.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md"
+      ]
+    },
+    {
+      "claim_id": "okf-spec-v02",
+      "claim": "Google Cloud's Open Knowledge Format is currently version 0.2 and represents knowledge as a directory of markdown files with YAML frontmatter.",
+      "source_url": "https://raw.githubusercontent.com/GoogleCloudPlatform/knowledge-catalog/main/okf/SPEC.md",
+      "raw_snippet": "The format is intentionally minimal: a directory of markdown files with\nYAML frontmatter.",
+      "fetched_at": "2026-08-11T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
       ]
     }
   ]

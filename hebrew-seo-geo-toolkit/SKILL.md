@@ -31,7 +31,7 @@ curl -s "https://example.co.il/robots.txt"
 curl -s "https://example.co.il/sitemap.xml" | head -50
 ```
 
-**Verify AI bot access in robots.txt:** Googlebot, Bingbot, PerplexityBot, ChatGPT-User, ClaudeBot, anthropic-ai, GPTBot must all be allowed. See [references/seo-checklist.md](./references/seo-checklist.md) for the full prioritized audit checklist.
+**Verify AI bot access in robots.txt:** Googlebot, Bingbot, GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User, ClaudeBot, Claude-SearchBot and Claude-User must all be allowed. The search-index crawlers (`OAI-SearchBot`, `Claude-SearchBot`) are the ones that govern citation eligibility, and they are the ones most often missing. See [references/seo-checklist.md](./references/seo-checklist.md) for the full prioritized audit checklist.
 
 ### Step 2: Analyze Hebrew Keyword Morphology
 
@@ -143,28 +143,38 @@ Each AI search engine has unique ranking factors. Snapshot for 2026:
 
 | Platform | Primary Index | Key Factor | Critical Requirement |
 |----------|--------------|------------|---------------------|
-| ChatGPT (search) | Own crawler (`OAI-SearchBot`) + Bing fallback | Domain authority + content-answer fit | Allow `OAI-SearchBot` separately from `GPTBot` (training); 30-day freshness |
+| ChatGPT (search) | Own crawler (`OAI-SearchBot`) + Bing fallback | Domain authority + content-answer fit | Allow `OAI-SearchBot` separately from `GPTBot` (training); keep content genuinely current |
 | Perplexity | Own crawler (`PerplexityBot`) + Google fallback | Semantic relevance | FAQ Schema, structured data, PDF/markdown sources |
-| Google AI Overview | Google index | E-E-A-T + Knowledge Graph | Hebrew AI Overview rolled out to google.co.il during 2024-2025; structured data and clear answer paragraphs help |
-| Gemini (Google) | Google index + real-time web | E-E-A-T + recency | Same as Google Search; benefits from llms.txt and clean markdown |
+| Google AI Overview | Google index | E-E-A-T + Knowledge Graph | Available to all users in Israel and in Hebrew; structured data and clear answer paragraphs help |
+| Google AI Mode | Google index | E-E-A-T + sub-question coverage | A distinct surface from AI Overviews, Hebrew supported since Nov 2025. Uses "query fan-out", so cover the related sub-questions on the page |
+| Gemini (Google) | Google index + real-time web | E-E-A-T + recency | Same as Google Search |
 | Copilot (Microsoft) | Bing index | Bing rank + MS ecosystem signals | Bing Webmaster Tools verified, LinkedIn/GitHub presence |
-| Claude (with web search) | Brave Search index | Factual density + citations | Brave indexing + clean source URLs |
+| Claude (with web search) | Anthropic's own `Claude-SearchBot` index; a third-party search backend is also involved | Factual density + citations | Allow `Claude-SearchBot`, clean source URLs |
+
+**On Claude's search backend:** it is widely reported that Brave supplies Claude's web search, based on Brave appearing on Anthropic's published subprocessor list and a `BraveSearchParams` parameter in the web-search tool definition. Anthropic has never officially named a provider, so do not state it as fact to a client. What IS officially documented is `Claude-SearchBot`, so optimize against that rather than against a specific third-party index.
+
+**On Google AI Overviews vs AI Mode:** these are two different surfaces. Google's own guidance says "There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary", and ordinary indexable, helpful content is the entry ticket. Both may use a "query fan-out" technique, issuing multiple related searches behind one user query, which is the concrete reason to answer adjacent sub-questions on the same page rather than only the headline one.
 
 **Bot table (2026):**
 - `GPTBot`, OpenAI training crawler. Block if you do not want training; allow if you want broader OpenAI presence.
 - `OAI-SearchBot`, OpenAI's separate crawler for ChatGPT search results. Allow this even if you block `GPTBot`, otherwise ChatGPT search will not cite you.
 - `ChatGPT-User`, fired when a user invokes browsing during a chat. Allow.
-- `PerplexityBot` and `Perplexity-User`, index + on-demand fetch. Allow both.
-- `ClaudeBot`, Anthropic's officially documented crawler. Allow. `anthropic-ai` and `Claude-Web` are older names that still appear in robots.txt examples but not in Anthropic's current documentation.
+- `OAI-AdsBot`, OpenAI's crawler that validates the safety of pages submitted as ads on ChatGPT. Only relevant if you advertise there.
+- `PerplexityBot`, the search-index crawler. Allow. It respects robots.txt.
+- `Perplexity-User`, the on-demand fetch fired when a user asks a question. Allow. Note Perplexity documents that "Since a user requested the fetch, this fetcher generally ignores robots.txt rules", so disallowing it reduces your odds of being *indexed*, not of being fetched when someone pastes your URL.
+- `ClaudeBot`, Anthropic's training crawler. Allow if you want your content usable for training.
+- `Claude-SearchBot`, Anthropic's search-index crawler. **Allow this one even if you block `ClaudeBot`**, because it is what makes you eligible to be cited in Claude's search results. Same training-vs-search split as OpenAI's `GPTBot` / `OAI-SearchBot`.
+- `Claude-User`, fired when a Claude user asks a question that needs a page. Allow.
+- `anthropic-ai` and `Claude-Web` are older names that still circulate in robots.txt examples but appear nowhere in Anthropic's current documentation. Harmless to leave in; not worth adding.
 - `Google-Extended`, opt-out token for Gemini/Bard training (does NOT affect Google Search ranking or AI Overview citations).
 - `CCBot`, Common Crawl, used by many model trainers downstream.
 - `Applebot-Extended`, Apple Intelligence training opt-out.
 - `MistralAI-User`, circulated as the on-demand fetcher for Le Chat. We could not find it in Mistral's published docs, so verify before relying on it. Leaving it allowed in robots.txt costs nothing.
 - `Meta-ExternalAgent`, Meta's web crawler for Meta AI products. Block via robots.txt if you want to opt out.
 
-**llms.txt advisory caveat (2026 update):** llms.txt has gained adoption among AI crawlers as a hint but it is NOT a substitute for proper HTML and Schema.org. Google has published no support for llms.txt in its Search documentation, so treat it as advisory only and not as a ranking signal. Treat it as a nice-to-have on top of a clean site, not a replacement. Place a short `/llms.txt` index per the llmstxt.org spec. A longer companion file, commonly named llms-full.txt, is a tooling convention and is not part of that spec. Either way, keep the actual content rendered server-side and discoverable to traditional crawlers.
+**llms.txt status (2026): optional, and NOT a ranking or citation signal.** Do not sell it to a client as one. Google's Search Relations team has said Search does not use llms.txt and has no plans to, and Google's AI-features documentation never mentions it while stating that no additional files or markup are needed for AI Overviews or AI Mode. No AI engine has announced reading it as a ranking input. Ship it if you want cheap protocol-layer registration on the chance the convention wins later, the same shape of bet Schema.org was a decade ago, but ship it AFTER the fundamentals and never instead of them. Place a short `/llms.txt` index per the llmstxt.org spec. A longer companion, commonly named llms-full.txt, is a tooling convention and is not part of that spec. Google Cloud's Open Knowledge Format (OKF, currently v0.2, a directory of Markdown files with YAML frontmatter) is a related emerging convention with the same caveat: nothing crawls the open web for it yet.
 
-**Universal requirements:** allow the search-time bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) in robots.txt, implement Schema markup (FAQPage, Article, Organization with sameAs), include statistics and citations, update content within 30 days, expose a clean `/llms.txt` and llms-full.txt for AI consumption.
+**Universal requirements:** allow the search-time bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `Claude-SearchBot`, `Claude-User`) in robots.txt, keep content server-rendered and indexable, implement Schema markup (Article, Organization with sameAs, FAQPage), include statistics and citations, and keep content genuinely current. llms.txt is explicitly NOT on this list.
 
 See [references/platform-algorithms.md](./references/platform-algorithms.md) for detailed per-platform optimization checklists.
 
@@ -263,14 +273,14 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-# Anthropic
+# Anthropic: three separate bots (training / search index / user fetch)
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Claude-SearchBot
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Claude-User
 Allow: /
 
 # Common Crawl (used by many trainers)
@@ -292,9 +302,10 @@ Sitemap: https://example.co.il/sitemap.xml
 - Allowing search-time crawlers (`OAI-SearchBot`, `Perplexity-User`, `ChatGPT-User`) increases chances of being cited in AI responses.
 - Blocking `Google-Extended` opts out of Gemini training without affecting Google Search ranking or AI Overview citations.
 - Blocking `GPTBot` opts out of OpenAI model training but keeps you eligible for ChatGPT search if `OAI-SearchBot` and `ChatGPT-User` remain allowed.
+- The same split applies at Anthropic: blocking `ClaudeBot` opts out of training while `Claude-SearchBot` keeps you eligible for citation in Claude's search results. Blocking `ClaudeBot` alone is NOT an opt-out of Claude entirely, and blocking all three is.
 - Review your policy regularly. This landscape evolves rapidly.
 
-**Add `/llms.txt` and a llms-full.txt companion:** llms.txt (proposed by Jeremy Howard, 2024) is becoming a de facto AI-readable index. Place a short markdown file at `https://example.co.il/llms.txt` summarizing the site's purpose and key URLs, plus a longer `llms-full.txt` with the full content. AI search crawlers and agents increasingly use these instead of guessing structure from HTML.
+**Optionally add `/llms.txt`:** llms.txt (proposed by Jeremy Howard, 2024) is a convention, not a standard, and carries no confirmed ranking or citation effect. Place a short markdown file at `https://example.co.il/llms.txt` summarizing the site's purpose and key URLs if you want to register early. Do NOT let it displace server-rendered HTML, Schema.org, or a correct robots.txt, and do not report it to a client as an AI-visibility win.
 
 ### Step 10: Validate and Monitor
 
@@ -310,11 +321,25 @@ open "https://www.google.com/search?q=site:{domain}"
 open "https://www.bing.com/search?q=site:{domain}"
 ```
 
-**GEO Monitoring:**
-- Track AI citations using tools like Otterly.ai, Profound, or SE Ranking AI Toolkit
-- Monitor referral traffic from AI platforms (Perplexity, ChatGPT)
-- Search for your brand in AI assistants to check citation accuracy
-- Track Google Search Console AI Overview data
+**GEO Monitoring: measure in four layers, in order.** GEO outcomes are delayed (an engine has to re-crawl before your edit can surface) and confounded (your number also moves when the engine or a competitor changes). So separate the fast proxy from the slow outcome instead of reading a raw before/after.
+
+| Layer | Question | Latency | Proxy or outcome |
+|-------|----------|---------|------------------|
+| 1. Crawler access | Can the bots fetch and parse the page at all? | Instant | Precondition |
+| 2. Citability | Given the page, is it extractable and answer-shaped? | Minutes | Proxy |
+| 3. Surfacing | Does an engine cite you for a bare query, unprompted? | Days to weeks | Outcome (GEO) |
+| 4. Rankings and clicks | Position, impressions, CTR | Weeks to months | Outcome (SEO) |
+
+**Always check layer 1 before concluding anything about content quality.** "Not crawled yet" and "crawled but not chosen" look identical in the answer box and have completely different fixes. Diagnosing a content problem when the real cause is a blocked `Claude-SearchBot` wastes weeks.
+
+1. **Layer 1:** request the page as each bot user agent, confirm a 200 AND that the content is in the raw HTML rather than JS-injected. Evaluate robots.txt per user agent, not in aggregate. Check your own access logs for real bot hits per URL.
+2. **Layer 2:** hand a specific URL to an engine and ask the target question. This bypasses crawl lag on live-fetch paths, so it iterates in minutes, but it only proves extractability, not that you will be chosen.
+3. **Layer 3:** ask a FIXED panel of queries WITHOUT supplying the URL, and record citations over time against a control page you did not edit. This is the actual GEO outcome.
+4. **Layer 4:** Search Console and rank data, snapshotted over time against the same control.
+
+**Google Search Console generative AI reports:** Google launched dedicated Search Generative AI performance reports on 3 June 2026, covering AI Overviews, AI Mode, and generative AI features in Discover. They report **Impressions, Pages, Countries, Devices and Dates only**. There is no click, CTR, position, or query data in this version, and Google is rolling the reports out to a subset of websites rather than everyone, so do not promise a client this data until you have confirmed their property has it. Generative-AI traffic also continues to be counted inside the overall performance report.
+
+Third-party AI-citation trackers (Otterly.ai, Profound, SE Ranking AI Toolkit) automate layer 3. Also watch referral traffic from AI platforms and check citation accuracy by searching your brand in each assistant.
 
 **Hebrew-specific checks:**
 1. Verify RTL rendering in all browsers
@@ -423,9 +448,11 @@ Result: Prioritized SEO + GEO improvement plan for the Israeli market
 | Google Keyword Planner | https://ads.google.com/intl/en/home/tools/keyword-planner/ | Hebrew search volumes, keyword ideas |
 | Academy of the Hebrew Language | https://hebrew-academy.org.il | Correct Hebrew terminology, spelling rules |
 | Princeton GEO paper (Aggarwal et al., 2023) | https://arxiv.org/abs/2311.09735 | GEO methods for AI search engines |
-| OpenAI bot docs | https://platform.openai.com/docs/bots | `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` behavior |
-| Anthropic crawler docs | https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot` and how to block it |
-| Perplexity crawler info | https://docs.perplexity.ai/guides/bots | `PerplexityBot`, `Perplexity-User` |
+| OpenAI bot docs | https://developers.openai.com/api/docs/bots | `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `OAI-AdsBot` behavior |
+| Anthropic crawler docs | https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot`, `Claude-SearchBot`, `Claude-User` and how to block each |
+| Perplexity crawler info | https://docs.perplexity.ai/docs/resources/perplexity-crawlers | `PerplexityBot`, `Perplexity-User`, and which one ignores robots.txt |
+| Google AI features guidance | https://developers.google.com/search/docs/appearance/ai-features | What is and is not required for AI Overviews and AI Mode |
+| Search Console generative AI reports | https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports | Which metrics the AI reports actually expose |
 | llms.txt proposal | https://llmstxt.org | Convention for AI-readable site index |
 | Bing Webmaster Tools AI Performance | https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview | AI Performance reporting shows when Copilot cites you |
 | Brave Search | https://brave.com/search/ | Independent index Claude relies on |
@@ -449,8 +476,8 @@ Cause: Content may be machine-translated or missing morphological keyword varian
 Solution: Ensure Hebrew content includes natural prefix combinations. Use `scripts/analyze_keywords.py` to identify missing variants.
 
 ### Error: "Not appearing in AI search results"
-Cause: AI bots may be blocked, content lacks citation-worthy signals, or site not indexed on required platforms
-Solution: Check robots.txt allows GPTBot, PerplexityBot, ClaudeBot. Apply GEO methods (citations, statistics, authoritative tone). Verify Bing indexing (for Copilot) and Brave indexing (for Claude). Ensure content is updated within 30 days.
+Cause: diagnose in order, because these look identical from the outside and have different fixes. (1) the search-time bot cannot fetch the page at all; (2) it fetched, but the content is JS-injected and not in the raw HTML; (3) it parsed fine but the content is not answer-shaped enough to be chosen.
+Solution: Check (1) FIRST by requesting the page as each bot user agent and confirming a 200 with the text present in the raw HTML. Confirm robots.txt allows `OAI-SearchBot`, `PerplexityBot`, and `Claude-SearchBot` specifically. Allowing only `GPTBot` and `ClaudeBot` covers training crawlers and leaves you ineligible for search citations on both platforms, which is the most common version of this bug. Only after access is green, apply GEO methods (quotes, statistics, citations) and restructure to answer-first.
 
 ### Error: "AI citing competitors instead of my site"
 Cause: Competitor content has higher factual density, better structure, or more authoritative citations

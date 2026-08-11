@@ -23,7 +23,7 @@ curl -s "https://example.co.il/robots.txt"
 curl -s "https://example.co.il/sitemap.xml" | head -50
 ```
 
-**תאמתו גישת בוטי AI ב-robots.txt:** Googlebot, Bingbot, PerplexityBot, ChatGPT-User, ClaudeBot, anthropic-ai, GPTBot כולם חייבים להיות מורשים. תסתכלו על [references/seo-checklist.md](./references/seo-checklist.md) לרשימת ביקורת מלאה מתועדפת.
+**תאמתו גישת בוטי AI ב-robots.txt:** חייבים להיות מורשים Googlebot, Bingbot, GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User, ClaudeBot, Claude-SearchBot ו-Claude-User. תסתכלו על [references/seo-checklist.md](./references/seo-checklist.md) לרשימת ביקורת מלאה מתועדפת.
 
 ### שלב 2: ניתוח מורפולוגיה של מילות מפתח בעברית
 
@@ -135,28 +135,37 @@ WebSearch: "{keyword} search volume 2026"
 
 | פלטפורמה | אינדקס ראשי | גורם מפתח | דרישה קריטית |
 |----------|-------------|-----------|-------------|
-| ChatGPT (חיפוש) | סורק עצמי (`OAI-SearchBot`) + Bing כגיבוי | סמכות דומיין + התאמת תוכן-תשובה | חייבים לאשר את `OAI-SearchBot` בנפרד מ-`GPTBot` (אימון); רעננות 30 יום |
+| ChatGPT (חיפוש) | סורק עצמי (`OAI-SearchBot`) + Bing כגיבוי | סמכות דומיין + התאמת תוכן-תשובה | חייבים לאשר את `OAI-SearchBot` בנפרד מ-`GPTBot` (אימון); לשמור על תוכן עדכני באמת |
 | Perplexity | סורק עצמי (`PerplexityBot`) + Google כגיבוי | רלוונטיות סמנטית | FAQ Schema, נתונים מובנים, מקורות PDF/markdown |
-| Google AI Overview | אינדקס Google | E-E-A-T + Knowledge Graph | AI Overview בעברית הושק ל-google.co.il במהלך 2024-2025; נתונים מובנים ופסקאות תשובה ברורות עוזרים |
-| Gemini (Google) | אינדקס Google + ווב בזמן אמת | E-E-A-T + רעננות | זהה ל-Google Search; נהנה מ-llms.txt ו-markdown נקי |
+| Google AI Overview | אינדקס Google | E-E-A-T + Knowledge Graph | זמין לכל המשתמשים בישראל ובעברית; נתונים מובנים ופסקאות תשובה ברורות עוזרים |
+| Google AI Mode | אינדקס Google | E-E-A-T + כיסוי תת-שאלות | משטח נפרד מ-AI Overviews, עברית נתמכת מנובמבר 2025. משתמש ב-query fan-out, אז כסו בדף גם את תת-השאלות הנלוות |
+| Gemini (Google) | אינדקס Google + ווב בזמן אמת | E-E-A-T + רעננות | זהה ל-Google Search |
 | Copilot (Microsoft) | אינדקס Bing | דירוג Bing + אותות אקוסיסטם MS | Bing Webmaster Tools מאומת, נוכחות ב-LinkedIn/GitHub |
-| Claude (עם web search) | אינדקס Brave Search | צפיפות עובדתית + ציטוטים | אינדוקס ב-Brave + URL מקור נקי |
+| Claude (עם web search) | אינדקס עצמי של Anthropic דרך `Claude-SearchBot`, בשילוב מנוע חיפוש חיצוני | צפיפות עובדתית + ציטוטים | אישור `Claude-SearchBot` + URL מקור נקי |
+
+**לגבי מנוע החיפוש שמאחורי Claude:** מקובל לייחס את החיפוש של Claude ל-Brave, על בסיס הופעת Brave ברשימת קבלני המשנה המפורסמת של Anthropic ופרמטר בשם `BraveSearchParams` בהגדרת כלי החיפוש. Anthropic מעולם לא נקבה רשמית בשם ספק, אז אל תציגו את זה כעובדה מול לקוח. מה שכן מתועד רשמית זה `Claude-SearchBot`, אז תבצעו אופטימיזציה מולו ולא מול אינדקס חיצוני ספציפי.
+
+**לגבי ההבדל בין AI Overviews ל-AI Mode:** מדובר בשני משטחים שונים. ההנחיה של Google עצמה אומרת שאין דרישות נוספות או אופטימיזציות מיוחדות כדי להופיע באף אחד מהם, כלומר כרטיס הכניסה הוא תוכן רגיל, מועיל ובר-אינדוקס. שניהם עשויים להשתמש בטכניקת query fan-out, כלומר שליחת כמה חיפושים נלווים מאחורי שאילתה אחת, וזאת בדיוק הסיבה הקונקרטית לענות בדף גם על השאלות הסמוכות ולא רק על הכותרת.
 
 **טבלת בוטים (2026):**
 - `GPTBot`, סורק האימון של OpenAI. תחסמו אם לא רוצים אימון; תאשרו אם רוצים נוכחות רחבה ב-OpenAI.
 - `OAI-SearchBot`, סורק נפרד של OpenAI לתוצאות חיפוש ChatGPT. תאשרו אותו גם אם חוסמים את `GPTBot`, אחרת חיפוש ChatGPT לא יצטט אתכם.
 - `ChatGPT-User`, נורה כשמשתמש מפעיל גלישה בצ'אט. תאשרו.
-- `PerplexityBot` ו-`Perplexity-User`, אינדקס + שליפה לפי דרישה. תאשרו את שניהם.
-- `ClaudeBot`, הסורק של Anthropic שמתועד רשמית. תאשרו. `anthropic-ai` ו-`Claude-Web` הם שמות ישנים שעדיין מופיעים בדוגמאות robots.txt אבל לא בתיעוד הנוכחי של Anthropic.
+- `PerplexityBot`, סורק האינדקס. תאשרו. הוא מכבד robots.txt.
+- `Perplexity-User`, שליפה לפי דרישה כשמשתמש שואל שאלה. תאשרו. שימו לב ש-Perplexity מתעדת שהשליפה הזאת בדרך כלל מתעלמת מכללי robots.txt, כי משתמש אנושי ביקש אותה, אז חסימה פוגעת באינדוקס ולא מונעת שליפה.
+- `ClaudeBot`, סורק האימון של Anthropic. תאשרו אם אתם רוצים שהתוכן ישמש לאימון.
+- `Claude-SearchBot`, סורק האינדקס לחיפוש של Anthropic. **תאשרו אותו גם אם חסמתם את `ClaudeBot`**, כי הוא זה שהופך אתכם לזכאים לציטוט בתוצאות החיפוש של Claude. אותה הפרדה בדיוק כמו `GPTBot` מול `OAI-SearchBot` אצל OpenAI.
+- `Claude-User`, נורה כשמשתמש Claude שואל שאלה שדורשת דף. תאשרו.
+- `anthropic-ai` ו-`Claude-Web` הם שמות ישנים שעדיין מסתובבים בדוגמאות robots.txt אבל לא מופיעים בתיעוד הנוכחי של Anthropic. לא מזיק להשאיר, לא שווה להוסיף.
 - `Google-Extended`, opt-out לאימון Gemini/Bard (לא משפיע על דירוג Google Search או על ציטוטים ב-AI Overview).
 - `CCBot`, Common Crawl, משמש מאמני מודלים רבים.
 - `Applebot-Extended`, opt-out לאימון Apple Intelligence.
 - `MistralAI-User`, שם שמסתובב כ-fetcher לפי דרישה של Le Chat. לא מצאנו אותו בתיעוד הפומבי של Mistral, אז אמתו לפני שאתם מסתמכים עליו. אין נזק להשאיר אותו מאושר ב-robots.txt.
 - `Meta-ExternalAgent`, crawler של מטא למוצרי Meta AI. ניתן לחסום ב-robots.txt כדי לעשות opt-out.
 
-**הסתייגות לגבי llms.txt (עדכון 2026):** llms.txt צובר תאוצה אצל crawlers של AI כרמז, אבל הוא לא תחליף ל-HTML תקין ו-Schema.org. Google לא מזכירה את llms.txt בתיעוד החיפוש שלה, אז תתייחסו אליו כהמלצה בלבד ולא כסיגנל דירוג. תתייחסו אליו כתוספת nice-to-have על אתר נקי, לא כתחליף. תניחו קובץ אינדקס קצר ב-`/llms.txt` לפי המפרט של llmstxt.org. קובץ נלווה ארוך יותר, שנהוג לקרוא לו llms-full.txt, הוא מוסכמה של כלים ולא חלק מהמפרט. בכל מקרה, תשמרו על התוכן עצמו מרונדר בצד השרת וגלוי ל-crawlers מסורתיים.
+**מעמד llms.txt נכון ל-2026: אופציונלי, ולא סיגנל דירוג או ציטוט.** אל תמכרו את זה ללקוח ככזה. צוות Search Relations של Google אמר שהחיפוש לא משתמש ב-llms.txt ואין כוונה לעשות זאת, והתיעוד של Google לתכונות AI בכלל לא מזכיר אותו, ובמקביל קובע שלא נדרשים קבצים או תגיות נוספים ל-AI Overviews או ל-AI Mode. אף מנוע AI לא הכריז שהוא קורא אותו כקלט לדירוג. תעלו אותו אם בא לכם רישום זול בשכבת הפרוטוקול, על הסיכוי שהקונבנציה תנצח בהמשך, בערך אותו סוג הימור ש-Schema.org היה לפני עשור, אבל רק אחרי היסודות ולעולם לא במקומם. תניחו אינדקס קצר ב-`/llms.txt` לפי המפרט של llmstxt.org. קובץ נלווה ארוך יותר, שנהוג לקרוא לו llms-full.txt, הוא מוסכמה של כלים ולא חלק מהמפרט. גם ל-Open Knowledge Format של Google Cloud (בקיצור OKF, כרגע גרסה 0.2, ספריית קבצי Markdown עם YAML frontmatter) יש בדיוק אותה הסתייגות: שום דבר עדיין לא סורק את הרשת הפתוחה כדי למצוא אותו.
 
-**דרישות אוניברסליות:** תאשרו את בוטי זמן-החיפוש (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `ClaudeBot`) ב-robots.txt, תטמיעו Schema (FAQPage, Article, Organization עם sameAs), תכניסו סטטיסטיקות וציטוטים, תרעננו תוכן תוך 30 יום, תחשפו `/llms.txt` ו-llms-full.txt נקיים לצריכת AI.
+**דרישות אוניברסליות:** תאשרו את בוטי זמן-החיפוש (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `Claude-SearchBot`, `Claude-User`) ב-robots.txt, תשמרו על תוכן מרונדר בצד השרת וניתן לאינדוקס, תטמיעו Schema (Article, Organization עם sameAs, FAQPage), תכניסו סטטיסטיקות וציטוטים, ותשמרו על תוכן עדכני באמת. שימו לב ש-llms.txt איננו ברשימה הזאת.
 
 תסתכלו על [references/platform-algorithms.md](./references/platform-algorithms.md) לרשימות בדיקה מפורטות לכל פלטפורמה.
 
@@ -259,10 +268,10 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Claude-SearchBot
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Claude-User
 Allow: /
 
 # Common Crawl (משמש מאמני מודלים רבים)
@@ -284,9 +293,10 @@ Sitemap: https://example.co.il/sitemap.xml
 - אפשור סורקי זמן-חיפוש (`OAI-SearchBot`, `Perplexity-User`, `ChatGPT-User`) מגדיל סיכויים להיות מצוטטים בתגובות AI.
 - חסימת `Google-Extended` היא opt-out לאימון Gemini בלי לפגוע בדירוג Google Search או בציטוטים ב-AI Overview.
 - חסימת `GPTBot` היא opt-out לאימון מודלים של OpenAI אבל שומרת אתכם זכאים לחיפוש ChatGPT, בתנאי ש-`OAI-SearchBot` ו-`ChatGPT-User` נשארים מאושרים.
+- אותה הפרדה קיימת ב-Anthropic: חסימת `ClaudeBot` היא opt-out מאימון, בזמן ש-`Claude-SearchBot` שומר על הזכאות לציטוט בחיפוש של Claude. חסימה של `ClaudeBot` לבדו איננה יציאה מ-Claude, ורק חסימת שלושתם היא.
 - תבדקו את המדיניות שלכם באופן קבוע. התחום מתפתח מהר.
 
-**הוסיפו `/llms.txt` וקובץ llms-full.txt נלווה:** llms.txt (הוצע על ידי Jeremy Howard, 2024) הופך לאינדקס דה-פקטו קריא ל-AI. תניחו קובץ markdown קצר ב-`https://example.co.il/llms.txt` שמסכם את מטרת האתר ואת ה-URLים המרכזיים, ועוד `llms-full.txt` ארוך יותר עם התוכן המלא. סורקי חיפוש AI וסוכנים משתמשים בזה יותר ויותר במקום לנחש מבנה מ-HTML.
+**אפשר להוסיף `/llms.txt`, אבל זה אופציונלי:** llms.txt (הוצע על ידי Jeremy Howard, 2024) הוא קונבנציה ולא תקן, ואין לו אפקט מוכח על דירוג או ציטוט. תניחו קובץ markdown קצר ב-`https://example.co.il/llms.txt` שמסכם את מטרת האתר ואת ה-URLים המרכזיים, אם אתם רוצים להירשם מוקדם. אל תיתנו לו לדחוק HTML מרונדר בצד השרת, Schema.org או robots.txt תקין, ואל תדווחו עליו ללקוח כהישג בנראות AI.
 
 ### שלב 10: אימות וניטור
 
@@ -302,11 +312,25 @@ open "https://www.google.com/search?q=site:{domain}"
 open "https://www.bing.com/search?q=site:{domain}"
 ```
 
-**ניטור GEO:**
-- תעקבו אחרי ציטוטי AI בעזרת כלים כמו Otterly.ai, Profound או SE Ranking AI Toolkit
-- תנטרו תעבורת הפניות מפלטפורמות AI (Perplexity, ChatGPT)
-- תחפשו את המותג שלכם בעוזרי AI כדי לבדוק דיוק ציטוטים
-- תעקבו אחרי נתוני AI Overview ב-Google Search Console
+**ניטור GEO: תמדדו בארבע שכבות, לפי הסדר.** תוצאות GEO מתעכבות (המנוע צריך לסרוק מחדש לפני שהעריכה שלכם יכולה לצוף) ומוסוות על ידי גורמים אחרים (המספר שלכם זז גם כשהמנוע או מתחרה משתנים). לכן תפרידו בין מדד מקורב ומהיר לבין תוצאה אמיתית ואיטית, במקום לקרוא השוואת לפני-ואחרי גולמית.
+
+| שכבה | השאלה | זמן תגובה | מקורב או תוצאה |
+|------|-------|-----------|----------------|
+| גישת סורקים | האם הבוטים בכלל מצליחים לשלוף ולפענח את הדף? | מיידי | תנאי מקדים |
+| יכולת ציטוט | בהינתן הדף, האם הוא נתיק וממוקד תשובה? | דקות | מקורב |
+| הופעה בפועל | האם מנוע מצטט אתכם על שאילתה נקייה, בלי שביקשתם? | ימים עד שבועות | תוצאה (GEO) |
+| דירוגים והקלקות | מיקום, חשיפות, שיעור הקלקה | שבועות עד חודשים | תוצאה (SEO) |
+
+**תמיד תבדקו את שכבת הגישה לפני שאתם מסיקים משהו על איכות התוכן.** מצב של "עדיין לא נסרק" ומצב של "נסרק אבל לא נבחר" נראים זהים לחלוטין בתיבת התשובה, והתיקון שלהם הפוך. אבחון של בעיית תוכן כשהסיבה האמיתית היא `Claude-SearchBot` חסום מבזבז שבועות.
+
+1. **שכבת הגישה:** תבקשו את הדף בתור כל user agent של בוט, תוודאו החזר 200 וגם שהתוכן נמצא ב-HTML הגולמי ולא מוזרק ב-JavaScript. תעריכו את robots.txt לכל user agent בנפרד ולא במצטבר. תבדקו בלוגים שלכם פניות אמיתיות של בוטים לכל כתובת.
+2. **שכבת יכולת הציטוט:** תמסרו כתובת ספציפית למנוע ותשאלו את שאלת היעד. זה עוקף את השהיית הסריקה בנתיבי שליפה חיה, אז אפשר לחזור על זה תוך דקות, אבל זה מוכיח רק יכולת חילוץ ולא שתיבחרו.
+3. **שכבת ההופעה בפועל:** תשאלו מערך קבוע של שאילתות בלי למסור את הכתובת, ותתעדו ציטוטים לאורך זמן מול דף ביקורת שלא ערכתם. זאת תוצאת ה-GEO האמיתית.
+4. **שכבת הדירוגים:** נתוני Search Console ודירוגים, בצילומי מצב לאורך זמן מול אותו דף ביקורת.
+
+**דוחות ה-AI הגנרטיבי ב-Google Search Console:** גוגל השיקה ב-3 ביוני 2026 דוחות ייעודיים לביצועי AI גנרטיבי, שמכסים AI Overviews, AI Mode ותכונות AI גנרטיבי ב-Discover. הם מדווחים **חשיפות, דפים, מדינות, מכשירים ותאריכים בלבד**. אין בגרסה הזאת נתוני הקלקות, שיעור הקלקה, מיקום או שאילתות, וההשקה הגיעה קודם לתת-קבוצה של אתרים, אז אל תבטיחו ללקוח את הנתונים האלה לפני שווידאתם שהנכס שלו קיבל אותם. הפעילות הזאת ממשיכה להיספר גם בדוח הביצועים הכללי.
+
+כלים חיצוניים למעקב ציטוטי AI (כמו Otterly.ai, Profound או SE Ranking AI Toolkit) מבצעים אוטומציה של שכבת ההופעה בפועל. במקביל תנטרו תעבורת הפניות מפלטפורמות AI ותחפשו את המותג שלכם בכל עוזר כדי לבדוק דיוק ציטוטים.
 
 **בדיקות לעברית:**
 1. תוודאו תצוגת RTL תקינה בכל הדפדפנים
@@ -368,7 +392,7 @@ open "https://www.bing.com/search?q=site:{domain}"
 4. ביקורת נתונים מובנים (FAQPage, Product, BreadcrumbList schemas)
 5. הערכת אותות EEAT (אישורי מחבר, ציטוטים, מומחיות בעברית)
 6. בדיקת נראות AI - לחפש שם מותג ומוצרים ב-ChatGPT, Perplexity, Claude
-7. סקירת נתוני AI Overview ב-Google Search Console
+7. סקירת דוחות ה-AI הגנרטיבי ב-Google Search Console
 תוצאה: תוכנית שיפור SEO + GEO מתועדפת לשוק הישראלי
 
 ## משאבים מצורפים
@@ -415,12 +439,14 @@ open "https://www.bing.com/search?q=site:{domain}"
 | Google Keyword Planner | https://ads.google.com/intl/en/home/tools/keyword-planner/ | נפחי חיפוש בעברית, רעיונות למילות מפתח |
 | האקדמיה ללשון העברית | https://hebrew-academy.org.il | מינוח עברי תקני, כללי כתיב |
 | מאמר GEO של פרינסטון (Aggarwal et al., 2023) | https://arxiv.org/abs/2311.09735 | שיטות GEO למנועי חיפוש מבוססי AI |
-| תיעוד בוטים של OpenAI | https://platform.openai.com/docs/bots | התנהגות `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` |
-| תיעוד סורקי Anthropic | https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot`, `anthropic-ai`, `Claude-Web` |
-| מידע על סורקי Perplexity | https://docs.perplexity.ai/guides/bots | `PerplexityBot`, `Perplexity-User` |
+| תיעוד בוטים של OpenAI | https://developers.openai.com/api/docs/bots | התנהגות `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `OAI-AdsBot` |
+| תיעוד סורקי Anthropic | https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot`, `Claude-SearchBot`, `Claude-User` ואיך לחסום כל אחד |
+| הנחיות Google לתכונות AI | https://developers.google.com/search/docs/appearance/ai-features | מה נדרש ומה לא נדרש ל-AI Overviews ול-AI Mode |
+| דוחות AI גנרטיבי ב-Search Console | https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports | אילו מדדים הדוחות באמת חושפים |
+| מידע על סורקי Perplexity | https://docs.perplexity.ai/docs/resources/perplexity-crawlers | `PerplexityBot`, `Perplexity-User` |
 | הצעת llms.txt | https://llmstxt.org | קונבנציה לאינדקס אתר קריא ל-AI |
 | דוח AI Performance של Bing Webmaster Tools | https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview | דוח AI Performance מראה מתי Copilot מצטט אתכם |
-| Brave Search | https://brave.com/search/ | אינדקס עצמאי ש-Claude מסתמך עליו |
+| Brave Search | https://brave.com/search/ | אינדקס עצמאי שמיוחס לחיפוש של Claude, בלי אישור רשמי מ-Anthropic |
 
 ## פתרון בעיות
 
@@ -442,7 +468,7 @@ open "https://www.bing.com/search?q=site:{domain}"
 
 ### שגיאה: "לא מופיע בתוצאות חיפוש AI"
 סיבה: בוטי AI יכולים להיות חסומים, לתוכן חסרים אותות ראויים לציטוט, או שהאתר לא מאונדקס בפלטפורמות הנדרשות
-פתרון: תבדקו ש-robots.txt מאפשר GPTBot, PerplexityBot, ClaudeBot. תיישמו שיטות GEO (ציטוטים, סטטיסטיקות, טון סמכותי). תאמתו אינדוקס ב-Bing (ל-Copilot) ו-Brave (ל-Claude). תוודאו שהתוכן עודכן תוך 30 יום.
+פתרון: תבדקו קודם כל גישה, לפני שאתם מסיקים משהו על איכות התוכן. תבקשו את הדף בתור כל user agent של בוט ותוודאו החזר 200 עם הטקסט קיים ב-HTML הגולמי ולא מוזרק ב-JavaScript. תוודאו ש-robots.txt מאפשר במפורש את `OAI-SearchBot`, `PerplexityBot` ו-`Claude-SearchBot`. אישור של `GPTBot` ו-`ClaudeBot` בלבד מכסה רק את סורקי האימון ומשאיר אתכם לא זכאים לציטוט בחיפוש בשתי הפלטפורמות, וזאת התקלה הנפוצה ביותר כאן. רק אחרי שהגישה תקינה, תיישמו שיטות GEO ותבנו מחדש בפורמט תשובה-קודם.
 
 ### שגיאה: "AI מצטט מתחרים במקום את האתר שלי"
 סיבה: לתוכן של המתחרה יש צפיפות עובדתית גבוהה יותר, מבנה טוב יותר או ציטוטים סמכותיים יותר

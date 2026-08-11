@@ -1,0 +1,17 @@
+{
+  "cycles": [
+    {
+      "version": "2.3.0",
+      "date": "2026-08-11",
+      "lessons": [
+        "Bootstrapped references/domain-checklist.md and this log; neither existed before v2.3.0, so prior cycles had no cross-cycle memory and no expert-review anchor.",
+        "Root cause of this cycle's CRITICAL: the skill documented the GPTBot/OAI-SearchBot training-vs-search split correctly for OpenAI but never re-checked whether other vendors had adopted the same split. Anthropic added Claude-SearchBot and Claude-User (docs updated ~Feb 2026) and the skill kept recommending ClaudeBot alone. NEXT CYCLE: re-enumerate EVERY vendor's full documented bot list from the vendor's own page, do not spot-check the one bot already named.",
+        "Two cited vendor doc URLs had 301-redirected to new hosts (platform.openai.com -> developers.openai.com, support.anthropic.com -> support.claude.com) while still returning 200 through the redirect, so link validation passed and hid the move. NEXT CYCLE: check final resolved URL, not just status code.",
+        "references/platform-algorithms.md contained a fabricated Bing crawler name (PermaBot) that survived multiple cycles because reference files are rarely re-read. The evidence gate did not catch it because user-agent tokens are not numeric and were never extracted as claims. Consider whether bot names should be evidence-tracked.",
+        "Deferred: FAQPage is recommended throughout without noting that Google restricted FAQ RICH RESULTS to authoritative government and health sites in 2023. Logged in domain-checklist.md under Should-cover; the schema still has AI-extraction value, so this is a framing fix, not a removal.",
+        "UNVERIFIED and deliberately NOT written this cycle: the claim that ChatGPT with browsing prefers its cached index over re-fetching a supplied URL. Plausible and repeated by third parties, but no primary source found. Revisit.",
+        "RESOLVED this cycle (not deferred after all): the unsourced '30-day freshness' figure was removed from all 5 occurrences across SKILL.md, SKILL_HE.md, seo-checklist.md and platform-algorithms.md, and replaced with non-numeric guidance. It was the same class of untraceable vendor stat that earlier cycles stripped from the GEO tables, so leaving it would have been inconsistent."
+      ]
+    }
+  ]
+}

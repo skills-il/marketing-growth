@@ -65,13 +65,22 @@ def check_robots(url: str) -> dict:
     robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
     content, _, _ = fetch_url(robots_url)
     
-    result = {"exists": False, "ai_bots": []}
+    result = {"exists": False, "ai_bots": [], "missing_search_bots": []}
     if content:
         result["exists"] = True
-        ai_bots = ["GPTBot", "PerplexityBot", "ClaudeBot", "anthropic-ai", "ChatGPT-User"]
-        for bot in ai_bots:
-            if bot.lower() in content.lower():
+        # Search-index crawlers govern citation eligibility. Allowing only the
+        # training crawlers (GPTBot, ClaudeBot) leaves a site ineligible to be
+        # cited in ChatGPT search and Claude search, which is the single most
+        # common misconfiguration in this area.
+        search_bots = ["OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
+        other_bots = ["GPTBot", "ClaudeBot", "ChatGPT-User", "Claude-User", "Perplexity-User"]
+        lowered = content.lower()
+        for bot in search_bots + other_bots:
+            if bot.lower() in lowered:
                 result["ai_bots"].append(bot)
+        result["missing_search_bots"] = [
+            b for b in search_bots if b.lower() not in lowered
+        ]
     return result
 
 
@@ -136,6 +145,13 @@ def main():
         print(f"ai_bots_mentioned: {', '.join(robots['ai_bots'])}")
     else:
         print("ai_bots_mentioned: none")
+    if robots["exists"] and robots["missing_search_bots"]:
+        print(
+            "WARNING: no robots.txt rule mentions "
+            f"{', '.join(robots['missing_search_bots'])}. "
+            "These are the search-index crawlers that govern AI citation "
+            "eligibility. Verify they are not blocked by a wildcard rule."
+        )
     print()
     
     # Sitemap

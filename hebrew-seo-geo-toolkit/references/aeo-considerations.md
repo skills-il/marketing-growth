@@ -114,29 +114,30 @@ AI prefers content that fully answers questions.
 - Include definitions for technical terms
 - Address common misconceptions
 
-## Google AI Overviews
+## Google AI Overviews and AI Mode
 
-Google's AI Overviews (formerly SGE) now appear in many search results. To optimize:
+These are two distinct surfaces. AI Overviews appear inside ordinary results pages; AI Mode is a separate conversational experience, available in Hebrew since November 2025. Google states there are no additional requirements or special optimizations needed to appear in either, so the entry ticket is ordinary indexable, helpful content rather than a new file format or markup.
 
-- **Be the cited source:** AI Overviews cite specific pages. Concise, authoritative answers increase citation likelihood.
+- **Be the cited source:** both surfaces link out to specific pages. Concise, authoritative answers increase citation likelihood.
 - **Structure for extraction:** Use clear headings, direct answers, and lists that AI can easily parse.
-- **Cover follow-up questions:** AI Overviews often address related queries. Anticipate and answer them on the same page or link to dedicated pages.
-- **Monitor in Search Console:** Google Search Console provides data on AI Overview impressions and clicks.
+- **Cover follow-up questions:** both may use a "query fan-out" technique, issuing several related searches behind one user query. Answering the adjacent sub-questions on the same page is therefore a direct optimization, not a nice-to-have.
+- **Monitor in Search Console:** Google launched dedicated Search Generative AI performance reports on 3 June 2026, covering AI Overviews, AI Mode, and generative AI in Discover. They expose **impressions, pages, countries, devices and dates only**. There is no click, CTR, position or query data in this version, and the rollout reached a subset of websites first. Generative-AI activity also remains counted inside the overall performance report.
 
 ## AI Crawler Management
 
 Make conscious decisions about which AI systems can crawl your content:
 
-- **robots.txt directives:** Use `User-agent: GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended` to control access.
+- **Separate training from search.** OpenAI and Anthropic both run distinct bots for each: `GPTBot` vs `OAI-SearchBot`, and `ClaudeBot` vs `Claude-SearchBot`. Allowing only the training crawler leaves you ineligible for search citations on that platform. This is the most common misconfiguration in the whole area.
+- **Live fetchers are a third category:** `ChatGPT-User`, `Claude-User`, `Perplexity-User`. Perplexity documents that `Perplexity-User` generally ignores robots.txt because a human requested the fetch, so blocking it reduces indexing rather than preventing retrieval.
+- **`Google-Extended` is an opt-out token, not a crawler.** It governs Gemini training use and does not affect Google Search ranking or AI Overview citations.
 - **Allowing crawlers** increases chances of being cited as a source in AI responses.
-- **Blocking crawlers** prevents content from being used in AI training (but may reduce AI citations).
 - Review your policy regularly. This is one of the most actively evolving areas of SEO.
 
 ## Measuring AEO Success
 
 ### Monitor AI Mentions
-Track when AI assistants cite your content:
-- Use Google Search Console's AI Overview data for impression and click tracking
+Track when AI assistants cite your content. Check crawler ACCESS before judging content quality: "not crawled yet" and "crawled but not chosen" look identical in the answer box and have opposite fixes.
+- Use Search Console's generative AI reports for impressions (no click data in the current version)
 - Monitor referral traffic from AI platforms (Perplexity, ChatGPT, Bing Copilot)
 - Search for your brand + "according to" in AI assistants
 - Consider third-party AEO tracking tools for comprehensive monitoring
