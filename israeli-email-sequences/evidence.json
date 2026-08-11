@@ -221,6 +221,32 @@
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "registration-10000-direct-mail",
+      "claim": "A database whose main purpose is collecting personal information in order to supply it to others as a business or for consideration, including direct-mail services, must register once it holds information on 10,000 people or more.",
+      "source_url": "https://www.gov.il/he/pages/tikun13_qa",
+      "raw_snippet": "מאגר שמטרתו העיקרית היא איסוף מידע אישי לשם מסירתו לאחר כדרך עיסוק או בתמורה, לרבות שירותי דיוור ישיר, ויש במאגר מידע על 10,000 בני אדם ומעלה.",
+      "fetched_at": "2026-08-11",
+      "verified_via": "gov.il content API",
+      "verified_at": "2026-08-11",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "notification-100000-sensitive",
+      "claim": "A database holding specially-sensitive information on more than 100,000 people, where the registration duty does not apply, must notify the Privacy Protection Authority within 30 days under Section 8a(b). This is a NOTIFICATION duty, not a DPO-appointment threshold.",
+      "source_url": "https://www.gov.il/he/pages/tikun13_qa",
+      "raw_snippet": "ביחס למאגרי מידע שיש בהם \"מידע בעל רגישות מיוחדת\", בהתאם להגדרה החדשה בחוק, על יותר מ-100,000 איש, וחובת הרישום אינה חלה עליהם, נקבעה חובה חדשה בדין של מסירת הודעה לרשות בתוך 30 יום על מאגר המידע.",
+      "fetched_at": "2026-08-11",
+      "verified_via": "gov.il content API",
+      "verified_at": "2026-08-11",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

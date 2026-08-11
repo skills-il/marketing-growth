@@ -26,7 +26,7 @@ On top of Chok HaSpam, marketing email lists are a "database" subject to additio
 - **30-day response** to access, correction, and erasure requests
 - **24-hour breach reporting** to the PPA for serious incidents
 - **DPO appointment** for businesses with 100k+ subjects or sensitive data
-- **Administrative fines** up to 3.2M NIS (capped at 5% of annual turnover) for severe violations
+- **Administrative fines** capped at 5% of annual turnover for severe violations
 
 ## Best Practices
 - Double opt-in recommended
