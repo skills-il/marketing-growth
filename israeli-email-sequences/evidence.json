@@ -27,14 +27,27 @@
     },
     {
       "claim_id": "amendment-13-in-force",
-      "claim": "Privacy Protection Law Amendment 13 effective 14 August 2025; administrative fines up to 3.2 million NIS or 5% of annual turnover for severe violations",
-      "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority",
-      "raw_snippet": "תיקון 13, בתוקף 14 באוגוסט 2025, קנס 3.2 מיליון ש\"ח, 5%",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim": "Amendment 13 to the Privacy Protection Law entered into force on 14 August 2025.",
+      "source_url": "https://www.gov.il/he/pages/guide_tikon13_professional",
+      "raw_snippet": "הרשות להגנת הפרטיות מפרסמת מדריך בעניין הוראות תיקון מס' 13 לחוק הגנת הפרטיות, שנכנס לתוקף ב־14 באוגוסט 2025.",
+      "fetched_at": "2026-08-11T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "amendment-13-turnover-cap-5pct",
+      "claim": "Under Amendment 13 (Fifth Schedule, section 7), where an administrative fine imposed on a violator exceeds 5% of the violator's transaction turnover, the head of the Privacy Protection Authority reduces the fine to 5% of that turnover.",
+      "source_url": "https://www.gov.il/BlobFolder/news/13_amendment/he/%D7%AA%D7%99%D7%A7%D7%95%D7%9F%2013%20-%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%20%D7%94%D7%97%D7%95%D7%A7%D7%99%D7%9D.pdf",
+      "raw_snippet": "(א) מצא ראש הרשות ,לבקשת המפר ,שסכום העיצום הכספי המוטל על המפר ,בין שהופחת לפי סעיף 4 ,3 ,2או 6ובין שלא הופחת כאמור ,עולה על 5%ממחזור העסקאות של המפר ,יפחית את סכום העיצום הכספי ל־ 5%ממחזור העסקאות שלו",
+      "fetched_at": "2026-08-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-08-11"
     },
     {
       "claim_id": "open-rate-benchmarks",

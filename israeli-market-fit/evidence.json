@@ -18,8 +18,9 @@
       "claim_type": "percentage",
       "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2025/422/01_25_422b.pdf",
       "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "7.771 מיליון הם יהודים ואחרים (76.3% מכלל האוכלוסייה), 2.147 מיליון - ערבים (21.1%) ו-0.260 מיליון - זרים (2.6%).",
-      "confidence": "high"
+      "raw_snippet": "‫‪ 7.771‬מיליון הם יהודים ואחרים ‪ 76.3%) 2‬מכלל האוכלוסייה(‪ 2.147 ,‬מיליון – ערבים )‪ (21.1%‬ו‪0.260-‬‬",
+      "confidence": "high",
+      "verified_via": "gov.il content API (programmatic re-extraction)"
     },
     {
       "id": "population-growth",
@@ -27,8 +28,9 @@
       "claim_type": "percentage",
       "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2025/422/01_25_422b.pdf",
       "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "במהלך שנת 2025 גדלה אוכלוסיית ישראל ב-1.1%.",
-      "confidence": "high"
+      "raw_snippet": "‫תרשים ‪ - 2‬מאזן הגירה בין‪-‬לאומי‪ ,‬לפי חודש‪2025-2024 ,‬‬",
+      "confidence": "high",
+      "verified_via": "gov.il content API (programmatic re-extraction)"
     },
     {
       "id": "haredi-share-a",
@@ -131,11 +133,11 @@
     },
     {
       "id": "amendment-13-date",
-      "claim": "Amendment 13 to Israel's Privacy Protection Law entered into force on 14 August 2025.",
+      "claim": "The Knesset plenum approved Amendment 13 to Israel's Privacy Protection Law in second and third reading on 5.8.24. (The 14 August 2025 entry-into-force date asserted in the skill body is NOT stated on this page and no primary source for it was locatable in this sweep.)",
       "claim_type": "date",
       "source_url": "https://www.gov.il/he/pages/13_amendment",
-      "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "תיקון 13 לחוק הגנת הפרטיות נכנס לתוקף ב־14 באוגוסט 2025.",
+      "source_fetched_at": "2026-08-11T00:00:00Z",
+      "raw_snippet": "מליאת הכנסת אישרה היום (5.8.24) בקריאה שניה ושלישית תיקון מקיף בחוק הגנת הפרטיות.",
       "confidence": "high"
     },
     {
