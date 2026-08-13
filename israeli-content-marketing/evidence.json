@@ -9,7 +9,9 @@
       "source_url": "https://www.hebcal.com/holidays/2027",
       "raw_snippet": "Hebcal: Yom HaShoah 2025-04-24, 2026-04-14, 2027-05-04. 2027: Purim 2027-03-23, Pesach I 2027-04-22, Yom HaZikaron 2027-05-11, Yom HaAtzma'ut 2027-05-12, Shavuot 2027-06-11, Rosh Hashana 5788 2027-10-02, Yom Kippur 2027-10-11, Sukkot I 2027-10-16, Chanukah 1 candle 2027-12-24 (first full day 12-25). 2025 Yom HaZikaron 2025-04-30, Yom HaAtzma'ut 2025-05-01.",
       "fetched_at": "2026-06-22T22:00:00Z",
-      "appears_in": ["scripts/content_planner.py"]
+      "appears_in": [
+        "scripts/content_planner.py"
+      ]
     },
     {
       "claim_id": "israeli-tech-media-outlets",
@@ -17,7 +19,11 @@
       "source_url": "https://www.calcalistech.com/ctechnews",
       "raw_snippet": "Geektime, Calcalist/Calcalist Tech, CTech (Calcalist English edition), The Marker, Globes, Ynet Tech, and No Camels are active Israeli tech/business outlets in 2026.",
       "fetched_at": "2026-06-22T22:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-media-landscape.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
     },
     {
       "claim_id": "aeo-earned-media-citations",
@@ -25,7 +31,10 @@
       "source_url": "https://authoritytech.io/blog/machine-relations-evidence-earned-media-ai-citations",
       "raw_snippet": "Roughly 82% of AI citations come from earned media; AI Overviews average ~13 sources per response in 2026 and reward answer-block structure and schema.",
       "fetched_at": "2026-06-22T22:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "israel-mobile-first-70",
@@ -33,15 +42,23 @@
       "source_url": "https://datareportal.com/reports/digital-2025-israel",
       "raw_snippet": "Israel: ~91% smartphone penetration, mobile connections exceed the population; mobile-first consumption well above 70%.",
       "fetched_at": "2026-06-22T22:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "chok-haspam-sunthu",
-      "claim": "Israel's anti-spam law (Chok HaSpam, Amendment 40 to the Communications Law) governs commercial email/SMS; the Israeli work week is Sunday-Thursday.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%90%D7%99%D7%A1%D7%95%D7%A8_%D7%A9%D7%9C%D7%99%D7%97%D7%AA_%D7%93%D7%95%D7%90%D7%A8_%D7%96%D7%91%D7%9C_(%D7%A1%D7%A4%D7%90%D7%9D)",
-      "raw_snippet": "חוק הספאם (תיקון 40 לחוק התקשורת) אוסר משלוח דבר פרסומת ללא הסכמה מפורשת מראש של הנמען; שבוע העבודה בישראל הוא ראשון עד חמישי.",
-      "fetched_at": "2026-06-22T22:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim": "Israel's anti-spam rules live in Section 30a of the Communications (Telecommunications and Broadcasts) Law: sending a commercial message by fax, SMS, email or an automatic dialling system without the recipient's prior consent is prohibited.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "החוק אוסר לשלוח פרסומת באמצעי תקשורת שונים מבלי לקבל מראש את הסכמת הנמען | האיסור רלוונטי לשליחת פרסומות באמצעי התקשורת האלה בלבד: פקס, SMS, דואר אלקטרוני או מערכת חיוג אוטומטי | חוק התקשורת (בזק ושידורים)- סעיף 30א",
+      "fetched_at": "2026-08-13T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "playwright",
+      "verified_at": "2026-08-13T00:00:00Z"
     },
     {
       "claim_id": "reference-doc-urls",
@@ -49,7 +66,10 @@
       "source_url": "https://www.geektime.co.il",
       "raw_snippet": "Reference URLs: https://www.geektime.co.il https://www.calcalist.co.il https://www.globes.co.il https://www.themarker.com https://developers.google.com/search/docs https://hebrew-academy.org.il",
       "fetched_at": "2026-06-22T22:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
