@@ -139,6 +139,8 @@ Relative to Tel Aviv (1.00):
 | Beer Sheva | 0.78 | 15-22% |
 | Remote (company in TLV) | 0.95 | 0-8% (varies widely) |
 
+The location index and its discount ranges are survey-derived market observations from the sources listed at the top of this file, not published statistics. Treat them as negotiating context, not as figures to quote as fact.
+
 ## Hot Skills Premium
 
 Candidates with these in-demand specializations typically command a 10-25% premium over base ranges:
