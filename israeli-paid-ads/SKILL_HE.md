@@ -289,7 +289,7 @@ python scripts/cpc_calculator.py --vertical legal --budget 10000 --cpc 30
 | מדיניות Google Ads | https://support.google.com/google-ads/answer/6008942 | מדיניות פרסום וכללי תוכן מוגבל |
 | Meta Advertising Standards | https://transparency.meta.com/policies/ad-standards/ | כללי תוכן המודעות של מטא, חלים על קמפיינים ישראליים |
 | הרשות להגנת הפרטיות (תיקון 13) | https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page | הנחיות הסכמה לפי תיקון 13 לרשימות לקוחות, seeds ל-lookalike, מעקב פיקסל/CAPI |
-| הגנת הצרכן (gov.il) | https://www.gov.il/he/departments/units/consumer_protection_unit | חוק הגנת הצרכן, תמחור כולל מע"מ, סימון תוכן ממומן |
+| הגנת הצרכן (gov.il) | (link removed, this gov.il page now returns 404) | חוק הגנת הצרכן, תמחור כולל מע"מ, סימון תוכן ממומן |
 | רשות המסים | https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page | שיעור המע"מ (כרגע 18%) החל על הוצאות פרסום ועל תמחור |
 
 ## שרתי MCP מומלצים

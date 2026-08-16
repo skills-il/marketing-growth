@@ -50,7 +50,7 @@ This is a compliance area. Verify the current Privacy Protection Authority (PPA)
 
 ## Source URLs
 - Privacy Protection Authority (Amendment 13 guidance): https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page
-- Consumer Protection unit (gov.il): https://www.gov.il/he/departments/units/consumer_protection_unit
+- Consumer Protection unit (gov.il): (link removed, this gov.il page now returns 404)
 - Israel Tax Authority (VAT, currently 18%): https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page
 - Google Ads policies: https://support.google.com/google-ads/answer/6008942
 - Google Ads, About Smart Bidding: https://support.google.com/google-ads/answer/2459326

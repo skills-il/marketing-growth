@@ -296,7 +296,7 @@ Result: Data-driven budget recommendation with conversion estimates
 | Google Ads policies | https://support.google.com/google-ads/answer/6008942 | Advertising policies and restricted-content rules |
 | Meta Advertising Standards | https://transparency.meta.com/policies/ad-standards/ | Meta's ad content rules, applies to Israeli campaigns |
 | Privacy Protection Authority (Amendment 13) | https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page | Amendment 13 consent guidance for customer lists, lookalike seeds, pixel/CAPI tracking |
-| Consumer Protection (gov.il) | https://www.gov.il/he/departments/units/consumer_protection_unit | Consumer Protection Law, VAT-inclusive pricing, sponsored-content labeling |
+| Consumer Protection (gov.il) | (link removed, this gov.il page now returns 404) | Consumer Protection Law, VAT-inclusive pricing, sponsored-content labeling |
 | Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page | VAT rate (currently 18%) applied to ad spend and pricing |
 
 ## Recommended MCP Servers
