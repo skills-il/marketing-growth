@@ -59,12 +59,14 @@
       "claim_id": "named-israeli-apps-operating",
       "claim": "Named Israeli apps operating in 2026: Moovit (transit), Gett (taxi), Wolt and 10bis (food delivery). 10bis is still operating (not merged or renamed).",
       "source_url": "https://www.calcalistech.com/ctechnews/article/juvdmh4v1",
-      "raw_snippet": "Moovit, Gett, Wolt, and 10bis remain active Israeli apps in 2026; 10bis continues as a food-delivery and corporate meal-card platform.",
-      "fetched_at": "2026-06-22T21:30:00Z",
+      "raw_snippet": "Wolt Israel GM: \"We are entering a new era of competition in the catering budgeting m | Ctech",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "reference-doc-urls",

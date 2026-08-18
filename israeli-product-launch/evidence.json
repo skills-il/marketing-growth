@@ -7,12 +7,14 @@
       "claim_id": "techstars-tel-aviv-closed",
       "claim": "Techstars no longer runs a Tel Aviv accelerator program. After its 2024 cohort, Techstars ('Techstars 2.0') consolidated onto high-VC-density US cities; Tel Aviv is absent from all 2025/2026 Techstars program lists (including Spring 2026). It also never ran 'quarterly' cohorts.",
       "source_url": "https://www.techstars.com/blog/program-news/applications-are-now-open-for-techstars-spring-2026-accelerator-programs",
-      "raw_snippet": "Techstars Spring 2026 accelerator programs cover a consolidated set of US-centric cities plus Anywhere; Tel Aviv is not among Techstars' 2025-2026 programs.",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "Applications Are Now Open for Techstars' Spring 2026 Accelerator Programs | Techstars | Techstars",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "active-israeli-accelerators-2026",
@@ -31,12 +33,14 @@
       "claim_id": "startup-nation-central-restructure-finder",
       "claim": "Startup Nation Central restructured in early 2026 (laid off roughly 65 of ~80 staff, refocused on fewer high-impact initiatives), downsizing its live-event footprint. Startup Nation Finder remains its durable canonical database of Israeli investors, programs, and events.",
       "source_url": "https://www.calcalistech.com/ctechnews/article/skszcohdwg",
-      "raw_snippet": "Startup Nation Central announced (Feb 2026) it laid off about 65 of its ~80 employees and refocused on a smaller set of initiatives; Startup Nation Finder remains its core database product.",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "Startup Nation Central lays off 65 of 80 employees amid major restructuring | Ctech",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "geektime-english-defunct-ctech",

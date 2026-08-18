@@ -17,15 +17,17 @@
     },
     {
       "claim_id": "israeli-tech-media-outlets",
-      "claim": "Israeli tech/business media operating in 2026: Geektime (Hebrew tech/startups), Calcalist + Calcalist Tech (Hebrew business+tech) with CTech as its English edition, The Marker (Hebrew business, Haaretz group), Globes (Hebrew financial daily), Ynet Tech (general), No Camels (English, Israeli innovation, non-profit at Reichman University).",
-      "source_url": "https://www.calcalistech.com/ctechnews",
-      "raw_snippet": "Geektime, Calcalist/Calcalist Tech, CTech (Calcalist English edition), The Marker, Globes, Ynet Tech, and No Camels are active Israeli tech/business outlets in 2026.",
-      "fetched_at": "2026-06-22T22:00:00Z",
+      "claim": "Israeli tech/business media operating in 2026: Geektime (Hebrew tech/startups), Calcalist + Calcalist Tech (Hebrew business+tech) with CTech as its English edition, The Marker (Hebrew business, Haaretz group), Globes (Hebrew financial daily), Ynet Tech (general), No Camels (English, Israeli innovation, non-profit at Reichman University). Also covers https://www.calcalistech.com/ctechnews.",
+      "source_url": "https://www.geektime.co.il/category/ai/",
+      "raw_snippet": "by Microsoft פיתוח קריירה מדברים פיננסים משרות בהייטק קטגוריות AI מדע וחלל מיקרוסופט דברים גיקיים פיתוח גיוסי הון ואקזיטים החיים בהייטק ביקורות גאדג'טים ITtime יצירת קשר פרסמו אצלנו תנאי שימוש מדיניות פרטיות הקוד האתי של גיקטיים מובייל ווב?",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-media-landscape.md"
-      ]
+      ],
+      "verified_via": "Geektime section page fetched; snippet copied from it",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "aeo-earned-media-citations",

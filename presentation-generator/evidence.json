@@ -49,13 +49,15 @@
       "claim_id": "marp-no-native-rtl-css",
       "claim": "Marp / Marp Core has no engine-level native RTL support as of CLI 4.4.0; RTL is achieved via a CSS theme (`direction: rtl; text-align: right`) and/or a per-slide `dir: rtl` front-matter / `dir=\"auto\"` attribute. Many built-in themes ignore RTL.",
       "source_url": "https://github.com/orgs/marp-team/discussions/490",
-      "raw_snippet": "Marp maintainer confirms no native RTL; recommends CSS direction or a dir-attribute plugin; built-in themes are LTR-oriented.",
-      "fetched_at": "2026-06-26T13:30:00Z",
+      "raw_snippet": "Adding RTL support · marp-team · Discussion #490 · GitHub",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/marp-rtl-guide.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "hebrew-google-fonts",

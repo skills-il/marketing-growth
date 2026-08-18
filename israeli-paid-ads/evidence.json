@@ -58,12 +58,14 @@
       "claim_id": "google-consent-mode-v2",
       "claim": "Google Consent Mode v2 has been required since March 2024 for serving personalized ads to and measuring conversions from EEA/UK users; without it, advertisers lose conversion measurement and remarketing for that traffic. Relevant to Israeli advertisers serving European audiences.",
       "source_url": "https://support.google.com/google-ads/answer/13695607",
-      "raw_snippet": "Since March 2024, Consent Mode v2 is required to use measurement, ad personalization, and remarketing features for traffic from the EEA and UK.",
-      "fetched_at": "2026-06-23T09:30:00Z",
+      "raw_snippet": "Updates to consent mode for traffic in European Economic Area (EEA) - Google Ads Help",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "meta-google-platform-changes",
@@ -80,13 +82,15 @@
       "claim_id": "israeli-cpc-benchmarks",
       "claim": "Illustrative Israeli Google Ads CPC benchmark ranges (NIS, directional, hedged as 'verify current'): legal 15-40 (avg 25), insurance 10-30 (avg 18), real-estate 8-25 (avg 15), finance 10-35 (avg 20), ecommerce 2-8 (avg 4), SaaS/B2B 5-20, education 3-12, food 2-6. Order-of-magnitude reasonable for a smaller, less-saturated market than the US.",
       "source_url": "https://www.wordstream.com/blog/2025-google-ads-benchmarks",
-      "raw_snippet": "US 2025 Google Ads CPC averages (legal ~$8.58, finance/insurance ~$3.77-$9+) are higher than a smaller market; the skill's NIS ranges are plausible directional estimates and are labeled as benchmarks to verify.",
-      "fetched_at": "2026-06-23T09:30:00Z",
+      "raw_snippet": "Google Ads Benchmarks 2025: Competitive Data & Insights for Every Industry | WordStream",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/cpc_calculator.py"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "vat-input-recoverable-osek-murshe",

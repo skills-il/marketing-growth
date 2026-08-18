@@ -31,13 +31,15 @@
       "claim_id": "forms-api-methods",
       "claim": "Google Forms API v1 exposes exactly four methods on the forms resource: create, get, batchUpdate, setPublishSettings. There is no forms.update method.",
       "source_url": "https://developers.google.com/workspace/forms/api/reference/rest/v1/forms",
-      "raw_snippet": "Forms with publishSettings value set can call forms.setPublishSettings API to publish or unpublish the form.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "raw_snippet": "אם הטופס מקבל תשובות. אם השדה isPublished מוגדר ל- false , השדה הזה מוגדר באופן אוטומטי ל- false . Methods batchUpdate שינוי הטופס באמצעות קבוצה של עדכונים. create יוצרים טופס חדש עם השם שצוין בהודעת הטופס שסופקה בבקשה. get פותחים טופס. setPublishSettings עדכון הגדרות הפרסום של טופס. שליחת משוב אלא אם צוין אחרת, התוכן של דף זה הוא ברישיון Creative Commons Attribution 4.0 ודוגמאות הקוד הן ברישיון Apache 2.0 . לפרטים, ניתן לעיין ב מדיניות האתר Google Developers .",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/gws-forms-cheatsheet.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 13 of 19 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"methods\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "forms-batchupdate-endpoint",

@@ -43,13 +43,15 @@
       "claim_id": "israel-linkedin-timing-members",
       "claim": "Israeli LinkedIn timing: Sunday-Thursday work week, best windows 07:00-08:30 (morning commute) plus lunch and early evening; Friday-Saturday (Shabbat) low. Israel has ~3.1M registered LinkedIn members (DataReportal Digital 2026), roughly a third of the population (registered members, not monthly active users).",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "Israel LinkedIn audience ~3.1 million registered members; the Israeli work week is Sunday-Thursday with Shabbat (Fri eve-Sat) low activity.",
-      "fetched_at": "2026-06-23T08:00:00Z",
+      "raw_snippet": "Digital 2026: Israel — DataReportal – Global Digital Insights",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/linkedin-patterns.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "hebrew-hashtag-formatting",
