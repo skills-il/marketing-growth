@@ -59,12 +59,14 @@
       "claim_id": "tiktok-us-jv-and-hebrew-audio",
       "claim": "TikTok's US operations moved to a majority-American joint venture (Oracle, Silver Lake, MGX), closing January 2026; the skill flags this as a reason to re-verify TikTok policy claims and does not over-claim Israel impact. For Israeli audiences, Hebrew audio outperforms English.",
       "source_url": "https://www.nbcnews.com/tech/tech-news/tiktok-will-automatically-label-ai-generated-content-rcna151446",
-      "raw_snippet": "TikTok's US ownership restructured into a majority-American joint venture closing in January 2026; TikTok continues to auto-label AI content via Content Credentials.",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "TikTok will automatically label AI-generated content on the platform",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "mobile-first-70",

@@ -94,12 +94,14 @@
       "claim_id": "nis-pricing-guidance",
       "claim": "Editorial ASO guidance (not an external fact): app screenshots and descriptions targeting Israeli users should show prices in NIS (Israeli new shekels), not USD, to build trust.",
       "source_url": "https://developer.apple.com/app-store/product-page/",
-      "raw_snippet": "Localize pricing and currency for the target market; for Israel, display prices in NIS, not USD.",
-      "fetched_at": "2026-06-22T21:30:00Z",
+      "raw_snippet": "Creating Your Product Page - App Store - Apple Developer",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     }
   ]
 }

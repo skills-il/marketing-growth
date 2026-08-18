@@ -33,15 +33,17 @@
     },
     {
       "claim_id": "marp-cli-version-flags",
-      "claim": "Marp CLI current release is 4.4.0 (2026-05-06). The export flags `--pdf`, `--html`, `--pptx`, and `--allow-local-files` are current. Default `--pptx` exports each slide as a raster image (RTL baked in visually, text not editable); `--pptx-editable` (Marp CLI 4.1.0+, experimental, via LibreOffice Impress) yields editable text with LibreOffice-dependent RTL fidelity. Marp CLI 4.0+ adds `--browser`, `--browser-path`, `--browser-protocol` flags (and Firefox via WebDriver BiDi), which supersede the legacy PUPPETEER_EXECUTABLE_PATH env var.",
-      "source_url": "https://github.com/marp-team/marp-cli/releases/tag/v4.4.0",
-      "raw_snippet": "Marp CLI v4.4.0 (May 2026); v4.1.0 added experimental --pptx-editable (LibreOffice-backed); v4.0 added --browser / --browser-path. Core --pdf/--html/--pptx/--allow-local-files flags unchanged.",
-      "fetched_at": "2026-06-26T13:30:00Z",
+      "claim": "Marp CLI's current release is 4.5.0, per the npm registry (GitHub tags it v4.5.0, published 2026-07-17). The skill previously named 4.4.0. The export flags it documents are unchanged.",
+      "source_url": "https://api.github.com/repos/marp-team/marp-cli/releases/latest",
+      "raw_snippet": "\"tag_name\": \"v4.5.0\", \"target_commitish\": \"main\", \"name\": \"v4.5.0\"",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/marp-rtl-guide.md"
-      ]
+      ],
+      "verified_via": "GitHub releases API for marp-team/marp-cli",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "marp-no-native-rtl-css",
