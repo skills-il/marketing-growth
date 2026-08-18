@@ -70,7 +70,7 @@
       "claim_id": "reference-doc-urls",
       "claim": "Official documentation URLs referenced by the skill. Covers these references: https://developer.apple.com/app-store/review/guidelines/ https://developer.apple.com/help/app-store-connect/ https://developer.apple.com/design/human-interface-guidelines/right-to-left https://support.google.com/googleplay/android-developer https://support.google.com/googleplay/android-developer/topic/9858052",
       "source_url": "https://developer.apple.com/app-store/review/guidelines/",
-      "raw_snippet": "ts News Forums Sample Code Videos --> App Review Open Menu Close Menu Overview App Review Guidelines App Review Guidelines Apps are changing the world, enriching people’s lives, and enabling developers like you to innovate like never before.",
+      "raw_snippet": "News Forums Sample Code Videos --> App Review Open Menu Close Menu Overview App Review Guidelines App Review Guidelines Apps are changing the world, enriching people’s lives, and enabling developers like you to innovate like never before.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",

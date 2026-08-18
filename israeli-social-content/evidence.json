@@ -32,7 +32,7 @@
       "claim_id": "caption-and-video-specs-2026",
       "claim": "Format limits (2026): TikTok caption up to 4,000 characters (only ~80-150 shown before truncation); Instagram caption up to 2,200 characters with up to 30 hashtags (3-10 is the practical sweet spot); Reels and TikTok video 1080x1920 px, 9:16, MP4/H.264. Also covers: https://ads.tiktok.com/business/en https://business.linkedin.com https://creators.instagram.com https://help.instagram.com https://www.facebook.com/business/help",
       "source_url": "https://www.outfy.com/blog/instagram-character-limit/",
-      "raw_snippet": "gram Character Limit Instagram Character Limits: Quick Reference Table (2026) Feature Character / Limit Caption 2,200 characters Bio 150 characters Username (handle) 30 characters Name field 30 characters Comment 2,200 characters Direct Message (DM) 1,000 characters Hashtags per post Up to 30 hashtags Daily comments 180–200 per day Instagram Caption Character Limit Instagram allows up to 2,200 characters in a single caption.",
+      "raw_snippet": "Character Limit Instagram Character Limits: Quick Reference Table (2026) Feature Character / Limit Caption 2,200 characters Bio 150 characters Username (handle) 30 characters Name field 30 characters Comment 2,200 characters Direct Message (DM) 1,000 characters Hashtags per post Up to 30 hashtags Daily comments 180–200 per day Instagram Caption Character Limit Instagram allows up to 2,200 characters in a single caption.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
@@ -106,7 +106,7 @@
       "claim_id": "reference-doc-urls",
       "claim": "Official reference URLs in the skill.",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "rent gender “skew” that frequently appears in X’s inferred gender data may also be due in part to the high number of legitimate but “non-human” accounts that feature in X’s active user data, including accounts that represent businesses and brands, animals, music groups, and various other entities [ note that X doesn’t currently distinguish between “people” and other types of account in the ways that platforms like Facebook and Instagram do ].",
+      "raw_snippet": "gender “skew” that frequently appears in X’s inferred gender data may also be due in part to the high number of legitimate but “non-human” accounts that feature in X’s active user data, including accounts that represent businesses and brands, animals, music groups, and various other entities [ note that X doesn’t currently distinguish between “people” and other types of account in the ways that platforms like Facebook and Instagram do ].",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
