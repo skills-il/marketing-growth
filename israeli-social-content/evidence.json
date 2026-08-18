@@ -25,7 +25,7 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 29 of 39 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"depicting\"",
+      "verified_via": "cited page fetched; 49 of 58 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"depicting\"",
       "verified_at": "2026-08-18"
     },
     {
@@ -52,7 +52,7 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 25 of 38 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"entertainment\"",
+      "verified_via": "cited page fetched; 56 of 66 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"entertainment\"",
       "verified_at": "2026-08-18"
     },
     {
@@ -104,13 +104,13 @@
       "claim_id": "reference-doc-urls",
       "claim": "Official reference URLs in the skill.",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "rt to the high number of legitimate but “non-human” accounts that feature in X’s active user data, including accounts that represent businesses and brands, animals, music groups, and various other entities [ note that X doesn’t currently distinguish between “people” and other types of account in the ways that platforms like Facebook and Instagram do ]. Regardless of the cause though, we’d advise caution when analysing or interpreting X’s reported figures for use by gender.",
+      "raw_snippet": "rent gender “skew” that frequently appears in X’s inferred gender data may also be due in part to the high number of legitimate but “non-human” accounts that feature in X’s active user data, including accounts that represent businesses and brands, animals, music groups, and various other entities [ note that X doesn’t currently distinguish between “people” and other types of account in the ways that platforms like Facebook and Instagram do ].",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 10 of 16 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"business\"",
+      "verified_via": "cited page fetched; 40 of 43 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"non-human\"",
       "verified_at": "2026-08-18"
     }
   ]

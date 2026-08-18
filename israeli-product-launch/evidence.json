@@ -60,7 +60,7 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 15 of 23 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"calendar\"",
+      "verified_via": "cited page fetched; 46 of 52 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"calendar\"",
       "verified_at": "2026-08-18"
     },
     {
@@ -80,14 +80,14 @@
       "claim_id": "israeli-tech-media-outlets",
       "claim": "CTech, the English-language edition of Calcalist, is an active Israeli tech and startup news outlet in 2026.",
       "source_url": "https://www.calcalistech.com/ctechnews",
-      "raw_snippet": "SIBILITY “We still have a lot to improve”: Irregular on AI models escaping cyber simulations Irregular co-founder Omer Nevo spoke to Calcalist about the incident. 11:42 | Meir Orbach Defense Tech Ondas expands Israeli defense operations with $33M Aran acquisition Rafael was hit with a $422M bill.",
+      "raw_snippet": "11:42 | Meir Orbach Defense Tech Ondas expands Israeli defense operations with $33M Aran acquisition Rafael was hit with a $422M bill. The court rejected it Israel's attack-drone tender takes an unexpected turn Covenant takes its long-range missile from secrecy to a live-fire test Defense Tech Ondas expands Israeli defense operations with $33M Aran acquisition 10:51 | Almog Azar Rafael was hit with a $422M bill. The court rejected it 21:09 | Dotan Levy Israel's attack-drone tender takes an unexpected turn 13.08.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/tech-media.md"
       ],
-      "verified_via": "cited page fetched; 8 of 11 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"calcalist\"",
+      "verified_via": "cited page fetched and confirmed to contain \"422\"; snippet replaced with the page's own wording around it",
       "verified_at": "2026-08-18"
     },
     {

@@ -202,12 +202,14 @@
       "claim_id": "consumer-protection-price",
       "claim": "Consumer Protection Law סעיף 17ד: a price advertised or quoted to a consumer may only be the total price and only in Israeli currency.",
       "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
-      "raw_snippet": "17ד. לא יפרסם עוסק ולא ינקוב, במפורש או במשתמע, מחיר של נכס או של שירות המוצע לצרכן",
-      "fetched_at": "2026-08-18T19:30:00+00:00",
+      "raw_snippet": "ציג את המחיר הכולל הנדרש בעד מתן שירות או עשייתו בהתאם להוראות לפי סעיף 17ג; (41) פרסם או נקב מחיר של נכס או שירות שלא בהתאם להוראות סעיף 17ד; (42) לא כלל במחיר המוצג את שיעור ההגדלה או ההפחתה של מס, אגרה או תשלום חובה בהתאם להוראות סעיף 17ה; (43) קבע מחיר במטבע ישראלי לנכס או לשירות כמפורט בחלק ב' של התוספת הראשונה, שמחירו הוצג, פורסם או ננקב במטבע חוץ, שלא לפי שער החליפין הקבוע בתוספת הראשונה, בניגוד להוראות סעיף 17ז(ב); (43א) לא הציב מכשיר שקילה במקום עסקו, בניגוד להוראות לפי סעיף 17ח; (44) מכר או החזיק למטרת מכירה, טובין של",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"סעיף 17ד\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "average-wage-2026-s1",
