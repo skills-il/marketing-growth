@@ -129,15 +129,17 @@
     },
     {
       "claim_id": "reference-doc-urls",
-      "claim": "Official reference URLs in the skill.",
-      "source_url": "https://transparency.meta.com/policies/ad-standards/",
-      "raw_snippet": "Reference URLs: https://support.google.com/google-ads/answer/2459326 https://support.google.com/google-ads/answer/6008942 https://transparency.meta.com/policies/ad-standards/ https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page https://www.gov.il/he/departments/units/consumer_protection_unit",
-      "fetched_at": "2026-06-23T09:30:00Z",
+      "claim": "Official reference URLs in the skill. Covers these references: https://support.google.com/google-ads/answer/2459326 https://support.google.com/google-ads/answer/6008942 https://transparency.meta.com/policies/ad-standards/ https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page https://www.gov.il/he/departments/units/consumer_protection_unit",
+      "source_url": "https://support.google.com/google-ads/answer/2459326",
+      "raw_snippet": "nouncements Sign in Google Help Help Center Start advertising Campaigns Explore features Optimize performance Account & billing Fix issues Google Partners Community Google Ads Privacy Policy Terms of Service Submit feedback Send feedback on.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-ad-regulations.md"
-      ]
+      ],
+      "verified_via": "reference-coverage entry; snippet quoted from one of the covered sources",
+      "verified_at": "2026-08-18"
     }
   ]
 }
