@@ -9,7 +9,11 @@
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
       "raw_snippet": "DataReportal Digital 2026 Israel: Facebook ad reach 5.05M, Instagram 5.00M, TikTok 4.49M (18+), LinkedIn 3.10M, YouTube ~7.01M; X audience ~0.88M and shrinking; NapoleonCat reports Facebook all-ages ~7.6M.",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-social-platforms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-social-platforms.md"
+      ]
     },
     {
       "claim_id": "platform-ai-content-labeling-2026",
@@ -17,15 +21,24 @@
       "source_url": "https://influencermarketinghub.com/ai-disclosure-rules/",
       "raw_snippet": "Meta and TikTok use C2PA Content Credentials to automatically detect and label AI-generated content in 2026; creators are expected to disclose AI-generated realistic media, and platforms apply 'AI Info' / 'Made with AI' labels.",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "caption-and-video-specs-2026",
       "claim": "Format limits (2026): TikTok caption up to 4,000 characters (only ~80-150 shown before truncation); Instagram caption up to 2,200 characters with up to 30 hashtags (3-10 is the practical sweet spot); Reels and TikTok video 1080x1920 px, 9:16, MP4/H.264.",
       "source_url": "https://www.outfy.com/blog/instagram-character-limit/",
-      "raw_snippet": "TikTok captions allow up to 4,000 characters; Instagram captions up to 2,200 characters and up to 30 hashtags; vertical video standard is 1080x1920 (9:16).",
-      "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-social-platforms.md"]
+      "raw_snippet": "gram Character Limit Instagram Character Limits: Quick Reference Table (2026) Feature Character / Limit Caption 2,200 characters Bio 150 characters Username (handle) 30 characters Name field 30 characters Comment 2,200 characters Direct Message (DM) 1,000 characters Hashtags per post Up to 30 hashtags Daily comments 180–200 per day Instagram Caption Character Limit Instagram allows up to 2,200 characters in a single caption.",
+      "fetched_at": "2026-08-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-social-platforms.md"
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"150\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "instagram-tiktok-2026-signals",
@@ -33,7 +46,10 @@
       "source_url": "https://blog.hootsuite.com/instagram-algorithm/",
       "raw_snippet": "In 2026 Instagram weights watch time and shares/sends above likes; Reels lead reach (~1.36x carousels) while carousels lead engagement rate; TikTok favors retention, with ~21-34s entertainment and 60-90s informative as sweet spots.",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "tiktok-us-jv-and-hebrew-audio",
@@ -41,7 +57,10 @@
       "source_url": "https://www.nbcnews.com/tech/tech-news/tiktok-will-automatically-label-ai-generated-content-rcna151446",
       "raw_snippet": "TikTok's US ownership restructured into a majority-American joint venture closing in January 2026; TikTok continues to auto-label AI content via Content Credentials.",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "mobile-first-70",
@@ -49,7 +68,10 @@
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
       "raw_snippet": "Israel is majority-mobile for social and web traffic (well over 70%).",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "external-link-reach-suppression",
@@ -57,7 +79,10 @@
       "source_url": "https://www.socialmediaexaminer.com/what-facebooks-new-link-rules-mean-for-your-2026-strategy/",
       "raw_snippet": "Facebook suppresses external-link posts in the feed and recommends moving links to comments; Instagram caption links carry about a 15% reach reduction; Mosseri confirmed 'link in bio' as a caption phrase does not affect reach.",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "penetration-figures-and-content-mix",
@@ -65,7 +90,11 @@
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
       "raw_snippet": "Per DataReportal/ISOC-IL 2026: Instagram grew ~13.6% YoY; YouTube reaches ~73% of the population; Telegram ~71% usage; WhatsApp ~99%. A 40%/30%/20%/10% LinkedIn content mix is a common B2B rule of thumb.",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-social-platforms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-social-platforms.md"
+      ]
     },
     {
       "claim_id": "reference-doc-urls",
@@ -73,7 +102,10 @@
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
       "raw_snippet": "Reference URLs: https://datareportal.com/reports/digital-2026-israel https://www.facebook.com/business/help https://creators.instagram.com https://help.instagram.com https://ads.tiktok.com/business/en https://business.linkedin.com",
       "fetched_at": "2026-06-23T12:30:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

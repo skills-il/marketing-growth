@@ -7,9 +7,15 @@
       "claim_id": "linkedin-2026-algorithm",
       "claim": "LinkedIn's 2026 algorithm is keyword-driven (semantic search) not hashtag-driven; it removed hashtag following entirely (phased out through late 2024); 0-3 hashtags is the norm and hashtags no longer boost reach; it leans on the Interest Graph over the Relationship Graph (surfacing posts to topically-interested non-followers); 'saves' are a top engagement signal ahead of likes; dwell time is a major ranking signal; document/PDF carousels and native video far outperform plain text for reach. The first ~60 minutes ('golden hour') are an algorithmic test window: engagement and author replies in the first 15-60 minutes determine whether the post is amplified, so being present to reply fast (and not stacking a second post same-day) is a key reach lever.",
       "source_url": "https://www.dataslayer.ai/blog/linkedin-algorithm-february-2026-whats-working-now",
-      "raw_snippet": "In 2026 LinkedIn's algorithm is keyword/semantic-driven; hashtag following was removed; reach is driven by dwell time, saves, and early comments; the first 60 minutes are a test window where fast author replies boost distribution; document carousels (~6.6%) and native video (~5.6%) outperform text; the interest graph surfaces posts to non-followers.",
-      "fetched_at": "2026-06-23T08:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/linkedin-patterns.md"]
+      "raw_snippet": "Document posts hit 6.6% engagement, video grew 36% YoY, and newsletters deliver directly to inboxes, bypassing the algorithm entirely. This guide covers what the algorithm rewards now, with format benchmarks and a testing framework. ‍ The LinkedIn algorithm changed dramatically entering 2026, driven by LinkedIn's new unified AI ranking system 360Brew that replaced the legacy content infrastructure.",
+      "fetched_at": "2026-08-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/linkedin-patterns.md"
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"6.6%\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "external-link-first-comment-partial",
@@ -17,7 +23,10 @@
       "source_url": "https://gromming.com/blog/linkedin-external-links-penalty",
       "raw_snippet": "External links still suppress reach (~50-60%); the first-comment workaround now carries its own reduced penalty in 2026 and is partially patched, native content performs best.",
       "fetched_at": "2026-06-23T08:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "linkedin-ai-authenticity-2026",
@@ -25,7 +34,10 @@
       "source_url": "https://www.linkedin.com/help/linkedin/answer/a1481496",
       "raw_snippet": "LinkedIn best practices for content created with the help of AI: disclose AI assistance, attribute factual claims, keep content authentic; AI 'slop' is demoted and human-AI hybrid posts outperform pure AI.",
       "fetched_at": "2026-06-23T08:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "israel-linkedin-timing-members",
@@ -33,7 +45,11 @@
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
       "raw_snippet": "Israel LinkedIn audience ~3.1 million registered members; the Israeli work week is Sunday-Thursday with Shabbat (Fri eve-Sat) low activity.",
       "fetched_at": "2026-06-23T08:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/linkedin-patterns.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/linkedin-patterns.md"
+      ]
     },
     {
       "claim_id": "hebrew-hashtag-formatting",
@@ -41,15 +57,23 @@
       "source_url": "https://www.linkedin.com/help/linkedin/answer/a528176",
       "raw_snippet": "LinkedIn hashtags are a single token; spaces or underscores break the hashtag, so multi-word Hebrew tags must be written without separators.",
       "fetched_at": "2026-06-23T08:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "reference-doc-urls",
-      "claim": "Official reference URLs in the skill.",
+      "claim": "Official reference URLs in the skill. Covered references: Reference URLs: https://www.linkedin.com/help/linkedin https://business.linkedin.com https://www.geektime.co.il https://www.calcalist.co.il https://startupnationcentral.org",
       "source_url": "https://www.linkedin.com/help/linkedin",
-      "raw_snippet": "Reference URLs: https://www.linkedin.com/help/linkedin https://business.linkedin.com https://www.geektime.co.il https://www.calcalist.co.il https://startupnationcentral.org",
-      "fetched_at": "2026-06-23T08:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "מרכז העזרה של LinkedIn לתשומת לב המשתמשים בקוראי מסך: התצוגה שלכם מותאמת לנייד וייתכן שתוכן לא יופיע במקום המצופה.",
+      "fetched_at": "2026-08-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     }
   ]
 }

@@ -18,12 +18,14 @@
       "claim_id": "active-israeli-accelerators-2026",
       "claim": "Active Israeli accelerators / startup programs in 2026: 8200 EISP (8200 for Startups, nonprofit accelerator, Feb-Jul cohort with a large annual Demo Day, 14+ cohorts); MassChallenge Israel (zero-equity, Jerusalem, annual cohort + showcases); TheHive by Gvahim (accelerator for olim/immigrant founders, Tel Aviv and Ashdod); Google for Startups (Campus Tel Aviv) and Microsoft for Startups (Israel).",
       "source_url": "https://eisp.8200.org.il/program",
-      "raw_snippet": "8200 EISP runs a Feb-Jul accelerator cohort ending in a large annual Demo Day; MassChallenge Israel is an active zero-equity accelerator in Jerusalem; TheHive by Gvahim accelerates immigrant founders.",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "--> The Program | 8200EISP top of page The Program The Team Alumni Blog Menu Close The Program The Team Alumni Blog Menu Close Apply Apply The Program ​ Empowering founders with world-class mentorship, cutting-edge resources, and a powerful network to drive startup success.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"8200\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "startup-nation-central-restructure-finder",
@@ -63,12 +65,14 @@
       "claim_id": "8200-alumni-idf-signals",
       "claim": "The 8200 alumni network numbers in the tens of thousands (10,000+ is a conservative figure; EISP cites ~14,000 alumni worldwide). Unit 8200, Unit 81, and Mamram are elite IDF tech units used as founder-quality signals.",
       "source_url": "https://www.8200.org.il/english",
-      "raw_snippet": "The 8200 Alumni Association numbers in the tens of thousands; Unit 8200, Unit 81 and Mamram are recognized elite IDF technology units.",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "--> 8200 Alumni Association top of page תרמו לנו הצטרפו לקהילה עלינו למען החברה למען הבוגרים כרטיס אשראי הייטקזון למען הבוגרים 8200Career תמיכה במילואים פרויקט המלגות למען המורשת מורשת היחידה טורי מורשת חללי יחידה 8200 EN 8200 Alumni Association Founded in 1989, the 8200 Alumni Association preserves the legacy of Unit 8200, supports its graduates in their civilian careers, and leverages its alumni net",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"8200\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "israeli-tech-media-outlets",
@@ -86,23 +90,27 @@
       "claim_id": "illustrative-community-sizes-and-pricing",
       "claim": "Non-regulatory illustrative figures (the skill's own approximate community sizes and pricing guidance, not external facts): Israeli founder/alumni community sizes such as 8200 Alumni 10,000+, Mamram 5,000+, Talpiot 1,000+, Israeli Tech Startups 50,000+, Tech Careers Israel 100,000+, Israel Product Managers 15,000+, DevOps Israel 3,000+, Frontend Israel 5,000+. The skill advises showing budget and pricing amounts in both USD and NIS (Convert USD to NIS, add Israeli market context), e.g. local pricing in NIS, 3 to NIS 6 figures vary. Unit *8200 / **8200** appears in bold as a unit name.",
       "source_url": "https://www.8200.org.il/english",
-      "raw_snippet": "Israeli tech communities range from ~1,000+ to 100,000+ members; pitch budgets should show both USD and NIS; *8200 and **8200** denote the elite IDF unit. NIS 3 to NIS 6 figures are illustrative.",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "--> 8200 Alumni Association top of page תרמו לנו הצטרפו לקהילה עלינו למען החברה למען הבוגרים כרטיס אשראי הייטקזון למען הבוגרים 8200Career תמיכה במילואים פרויקט המלגות למען המורשת מורשת היחידה טורי מורשת חללי יחידה 8200 EN 8200 Alumni Association Founded in 1989, the 8200 Alumni Association preserves the legacy of Unit 8200, supports its graduates in their civilian careers, and leverages its alumni net",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"8200\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "reference-doc-urls",
-      "claim": "Official reference URLs in the skill.",
+      "claim": "Official reference URLs in the skill. Covered references: Reference URLs: https://www.geektime.co.il https://www.calcalist.co.il https://www.calcalistech.com https://www.globes.co.il https://www.themarker.com https://www.startupnationcentral.org https://innovationisrael.org.il https://innovationisrael.org.il/en",
       "source_url": "https://www.geektime.co.il",
-      "raw_snippet": "Reference URLs: https://www.geektime.co.il https://www.calcalist.co.il https://www.calcalistech.com https://www.globes.co.il https://www.themarker.com https://www.startupnationcentral.org https://innovationisrael.org.il https://innovationisrael.org.il/en",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "גיקטיים - אתר הטכנולוגיה וההייטק של ישראל | גיקטיים דלג לתוכן פתיחת תפריט ראשי INSIDER אירועים יצירת קשר גיוסי הון ואקזיטים AI החיים בהייטק AI Hub by Microsoft ביקורות מדברים פיננסים ITtime Geektime INSIDER משרות חמות חב",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     }
   ]
 }

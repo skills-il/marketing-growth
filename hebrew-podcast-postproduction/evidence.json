@@ -138,13 +138,15 @@
       "claim_id": "internal-scoring-weights",
       "claim": "The clip shareability scoring weights are this skill's own heuristic, not external facts: quotable density 40%, emotional peaks 25%, standalone comprehensibility 20%, topic hook 15% (sum 100%). They are tunable in scripts/score_segments.py.",
       "source_url": "https://raw.githubusercontent.com/skills-il/marketing-growth/master/hebrew-podcast-postproduction/SKILL.md",
-      "raw_snippet": "40% 25% 20% 15%",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "raw_snippet": "or each 30-90 second window, compute: | Signal | Weight | How to Measure | |--------|--------|----------------| | Quotable density | 40% | Ratio of declarative statements to filler words; presence of first-person insights | | Emotional peaks | 25% | Exclamations, laughter markers, raised-voice indicators, strong positive/negative sentiment | | Standalone comprehensibility | 20% | Can this segment be understood without preceding context? Does it reference \"this\" / \"that\" without an antecedent?",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/score_segments.py"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"40%\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "rfc2606-reserved-example-domains",

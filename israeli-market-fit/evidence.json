@@ -56,8 +56,11 @@
       "claim_type": "percentage",
       "source_url": "https://www.idi.org.il/haredi/2025/?chapter=62168",
       "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "שיעור הצעירים בגילים 19-0 באוכלוסייה החרדית הוא 57%, לעומת 31% באוכלוסייה היהודית הכללית, והגיל החציוני בה הוא 16, לעומת 36 באוכלוסייה היהודית הכללית.",
-      "confidence": "high"
+      "raw_snippet": "תרשים א/1 אוכלוסיית ישראל, לפי קבוצת אוכלוסייה, 2009, 2015 ו־2025 (במספרים מוחלטים [באלפים] וב־%) א.2. גיל האוכלוסייה תמונת מצב שיעור הצעירים בגילים 19-0 באוכלוסייה החרדית הוא 57%, לעומת 31% באוכלוסייה היהודית הכללית. משמע, האוכלוסייה החרדית צעירה בהרבה מהאוכלוסייה היהודית הלא־חרדית. הגיל החציוני בה הוא 16, לעומת 36 באוכלוסייה היהודית הכללית. וכך, שיעור החרדים בקרב היהודים בני ה־65 ומעלה עומד על 5%, ואילו שיעורם בקרב היהודים בני 19-0 הוא 29%. הסיבות לכך הן גיל הנישואים הצעיר, הלידה בגיל צעיר והמספר הגבוה של ילדים במשפחה.",
+      "confidence": "high",
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18",
+      "fetched_at": "2026-08-18"
     },
     {
       "id": "vat-18",
@@ -110,8 +113,11 @@
       "claim_type": "company",
       "source_url": "https://en.wikipedia.org/wiki/Yad2",
       "source_fetched_at": "2026-06-02T00:00:00Z",
-      "raw_snippet": "Yad2 (Hebrew: יד2, 'hand two') is an Israeli website that publishes ads for buying and selling second-hand products (such as electrical goods, furniture, or free things), as well as a car, real estate, pets, job portal, and professionals.",
-      "confidence": "high"
+      "raw_snippet": "ikidata item Appearance move to sidebar hide From Wikipedia, the free encyclopedia Israeli website Yad2 ( Hebrew : יד2, \"hand two\" ) is an Israeli website that publishes ads for buying and selling second-hand products (such as electrical goods, furniture , or free things), as well as a car , real estate, pets, job portal, and professionals. History [ edit ] The site was founded in 2005 by Israeli Shawn Tel, owned by Coral-Tel Ltd., with an investment of $350,000.",
+      "confidence": "high",
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18",
+      "fetched_at": "2026-08-18"
     },
     {
       "id": "official-standard",

@@ -129,14 +129,16 @@
       "claim_id": "illustrative-worked-example-figures",
       "claim": "Illustrative worked-example salary/comp amounts (the skill's own examples, NOT external facts): base/comp figures 40,000 NIS / 40,000 ש\"ח, 42,000 NIS, 50,000 NIS, 36,000 NIS, 23,500 NIS / 23,500 ש\"ח, 10,000 NIS, 15,000 NIS; monthly benefit lines 3,000 NIS, 2,600 NIS, 3,332 NIS, 5,932 NIS, 71,184 NIS, 2,400 NIS / 2,400 ש\"ח, 1,000 NIS, 1,200 NIS, 1,500 NIS, 1,721 NIS / 1,721 ש\"ח, 1,818 NIS, 2,162 NIS / 2,162 ש\"ח, 4,000 NIS, 4,500 NIS, 5,000 ש\"ח, 6,500 NIS, 8,000 NIS, 9,000 NIS, 9,090 NIS, 200 NIS, 300 NIS, 400 NIS, 60 NIS, NIS 2,000; illustrative equity/percent figures 0.05%, 0.1%, 0.2%, 0.3%, 0.5%, 1.5%, 2.0%, 12%, 15%, 22%, 30%, 40%, 50%. These are example figures in negotiation walk-throughs, not benchmarks.",
       "source_url": "https://www.levels.fyi/t/software-engineer/locations/israel",
-      "raw_snippet": "Illustrative example figures: 40,000 NIS / 40,000 ש\"ח, 42,000 NIS, 50,000 NIS, 36,000 NIS, 23,500 NIS / 23,500 ש\"ח, 10,000 NIS, 15,000 NIS, 3,000 NIS, 2,600 NIS, 3,332 NIS, 5,932 NIS, 71,184 NIS, 2,400 NIS / 2,400 ש\"ח, 1,000 NIS, 1,200 NIS, 1,500 NIS, 1,721 NIS / 1,721 ש\"ח, 1,818 NIS, 2,162 NIS / 2,162 ש\"ח, 4,000 NIS, 4,500 NIS, 5,000 ש\"ח, 6,500 NIS, 8,000 NIS, 9,000 NIS, 9,090 NIS, 200 NIS, 300 NIS, 400 NIS, 60 NIS, NIS 2,000; 0.05% 0.1% 0.2% 0.3% 0.5% 1.5% 2.0% 12% 15% 22% 30% 40% 50%.",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "raw_snippet": "We've helped people like you get $30k+ (sometimes $300k+) increases. Schedule a Session Schedule a Session Resume Review Resume Review Stop applying to jobs. Get recruiters to chase you instead. Book a Review Book a Review FAQ What is the salary of a Software Engineer in Israel? The average total compensation of a Software Engineer in Israel is ₪442,628. What is the minimum salary of a Software Engineer in Israel?",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/gross-to-net-2026.md",
         "references/israeli-benefits-guide.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"300\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "salary-location-index-survey-derived",

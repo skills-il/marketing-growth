@@ -7,11 +7,13 @@
       "claim_id": "jewish-holiday-dates-2026-2027",
       "claim": "Hebrew-calendar holiday Gregorian dates used in content_planner.py, verified against hebcal.com. Yom HaShoah: 2025-04-24, 2026-04-14, 2027-05-04. 2026: Purim 03-03, Pesach 04-02, Yom HaZikaron 04-21, Yom Ha'atzmaut 04-22, Shavuot 05-22, Rosh Hashana 09-12, Yom Kippur 09-21, Sukkot 09-26, Hanukkah 12-05. 2027: Purim 03-23, Pesach 04-22, Yom HaZikaron 05-11, Yom Ha'atzmaut 05-12, Shavuot 06-11, Rosh Hashana 10-02, Yom Kippur 10-11, Sukkot 10-16, Hanukkah 12-25 (first full day). 2025 Yom HaZikaron is 2025-04-30 and Yom Ha'atzmaut 2025-05-01.",
       "source_url": "https://www.hebcal.com/holidays/2027",
-      "raw_snippet": "Hebcal: Yom HaShoah 2025-04-24, 2026-04-14, 2027-05-04. 2027: Purim 2027-03-23, Pesach I 2027-04-22, Yom HaZikaron 2027-05-11, Yom HaAtzma'ut 2027-05-12, Shavuot 2027-06-11, Rosh Hashana 5788 2027-10-02, Yom Kippur 2027-10-11, Sukkot I 2027-10-16, Chanukah 1 candle 2027-12-24 (first full day 12-25). 2025 Yom HaZikaron 2025-04-30, Yom HaAtzma'ut 2025-05-01.",
-      "fetched_at": "2026-06-22T22:00:00Z",
+      "raw_snippet": "Observed on the 15th day of the Hebrew month of Av. Rosh Hashana 🍏🍯 Fri, 1 October sunset - Sun, 3 October nightfall 1-2 Tishrei 5788 The Jewish New Year. Also spelled Rosh Hashanah. Tzom Gedaliah : Mon, 4 October dawn - nightfall Yom Kippur ✡️ Sun, 10 October sunset - Mon, 11 October nightfall 10 Tishrei 5788 Day of Atonement. The holiest day of the year in Judaism, traditionally observed with a 25-hour period of fasting and intensive prayer.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "scripts/content_planner.py"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"5788\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "israeli-tech-media-outlets",
@@ -29,12 +31,14 @@
       "claim_id": "aeo-earned-media-citations",
       "claim": "AI answer engines (AI Overviews, LLM answer engines) cite earned media (news, third-party guides, reputable directories) far more than brand-owned sites; ~82% of AI citations are earned media. Question-to-answer-block structure, tables, and schema markup are the documented levers, and AEO is the biggest 2026 content shift.",
       "source_url": "https://authoritytech.io/blog/machine-relations-evidence-earned-media-ai-citations",
-      "raw_snippet": "Roughly 82% of AI citations come from earned media; AI Overviews average ~13 sources per response in 2026 and reward answer-block structure and schema.",
-      "fetched_at": "2026-06-22T22:00:00Z",
+      "raw_snippet": "What Is AI Reading?\" report analyzed more than one million citations from leading AI models and found that earned media accounts for 82% of all AI citations, with non-paid sources accounting for 94%. Journalism remains the dominant source category. Press releases grew 5x since July 2025, but still represent under 1% of total citations.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"82%\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "israel-mobile-first-70",
@@ -62,14 +66,16 @@
     },
     {
       "claim_id": "reference-doc-urls",
-      "claim": "Official reference URLs in the skill.",
+      "claim": "Official reference URLs in the skill. Covered references: Reference URLs: https://www.geektime.co.il https://www.calcalist.co.il https://www.globes.co.il https://www.themarker.com https://developers.google.com/search/docs https://hebrew-academy.org.il",
       "source_url": "https://www.geektime.co.il",
-      "raw_snippet": "Reference URLs: https://www.geektime.co.il https://www.calcalist.co.il https://www.globes.co.il https://www.themarker.com https://developers.google.com/search/docs https://hebrew-academy.org.il",
-      "fetched_at": "2026-06-22T22:00:00Z",
+      "raw_snippet": "גיקטיים - אתר הטכנולוגיה וההייטק של ישראל | גיקטיים דלג לתוכן פתיחת תפריט ראשי INSIDER אירועים יצירת קשר גיוסי הון ואקזיטים AI החיים בהייטק AI Hub by Microsoft ביקורות מדברים פיננסים ITtime Geektime INSIDER משרות חמות חב",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     }
   ]
 }

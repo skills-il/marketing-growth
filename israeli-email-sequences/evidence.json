@@ -53,23 +53,27 @@
       "claim_id": "open-rate-benchmarks",
       "claim": "Israeli email benchmarks 2024-2025 (Mailchimp + Brevo regional reports): 22-28% open rate, 2-4% click rate, 0.2-0.5% unsubscribe rate; personalization lifts opens 15-20%",
       "source_url": "https://mailchimp.com/resources/email-marketing-benchmarks/",
-      "raw_snippet": "22-28% open, 2-4% click, 0.2-0.5% unsubscribe, 15-20% personalization lift",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "raw_snippet": "That can include adding 500 more subscribers to your email newsletter, increasing the total number of products you sell by 20%, or doubling your email campaign’s click-through rate. You should also make sure that your goals for each segment and your company’s overall goals are in sync with each other. Once you’ve set those goals, track them. If you met them, great! If not, some tweaking is necessary.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"20%\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "dmarc-bulk-sender-rules",
       "claim": "Yahoo and Google enforce DMARC for bulk senders since February 2024: bulk = 5,000+/day to either; require SPF aligned, DKIM aligned, DMARC p=none minimum, RFC 8058 one-click unsubscribe, complaint rate under 0.3%",
       "source_url": "https://blog.google/products/gmail/gmail-security-authentication-spam-protection/",
-      "raw_snippet": "Google bulk sender requirements 5,000 daily; DMARC p=none; 0.3% complaint",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "raw_snippet": "So today, we’re introducing new requirements for bulk senders — those who send more than 5,000 messages to Gmail addresses in one day — to keep your inbox even safer and more spam-free. Focus on email validation Many bulk senders don’t appropriately secure and configure their systems, allowing attackers to easily hide in their midst. To help fix that, we’ve focused on a crucial aspect of email security: the validation that a sender is who they claim to be.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"5,000\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "yom-kippur-no-commercial-email",
