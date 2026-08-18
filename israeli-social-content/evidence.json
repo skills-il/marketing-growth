@@ -19,16 +19,18 @@
       "claim_id": "platform-ai-content-labeling-2026",
       "claim": "In 2026 both Meta (Facebook/Instagram/Threads) and TikTok require disclosure of AI-generated/altered visuals and audio depicting realistic people or scenes, and automatically detect and label them via C2PA Content Credentials even without self-disclosure. Repeated non-disclosure can lead to demotion, ad rejection, or account restriction.",
       "source_url": "https://influencermarketinghub.com/ai-disclosure-rules/",
-      "raw_snippet": "Meta and TikTok use C2PA Content Credentials to automatically detect and label AI-generated content in 2026; creators are expected to disclose AI-generated realistic media, and platforms apply 'AI Info' / 'Made with AI' labels.",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "When Creators Must Disclose TikTok’s community guidelines state that any content depicting realistic synthetic people, events, or voices must include a visible disclosure. This includes: AI filters or avatars that make people appear to say or do things they didn’t. Voice clones of real individuals or public figures. Deepfake simulations of events that never occurred.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 29 of 39 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"depicting\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "caption-and-video-specs-2026",
-      "claim": "Format limits (2026): TikTok caption up to 4,000 characters (only ~80-150 shown before truncation); Instagram caption up to 2,200 characters with up to 30 hashtags (3-10 is the practical sweet spot); Reels and TikTok video 1080x1920 px, 9:16, MP4/H.264.",
+      "claim": "Format limits (2026): TikTok caption up to 4,000 characters (only ~80-150 shown before truncation); Instagram caption up to 2,200 characters with up to 30 hashtags (3-10 is the practical sweet spot); Reels and TikTok video 1080x1920 px, 9:16, MP4/H.264. Also covers: https://ads.tiktok.com/business/en https://business.linkedin.com https://creators.instagram.com https://help.instagram.com https://www.facebook.com/business/help",
       "source_url": "https://www.outfy.com/blog/instagram-character-limit/",
       "raw_snippet": "gram Character Limit Instagram Character Limits: Quick Reference Table (2026) Feature Character / Limit Caption 2,200 characters Bio 150 characters Username (handle) 30 characters Name field 30 characters Comment 2,200 characters Direct Message (DM) 1,000 characters Hashtags per post Up to 30 hashtags Daily comments 180–200 per day Instagram Caption Character Limit Instagram allows up to 2,200 characters in a single caption.",
       "fetched_at": "2026-08-18",
@@ -44,12 +46,14 @@
       "claim_id": "instagram-tiktok-2026-signals",
       "claim": "2026 algorithm signals: Instagram Reels lead reach but watch time and 'sends' (DM shares per reach) are the dominant ranking signals (likes downgraded), and carousels now edge out Reels on engagement rate. TikTok rewards retention over raw length (~21-34s for entertainment, 60-90s for informative/search content); Hebrew audio outperforms English for Israeli audiences.",
       "source_url": "https://blog.hootsuite.com/instagram-algorithm/",
-      "raw_snippet": "In 2026 Instagram weights watch time and shares/sends above likes; Reels lead reach (~1.36x carousels) while carousels lead engagement rate; TikTok favors retention, with ~21-34s entertainment and 60-90s informative as sweet spots.",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "It starts by gathering a pool of potential videos, then scoring and ordering them. The signals are similar to Feed, but with an entertainment-first lens. Instagram looks at: How long people watch a video Whether viewers rewatch or reshare it How quickly people interact with the Reel Whether viewers take follow-up actions, like following the creator Using these engagement signals, Instagram predicts how likely you are to: Watch the Reel to the end Tap into the audio page Rewatch or reshare it Follow the creator after watchi",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 25 of 38 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"entertainment\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "tiktok-us-jv-and-hebrew-audio",
@@ -100,12 +104,14 @@
       "claim_id": "reference-doc-urls",
       "claim": "Official reference URLs in the skill.",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "Reference URLs: https://datareportal.com/reports/digital-2026-israel https://www.facebook.com/business/help https://creators.instagram.com https://help.instagram.com https://ads.tiktok.com/business/en https://business.linkedin.com",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "rt to the high number of legitimate but “non-human” accounts that feature in X’s active user data, including accounts that represent businesses and brands, animals, music groups, and various other entities [ note that X doesn’t currently distinguish between “people” and other types of account in the ways that platforms like Facebook and Instagram do ]. Regardless of the cause though, we’d advise caution when analysing or interpreting X’s reported figures for use by gender.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 10 of 16 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"business\"",
+      "verified_at": "2026-08-18"
     }
   ]
 }

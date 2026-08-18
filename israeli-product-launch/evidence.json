@@ -54,12 +54,14 @@
       "claim_id": "product-hunt-mechanics",
       "claim": "Product Hunt launches go live at 12:01 AM PT (00:01 PT) and run a single ~24-hour daily ranking window (Product of the Day / Week structure), so an Israeli launch day spans parts of two Israel-time calendar days. Unchanged in 2026.",
       "source_url": "https://smollaunch.com/guides/launching-on-product-hunt",
-      "raw_snippet": "Product Hunt launches start at 12:01 AM PT and run until 11:59 PM PT; the daily Product of the Day ranking and weekly structure remain in 2026.",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "lidays, major sporting events, and big tech announcements Launch at 12:01 AM PST for a full day of visibility Check the Product Hunt calendar and ProductLaunch.io for heavy days Pick a single launch goal Product Hunt success is easier to measure with one clear outcome: More signups for your beta More demo requests for a B2B product A feedback-driven cohort to shape onboarding Launch narrative and angle Product Hunt is crowded. A clear narrative makes your listing memorable.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 15 of 23 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"calendar\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "8200-alumni-idf-signals",
@@ -78,13 +80,15 @@
       "claim_id": "israeli-tech-media-outlets",
       "claim": "CTech, the English-language edition of Calcalist, is an active Israeli tech and startup news outlet in 2026.",
       "source_url": "https://www.calcalistech.com/ctechnews",
-      "raw_snippet": "CTech - Israeli Tech and Start up News",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "raw_snippet": "SIBILITY “We still have a lot to improve”: Irregular on AI models escaping cyber simulations Irregular co-founder Omer Nevo spoke to Calcalist about the incident. 11:42 | Meir Orbach Defense Tech Ondas expands Israeli defense operations with $33M Aran acquisition Rafael was hit with a $422M bill.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/tech-media.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 8 of 11 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"calcalist\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "illustrative-community-sizes-and-pricing",
