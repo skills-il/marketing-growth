@@ -1,0 +1,16 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-26",
+      "lessons": [
+        "CRITICAL fixed: the skill's central technique (set_paragraph_rtl) injected a child <a:rtl val=\"1\"/> element into <a:pPr>, which is NOT schema-valid per OOXML (ISO/IEC 29500). Paragraph-level RTL is the boolean `rtl` ATTRIBUTE on <a:pPr> / <a:lvl1pPr>..<a:lvl9pPr> (what PowerPoint itself writes). Fixed to pPr.set('rtl','1') (and drop any stale child) in scripts/create-presentation.py, references/pptx-rtl-patches.md, SKILL.md and SKILL_HE.md. Re-tested: 17 paragraphs carry rtl=\"1\" as an attribute, valid 5-slide deck.",
+        "CRITICAL fixed (round 2, Expert + own datypic/ECMA-376 verification): DrawingML has NO <a:rtl> element at ALL (datypic e-a_rtl-1.html is 404) and <a:rPr> (CT_TextCharacterProperties) has no rtl attribute, so there is no run-level direction toggle. The original run-level LTR override (<a:rtl val=\"0\"/> on <a:rPr> in add_english_run/set_run_ltr/add_mixed) was therefore schema-invalid (a WordprocessingML <w:rtl/> concept ported into DrawingML); PowerPoint silently ignored it. Removed all run-level <a:rtl> writes: inline English/digits render LTR via the Unicode bidi algorithm, and ambiguous mixed-script tokens are isolated with LRM/LRI/PDI in the text (which the skill already documented). Re-tested: 0 invalid <a:rtl> elements at paragraph OR run level, deck still renders mixed Hebrew/English correctly. Also fixed the slide-master advice (dropped the invalid <a:defRPr> child <a:rtl> suggestion), repointed the OOXML reference to the datypic DrawingML schema, and switched the table currency anchor from a HAIR SPACE (U+200A, no bidi effect) to LRM (U+200E).",
+        "MAJOR added: Marp --pptx-editable (CLI 4.1.0+, experimental, LibreOffice-backed) and the distinction that default --pptx export is a per-slide raster image (RTL baked in visually, text not editable); plus Marp 4.0+ --browser / --browser-path flags that supersede the legacy PUPPETEER_EXECUTABLE_PATH env var.",
+        "Verified CORRECT (no change): python-pptx 1.0.2 is current with no native RTL API (script runs clean under it); Marp CLI 4.4.0 with --pdf/--html/--pptx/--allow-local-files unchanged; Marp has no engine-level native RTL (CSS direction workaround still canonical); Heebo/David Libre/Assistant/Rubik all current Google Fonts; the run-level LTR override; the font-embed flag caveat; bidi isolate (LRI/PDI) guidance; table column reversal. All reference links return HTTP 200.",
+        "Fixed MINOR: the Google Slides path asserted a `WritingDirection: RIGHT_TO_LEFT` field that could not be verified against the current Slides API; softened to direct readers to verify batchUpdate text-direction support in the API docs (the Slides RTL surface is narrower than PPTX).",
+        "Deferred (MINOR): add Noto Sans Hebrew as the recommended fallback font for guaranteed glyph coverage; add a short 'when to reach for an AI deck tool (Gamma+Claude, Claude->Marp/Slidev) vs this skill' note."
+      ]
+    }
+  ]
+}

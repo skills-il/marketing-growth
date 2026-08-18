@@ -1,0 +1,14 @@
+{
+  "cycles": [
+    {
+      "version": "1.3.0",
+      "date": "2026-05-31",
+      "lessons": [
+        "gws CLI + Forms API surface independently re-verified accurate against upstream (no drift). Skill correctly overrides Google's own stale 'call forms.update' doc text.",
+        "Expert CRITICAL fixed this cycle: CES template/script were reverse-scored (1-7 with low=easy/high=hard, 'lower is better'), which both confused the instrument (question asked 'how easy' against an inverted scale) and broke CES-benchmark comparability. Switched to canonical CES 2.0 agreement statement (higher = better).",
+        "Expert MAJORs fixed this cycle: consent note expanded to cover emailed-personalized-link re-identification, Google Forms 'collect email' Workspace auto-capture footgun, small-sample k-anonymity, and a leading-consent-item pattern; NPS note now warns to interpret against own prior waves, not US benchmarks (Israeli top-box under-use).",
+        "Deferred MINOR (revisit next cycle): cross-link the RTL scale-flip warning from export-to-other-platforms.md into hebrew-survey-templates.md; note that market-research willingness-to-pay bands are consumer-scale and need adjusting for B2B; event-feedback option text has drifted between the template reference and the script (script uses generic placeholders); optionally document the gws watches sub-resource."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-23",
+      "lessons": [
+        "WRONG fixed: the demo-day list led with 'Techstars Tel Aviv -- Quarterly cohort demos'. Techstars no longer runs a Tel Aviv program (Techstars 2.0 consolidated onto US VC hubs after its 2024 cohort; Tel Aviv is absent from all 2025/2026 program lists) and it never ran 'quarterly' cohorts. Removed it, added a note not to pitch a Techstars Tel Aviv demo day.",
+        "STALE fixed: 'Startup Nation Central events -- various throughout the year' overstated the post-2025 reality (SNC laid off ~65 of ~80 staff and refocused). Reframed around Startup Nation Finder (its durable canonical database).",
+        "MAJOR (coverage) added: replaced the dead Techstars entry with currently-active anchors (8200 EISP, MassChallenge Israel, TheHive by Gvahim) and added Google for Startups (Campus TLV) + Microsoft for Startups (Israel).",
+        "Verified CORRECT (no change): 8200 EISP annual Demo Day, MassChallenge Israel, TheHive by Gvahim, Geektime English defunct -> route English to CTech, Product Hunt 00:01 PT mechanics, 8200/Unit 81/Mamram talent signals, and the media outlets (already verified in the content-marketing pass).",
+        "MAJOR added (Expert): a security/reserve-duty (miluim) timing check in Step 1 (since late 2023, large call-ups + Pikud HaOref restrictions rival the holiday calendar as a launch-timing risk; hebcal does not cover it) and a Step 2 note that Israeli media outreach is relationship/WhatsApp-driven, not contact-form-driven.",
+        "Fixed (Judge): SNC restructuring dated to early 2026 (the layoffs were announced Feb 2026), not 2025.",
+        "Deferred (MINOR): broaden community channels beyond Facebook (WhatsApp/Telegram/Discord founder groups, Startup Grind TLV, X/Twitter, whose dominance shifted); name NoCamels / Globes English / Times of Israel tech as secondary English outlets alongside CTech; note Product Hunt's mid-week (Tue-Thu) best-launch-day bias vs the Israeli Sun-Mon advice. Also populate the empty `avoid` enriched field (done in Phase 9)."
+      ]
+    }
+  ]
+}

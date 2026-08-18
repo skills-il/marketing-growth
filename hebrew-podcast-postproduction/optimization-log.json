@@ -1,0 +1,15 @@
+{
+  "cycles": [
+    {
+      "version": "1.1.1",
+      "date": "2026-05-31",
+      "lessons": [
+        "Fixed broken macOS FFmpeg install commands: `--with-libass` no longer exists in Homebrew and errors out; promoted homebrew-core `brew install ffmpeg-full` (bundles libass+HarfBuzz, FriBidi transitively) as primary, and corrected the mislabel of ffmpeg-full as a 'community tap' (it is homebrew-core). Fixed `brew install font-heebo` -> `brew install --cask font-heebo`. The core premise (default `brew install ffmpeg` lacks libass) was independently re-verified TRUE.",
+        "Expert CRITICAL fixed: this cycle initially promoted `brew install ffmpeg-full` as primary, but ffmpeg-full is KEG-ONLY (not symlinked to PATH), so bare `ffmpeg` (called by every script template) would not resolve to the libass build. Demoted ffmpeg-full to alternative with the full-path caveat; made the homebrew-ffmpeg tap (which links `ffmpeg`) the primary macOS path.",
+        "Expert MAJORs fixed: added a python-bidi pre-shape Troubleshooting entry for libass+SRT BiDi mis-ordering that persists on macOS even with FriBidi (cross-ref video-use-best-practices); added a multi-word-FontName fontconfig caveat (check `fc-list | grep -i hebrew` for `Open Sans Hebrew`).",
+        "Re-verified accurate (no change): Spotify chapter rules (min 3, first at 00:00, 30s gap, 40-char title), Podcasting 2.0 Chapters JSON v1.2.0, social caption limits (IG 2200/TikTok 4000/X 280+25000/LinkedIn 3000+100000), Apple transcript languages still exclude Hebrew, FFmpeg -ss/-to and subtitles force_style syntax.",
+        "Deferred MINOR (revisit next cycle): optionally document python-bidi SRT pre-shaping as a fallback for libass builds that still mis-order Hebrew (cross-ref video-use-best-practices); add a '(verified 2026-05)' marker on the Apple transcript-language list since Apple has expanded it before."
+      ]
+    }
+  ]
+}

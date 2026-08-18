@@ -1,0 +1,18 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-22",
+      "lessons": [
+        "Skill verified in excellent shape: all 9 hardcoded 2026 Jewish-holiday Gregorian dates match hebcal.com exactly (zero off-by-one); all named media outlets (Geektime, Calcalist/Calcalist Tech, CTech, The Marker, Globes, Ynet Tech, No Camels, Walla Tech) operate in 2026 and are accurately described; the AEO/AI-search section is current and well-grounded (~82% of AI citations are earned media); the >70% mobile-first stat is conservative.",
+        "MAJOR fixed: content_planner.py holiday table ended at 2026, so the forward-planning tool returned an empty calendar for 2027 (it is mid-2026). Added a verified 2027 block (cross-checked against hebcal: Purim 03-23, Pesach 04-22, Yom HaZikaron 05-11, Yom Ha'atzmaut 05-12, Shavuot 06-11, Rosh Hashana 10-02, Yom Kippur 10-11, Sukkot 10-16, Hanukkah 12-25 first full day), and updated the SKILL.md/HE notes to '2025, 2026, 2027'. Add 2028 next cycle.",
+        "Fixed MINOR: docstring referenced the old name 'JEWISH_HOLIDAYS' (actual dict is JEWISH_HOLIDAYS_BY_YEAR).",
+        "CRITICAL fixed (Expert): Yom HaShoah (Holocaust Remembrance Day) was entirely absent, a major miss for a skill that exists to prevent tone-deaf commercial posting (it is one of Israel's two siren / advertising-suspension solemn days). Added it to the planner for all 3 years (2025-04-24, 2026-04-14, 2027-05-04, verified vs hebcal), to NO_COMMERCIAL_DAYS, and to the 'absolute no-commercial-content days' line in SKILL.md + SKILL_HE.md.",
+        "MAJOR fixed (Expert): the planner modeled multi-day holidays as single dates, contradicting the skill's own week-long-slowdown prose. Added a duration field per holiday (Pesach 7, Sukkot 7, Hanukkah 8, Rosh Hashana 2) so the calendar renders the full avoid-window and catches holidays whose window spills into the queried month.",
+        "Fixed a PRE-EXISTING date error surfaced while rewriting: the 2025 rows had Yom HaZikaron 04-25 / Yom Ha'atzmaut 04-26, but hebcal shows 2025-04-30 / 2025-05-01 (the original was ~5 days off). Corrected.",
+        "Fixed: the Chok HaSpam evidence source_url (gov.il/legalInfo/spam_law) now 403s; swapped to the kolzchut spam-law page.",
+        "Deferred (MINOR): add 2028 holiday rows; optionally add Tu BiShvat / Lag BaOmer / Tisha B'Av (Tisha B'Av is a low-commercial-sensitivity day worth flagging); note CTech's live English site is calcalistech.com; reconcile the Times-of-Israel / Walla asymmetry between SKILL.md body and the reference file; consider softening the AEO earned-media claim to 'tend to favor'."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "cycles": [
+    {
+      "version": "1.4.0",
+      "date": "2026-06-26",
+      "lessons": [
+        "STALE fixed (verified directly against btl.gov.il): the NI/health reduced-rate threshold was the 2025 value of 7,522 (shekels) but the 2026 figure is 7,703 (effective 01.01.2026), and the contribution ceiling was the 2025 figure of 50,695 but is 51,910 in 2026. Fixed in SKILL.md, SKILL_HE.md, and gross-to-net-2026.md, and recalculated the worked examples (NI/health charge ~4,259.4, net-to-bank ~23,101.1). The rates (1.04%/7%, 3.23%/5.17%) are unchanged; only the threshold/ceiling move with the average wage each year.",
+        "WRONG fixed: keren hishtalmut tax-benefited salary ceiling was stated as 15,751 (a digit transposition) but is 15,712 NIS/month (the doc's own correct 1,571 deposit figure proves it). Fixed.",
+        "MAJOR added: keren above-ceiling tax treatment for high earners (employer contribution above 15,712 is taxable income AND the growth on that portion loses the after-6-years CGT exemption), a real point for 40K+ salaries; and a 2026 soft-market leverage caveat in Step 5 (layoffs / repriced equity mean weaker candidate leverage than the 2021-2022 peak; do not coach an aggressive counter when the candidate has no alternative).",
+        "Verified CORRECT (no change): the April 2026 income-tax bracket revision (20% widened to 19,000, 31% 19,001-25,100) and credit point 242 NIS, Section 102 (25% / 24-month / RSU grant-date value = ordinary income), Section 45a (35%, 679/mo, 9,700 ceiling, ~2,852/yr), pension 6.5%+8.33%=14.83% with Section 14, dmei havraah 418 NIS, and the salary benchmarks (align with 2026 levels.fyi Israel).",
+        "Fixed MINOR: reworded the pension disability framing to the accurate 5%-tagmulim-floor / 7.5%-combined-cap rule; noted in salary-calculator.py that the employer-cost total excludes employer-side National Insurance.",
+        "CRITICAL fixed (Expert round 2): the keren 'max tax-benefited employer deposit: 1,571 at 10%' mislabeled the COMBINED employer+employee 10% deposit as the employer's. The employer (7.5%) tax-benefited deposit at the 15,712 ceiling is 1,178 NIS/month; clarified both (employer 1,178 at 7.5%, combined 1,571 at 10%).",
+        "MAJOR fixed (Expert round 2): the salary-calculator.py employer-NI note used the stale 2025 reduced rate (3.55 percent) and wrongly attributed health tax to the employer. Corrected to the 2026 employer NI of ~4.51% reduced / 7.6% full, and clarified the employer pays NI only (health tax is employee-side).",
+        "Decoded all percent-encoded Hebrew source URLs to literal Hebrew (the verify-evidence gate read %94/%95/%9X byte pairs as phantom 9X% percentages, the known false-positive).",
+        "Deferred (MINOR): dmei havraah may rise to ~451.5 if the pending extension order is signed (update both files if so); add ESPP lookback mechanics, sign-on/retention clawback clauses, and RSU double-trigger (liquidity-event) vesting for late-stage startup offers."
+      ]
+    }
+  ]
+}
