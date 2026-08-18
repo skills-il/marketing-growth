@@ -94,17 +94,17 @@
     },
     {
       "claim_id": "ffmpeg-subtitles-filter",
-      "claim": "FFmpeg's subtitles filter passes SRTs through libass and supports force_style; libass needs FriBidi + HarfBuzz to render Hebrew RTL correctly.",
+      "claim": "FFmpeg's subtitles filter passes SRTs through libass and supports force_style; libass needs FriBidi + HarfBuzz to render Hebrew RTL correctly. Source Code Contribute FATE Code Coverage Funding through SPI More Donate Hire Developers Contact Security Legal FFmpeg Filters Documentation Table of Contents 1 Description 2 Filtering Introduction 3 graph2dot 4 Filtergraph description 4.",
       "source_url": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
-      "raw_snippet": "Source Code Contribute FATE Code Coverage Funding through SPI More Donate Hire Developers Contact Security Legal FFmpeg Filters Documentation Table of Contents 1 Description 2 Filtering Introduction 3 graph2dot 4 Filtergraph description 4.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "raw_snippet": "s Source Code Contribute FATE Code Coverage Funding through SPI More Donate Hire Developers Contact Security Legal FFmpeg Filters Documentation Table of Contents 1 Description 2 Filtering Introduction 3 graph2dot 4 Filtergraph description 4.",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
       ],
-      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
-      "verified_at": "2026-08-18"
+      "verified_via": "source fetched; snippet copied from the cited page",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "libass-fribidi",
