@@ -99,16 +99,18 @@
     },
     {
       "claim_id": "reference-source-urls",
-      "claim": "Authoritative source URLs cited in the skill (gov / btl / kolzchut / pensuni / supermarker / levels.fyi / globes).",
-      "source_url": "https://www.btl.gov.il/",
-      "raw_snippet": "Source URLs: https://en.globes.co.il/en/article-revised-income-tax-brackets-boost-march-salary-1001539434 https://pensuni.com/?p=1532 https://pensuni.com/?p=827 https://www.btl.gov.il/ https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים שכירים.aspx https://www.cbs.gov.il/en/mediarelease/Pages/default.aspx https://www.cbs.gov.il/en/subjects/Pages/Wages-Income.aspx https://www.gov.il/en/departments/israel_tax_authority https://www.gov.il/he/departments/israel_tax_authority https://www.kolzchut.org.il/he/זיכוי_ממס_הכנסה_בגין_הפרשות_לביטוח_פנסיוני https://www.kolzchut.org.il/he/חופשה_שנתית https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה https://www.kolzchut.org.il/he/קרן_השתלמות https://www.levels.fyi/t/software-engineer/locations/israel https://www.supermarker.themarker.com/Gemel/HishtalmutFundTaxBenefits2017.aspx https://www.supermarker.themarker.com/Gemel/TaxBenefitsForKupatGemelAndHishtalmut.aspx",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "claim": "Authoritative source URLs cited in the skill (gov / btl / kolzchut / pensuni / supermarker / levels.fyi / globes). Covers these references: https://en.globes.co.il/en/article-revised-income-tax-brackets-boost-march-salary-1001539434 https://pensuni.com/?p=1532 https://pensuni.com/?p=827 https://www.btl.gov.il/ https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים https://www.cbs.gov.il/en/mediarelease/Pages/default.aspx https://www.cbs.gov.il/en/subjects/Pages/Wages-Income.aspx https://www.gov.il/en/departments/israel_tax_authority https://www.gov.il/he/departments/israel_tax_authority https://www.kolzchut.org.il/he/זיכוי_ממס_הכנסה_בגין_הפרשות_לביטוח_פנסיוני https://www.kolzchut.org.il/he/חופשה_שנתית https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה https://www.kolzchut.org.il/he/קרן_השתלמות https://www.levels.fyi/t/software-engineer/locations/israel https://www.supermarker.themarker.com/Gemel/HishtalmutFundTaxBenefits2017.aspx https://www.supermarker.themarker.com/Gemel/TaxBenefitsForKupatGemelAndHishtalmut.aspx",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/default.aspx",
+      "raw_snippet": "דף הבית, הביטוח הלאומי",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/gross-to-net-2026.md",
         "references/israeli-benefits-guide.md"
-      ]
+      ],
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "verified-2026-constants-and-forms",

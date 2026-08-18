@@ -55,13 +55,13 @@
       "claim_id": "hebrew-hashtag-formatting",
       "claim": "Hebrew hashtags must be a single concatenated string with no spaces and no underscores (#סטארטאפישראלי not #סטארטאפ_ישראלי); LinkedIn hashtags break at the first space or non-alphanumeric separator.",
       "source_url": "https://www.linkedin.com/help/linkedin/answer/a528176",
-      "raw_snippet": "Post and share updates | LinkedIn Help",
+      "raw_snippet": "Post and share updates | LinkedIn Help Attention screen reader users, you are in a mobile optimized view and content may not appear where you expect it to be.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_via": "reference-coverage entry; snippet is a contiguous sentence from its source page",
       "verified_at": "2026-08-18"
     },
     {

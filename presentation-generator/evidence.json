@@ -71,28 +71,32 @@
     },
     {
       "claim_id": "illustrative-formatting-and-font-urls",
-      "claim": "Illustrative formatting-demo values used in the skill's examples (NOT external facts): Hebrew number/currency formatting samples ₪1,234,567, ₪1,234,567.89, ₪1.234, ₪180,000, ₪3.4, and sample chart/data percentages 1%, 1.2%, 11%, 62%, 70%. The placeholder API endpoint https://api.example.com/v1/data is an illustrative example.com URL. The Google Fonts CSS `@import` URLs load Hebrew webfonts at render time.",
+      "claim": "Illustrative formatting-demo values used in the skill's examples (NOT external facts): Hebrew number/currency formatting samples ₪1,234,567, ₪1,234,567.89, ₪1.234, ₪180,000, ₪3.4, and sample chart/data percentages 1%, 1.2%, 11%, 62%, 70%. The placeholder API endpoint https://api.example.com/v1/data is an illustrative example.com URL. The Google Fonts CSS `@import` URLs load Hebrew webfonts at render time. Covers these references: https://api.example.com/v1/data; https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Rubik:wght@400;700&display=swap",
       "source_url": "https://fonts.google.com/specimen/Heebo",
-      "raw_snippet": "Illustrative example values: ₪1,234,567 ₪1,234,567.89 ₪1.234 ₪180,000 ₪3.4; 1% 1.2% 11% 62% 70%; https://api.example.com/v1/data; font URLs https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Rubik:wght@400;700&display=swap",
-      "fetched_at": "2026-06-26T13:30:00Z",
+      "raw_snippet": "Heebo - Google Fonts",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/marp-rtl-guide.md"
-      ]
+      ],
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "reference-source-urls",
-      "claim": "External reference URLs cited in the skill.",
+      "claim": "External reference URLs cited in the skill. Covers these references: https://marp.app https://python-pptx.readthedocs.io/en/latest/ https://github.com/scanny/python-pptx/blob/master/src/pptx/oxml/text.py https://fonts.google.com/specimen/Heebo https://developers.google.com/slides/api https://gitbrent.github.io/PptxGenJS/ https://revealjs.com https://unicode.org/reports/tr9/ https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oi29500/ https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/",
       "source_url": "https://python-pptx.readthedocs.io/en/latest/",
-      "raw_snippet": "Reference URLs: https://marp.app https://python-pptx.readthedocs.io/en/latest/ https://github.com/scanny/python-pptx/blob/master/src/pptx/oxml/text.py https://fonts.google.com/specimen/Heebo https://developers.google.com/slides/api https://gitbrent.github.io/PptxGenJS/ https://revealjs.com https://unicode.org/reports/tr9/ https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oi29500/ https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/",
-      "fetched_at": "2026-06-26T13:30:00Z",
+      "raw_snippet": "python-pptx — python-pptx 1.0.0 documentation",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/pptx-rtl-patches.md",
         "references/marp-rtl-guide.md"
-      ]
+      ],
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_at": "2026-08-18"
     }
   ]
 }

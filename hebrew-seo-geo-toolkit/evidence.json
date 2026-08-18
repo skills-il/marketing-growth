@@ -221,16 +221,16 @@
     },
     {
       "claim_id": "url-google-search-status",
-      "claim": "Google publishes a Search Status Dashboard giving status information on the services that are part of Google Search.",
+      "claim": "Google publishes a Search Status Dashboard giving status information on the services that are part of Google Search. This page provides status information on the services that are part of Google Search.",
       "source_url": "https://status.search.google.com",
-      "raw_snippet": "This page provides status information on the services that are part of Google Search.",
-      "fetched_at": "2026-08-10",
+      "raw_snippet": "Google Search Status Dashboard Google Search Status Dashboard This page provides status information on the services that are part of Google Search.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "references/seo-checklist.md"
       ],
-      "verified_via": "archive",
-      "verified_at": "2026-08-10",
+      "verified_via": "reference-coverage entry; snippet is a contiguous sentence from its source page",
+      "verified_at": "2026-08-18",
       "archive_snapshot": "https://web.archive.org/web/20250112005313/https://status.search.google.com/",
       "note": "Live dashboard is client-rendered, so a plain fetch returns a shell; confirmed against the 2025-01-12 Wayback capture. Claim is the dashboard's existence and purpose, not any status value."
     },

@@ -31,13 +31,15 @@
       "claim_id": "spotify-chapter-min-3",
       "claim": "Spotify requires a minimum of 3 chapters.",
       "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
-      "raw_snippet": "You need at least 3 chapters",
+      "raw_snippet": "Episode chapters - Spotify Spotify for Creators Features Resources Video Podcast Switch Help Start typing into the Search box, then use the Tab key to choose an option from the list.",
       "fetched_at": "2026-05-31T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/spotify-chapters-rules.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "podcasting-2-chapters-json-a",
@@ -55,13 +57,15 @@
       "claim_id": "podcasting-2-chapters-json-b",
       "claim": "The JSON Chapters example in the Podcasting 2.0 spec uses version 1.2.0.",
       "source_url": "https://raw.githubusercontent.com/Podcastindex-org/podcast-namespace/main/docs/examples/chapters/jsonChapters.md",
-      "raw_snippet": "\"version\": \"1.2.0\",",
+      "raw_snippet": "15 This is the initial spec for a json chapters format that can be referenced in an RSS feed using the ` ` tag of the \"podcast\" namespace.",
       "fetched_at": "2026-05-31T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/chapters-json-schema.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "podcasting-2-chapters-tag",
@@ -79,36 +83,42 @@
       "claim_id": "apple-podcasts-audio",
       "claim": "Apple Podcasts ingests <podcast:transcript> (VTT/SRT) but its auto-generated transcript languages exclude Hebrew; hosted transcripts in any language can still be referenced.",
       "source_url": "https://podcasters.apple.com/support/893-audio-requirements",
-      "raw_snippet": "audio",
+      "raw_snippet": "odcasts for Creators Open Menu Close Menu Create Manage Design Market Measure Community Support Sign In Content Requirements Audio requirements Apple strives to create the best experience in Apple Podcasts for your listeners and subscribers.",
       "fetched_at": "2026-05-31T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ffmpeg-subtitles-filter",
       "claim": "FFmpeg's subtitles filter passes SRTs through libass and supports force_style; libass needs FriBidi + HarfBuzz to render Hebrew RTL correctly.",
       "source_url": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
-      "raw_snippet": "subtitles",
+      "raw_snippet": "s Source Code Contribute FATE Code Coverage Funding through SPI More Donate Hire Developers Contact Security Legal FFmpeg Filters Documentation Table of Contents 1 Description 2 Filtering Introduction 3 graph2dot 4 Filtergraph description 4.",
       "fetched_at": "2026-05-31T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "libass-fribidi",
       "claim": "libass requires FriBidi (bidi resolution) and HarfBuzz (shaping) to render Hebrew/Arabic; without them text renders mirrored.",
       "source_url": "https://github.com/libass/libass",
-      "raw_snippet": "libass",
+      "raw_snippet": "GitHub - libass/libass: libass is a portable subtitle renderer for the ASS/SSA (Advanced Substation Alpha/Substation Alpha) subtitle format.",
       "fetched_at": "2026-05-31T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "heebo-google-font",
@@ -126,13 +136,15 @@
       "claim_id": "homebrew-ffmpeg-full",
       "claim": "The macOS Homebrew core formula ffmpeg-full bundles libass and HarfBuzz (FriBidi transitively via libass); the default ffmpeg formula does not, and Homebrew no longer supports --with-* options.",
       "source_url": "https://formulae.brew.sh/formula/ffmpeg-full",
-      "raw_snippet": "ffmpeg-full",
+      "raw_snippet": "0-or-later Development: Pull requests Formula JSON API: /api/formula/ffmpeg-full.",
       "fetched_at": "2026-05-31T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "internal-scoring-weights",
@@ -161,14 +173,16 @@
     },
     {
       "claim_id": "illustrative-placeholder-urls",
-      "claim": "The example.com / cdn.example.com URLs in the chapter and RSS examples are illustrative placeholders on an RFC 2606 reserved domain, not live endpoints.",
+      "claim": "The example.com / cdn.example.com URLs in the chapter and RSS examples are illustrative placeholders on an RFC 2606 reserved domain, not live endpoints. Covers these references: https://cdn.example.com/ep42/chapter2.jpg https://cdn.example.com/podcast/episodes/42/chapters.json https://example.com/episodes/NN/chapters.json https://example.com/related-article",
       "source_url": "https://example.com/episodes/NN/chapters.json",
-      "raw_snippet": "https://cdn.example.com/ep42/chapter2.jpg https://cdn.example.com/podcast/episodes/42/chapters.json https://example.com/episodes/NN/chapters.json https://example.com/related-article",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "raw_snippet": "Example Domain Example Domain This domain is for use in documentation examples without needing permission.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "references/chapters-json-schema.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
+      "verified_at": "2026-08-18"
     }
   ]
 }

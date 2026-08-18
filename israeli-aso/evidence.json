@@ -68,14 +68,16 @@
     },
     {
       "claim_id": "reference-doc-urls",
-      "claim": "Official documentation URLs referenced by the skill.",
+      "claim": "Official documentation URLs referenced by the skill. Covers these references: https://developer.apple.com/app-store/review/guidelines/ https://developer.apple.com/help/app-store-connect/ https://developer.apple.com/design/human-interface-guidelines/right-to-left https://support.google.com/googleplay/android-developer https://support.google.com/googleplay/android-developer/topic/9858052",
       "source_url": "https://developer.apple.com/app-store/review/guidelines/",
-      "raw_snippet": "Reference URLs: https://developer.apple.com/app-store/review/guidelines/ https://developer.apple.com/help/app-store-connect/ https://developer.apple.com/design/human-interface-guidelines/right-to-left https://support.google.com/googleplay/android-developer https://support.google.com/googleplay/android-developer/topic/9858052",
-      "fetched_at": "2026-06-22T21:30:00Z",
+      "raw_snippet": "ts News Forums Sample Code Videos --> App Review Open Menu Close Menu Overview App Review Guidelines App Review Guidelines Apps are changing the world, enriching people’s lives, and enabling developers like you to innovate like never before.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "reference-coverage entry; snippet is a contiguous sentence from its source page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "native-ab-testing-tools",
