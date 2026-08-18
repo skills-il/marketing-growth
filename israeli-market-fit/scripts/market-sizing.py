@@ -5,7 +5,7 @@ market-sizing.py - bottom-up TAM/SAM/SOM estimator for the Israeli market.
 The point of this script is discipline, not precision: it forces a market-fit
 estimate to be built from a real segment population, a defensible adoption
 fraction, and a per-buyer annual spend, instead of a hand-waved "the Israeli
-market is huge" number. Israel's whole population is about 10.178 million, so
+market is huge" number. Israel's whole population is about 10.244 million, so
 the serviceable number is usually much smaller than founders expect.
 
 All monetary inputs and outputs are in shekels. Adoption and serviceable shares
@@ -13,7 +13,7 @@ are fractions between 0 and 1 (e.g. 0.05 for one in twenty), NOT figures with a
 percent sign, on purpose: it keeps you honest about the actual ratio.
 
 Usage:
-    python market-sizing.py --segment-pop 7771000 --adoption 0.04 \
+    python market-sizing.py --segment-pop 7790000 --adoption 0.04 \
         --annual-spend 240 --serviceable 0.15
 
     # interactive prompts if no flags are given:
@@ -79,7 +79,7 @@ def main() -> int:
     print("Estimated early buyers: " + format(round(r["buyers"]), ","))
     print()
     print("Reality check: compare SOM against your fixed costs. In a market of about")
-    print("10.178 million people, a narrow segment can be too small to clear a revenue floor.")
+    print("10.244 million people, a narrow segment can be too small to clear a revenue floor.")
     return 0
 
 

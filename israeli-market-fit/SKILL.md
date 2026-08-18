@@ -1,12 +1,18 @@
 ---
 name: israeli-market-fit
-description: "Assess whether a product or service fits the Israeli market before you build, launch, or localize it. Use when a founder or marketer asks 'will this work in Israel', 'who is the Israeli buyer', wants buyer personas or avatars for Israel, market sizing, product-market-fit, or a go / pivot / no-go decision, or asks in Hebrew about התאמת מוצר לשוק הישראלי, חקר שוק, or אווטאר קונה. Produces a market-fit report: segment sizing (secular, Haredi, Arab-Israeli, olim, periphery), buyer-avatar cards, localized positioning angles, and a viability verdict contrasting the global market with Israeli reality (Hebrew and RTL, shekel pricing, payment habits, regulatory gates, seasonality). Israel is a small, segmented market where a global plan usually must change. Do NOT use for writing the survey itself (hebrew-survey-builder), running paid ads (israeli-paid-ads), SEO content (israeli-content-marketing), or launch PR (israeli-product-launch)."
+description: "Not legal advice. Assess whether a product or service fits the Israeli market before you build, launch, or localize it. Use when a founder or marketer asks 'will this work in Israel', 'who is the Israeli buyer', wants buyer personas or avatars for Israel, market sizing, product-market-fit, or a go / pivot / no-go decision, or asks in Hebrew about התאמת מוצר לשוק הישראלי, חקר שוק, or אווטאר קונה. Produces a market-fit report: segment sizing (secular, Haredi, Arab-Israeli, olim, periphery), buyer-avatar cards, localized positioning angles, and a viability verdict contrasting the global market with Israeli reality (Hebrew and RTL, shekel pricing, payment habits, regulatory gates, seasonality). Israel is a small, segmented market where a global plan usually must change. Do NOT use for writing the survey itself (hebrew-survey-builder), running paid ads (israeli-paid-ads), SEO content (israeli-content-marketing), or launch PR (israeli-product-launch)."
 license: MIT
 compatibility: Works as a reasoning workflow on any agent. The optional market-sizing script needs Python 3. Network access helps for fresh competitor and pricing research.
 ---
 
 
 # Israeli Market Fit Analyzer
+
+## Legal notice
+
+This is a free information tool operated by an AI model. It segments the Israeli market, sizes it bottom-up, and flags possible regulatory and seasonality gates, alongside a general explanation of the applicable law. All of its output is produced automatically by an AI model, with no involvement, review, or approval by an advocate. The output is not legal advice and not a legal opinion; it is a commercial and marketing analysis only. It does not examine your documents or engagements, does not test your product's specific facts against the text of the law and current case law, and does not determine whether any exemption or exception applies to you. An AI model may err, omit data, or present a wrong conclusion, and tax rates, amounts, and regulatory rules change.
+
+The go / pivot / no-go verdict is a commercial assessment only, and is not a determination that the product does or does not comply with the law. Do not rely on the output as the basis for a legal decision or for dealings with an authority. It is not a substitute for advice that takes into account the particular data and needs of each person, and before setting a consumer price, building a customer database, sending marketing messages, or importing and selling a product, consult an advocate.
 
 ## Problem
 
@@ -27,7 +33,7 @@ when the user wants real TAM/SAM/SOM numbers.
 
 Restate, in one or two sentences, what the product is and what job it does. Then name the
 core question: is there a real Israeli buyer, and what about the global plan must change.
-Israel's whole population is about 10.178 million, so a product whose unit economics
+Israel's whole population is about 10.244 million, so a product whose unit economics
 assume a US-sized market often does not survive contact with the numbers. Flag that
 upfront.
 
@@ -38,10 +44,22 @@ can actually serve. Use these shares of the population:
 
 | Segment | Share of population | Reach reality |
 |---------|---------------------|---------------|
-| Jews and others (secular to traditional mainstream) | 76.3% | Reachable through mainstream Hebrew channels |
+| Jews and others (secular to traditional mainstream) | 76% | Reachable through mainstream Hebrew channels |
 | Arab-Israeli | 21.1% | Arabic-first; separate social graph and retail |
-| Haredi (ultra-Orthodox) | 14.3% of the total | Separate media universe; mainstream ads do not reach them |
-| Foreigners and others | 2.6% | Olim and migrant-worker sub-markets |
+| Foreigners and others | 2.9% | Olim and migrant-worker sub-markets |
+| Haredi (ultra-Orthodox), a SUBSET of the first row | 14.3% of the total | Separate media universe; mainstream ads do not reach them |
+
+**Do not add these rows up.** The first three are mutually exclusive and already total the
+whole population. The Haredi row is carved out of the first row, not additional to it, so
+the mainstream Hebrew segment you size in Step 3 is the first row MINUS the Haredi share.
+Subtract before you size, or you will double-count the Haredi population and overstate the
+mainstream market.
+
+The 21.1% Arab figure is the CBS "Arabs" category, which counts East Jerusalem residents
+alongside Arab citizens of Israel. They are not one commercial segment: residency status,
+banking and credit-card penetration, and street-level addressing differ, so a product that
+depends on card checkout or on courier delivery to a street address will not reach all of
+that 21.1%. Say which sub-population you are actually sizing.
 
 The Haredi segment is very young (median age 16, with 57% aged 0-19), which changes which
 products have a real adult buyer there. New olim and Russian-speakers cut across the Jewish
@@ -76,9 +94,14 @@ segment population, times a defensible adoption fraction, times annual spend per
 Run `scripts/market-sizing.py` to keep yourself honest:
 
 ```bash
-python scripts/market-sizing.py --segment-pop 7771000 --adoption 0.04 \
+python scripts/market-sizing.py --segment-pop 7790000 --adoption 0.04 \
     --annual-spend 240 --serviceable 0.15
 ```
+
+On a host that cannot run a script (Claude.ai, ChatGPT, Claude Desktop, Manus), do the same
+three lines by hand instead, and show them: TAM = segment population x annual spend;
+SAM = TAM x adoption fraction; SOM = SAM x the fraction you can win early. The discipline is
+the point, not the script.
 
 State your adoption and spend assumptions explicitly. The output (SOM) is the number the
 verdict hangs on. If the SOM for every reachable segment is smaller than the fixed cost of
@@ -88,10 +111,10 @@ serving the market, that is a no-go signal regardless of how exciting the produc
 
 Fill the avatar template from `references/segments.md` for each segment you decided to
 serve. Ground every field in the segment data, not invented demographics. Each card must
-name: the language for product and support, the income band relative to the local average
-wage (13,566 NIS per month as of January 2026), where they discover and where they buy,
-preferred payment, the top objections, the trust triggers, and why the global pitch does
-not land as-is.
+name: the language for product and support, the income band relative to the statutory
+average wage under s.1 of the National Insurance Law (13,566 NIS per month as of January
+2026), where they discover and where they buy, preferred payment, the top objections, the
+trust triggers, and why the global pitch does not land as-is.
 
 ### Step 5: Localize the positioning angles
 
@@ -101,15 +124,18 @@ Translate the product's value into Israeli reality, not a translated US pitch:
   relevant. Go past "RTL": Hebrew that reads as machine-translated is a top trust-killer,
   mixed Hebrew/English/number lines break BiDi rendering, and date, phone, and address
   formats are local. Budget for a real Hebrew content writer, not a translation pass.
-- **Pricing:** price in shekels, VAT-inclusive at 18%. Note that VAT is a recurring
-  budget-bill lever in Israel, so confirm the current rate before you lock a price. Do not
-  anchor willingness-to-pay to the average (mean) wage of 13,566 NIS per month: it is pulled
-  up by high earners and the median is materially lower, so benchmark against local
+- **Pricing:** price in shekels, VAT-inclusive at 18%. This is a legal duty for consumer
+  prices, not a style preference: see the Consumer Protection Law point in Step 6. VAT is a
+  recurring budget-bill lever in Israel, so confirm the current rate before you lock a price.
+  For the income benchmark, note which "average wage" you are using: 13,566 NIS per month is
+  the statutory average wage under s.1 of the National Insurance Law (the figure that indexes
+  minimum wage and senior salaries), not the CBS economy-wide average, and either way a mean
+  is pulled up by high earners while the median is materially lower. Benchmark against local
   substitute prices, not US incomes. Interest-free installments (תשלומים) are an expectation,
   and they are themselves a pricing lever, not a footnote.
 - **Payment rail:** the dominant business checkout is credit cards through local gateways
-  and acquirers (for example Tranzila, Cardcom, Meshulam), which is also what processes
-  installments. Not every foreign gateway supports Israeli installments, so a US-only Stripe
+  and acquirers (for example Tranzila, Cardcom, and Grow, formerly Meshulam), which is also
+  what processes installments. Not every foreign gateway supports Israeli installments, so a US-only Stripe
   setup may not be enough. Bit (Bank Hapoalim) and paybox (Discount Bank) dominate
   peer-to-peer transfers and suit small sellers and C2C, but they are not the primary
   business checkout, so do not plan your commerce rail around "accept Bit".
@@ -118,8 +144,12 @@ Translate the product's value into Israeli reality, not a translated US pitch:
   For physical goods on shelves: retail is concentrated and often gated by a single importer
   or distributor and by chains such as Shufersal, Rami Levy, and Super-Pharm. The real
   competitor is frequently a grey-market parallel importer selling the same brand cheaper, or
-  buyers importing directly from foreign sites (check the current personal-import tax
-  exemption that makes "I will just order it from abroad" the substitute).
+  buyers importing directly from foreign sites. The personal-import tax exemption is what
+  makes "I will just order it from abroad" a real substitute: it is currently 75 dollars per
+  parcel. Treat that number as volatile rather than settled. It moved three times between
+  December 2025 and June 2026 (raised to 150, then set at 130 by order, then voted back down
+  to 75 on 1 June 2026), so
+  re-check it before you build a pricing argument on top of it.
 - **Trust:** Israeli buyers are price-aggressive and recommendation-driven. Local phone
   support, Israeli social proof, and a Hebrew interface raise trust more than a slick
   global brand. Also check whether a local copycat already cloned the product or whether the
@@ -135,11 +165,35 @@ apply:
   (electrical, toys, food, cosmetics) until lab-tested.
 - **Hebrew labeling:** every consumer-product package must carry clear Hebrew labeling,
   even when imported.
-- **Consumer Protection Law:** deceptive marketing is prohibited, and the displayed price
-  must be the final price.
+- **Consumer Protection Law:** deceptive marketing is prohibited (s.2(a) bans anything
+  liable to mislead a consumer on a material matter). Separately, s.17ד says a price
+  advertised or quoted to a consumer may only be the total price (המחיר הכולל, defined in
+  s.17א to include VAT, fees and every mandatory charge) and only in Israeli currency. So a
+  consumer price in dollars, or one that adds VAT at checkout, is unlawful rather than merely
+  unappealing. The s.17ז exemptions (goods sold abroad, and the categories in the First
+  Schedule) are what let some B2B and tourism pricing stay in dollars, so check whether you
+  fall inside one before quoting USD. When a tax rate changes, s.17ה gives a seven-day window
+  to keep displaying the old price provided you say so prominently.
+- **Cancellation rights, which are a product requirement and not a support policy:** the same
+  law gives a distance-selling cancellation right under s.14ג(ג). For goods, the consumer may
+  cancel from the moment of the transaction until fourteen days after delivery; for a service,
+  within fourteen days of the transaction. A continuing transaction (עסקה מתמשכת) can be
+  cancelled at any time, and under s.13ד the contract ends within three business days of the
+  cancellation notice. For any subscription product this means refund exposure in the model
+  and a real cancellation flow in the build, so price and plan the funnel accordingly.
+- **Who has to register for Israeli VAT:** charging VAT-inclusive shekel prices is a separate
+  question from whether you are registered to collect it. Israel has no small-turnover
+  exemption for a non-resident seller the way it has for a local osek patur, so a foreign
+  company supplying goods or digital services to Israeli consumers may need to register from
+  its first taxable supply and to appoint an Israel-resident VAT representative. Treat this as
+  a market-entry cost and timeline item, and confirm the specific obligation with the Israel
+  Tax Authority or an Israeli tax adviser before you model the price.
 - **Data and privacy:** Amendment 13 to the Privacy Protection Law (in force since 14 August
   2025) strengthened data-protection obligations and enforcement for anyone holding customer
-  data, so a marketing database is itself a compliance responsibility.
+  data, so a marketing database is itself a compliance responsibility. Treat this as enforced
+  rather than theoretical: the Privacy Protection Authority issued its first administrative
+  fine under the amendment in July 2026, against an HMO that reported a security incident
+  late.
 - **Marketing consent (anti-spam law):** sending promotional email or SMS requires the
   recipient's prior, explicit, written consent (active opt-in, not a pre-checked box). This
   is the anti-spam law, separate from Amendment 13. Sending without consent exposes you to
@@ -148,6 +202,19 @@ apply:
 - **Seasonality:** demand swings around the Jewish-holiday calendar (Rosh Hashana, Pesach,
   Sukkot), Ramadan for the Arab segment, the August vacation, and reserve-duty (miluim)
   call-ups that disrupt B2B.
+- **Election season:** Israel votes for the 26th Knesset on 27 October 2026. A campaign
+  season is a marketing condition, not just a news story: attention and ad inventory get
+  scarce and expensive, and the platforms impose election rules. TikTok, for one, bans paid
+  political advertising in Israel, bans paying creators to promote a party or candidate,
+  bans boosting political video with promotion tools, and requires realistic AI-generated
+  content to be labeled. Israeli law now goes further than platform policy: rules published
+  in Reshumot on 26.7.2026 under the 26th-Knesset elections law impose a disclosure duty on
+  election propaganda that is a "deep fake" (נחזות עמוקה), satisfied either by stating that
+  the content was digitally generated or materially edited, or by carrying the Elections
+  Committee's prescribed logo. Responsibility sits with the publisher. If the product is
+  anywhere near a political or civic theme, check each platform's election policy AND the
+  Israeli disclosure rules before you plan the campaign, and expect launch windows around the
+  vote to be poor.
 
 ### Step 7: Write the viability verdict (go / pivot / no-go)
 
@@ -194,13 +261,15 @@ model in shekels, with a recommendation to localize content rather than translat
 
 ## Gotchas
 
-- **Treating Israel as one Hebrew market.** Agents routinely size off the full 10.178
+- **Treating Israel as one Hebrew market.** Agents routinely size off the full 10.244
   million and assume mainstream Instagram ads reach everyone. The Haredi (14.3%) and
   Arab-Israeli (21.1%) segments have separate channels and languages; sizing and avatars
   must be per segment.
 - **Pricing in dollars.** Israeli buyers expect shekel prices that already include the 18%
-  VAT and offer installments. A dollar price or a VAT-exclusive price reads as overpriced
-  and, if the displayed price is not final, breaches consumer-protection rules.
+  VAT and offer installments. Agents treat this as a conversion tip; for a consumer price it
+  is the law. s.17ד permits only the total price and only in Israeli currency, so a dollar
+  price or a VAT-added-at-checkout price is a breach, not just a bad look, unless you fall
+  inside an s.17ז exemption.
 - **Forgetting the regulatory gate exists.** For physical goods, agents jump to marketing
   and skip the official-standard (תקן רשמי) and Hebrew-labeling gates that can block import
   or sale entirely. Check the gate before you size the upside.
@@ -220,19 +289,28 @@ model in shekels, with a recommendation to localize content rather than translat
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| CBS population release | https://www.cbs.gov.il/he/mediarelease/DocLib/2025/422/01_25_422b.pdf | Total population and Jewish/Arab/other split |
+| CBS population release | https://www.cbs.gov.il/he/mediarelease/DocLib/2026/117/11_26_117b.pdf | Total population and Jewish/Arab/other split |
 | IDI Haredi Yearbook 2025 | https://www.idi.org.il/haredi/2025/?chapter=62168 | Haredi share, median age, youth share |
 | PwC Israel tax summary | https://taxsummaries.pwc.com/israel/corporate/other-taxes | Current standard VAT rate |
 | Standards Institution of Israel | https://www.sii.org.il/he/israelistandards/ | Official-standard (תקן רשמי) and import rules |
 | Consumer Protection Law (Nevo) | https://www.nevo.co.il/law_html/law00/70305.htm | Deception ban and final-price display |
 | Hebrew labeling requirement | https://weksler-davidovich.co.il/consumer-protection-labeling/ | Mandatory Hebrew labeling on consumer products |
 | Privacy Amendment 13 (gov.il) | https://www.gov.il/he/pages/13_amendment | Data-protection obligations for customer data |
+| ISOC-IL on the 2026 election AI-disclosure rules | https://www.isoc.org.il/regulation-digital-services/deep-fake-election-law | Deep-fake disclosure duty and the prescribed logo |
 
 ## Recommended MCP Servers
 
-No MCP server is required. This skill reasons over the bundled segment data and the user's
-product description. For live competitor or pricing research, use the agent's built-in web
-access.
+No MCP server is required: the skill reasons over the bundled segment data and the user's
+product description. Three published MCPs turn parts of the analysis from estimate into
+measurement, and are worth adding when the user has them:
+
+| MCP | What It Adds |
+|-----|-------------|
+| [Israeli Supermarket Prices](https://agentskills.co.il/he/mcp/supermarket-prices) | Real shelf prices across 35+ chains, so the Step 5 "benchmark against local substitute prices" step uses actual Israeli prices instead of a guess. |
+| [Israeli CBS](https://agentskills.co.il/he/mcp/israeli-cbs) | CBS statistical series and price indices for sizing inputs and for CPI-adjusting a spend assumption. |
+| [Israel Statistics](https://agentskills.co.il/he/mcp/israel-statistics) | CPI and producer/consumer index series, useful when a price assumption has to hold over a multi-year plan. |
+
+For live competitor research, the agent's built-in web access is still the right tool.
 
 ## Troubleshooting
 
