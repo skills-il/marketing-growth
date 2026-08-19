@@ -19,25 +19,29 @@
     },
     {
       "claim_id": "external-link-first-comment-partial",
-      "claim": "External links in the post body cost roughly half the reach of a native post in 2026. Putting the link in the first comment reduces but no longer eliminates the penalty (LinkedIn now also dampens first-comment links), so it is mitigation, not a free pass; native content outperforms linking out.",
+      "claim": "External links in the post body cost reach, and placing the link in the first comment mitigates without eliminating it. The quantified 'roughly half' figure was removed from the skill: the page that carried it answers automated requests with a browser challenge, and no reachable source states a reliable number.",
       "source_url": "https://gromming.com/blog/linkedin-external-links-penalty",
-      "raw_snippet": "External links still suppress reach (~50-60%); the first-comment workaround now carries its own reduced penalty in 2026 and is partially patched, native content performs best.",
-      "fetched_at": "2026-06-23T08:00:00Z",
+      "raw_snippet": "LinkedIn external links penalty",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "the unsourced figure was removed rather than re-cited; the cited blog serves a bot challenge",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "linkedin-ai-authenticity-2026",
       "claim": "LinkedIn's 2026 authenticity policy ('Keeping conversations real') expects disclosure when AI materially generated or transformed a post and attribution of factual claims; it demotes formulaic AI 'slop' (organic reach for pages flagged as AI-generated has dropped toward ~2%), while human-AI hybrid content outperforms pure-AI content (reported ~156% better engagement).",
       "source_url": "https://www.linkedin.com/help/linkedin/answer/a1481496",
-      "raw_snippet": "LinkedIn best practices for content created with the help of AI: disclose AI assistance, attribute factual claims, keep content authentic; AI 'slop' is demoted and human-AI hybrid posts outperform pure AI.",
-      "fetched_at": "2026-06-23T08:00:00Z",
+      "raw_snippet": "Best practices for content created with the help of AI | LinkedIn Help",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "israel-linkedin-timing-members",

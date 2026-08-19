@@ -94,7 +94,7 @@ Israeli LinkedIn posts follow engagement patterns. Note the 2026 algorithm shift
 2026 algorithm and format reality:
 - LinkedIn now leans on the **Interest Graph over the Relationship Graph** -- it surfaces a post to people interested in the topic, not just to your connections. Topic consistency matters more than network size.
 - **Document/PDF carousels and native video far outperform plain text posts** for reach. A military-to-tech career story works better as a short native video or a carousel than as a wall of text.
-- **External links cost reach** (roughly half the reach of a native post in 2026). Prefer native content. Putting the link in the first comment instead of the body REDUCES the penalty but no longer removes it, since LinkedIn now also dampens first-comment links, treat it as mitigation, not a free pass.
+- **External links cost reach.** No published figure quantifies the penalty reliably, so treat it as directional rather than a number. Prefer native content. Putting the link in the first comment instead of the body REDUCES the penalty but no longer removes it, since LinkedIn now also dampens first-comment links, treat it as mitigation, not a free pass.
 - **"Saves" are the top engagement signal,** ahead of likes. Write posts worth saving: frameworks, checklists, "how I did X" breakdowns relevant to Israeli founders and operators.
 - **Dwell time matters.** A longer, genuinely useful post that holds the reader beats a short one that gets a quick like.
 

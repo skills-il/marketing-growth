@@ -89,13 +89,15 @@
       "claim_id": "israeli-tech-salary-benchmarks-2026",
       "claim": "Israeli tech salary benchmarks (NIS/month) are calibrated to 2026 levels.fyi Israel data, e.g. Senior Backend Tel Aviv roughly 35K/42K/48K/55K (25th/median/75th/90th), within the levels.fyi senior SWE Tel Aviv range (~37.5K-53.5K). AI/ML and cyber specializations command a ~15-25% premium over base ranges; Tel Aviv/center pays ~15-25% more than the periphery.",
       "source_url": "https://www.levels.fyi/t/software-engineer/levels/senior/locations/tel-aviv-metropolitan-area",
-      "raw_snippet": "levels.fyi Tel Aviv senior software engineer ~37,500-53,500 NIS/month (2026); AI/ML and cyber roles carry a 15-25% premium; center pays 15-25% above periphery.",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "raw_snippet": "Senior Software Engineer Salary in Tel Aviv, Israel",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "references/israeli-tech-salary-data.md",
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "reference-source-urls",

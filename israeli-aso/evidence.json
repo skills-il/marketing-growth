@@ -7,13 +7,15 @@
       "claim_id": "israel-mobile-os-split-2026",
       "claim": "Israel mobile OS split (2026): iOS ~33%, Android ~67% (StatCounter). Smartphone penetration ~91%, roughly 8.7M smartphone users.",
       "source_url": "https://gs.statcounter.com/os-market-share/mobile/israel",
-      "raw_snippet": "Mobile operating system market share Israel: Android ~67%, iOS ~33%. Smartphone penetration ~91%.",
-      "fetched_at": "2026-06-22T21:30:00Z",
+      "raw_snippet": "Statcounter Global Stats Mobile Operating Systems Percentage Market Share Mobile Operating System Market Share in Israel - July 2026 Android 67.56 % iOS 32.44 % Linux 0 % Windows 0 % KaiOS 0 % Samsung 0 % Mobile Operating System Market Share Israel Edit Chart Data Sorry, JavaScript is required to view Global Stats charts. Save Chart Image (.png) Download Data (.csv) Embed HTML Source: Statcounter Global Stats - Browser Market Share '> Period: Set",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-app-market.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 8 of 13 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"android\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "apple-metadata-limits",
@@ -33,13 +35,15 @@
       "claim_id": "google-play-metadata-limits-and-title-policy",
       "claim": "Google Play limits (2026): title 30 characters, short description 80 characters, full description 4,000 characters; no separate keyword field. Play policy bans promotional words (best, #1, free, top), calls to action (Download now), emojis and ALL-CAPS in the app title, icon, and developer name.",
       "source_url": "https://support.google.com/googleplay/android-developer/answer/9859455",
-      "raw_snippet": "App title limited to 30 characters; titles must not contain promotional or pricing keywords, calls to action, emoji, or all-caps. Short description 80, full description 4,000 characters.",
-      "fetched_at": "2026-06-22T21:30:00Z",
+      "raw_snippet": "Prepare your app for review - Play Console Help",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-app-market.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "screenshot-specs-2026",

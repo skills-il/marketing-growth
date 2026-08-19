@@ -7,13 +7,15 @@
       "claim_id": "israel-platform-audiences-2026",
       "claim": "Israeli social audiences (DataReportal Digital 2026 ad reach): Facebook 5.05M (~53%), Instagram 5.00M (~52%), TikTok 4.49M of adults 18+ (~69%), LinkedIn 3.10M (~33%), YouTube ~7.01M (largest). Facebook and Instagram are roughly tied; YouTube is the largest single platform. The ~7.6M Facebook figure is NapoleonCat's all-ages count (different methodology). X/Twitter has fallen to ~0.88M (about -16% YoY); Threads is small but emerging (~0.35M).",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "DataReportal Digital 2026 Israel: Facebook ad reach 5.05M, Instagram 5.00M, TikTok 4.49M (18+), LinkedIn 3.10M, YouTube ~7.01M; X audience ~0.88M and shrinking; NapoleonCat reports Facebook all-ages ~7.6M.",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "Having said that, ad audiences often only account for a subset of a platform’s total users, and given that TikTok’s ad tools only publish data for users aged 18 and above , it’s important to remember that trends in TikTok’s ad reach figures may not necessarily match changes in the platform’s overall user base.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-social-platforms.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 22 of 33 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"audiences\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "platform-ai-content-labeling-2026",
@@ -72,35 +74,41 @@
       "claim_id": "mobile-first-70",
       "claim": "Over 70% of Israeli social traffic is mobile.",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "Israel is majority-mobile for social and web traffic (well over 70%).",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "Digital 2026: Israel — DataReportal – Global Digital Insights",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "external-link-reach-suppression",
       "claim": "A clickable external link in the caption costs organic reach: Meta applies a roughly 15% reach reduction to Instagram caption links and Facebook suppresses external-link feed posts (recommending links in comments); TikTok keeps users on-platform. The phrase 'link in bio' in a caption does NOT hurt reach (Instagram head Adam Mosseri confirmed this is a myth); only the clickable in-caption URL is penalized.",
       "source_url": "https://www.socialmediaexaminer.com/what-facebooks-new-link-rules-mean-for-your-2026-strategy/",
-      "raw_snippet": "Facebook suppresses external-link posts in the feed and recommends moving links to comments; Instagram caption links carry about a 15% reach reduction; Mosseri confirmed 'link in bio' as a caption phrase does not affect reach.",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "What Facebook's New Link Rules Mean for Your 2026 Strategy : Social Media Examiner",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "penetration-figures-and-content-mix",
       "claim": "Reference penetration figures (DataReportal/ISOC-IL): Instagram +13.6% YoY growth; YouTube ~73% of population; Telegram ~71% usage rate (ISOC-IL); WhatsApp ~99% of population. The LinkedIn content-mix heuristic (industry insights 40%, company culture 30%, product 20%, hiring 10%) is conventional B2B guidance, not a measured benchmark.",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "Per DataReportal/ISOC-IL 2026: Instagram grew ~13.6% YoY; YouTube reaches ~73% of the population; Telegram ~71% usage; WhatsApp ~99%. A 40%/30%/20%/10% LinkedIn content mix is a common B2B rule of thumb.",
-      "fetched_at": "2026-06-23T12:30:00Z",
+      "raw_snippet": "Digital 2026: Israel — DataReportal – Global Digital Insights",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-social-platforms.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "reference-doc-urls",

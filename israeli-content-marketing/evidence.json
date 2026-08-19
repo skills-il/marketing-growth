@@ -46,12 +46,14 @@
       "claim_id": "israel-mobile-first-70",
       "claim": "Israeli content consumption is heavily mobile-first (over 70%); Israel has ~91% smartphone penetration and >100% mobile connections per capita, so >70% is a conservative floor.",
       "source_url": "https://datareportal.com/reports/digital-2025-israel",
-      "raw_snippet": "Israel: ~91% smartphone penetration, mobile connections exceed the population; mobile-first consumption well above 70%.",
-      "fetched_at": "2026-06-22T22:00:00Z",
+      "raw_snippet": "Digital 2025: Israel — DataReportal – Global Digital Insights",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "chok-haspam-sunthu",

@@ -47,12 +47,14 @@
       "claim_id": "google-search-share-israel",
       "claim": "Google has roughly 95-98% of search market share in Israel (StatCounter ~98% in 2026).",
       "source_url": "https://gs.statcounter.com/search-engine-market-share/all/israel",
-      "raw_snippet": "Google search engine market share in Israel is approximately 98% in 2026.",
-      "fetched_at": "2026-06-23T09:30:00Z",
+      "raw_snippet": "FAQ About Feedback Statcounter Global Stats Search Engines Percentage Market Share Search Engine Market Share in Israel - July 2026 Google 98.17 % bing 1.13 % YANDEX 0.51 % DuckDuckGo 0.09 % Yahoo! 0.07 % Ecosia 0.02 % Search Engine Market Share Israel Edit Chart Data Sorry, JavaScript is required to view Global Stats charts. Save Chart Image (.png) Download Data (.csv) Embed HTML Source: Statcounter Global Stats - Browser Market Share '> Period: Set",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 7 of 9 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"google\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "google-consent-mode-v2",
@@ -71,12 +73,14 @@
       "claim_id": "meta-google-platform-changes",
       "claim": "Platform changes: Google removed Enhanced CPC (ECPC) for new Search/Display campaigns (October 2024, forced migration completed week of March 31 2025). Meta has effectively deprecated standalone Lookalike Audiences in favor of Advantage+ audience. Google ~95% search share. Israeli mobile web traffic is over 70%; Gush Dan holds roughly 40-45% of the population.",
       "source_url": "https://www.stackmatix.com/blog/facebook-lookalike-audiences-strategy-2026",
-      "raw_snippet": "Enhanced CPC was removed for new Search/Display campaigns in October 2024 with forced migration by late March 2025; Meta has shifted from standalone lookalikes to Advantage+ audience; Israeli web traffic is majority mobile (>70%).",
-      "fetched_at": "2026-06-23T09:30:00Z",
+      "raw_snippet": "Facebook Lookalike Audiences in 2026: What Changed and What Works Now",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "israeli-cpc-benchmarks",
