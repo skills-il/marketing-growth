@@ -1,0 +1,22 @@
+{
+  "cycles": [
+    {
+      "version": "1.3.0",
+      "date": "2026-08-24",
+      "lessons": [
+        "The 1.2.1 cycle corrected the 24-hour breach deadline and the 3.2M NIS fine in the Hebrew file and the changelog, but left both live in the English Gotchas and in references/chok-haspam-guide.md. Always run the 3f.1 old-value sweep across references/ and BOTH language files, not just the file where the finding surfaced.",
+        "Two Knesset URLs had been carried as authoritative citations for cycles. LawPrimary?lawitemid=2001205 actually resolves to the 2004 Ports and Shipping Authority Law, and the Amendment 13 LawBill URL returns a SharePoint error. Both were caught only by the Independent Judge opening them. A 200 status was never the check; opening the page was. All statute citations now point at he.wikisource consolidated texts, which serve raw wikitext and are deterministically greppable.",
+        "Expert MAJOR deferred: Hebrew email rendering still stops short of a shippable email. No preheader text, no alt text behaviour in Outlook, no bulletproof/VML buttons, no images-off default, no dark-mode inversion, no bidi-neutral punctuation at line ends. This is the largest remaining content gap and should be the focus of the next cycle.",
+        "Expert MAJOR deferred: automation mechanics beyond the single exit condition added this cycle. Trigger sources and webhooks, flow-versus-broadcast suppression and frequency capping, re-entry rules and cooldowns, conditional splits, holdout groups.",
+        "Expert MAJOR deferred: Israeli commercial conventions in the content itself. VAT-inclusive price display, תשלומים instalments as a conversion lever, free-shipping thresholds, and the ח\"פ / ע.מ company number in the footer alongside the address.",
+        "Expert MAJOR deferred: measurement and QA. UTM convention, per-flow revenue attribution, A/B protocol, and a pre-send QA checklist including merge-tag fallback for a missing first name, which produces a broken Hebrew vocative.",
+        "Expert MINOR deferred: BIMI and a DMARC aggregate-report reading workflow.",
+        "Vendor-specific ESP field names (Mailchimp's footer merge tags, Klaviyo's preference-centre default) were deliberately NOT encoded despite the Expert supplying them, because no vendor page could be fetched to verify them. The skill states which LAYER each duty lives in instead. If a later cycle can verify them against current vendor docs, they would make the guidance materially more actionable.",
+        "Unresolved: no authoritative source found for a regulation prescribing a period for honouring a refusal notice under section 30א(יא)(3). The skill now states the statute sets none.",
+        "Unresolved: no vendor documents Hebrew-RTL templates or an Israeli holiday calendar as a feature, though it is widely repeated. The skill now tells the user to verify rather than asserting it.",
+        "Microsoft's own high-volume-sender post contradicts itself on junk-routing versus rejection, and the learn.microsoft.com page 404s. Re-check next cycle for a dated replacement page.",
+        "Whether WhatsApp is an הודעה אלקטרונית or an הודעת מסר קצר under section 30א is stated as a reading of the statutory definitions, not as settled law. If case law or PPA guidance settles it, encode the holding."
+      ]
+    }
+  ]
+}

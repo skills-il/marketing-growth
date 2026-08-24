@@ -1,258 +1,836 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-email-sequences",
-  "generated_at": "2026-05-25T21:15:00Z",
+  "generated_at": "2026-08-24T00:00:00Z",
   "claims": [
     {
-      "claim_id": "chok-haspam-1000",
-      "claim": "Chok HaSpam (Amendment 40) statutory damages up to 1,000 NIS per unsolicited commercial message without proof of harm; effective since December 2008",
-      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
-      "raw_snippet": "1,000 ש\"ח / 1,000 NIS להודעה ספאם, תיקון 40 לחוק התקשורת, דצמבר 2008",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "amendment-40-in-force-2008",
+      "claim": "Amendment 40 to the Communications Law (section 30A, Chok HaSpam) is in force since December 2008 and was last amended in 2022 (תשפ\"ב).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "{{ח:סעיף|30א|שיגור דבר פרסומת באמצעות מיתקן בזק או ציוד קצה|תיקון: תשנ“ג־2, תשס“ה, תשס“ח־3, תשע“ו־6, תשע“ח, תשע“ח־7, תשפ“ב־2}}",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "chok-haspam-5000-bill-pending",
-      "claim": "2024 Knesset bill to raise Chok HaSpam statutory damages cap to 5,000 NIS per message has not yet passed as of mid-2026",
-      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawBill.aspx",
-      "raw_snippet": "5,000 ש\"ח / 5,000 NIS proposed cap, not yet passed",
-      "fetched_at": "2026-05-25T21:15:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "amendment-13-in-force",
-      "claim": "Amendment 13 to the Privacy Protection Law entered into force on 14 August 2025.",
-      "source_url": "https://www.gov.il/he/pages/guide_tikon13_professional",
-      "raw_snippet": "הרשות להגנת הפרטיות מפרסמת מדריך בעניין הוראות תיקון מס' 13 לחוק הגנת הפרטיות, שנכנס לתוקף ב־14 באוגוסט 2025.",
-      "fetched_at": "2026-08-11T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "amendment-13-turnover-cap-5pct",
-      "claim": "Under Amendment 13 (Fifth Schedule, section 7), where an administrative fine imposed on a violator exceeds 5% of the violator's transaction turnover, the head of the Privacy Protection Authority reduces the fine to 5% of that turnover.",
-      "source_url": "https://www.gov.il/BlobFolder/news/13_amendment/he/%D7%AA%D7%99%D7%A7%D7%95%D7%9F%2013%20-%20%D7%A4%D7%A8%D7%A1%D7%95%D7%9D%20%D7%91%D7%A1%D7%A4%D7%A8%20%D7%94%D7%97%D7%95%D7%A7%D7%99%D7%9D.pdf",
-      "raw_snippet": "(א) מצא ראש הרשות ,לבקשת המפר ,שסכום העיצום הכספי המוטל על המפר ,בין שהופחת לפי סעיף 4 ,3 ,2או 6ובין שלא הופחת כאמור ,עולה על 5%ממחזור העסקאות של המפר ,יפחית את סכום העיצום הכספי ל־ 5%ממחזור העסקאות שלו",
-      "fetched_at": "2026-08-11T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
       ],
-      "verified_via": "pdf",
-      "verified_at": "2026-08-11"
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "open-rate-benchmarks",
-      "claim": "Israeli email benchmarks 2024-2025 (Mailchimp + Brevo regional reports): 22-28% open rate, 2-4% click rate, 0.2-0.5% unsubscribe rate; personalization lifts opens 15-20%",
-      "source_url": "https://mailchimp.com/resources/email-marketing-benchmarks/",
-      "raw_snippet": "That can include adding 500 more subscribers to your email newsletter, increasing the total number of products you sell by 20%, or doubling your email campaign’s click-through rate. You should also make sure that your goals for each segment and your company’s overall goals are in sync with each other. Once you’ve set those goals, track them. If you met them, great! If not, some tweaking is necessary.",
-      "fetched_at": "2026-08-18",
+      "claim_id": "consent-written-30a-b",
+      "claim": "Section 30A(b) requires express prior consent in writing, which expressly includes an electronic message or a recorded call; a one-off approach to a business recipient is not a breach.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "לא ישגר מפרסם דבר פרסומת באמצעות פקסימיליה, מערכת חיוג אוטומטי, הודעה אלקטרונית או הודעת מסר קצר, בלא קבלת הסכמה מפורשת מראש של הנמען, בכתב, לרבות בהודעה אלקטרונית או בשיחה מוקלטת;",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"20%\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "dmarc-bulk-sender-rules",
-      "claim": "Yahoo and Google enforce DMARC for bulk senders since February 2024: bulk = 5,000+/day to either; require SPF aligned, DKIM aligned, DMARC p=none minimum, RFC 8058 one-click unsubscribe, complaint rate under 0.3%",
-      "source_url": "https://blog.google/products/gmail/gmail-security-authentication-spam-protection/",
-      "raw_snippet": "So today, we’re introducing new requirements for bulk senders — those who send more than 5,000 messages to Gmail addresses in one day — to keep your inbox even safer and more spam-free. Focus on email validation Many bulk senders don’t appropriately secure and configure their systems, allowing attackers to easily hide in their midst. To help fix that, we’ve focused on a crucial aspect of email security: the validation that a sender is who they claim to be.",
-      "fetched_at": "2026-08-18",
+      "claim_id": "disclosure-tag-persomet",
+      "claim": "Section 30A(e)(1)(a): the word פרסומת (or בקשת תרומה / תעמולה) must appear at the start of the ad, and in the subject line for an electronic message.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "היותו דבר פרסומת; המילים ”פרסומת“, ”בקשת תרומה“ או ”תעמולה“, לפי העניין, יופיעו בתחילת דבר הפרסומת, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית – בכותרת ההודעה;",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"5,000\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "yom-kippur-no-commercial-email",
-      "claim": "Commercial email must not be sent on Yom Kippur (Tishrei 10), Yom HaZikaron (Iyar 4), Yom HaShoah (Nisan 27), or during 7-day national mourning periods",
-      "source_url": "https://www.hebcal.com/home/developer-apis",
-      "raw_snippet": "יום כיפור, יום הזיכרון, יום השואה, אבל לאומי",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "disclosure-name-address",
+      "claim": "Section 30A(e)(1)(b): the advertiser's name, address, and contact details must be stated.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "שמו של המפרסם, כתובתו ודרכי יצירת הקשר עמו;",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "walla-gmail-co-il",
-      "claim": "gmail.co.il is Walla Mail (Israeli webmail), not Google; its RTL rendering behaves more like Outlook than Gmail",
-      "source_url": "https://www.walla.co.il",
-      "raw_snippet": "וואלה חדשות. ספורט. סלבס. אוכל - עדכונים ודיווחים שוטפים",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
       ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-knesset-amendment-40",
-      "claim": "Knesset Communications Law Amendment 40 text",
-      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
-      "raw_snippet": "Amendment 40",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "disclosure-refusal-route",
+      "claim": "Section 30A(e)(1)(c)(1): the right to send a refusal notice at any time, a simple and reasonable way to send it, and a valid internet address of the advertiser for that purpose.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "זכותו של הנמען לשלוח, בכל עת, הודעת סירוב כאמור בסעיף קטן (ד), ודרך אפשרית למשלוח הודעה כאמור שהיא פשוטה וסבירה בנסיבות העניין, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית – כתובת תקפה של המפרסם ברשת האינטרנט לצורך מתן הודעת סירוב;",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-ppa",
-      "claim": "Israel Privacy Protection Authority",
-      "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority",
-      "raw_snippet": "Privacy Protection Authority",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "sms-carveout-30a-e-2",
+      "claim": "Section 30A(e)(2) is a short-message carve-out that reduces the disclosure to the advertiser's name and refusal-contact details only, dropping the address.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "על אף הוראות פסקה (1), מפרסם המשגר דבר פרסומת באמצעות הודעת מסר קצר יציין בדבר הפרסומת רק את שמו ואת דרכי יצירת הקשר עמו לצורך מתן הודעת סירוב.",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-amendment-13-bill",
-      "claim": "Knesset Privacy Protection Law Amendment 13 bill text",
-      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawBill.aspx?t=LawReshumot&lawitemid=2202316",
-      "raw_snippet": "Amendment 13",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "dialer-keypress-30a-e-1-c-2",
+      "claim": "Section 30A(e)(1)(c)(2): an automated-dialer ad must open with a removal offer and allow removal by pressing a key.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "שוגר דבר פרסומת באמצעות מערכת חיוג אוטומטי, יציין המפרסם בתחילת הודעת המסר הקולי כי הנמען רשאי לבקש להסיר את שמו מרשימת התפוצה של המפרסם, ויאפשר לו, מיד לאחר מכן, להסיר את שמו כאמור גם בדרך של לחיצה על החייגן.",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-hebcal-api",
-      "claim": "Hebcal API for Jewish + Israeli holiday dates",
-      "source_url": "https://www.hebcal.com/home/developer-apis",
-      "raw_snippet": "Hebcal",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "existing-customer-30a-c",
+      "claim": "Section 30A(c) existing-customer exception requires three cumulative limbs and contains no 12-month recency window.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "הנמען מסר את פרטיו למפרסם במהלך רכישה של מוצר או שירות, או במהלך משא ומתן לרכישה כאמור, והמפרסם הודיע לו כי הפרטים שמסר ישמשו לצורך משלוח דבר פרסומת מטעמו",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-kolzchut",
-      "claim": "Kol Zchut bilingual consumer rights",
-      "source_url": "https://www.kolzchut.org.il/en",
-      "raw_snippet": "Kol Zchut",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "existing-customer-similar-kind",
+      "claim": "Section 30A(c)(3): the advertisement must concern a product or service of a similar kind.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "דבר הפרסומת מתייחס למוצר או לשירות מסוג דומה למוצר או לשירות האמורים בפסקה (1).",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-mjml",
-      "claim": "MJML email framework documentation",
-      "source_url": "https://mjml.io/documentation",
-      "raw_snippet": "MJML",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "nonprofit-email-30a-b1",
+      "claim": "Section 30A(b1) permits an association or public-benefit company to email for donations or advocacy unless the recipient refused.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "משלוח דבר פרסומת באמצעות דואר אלקטרוני לשם קבלת תרומה או תעמולה על ידי מפרסם שהוא עמותה או חברה לתועלת הציבור, לא יהווה הפרה של הוראות סעיף קטן (ב), ובלבד שהנמען לא הודיע על סירובו",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-resend-rtl",
-      "claim": "Resend React Email RTL guide",
-      "source_url": "https://resend.com/docs/send-with-react-email",
-      "raw_snippet": "Resend",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "damages-1000-30a-j-1",
+      "claim": "Section 30A(j)(1): a court may award statutory damages of up to 1,000 NIS per offending message, without proof of harm, where the sending was knowing.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "פיצויים שאינם תלויים בנזק (בסעיף זה – פיצויים לדוגמה), בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת שקיבל הנמען בניגוד להוראות סעיף זה.",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-smoove",
-      "claim": "Smoove Israeli ESP with Hebrew templates and holiday calendar",
-      "source_url": "https://www.smoove.io",
-      "raw_snippet": "Smoove",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "refusal-notice-30a-d",
+      "claim": "Section 30A(d)(1): a refusal notice may be sent at any time, free apart from sending cost, in writing or by the channel the ad arrived on. The statute states no deadline for honouring it.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "הודעת הסירוב לא תהיה כרוכה בתשלום, למעט עלות משלוח ההודעה; הודעת הסירוב תינתן בכתב או בדרך שבה שוגר דבר הפרסומת, לפי בחירת הנמען.",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-ppa-he",
-      "claim": "Israel Privacy Protection Authority Hebrew portal",
-      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
-      "raw_snippet": "הרשות להגנת הפרטיות",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "refusal-contract-end-30a-d-2",
+      "claim": "Section 30A(d)(2): in a continuing-supply contract the recipient is treated as having refused when the contract ends.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "יראו את הנמען כמי שנתן הודעת סירוב במועד סיום ההתקשרות",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
-        "SKILL_HE.md"
-      ]
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "ref-kolzchut-root",
-      "claim": "Kol Zchut root portal",
-      "source_url": "https://www.kolzchut.org.il",
-      "raw_snippet": "Kol Zchut root",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "knowledge-presumption-30a-j-5",
+      "claim": "Section 30A(j)(5) creates a rebuttable presumption of knowledge, with the criminal fine bands set by reference to Penal Law section 61 rather than a figure in section 30A.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "דינו – קנס כאמור בסעיף 61(א)(4) לחוק העונשין",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
-        "SKILL_HE.md"
-      ]
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "section-30a-incidental",
-      "claim": "Section 30A (סעיף 30א) of the Israeli Communications Law is the canonical reference for the Chok HaSpam provision",
-      "source_url": "https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/LawPrimary.aspx?lawitemid=2001205",
-      "raw_snippet": "סעיף 30א לחוק התקשורת",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "claim_id": "bill-5000-not-enacted",
+      "claim": "Kol Zchut states the statutory damages as up to 1,000 NIS per advertisement without proof of harm; no source supports an enacted 5,000 NIS ceiling, and the consolidated statute still reads 1,000.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה, בלי צורך להוכיח שנגרם נזק",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "registration-10000-direct-mail",
+      "claim": "Amendment 13 section 8A(a): registration is required for a database whose main purpose is supplying personal data to others as a business or for consideration, including direct-mail services, holding data on more than 10,000 people.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "מטרתו העיקרית היא איסוף מידע אישי לשם מסירתו לאחר כדרך עיסוק או בתמורה, לרבות שירותי דיוור ישיר, ויש במאגר מידע אישי על יותר מ־10,000 בני אדם;",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "notification-100000-sensitive",
+      "claim": "Amendment 13 section 8A(b)(1): a non-registrable database holding specially-sensitive data on more than 100,000 people must notify the Authority within 30 days.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "עלה מספר בני האדם שיש על אודותיהם מידע בעל רגישות מיוחדת במאגר מידע שאינו מאגר חייב ברישום לפי סעיף קטן (א)(1), על 100,000, יודיע בעל השליטה במאגר המידע לרשות, בתוך 30 ימים מהתקיימות האמור",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "dpo-triggers-17b1",
+      "claim": "Amendment 13 section 17B1(a): four DPO triggers, of which the only numeric one is the 10,000-person direct-mail test. There is no 100,000-subject DPO trigger.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "בעל שליטה במאגר מידע או מחזיק במאגר מידע שעיסוקיו העיקריים כוללים פעולות עיבוד מידע או כרוכים בפעולות כאמור, אשר נוכח טיבן, היקפן או מטרתן מחייבות ניטור שוטף ושיטתי של בני אדם",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "direct-mail-17d",
+      "claim": "Amendment 13 section 17D: processing in a direct-mail database requires registration with direct-mail services as a registered purpose. Section 17C was repealed.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "לא יעבד בעל שליטה במאגר מידע או מחזיק במאגר מידע, מידע אישי במאגר מידע המשמש לשירותי דיוור ישיר, אלא אם כן הוא רשום במרשם ואחת ממטרותיו הרשומות היא שירותי",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "direct-mail-17f-registration-number",
+      "claim": "Amendment 13 section 17F(a)(1): every direct-mail approach must state that it is direct mail together with the database's registration number.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "כל פניה בדיוור ישיר תכיל באופן ברור ובולט – ציון כי הפניה היא בדיוור ישיר, בצירוף ציון מספר הרישום של המאגר המשמש לשירותי דיוור ישיר במרשם מאגרי מידע;",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "direct-mail-17f-deletion-right",
+      "claim": "Amendment 13 section 17F(a)(2)-(3): the approach must state the deletion right with the address to write to, and the controller's identity, address, and data sources.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "הודעה על זכותו של מקבל הפניה להימחק מן המאגר כאמור בסעיף קטן (ב); בצירוף המען שאליו יש לפנות לצורך כך;",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "access-30-days",
+      "claim": "Privacy Protection (Conditions for Inspecting Information) Regulations 1981, reg. 4(a): access must be granted within 30 days, extendable by the Registrar by 15 further days.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA%20%28%D7%AA%D7%A0%D7%90%D7%99%D7%9D%20%D7%9C%D7%A2%D7%99%D7%95%D7%9F%20%D7%91%D7%9E%D7%99%D7%93%D7%A2%20%D7%95%D7%A1%D7%93%D7%A8%D7%99%20%D7%94%D7%93%D7%99%D7%9F%20%D7%91%D7%A2%D7%A8%D7%A2%D7%95%D7%A8%20%D7%A2%D7%9C%20%D7%A1%D7%99%D7%A8%D7%95%D7%91%20%D7%9C%D7%91%D7%A7%D7%A9%D7%AA%20%D7%A2%D7%99%D7%95%D7%9F%29",
+      "raw_snippet": "ובלבד שהמועד יחול תוך 30 ימים מיום שנתקבלה הבקשה לעיון",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "refusal-notice-21-days",
+      "claim": "1981 access regulations, reg. 5(a): a refusal to grant access must be notified within 21 days of the request.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA%20%28%D7%AA%D7%A0%D7%90%D7%99%D7%9D%20%D7%9C%D7%A2%D7%99%D7%95%D7%9F%20%D7%91%D7%9E%D7%99%D7%93%D7%A2%20%D7%95%D7%A1%D7%93%D7%A8%D7%99%20%D7%94%D7%93%D7%99%D7%9F%20%D7%91%D7%A2%D7%A8%D7%A2%D7%95%D7%A8%20%D7%A2%D7%9C%20%D7%A1%D7%99%D7%A8%D7%95%D7%91%20%D7%9C%D7%91%D7%A7%D7%A9%D7%AA%20%D7%A2%D7%99%D7%95%D7%9F%29",
+      "raw_snippet": "יודיע על כך למבקש תוך 21 ימים מיום קבלת הבקשה",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "breach-immediate-reg-11d",
+      "claim": "Regulation 11(d) of the Privacy Protection (Data Security) Regulations 2017 requires a serious security incident to be reported to the Registrar immediately, not on a 24-hour clock, and applies to medium and high security-level databases.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA%20%28%D7%90%D7%91%D7%98%D7%97%D7%AA%20%D7%9E%D7%99%D7%93%D7%A2%29",
+      "raw_snippet": "אירע אירוע אבטחה חמור – {{ח:תתת|(1)}} יודיע על כך בעל המאגר לרשם באופן מיידי, וכן ידווח לרשם על הצעדים שנקט בעקבות האירוע;",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "penalties-23z6-fixed",
+      "claim": "Amendment 13 section 23Z6 sets fixed administrative penalty amounts, for example 150,000 NIS, doubled where the database covers a million people or more.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "רשאי ראש הרשות להטיל עליו עיצום כספי בסכום של 150,000 שקלים חדשים, ואם במאגר המידע היה מידע אישי על אודות 1,000,000 בני אדם ומעלה, רשאי ראש הרשות להטיל עליו את כפל הסכום",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "penalty-5pct-is-a-reduction",
+      "claim": "The 5%-of-turnover figure in Amendment 13 is a reduction the head of the Authority applies under the Fifth Schedule, not an automatic cap. A penalty computed below 30,000 NIS may be raised to 30,000 NIS.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "עולה על 5% ממחזור העסקאות של המפר, יפחית את סכום העיצום הכספי ל־5% ממחזור העסקאות שלו",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "eu-adequacy-2011",
+      "claim": "EU adequacy Decision 2011/61/EU for Israel remains in force; the most recent concluded Commission review is COM(2024) 7 final of 15 January 2024, which predates Amendment 13. No post-Amendment-13 review has concluded.",
+      "source_url": "https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en",
+      "raw_snippet": "The European Commission has so far recognised: Andorra , Argentina , Brazil , Canada (commercial organisations), Faroe Islands , Guernsey , Israel , Isle of Man , Japan , Jersey , New Zealand , Republic of Korea , Switzerland , the United Kingdom under the GDPR and the LED",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
         "references/chok-haspam-guide.md"
       ]
     },
     {
-      "claim_id": "ref-activetrail",
-      "claim": "ActiveTrail Israeli ESP with RTL templates and SMS+email",
+      "claim_id": "google-bulk-5000",
+      "claim": "Google: senders of more than 5,000 messages per day to personal Gmail accounts in a 24-hour period are bulk senders, counted per primary domain, with bulk status permanent once assigned.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "A bulk sender is any email sender that sends close to 5,000 messages or more to personal Gmail accounts within a 24-hour period.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "google-bulk-permanent",
+      "claim": "Google: bulk sender status has no expiration and does not revert.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "Senders who meet the above criteria at least once are permanently considered bulk senders.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "google-enforcement-nov-2025",
+      "claim": "Google began ramping enforcement to temporary and permanent rejections in November 2025.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "Starting November 2025, Gmail is ramping up its enforcement on non-compliant traffic.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "google-spam-rates",
+      "claim": "Google states two spam-rate figures: keep below 0.10% and never reach 0.30%.",
+      "source_url": "https://support.google.com/a/answer/81126?hl=en",
+      "raw_snippet": "Keep spam rates reported in Postmaster Tools below 0.10% and avoid ever reaching a spam rate of 0.30% or higher.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "google-mitigation-7-days",
+      "claim": "Google: senders above a 0.3% spam rate are ineligible for mitigation until the rate stays below 0.3% for 7 consecutive days.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "Bulk senders will be eligible for mitigation when their spam rates remain below 0.3% for 7 consecutive days.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "google-unsub-48h",
+      "claim": "Google requires unsubscribe requests to be honored within 48 hours.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "Unsubscribe requests aren’t honored within 48 hours",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "google-oneclick-marketing-only",
+      "claim": "Google: one-click unsubscribe is required only for marketing and promotional messages; transactional messages are excluded.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "One-click unsubscribe is required only for marketing and promotional messages. Transactional messages are excluded from this requirement.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "rfc-8058-headers",
+      "claim": "Google directs senders to follow the RFC 8058 one-click unsubscribe specification and add List-Unsubscribe headers to all outgoing promotional messages.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "Senders should follow the specifications for one-click unsubscribe that are defined in RFC 8058",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "dmarc-p-none",
+      "claim": "Google: the DMARC enforcement policy may be set to none.",
+      "source_url": "https://support.google.com/a/answer/81126?hl=en",
+      "raw_snippet": "Your DMARC enforcement policy can be set to none",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "dmarc-alignment-one-of-two",
+      "claim": "Google requires both SPF and DKIM to be set up, but only one needs to be aligned with the From domain.",
+      "source_url": "https://support.google.com/a/answer/14229414?hl=en",
+      "raw_snippet": "Although we require bulk senders to set up both SPF and DKIM authentication, only one of these needs to be aligned to meet the sender alignment requirements.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "google-feb-2024",
+      "claim": "Google's bulk-sender requirements took effect on February 1, 2024.",
+      "source_url": "https://support.google.com/a/answer/81126?hl=en",
+      "raw_snippet": "Starting February 1, 2024, email senders who send more than 5,000 messages per day to Gmail accounts must meet the requirements in this section.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "yahoo-requirements",
+      "claim": "Yahoo requires SPF and DKIM, a DMARC policy of at least p=none, a spam rate below 0.3%, one-click unsubscribe, and honoring unsubscribes within 2 days.",
+      "source_url": "https://senders.yahooinc.com/best-practices/",
+      "raw_snippet": "Honor unsubscribes within 2 days",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ]
+    },
+    {
+      "claim_id": "microsoft-5000-may-2025",
+      "claim": "Microsoft requires domains sending over 5,000 emails per day to consumer Outlook, Hotmail or Live to pass SPF, DKIM and DMARC, effective May 5, 2025.",
+      "source_url": "https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730",
+      "raw_snippet": "For domains sending over 5,000 emails per day, Outlook will soon require compliance with SPF, DKIM, DMARC.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ]
+    },
+    {
+      "claim_id": "microsoft-junk-then-reject",
+      "claim": "Microsoft's announcement describes junk-folder routing after May 5 2025 with a 550 5.7.515 rejection and full rejection at a date to be announced.",
+      "source_url": "https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%E2%80%99s-new-requirements-for-high%E2%80%90volume-senders/4399730",
+      "raw_snippet": "550; 5.7.515 Access denied, sending domain",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ]
+    },
+    {
+      "claim_id": "dkim2-draft-only",
+      "claim": "DKIM2 is an IETF Internet-Draft with no RFC and no provider deployment; the current spec draft is dated July 2026.",
+      "source_url": "https://datatracker.ietf.org/doc/draft-ietf-dkim-dkim2-spec/",
+      "raw_snippet": "draft-ietf-dkim-dkim2-spec-04 Network Working Group R. Clayton Internet-Draft Yahoo Intended status: Standards Track W. Chuang Expires: 6 January 2027 Google B. Gondwana Fastmail Pty Ltd 5 July 2026",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ]
+    },
+    {
+      "claim_id": "caniemail-dir-orange",
+      "claim": "Orange webmail removes the dir attribute from table and td elements; Outlook Windows reverses word order for LTR runs inside RTL blocks, and Gmail mobile applies RTL to the whole email.",
+      "source_url": "https://www.caniemail.com/features/html-dir/",
+      "raw_snippet": "Removed from",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ]
+    },
+    {
+      "claim_id": "mjml-dir-root-tag",
+      "claim": "In MJML the dir attribute is set on the root mjml tag and propagates to the html and body wrapper elements.",
+      "source_url": "https://mjml.io/documentation",
+      "raw_snippet": "dir",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ]
+    },
+    {
+      "claim_id": "activetrail-il-benchmark-2026",
+      "claim": "ActiveTrail's 2026 Israeli benchmark report: average open rate about 40%, top decile above 53%, average click rate around 3% rising to 5% for leaders.",
+      "source_url": "https://www.activetrail.co.il/blog/marketing_automation_articles_il/email-marketing-benchmark-2026/",
+      "raw_snippet": "שיעור הפתיחה הממוצע עמד על כ-40%. בקרב 10% הארגונים המובילים הנתון חצה את רף ה-53%. שיעור הקליקים הממוצע נע סביב 3%, בעוד שאצל המובילים טיפס ל-5%.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "mpp-inflates-open-rates",
+      "claim": "Apple Mail Privacy Protection auto-opens messages and inflates open rates, so current open-rate benchmarks are not comparable to pre-MPP figures.",
+      "source_url": "https://mailchimp.com/resources/email-marketing-benchmarks/",
+      "raw_snippet": "Mail Privacy Protection",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ]
+    },
+    {
+      "claim_id": "israeli-esps-live",
+      "claim": "ActiveTrail markets itself as an Israeli multi-channel messaging platform covering email and SMS.",
       "source_url": "https://www.activetrail.com",
       "raw_snippet": "ActiveTrail",
-      "fetched_at": "2026-05-25T21:15:00Z",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z",
+      "note": "Vendor site is bot-protected; the skill states only that the vendors were live and market email plus SMS, and directs the reader to verify tiers and ownership themselves."
+    },
+    {
+      "claim_id": "ref-hebcal-api",
+      "claim": "Hebcal publishes a developer API for Jewish and Israeli holiday dates.",
+      "source_url": "https://www.hebcal.com/home/developer-apis",
+      "raw_snippet": "API",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ]
     },
     {
-      "claim_id": "registration-10000-direct-mail",
-      "claim": "A database whose main purpose is collecting personal information in order to supply it to others as a business or for consideration, including direct-mail services, must register once it holds information on 10,000 people or more.",
-      "source_url": "https://www.gov.il/he/pages/tikun13_qa",
-      "raw_snippet": "מאגר שמטרתו העיקרית היא איסוף מידע אישי לשם מסירתו לאחר כדרך עיסוק או בתמורה, לרבות שירותי דיוור ישיר, ויש במאגר מידע על 10,000 בני אדם ומעלה.",
-      "fetched_at": "2026-08-11",
-      "verified_via": "gov.il content API",
-      "verified_at": "2026-08-11",
+      "claim_id": "section-ref-30a",
+      "claim": "The anti-spam provision is section 30A of the Communications Law (Telecommunications and Broadcasts), headed 'שיגור דבר פרסומת באמצעות מיתקן בזק או ציוד קצה'.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "והגבלה של קבלת שיחות שבוצעו ממערכת חיוג אוטומטי כהגדרתה {{ח:פנימי|סעיף 30א|בסעיף 30א(א)}}",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
-      ]
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     },
     {
-      "claim_id": "notification-100000-sensitive",
-      "claim": "A database holding specially-sensitive information on more than 100,000 people, where the registration duty does not apply, must notify the Privacy Protection Authority within 30 days under Section 8a(b). This is a NOTIFICATION duty, not a DPO-appointment threshold.",
-      "source_url": "https://www.gov.il/he/pages/tikun13_qa",
-      "raw_snippet": "ביחס למאגרי מידע שיש בהם \"מידע בעל רגישות מיוחדת\", בהתאם להגדרה החדשה בחוק, על יותר מ-100,000 איש, וחובת הרישום אינה חלה עליהם, נקבעה חובה חדשה בדין של מסירת הודעה לרשות בתוך 30 יום על מאגר המידע.",
-      "fetched_at": "2026-08-11",
-      "verified_via": "gov.il content API",
-      "verified_at": "2026-08-11",
+      "claim_id": "section-ref-8a",
+      "claim": "Amendment 13 places the database registration and notification duties in section 8A of the Privacy Protection Law.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "אם המאגר חייב ברישום לפי הוראות {{ח:פנימי|סעיף 8א|סעיף 8א}} – עיבד מידע אישי במאגר מידע בלי שנרשם",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "section-ref-17b1",
+      "claim": "Amendment 13 places the privacy-officer (DPO) appointment duty in section 17ב1 of the Privacy Protection Law.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "{{ח:פנימי|סעיף 17ב|17ב}}, {{ח:פנימי|סעיף 17ב1|17ב1}}, {{ח:פנימי|סעיף 17ב2|17ב2}}, {{ח:פנימי|סעיף 17ו|17ו}}",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "section-ref-17c-repealed",
+      "claim": "Section 17ג of the Privacy Protection Law was repealed by Amendment 13; the direct-mail duties now sit in sections 17ד to 17ו.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "סימן ב׳: דיוור ישיר|תיקון: תשנ״ו}} {{ח:סעיף|17ג||תיקון: תשנ״ו, תשפ״ד}} {{ח:ת}} {{ח:הערה|(בוטל).}}",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "section-ref-17f",
+      "claim": "Amendment 13 places the direct-mail disclosure duties, including the database registration number, in section 17ו of the Privacy Protection Law.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "לא נענה לדרישתו של אדם בהתאם {{ח:פנימי|סעיף 17ו|לסעיף 17ו(ב)}}, שמידע אישי המתייחס אליו יימחק ממאגר מידע המשמש לדיוור ישיר",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "section-ref-23z6",
+      "claim": "Amendment 13 places the administrative penalty amounts in section 23כו of the Privacy Protection Law.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "קבע שר המשפטים, באישור ועדת החוקה, צו לפי {{ח:פנימי|סעיף 23כו|סעיף 23כו(ד)(1)(ז)}}",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "penalty-30000-floor",
+      "claim": "Amendment 13 section 23כו(ג)(2): where the computed penalty falls below 30,000 NIS the head of the Authority may impose 30,000 NIS.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%92%D7%A0%D7%AA_%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+      "raw_snippet": "היה סכום העיצום הכספי לפי פסקה (1) קטן מ־30,000 שקלים חדשים, רשאי ראש הרשות להטיל על בעל שליטה במאגר מידע או על מחזיק במאגר מידע עיצום כספי בסכום של 30,000 שקלים חדשים.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "breach-severe-definition",
+      "claim": "Regulation 1 of the 2017 Data Security Regulations defines a serious security incident by reference to high and medium security-level databases, so the immediate-reporting duty attaches only to those levels.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA%20%28%D7%90%D7%91%D7%98%D7%97%D7%AA%20%D7%9E%D7%99%D7%93%D7%A2%29",
+      "raw_snippet": "”אירוע אבטחה חמור“ – כל אחד מאלה: {{ח:תתת|(1)}} במאגר מידע שחלה עליו רמת אבטחה גבוהה – אירוע שנעשה בו שימוש במידע מן המאגר, בלא הרשאה או בחריגה מהרשאה או שנעשתה פגיעה בשלמות המידע;",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "ref-ppa-en",
+      "claim": "The Privacy Protection Authority is Israel's regulatory and enforcement authority for personal digital information under the Privacy Protection Law.",
+      "source_url": "https://www.gov.il/en/departments/the_privacy_protection_authority",
+      "raw_snippet": "The Privacy Protection Authority is the Israeli regulatory and enforcing authority for personal digital information, in accordance with the Privacy Protection Law.",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "ref-kolzchut-he",
+      "claim": "Kol Zchut publishes a Hebrew plain-language page on compensation for advertisements sent without consent under Chok HaSpam. Its English pages were removed in 2023.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה",
+      "fetched_at": "2026-08-24T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "smoove-hebrew-rtl-ui",
+      "claim": "smoove.io serves its site with a Hebrew right-to-left document root.",
+      "source_url": "https://www.smoove.io",
+      "raw_snippet": "<html dir=\"rtl\" lang=\"he-IL\"",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "regulation-ref-11",
+      "claim": "Regulation 11 of the 2017 Data Security Regulations is the provision governing security-incident documentation and reporting.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA%20%D7%94%D7%92%D7%A0%D7%AA%20%D7%94%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA%20%28%D7%90%D7%91%D7%98%D7%97%D7%AA%20%D7%9E%D7%99%D7%93%D7%A2%29",
+      "raw_snippet": "אופן התמודדות עם אירועי אבטחת מידע כאמור {{ח:פנימי|סעיף 11|בתקנה 11}}, לפי חומרת האירוע ומידת רגישות המידע;",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
+    },
+    {
+      "claim_id": "ref-ppa-he",
+      "claim": "The Privacy Protection Authority's Hebrew department page carries its Amendment 13 and Data Security Regulations topic hubs and its database-registration services.",
+      "source_url": "https://www.gov.il/he/departments/the_privacy_protection_authority",
+      "raw_snippet": "תקנות הגנת הפרטיות (אבטחת מידע) פעילות בין-לאומית הנחיות הרשות להגנת הפרטיות מידע ביומטרי חתימה אלקטרונית בחירות תיקון 13 לחוק הגנת הפרטיות",
+      "fetched_at": "2026-08-24T00:00:00Z",
+      "appears_in": [
+        "SKILL_HE.md",
+        "references/chok-haspam-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-24T00:00:00Z"
     }
   ]
 }
