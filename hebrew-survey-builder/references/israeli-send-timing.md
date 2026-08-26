@@ -1,13 +1,17 @@
 # When to Send Surveys in Israel
 
-Israeli response patterns are shaped by the Jewish work week, religious observances, and cultural rhythms. Sending at the wrong time tanks your response rate even if the questions are perfect. This reference is about *when* to push a survey, not *what* to put in it (see `hebrew-survey-templates.md` for content).
+Israeli response patterns are shaped by the Jewish work week, religious observances, and cultural rhythms. Sending at the wrong time hurts your response rate even if the questions are perfect. This reference is about *when* to push a survey, not *what* to put in it (see `hebrew-survey-templates.md` for content).
+
+**What this guidance is, and is not.** The recommendations below are reasoned from structural facts about Israel that are not in dispute: the work week runs Sunday to Thursday, Friday is a short day, Shabbat and the chagim take observant recipients offline, and chag weeks pull large numbers of people out of the office. They are **not** measured response-rate findings, and no published Israeli send-time study is cited here because none was found. So use them as defaults, and do not quote a percentage uplift to a client. The one number that should drive your decisions is your own: log send day, send hour and response rate for every wave, and after three or four waves your own data outranks everything on this page.
+
+**Before you send: is your invite an advertisement?** A neutral research invite is one thing. The moment you attach an incentive (a prize draw, a discount code, a gift card) or use the invite to talk up your product, the message may qualify as a commercial communication under Israel's anti-spam rules, which turn on prior consent, identifying the sender, and offering a working opt-out, and which carry statutory damages. This bites hardest on the channels this skill actually recommends: email, SMS and WhatsApp to a customer list. Prize draws carry their own restrictions in Israel on top of that. Get the incentive design checked before you send, rather than after. This is a flag, not legal advice: verify against the current statute or with counsel.
 
 ## Day of Week
 
 | Day | Verdict | Why |
 |-----|---------|-----|
 | Sunday | Best | Start of the Israeli work week. Inboxes are fresh, not yet cluttered. |
-| Monday–Wednesday | Good | Steady engagement. Tuesday and Wednesday are typically the best days for B2B. |
+| Monday-Wednesday | Good | Steady engagement. Tuesday and Wednesday are typically the best days for B2B. |
 | Thursday | Acceptable, leaning late | People are wrapping up the week; less attention for non-urgent items. |
 | Friday (morning) | Risky | Short workday for most Israelis. Many offices close by noon or run half-day. |
 | Friday (afternoon) | Avoid | Shabbat prep begins. Observant recipients are offline. |
@@ -18,8 +22,8 @@ Israeli response patterns are shaped by the Jewish work week, religious observan
 
 For Sunday through Thursday:
 
-- **Morning (9:00–11:00)**, Strong window. Morning coffee, before the day gets hectic.
-- **Early afternoon (13:00–14:00)**, Second best. Post-lunch lull, good for quick surveys.
+- **Morning (9:00-11:00)**, Strong window. Morning coffee, before the day gets hectic.
+- **Early afternoon (13:00-14:00)**, Second best. Post-lunch lull, good for quick surveys.
 - **Late afternoon (after 17:00)**, Weaker. People are wrapping up / commuting.
 - **Before 08:30 or after 20:00**, Avoid unless your audience is specifically known to be online then (night-shift workers, global remote teams).
 
@@ -51,12 +55,12 @@ The two week-long holidays (Sukkot and Pesach) are especially bad. Offices run o
 
 ## Audience Caveat
 
-These rules apply to Hebrew surveys sent to Israeli audiences. If your audience is specifically global-English-speaking Israelis (e.g., expats, tech workers in multinational companies, offshore engineers), day-of-week patterns shift slightly toward Western Monday–Friday norms. The chag warnings still apply, those hit regardless of language.
+These rules apply to Hebrew surveys sent to Israeli audiences. If your audience is specifically global-English-speaking Israelis (e.g., expats, tech workers in multinational companies, offshore engineers), day-of-week patterns shift slightly toward Western Monday-Friday norms. The chag warnings still apply, those hit regardless of language.
 
 ## Quick Decision Tree
 
 1. Is it a chag week? → Delay until after the chag.
 2. Is it Friday after lunch or Shabbat? → Delay until Sunday morning.
 3. Is it a transactional survey (post-ticket, post-event)? → Send now, as close to the interaction as possible.
-4. Is it a relationship survey (NPS, quarterly CSAT)? → Tuesday or Wednesday, 9:30–11:00.
+4. Is it a relationship survey (NPS, quarterly CSAT)? → Tuesday or Wednesday, 9:30-11:00.
 5. Unsure? → Sunday 10:00 is the safest default.

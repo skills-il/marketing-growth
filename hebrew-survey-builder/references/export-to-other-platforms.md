@@ -31,7 +31,7 @@ This reference covers Typeform, SurveyMonkey, Tally, Microsoft Forms, and lightw
 
 - Create a new form in the Tally form builder.
 - Use the rating/scale block for NPS/CSAT/CES and the long-text block for open-ended questions.
-- Hebrew text renders RTL automatically in the published form.
+- RTL is a **manual setting**, not automatic. Tally lists Hebrew among three RTL-supported languages (Arabic, Hebrew, Yoruba), and per its own docs: "When you select one of these languages, the Text direction setting will appear. Choose the text direction and click Save changes." Set it before you publish, or Hebrew ships LTR.
 - Tally is a reasonable option for users who want something simple, fast, and non-Google. It is especially useful for Israeli indie hackers and solo founders.
 
 ## Microsoft Forms
@@ -59,9 +59,29 @@ For very short surveys (two or three questions at most), skip form builders enti
 ## Gotchas when moving between platforms
 
 1. **Don't re-translate through a second channel.** Every time the Hebrew text passes through a translator, paraphraser, or "cleanup" pass, it drifts back toward literal-English phrasing. Copy the Hebrew directly from the reference file and do not touch it.
-2. **Always preview RTL before sending.** If you see Hebrew displayed LTR in the preview, it will look broken to recipients. Most platforms auto-detect direction, but some have quirks around titles that start with ASCII characters or digits.
+2. **Always preview RTL before sending.** If you see Hebrew displayed LTR in the preview, it will look broken to recipients. Do not assume auto-detection: it varies by platform.
+
+   | Platform | RTL behaviour | Source |
+   |---|---|---|
+   | SurveyMonkey | Automatic. "Hebrew, Arabic, and Persian text automatically displays in RTL orientation." | help.surveymonkey.com multilingual-surveys |
+   | Typeform | Supported. "Currently, the only right-to-left languages supported are Arabic and Hebrew." | help.typeform.com form-language |
+   | Tally | Manual toggle, see above | tally.so/help/supported-languages |
+   | Microsoft Forms | Hebrew is a supported interface language, but Microsoft documents nothing about RTL rendering. Preview before committing. | support.microsoft.com languages-supported |
+   | Google Forms | Infers direction from the first strong character; a title starting with ASCII or a digit can flip the paragraph LTR. | see SKILL.md Troubleshooting |
+
+3. **Check the free tier before you commit to a platform.** A survey tool that caps responses below your list size wastes the whole send.
+
+   | Platform | Free-tier constraint worth knowing |
+   |---|---|
+   | Microsoft Forms | On a personal Microsoft account, "the number of responses a form/quiz can receive is up to 200 for free accounts up to 1,000 for paid accounts". Work/school accounts are far higher. |
+   | SurveyMonkey | The free Basic plan caps questions per survey (10 at time of writing) and limits how many responses you can view. Check the current pricing page. |
+   | Typeform | The free plan's monthly response cap is low enough that a real NPS wave will exhaust it. Check the current pricing page before choosing Typeform for anything at volume. |
+   | Tally | Generous free tier, which is why it suits solo founders and indie hackers. |
+   | Google Forms | No response cap that a normal survey will reach, which is the main practical reason to prefer it for a large Israeli list. Google does publish per-form limits; check them if your list is very large. |
+
+   Pricing pages change often. Treat the numbers above as a prompt to check, not as current fact.
 3. **Do not manually reverse NPS scale numbers.** In Hebrew, users read right-to-left, so on a 0-10 NPS scale some platforms visually flip the scale (10 on the left, 0 on the right). This is correct, do not manually reverse the numbers to "fix" it.
-4. **Email subject lines must also be in Hebrew.** For surveys sent via email, the subject line should be Hebrew to match the body. English subject + Hebrew body gets filed as spam more often.
+4. **Email subject lines must also be in Hebrew.** For surveys sent via email, the subject line should be Hebrew to match the body. Match the subject language to the body. A Hebrew survey behind an English subject line reads as a mismatched mass mailing to recipients, which is reason enough; no deliverability measurement is cited for it here.
 5. **Map question types carefully.** A "rating" in one tool may not support the same range as another. Check before assuming, NPS needs 0-10, CES needs 1-7, and some tools default to 1-5 for all ratings, which silently corrupts your analysis.
 
 ## Which platform should I pick?

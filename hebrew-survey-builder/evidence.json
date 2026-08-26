@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "hebrew-survey-builder",
-  "generated_at": "2026-05-31T00:00:00Z",
+  "generated_at": "2026-08-26T17:21:42.940387+00:00",
   "claims": [
     {
       "claim_id": "gws-cli-exists",
@@ -20,12 +20,14 @@
       "claim": "gws forms create copies only info.title and info.documentTitle; all other fields (description, items, settings) are disallowed and must be added via batchUpdate.",
       "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-forms/SKILL.md",
       "raw_snippet": "Only the form.info.title and form.info.document_title fields are copied to the new form. All other fields including the form description, items and settings are disallowed.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "fetched_at": "2026-08-26T17:05:37.226751+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/gws-forms-cheatsheet.md"
-      ]
+      ],
+      "verified_via": "text",
+      "verified_at": "2026-08-26T17:05:37.226751+00:00"
     },
     {
       "claim_id": "forms-api-methods",
@@ -54,13 +56,196 @@
     },
     {
       "claim_id": "privacy-amendment-13",
-      "claim": "Israel's Privacy Protection Law Amendment 13 entered into force on 14 August 2025 and requires consent to be explicit and privacy notices to state what data is collected, why, and with whom it is shared.",
-      "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
-      "raw_snippet": "Amendment 13",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "claim": "Israel's Privacy Protection Law Amendment No. 13, approved 5 August 2024, came into effect on 14 August 2025.",
+      "source_url": "https://www.dlapiperdataprotection.com/index.html?t=law&c=IL",
+      "raw_snippet": "which shall come into effect on August 14, 2025",
+      "fetched_at": "2026-08-26T17:11:10.392751+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ],
+      "verified_at": "2026-08-26T17:11:10.392751+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "forms-unpublished-by-default-2026-06-30",
+      "claim": "Google Forms created through the API after 30 June 2026 are created in an unpublished state and do not accept responses until forms.setPublishSettings is called.",
+      "source_url": "https://developers.google.com/workspace/forms/api/guides/api-changes-to-google-forms",
+      "raw_snippet": "forms created by the API after June 30, 2026 will be created in an unpublished state. You must publish the forms before they can accept responses.",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "forms-unpublished-no-action",
+      "claim": "If no action is taken, API-created forms after June 30 2026 stay unpublished and receive no responses.",
+      "source_url": "https://developers.google.com/workspace/forms/api/guides/api-changes-to-google-forms",
+      "raw_snippet": "will be in an unpublished state by default and won't receive responses",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "forms-permissions-create-for-responders",
+      "claim": "Sharing a form with specific responders is done via the Drive permissions.create method, not via publishSettings.",
+      "source_url": "https://developers.google.com/workspace/forms/api/guides/api-changes-to-google-forms",
+      "raw_snippet": "The permissions.create method can be used to share the form with responders.",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "gws-command-shape",
+      "claim": "The gws CLI command shape is `gws <service> <resource> [sub-resource] <method>`, so the forms resource in the forms service is `gws forms forms <method>`.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-shared/SKILL.md",
+      "raw_snippet": "gws <service> <resource> [sub-resource] <method> [flags]",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gws-forms-cheatsheet.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "gws-params-is-json",
+      "claim": "The gws --params flag takes a JSON object, not key=value pairs.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-shared/SKILL.md",
+      "raw_snippet": "| `--params '{\"key\": \"val\"}'` | URL/query parameters |",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gws-forms-cheatsheet.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "forms-legacy-no-publishsettings",
+      "claim": "Legacy Google Forms do not support setPublishSettings because they lack the publish_settings field.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-forms/SKILL.md",
+      "raw_snippet": "Legacy forms aren't supported because they don't have the `publish_settings` field.",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "forms-create-title-only",
+      "claim": "Google Forms create copies only form.info.title and form.info.document_title; all other fields including description, items and settings are disallowed.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-forms/SKILL.md",
+      "raw_snippet": "Only the form.info.title and form.info.document_title fields are copied to the new form.",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gws-forms-cheatsheet.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "tally-rtl-manual-toggle",
+      "claim": "Tally supports RTL for Arabic, Hebrew and Yoruba, and the text direction is a setting the form creator must choose and save, not automatic.",
+      "source_url": "https://tally.so/help/supported-languages",
+      "raw_snippet": "When you select one of these languages, the Text direction setting will appear.",
+      "appears_in": [
+        "references/export-to-other-platforms.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "surveymonkey-rtl-automatic",
+      "claim": "SurveyMonkey displays Hebrew, Arabic and Persian text in RTL orientation automatically.",
+      "source_url": "https://help.surveymonkey.com/en/surveymonkey/create/multilingual-surveys/",
+      "raw_snippet": "automatically displays in RTL orientation",
+      "appears_in": [
+        "references/export-to-other-platforms.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "typeform-rtl-languages",
+      "claim": "Typeform supports Arabic and Hebrew as its only right-to-left languages.",
+      "source_url": "https://help.typeform.com/hc/en-us/articles/360050914231-Change-your-form-language",
+      "raw_snippet": "right-to-left languages supported are Arabic and Hebrew",
+      "appears_in": [
+        "references/export-to-other-platforms.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "msforms-free-200-responses",
+      "claim": "On a personal Microsoft account, a Microsoft Form can receive up to 200 responses on free accounts and up to 1,000 on paid accounts.",
+      "source_url": "https://support.microsoft.com/en-us/forms/form-question-response-and-character-limits-in-microsoft-forms",
+      "raw_snippet": "up to 200 for free accounts up to 1,000 for paid accounts",
+      "appears_in": [
+        "references/export-to-other-platforms.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "msforms-hebrew-supported-language",
+      "claim": "Hebrew is a supported Microsoft Forms language, but Microsoft documents nothing about RTL rendering.",
+      "source_url": "https://support.microsoft.com/en-US/Forms/languages-supported-by-microsoft-forms",
+      "raw_snippet": "Hebrew",
+      "appears_in": [
+        "references/export-to-other-platforms.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "qualtrics-ces-low-effort-polarity",
+      "claim": "The original Customer Effort Score phrasing, still documented by major CX vendors, asks how easy an interaction was on a very easy to very difficult scale, so both CES polarities exist in practice.",
+      "source_url": "https://www.qualtrics.com/experience-management/customer/customer-effort-score/",
+      "raw_snippet": "Customer Effort Score",
+      "appears_in": [
+        "references/hebrew-survey-templates.md"
+      ],
+      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "forms-updateforminfo-request",
+      "claim": "The Forms batchUpdate API exposes an updateFormInfo request for setting the form description after creation, which is the only way to add a description since create disallows it.",
+      "source_url": "https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate",
+      "raw_snippet": "UpdateFormInfoRequest",
+      "fetched_at": "2026-08-26T17:21:42.940387+00:00",
+      "verified_at": "2026-08-26T17:21:42.940387+00:00",
+      "verified_via": "text",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/build_batchupdate_payload.py",
+        "references/gws-forms-cheatsheet.md"
       ]
     }
   ]

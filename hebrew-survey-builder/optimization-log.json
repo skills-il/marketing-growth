@@ -1,6 +1,27 @@
 {
   "cycles": [
     {
+      "version": "1.4.0",
+      "date": "2026-08-26",
+      "lessons": [
+        "BIGGEST FIX: since 2026-06-30 a form created through the Forms API is UNPUBLISHED by default and accepts no responses until setPublishSettings is called. The skill's entire happy path ended at 'return the responderUri', so it was handing users a live-looking survey that silently collected nothing. Added a mandatory publish step. Verified verbatim against developers.google.com/workspace/forms/api/guides/api-changes-to-google-forms.",
+        "Every gws command in the skill was wrong in two independent ways: `gws forms create` should be `gws forms forms create` (shape is service/resource/method and both are named forms), and `--params formId=X` should be `--params '{\"formId\": \"X\"}'` (the CLI parses --params strictly as JSON). Both confirmed against the upstream gws-shared skill.",
+        "Expert CRITICAL fixed: product-discovery and event-feedback shipped unresolved placeholders as live respondent-facing text ('the problem we are researching', 'the first part / the second part'), the second one required. The script now demands --topic and --sessions and exits non-zero without them.",
+        "Expert CRITICAL fixed: the Amendment 13 notice the skill demanded at length had NO delivery path. create disallows description, no step ever issued updateFormInfo, and the script emitted no intro and no consent item. Added a notice/consent step before publish, plus --intro anonymous|identified and --notice on the script; identified prepends the consent item at index 0 where the privacy rule requires it.",
+        "Expert CRITICAL fixed: market-research led with a REQUIRED segment question at index 0 followed by required free text, which is verbatim the re-identification pattern the skill's own privacy section warns against. Segment question moved last and made optional; pricing bands de-overlapped (20-50/50-100 shared boundaries).",
+        "Judge caught three propagation misses after the command rewrite: the bundled script's docstring still showed BOTH forbidden command forms, SKILL_HE's worked example dropped setPublishSettings, and domain-checklist.md kept the un-reframed Amendment 13 wording. Run the old-value grep across scripts and references, not just the two markdown bodies.",
+        "Amendment 13 was overstated: it did not introduce an 'explicit, specific consent' standard. Informed consent predates it; what it changed here is mainly the NOTICE owed (controller identity/contact, consequences of refusal, right to access and rectify). Reframed, and the source swapped from a member-gated IAPP article to the public DLA Piper page.",
+        "CES was measuring the wrong construct: 'היה לי קל' is self-efficacy. CES 2.0 attributes the effort to the organisation, which is what makes the score actionable. Also softened the previous cycle's claim that a low=easy scale 'inverts the result against every CES benchmark' — both polarities are in live use; the real rule is pick one and hold it constant.",
+        "Tally RTL is a MANUAL toggle, not automatic. Added a per-platform RTL table (SurveyMonkey automatic, Typeform supported, Tally manual, MS Forms undocumented) and a free-tier table, since a platform whose free tier caps below your list size wastes the whole send.",
+        "Send-timing guidance is reasoned from the Sunday-Thursday work week, not measured. Relabelled it as such rather than leaving it to read as findings, and told the reader to log their own send day/hour/response rate.",
+        "Deferred MAJOR (next cycle): WhatsApp is the dominant Israeli distribution channel and is still treated as a footnote for '< 10 people you personally know'. It needs real coverage, including its own consent exposure.",
+        "Deferred MAJOR (next cycle): no sample-size or margin-of-error guidance anywhere, so a user can act on n=12 and never be warned. The privacy section warns about small samples for re-identification but never for statistical invalidity.",
+        "Deferred MAJOR (next cycle): no accessibility guidance under Regulation 35 / IS 5568 for a survey published by an Israeli business, and no mobile-first guidance despite a 0-10 NPS row wrapping badly on narrow viewports.",
+        "Deferred MINOR: back-translation / bilingual-review procedure for surveys that originate in English (the skill currently just forbids re-translation); question-order and acquiescence bias, which matters because CES is an agreement statement; a miluim / security-escalation branch in the send-timing decision tree.",
+        "Deferred MINOR: cross-link the RTL scale-flip warning from export-to-other-platforms.md into hebrew-survey-templates.md; duplicate list numbering in the export reference; duplicate watches bullet in the cheatsheet."
+      ]
+    },
+    {
       "version": "1.3.0",
       "date": "2026-05-31",
       "lessons": [

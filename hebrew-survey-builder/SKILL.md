@@ -2,7 +2,7 @@
 name: hebrew-survey-builder
 description: "Write Hebrew surveys (NPS, CSAT, CES, event feedback, product discovery, market research) with natural Israeli phrasing, and either deploy them as live Google Forms via the Google Workspace CLI (gws) or paste them into Typeform, SurveyMonkey, Tally, Microsoft Forms, or email/Slack. Also advises on Israeli-specific send timing (days, hours, chagim to avoid) and cadence. Use when the user asks to build a survey in Hebrew, run an NPS or CSAT for Israeli customers, collect event feedback, run user interviews in Hebrew, decide when to send a survey to Israeli audiences, or asks about \"סקר\", \"שאלון\", \"משוב\", \"NPS\", \"CSAT\", or survey cadence. Do NOT use for Israeli government forms (see israeli-gov-form-automator)."
 license: MIT
-compatibility: Requires the Google Workspace CLI (gws) to be installed and authenticated, plus a Google account with Forms access. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, and openclaw.
+compatibility: The Google Forms deployment path needs the Google Workspace CLI (gws) installed and authenticated plus a Google account with Forms access, so it runs only on shell-capable hosts (Claude Code, Cursor, openclaw). On Claude Desktop the skill still produces paste-ready Hebrew templates and the send-timing plan; see Step 0.
 ---
 
 # Hebrew Survey Builder
@@ -11,7 +11,7 @@ compatibility: Requires the Google Workspace CLI (gws) to be installed and authe
 
 Running surveys in Hebrew is painful. Google Forms renders Hebrew text right-to-left automatically, but the hard part is choosing the right questions, phrasing them in natural Israeli Hebrew (not stiff literal translations from English), and actually creating the form without clicking through the UI. Most teams default to bad English templates run through Google Translate, which tank response rates.
 
-This skill lets an agent build a complete Hebrew survey end-to-end using `gws forms create` + `gws forms batchUpdate`, returning a live, shareable form URL within a single prompt.
+This skill lets an agent build a complete Hebrew survey end-to-end using `gws forms forms create` + `gws forms forms batchUpdate`, returning a live, shareable form URL within a single prompt.
 
 ## Instructions
 
@@ -19,14 +19,20 @@ This skill lets an agent build a complete Hebrew survey end-to-end using `gws fo
 
 Start by asking which tool the user wants the survey deployed on:
 
-- **Google Forms**, use the `gws` flow below (Steps 1–7). Produces a live, shareable URL.
+- **Google Forms**, use the `gws` flow below (Steps 1-9). Produces a live, shareable URL.
+- **No shell available** (Claude Desktop, and any host that cannot run a local binary), take the same route as the non-Google platforms below: `gws` is a CLI, so the Google Forms deployment path is unavailable there by construction. Produce the Hebrew templates and the timing plan, and hand the user paste-ready content.
 - **Typeform, SurveyMonkey, Tally, Microsoft Forms, email, Slack, WhatsApp**, skip the `gws` steps. Go straight to Step 1 (pick template), then jump to `references/export-to-other-platforms.md` for per-tool paste-in instructions. The Hebrew question wording and Israeli timing rules apply regardless of platform.
 
-If the user is deploying to Google Forms, confirm the `gws` CLI is installed and authenticated:
+If the user is deploying to Google Forms, confirm the `gws` CLI is installed **and** authenticated. These are two different checks:
 
 ```bash
-gws forms --help
+gws forms --help                              # installed? prints usage
+gws drive files list --params '{"pageSize": 1}'   # authenticated? needs real credentials
 ```
+
+`--help` exits 0 with no credentials at all, so on its own it proves nothing about auth. Skipping the second command is the most common way this flow dies at Step 2 with an auth error instead of at Step 0 with a clear one.
+
+Command shape is `gws <service> <resource> [sub-resource] <method>`, so the forms resource inside the forms service is addressed as `gws forms forms <method>`. The doubled word is not a typo.
 
 If the command is not found, tell the user to install the Google Workspace CLI from `github.com/googleworkspace/cli` (a pre-built binary, or via a package manager such as npm, Homebrew, or cargo, see the repo's install section for the current commands) and authenticate it. Do not attempt to fabricate a response. Do not use a different CLI. If the user does not want to install `gws`, offer to generate the templates in Markdown and point them to `references/export-to-other-platforms.md` instead.
 
@@ -36,9 +42,9 @@ Ask the user which kind of survey they need. Map their intent to one of these te
 
 | Template | When to use | Scale |
 |----------|-------------|-------|
-| `nps` | Measure Israeli customer loyalty | 0–10 |
-| `csat` | Rate a single interaction / order / support ticket | 1–5 |
-| `ces` | Measure effort of a task (e.g. sign-up, checkout) | 1–7 |
+| `nps` | Measure Israeli customer loyalty | 0-10 |
+| `csat` | Rate a single interaction / order / support ticket | 1-5 |
+| `ces` | Measure effort of a task (e.g. sign-up, checkout) | 1-7 |
 | `event-feedback` | Post-event debrief (meetups, workshops, webinars) | mixed |
 | `product-discovery` | Early-stage user interviews about a pain point | open-ended |
 | `market-research` | Demand validation for a new Israeli product | mixed |
@@ -50,9 +56,9 @@ If the user's intent doesn't fit cleanly, ask one clarifying question. Don't for
 The `create` method only accepts the form title and document_title, per the Google Forms API. All other fields (description, items, settings) must be added in a separate `batchUpdate` call. This is a hard constraint, do not try to pass items at creation time.
 
 ```bash
-gws forms create --json '{
+gws forms forms create --json '{
   "info": {
-    "title": "סקר NPS – <company name>",
+    "title": "סקר NPS - <company name>",
     "documentTitle": "NPS Survey <date>"
   }
 }'
@@ -73,7 +79,7 @@ gws schema forms.forms.batchUpdate
 Build the payload from the template you chose in Step 1. Example for a 2-question NPS form:
 
 ```bash
-gws forms batchUpdate --params formId=<FORM_ID> --json '{
+gws forms forms batchUpdate --params '{"formId": "<FORM_ID>"}' --json '{
   "requests": [
     {
       "createItem": {
@@ -114,51 +120,86 @@ gws forms batchUpdate --params formId=<FORM_ID> --json '{
 
 `location.index` is the zero-based position of the item in the form. Always set it, even for a single-item insert, the API rejects the request otherwise.
 
-### Step 4: Get the share URL
+### Step 4: Write the intro and consent text into the form
+
+`create` disallows `description`, so the anonymity line or the fuller notice has to be set here, in the same `batchUpdate` pass as the questions. If you skip this the form has no intro at all, and the consent obligations in Step 8 have no delivery path.
+
+```bash
+gws forms forms batchUpdate --params '{"formId": "<FORM_ID>"}' --json '{
+  "requests": [
+    {
+      "updateFormInfo": {
+        "info": { "description": "התשובות בסקר הזה אנונימיות ולא נאספים בו פרטים מזהים." },
+        "updateMask": "description"
+      }
+    }
+  ]
+}'
+```
+
+The bundled script does this for you: `--intro anonymous` writes the anonymity line, and `--intro identified` writes your `--notice` text AND prepends a required consent item at index 0, which is where Step 8 requires it to sit. Decide anonymous-vs-identifiable **now**, before the form is published, not after.
+
+### Step 5: Get the share URL
 
 Fetch the form metadata and return the `responderUri` to the user:
 
 ```bash
-gws forms get --params formId=<FORM_ID>
+gws forms forms get --params '{"formId": "<FORM_ID>"}'
 ```
 
-The `responderUri` field is the public URL to share with respondents. This is what the user actually wants, lead with it in your reply. Also include the `formId` so the user can re-open the form in the Forms UI later.
+The `responderUri` field is the URL to share with respondents. **It does not work until the form is published; see Step 6.** This is what the user actually wants, lead with it in your reply. Also include the `formId` so the user can re-open the form in the Forms UI later.
 
-### Step 5: Guide Sheets linking (UI step, not API)
+### Step 6: Publish the form (MANDATORY since 30 June 2026)
+
+**A form created through the API no longer accepts responses until you publish it.** Google changed the default: "forms created by the API after June 30, 2026 will be created in an unpublished state. You must publish the forms before they can accept responses", and "If no action is taken, then new forms created using APIs after June 30, 2026, will be in an unpublished state by default and won't receive responses."
+
+This is the single most likely way to hand a user a dead survey. The form opens, looks correct, and silently collects nothing. Do not skip this step and do not treat it as optional polish.
+
+```bash
+# Inspect the exact publishSettings shape first
+gws schema forms.forms.setPublishSettings
+
+gws forms forms setPublishSettings \
+  --params '{"formId": "<FORM_ID>"}' \
+  --json '{"publishSettings": {"publishState": {"isPublished": true, "isAcceptingResponses": true}}, "updateMask": "publishState"}'
+```
+
+Then re-run `gws forms forms get` and confirm the publish state before you hand over the `responderUri`. Publish first, hand over the link second: the order is what stops you shipping a dead survey.
+
+Two related notes:
+
+- Legacy forms (created before the publishing model existed) do not support `publishSettings` at all, because they have no such field. Forms you create through the API do.
+- To restrict who can respond rather than sharing an open link, share the form with specific users via the Drive API's `permissions.create`. That is a separate call, not a `publishSettings` flag.
+
+### Step 7: Guide Sheets linking (UI step, not API)
 
 The Google Forms API does not currently expose a method to connect a form's responses to a specific Google Sheet. This must be done once in the UI:
 
-1. Open the form in the Forms editor (the URL comes back from `gws forms get`; copy the `formId` into the browser-side Forms UI, or open it from Drive).
+1. Open the form in the Forms editor (the URL comes back from `gws forms forms get`; copy the `formId` into the browser-side Forms UI, or open it from Drive).
 2. Click the **Responses** tab.
 3. Click the green Sheets icon → **Create a new spreadsheet** (or select an existing one).
 
 Tell the user this is a one-time click, and that after it's done, every new response will land in the linked Sheet automatically. Do not claim the skill handles this step.
 
-If the user wants API-level response access instead, use `gws forms responses list --params formId=<FORM_ID>` to pull responses and pipe them into `gws sheets` yourself.
+If the user wants API-level response access instead, use `gws forms forms responses list --params '{"formId": "<FORM_ID>"}'` to pull responses and pipe them into `gws sheets` yourself.
 
-### Step 6: Pick the right send time for Israeli audiences
+### Step 8: Pick the right send time for Israeli audiences
 
 A perfectly worded survey sent at the wrong time tanks your response rate. Before you push the form, think about *when* it will land in people's inboxes:
 
 - **Avoid Friday afternoon and Shabbat.** Observant recipients are offline; by Sunday it's buried.
 - **Avoid chag weeks entirely**, Sukkot, Pesach, Rosh Hashanah, Yom Kippur period, Shavuot, Yom HaZikaron/Yom HaAtzmaut. Response rates collapse during these weeks.
-- **Best days**: Sunday (fresh inboxes), Tuesday–Wednesday (strongest B2B engagement). Thursday is acceptable but drifts softer late in the day.
-- **Best hours**: 09:00–11:00 morning window, 13:00–14:00 post-lunch lull. Avoid before 08:30 or after 20:00.
+- **Best days**: Sunday (fresh inboxes), Tuesday-Wednesday (strongest B2B engagement). Thursday is acceptable but drifts softer late in the day.
+- **Best hours**: 09:00-11:00 morning window, 13:00-14:00 post-lunch lull. Avoid before 08:30 or after 20:00.
 - **Transactional surveys** (post-ticket CSAT, post-event feedback) should fire immediately after the interaction, not on a batch schedule, but still hold them for Sunday morning if the event ended Thursday evening.
 
 The full decision tree and per-survey-type cadence (NPS quarterly vs monthly, CSAT per-ticket vs batched, etc.) is in `references/israeli-send-timing.md`. Consult it before committing to a cadence.
 
-### Step 7: Publish and share
+### Step 9: Share, and check consent before you send
 
-By default, a newly created form is accessible to anyone with the responder link, inside the creator's Google account rules (Workspace domain restrictions still apply). If the user needs to change who can respond, use:
+Once Step 5 has published the form, the responder link works for anyone who has it, within the creator's Google account rules (Workspace domain restrictions still apply).
 
-```bash
-gws schema forms.forms.setPublishSettings
-```
-
-to see the exact `publishSettings` shape, then call `gws forms setPublishSettings` with the right flags. The Google Forms API notes that legacy forms do not support `publish_settings`, newly created API forms do.
-
-**Consent and privacy.** Keep NPS, CSAT, and CES responses anonymous by default, it both protects respondents and lifts response rates. Israel's Privacy Protection Law Amendment 13 (in force since August 2025) requires explicit, specific consent whenever a response can be tied to a person, so before you share the form, check whether it is *actually* anonymous, not just anonymous-looking:
+**Consent and privacy.** Keep NPS, CSAT, and CES responses anonymous by default, it both protects respondents and lifts response rates. Israeli law has required informed consent (הסכמה מדעת) for identifiable personal data since long before the recent reform. What Amendment 13 (in force 14 August 2025) changed here is mainly the **notice** you owe the respondent: who the controller is and how to reach them, what happens if they refuse, and their right to access and correct their data. So before you share the form, check whether it is *actually* anonymous, not just anonymous-looking:
 
 - **A form with no identifying field can still be identifiable.** Emailing a personalized survey link to a customer list, or pre-filling a respondent token, re-identifies every answer even if the form asks for no name or email. Treat that flow as identifiable: tell recipients what you collect and why, give an opt-out, and don't reuse the list beyond this survey.
 - **Turn off "Collect email addresses" for anonymous external surveys.** Inside a Google Workspace domain, Google Forms can auto-capture the respondent's account email, which silently breaks an "anonymous" promise. Disable it unless you actually need identity.
@@ -181,6 +222,8 @@ For a genuinely anonymous survey, a one-line intro ("התשובות אנונימ
 | Official gws-forms skill | https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-forms/SKILL.md | Canonical list of gws forms methods and constraints |
 | Google Forms API v1 reference | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms | Authoritative method list (create, get, batchUpdate, setPublishSettings) |
 | Forms batchUpdate reference | https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate | Request types (CreateItemRequest, UpdateItemRequest, etc.) |
+| API changes to Google Forms | https://developers.google.com/workspace/forms/api/guides/api-changes-to-google-forms | The unpublished-by-default change and the publishing flow |
+| gws shared conventions | https://raw.githubusercontent.com/googleworkspace/cli/main/skills/gws-shared/SKILL.md | Command shape and the JSON form of --params |
 | Hebrew survey templates (local) | `references/hebrew-survey-templates.md` | NPS, CSAT, CES, event, product discovery wording |
 | Israeli send-time guide (local) | `references/israeli-send-timing.md` | Day/hour guidance, chag weeks to avoid, cadence rules |
 | Export to non-Google platforms (local) | `references/export-to-other-platforms.md` | How to paste the Hebrew templates into Typeform, SurveyMonkey, Tally, Microsoft Forms, email/Slack |
@@ -188,7 +231,16 @@ For a genuinely anonymous survey, a one-line intro ("התשובות אנונימ
 ## Bundled Resources
 
 ### Scripts
-- `scripts/build_batchupdate_payload.py`, take a template name (`nps`, `csat`, `ces`, `event-feedback`, `product-discovery`, `market-research`) and emit a ready-to-pipe JSON payload for `gws forms batchUpdate --json`. Usage: `python3 scripts/build_batchupdate_payload.py --template nps`.
+- `scripts/build_batchupdate_payload.py`, take a template name (`nps`, `csat`, `ces`, `event-feedback`, `product-discovery`, `market-research`) and emit a ready-to-pipe JSON payload for `gws forms forms batchUpdate --json`.
+
+  ```bash
+  python3 scripts/build_batchupdate_payload.py --template nps --intro anonymous
+  python3 scripts/build_batchupdate_payload.py --template product-discovery --topic 'ניהול הוצאות בעסק קטן'
+  python3 scripts/build_batchupdate_payload.py --template event-feedback --sessions 'פתיחה,הרצאת אורח,פאנל'
+  python3 scripts/build_batchupdate_payload.py --template ces --task 'את ההרשמה'
+  ```
+
+  `--topic` and `--sessions` are **required** for their templates and the script exits non-zero without them. That is deliberate: those two templates have a slot in the respondent-facing question text, and a generic filler ("the problem we are researching", "the first part") produces a question nobody can answer meaningfully. `--task` is optional but naming the task makes CES usable. `--intro anonymous|identified` sets the form description, and `identified` also prepends the required consent item at index 0.
 
 ### References
 - `references/hebrew-survey-templates.md`, every template's question list in natural Israeli Hebrew, with scale labels, question types, and notes on when each template is appropriate.
@@ -200,12 +252,15 @@ For a genuinely anonymous survey, a one-line intro ("התשובות אנונימ
 
 These are the mistakes an agent will most likely make on first try:
 
-1. **Trying to pass items at `create` time.** The `create` method only copies `info.title` and `info.documentTitle`. Everything else (description, items, settings) is silently disallowed. You MUST follow up with `batchUpdate` to add questions.
+1. **Trying to pass items at `create` time.** The `create` method only copies `info.title` and `info.documentTitle`. Everything else (description, items, settings) is disallowed. Upstream says only that these fields are disallowed, not whether they are dropped or rejected, so do not assume either: read the response rather than branching on an error that may never arrive, and confirm the created form is empty before you `batchUpdate` into it.
 2. **Calling `forms.update` instead of `forms.batchUpdate`.** Google Forms API v1 does NOT have a `forms.update` method. The only methods on the forms resource are `create`, `get`, `batchUpdate`, and `setPublishSettings`. If you see `update` in older docs or blog posts, substitute `batchUpdate`.
 3. **Assuming the API links responses to a Google Sheet.** It doesn't. The "Link to Sheets" button is UI-only. Tell the user to do it once by hand, or poll `forms.responses.list` and write to a Sheet yourself via `gws sheets`.
 4. **Translating English NPS phrasing literally.** "How likely are you to recommend us to a friend or colleague?" translated word-for-word sounds stiff and passive in Hebrew. Use the wording in `references/hebrew-survey-templates.md`, it was written in Hebrew first, not translated. This is the main reason bad surveys get bad response rates in Israel.
 5. **Forgetting `location.index` in a `createItem` request.** Even for a single-question insert, `location.index` is required. Start at `0` and increment.
-6. **Using Hebrew in `documentTitle`.** `documentTitle` is the Drive filename. Some Drive search flows handle Hebrew filenames awkwardly, keep `documentTitle` in ASCII, put the Hebrew version in `info.title` (the user-facing form title).
+6. **Handing over the `responderUri` without publishing.** Since 30 June 2026 an API-created form starts unpublished and accepts no responses. The link resolves, the form renders, and every submission is silently impossible. Always run `setPublishSettings` (Step 6) before you give the user the link.
+7. **Writing `--params formId=<ID>`.** The `--params` flag takes a JSON object, not `key=value`: `--params '{"formId": "<ID>"}'`. The CLI parses it strictly and rejects anything else.
+8. **Dropping the resource token.** The command is `gws forms forms create`, not `gws forms create`. The pattern is `gws <service> <resource> <method>`, and here both the service and the resource are called `forms`. The same doubling shows up in `gws schema forms.forms.batchUpdate`, which the skill has always had right.
+9. **Using Hebrew in `documentTitle`.** `documentTitle` is the Drive filename. Some Drive search flows handle Hebrew filenames awkwardly, keep `documentTitle` in ASCII, put the Hebrew version in `info.title` (the user-facing form title).
 
 ## Examples
 
@@ -214,9 +269,9 @@ User says: "אני צריך להפיץ NPS ללקוחות שלי, אפשר לב�
 
 Actions:
 1. Pick the `nps` template.
-2. `gws forms create` with title "סקר NPS – <company>".
-3. `gws forms batchUpdate` with the 2-question NPS payload from `references/hebrew-survey-templates.md`.
-4. `gws forms get` → return the `responderUri`.
+2. `gws forms forms create` with title "סקר NPS - <company>".
+3. `gws forms forms batchUpdate` with the 2-question NPS payload from `references/hebrew-survey-templates.md`.
+4. `gws forms forms setPublishSettings` to publish (mandatory), then `gws forms forms get` → return the `responderUri`.
 5. Tell the user how to link to Sheets in one click if they want responses in a spreadsheet.
 
 ### Example 2: Post-event feedback for a meetup
@@ -225,7 +280,7 @@ User says: "Build a post-event survey in Hebrew for yesterday's Tel Aviv meetup,
 Actions:
 1. Pick the `event-feedback` template.
 2. Trim it to 5 questions, keep "האם תחזרו למפגש הבא?" as the last question.
-3. `create` + `batchUpdate`.
+3. `create` + `batchUpdate` + `setPublishSettings`.
 4. Return the share link.
 
 ## Troubleshooting
@@ -234,7 +289,7 @@ Actions:
 Cause: Google Workspace CLI is not installed on PATH.
 Solution: Install from https://github.com/googleworkspace/cli (download the pre-built binary for your OS, or use a package manager such as npm, Homebrew, or cargo, see the repo's install section), then re-authenticate. Do not attempt to substitute another CLI or `curl` the REST API directly unless the user explicitly asks.
 
-### Error: `INVALID_ARGUMENT` on `gws forms create` when passing items
+### Error: `INVALID_ARGUMENT` on `gws forms forms create` when passing items
 Cause: `create` rejects everything except `info.title` and `info.documentTitle`.
 Solution: Remove `items`, `description`, and `settings` from the create payload. Add them afterwards via `batchUpdate`.
 
@@ -245,6 +300,18 @@ Solution: Always include `"location": { "index": <number> }` even for a single-i
 ### Error: `forms.update not found`
 Cause: Calling a method that doesn't exist in the Google Forms API v1.
 Solution: Use `forms.batchUpdate` with an `updateItem` request inside the `requests` array, not `forms.update`.
+
+### Error: an auth / permission failure on the first `create`
+Cause: `gws` is installed but not authenticated, or is authenticated without the Forms and Drive scopes.
+Solution: re-run the gws auth flow and grant Forms and Drive access, then re-check with `gws drive files list --params '{"pageSize": 1}'` before retrying Step 2.
+
+### The form link works but no responses ever arrive
+Cause: the form was created through the API after 30 June 2026 and was never published, so it is not accepting responses.
+Solution: run `gws forms forms setPublishSettings` (Step 6), then confirm with `gws forms forms get` before re-sharing the link.
+
+### Error: `Invalid --params JSON`
+Cause: `--params` was given `key=value` instead of a JSON object.
+Solution: `--params '{"formId": "<ID>"}'`. Wrap in single quotes so the shell leaves the inner double quotes alone.
 
 ### Hebrew text appears left-to-right in the created form
 Cause: Very rarely, a title that starts with an ASCII character will direct the paragraph LTR even though the body is Hebrew.

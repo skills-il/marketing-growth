@@ -5,7 +5,10 @@ Mirrored from the upstream `gws-forms` skill in `github.com/googleworkspace/cli`
 ## Command format
 
 ```bash
-gws forms <resource> <method> [flags]
+gws <service> <resource> [sub-resource] <method> [flags]
+
+# For the forms resource inside the forms service, both words are 'forms':
+gws forms forms <method> [flags]
 ```
 
 ## Methods on the `forms` resource
@@ -14,14 +17,15 @@ Exactly these four, plus two sub-resources:
 
 | Method | Purpose |
 |--------|---------|
-| `create` | Create a new form. Only `info.title` and `info.documentTitle` are accepted, items, description, and settings are silently rejected. |
+| `create` | Create a new form. Only `info.title` and `info.documentTitle` are accepted, items, description, and settings are disallowed (upstream does not state whether they are dropped or rejected, so check the response). |
 | `get` | Fetch a form's metadata, including `responderUri` (the public share URL). |
 | `batchUpdate` | The ONLY way to modify a form after creation. Takes a `requests` array. |
 | `setPublishSettings` | Change who can respond. Legacy forms don't support this; API-created forms do. |
 
 Sub-resources:
 
-- `responses`, list/get responses (`gws forms responses list`, `gws forms responses get`)
+- `responses`, list/get responses (`gws forms forms responses list`, `gws forms forms responses get`)
+- `watches`, push-notification watches on a form (`gws forms forms watches list|create|delete`)
 - `watches`, create/list/delete push notifications when responses come in
 
 There is **no `forms.update`** method. If you see it in old docs or blog posts, it means `forms.batchUpdate` with an `updateItem` request.
@@ -73,7 +77,7 @@ gws schema forms.forms.setPublishSettings
 | Flag | Use |
 |------|-----|
 | `--json '{ ... }'` | Pass the request body as JSON |
-| `--params key=value` | Pass URL path/query params (e.g. `formId=XYZ`) |
+| `--params '{"key": "val"}'` | URL path/query params as a **JSON object**. `--params formId=XYZ` is rejected with `Invalid --params JSON`. |
 
 ## Endpoint reference
 
