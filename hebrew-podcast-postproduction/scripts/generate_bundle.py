@@ -50,18 +50,64 @@ import re
 from pathlib import Path
 
 
-NIKUD_RE = re.compile(r"[\u0591-\u05C7]")  # Hebrew accents, points, marks
+# Vowel points and cantillation only. U+05BE MAQAF, U+05C0 PASEQ and
+# U+05C3 SOF PASUQ are punctuation and are deliberately excluded, matching
+# the nikud definition in SKILL.md Step A1.
+NIKUD_RE = re.compile(r"[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]")
 
 
 def strip_nikud(text: str) -> str:
+    """Remove Hebrew vowel points only.
+
+    Deliberately narrower than the full U+0591-U+05C7 block: that range also
+    holds MAQAF (U+05BE), PASEQ (U+05C0) and SOF PASUQ (U+05C3), which are
+    punctuation, not nikud. Stripping the maqaf turns "בית-ספר" into "ביתספר".
+    """
     return NIKUD_RE.sub("", text)
 
 
-def format_hhmmss(seconds: float) -> str:
+def format_hhmmss(seconds: float, millis: bool = False) -> str:
+    """Format seconds as HH:MM:SS, optionally with milliseconds.
+
+    The clip SRT cues are rebased to the clip's true fractional start, so a cut
+    point truncated to a whole second desyncs every burned-in cue by up to a
+    second. FFmpeg accepts HH:MM:SS.mmm on -ss/-to, so use millis=True for cut
+    points and plain HH:MM:SS for human-facing chapter lines.
+    """
     h = int(seconds // 3600)
     m = int((seconds % 3600) // 60)
-    s = int(seconds % 60)
-    return f"{h:02d}:{m:02d}:{s:02d}"
+    if millis:
+        s = seconds % 60
+        return f"{h:02d}:{m:02d}:{s:06.3f}"
+    return f"{h:02d}:{m:02d}:{int(seconds % 60):02d}"
+
+
+VIDEO_EXTS = {".mp4", ".mov", ".mkv", ".webm", ".avi", ".m4v"}
+AUDIO_EXTS = {".mp3", ".m4a", ".wav", ".aac", ".flac", ".ogg", ".opus"}
+
+
+def check_mode_matches_media(audio_path: str, mode: str) -> str | None:
+    """Return a warning if --mode contradicts the source file's extension.
+
+    Neither direction is survivable at ffmpeg run time: audio mode on an MP4
+    stream-copies H.264 into an .mp3 container ("Could not find tag for codec
+    h264"), and video mode on an MP3 applies -vf to a file with no video
+    stream. The script does not probe the file, so this is an extension check,
+    not a guarantee.
+    """
+    ext = Path(audio_path).suffix.lower()
+    if mode == "audio" and ext in VIDEO_EXTS:
+        return (
+            f"--mode audio was used with a video file ({ext}). The emitted "
+            f"'-c copy' command will fail. Pass --mode video."
+        )
+    if mode == "video" and ext in AUDIO_EXTS:
+        return (
+            f"--mode video was used with an audio-only file ({ext}). The "
+            f"emitted '-vf subtitles=...' command has no video stream to draw "
+            f"on. Pass --mode audio."
+        )
+    return None
 
 
 def format_srt_ts(seconds: float) -> str:
@@ -73,8 +119,18 @@ def format_srt_ts(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
-def validate_spotify_chapters(chapters: list[dict]) -> list[str]:
+def validate_spotify_chapters(chapters: list[dict]) -> tuple[list[str], list[str]]:
+    """Split Spotify's rules into what it enforces and what it merely advises.
+
+    Returns (errors, warnings). Only the enforced rules are errors. The
+    40-character title figure is worded by Spotify as "aim for chapter titles
+    under 40 characters", under "Tips for chapter titles" - it is a
+    readability recommendation, not a parse requirement, and treating it as
+    fatal rejects legitimate Hebrew titles, which carry fewer ideas per
+    character than English ones.
+    """
     errors: list[str] = []
+    warnings: list[str] = []
     if len(chapters) < 3:
         errors.append(f"need at least 3 chapters, got {len(chapters)}")
     if chapters and chapters[0]["startTime"] != 0:
@@ -82,12 +138,25 @@ def validate_spotify_chapters(chapters: list[dict]) -> list[str]:
     for i, ch in enumerate(chapters):
         title = strip_nikud(ch["title"])
         if len(title) > 40:
-            errors.append(f"chapter {i} title too long ({len(title)} chars): {title[:20]}...")
+            warnings.append(
+                f"chapter {i} title is {len(title)} chars; Spotify advises under 40 "
+                f"for readability (not a hard limit): {title[:24]}..."
+            )
+        if re.match(r"^\s*\d+\s*[-.)]\s+", title):
+            warnings.append(
+                f"chapter {i} title starts with an index; Spotify strips it "
+                f"(\"1 - Introduction\" is reformatted): {title[:24]}..."
+            )
         if i > 0:
             gap = ch["startTime"] - chapters[i - 1]["startTime"]
-            if gap < 30:
+            if gap < 0:
+                errors.append(
+                    f"chapter {i} starts before chapter {i - 1}; Spotify requires "
+                    f"chronological order"
+                )
+            elif gap < 30:
                 errors.append(f"chapter {i} only {gap}s after previous (min 30s)")
-    return errors
+    return errors, warnings
 
 
 def write_spotify_chapters(chapters: list[dict], out_path: Path) -> None:
@@ -126,9 +195,21 @@ set -euo pipefail
 ffmpeg -y \\
   -ss {start_ts} -to {end_ts} \\
   -i "{audio}" \\
-  -vf "subtitles={srt_path}:force_style='FontName=Heebo,FontSize=22,PrimaryColour=&H00FFFFFF,BorderStyle=3,Outline=2,Shadow=0,MarginV=40'" \\
-  -c:a aac -c:v libx264 -preset fast -crf 20 \\
+  -vf "subtitles={srt_path}:force_style='FontName=Heebo,FontSize=22,PrimaryColour=&H00FFFFFF,BorderStyle=3,Outline=2,Shadow=0,MarginV=40':shaping=complex" \\
+  -c:a aac -b:a 192k -c:v libx264 -preset fast -crf 20 \\
   "{output}"
+
+# shaping=complex is what makes Hebrew lay out correctly. It was exposed on the
+# subtitles filter in FFmpeg on 2026-06-23; on an older build the option is
+# rejected. Check with:
+#   ffmpeg -hide_banner -h filter=subtitles | grep shaping
+# If it is absent, drop ":shaping=complex" above and instead convert to ASS,
+# which has always had the option:
+#   ffmpeg -i {srt_path} clip.ass
+#   ffmpeg -y -ss {start_ts} -to {end_ts} -i "{audio}" \\
+#     -vf "ass=clip.ass:shaping=complex" -c:a aac -c:v libx264 -crf 20 "{output}"
+# Note that force_style is a subtitles-filter option only; the ass filter does
+# not accept it, so set FontName/FontSize in the .ass [V4+ Styles] Style line.
 """
 
 FFMPEG_AUDIO_TEMPLATE = """#!/usr/bin/env bash
@@ -143,8 +224,8 @@ ffmpeg -y \\
 
 
 def write_ffmpeg_script(clip: dict, audio_path: str, srt_path: str, out_path: Path, mode: str) -> None:
-    start_ts = format_hhmmss(clip["start"])
-    end_ts = format_hhmmss(clip["end"])
+    start_ts = format_hhmmss(clip["start"], millis=True)
+    end_ts = format_hhmmss(clip["end"], millis=True)
     output_ext = "mp4" if mode == "video" else "mp3"
     output = out_path.parent / f"clip-{clip['id']:02d}.{output_ext}"
     template = FFMPEG_VIDEO_TEMPLATE if mode == "video" else FFMPEG_AUDIO_TEMPLATE
@@ -186,7 +267,15 @@ def main() -> int:
     chapters = json.loads(Path(args.chapters).read_text(encoding="utf-8"))
     clips = json.loads(Path(args.clips).read_text(encoding="utf-8"))
 
-    errors = validate_spotify_chapters(chapters)
+    mode_warning = check_mode_matches_media(args.audio, args.mode)
+    if mode_warning:
+        print(f"WARNING: {mode_warning}")
+
+    errors, warnings = validate_spotify_chapters(chapters)
+    if warnings:
+        print("Spotify chapter warnings (non-fatal):")
+        for w in warnings:
+            print(f"  - {w}")
     if errors:
         print("Spotify chapter validation errors:")
         for e in errors:

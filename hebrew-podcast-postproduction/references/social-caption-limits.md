@@ -4,12 +4,12 @@
 
 | Platform | Hard limit | Practical target | Truncation point |
 |----------|-----------|------------------|-------------------|
-| Instagram Reels | 2,200 | 100-150 | First 125 characters visible before "more" |
-| TikTok | 4,000 | 150-300 | None - full caption visible when tapped |
+| Instagram Reels | 2,200 | 100-150 | Meta's media reference also caps a caption at 30 hashtags and 20 @-mentions. The ~125-character "more" truncation point is widely reported but is not stated on any Meta-owned page; treat it as a rule of thumb. |
+| TikTok | 2,200 (UTF-16 runes) | 150-300 | The only figure TikTok publishes, in the Content Posting API (`title`, "maximum length is 2200 in UTF-16 runes"). Its help center documents no caption limit. The widely-quoted 4,000 appears on no TikTok-owned page. |
 | X (free tier) | 280 | 240-260 | None, but leave room for retweet/quote |
-| X (Premium) | 25,000 | Varies | Collapses after ~280, expands on tap |
-| LinkedIn (post) | 3,000 | 150-300 | First ~3 lines (210 characters) visible before "see more" |
-| LinkedIn (article) | 100,000 | N/A | Articles are long-form blog posts |
+| X (Premium) | Higher than 280, exact ceiling not confirmed on an X-owned page | Varies | Long posts collapse after roughly the standard length and expand on tap. Premium-only: do not plan a caption around it for a general audience. |
+| LinkedIn (post) | 3,000 | 150-300 | Truncated after roughly three lines; the exact "see more" cutoff is not published by LinkedIn and varies by viewport, so write the hook into the first two lines rather than counting characters. |
+| LinkedIn (article) | Not published by LinkedIn | N/A | The help center states only the 3,000-character post limit and says that above it you "can instead write an article using LinkedIn's Publishing Platform". Do not quote a specific article ceiling; it is not documented. |
 
 Sources: platform help docs and 2026 character limit audits; verify against the current platform UI before publishing if a caption is near the limit.
 
@@ -34,17 +34,17 @@ Hebrew hashtags follow different rules from English:
 - Concatenate words without spaces or underscores: `#פודקאסטישראלי`
 - Mix Hebrew and English tags (TikTok indexes both, doubles the discovery surface)
 - Use 3-5 tags per post on Instagram/TikTok, 1-3 on LinkedIn
-- Place Hebrew tags at the end of the caption, not inline (Instagram's Hebrew RTL rendering gets confused by inline tags)
+- Place Hebrew tags at the end of the caption, not inline. A Latin-script `#` immediately followed by Hebrew sits on a bidi boundary, and where it lands visually inside a Hebrew sentence is unpredictable across clients. Putting tags on their own trailing lines sidesteps the question entirely.
 
 **Don't:**
-- Use underscores in Hebrew tags - `#פודקאסט_ישראלי` gets parsed as two separate tags by some platforms
+- Use underscores in Hebrew tags. Hebrew hashtags are conventionally written concatenated (`#פודקאסטישראלי`); the underscore form is not the form Israeli users search for, so it costs you the match regardless of how any given platform tokenises it.
 - Transliterate: `#startup` works globally; `#סטארטאפ` works in Israel; `#startapp` is neither
-- Use more than 8 hashtags on LinkedIn - the algorithm deprioritizes over-tagged posts
+- Pile on hashtags on LinkedIn. Three to five focused tags read as professional; a long tag block reads as spam to human readers, which is the effect you can actually observe. LinkedIn publishes no tag-count ranking rule, so treat any specific threshold you see quoted as folklore.
 
-## Common Israeli podcast hashtags (verified active)
+## Common Israeli podcast hashtags
 
 Broad:
-- `#פודקאסט` (1M+ posts)
+- `#פודקאסט` (the broadest Hebrew podcast tag). Per-tag post counts are not published through any citable platform page, so check volume in the app before leaning on a tag.
 - `#פודקאסטישראלי`
 - `#פודקאסטעברית`
 - `#podcast`
@@ -74,8 +74,8 @@ Content niches:
 **TikTok caption:**
 - Hook + context can share a line
 - Hashtags inline at the end
-- Use one of TikTok's native sounds if the clip has no music - non-music podcast clips perform noticeably worse
-- 150-300 characters performs best (beyond this, users scroll past)
+- Consider adding one of TikTok's native sounds under a talking-head clip. This is a widely-followed creator convention rather than a documented ranking factor; TikTok publishes no statement about non-music clips, so test it on your own account rather than treating it as a rule.
+- Aim for 150-300 characters. This is a readability target, not a published ranking factor: the caption is collapsed in-feed, so anything past the first couple of lines is only read by someone who already tapped.
 
 **X (Twitter):**
 - Hook + "listen:" + link + 1 hashtag
@@ -84,7 +84,7 @@ Content niches:
 
 **LinkedIn:**
 - The first 3 lines must hook: avoid emoji stuffing, avoid "Excited to share..." openers
-- Native document uploads outperform external links - consider uploading a PDF of the episode transcript as a separate post
+- Consider uploading a PDF of the episode transcript as a native document post. Native uploads keep the reader on-platform, which is the mechanism people cite; LinkedIn publishes no reach comparison, so treat the advantage as unquantified.
 - Hashtags at the very end, 3-5 maximum
 
 ## Reference

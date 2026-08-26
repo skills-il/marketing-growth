@@ -9,7 +9,10 @@ Spotify parses chapters from the **episode description** you enter in your podca
 | Minimum chapters per episode | 3 | Spotify Creators support |
 | First chapter start time | `00:00` or `00:00:00` | Spotify Creators support |
 | Minimum gap between chapters | 30 seconds | Spotify Creators support |
-| Chapter title maximum length | 40 characters (plain text) | Spotify Creators support |
+| Chapter title length | "Aim for chapter titles under 40 characters" - a recommendation under Spotify's "Tips for chapter titles", not an enforced maximum | Spotify Creators support |
+| Chapter order | Chapters should be in chronological order | Spotify Creators support |
+| Index prefixes | Removed by Spotify: "1 - Introduction" is reformatted | Spotify Creators support |
+| Very short chapters | "If your chapters are shorter than 30 seconds, consider merging them" | Spotify Creators support |
 | Timestamp formats accepted | `(MM:SS)`, `MM:SS`, `(HH:MM:SS)`, `HH:MM:SS` | Spotify Creators support |
 
 ## Formatting
@@ -43,11 +46,11 @@ Invalid examples:
 
 ## Reingest timing
 
-After editing the episode description, Spotify may take up to 4 hours to reparse the chapters on the published episode. If chapters still do not appear after 4 hours, verify the description format - do not repeatedly re-save, it does not speed up the parse.
+After editing the episode description, Spotify states that "it can take a few hours for description updates to reflect across all listening platforms". No specific ceiling is published. If chapters still do not appear, verify the description format - repeatedly re-saving does not speed up the parse.
 
 ## Hebrew-specific gotchas
 
-- **Strip nikud from titles.** Vowel points add codepoints that count against the 40-char limit and can cause the parser to truncate mid-character.
+- **Strip nikud from titles.** Vowel points add codepoints that count against the 40-character readability target and can cause the parser to truncate mid-character.
 - **Numerical digits render LTR inside RTL titles.** This is expected; do not try to wrap digits in unicode directional markers - Spotify strips them.
 - **Do not wrap titles in `<div dir="rtl">`.** The description as a whole can have an RTL div, but individual chapter lines must be plain text.
 

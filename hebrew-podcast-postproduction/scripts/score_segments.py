@@ -35,6 +35,7 @@ STRONG_OPENERS_HE = (
     "כולם", "בכלל לא", "הדבר הכי", "הפעם הראשונה", "האמת היא",
 )
 PRONOUN_REFS_HE = {"זה", "זאת", "הוא", "היא", "הם", "הן", "שם", "ההוא", "ההיא"}
+FILLER_STRIP = " \t.,!?;:\"'()[]{}־-…"
 LAUGHTER_MARKERS = ("[צחוק]", "(צחוק)", "[laughter]", "(laughter)", "ha ha", "חחח")
 
 
@@ -58,6 +59,61 @@ def load_transcript(path: str) -> dict:
         return json.load(f)
 
 
+def scribe_words_to_segments(words: list[dict], gap_sec: float = 0.6) -> list[dict]:
+    """Group ElevenLabs Scribe word-level output into pseudo-segments.
+
+    Scribe returns no `segments` array. Its response is `language_code` plus
+    `words[]`, each `{text, start, end, type}` where `type` is one of
+    "word" | "spacing" | "audio_event". We split on a `spacing` entry longer
+    than `gap_sec`, which approximates the sentence boundaries Whisper emits
+    as segments. `audio_event` entries (laughter, applause) are kept inline as
+    bracketed text so the emotional-peak signal can still see them.
+    """
+    segments: list[dict] = []
+    cur: list[str] = []
+    cur_start: float | None = None
+    cur_end: float | None = None
+
+    def flush() -> None:
+        if cur and cur_start is not None and cur_end is not None:
+            text = " ".join(cur).strip()
+            if text:
+                segments.append({"start": cur_start, "end": cur_end, "text": text})
+
+    for w in words:
+        wtype = w.get("type", "word")
+        start, end = w.get("start"), w.get("end")
+        if wtype == "spacing":
+            if start is not None and end is not None and (end - start) >= gap_sec:
+                flush()
+                cur, cur_start, cur_end = [], None, None
+            continue
+        if start is None or end is None:
+            continue
+        token = w.get("text", "")
+        if wtype == "audio_event":
+            token = f"[{token.strip()}]"
+        if cur_start is None:
+            cur_start = start
+        cur_end = end
+        cur.append(token)
+    flush()
+    return segments
+
+
+def extract_segments(data: dict) -> tuple[list[dict], str]:
+    """Accept either a Whisper transcript or a Scribe transcript.
+
+    Returns (segments, source_label). Raises nothing: an unrecognised shape
+    comes back as an empty list so main() can print one clear error.
+    """
+    if data.get("segments"):
+        return data["segments"], "whisper"
+    if data.get("words"):
+        return scribe_words_to_segments(data["words"]), "scribe"
+    return [], "unknown"
+
+
 def build_windows(segments: list[dict], min_sec: float = 30.0, max_sec: float = 90.0) -> Iterable[Window]:
     """Slide a variable window over consecutive segments, emitting candidate clips."""
     n = len(segments)
@@ -79,7 +135,10 @@ def score_quotable_density(text: str) -> tuple[float, list[str]]:
     words = re.findall(r"\S+", text)
     if not words:
         return 0.0, []
-    filler_count = sum(1 for w in words if w in HEBREW_FILLER)
+    # Whisper attaches punctuation to tokens ("כאילו," / "נו..."), so an exact
+    # match against the filler set silently matched almost nothing and this
+    # 40-point component returned ~40 for every window. Strip punctuation first.
+    filler_count = sum(1 for w in words if w.strip(FILLER_STRIP) in HEBREW_FILLER)
     ratio = 1.0 - (filler_count / len(words))
     reasons = [f"filler ratio {filler_count}/{len(words)}"]
     return ratio * 40.0, reasons
@@ -137,7 +196,15 @@ def select_top_non_overlapping(windows: list[Window], k: int = 5, min_gap: float
     for w in sorted_windows:
         if len(selected) >= k:
             break
-        if all(abs(w.start - s.start) >= min_gap for s in selected):
+        # Compare against the ENDS, not just the starts. Windows here run
+        # 30-90s, so a start-to-start distance of min_gap does not prevent an
+        # overlap: two 90s clips whose starts are 60s apart share 30s of audio.
+        # The skill documents "at least 60 seconds of separation", which is a
+        # statement about the gap between clips, not between their start times.
+        if all(
+            w.start >= s.end + min_gap or w.end + min_gap <= s.start
+            for s in selected
+        ):
             selected.append(w)
     return sorted(selected, key=lambda w: w.start)
 
@@ -159,10 +226,19 @@ def main() -> int:
     args = parser.parse_args()
 
     data = load_transcript(args.transcript)
-    segments = data.get("segments", [])
+    segments, source = extract_segments(data)
     if not segments:
-        print("error: no segments found in transcript", file=sys.stderr)
+        print(
+            "error: no usable timestamps in transcript. Expected either a Whisper "
+            "'segments' array or an ElevenLabs Scribe 'words' array. Note that "
+            "gpt-4o-transcribe and gpt-4o-mini-transcribe return no timestamps at "
+            "all: use local openai-whisper, whisper-1 with response_format="
+            "verbose_json, or Scribe.",
+            file=sys.stderr,
+        )
         return 1
+    lang = data.get("language") or data.get("language_code") or "unknown"
+    print(f"# Source: {source} transcript, language={lang}, {len(segments)} segments\n")
 
     windows = list(build_windows(segments, min_sec=args.min_sec, max_sec=args.max_sec))
     scored = [score_window(w) for w in windows]

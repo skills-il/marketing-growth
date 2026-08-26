@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "hebrew-podcast-postproduction",
-  "generated_at": "2026-05-31T00:00:00Z",
+  "generated_at": "2026-08-26T16:29:01.286584+00:00",
   "claims": [
     {
       "claim_id": "spotify-chapter-rules-a",
@@ -29,17 +29,17 @@
     },
     {
       "claim_id": "spotify-chapter-min-3",
-      "claim": "Spotify requires a minimum of 3 chapters.",
+      "claim": "Spotify requires a minimum of 3 chapters per episode and at least 30 seconds between chapter start times.",
       "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
-      "raw_snippet": "Episode chapters - Spotify Spotify for Creators Features Resources Video Podcast Switch Help Start typing into the Search box, then use the Tab key to choose an option from the list.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "raw_snippet": "You need at least 3 chapters per episode, and at least 30 seconds between each chapter",
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/spotify-chapters-rules.md"
       ],
-      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
-      "verified_at": "2026-08-18"
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00"
     },
     {
       "claim_id": "podcasting-2-chapters-json-a",
@@ -55,17 +55,17 @@
     },
     {
       "claim_id": "podcasting-2-chapters-json-b",
-      "claim": "The JSON Chapters example in the Podcasting 2.0 spec uses version 1.2.0.",
+      "claim": "The Podcasting 2.0 JSON Chapters object has exactly two required top-level properties, version and chapters, and startTime is the only required per-chapter attribute (title is optional).",
       "source_url": "https://raw.githubusercontent.com/Podcastindex-org/podcast-namespace/main/docs/examples/chapters/jsonChapters.md",
-      "raw_snippet": "15 This is the initial spec for a json chapters format that can be referenced in an RSS feed using the ` ` tag of the \"podcast\" namespace.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "raw_snippet": "There is only one required attribute:",
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/chapters-json-schema.md"
       ],
-      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
-      "verified_at": "2026-08-18"
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00"
     },
     {
       "claim_id": "podcasting-2-chapters-tag",
@@ -81,70 +81,72 @@
     },
     {
       "claim_id": "apple-podcasts-audio",
-      "claim": "Apple Podcasts ingests <podcast:transcript> (VTT/SRT) but its auto-generated transcript languages exclude Hebrew; hosted transcripts in any language can still be referenced.",
+      "claim": "Apple publishes accepted podcast audio formats and per-format sampling rate and bit rate requirements.",
       "source_url": "https://podcasters.apple.com/support/893-audio-requirements",
-      "raw_snippet": "odcasts for Creators Open Menu Close Menu Create Manage Design Market Measure Community Support Sign In Content Requirements Audio requirements Apple strives to create the best experience in Apple Podcasts for your listeners and subscribers.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "raw_snippet": "Sampling rate: 44.1 kHz",
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
-      "verified_at": "2026-08-18"
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00"
     },
     {
       "claim_id": "ffmpeg-subtitles-filter",
-      "claim": "FFmpeg's subtitles filter passes SRTs through libass and supports force_style; libass needs FriBidi + HarfBuzz to render Hebrew RTL correctly. Source Code Contribute FATE Code Coverage Funding through SPI More Donate Hire Developers Contact Security Legal FFmpeg Filters Documentation Table of Contents 1 Description 2 Filtering Introduction 3 graph2dot 4 Filtergraph description 4.",
+      "claim": "FFmpeg's subtitles filter draws subtitles on top of input video using the libass library, and accepts an ASS force_style string of KEY=VALUE couples separated by commas.",
       "source_url": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
-      "raw_snippet": "s Source Code Contribute FATE Code Coverage Funding through SPI More Donate Hire Developers Contact Security Legal FFmpeg Filters Documentation Table of Contents 1 Description 2 Filtering Introduction 3 graph2dot 4 Filtergraph description 4.",
-      "fetched_at": "2026-08-19",
+      "raw_snippet": "It accepts a string containing ASS style format",
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
       ],
-      "verified_via": "source fetched; snippet copied from the cited page",
-      "verified_at": "2026-08-19"
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00"
     },
     {
       "claim_id": "libass-fribidi",
-      "claim": "libass requires FriBidi (bidi resolution) and HarfBuzz (shaping) to render Hebrew/Arabic; without them text renders mirrored.",
-      "source_url": "https://github.com/libass/libass",
-      "raw_snippet": "GitHub - libass/libass: libass is a portable subtitle renderer for the ASS/SSA (Advanced Substation Alpha/Substation Alpha) subtitle format.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "claim": "libass requires FriBidi and HarfBuzz as build dependencies; FFmpeg documents HarfBuzz as required for correct Hebrew shaping via the ass filter.",
+      "source_url": "https://raw.githubusercontent.com/libass/libass/master/README.md",
+      "raw_snippet": "fribidi",
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
       ],
-      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
-      "verified_at": "2026-08-18"
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00"
     },
     {
       "claim_id": "heebo-google-font",
-      "claim": "Heebo is a Hebrew-capable Google Font usable for subtitle rendering.",
-      "source_url": "https://fonts.google.com/download?family=Heebo",
-      "raw_snippet": "Heebo",
-      "fetched_at": "2026-05-31T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
-        "references/ffmpeg-hebrew-subtitles.md"
-      ]
-    },
-    {
-      "claim_id": "homebrew-ffmpeg-full",
-      "claim": "The macOS Homebrew core formula ffmpeg-full bundles libass and HarfBuzz (FriBidi transitively via libass); the default ffmpeg formula does not, and Homebrew no longer supports --with-* options.",
-      "source_url": "https://formulae.brew.sh/formula/ffmpeg-full",
-      "raw_snippet": "0-or-later Development: Pull requests Formula JSON API: /api/formula/ffmpeg-full.",
-      "fetched_at": "2026-05-31T00:00:00Z",
+      "claim": "Heebo is a Google Font whose published subsets include Hebrew, making it usable for Hebrew subtitle rendering.",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/heebo/METADATA.pb",
+      "raw_snippet": "subsets: \"hebrew\"",
+      "fetched_at": "2026-08-26T16:19:43.668253+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
       ],
-      "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
-      "verified_at": "2026-08-18"
+      "verified_at": "2026-08-26T16:19:43.668253+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "homebrew-ffmpeg-full",
+      "claim": "The homebrew-core ffmpeg-full formula is keg_only and depends on libass and harfbuzz; the plain ffmpeg formula does not depend on libass.",
+      "source_url": "https://formulae.brew.sh/api/formula/ffmpeg-full.json",
+      "raw_snippet": "\"keg_only\": true",
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ],
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00"
     },
     {
       "claim_id": "internal-scoring-weights",
@@ -183,6 +185,292 @@
       ],
       "verified_via": "cited page fetched; snippet is a contiguous sentence copied from it",
       "verified_at": "2026-08-18"
+    },
+    {
+      "claim_id": "ffmpeg-fribidi-harfbuzz-are-drawtext-flags",
+      "claim": "FFmpeg's --enable-libfribidi and --enable-libharfbuzz configure flags belong to the drawtext filter, not to libass, so they are not a valid test of Hebrew subtitle readiness.",
+      "source_url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/configure",
+      "raw_snippet": "--enable-libfribidi      enable libfribidi, improves drawtext filter [no]",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
+    },
+    {
+      "claim_id": "ffmpeg-libharfbuzz-drawtext",
+      "claim": "FFmpeg's --enable-libharfbuzz flag is documented as needed for the drawtext filter.",
+      "source_url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/configure",
+      "raw_snippet": "--enable-libharfbuzz     enable libharfbuzz, needed for drawtext filter [no]",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
+    },
+    {
+      "claim_id": "ffmpeg-subtitles-needs-libass-only",
+      "claim": "The subtitles filter requires only --enable-libass to compile.",
+      "source_url": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
+      "raw_snippet": "To enable compilation of this filter you need to configure FFmpeg with",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
+    },
+    {
+      "claim_id": "ffmpeg-ass-shaping-complex-hebrew",
+      "claim": "FFmpeg documents shaping=complex as required for correct rendering of Hebrew; the option is available on both the ass and subtitles filters in current FFmpeg (exposed on subtitles on 2026-06-23), while force_style is a subtitles-filter option only.",
+      "source_url": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
+      "raw_snippet": "Required for correct rendering of complex scripts such as Arabic, Hebrew, Devanagari and Thai. Requires libass to be built with HarfBuzz.",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
+    },
+    {
+      "claim_id": "spotify-chapters-chronological",
+      "claim": "Spotify requires chapters to be in chronological order.",
+      "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
+      "raw_snippet": "Chapters should be in chronological order",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/spotify-chapters-rules.md",
+        "scripts/generate_bundle.py"
+      ]
+    },
+    {
+      "claim_id": "spotify-title-40-is-a-recommendation",
+      "claim": "Spotify's 40-character chapter-title figure is a recommendation under 'Tips for chapter titles', not an enforced maximum.",
+      "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
+      "raw_snippet": "Aim for chapter titles under 40 characters.",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/spotify-chapters-rules.md",
+        "scripts/generate_bundle.py"
+      ]
+    },
+    {
+      "claim_id": "spotify-index-prefix-stripped",
+      "claim": "Spotify removes index prefixes from chapter titles.",
+      "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
+      "raw_snippet": "Not adding indexes to your chapter titles as they",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/spotify-chapters-rules.md",
+        "scripts/generate_bundle.py"
+      ]
+    },
+    {
+      "claim_id": "spotify-reparse-a-few-hours",
+      "claim": "Spotify states description updates take a few hours to reflect across listening platforms; it publishes no specific ceiling.",
+      "source_url": "https://support.spotify.com/us/creators/article/episode-chapters/",
+      "raw_snippet": "It can take a few hours for description updates to reflect across all listening platforms.",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/spotify-chapters-rules.md"
+      ]
+    },
+    {
+      "claim_id": "tiktok-caption-2200-utf16-runes",
+      "claim": "TikTok's Content Posting API documents a maximum caption length of 2200 UTF-16 runes; this is the only caption limit TikTok publishes.",
+      "source_url": "https://developers.tiktok.com/doc/content-posting-api-reference-direct-post/",
+      "raw_snippet": "The maximum length is 2200 in UTF-16 runes.",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/social-caption-limits.md"
+      ]
+    },
+    {
+      "claim_id": "linkedin-post-3000-articles-above",
+      "claim": "LinkedIn documents a 3,000-character post limit and directs longer content to an Article; it publishes no article character ceiling.",
+      "source_url": "https://www.linkedin.com/help/linkedin/answer/a528176",
+      "raw_snippet": "The character limit for a post is 3,000 characters.",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/social-caption-limits.md"
+      ]
+    },
+    {
+      "claim_id": "apple-loudness-16-lkfs",
+      "claim": "Apple recommends podcast audio be preconditioned to around -16 dB LKFS with +/- 1 dB tolerance and a true-peak not exceeding -1 dB FS, per ITU-R BS.1770-5.",
+      "source_url": "https://podcasters.apple.com/support/893-audio-requirements",
+      "raw_snippet": "the overall loudness remains around -16 dB LKFS, with a +/- 1 dB tolerance, and that the true-peak value doesn",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "apple-mp3-stereo-bitrates",
+      "claim": "Apple's stereo MP3 minimum is 44.1 kHz at 64 kbps, with 128-256 kbps at 44.1/48 kHz recommended.",
+      "source_url": "https://podcasters.apple.com/support/893-audio-requirements",
+      "raw_snippet": "Bit rate: 64 kbps",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "elevenlabs-scribe-words-not-segments",
+      "claim": "ElevenLabs Scribe returns language_code and a words[] array of {text,start,end,type}; it has no segments[] array.",
+      "source_url": "https://api.elevenlabs.io/openapi.json",
+      "raw_snippet": "SpeechToTextWordResponseModel",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/score_segments.py"
+      ]
+    },
+    {
+      "claim_id": "apple-transcript-languages-exclude-hebrew",
+      "claim": "Apple Podcasts accepts transcripts, including author-supplied ones, only in English, Danish, Dutch, Finnish, French, German, Italian, Norwegian, Portuguese, Spanish and Swedish. Hebrew is excluded.",
+      "source_url": "https://podcasters.apple.com/support/5316-transcripts-on-apple-podcasts",
+      "raw_snippet": "At this time, Apple Podcasts accepts transcripts in English, Danish, Dutch, Finnish, French, German, Italian, Norwegian, Portuguese, Spanish, and Swedish.",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "python-bidi-get-display-api",
+      "claim": "python-bidi 0.6.x exposes get_display both as the Rust-backed top-level `from bidi import get_display` and the backward-compatible `from bidi.algorithm import get_display`.",
+      "source_url": "https://pypi.org/pypi/python-bidi/json",
+      "raw_snippet": "For the python implementation, and compatible with previous versions, use",
+      "fetched_at": "2026-08-26T16:18:53.885261+00:00",
+      "verified_via": "text",
+      "verified_at": "2026-08-26T16:18:53.885261+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "heebo-ttf-direct-download",
+      "claim": "The Heebo variable TTF is downloadable directly from the google/fonts repository.",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/heebo/Heebo%5Bwght%5D.ttf",
+      "raw_snippet": "Heebo[wght].ttf",
+      "fetched_at": "2026-08-26T16:20:09.939742+00:00",
+      "verified_via": "binary",
+      "verified_at": "2026-08-26T16:20:09.939742+00:00",
+      "appears_in": [
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
+    },
+    {
+      "claim_id": "instagram-caption-2200-30-hashtags",
+      "claim": "Instagram caps a media caption at 2200 characters, 30 hashtags and 20 @-mentions.",
+      "source_url": "https://developers.facebook.com/docs/instagram-api/reference/ig-user/media",
+      "raw_snippet": "Maximum 2200 characters, 30 hashtags, and 20",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/social-caption-limits.md"
+      ],
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "x-post-280-character-limit",
+      "claim": "X documents a 280-character limit for Posts on the standard (non-Premium) tier.",
+      "source_url": "https://developer.x.com/en/docs/fundamentals/counting-characters",
+      "raw_snippet": "280-character limit",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/social-caption-limits.md"
+      ],
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "podcasting-2-chapters-only-startTime-required",
+      "claim": "Per the Podcasting 2.0 chapters spec, title is an optional chapter attribute and the spec sets no minimum number of chapter entries.",
+      "source_url": "https://raw.githubusercontent.com/Podcastindex-org/podcast-namespace/main/docs/examples/chapters/jsonChapters.md",
+      "raw_snippet": "(optional - string) The title of this chapter.",
+      "appears_in": [
+        "references/chapters-json-schema.md"
+      ],
+      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
+      "verified_at": "2026-08-26T16:28:44.565456+00:00",
+      "verified_via": "text"
+    },
+    {
+      "claim_id": "libass-repo-url",
+      "claim": "The libass project repository is the canonical reference for its RTL/shaping requirements and is linked from the skill's Reference Links table.",
+      "source_url": "https://github.com/libass/libass",
+      "raw_snippet": "libass",
+      "fetched_at": "2026-08-26T16:29:01.286584+00:00",
+      "verified_at": "2026-08-26T16:29:01.286584+00:00",
+      "verified_via": "text",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "brew-ffmpeg-full-formula-page",
+      "claim": "formulae.brew.sh hosts the human-readable homebrew-core page for the ffmpeg-full formula referenced in the macOS install guidance.",
+      "source_url": "https://formulae.brew.sh/formula/ffmpeg-full",
+      "raw_snippet": "ffmpeg-full",
+      "fetched_at": "2026-08-26T16:29:01.286584+00:00",
+      "verified_at": "2026-08-26T16:29:01.286584+00:00",
+      "verified_via": "text",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/ffmpeg-hebrew-subtitles.md"
+      ]
     }
   ]
 }

@@ -1,6 +1,25 @@
 {
   "cycles": [
     {
+      "version": "1.2.0",
+      "date": "2026-08-26",
+      "lessons": [
+        "Expert CRITICAL fixed: generate_bundle.py's FFMPEG_VIDEO_TEMPLATE emitted the exact subtitles= burn-in the skill's own text calls broken for Hebrew (no shaping). Template now emits :shaping=complex with an inline build-check + ASS-fallback comment.",
+        "Expert CRITICAL fixed: force_style is a subtitles-filter option ONLY (verified in libavfilter/vf_subtitles.c: it sits in subtitles_options, not ass_options), so the previously-recommended switch to the ass filter silently dropped FontName=Heebo and every other style. Both files now say so and instruct editing the .ass [V4+ Styles] Style line.",
+        "Expert CRITICAL fixed: select_top_non_overlapping compared start-to-start only, so two 90s windows 60s apart overlapped by 30s while the Troubleshooting section prescribed that same check as the cure. Predicate now tests end-to-start separation in both directions.",
+        "Expert CRITICAL fixed: SKILL_HE.md Example 2 claimed --mode is auto-detected from the input; it is not (argparse default is audio). Added check_mode_matches_media() to warn on either mismatch.",
+        "REVERSAL worth remembering: both the FFmpeg online docs AND the expert reviewer state that only the ass filter exposes `shaping`. FFmpeg source disproves it: shaping was exposed on the subtitles filter on 2026-06-23. The Judge caught that the reversal was applied in the body but left stale in four other places. Verify filter options against libavfilter source, never against ffmpeg.org's rendered docs.",
+        "Root fix this cycle: the skill's headline Hebrew-readiness test (`ffmpeg -version | grep -E 'libass|fribidi|harfbuzz'`) was wrong. --enable-libfribidi/--enable-libharfbuzz are drawtext-filter flags; a working Hebrew build shows neither, and the tap the skill recommends does not pass libfribidi at all. Replaced with `ffmpeg -filters | grep ' subtitles '` plus `brew info libass`.",
+        "ElevenLabs Scribe support was advertised but broken: Scribe returns language_code + words[], never segments[]. score_segments.py now normalises Scribe word output into pseudo-segments on spacing gaps.",
+        "Examples 1 and 2 documented CLI flags (--transcript, --out, --video) that generate_bundle.py has never implemented; running them verbatim errors out. Corrected to the real argparse surface.",
+        "TikTok's only published caption limit is 2,200 UTF-16 runes (Content Posting API). The 4,000 figure the skill carried as 'verified' appears on no TikTok-owned page. LinkedIn publishes no article ceiling; the 100,000 figure was removed rather than replaced.",
+        "Deferred MAJOR (next cycle): no 9:16 reframing chain for the Reels/TikTok clip outputs the skill advertises, and the subtitle overlay must come after the scale in the filter chain. Biggest remaining practical gap.",
+        "Deferred MAJOR (next cycle): Step B3.5 documents two-pass loudnorm but generate_bundle.py's templates still emit no -af loudnorm, so the emitted scripts do not implement the section's own advice.",
+        "Deferred MINOR (next cycle): build_windows() breaks at the first window reaching min_sec, pinning clip length near the 30s floor and contradicting Step B1's stated 45-75s preference. Also YouTube chapters (a fourth chapter dialect) and ID3v2.3 chapter-writing tooling remain uncovered.",
+        "Deferred MINOR: the -vf filtergraph interpolates the SRT path raw, so an output directory containing a space or colon breaks it."
+      ]
+    },
+    {
       "version": "1.1.1",
       "date": "2026-05-31",
       "lessons": [
