@@ -18,7 +18,8 @@
         "Deferred MAJOR (next cycle): no sample-size or margin-of-error guidance anywhere, so a user can act on n=12 and never be warned. The privacy section warns about small samples for re-identification but never for statistical invalidity.",
         "Deferred MAJOR (next cycle): no accessibility guidance under Regulation 35 / IS 5568 for a survey published by an Israeli business, and no mobile-first guidance despite a 0-10 NPS row wrapping badly on narrow viewports.",
         "Deferred MINOR: back-translation / bilingual-review procedure for surveys that originate in English (the skill currently just forbids re-translation); question-order and acquiescence bias, which matters because CES is an agreement statement; a miluim / security-escalation branch in the send-timing decision tree.",
-        "Deferred MINOR: cross-link the RTL scale-flip warning from export-to-other-platforms.md into hebrew-survey-templates.md; duplicate list numbering in the export reference; duplicate watches bullet in the cheatsheet."
+        "Deferred MINOR: cross-link the RTL scale-flip warning from export-to-other-platforms.md into hebrew-survey-templates.md; duplicate list numbering in the export reference; duplicate watches bullet in the cheatsheet.",
+        "Evidence hygiene: typeform-rtl-languages shipped on a Playwright read performed by a subagent, and help.typeform.com 403s plain fetches, so nothing I ran had confirmed it. Recovered deterministically through the help centre's Zendesk JSON API (help.typeform.com/api/v2/help_center/en-us/articles/<id>.json), which curl reaches and which carries the exact sentence. Prefer that endpoint over the rendered page for any Typeform citation. Separately, forms-api-methods had a HEBREW snippet captured from a localised render of an English Google page, which could never verify."
       ]
     },
     {

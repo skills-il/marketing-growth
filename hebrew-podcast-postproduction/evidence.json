@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "hebrew-podcast-postproduction",
-  "generated_at": "2026-08-26T16:29:01.286584+00:00",
+  "generated_at": "2026-08-26T17:38:47.324571+00:00",
   "claims": [
     {
       "claim_id": "spotify-chapter-rules-a",
@@ -108,17 +108,17 @@
     },
     {
       "claim_id": "libass-fribidi",
-      "claim": "libass requires FriBidi and HarfBuzz as build dependencies; FFmpeg documents HarfBuzz as required for correct Hebrew shaping via the ass filter.",
-      "source_url": "https://raw.githubusercontent.com/libass/libass/master/README.md",
-      "raw_snippet": "fribidi",
-      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
+      "claim": "libass declares FriBidi as a required build dependency (pkg-config fribidi >= 0.19.1), which is why FriBidi never appears in FFmpeg's own configuration line.",
+      "source_url": "https://raw.githubusercontent.com/libass/libass/master/configure.ac",
+      "raw_snippet": "PKG_CHECK_MODULES([FRIBIDI], [fribidi >= 0.19.1]",
+      "fetched_at": "2026-08-26T17:38:47.324571+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
       ],
       "verified_via": "text",
-      "verified_at": "2026-08-26T16:28:44.565456+00:00"
+      "verified_at": "2026-08-26T17:38:47.324571+00:00"
     },
     {
       "claim_id": "heebo-google-font",
@@ -138,15 +138,15 @@
       "claim_id": "homebrew-ffmpeg-full",
       "claim": "The homebrew-core ffmpeg-full formula is keg_only and depends on libass and harfbuzz; the plain ffmpeg formula does not depend on libass.",
       "source_url": "https://formulae.brew.sh/api/formula/ffmpeg-full.json",
-      "raw_snippet": "\"keg_only\": true",
-      "fetched_at": "2026-08-26T16:28:44.565456+00:00",
+      "raw_snippet": "\"keg_only\":true",
+      "fetched_at": "2026-08-26T17:38:47.324571+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/ffmpeg-hebrew-subtitles.md"
       ],
       "verified_via": "text",
-      "verified_at": "2026-08-26T16:28:44.565456+00:00"
+      "verified_at": "2026-08-26T17:38:47.324571+00:00"
     },
     {
       "claim_id": "internal-scoring-weights",

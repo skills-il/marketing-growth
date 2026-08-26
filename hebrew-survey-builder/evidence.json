@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "hebrew-survey-builder",
-  "generated_at": "2026-08-26T17:21:42.940387+00:00",
+  "generated_at": "2026-08-26T17:38:47.324571+00:00",
   "claims": [
     {
       "claim_id": "gws-cli-exists",
@@ -31,17 +31,17 @@
     },
     {
       "claim_id": "forms-api-methods",
-      "claim": "Google Forms API v1 exposes exactly four methods on the forms resource: create, get, batchUpdate, setPublishSettings. There is no forms.update method.",
+      "claim": "The Google Forms API v1 forms resource exposes the methods batchUpdate, create, get and setPublishSettings; there is no forms.update method.",
       "source_url": "https://developers.google.com/workspace/forms/api/reference/rest/v1/forms",
-      "raw_snippet": "אם הטופס מקבל תשובות. אם השדה isPublished מוגדר ל- false , השדה הזה מוגדר באופן אוטומטי ל- false . Methods batchUpdate שינוי הטופס באמצעות קבוצה של עדכונים. create יוצרים טופס חדש עם השם שצוין בהודעת הטופס שסופקה בבקשה. get פותחים טופס. setPublishSettings עדכון הגדרות הפרסום של טופס. שליחת משוב אלא אם צוין אחרת, התוכן של דף זה הוא ברישיון Creative Commons Attribution 4.0 ודוגמאות הקוד הן ברישיון Apache 2.0 . לפרטים, ניתן לעיין ב מדיניות האתר Google Developers .",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Methods Resource: Form A Google Forms document.",
+      "fetched_at": "2026-08-26T17:38:47.324571+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/gws-forms-cheatsheet.md"
       ],
-      "verified_via": "cited page fetched; 13 of 19 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"methods\"",
-      "verified_at": "2026-08-18"
+      "verified_via": "text",
+      "verified_at": "2026-08-26T17:38:47.324571+00:00"
     },
     {
       "claim_id": "forms-batchupdate-endpoint",
@@ -187,14 +187,14 @@
     },
     {
       "claim_id": "typeform-rtl-languages",
-      "claim": "Typeform supports Arabic and Hebrew as its only right-to-left languages.",
-      "source_url": "https://help.typeform.com/hc/en-us/articles/360050914231-Change-your-form-language",
-      "raw_snippet": "right-to-left languages supported are Arabic and Hebrew",
+      "claim": "Typeform supports Arabic and Hebrew as its only right-to-left languages. Recovered via the help centre's JSON API because the rendered help page bot-blocks plain fetches.",
+      "source_url": "https://help.typeform.com/api/v2/help_center/en-us/articles/360050914231.json",
+      "raw_snippet": "the only right-to-left languages supported are Arabic and Hebrew",
       "appears_in": [
         "references/export-to-other-platforms.md"
       ],
-      "fetched_at": "2026-08-26T17:05:07.888039+00:00",
-      "verified_at": "2026-08-26T17:05:07.888039+00:00",
+      "fetched_at": "2026-08-26T17:38:47.324571+00:00",
+      "verified_at": "2026-08-26T17:38:47.324571+00:00",
       "verified_via": "text"
     },
     {

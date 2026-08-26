@@ -16,7 +16,8 @@
         "Deferred MAJOR (next cycle): no 9:16 reframing chain for the Reels/TikTok clip outputs the skill advertises, and the subtitle overlay must come after the scale in the filter chain. Biggest remaining practical gap.",
         "Deferred MAJOR (next cycle): Step B3.5 documents two-pass loudnorm but generate_bundle.py's templates still emit no -af loudnorm, so the emitted scripts do not implement the section's own advice.",
         "Deferred MINOR (next cycle): build_windows() breaks at the first window reaching min_sec, pinning clip length near the 30s floor and contradicting Step B1's stated 45-75s preference. Also YouTube chapters (a fourth chapter dialect) and ID3v2.3 chapter-writing tooling remain uncovered.",
-        "Deferred MINOR: the -vf filtergraph interpolates the SRT path raw, so an output directory containing a space or colon breaks it."
+        "Deferred MINOR: the -vf filtergraph interpolates the SRT path raw, so an output directory containing a space or colon breaks it.",
+        "Evidence hygiene: four snippets were carrying verified_via='text' on a SUBAGENT's report rather than my own fetch. A deterministic curl sweep over every source_url found libass-fribidi cited the README, which contains zero occurrences of 'fribidi' (re-sourced to configure.ac's PKG_CHECK_MODULES line), and homebrew-ffmpeg-full quoted '\"keg_only\": true' with a space that the minified JSON does not contain. Never stamp verified_via from a reviewer's report."
       ]
     },
     {
