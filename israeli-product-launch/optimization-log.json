@@ -1,6 +1,26 @@
 {
   "cycles": [
     {
+      "version": "1.3.0",
+      "date": "2026-08-27",
+      "lessons": [
+        "Deferred (Expert MAJOR): no App Store / Google Play lane. If the product ships as an app, Hebrew RTL store metadata, Israeli storefront + ILS price tiers, review lead time vs a fixed press date, phased release, and privacy declarations are a whole missing workflow. Logged in domain-checklist Should-cover; add next cycle.",
+        "Deferred (Expert MAJOR): Israeli checkout reality (Bit, instalment splitting, Hebrew tax invoice, VAT-registration consequence of charging Israeli customers). Step 6 tells the founder to price in NIS and stops there.",
+        "Deferred (Expert MAJOR): Arab-Israeli market and calendar (Ramadan, Eid) for consumer-facing launches.",
+        "Deferred (Expert under-specified): T-minus schedule for a one-month launch, launch measurement/KPIs+UTM, Hebrew landing-page and RTL guidance, crisis handling.",
+        "Partially addressed, revisit: Facebook-centric community table. Added a steering paragraph toward WhatsApp/Telegram/Slack/Discord rather than rewriting the table, because no named group's current size is independently verifiable. The table itself is still the plan's backbone.",
+        "REVIEWER WAS WRONG, do not repeat: the Expert recommended adding NoCamels as an English-language outlet. NoCamels ceased operations (About page: active 2011-2024, operations paused; last post October 2024), as already verified in israeli-content-marketing. Recorded in domain-checklist Out of scope so a future cycle cannot re-add it.",
+        "REVIEWER WAS WRONG, corrected against the primary source: the Expert cited the spam duty as 'Amendment 40 to the Communications Law'. The house-verified framing and the Kol Zchut source both put it at Section 30A (סעיף 30א). Written as Section 30A.",
+        "Could not source, so not asserted: the accessibility bullet originally named Israeli Standard IS 5568 and 'regulation 35'. Neither number could be confirmed against a reachable primary source (kolzchut page absent, gov.il slug 404s), so the numbers were removed and the bullet routes to the Commission for Equal Rights of Persons with Disabilities instead. Source and restore the standard reference next cycle.",
+        "Deferred (Expert MINOR N1): the accessibility bullet names a duty but no threshold or exemption regime, because neither could be sourced. Next cycle, source the standard version and the small-business thresholds and restore them.",
+        "Deferred (Expert MINOR N2): Step 3 now carries a dead-route registry and a mis-described-programs note. Valuable memory, but it is reference material; move both into references/ and leave a pointer so the step answers \"who do I pitch\" first.",
+        "Deferred (Expert MINOR N3): the Reference Links table still describes Start-Up Nation Central as an ecosystem-data source without the February 2026 restructuring or Startup Nation Finder, and the Innovation Authority URL differs between the EN (/en) and HE files.",
+        "Deferred (Expert MINOR N6): metadata.json display_description.he still names Facebook groups as the community channel, which is the framing this cycle steered away from; the SKILL.md frontmatter compatibility string also omits antigravity and gemini-cli. Both need the Phase 5.7 holdout gate, so they were not touched in a cycle that otherwise left the description alone.",
+        "Deferred (Expert MINOR N7): troubleshooting still says to spend 2-3 weeks warming up in communities, inside a skill whose modal user says \"next month\". Reconcile with the deferred T-minus schedule.",
+        "TOOLING (pre-existing, not caused by this update): verify_legal.py exits 1 on this slug with REVIEW level=3, fired by strong_emit on ניסוח ציטוט מנכל / מנסחים פיצ / תנסחו את הבקשה. Confirmed byte-identical on a pristine HEAD copy, so it predates this cycle. The fresh-context legal-review gate classified the skill Tier C (S1 x F1) PASS: PR and marketing copywriting are not licensed professions and no reserved instrument is emitted. Fix is to add the slug to REVIEWED_CLEAR in verify_legal.py with the profession question stated, NOT to add a notice. The edit was attempted and blocked by the permission classifier this run."
+      ]
+    },
+    {
       "version": "1.2.0",
       "date": "2026-06-23",
       "lessons": [

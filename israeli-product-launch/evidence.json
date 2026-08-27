@@ -1,40 +1,105 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-product-launch",
-  "generated_at": "2026-06-23T11:30:00Z",
+  "generated_at": "2026-08-27T12:20:00Z",
   "claims": [
     {
       "claim_id": "techstars-tel-aviv-closed",
-      "claim": "Techstars no longer runs a Tel Aviv accelerator program. After its 2024 cohort, Techstars ('Techstars 2.0') consolidated onto high-VC-density US cities; Tel Aviv is absent from all 2025/2026 Techstars program lists (including Spring 2026). It also never ran 'quarterly' cohorts.",
-      "source_url": "https://www.techstars.com/blog/program-news/applications-are-now-open-for-techstars-spring-2026-accelerator-programs",
-      "raw_snippet": "Applications Are Now Open for Techstars' Spring 2026 Accelerator Programs | Techstars | Techstars",
-      "fetched_at": "2026-08-18",
+      "claim": "Techstars' current accelerator list contains no Israel or Tel Aviv program, but it does still run London and Tokyo accelerators, so the Israel exit is not a US-only consolidation.",
+      "source_url": "https://www.techstars.com/accelerators",
+      "raw_snippet": "Techstars London Accelerator",
+      "fetched_at": "2026-08-27T12:20:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
     },
     {
       "claim_id": "active-israeli-accelerators-2026",
-      "claim": "Active Israeli accelerators / startup programs in 2026: 8200 EISP (8200 for Startups, nonprofit accelerator, Feb-Jul cohort with a large annual Demo Day, 14+ cohorts); MassChallenge Israel (zero-equity, Jerusalem, annual cohort + showcases); TheHive by Gvahim (accelerator for olim/immigrant founders, Tel Aviv and Ashdod); Google for Startups (Campus Tel Aviv) and Microsoft for Startups (Israel).",
+      "claim": "8200 EISP runs in numbered batches out of a Ramat Gan office. Its program page publishes no cohort months and no dated Demo Day.",
       "source_url": "https://eisp.8200.org.il/program",
-      "raw_snippet": "--> The Program | 8200EISP top of page The Program The Team Alumni Blog Menu Close The Program The Team Alumni Blog Menu Close Apply Apply The Program ​ Empowering founders with world-class mentorship, cutting-edge resources, and a powerful network to drive startup success.",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "The core of the program consists of activities lasting from dawn till dusk",
+      "fetched_at": "2026-08-27T12:20:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"8200\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
+    },
+    {
+      "claim_id": "8200-alumni-idf-signals",
+      "claim": "The 8200 alumni network is published by EISP at 14,000 alumni in Israel and abroad.",
+      "source_url": "https://eisp.8200.org.il/program",
+      "raw_snippet": "14,000 alumni in Israel and abroad",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
+    },
+    {
+      "claim_id": "masschallenge-israel-jerusalem",
+      "claim": "MassChallenge lists Israel as one of four regions, described as hybrid programming based out of Jerusalem, Israel.",
+      "source_url": "https://masschallenge.org/regions/",
+      "raw_snippet": "Israel - Hybrid programming based out of Jerusalem, Israel",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
+    },
+    {
+      "claim_id": "gvahim-thehive-defunct",
+      "claim": "TheHive by Gvahim is no longer a live route: thehive.org.il does not resolve in DNS, and Gvahim's own site lists only career and employment programs with no accelerator, entrepreneurship track or demo day.",
+      "source_url": "https://gvahim.org.il/",
+      "raw_snippet": "Gvahim is a non-profit organization dedicated to equipping new Olim with the necessary tools and up-to-date skills to find suitable employment, build successful careers, and develop their professional networks in Israel.",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
+    },
+    {
+      "claim_id": "google-campus-tel-aviv-gone",
+      "claim": "Google's Campus Tel Aviv is no longer a program property: campus.co redirects to startup.google.com, which lists no Israel location. Google for Startups itself remains a live global program.",
+      "source_url": "https://campus.co/",
+      "raw_snippet": "startup.google.com",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
+    },
+    {
+      "claim_id": "microsoft-for-startups-global-credits",
+      "claim": "Microsoft for Startups is a global self-serve credits and tooling program, not an Israel cohort program with demo days or showcases.",
+      "source_url": "https://www.microsoft.com/en-us/startups",
+      "raw_snippet": "Access cutting-edge AI models, developer tools, and up to $150,000 in credits",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
     },
     {
       "claim_id": "startup-nation-central-restructure-finder",
-      "claim": "Startup Nation Central restructured in early 2026 (laid off roughly 65 of ~80 staff, refocused on fewer high-impact initiatives), downsizing its live-event footprint. Startup Nation Finder remains its durable canonical database of Israeli investors, programs, and events.",
+      "claim": "Startup Nation Central restructured in February 2026, laying off approximately 65 of its 80 employees and refocusing on innovation diplomacy with a smaller, more specialized team. Startup Nation Finder remains its canonical ecosystem database.",
       "source_url": "https://www.calcalistech.com/ctechnews/article/skszcohdwg",
-      "raw_snippet": "Startup Nation Central lays off 65 of 80 employees amid major restructuring | Ctech",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Startup Nation Central is laying off approximately 65 of its 80 employees",
+      "fetched_at": "2026-08-27T12:20:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -44,55 +109,111 @@
     },
     {
       "claim_id": "geektime-english-defunct-ctech",
-      "claim": "Geektime's standalone English edition (geektime.com) is defunct/inactive; the Hebrew geektime.co.il remains a leading Israeli tech outlet. CTech (calcalistech.com) is the dominant English-language Israeli tech outlet, so English pitches route to CTech.",
-      "source_url": "https://www.similarweb.com/website/geektime.co.il/",
-      "raw_snippet": "geektime.com (English) is inactive/under construction; geektime.co.il (Hebrew) is a top Israeli tech site; CTech (calcalistech.com) is the established English-language Israeli tech outlet.",
-      "fetched_at": "2026-06-23T11:00:00Z",
+      "claim": "Geektime's standalone English edition is defunct: geektime.com serves an 'Under Construction' placeholder. CTech is the active English-language Israeli tech outlet, so English pitches route to CTech.",
+      "source_url": "https://geektime.com",
+      "raw_snippet": "Under Construction",
+      "fetched_at": "2026-08-27T12:20:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md",
-        "references/tech-media.md"
-      ]
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
     },
     {
       "claim_id": "product-hunt-mechanics",
-      "claim": "Product Hunt launches go live at 12:01 AM PT (00:01 PT) and run a single ~24-hour daily ranking window (Product of the Day / Week structure), so an Israeli launch day spans parts of two Israel-time calendar days. Unchanged in 2026.",
-      "source_url": "https://smollaunch.com/guides/launching-on-product-hunt",
-      "raw_snippet": "lidays, major sporting events, and big tech announcements Launch at 12:01 AM PST for a full day of visibility Check the Product Hunt calendar and ProductLaunch.io for heavy days Pick a single launch goal Product Hunt success is easier to measure with one clear outcome: More signups for your beta More demo requests for a B2B product A feedback-driven cohort to shape onboarding Launch narrative and angle Product Hunt is crowded. A clear narrative makes your listing memorable.",
-      "fetched_at": "2026-08-18",
+      "claim": "Product Hunt's own launch guide states that 12:01 am Pacific Time is the best launch time, and that the only real promotion rule is that you cannot ask people directly to upvote your product; you ask them to visit and comment instead.",
+      "source_url": "https://www.producthunt.com/launch",
+      "raw_snippet": "You can share your launch link however you wish. The only real rule here is that you cannot ask people directly to upvote your product. Instead, ask them to visit and comment.",
+      "fetched_at": "2026-08-27T12:20:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 46 of 52 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"calendar\"",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
     },
     {
-      "claim_id": "8200-alumni-idf-signals",
-      "claim": "The 8200 alumni network numbers in the tens of thousands (10,000+ is a conservative figure; EISP cites ~14,000 alumni worldwide). Unit 8200, Unit 81, and Mamram are elite IDF tech units used as founder-quality signals.",
-      "source_url": "https://www.8200.org.il/english",
-      "raw_snippet": "--> 8200 Alumni Association top of page תרמו לנו הצטרפו לקהילה עלינו למען החברה למען הבוגרים כרטיס אשראי הייטקזון למען הבוגרים 8200Career תמיכה במילואים פרויקט המלגות למען המורשת מורשת היחידה טורי מורשת חללי יחידה 8200 EN 8200 Alumni Association Founded in 1989, the 8200 Alumni Association preserves the legacy of Unit 8200, supports its graduates in their civilian careers, and leverages its alumni net",
-      "fetched_at": "2026-08-18",
+      "claim_id": "product-hunt-launch-time",
+      "claim": "Product Hunt states 12:01 am Pacific Time is the best time to launch for makers planning ahead.",
+      "source_url": "https://www.producthunt.com/launch",
+      "raw_snippet": "12:01 am Pacific Time is the best time to launch for makers that are planning ahead and don't have limitations or other opportunities.",
+      "fetched_at": "2026-08-27T12:20:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"8200\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T12:20:00Z"
+    },
+    {
+      "claim_id": "linkedin-artificial-engagement-policy",
+      "claim": "LinkedIn's Professional Community Policies prohibit artificially increasing engagement and pre-arranged reciprocal liking or re-sharing.",
+      "source_url": "https://www.linkedin.com/legal/professional-community-policies",
+      "raw_snippet": "Don't do things to artificially increase engagement with your content. Respond authentically to others' content and don't agree with others ahead of time to like or re-share each other's content.",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "spam-law-section-30a",
+      "claim": "Israel's anti-spam rules sit in Section 30A (סעיף 30א) of the Communications (Telecommunications and Broadcasts) Law: sending an advertisement by fax, SMS, email or an automatic dialling system requires the recipient's prior consent.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "חוק התקשורת (בזק ושידורים) - סעיף 30א | האיסור רלוונטי לשליחת פרסומות באמצעי התקשורת האלה בלבד: פקס, SMS, דואר אלקטרוני או מערכת חיוג אוטומטי",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "anti-spam-per-message-damages",
+      "claim": "A court may award up to NIS 1,000 for each advertisement sent without the recipient's prior consent, with no need to prove damage, and the awards accumulate.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "בית המשפט רשאי לפסוק פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה , בלי צורך להוכיח שנגרם נזק לנמען",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "amendment-13-privacy-2025",
+      "claim": "Amendment 13 to Israel's Protection of Privacy Law, 5741-1981 came into force on 14 August 2025 and substantially overhauled the regime, expanding the Privacy Protection Authority's enforcement powers.",
+      "source_url": "https://iapp.org/news/a/israel-marks-a-new-era-in-privacy-law-amendment-13-ushers-in-sweeping-reform",
+      "raw_snippet": "On 14 Aug., Israel enters a new chapter in its data protection regime. With the enactment of Amendment 13 to the Protection of Privacy Law, 5741-1981",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-18-consumer-pricing",
+      "claim": "Israeli VAT is 18%, raised from 17% on 1 January 2025 and unchanged for 2026. Consumer-facing advertised prices include VAT.",
+      "source_url": "https://www.vatupdate.com/2025/12/10/israel-approves-2026-budget-vat-stays-at-18-expands-exemptions-eases-bank-entry-rules/",
+      "raw_snippet": "Israel Approves 2026 Budget: VAT Stays at 18%",
+      "fetched_at": "2026-08-27T12:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "israeli-tech-media-outlets",
-      "claim": "CTech, the English-language edition of Calcalist, is an active Israeli tech and startup news outlet in 2026.",
+      "claim": "CTech is a live English-language Israeli tech and startup news outlet; its news index at calcalistech.com/ctechnews returns HTTP 200 with the page title \"CTech | Ctech\".",
       "source_url": "https://www.calcalistech.com/ctechnews",
-      "raw_snippet": "11:42 | Meir Orbach Defense Tech Ondas expands Israeli defense operations with $33M Aran acquisition Rafael was hit with a $422M bill. The court rejected it Israel's attack-drone tender takes an unexpected turn Covenant takes its long-range missile from secrecy to a live-fire test Defense Tech Ondas expands Israeli defense operations with $33M Aran acquisition 10:51 | Almog Azar Rafael was hit with a $422M bill. The court rejected it 21:09 | Dotan Levy Israel's attack-drone tender takes an unexpected turn 13.08.",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "CTech - Israeli Tech and Start up News",
+      "fetched_at": "2026-08-27T12:35:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/tech-media.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"422\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "page meta description, a stable element, replacing a snippet that had been pinned to rotating homepage headlines",
+      "verified_at": "2026-08-27T12:35:00Z"
     },
     {
       "claim_id": "illustrative-community-sizes-and-pricing",
