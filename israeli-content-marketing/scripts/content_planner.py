@@ -98,11 +98,15 @@ def main():
 
     # A multi-day holiday that STARTS in a prior month but runs into this month
     # still matters, so include any holiday whose window touches the month.
+    # Compare (year, month) and not month alone: an 8-day Hanukkah starting
+    # 25 December ends in the FOLLOWING January, and a month-only test made it
+    # match January of the SAME year, reporting a holiday that had not happened.
     holidays_in_month = []
+    target = (args.year, args.month)
     for d, he, en, days in holidays_for_year:
         start = datetime.strptime(d, "%Y-%m-%d")
         end = start + timedelta(days=days - 1)
-        if start.month == args.month or end.month == args.month:
+        if (start.year, start.month) == target or (end.year, end.month) == target:
             holidays_in_month.append((d, he, en, days))
 
     if holidays_in_month:

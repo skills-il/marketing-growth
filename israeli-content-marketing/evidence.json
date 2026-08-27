@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-content-marketing",
-  "generated_at": "2026-06-22T22:10:00Z",
+  "generated_at": "2026-08-27T08:30:00+00:00",
   "claims": [
     {
       "claim_id": "jewish-holiday-dates-2026-2027",
@@ -14,20 +14,6 @@
       ],
       "verified_via": "cited page fetched and confirmed to contain \"5788\"; snippet replaced with the page's own wording around it",
       "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "israeli-tech-media-outlets",
-      "claim": "Israeli tech/business media operating in 2026: Geektime (Hebrew tech/startups), Calcalist + Calcalist Tech (Hebrew business+tech) with CTech as its English edition, The Marker (Hebrew business, Haaretz group), Globes (Hebrew financial daily), Ynet Tech (general), No Camels (English, Israeli innovation, non-profit at Reichman University). Also covers https://www.calcalistech.com/ctechnews.",
-      "source_url": "https://www.geektime.co.il/category/ai/",
-      "raw_snippet": "by Microsoft פיתוח קריירה מדברים פיננסים משרות בהייטק קטגוריות AI מדע וחלל מיקרוסופט דברים גיקיים פיתוח גיוסי הון ואקזיטים החיים בהייטק ביקורות גאדג'טים ITtime יצירת קשר פרסמו אצלנו תנאי שימוש מדיניות פרטיות הקוד האתי של גיקטיים מובייל ווב?",
-      "fetched_at": "2026-08-19",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
-        "references/israeli-media-landscape.md"
-      ],
-      "verified_via": "Geektime section page fetched; snippet copied from it",
-      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "aeo-earned-media-citations",
@@ -43,17 +29,16 @@
       "verified_at": "2026-08-18"
     },
     {
-      "claim_id": "israel-mobile-first-70",
-      "claim": "Israeli content consumption is heavily mobile-first (over 70%); Israel has ~91% smartphone penetration and >100% mobile connections per capita, so >70% is a conservative floor.",
-      "source_url": "https://datareportal.com/reports/digital-2025-israel",
-      "raw_snippet": "Digital 2025: Israel — DataReportal – Global Digital Insights",
-      "fetched_at": "2026-08-19",
+      "claim_id": "israel-device-traffic-split-2026",
+      "claim": "Israeli web traffic is 53.62% mobile, 44.91% desktop and 1.47% tablet (StatCounter, July 2026). The commonly repeated 'over 70% mobile' figure is not supported for Israel.",
+      "source_url": "https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/israel",
+      "raw_snippet": "Desktop vs Mobile vs Tablet Market Share in Israel - July 2026 Mobile 53.62 % Desktop 44.91 % Tablet 1.47 %",
+      "fetched_at": "2026-08-27T08:30:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-19"
+      "note": "Replaces the previous israel-mobile-first-70 entry, whose verified_via only confirmed that a DataReportal page existed, never that it stated >70%."
     },
     {
       "claim_id": "chok-haspam-sunthu",
@@ -80,6 +65,136 @@
       ],
       "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
       "verified_at": "2026-08-18"
+    },
+    {
+      "claim_id": "nocamels-ceased-operations",
+      "claim": "NoCamels has paused operations due to funding constraints; its site remains accessible but its last published post is from 31 October 2024.",
+      "source_url": "https://nocamels.com/about/",
+      "raw_snippet": "However, due to funding constraints, we have paused our operations",
+      "fetched_at": "2026-08-27T08:30:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
+    },
+    {
+      "claim_id": "ynet-digital-not-tech",
+      "claim": "ynet's consumer-technology section is at ynet.co.il/digital. The path ynet.co.il/tech returns 404.",
+      "source_url": "https://www.ynet.co.il/digital",
+      "raw_snippet": "ynet - דיגיטל - כל מה שחדש בתחום המחשוב, הסלולר והטכנולוגיה",
+      "fetched_at": "2026-08-27T08:30:00+00:00",
+      "verified_via": "curl with a bogus-path negative control on the same host (both /tech and a nonsense path return 404, the /digital path returns 200 with this title)",
+      "verified_at": "2026-08-27T08:30:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
+    },
+    {
+      "claim_id": "anti-spam-per-message-damages",
+      "claim": "Under Israel's anti-spam provision a court may award up to NIS 1,000 for each advertisement sent without the recipient's prior consent, with no need to prove damage, and the awards accumulate. Sending in breach is also a criminal offence carrying a fine of up to NIS 226,000 (2026).",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "בית המשפט רשאי לפסוק פיצוי של עד 1,000 ₪ עבור כל פרסומת שנשלחה , בלי צורך להוכיח שנגרם נזק לנמען",
+      "fetched_at": "2026-08-27T08:30:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
+    },
+    {
+      "claim_id": "anti-spam-criminal-fine",
+      "claim": "Sending advertisements in breach of the anti-spam provision is a criminal offence with a fine of up to NIS 226,000 as at 2026.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "שליחת דברי פרסומת בניגוד לחוק היא עבירה פלילית שהקנס עליה הוא עד 226,000 ₪ (נכון ל-2026)",
+      "fetched_at": "2026-08-27T08:30:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "anti-spam-prior-consent",
+      "claim": "The law prohibits sending an advertisement through various communication media without obtaining the recipient's consent in advance.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%99%D7%A6%D7%95%D7%99_%D7%91%D7%92%D7%99%D7%9F_%D7%9E%D7%A9%D7%9C%D7%95%D7%97_%D7%93%D7%91%D7%A8%D7%99_%D7%A4%D7%A8%D7%A1%D7%95%D7%9E%D7%AA_%D7%9C%D7%9C%D7%90_%D7%94%D7%A1%D7%9B%D7%9E%D7%94_%D7%A9%D7%9C_%D7%94%D7%A0%D7%9E%D7%A2%D7%9F_(%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D)",
+      "raw_snippet": "החוק אוסר לשלוח פרסומת באמצעי תקשורת שונים מבלי לקבל מראש את הסכמת הנמען",
+      "fetched_at": "2026-08-27T08:30:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "outlet-live-geektime",
+      "claim": "Geektime is a live Israeli outlet as at 2026-08-27, verified by fetching its own page with a bogus-path negative control on the same host.",
+      "source_url": "https://www.geektime.co.il/about/",
+      "raw_snippet": "היי, אנחנו גיקטיים | גיקטיים",
+      "fetched_at": "2026-08-27T08:45:00+00:00",
+      "verified_via": "curl with a per-host bogus-path negative control (the bogus path returns 404, the real path returns 200 with this text)",
+      "verified_at": "2026-08-27T08:40:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
+    },
+    {
+      "claim_id": "outlet-live-globes",
+      "claim": "Globes is a live Israeli outlet as at 2026-08-27, verified by fetching its own page with a bogus-path negative control on the same host.",
+      "source_url": "https://www.globes.co.il/news/home.aspx",
+      "raw_snippet": "גלובס - עיתון העסקים של ישראל",
+      "fetched_at": "2026-08-27T08:45:00+00:00",
+      "verified_via": "curl with a per-host bogus-path negative control (the bogus path returns 404, the real path returns 200 with this text)",
+      "verified_at": "2026-08-27T08:40:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
+    },
+    {
+      "claim_id": "outlet-live-themarker",
+      "claim": "The Marker is a live Israeli outlet as at 2026-08-27, verified by fetching its own page with a bogus-path negative control on the same host.",
+      "source_url": "https://www.themarker.com/news",
+      "raw_snippet": "חדשות - TheMarker",
+      "fetched_at": "2026-08-27T08:45:00+00:00",
+      "verified_via": "curl with a per-host bogus-path negative control (the bogus path returns 404, the real path returns 200 with this text)",
+      "verified_at": "2026-08-27T08:40:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
+    },
+    {
+      "claim_id": "outlet-live-ynet-digital",
+      "claim": "ynet Digital is a live Israeli outlet as at 2026-08-27, verified by fetching its own page with a bogus-path negative control on the same host.",
+      "source_url": "https://www.ynet.co.il/digital",
+      "raw_snippet": "ynet - דיגיטל - כל מה שחדש בתחום המחשוב, הסלולר והטכנולוגיה",
+      "fetched_at": "2026-08-27T08:45:00+00:00",
+      "verified_via": "curl with a per-host bogus-path negative control (the bogus path returns 404, the real path returns 200 with this text)",
+      "verified_at": "2026-08-27T08:40:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
+    },
+    {
+      "claim_id": "outlets-calcalist-ctech-walla-live",
+      "claim": "CTech is live at calcalistech.com/ctechnews as at 2026-08-27, and Walla Tech is live at tech.walla.co.il (title 'וואלה טכנולוגיה | כל הטכנולוגיה, הסייבר והסטארטאפים בערוץ אחד'). Calcalist itself returns 403 to plain fetches for both real and bogus paths and was confirmed in a browser rather than by status code.",
+      "source_url": "https://www.calcalistech.com/ctechnews",
+      "raw_snippet": "CTech - Israeli Tech and Start up News",
+      "fetched_at": "2026-08-27T08:45:00+00:00",
+      "verified_via": "browser (location.href asserted); curl is not an oracle on this host",
+      "verified_at": "2026-08-27T08:40:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-media-landscape.md"
+      ]
     }
   ]
 }
