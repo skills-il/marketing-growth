@@ -31,7 +31,9 @@ PLATFORMS = {
         "name_he": "טיקטוק",
         "best_times": ["12:00", "17:00", "21:00"],
         "best_days": ["Sunday", "Tuesday", "Thursday"],
-        "post_types": ["Short video (match length to intent: ~21-34s entertainment / 60-90s informative)", "Duet", "Stitch"],
+        # TikTok publishes no optimal-length guidance. These bands are practitioner
+        # benchmarks to start testing from, not a platform rule. See SKILL.md Step 3.
+        "post_types": ["Short video (match length to intent; practitioner starting bands ~21-34s entertainment / 60-90s informative)", "Duet", "Stitch"],
         "frequency": "3-5 videos/week",
     },
     "linkedin": {

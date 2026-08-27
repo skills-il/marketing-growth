@@ -6,15 +6,17 @@ Sources: NapoleonCat (Jan 2026), DataReportal Digital 2025/2026 Israel, ISOC-IL 
 
 | Platform | Users (IL) | Primary Age | Penetration | Notes |
 |----------|-----------|-------------|-------------|-------|
-| Facebook | ~5.05M ad reach (~7.6M all-ages, NapoleonCat) | 25-55 | ~53% (ad reach) | Groups are #1 community channel; roughly tied with Instagram on scale |
+| Facebook | ~5.05M ad reach (~7.7M all-ages, NapoleonCat, Jul 2026) | 25-55 | ~53% (ad reach) | Groups are #1 community channel; roughly tied with Instagram on scale |
 | Instagram | ~5M | 18-35 | ~52% of population | Reels driving growth, +13.6% YoY |
 | TikTok | ~4.49M (18+) | 16-30 | ~69% of adults 18+ | Fastest growing, total users higher |
 | LinkedIn | ~3.1M | 25-55 | ~33% of population | One of the highest per-capita globally |
 | YouTube | ~7M | All ages | ~73% of population | Largest single platform in Israel by reach |
 | Twitter/X | ~0.88M | 25-45 | ~9% of population | Tech/politics niche, shrinking (about -16% YoY) |
 | Threads | ~0.35M | 18-40 | small but emerging | Meta's text app, growing off Instagram |
-| Telegram | ~2M+ | 20-40 | ~71% usage rate (ISOC-IL) | Developer communities, news channels |
-| WhatsApp | ~9.4M | All ages | ~99% of population | Universal, not a marketing platform |
+| Telegram | ~2M+ | 20-40 | ~71% usage rate | Developer communities, news channels. UNCITED, see note |
+| WhatsApp | ~9.4M | All ages | ~99% of population | Near-universal. Channels is a real one-to-many broadcast surface, treat it as a distribution channel rather than "not marketing", and note that promotional broadcast to a list engages Israel's anti-spam rules. UNCITED, see note |
+
+Citation note: every row above except Telegram and WhatsApp comes from the DataReportal Digital 2026 Israel report (or, for the all-ages Facebook count, NapoleonCat), and can be checked there. The Telegram and WhatsApp figures were carried from an earlier edition attributed to ISOC-IL and **could not be traced to a live source** in the August 2026 review. Treat them as unverified and re-source them before quoting either to a client.
 
 Note: TikTok figure is 18+ ad reach (DataReportal). Total users including under-18 are higher. LinkedIn counts registered members, not monthly active users.
 

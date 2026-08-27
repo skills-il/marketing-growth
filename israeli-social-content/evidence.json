@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-social-content",
-  "generated_at": "2026-06-23T13:00:00Z",
+  "generated_at": "2026-08-27T13:30:00Z",
   "claims": [
     {
       "claim_id": "israel-platform-audiences-2026",
@@ -18,90 +18,11 @@
       "verified_at": "2026-08-18"
     },
     {
-      "claim_id": "platform-ai-content-labeling-2026",
-      "claim": "In 2026 both Meta (Facebook/Instagram/Threads) and TikTok require disclosure of AI-generated/altered visuals and audio depicting realistic people or scenes, and automatically detect and label them via C2PA Content Credentials even without self-disclosure. Repeated non-disclosure can lead to demotion, ad rejection, or account restriction.",
-      "source_url": "https://influencermarketinghub.com/ai-disclosure-rules/",
-      "raw_snippet": "When Creators Must Disclose TikTok’s community guidelines state that any content depicting realistic synthetic people, events, or voices must include a visible disclosure. This includes: AI filters or avatars that make people appear to say or do things they didn’t. Voice clones of real individuals or public figures. Deepfake simulations of events that never occurred.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "cited page fetched; 49 of 58 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"depicting\"",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "caption-and-video-specs-2026",
-      "claim": "Format limits (2026): TikTok caption up to 4,000 characters (only ~80-150 shown before truncation); Instagram caption up to 2,200 characters with up to 30 hashtags (3-10 is the practical sweet spot); Reels and TikTok video 1080x1920 px, 9:16, MP4/H.264. Also covers: https://ads.tiktok.com/business/en https://business.linkedin.com https://creators.instagram.com https://help.instagram.com https://www.facebook.com/business/help",
-      "source_url": "https://www.outfy.com/blog/instagram-character-limit/",
-      "raw_snippet": "Character Limit Instagram Character Limits: Quick Reference Table (2026) Feature Character / Limit Caption 2,200 characters Bio 150 characters Username (handle) 30 characters Name field 30 characters Comment 2,200 characters Direct Message (DM) 1,000 characters Hashtags per post Up to 30 hashtags Daily comments 180–200 per day Instagram Caption Character Limit Instagram allows up to 2,200 characters in a single caption.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
-        "references/israeli-social-platforms.md"
-      ],
-      "verified_via": "cited page fetched and confirmed to contain \"150\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "instagram-tiktok-2026-signals",
-      "claim": "2026 algorithm signals: Instagram Reels lead reach but watch time and 'sends' (DM shares per reach) are the dominant ranking signals (likes downgraded), and carousels now edge out Reels on engagement rate. TikTok rewards retention over raw length (~21-34s for entertainment, 60-90s for informative/search content); Hebrew audio outperforms English for Israeli audiences.",
-      "source_url": "https://blog.hootsuite.com/instagram-algorithm/",
-      "raw_snippet": "It starts by gathering a pool of potential videos, then scoring and ordering them. The signals are similar to Feed, but with an entertainment-first lens. Instagram looks at: How long people watch a video Whether viewers rewatch or reshare it How quickly people interact with the Reel Whether viewers take follow-up actions, like following the creator Using these engagement signals, Instagram predicts how likely you are to: Watch the Reel to the end Tap into the audio page Rewatch or reshare it Follow the creator after watchi",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "cited page fetched; 56 of 66 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"entertainment\"",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "tiktok-us-jv-and-hebrew-audio",
-      "claim": "TikTok's US operations moved to a majority-American joint venture (Oracle, Silver Lake, MGX), closing January 2026; the skill flags this as a reason to re-verify TikTok policy claims and does not over-claim Israel impact. For Israeli audiences, Hebrew audio outperforms English.",
-      "source_url": "https://www.nbcnews.com/tech/tech-news/tiktok-will-automatically-label-ai-generated-content-rcna151446",
-      "raw_snippet": "TikTok will automatically label AI-generated content on the platform",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-18"
-    },
-    {
-      "claim_id": "mobile-first-70",
-      "claim": "Over 70% of Israeli social traffic is mobile.",
-      "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "Digital 2026: Israel — DataReportal – Global Digital Insights",
-      "fetched_at": "2026-08-19",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-19"
-    },
-    {
-      "claim_id": "external-link-reach-suppression",
-      "claim": "A clickable external link in the caption costs organic reach: Meta applies a roughly 15% reach reduction to Instagram caption links and Facebook suppresses external-link feed posts (recommending links in comments); TikTok keeps users on-platform. The phrase 'link in bio' in a caption does NOT hurt reach (Instagram head Adam Mosseri confirmed this is a myth); only the clickable in-caption URL is penalized.",
-      "source_url": "https://www.socialmediaexaminer.com/what-facebooks-new-link-rules-mean-for-your-2026-strategy/",
-      "raw_snippet": "What Facebook's New Link Rules Mean for Your 2026 Strategy : Social Media Examiner",
-      "fetched_at": "2026-08-19",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-19"
-    },
-    {
       "claim_id": "penetration-figures-and-content-mix",
-      "claim": "Reference penetration figures (DataReportal/ISOC-IL): Instagram +13.6% YoY growth; YouTube ~73% of population; Telegram ~71% usage rate (ISOC-IL); WhatsApp ~99% of population. The LinkedIn content-mix heuristic (industry insights 40%, company culture 30%, product 20%, hiring 10%) is conventional B2B guidance, not a measured benchmark.",
+      "claim": "DataReportal Digital 2026 Israel penetration figures used in the skill: YouTube 7.01 million users, which the skill rounds to ~73% of population (73.4% on the source), X 881 thousand (9.2%), Threads 354 thousand (3.7%), and Instagram growth of +13.6% year on year. The Telegram (~71%) and WhatsApp (~99%) rows in references/israeli-social-platforms.md are NOT from this report and are flagged in that file as uncited and unverified.",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "Digital 2026: Israel — DataReportal – Global Digital Insights",
-      "fetched_at": "2026-08-19",
+      "raw_snippet": "+13.6 percent",
+      "fetched_at": "2026-08-27T13:25:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -109,19 +30,154 @@
       ],
       "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
       "verified_at": "2026-08-19"
+    },
+    {
+      "claim_id": "napoleoncat-facebook-israel",
+      "claim": "NapoleonCat's all-ages count of Facebook users in Israel is 7,705,800 for July 2026, 80.4% of the population. This is a different methodology from DataReportal's ad-reach figure and is shown only for context.",
+      "source_url": "https://napoleoncat.com/stats/facebook-users-in-israel/2026/01/",
+      "raw_snippet": "7 705 800 Jul",
+      "fetched_at": "2026-08-27T13:25:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-social-platforms.md"
+      ]
+    },
+    {
+      "claim_id": "israel-mobile-desktop-split",
+      "claim": "Israeli web traffic is 53.62% mobile, 44.91% desktop and 1.47% tablet (StatCounter, July 2026). No social-specific Israeli mobile share is published.",
+      "source_url": "https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/israel",
+      "raw_snippet": "Desktop vs Mobile vs Tablet Market Share in Israel - July 2026 Mobile 53.62 % Desktop 44.91 % Tablet 1.47 %",
+      "fetched_at": "2026-08-27T13:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "tiktok-caption-limit-2200",
+      "claim": "TikTok's Content Posting API states the video caption maximum length is 2200 in UTF-16 runes, and that hashtags and mentions are matched within it. This is the only caption-length figure TikTok publishes.",
+      "source_url": "https://developers.tiktok.com/doc/content-posting-api-reference-direct-post",
+      "raw_snippet": "The video caption. Hashtags (#) and mentions (@) will be matched, or deliminated by spaces or new lines. The maximum length is 2200 in UTF-16 runes.",
+      "fetched_at": "2026-08-27T13:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "instagram-caption-and-hashtag-limits",
+      "claim": "Meta's Instagram Platform media reference states a caption maximum of 2200 characters, 30 hashtags and 20 @ tags.",
+      "source_url": "https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media",
+      "raw_snippet": "Maximum 2200 characters, 30 hashtags, and 20 @ tags.",
+      "fetched_at": "2026-08-27T13:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T13:10:00Z"
+    },
+    {
+      "claim_id": "tiktok-ai-labeling-c2pa",
+      "claim": "TikTok requires creators to label all AI-generated content containing realistic images, audio and video, and automatically applies an 'AI-generated' label to content it identifies as fully generated or significantly AI-edited, including uploads carrying C2PA Content Credentials. An auto-applied label cannot be removed.",
+      "source_url": "https://www.tiktok.com/support/faq_detail?id=7636670084747893268",
+      "raw_snippet": "We also require creators to label all AI-generated content that contains realistic images, audio, and video, as explained in our Community Guidelines.",
+      "fetched_at": "2026-08-27T13:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T13:00:00Z"
+    },
+    {
+      "claim_id": "tiktok-ai-autolabel-irreversible",
+      "claim": "TikTok states that once content is labeled as AI-generated with an auto label, the label cannot be removed from the post, and that the auto label may fire on uploads carrying Content Credentials from the Coalition for Content Provenance and Authenticity (C2PA).",
+      "source_url": "https://www.tiktok.com/support/faq_detail?id=7636670084747893268",
+      "raw_snippet": "Once your content is labeled as AI-generated with an auto label, you won't be able to remove the label from your post.",
+      "fetched_at": "2026-08-27T13:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T13:00:00Z"
+    },
+    {
+      "claim_id": "meta-demoted-content-list",
+      "claim": "Meta's published list of content types it demotes covers clickbait links, engagement bait, fact-checked misinformation and content likely violating Community Standards. External links in captions, and any reach-reduction percentage, do not appear on it.",
+      "source_url": "https://transparency.meta.com/en-us/features/approach-to-ranking/types-of-content-we-demote/",
+      "raw_snippet": "Reduced distribution may vary depending on the number of times the poster or commenter has violated our rules previously, the degree of confidence of our systems' predictions, among other things.",
+      "fetched_at": "2026-08-27T13:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T13:10:00Z"
+    },
+    {
+      "claim_id": "instagram-official-ranking-signals",
+      "claim": "Instagram's own published ranking explainer lists likes, shares, saves and comments as signals for Feed and Reels. It does not mention watch time, sends-per-reach, or any carousel-versus-Reels engagement comparison.",
+      "source_url": "https://about.instagram.com/blog/announcements/instagram-ranking-explained",
+      "raw_snippet": "Posts you've liked, shared, saved or commented on help us understand what you might be interested in.",
+      "fetched_at": "2026-08-27T13:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T13:10:00Z"
+    },
+    {
+      "claim_id": "debunked-figures",
+      "claim": "Two figures the skill names ONLY in order to debunk them, both unsupported. (1) A 'roughly 15%' Instagram caption-link reach reduction attributed to Meta: Meta's published demotion list does not include external links or any percentage. (2) 'Over 70% mobile' for Israel: StatCounter puts Israeli mobile share at 53.62% for July 2026, and no social-specific Israeli mobile figure is published anywhere.",
+      "source_url": "https://transparency.meta.com/en-us/features/approach-to-ranking/types-of-content-we-demote/",
+      "raw_snippet": "Reduced distribution may vary depending on the number of times the poster or commenter has violated our rules previously, the degree of confidence of our systems' predictions, among other things.",
+      "fetched_at": "2026-08-27T13:05:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "unsourced-practitioner-heuristics",
+      "claim": "Figures the skill carries as explicitly-labelled practitioner heuristics rather than platform facts, because no official source publishes them: TikTok length bands of roughly 21-34 seconds and 60-90 seconds; the vertical-video production convention of 1080x1920 at 9:16 in MP4/H.264 (Instagram documents 9:16 as recommended and H264 as a supported codec but publishes no 1080x1920 figure, and TikTok documents no aspect ratio at all); the safe-zone estimates of roughly the bottom 20% and top 10% of the frame; the peak-hour and per-platform posting times and frequencies in Step 5 and scripts/posting_scheduler.py; and the report that Hebrew audio outperforms English audio with Israeli audiences. Each is hedged in the skill text as a starting point to test, not a published benchmark.",
+      "source_url": "https://developers.tiktok.com/doc/content-posting-api-reference-direct-post",
+      "raw_snippet": "The maximum length is 2200 in UTF-16 runes.",
+      "fetched_at": "2026-08-27T13:25:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/posting_scheduler.py"
+      ],
+      "verified_via": "negative-boundary citation: this is TikTok's own API reference, cited to show the boundary of what TikTok actually publishes. The heuristics listed in the claim are explicitly NOT on it, which is the point of the entry.",
+      "verified_at": "2026-08-27T13:30:00Z"
+    },
+    {
+      "claim_id": "content-mix-recommendation",
+      "claim": "The skill's own editorial recommendation for a LinkedIn content mix (industry insights 40%, company culture 30%, product 20%, hiring 10%) and for the Instagram Reels share of time spent. These are the skill's guidance and a platform marketing claim respectively, not external regulatory facts.",
+      "source_url": "https://creators.instagram.com/grow",
+      "raw_snippet": "Did you know that Reels makes up over 50% of all time spent on Instagram?",
+      "fetched_at": "2026-08-27T13:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T13:30:00Z"
     },
     {
       "claim_id": "reference-doc-urls",
-      "claim": "Official reference URLs in the skill.",
+      "claim": "Official reference URLs cited in the skill's Reference Links table: https://www.facebook.com/business/help https://creators.instagram.com https://help.instagram.com https://ads.tiktok.com/business/en https://business.linkedin.com https://datareportal.com/reports/digital-2026-israel . Meta-owned hosts return HTTP 400 to plain curl because they bot-block non-browser clients; all render normally in a browser.",
       "source_url": "https://datareportal.com/reports/digital-2026-israel",
-      "raw_snippet": "gender “skew” that frequently appears in X’s inferred gender data may also be due in part to the high number of legitimate but “non-human” accounts that feature in X’s active user data, including accounts that represent businesses and brands, animals, music groups, and various other entities [ note that X doesn’t currently distinguish between “people” and other types of account in the ways that platforms like Facebook and Instagram do ].",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Digital 2026: Israel",
+      "fetched_at": "2026-08-27T13:25:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "cited page fetched; 40 of 43 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"non-human\"",
-      "verified_at": "2026-08-18"
+      ]
     }
   ]
 }
