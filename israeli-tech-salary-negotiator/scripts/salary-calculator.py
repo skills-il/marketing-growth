@@ -107,8 +107,11 @@ class CompensationPackage:
 
     @property
     def recuperation_annual(self) -> float:
-        # Dmey Havra'a: 418 NIS per day (private sector, 2026, frozen since 2023)
-        return self.recuperation_days * 418
+        # Dmey Havra'a: 451.5 NIS per day, private sector, havra'a year 2026
+        # (1.7.2025-30.6.2026). Updated 18.08.2026 from the previous 418 NIS;
+        # employers who already paid 2026 havra'a at 418 owe the difference.
+        # Public sector is 511.6. Re-check this rate every cycle: it moves.
+        return self.recuperation_days * 451.5
 
     @property
     def bonus_annual(self) -> float:
@@ -174,7 +177,10 @@ class CompensationPackage:
 
 def format_nis(amount: float) -> str:
     """Format a number as NIS currency."""
-    if amount >= 1000:
+    # Test on the magnitude, not the signed value: a negative difference in
+    # --compare mode used to fall through and print "-227607" with no
+    # thousands separators and no NIS suffix.
+    if abs(amount) >= 1000:
         return f"{amount:,.0f} NIS"
     return f"{amount:.0f} NIS"
 

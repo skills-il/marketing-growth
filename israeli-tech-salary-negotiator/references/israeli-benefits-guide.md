@@ -18,12 +18,13 @@ By Israeli law, employers must provide pension contributions after a qualifying 
 
 **Key notes**:
 - The severance component (Pitzuim) at 8.33% means the employer pre-funds severance pay (1 month per year of employment, which equals 8.33% monthly)
-- When the employer contributes 8.33% to severance via the pension fund, this is called "Section 14" (Sif 14), meaning the pension fund balance replaces the statutory severance obligation
-- Total employer cost for pension: 6.5% + 8.33% = 14.83% of salary
+- **Section 14 is a written arrangement, not a contribution rate.** Depositing 8.33% does not by itself create it; Section 14 applies only where the employer and employee sign an arrangement under the General Approval. Ask to see it, do not infer it from the percentage.
+- **What Section 14 gives and what it costs.** With it, the accumulated severance in the fund is the employee's on any exit, including resignation, which is the upside. Against that, the employee gives up the statutory calculation of one month per year on the **last** salary. For a tech employee whose salary rises sharply, the balance accumulated on each year's then-current salary can be well below `last salary x years`, and the top-up claim is waived. The faster the expected salary growth, the more the statutory route is worth, and this is decided at offer stage and cannot be revisited.
+- Total employer pension cost: **12.5% of salary at the statutory floor** (6.5% tagmulim + 6% severance), or **14.83%** where the offer carries the 8.33% tech-market severance rate. Say which one you are using.
 - The 6.5% employer tagmulim includes work-disability cover. By law the tagmulim (benefits) portion must stay at least 5%, and the employer's combined tagmulim-plus-disability contribution is capped at 7.5%; if the disability cover costs more, the employer tops up tagmulim so it never drops below the 5% floor.
 - Multiple pension "ceilings" exist in Israel (do not confuse them):
-  - **Tax-qualifying salary ceiling**: ~47,465 NIS/month in 2026. Above this, certain tax benefits on contributions are lost.
-  - **Comprehensive fund max insurable salary**: ~24,700–30,500 NIS/month in 2026 (varies with total contribution rate). Salary above flows to a supplementary fund.
+  - **The ceilings that actually bite in 2026**, each a different number, so name which one you mean: employer pension contributions above **2.5x the average wage (34,422.5 NIS/month)** lose their exemption and are imputed to the employee; the keren hishtalmut qualifying ceiling is **15,712 NIS/month**; the Section 45a qualifying salary is **9,700 NIS/month**; the severance deposit ceiling is **3,800 NIS/month**. An earlier edition of this guide stated a single "~47,465 NIS/month tax-qualifying ceiling" which corresponds to none of these and could not be traced to any source; it has been removed.
+  - **Comprehensive fund max insurable salary**: roughly 24,700 to 30,500 NIS/month in 2026 (varies with total contribution rate). Salary above flows to a supplementary fund.
   - **Comprehensive fund monthly premium ceiling**: 5,645 NIS/month in 2026 (20.5% of 2x average wage, 13,769 NIS).
 
 ### Pension Types
@@ -58,7 +59,16 @@ When the employee files **Tofes 101** (Form 101) at the start of employment and 
 
 ### Where the credit stops helping
 
-Contributions above the 679 NIS/month ceiling do **not** generate additional Section 45a credit. They are also not eligible for a Section 47 deduction (Section 47 is scoped to self-employed pension contributions only). The excess contribution is funded from after-tax net pay.
+Contributions above the 679 NIS/month ceiling do **not** generate additional Section 45a credit on the insured-salary slice, and that excess is funded from after-tax net pay.
+
+There is a route on the **unpensioned salary** slice (`sachar lo mevutach`: overtime, company-car imputed value, commissions), but it is means-tested against insured salary and the test excludes most of this skill's audience:
+
+| Insured salary | What the employee gets on the unpensioned slice |
+|---|---|
+| At or below 24,250 NIS/month (2026) | Section 47 **deduction** plus an additional Section 45a credit |
+| Above 24,250 NIS/month (2026) | **No Section 47 deduction.** Only a Section 45a credit, at 5% of the unpensioned income, capped by the 9,700 NIS qualifying ceiling |
+
+Worked example from the source: an employee on 30,000 NIS of which 25,000 is pensioned may deposit 5% of the 5,000 unpensioned slice, i.e. 250 NIS/month or 3,000 NIS/year, and receives a 35% credit on it, 1,050 NIS. Section 47 is therefore not a self-employed-only provision, but for a 40,000 NIS tech salary the deduction is out of reach and only the credit remains. State it that way rather than promising a deduction.
 
 For a 40,000 NIS/month tech salary, the employee's mandatory 6% contribution is 2,400 NIS/month. Only the first 679 NIS of that produces a 238 NIS credit. The remaining 1,721 NIS is effectively after-tax savings into the pension fund.
 
@@ -84,7 +94,7 @@ For a 40,000 NIS/month tech salary, the employee's mandatory 6% contribution is 
 
 - Payroll systems need the Form 101 declaration to apply the credit. A new hire who forgets to tick the pension section on Form 101 will see the credit missing from their first payslip until corrected (the difference refunds via the annual תיאום מס or Tofes 135 at year-end).
 - The 45a credit is separate from the Keren Hishtalmut tax treatment. Keren Hishtalmut gives tax-exempt growth on the fund itself; 45a gives a front-loaded monthly credit on the pension contribution. They stack.
-- "Section 47" (סעיף 47) often comes up in the same breath. Section 47 is a **deduction** from taxable income, scoped to self-employed pension contributions (and to salaried employees only on the portion of their salary that comes from non-pensioned income). Most salaried tech employees only claim Section 45a.
+- "Section 47" (סעיף 47) often comes up in the same breath. Section 47 is a **deduction** from taxable income, available to the self-employed and, for a salaried employee, on the portion of pay that is **not** pensioned. It is therefore not a self-employed-only provision. But the deduction is lost once insured salary exceeds 24,250 NIS/month (2026), leaving only a 45a credit on the unpensioned slice, so for most tech salaries the practical answer is credit, not deduction. See the table above.
 
 ### Sources
 - Kol-Zchut: [Pension tax credit (Section 45a)](https://www.kolzchut.org.il/he/זיכוי_ממס_הכנסה_בגין_הפרשות_לביטוח_פנסיוני)
@@ -126,20 +136,40 @@ This benefit is one of the most valuable in the Israeli market. An employer who 
 
 ### Statutory Minimums (by seniority)
 
-Per the 2016–2017 amendment to the Annual Vacation Law, the minimum for a 5-day workweek is:
+There are **two** ladders for a 5-day workweek, and which one applies changes the answer by up to 6 net days at 9 years' tenure. Check which one the employer is under before quoting a minimum. Where both could apply, the employee is entitled to the **higher** of the two.
 
-| Years of Employment | Vacation Days (law) | Common in Tech |
+**Workplaces covered by the expansion order on the move to a 5-day working week (`tzav harchava`).** Do not assume this covers a given employer: the order does **not** apply to workplaces with fewer than four employees, to government or municipal companies, to employers where the move to a 5-day week is regulated by a collective agreement, or to employers the order's supervisory committee has excluded. Confirm before quoting this ladder as a floor.
+
+| Years of tenure | Net days (actual working days) | Gross days (incl. weekly rest) |
 |---|---|---|
-| 1-4 years | 14 days (calendar), ~12 working days | 15-18 working days |
-| 5 years | 16 days (calendar), ~14 working days | 18-20 working days |
-| 6 years | 18 days (calendar), ~16 working days | 20-22 working days |
-| 7+ years | 18+ days, growing with tenure | 22-26 working days |
+| 1-4 years (from 01.01.2017) | 12 | 16 |
+| 5 years | 12 | 16 |
+| 6-8 years | 17 | 23 |
+| 9 years and above | 23 | 31 |
 
-Note: Israeli law expresses vacation in gross calendar days including the weekly rest day. Tech contracts almost always quote net working days, which is the smaller number.
+**Workplaces on the statutory floor only:**
+
+| Years of tenure | Net days | Gross days |
+|---|---|---|
+| 1-4 years (from 01.01.2017) | 12 | 16 |
+| 5 years | 12 | 16 |
+| 6 years | 14 | 18 |
+| 7 years | 15 | 21 |
+| 8 years | 16 | 22 |
+| 9 years | 17 | 23 |
+| 10 years | 18 | 24 |
+| 11 years | 19 | 25 |
+| 12 years | 20 | 26 |
+| 13 years | 20 | 27 |
+| 14 years and above | 20 | 28 |
+
+Typical tech practice sits above both floors, commonly 18-22 net days early on and 22-26 for senior tenure, but the floor is what a negotiation can fall back on.
+
+Note: Israeli law expresses vacation in gross days including the weekly rest day. Tech contracts almost always quote net working days, which is the smaller number, so always confirm which one an offer means.
 
 ### Additional Time Off
 - **Sick days**: 1.5 days per month (18 per year), accumulating up to 90 days. First day unpaid, days 2-3 at 50%, day 4+ at 100%.
-- **Recuperation pay (Dmey Havra'a)**: Annual lump sum based on tenure. **418 NIS per day (private sector, 2026, rate frozen since 2023)**. Typical: 5-10 days per year depending on tenure.
+- **Recuperation pay (Dmey Havra'a)**: Annual lump sum based on tenure. **451.5 NIS per day, private sector, for havra'a year 2026** (1.7.2025 to 30.6.2026). The rate was updated on 18.08.2026 from the previous 418 NIS, and employers who already paid 2026 havra'a at 418 owe the difference retroactively, which is a legitimate thing for a candidate to raise. Public sector is 511.6 NIS. Typical entitlement is 5-10 days per year depending on tenure, and it is payable only after the first full year of employment (then retroactively from day one).
 - **Jewish holidays**: 9 paid holiday days per year (Rosh Hashana, Yom Kippur, Sukkot, Simchat Torah, Pesach, Shavuot, Independence Day, etc.)
 - **Reserve duty (Miluim)**: Employer must maintain salary during reserve duty; the state reimburses the employer.
 - **Unlimited vacation**: Increasingly common in Israeli tech (especially startups), but verify the actual culture around taking time off.
@@ -175,7 +205,7 @@ Negotiating 5 extra vacation days = approximately 9,090 NIS/year in value.
 
 | Benefit | Typical Value | Tax Treatment |
 |---|---|---|
-| Cibus / 10bis card | 40-60 NIS/working day | Tax-exempt up to a ceiling |
+| Cibus / 10bis card | 40-60 NIS/working day | **Taxable in most configurations, verify before valuing.** An employer-funded meal card redeemed off-premises is generally imputed to the employee as a benefit; the narrow exemption is for meals actually provided at the workplace. Do not book this line at face value in a net comparison until you have checked the current Tax Authority position for the specific arrangement |
 | Monthly meal allowance | 800 - 1,200 NIS | Partially taxable |
 | On-site cafeteria | Varies | Generally tax-exempt |
 | Friday food budget | 100-200 NIS/week | Depends on structure |
@@ -229,7 +259,7 @@ For a Senior Engineer in Tel Aviv earning 42,000 NIS/month base:
 | Keren Hishtalmut employer (7.5%) | 3,150 | 37,800 |
 | Car allowance | 3,000 | 36,000 |
 | Meal benefit | 1,000 | 12,000 |
-| Recuperation pay (6 days x 418) | - | 2,508 |
+| Recuperation pay (6 days x 451.5) | - | 2,709 |
 | **Total employer cost** | **~55,400** | **~667,050** |
 
 This means an employer offering 42K base is actually spending approximately 55K/month, and the employee's total compensation package is worth approximately 667K NIS/year before equity and bonuses.
@@ -262,7 +292,7 @@ Watch for these warning signs:
 - **No Keren Hishtalmut**: standard in tech, absence is a 7.5% pay cut
 - **Pension below statutory minimum**: the 2017 expansion order fixed the floor at 6% employee + 6.5% tagmulim + 6% severance. Any offer below this is non-compliant, not a negotiation point.
 - **Tech offers at the statutory floor**: should be at least 6%+6.5% tagmulim + 8.33% severance in tech, with Section 14 applied
-- **No severance fund (Pitzuim)**: or less than 8.33% employer contribution
+- **No severance fund (Pitzuim)**: 6% is the statutory floor and is compliant, so it is not by itself a red flag; less than 6% is. Below 8.33% simply means the offer is under the tech-market norm and is a negotiating point rather than a defect
 - **Section 14 not applied**: means severance is not guaranteed via the pension fund
 - **"Global" salary with no Israeli benefits**: common in remote roles for foreign companies, but you lose significant tax-advantaged benefits
 - **Unlimited vacation with low actual usage**: ask about average days taken by the team

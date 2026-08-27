@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-tech-salary-negotiator",
-  "generated_at": "2026-06-26T10:00:00Z",
+  "generated_at": "2026-08-27T14:45:00Z",
   "claims": [
     {
       "claim_id": "income-tax-brackets-2026",
-      "claim": "2026 Israeli monthly income-tax brackets after the April 2026 revision: 10% to 7,010; 14% 7,011-10,060; 20% 10,061-19,000 (the 20% bracket was widened to 19,000); 31% 19,001-25,100 (shifted up from 22,440); 35% 25,101-46,690; 47% 46,691-60,130; +3% surtax (mas yesef) above ~60,130/month (annual taxable income above 721,560). Credit point value is 242 NIS/month, frozen for 2026.",
-      "source_url": "https://www.malam-payroll.com/%D7%A8%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA-%D7%9E%D7%A1-%D7%94%D7%9B%D7%A0%D7%A1%D7%94-%D7%9E%D7%99%D7%A0%D7%95%D7%90%D7%A8-2026-%D7%94%D7%91%D7%94%D7%A8%D7%94-%D7%9C%D7%9E/",
-      "raw_snippet": "מדרגת המס 20% הורחבה וחלה עד 19,000 ש\"ח לחודש; מדרגת 31% מתחילה ב-19,001 ותימשך עד 25,100 (במקום 22,440); נקודת זיכוי 242 ש\"ח לחודש ל-2026.",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "claim": "2026 monthly income tax brackets: up to 7,010 at 10%; 7,011-10,060 at 14%; 10,061-19,000 at 20%; 19,001-25,100 at 31%; 25,101-46,690 at 35%; 46,691-60,130 at 47%; 60,131 and above at 50% (47% plus the 3% surtax). The surtax threshold is annual income above 721,560 NIS. The bracket widening was enacted in the 2026 budget and applies retroactively from January 2026.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "46,691- 60,130 ₪",
+      "fetched_at": "2026-08-27T14:45:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -17,7 +17,7 @@
     },
     {
       "claim_id": "ni-health-threshold-ceiling-2026",
-      "claim": "2026 National Insurance + Health two-tier structure: reduced rate up to 7,703 NIS/month (employee NI 1.04% + health 3.23% = 4.27%), full rate above to the 51,910 NIS/month ceiling (employee NI 7.00% + health 5.17% = 12.17%). The 7,703 threshold (60% of average wage) and 51,910 ceiling are the 01.01.2026 figures, raised from the 2025 values of 7,522 and 50,695; the rates are unchanged from 2025.",
+      "claim": "2026 Bituach Leumi and health-tax EMPLOYEE rates. The standard row (able-bodied resident aged 18 to retirement, not drawing an old-age pension, not a controlling shareholder) is NI 1.04% / health 3.23% up to the reduced-collection threshold of 7,703 NIS/month, and NI 7.00% / health 5.17% above it, totalling 4.27% and 12.17%. Maximum insurable income is 51,910 NIS/month. The official table has other employee rows with different rates, including a controlling shareholder at 4.25% / 11.96%, an employee over 70 or drawing a disability pension at 3.23% / 5.17%, a 67-to-70-year-old not drawing an old-age pension at 3.93% / 10.03%, a new resident over 62 and under retirement age at 3.60% / 7.45%, and an employee under 18 or drawing an old-age pension who pays no employee contribution.",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
       "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת - 7,703 ש\"ח (החל ב-01.01.2026); תקרת ההכנסה המרבית 51,910 ש\"ח (החל ב-01.01.2026). עובד: ביטוח לאומי 1.04% מופחת / 7% מלא, ביטוח בריאות 3.23% מופחת / 5.17% מלא.",
       "fetched_at": "2026-06-26T09:30:00Z",
@@ -25,25 +25,26 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/gross-to-net-2026.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T14:05:00Z"
     },
     {
-      "claim_id": "section-102-options-tax",
-      "claim": "Most Israeli tech equity is granted under Section 102 of the Income Tax Ordinance via a trustee. The capital-gains track taxes appreciation at 25% (instead of the marginal rate up to 47% + 3% surtax), conditional on a 24-month trustee holding period from the grant date; selling earlier forfeits it and the whole gain is ordinary income. The grant-date value (a discount, or the full FMV for RSUs which have no strike) is taxed as ordinary work income; only post-grant appreciation gets 25%.",
-      "source_url": "https://www.ibi.co.il/hitechoptions/employee-stock-option/",
-      "raw_snippet": "מסלול רווח הון לפי סעיף 102: 25% על הרווח, בכפוף לתקופת החזקה בנאמנות של 24 חודשים מההקצאה; מרכיב ההטבה בעת ההקצאה (וב-RSU מלוא השווי) ממוסה כהכנסת עבודה, ורק העלייה מעבר לכך ב-25%.",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "claim_id": "pension-ceilings-2026",
+      "claim": "2026 contribution ceilings, each a different number: employer pension contributions above 2.5x the average wage, 34,422.5 NIS/month, lose their exemption and are imputed to the employee; the severance deposit ceiling is 3,800 NIS/month; the keren hishtalmut qualifying ceiling is 15,712 NIS/month; the Section 45a qualifying salary is 9,700 NIS/month.",
+      "source_url": "https://pensuni.com/?p=827",
+      "raw_snippet": "תקרת הכנסה מזכה לשכיר תקרת המשכורת בגינה ניתן זיכוי ממס לשכיר בגין הפקדה לקופת גמל לקצבה",
+      "fetched_at": "2026-08-27T14:45:00Z",
       "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
+        "references/israeli-benefits-guide.md"
       ]
     },
     {
       "claim_id": "section-45a-pension-credit-2026",
       "claim": "Section 45a gives salaried employees a 35% income-tax credit on their pension contribution, on a qualifying contribution capped at 8,148 NIS/year (~679 NIS/month, 7% of a ~9,700 NIS qualifying salary), for a maximum annual credit of ~2,851.8 NIS (~238 NIS/month off income tax).",
       "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
-      "raw_snippet": "זיכוי לפי סעיף 45א: 35% על הפקדת העובד לפנסיה, עד הפקדה מזכה של כ-8,148 ש\"ח לשנה (כ-679 לחודש), זיכוי שנתי מרבי כ-2,851.8 ש\"ח (כ-238 לחודש).",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "raw_snippet": "2,851.8 ₪ לשנה",
+      "fetched_at": "2026-08-27T14:45:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -51,23 +52,60 @@
       ]
     },
     {
+      "claim_id": "section-47-salaried-unpensioned",
+      "claim": "Section 47 is not self-employed-only, but it is means-tested. For a salaried employee with unpensioned salary components (overtime, company-car imputed value, commissions), a deposit against that slice earns a Section 47 deduction plus a Section 45a credit only where insured salary is at or below 24,250 NIS/month in 2026. Above that, no Section 47 deduction is available and only a credit remains, at 5% of the unpensioned income and not above the 9,700 NIS qualifying ceiling. Worked example from the source: an employee on 30,000 NIS of which 25,000 is pensioned may deposit 5% of the 5,000 unpensioned slice, 250 NIS/month or 3,000 NIS/year, and receives a 35% credit of 1,050 NIS under Section 45a (סעיף 45א).",
+      "source_url": "https://pensuni.com/?p=1532",
+      "raw_snippet": "מי ששכרו המבוטח עולה בשנת 2026 על 24,250 ש\"ח לא יהיה זכאי לניכוי בגין חלק השכר הלא מבוטח ויהיה זכאי לקבל רק זיכוי ממס.",
+      "fetched_at": "2026-08-27T14:45:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-benefits-guide.md"
+      ]
+    },
+    {
+      "claim_id": "section-102-options-tax",
+      "claim": "Section 102 capital-gains track: 25% capital-gains rate, 24-month trustee holding period measured from the GRANT date. The 102(b)(3) ordinary-income split applies ONLY to a company whose shares are already traded, or which lists within 90 days of the grant, and is measured as the average share price over the 30 trading days before the grant less what the employee paid. For a grant in a private company the whole benefit can be capital at 25%. A benefit on the capital-gains track is not employment income and so carries no Bituach Leumi and no health tax, but it does count toward the 3% surtax threshold.",
+      "source_url": "https://zcpa.co.il/Article/employee-stock-options-section-102-tax-guide",
+      "raw_snippet": "סעיף 102(ב)(3) חל על חברה שמניותיה נסחרות בבורסה, או על חברה שמניותיה נרשמו למסחר בתוך 90 יום ממועד ההקצאה",
+      "fetched_at": "2026-08-27T14:45:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "re-pointed from ibi.co.il, whose page does not contain the 90-day or 30-trading-day rule, to a source that states it",
+      "verified_at": "2026-08-27T14:45:00Z"
+    },
+    {
       "claim_id": "keren-hishtalmut-2026",
-      "claim": "Keren Hishtalmut: employee 2.5% + employer 7.5% (10% total); tax-exempt growth withdrawn after 6 years (3 for education). The 2026 tax-benefited qualifying salary ceiling is 15,712 NIS/month (max tax-benefited deposit 1,571 NIS/month at 10%); employer contributions on salary above that are taxable income for the employee and the growth on the above-ceiling portion is not capital-gains-exempt.",
-      "source_url": "https://www.fnx.co.il/ishtalmutfund/taxbenefits/",
-      "raw_snippet": "קרן השתלמות: עובד 2.5% ומעסיק 7.5%; תקרת השכר המוטבת 15,712 ש\"ח לחודש (הפקדה מוטבת מרבית 1,571 ש\"ח); מעבר לתקרה ההפקדה חייבת במס והרווח אינו פטור ממס רווחי הון. פטור ממס במשיכה לאחר 6 שנים.",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "claim": "Keren hishtalmut: employee 2.5% and employer 7.5% is the standard tech split, tax-exempt growth after six years, and the tax-qualifying ceiling for 2026 is 188,544 NIS/year, i.e. 15,712 NIS/month. The employer's exemption is additionally capped at three times the employee's own contribution, so a 7.5% / 2.5% split sits exactly at that limit and an employee-side reduction breaks it. At the 15,712 NIS ceiling the maximum tax-benefited employer deposit is 1,178 NIS/month (1,178.4 exactly) at 7.5%, the maximum employee deposit is 392.8 NIS/month at 2.5%, and the combined employer-plus-employee maximum at 10% is 1,571 NIS/month (1,571.2 exactly).",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%A8%D7%9F_%D7%94%D7%A9%D7%AA%D7%9C%D7%9E%D7%95%D7%AA",
+      "raw_snippet": "ולא יותר מפי 3 מחלקו של העובד בהפרשות",
+      "fetched_at": "2026-08-27T14:45:00Z",
       "appears_in": [
         "references/israeli-benefits-guide.md",
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "keren-above-ceiling-imputed",
+      "claim": "An employer keren hishtalmut deposit above the qualifying ceiling (15,712 NIS/month, 188,544/year in 2026) is treated as the employee's income at the moment of deposit and is taxed at the employee's marginal bracket. The employer's exemption is also capped at 3x the employee's own contribution. On a 40,000 NIS base with a 7.5% employer rate this imputes 1,822 NIS/month, costing roughly 638 NIS/month in tax at a 35% marginal rate and reducing real net-to-bank from about 23,100 to about 22,450 NIS.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%A8%D7%9F_%D7%94%D7%A9%D7%AA%D7%9C%D7%9E%D7%95%D7%AA",
+      "raw_snippet": "הפקדה של המעסיק מעבר לתקרה תיחשב כהכנסה של העובד כבר במועד ההפקדה לקרן",
+      "fetched_at": "2026-08-27T14:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-benefits-guide.md"
       ]
     },
     {
       "claim_id": "pension-tagmulim-severance-2026",
-      "claim": "Mandatory pension: employee 6%, employer 6.5% tagmulim (which includes work-disability cover, with the tagmulim portion kept at a 5% floor and the combined tagmulim+disability capped at 7.5%), plus an 8.33% employer severance (pitzuim) component (Section 14 pre-funds the 1-month-per-year statutory severance). Total employer pension cost is 6.5% + 8.33% = 14.83% of salary.",
-      "source_url": "https://www.chamber.org.il/serviceslobby/legal/1856/62578/",
-      "raw_snippet": "פנסיה חובה: עובד 6%, מעסיק 6.5% תגמולים (כולל אכ\"ע, רצפת תגמולים 5% ותקרה משולבת 7.5%) ועוד 8.33% פיצויים (סעיף 14). סך עלות מעסיק 14.83%.",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "claim": "Mandatory pension from January 2017 totals 18.50% of salary, split 6.00% employee, 6.50% employer tagmulim and 6% employer severance. The employer tagmulim rate includes work-disability cover. The 8.33% severance rate used across Israeli tech is a Section 14 (סעיף 14) arrangement pre-funding one month per year, above the 6% statutory severance, which is what makes the tech employer stack 14.83% rather than the statutory 12.5%. The salary on which mandatory pension is due is the average wage, 13,769 NIS in 2026.",
+      "source_url": "https://pensuni.com/?p=827",
+      "raw_snippet": "אחוזי ההפקדה לפנסיה חובה החל מינואר 2017, 18.50% בחלוקה הבאה:6.00% עובד, 6.50% מעסיק ו- 6% לפיצויים",
+      "fetched_at": "2026-08-27T14:15:00Z",
       "appears_in": [
         "references/israeli-benefits-guide.md",
         "SKILL.md",
@@ -75,15 +113,38 @@
       ]
     },
     {
-      "claim_id": "dmei-havraah-vacation-2026",
-      "claim": "Dmei Havraah (recuperation pay) private-sector rate is 418 NIS per day in 2026 (frozen; a raise to ~451.5 is pending an extension order, not yet binding), with day entitlements rising 5-10 by tenure. Statutory annual vacation is about 12 working days (16 calendar) for years 1-4 on a 5-day week, rising with tenure; Israeli tech commonly offers 18-24 days.",
+      "claim_id": "employer-stack-12-5-vs-14-83",
+      "claim": "The statutory employer pension and severance floor is 6.5% pension plus 6% severance, i.e. 12.5% of gross, within a total mandatory 18.50% split 6.00% employee / 6.50% employer / 6% severance. The 14.83% figure used in tech reflects a full Section 14 arrangement with severance at 8.33% (one month per year) rather than the statutory 6%.",
+      "source_url": "https://pensuni.com/?p=827",
+      "raw_snippet": "6.00% עובד, 6.50% מעסיק",
+      "fetched_at": "2026-08-27T14:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "dmei-havraah-2026",
+      "claim": "Private-sector recuperation pay (dmey havra'a) for havra'a year 2026 is 451.5 NIS per day, updated on 18.08.2026 from the previous 418 NIS, with employers who already paid at 418 owing the difference. Public sector is 511.6 NIS per day.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%94%D7%91%D7%A8%D7%90%D7%94",
-      "raw_snippet": "דמי הבראה במגזר הפרטי 418 ש\"ח ליום (2026); חופשה שנתית כ-12 ימי עבודה (16 קלנדריים) לשנים 1-4 בשבוע עבודה של 5 ימים.",
-      "fetched_at": "2026-06-26T09:30:00Z",
+      "raw_snippet": "מעסיקים שכבר שילמו דמי הבראה עבור שנת 2026 לפי התעריף הישן (418 ש\"ח), יצטרכו לשלם הפרשים לסכום העדכני של 451.5 ש\"ח.",
+      "fetched_at": "2026-08-27T14:00:00Z",
       "appears_in": [
         "references/israeli-benefits-guide.md",
         "scripts/salary-calculator.py"
       ]
+    },
+    {
+      "claim_id": "annual-vacation-5day-week",
+      "claim": "Statutory annual vacation for a 5-day workweek runs on TWO ladders. Expansion-order workplaces: 1-5 years 12 net / 16 gross; 6-8 years 17 net / 23 gross; 9 years and above 23 net / 31 gross. Statutory-floor workplaces: 1-5 years 12/16; 6 years 14/18; 7 years 15/21; 8 years 16/22; 9 years 17/23; 10 years 18/24; 11 years 19/25; 12 years 20/26; 13 years 20/27; 14 years and above 20/28. The 12 net / 16 gross figure applies from 01.01.2017.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%99%D7%A9%D7%95%D7%91_%D7%9E%D7%A1%D7%A4%D7%A8_%D7%99%D7%9E%D7%99_%D7%94%D7%97%D7%95%D7%A4%D7%A9%D7%94_%D7%94%D7%A9%D7%A0%D7%AA%D7%99%D7%AA_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D_%D7%91%D7%9E%D7%A7%D7%95%D7%9E%D7%95%D7%AA_%D7%A2%D7%91%D7%95%D7%93%D7%94_%D7%A9%D7%91%D7%94%D7%9D_%D7%9E%D7%95%D7%A0%D7%94%D7%92_%D7%A9%D7%91%D7%95%D7%A2_%D7%A2%D7%91%D7%95%D7%93%D7%94_%D7%91%D7%9F_5_%D7%99%D7%9E%D7%99%D7%9D",
+      "raw_snippet": "1- 4 שנים  (* החל מיום 01.01.2017)",
+      "fetched_at": "2026-08-27T14:00:00Z",
+      "appears_in": [
+        "references/israeli-benefits-guide.md"
+      ],
+      "verified_via": "both HTML tables extracted and enumerated row by row",
+      "verified_at": "2026-08-27T14:00:00Z"
     },
     {
       "claim_id": "israeli-tech-salary-benchmarks-2026",
@@ -96,14 +157,14 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-19"
+      "verified_via": "levels.fyi is JS-rendered and blocks automated access, so only its page identity can be fetched. This entry records the DECLARED provenance of aggregated market observations, not a source for any individual figure. references/israeli-tech-salary-data.md states in its own header that these tables are not published statistics and carry no per-figure citation.",
+      "verified_at": "2026-08-27T14:45:00Z"
     },
     {
-      "claim_id": "reference-source-urls",
-      "claim": "Authoritative source URLs cited in the skill (gov / btl / kolzchut / pensuni / supermarker / levels.fyi / globes). Covers these references: https://en.globes.co.il/en/article-revised-income-tax-brackets-boost-march-salary-1001539434 https://pensuni.com/?p=1532 https://pensuni.com/?p=827 https://www.btl.gov.il/ https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים https://www.cbs.gov.il/en/mediarelease/Pages/default.aspx https://www.cbs.gov.il/en/subjects/Pages/Wages-Income.aspx https://www.gov.il/en/departments/israel_tax_authority https://www.gov.il/he/departments/israel_tax_authority https://www.kolzchut.org.il/he/זיכוי_ממס_הכנסה_בגין_הפרשות_לביטוח_פנסיוני https://www.kolzchut.org.il/he/חופשה_שנתית https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה https://www.kolzchut.org.il/he/קרן_השתלמות https://www.levels.fyi/t/software-engineer/locations/israel https://www.supermarker.themarker.com/Gemel/HishtalmutFundTaxBenefits2017.aspx https://www.supermarker.themarker.com/Gemel/TaxBenefitsForKupatGemelAndHishtalmut.aspx",
-      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/default.aspx",
-      "raw_snippet": "דף הבית, הביטוח הלאומי",
+      "claim_id": "illustrative-worked-example-figures",
+      "claim": "Illustrative worked-example salary/comp amounts (the skill's own examples, NOT external facts): base/comp figures 40,000 NIS / 40,000 ש\"ח, 42,000 NIS, 50,000 NIS, 36,000 NIS, 23,500 NIS / 23,500 ש\"ח, 10,000 NIS, 15,000 NIS; monthly benefit lines 3,000 NIS, 2,600 NIS, 3,332 NIS, 5,932 NIS, 71,184 NIS, 2,400 NIS / 2,400 ש\"ח, 1,000 NIS, 1,200 NIS, 1,500 NIS, 1,721 NIS / 1,721 ש\"ח, 1,818 NIS, 2,162 NIS / 2,162 ש\"ח, 4,000 NIS, 4,500 NIS, 5,000 ש\"ח, 6,500 NIS, 8,000 NIS, 9,000 NIS, 9,090 NIS, 200 NIS, 300 NIS, 400 NIS, 60 NIS, NIS 2,000; illustrative equity/percent figures 0.05%, 0.1%, 0.2%, 0.3%, 0.5%, 1.5%, 2.0%, 12%, 15%, 22%, 30%, 40%, 50%. These are example figures in negotiation walk-throughs, not benchmarks.",
+      "source_url": "https://www.levels.fyi/t/software-engineer/locations/israel",
+      "raw_snippet": "We've helped people like you get $30k+ (sometimes $300k+) increases. Schedule a Session Schedule a Session Resume Review Resume Review Stop applying to jobs. Get recruiters to chase you instead. Book a Review Book a Review FAQ What is the salary of a Software Engineer in Israel? The average total compensation of a Software Engineer in Israel is ₪442,628. What is the minimum salary of a Software Engineer in Israel?",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
@@ -111,8 +172,20 @@
         "references/gross-to-net-2026.md",
         "references/israeli-benefits-guide.md"
       ],
-      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
-      "verified_at": "2026-08-18"
+      "verified_via": "levels.fyi is JS-rendered and blocks automated access, so only its page identity can be fetched. This entry records the DECLARED provenance of aggregated market observations, not a source for any individual figure. references/israeli-tech-salary-data.md states in its own header that these tables are not published statistics and carry no per-figure citation.",
+      "verified_at": "2026-08-27T14:45:00Z"
+    },
+    {
+      "claim_id": "salary-location-index-survey-derived",
+      "claim": "The location cost-of-living index and its salary-discount ranges, including the 0-8% remote band, are survey-derived market observations from the sources this reference file declares (levels.fyi Israel among them), not published statistics.",
+      "source_url": "https://www.levels.fyi/t/software-engineer/locations/israel",
+      "raw_snippet": "Software Engineer Salary in Israel",
+      "fetched_at": "2026-08-15",
+      "verified_via": "levels.fyi is JS-rendered and blocks automated access, so only its page identity can be fetched. This entry records the DECLARED provenance of aggregated market observations, not a source for any individual figure. references/israeli-tech-salary-data.md states in its own header that these tables are not published statistics and carry no per-figure citation.",
+      "verified_at": "2026-08-27T14:45:00Z",
+      "appears_in": [
+        "references/israeli-tech-salary-data.md"
+      ]
     },
     {
       "claim_id": "verified-2026-constants-and-forms",
@@ -130,10 +203,10 @@
       "verified_at": "2026-08-15"
     },
     {
-      "claim_id": "illustrative-worked-example-figures",
-      "claim": "Illustrative worked-example salary/comp amounts (the skill's own examples, NOT external facts): base/comp figures 40,000 NIS / 40,000 ש\"ח, 42,000 NIS, 50,000 NIS, 36,000 NIS, 23,500 NIS / 23,500 ש\"ח, 10,000 NIS, 15,000 NIS; monthly benefit lines 3,000 NIS, 2,600 NIS, 3,332 NIS, 5,932 NIS, 71,184 NIS, 2,400 NIS / 2,400 ש\"ח, 1,000 NIS, 1,200 NIS, 1,500 NIS, 1,721 NIS / 1,721 ש\"ח, 1,818 NIS, 2,162 NIS / 2,162 ש\"ח, 4,000 NIS, 4,500 NIS, 5,000 ש\"ח, 6,500 NIS, 8,000 NIS, 9,000 NIS, 9,090 NIS, 200 NIS, 300 NIS, 400 NIS, 60 NIS, NIS 2,000; illustrative equity/percent figures 0.05%, 0.1%, 0.2%, 0.3%, 0.5%, 1.5%, 2.0%, 12%, 15%, 22%, 30%, 40%, 50%. These are example figures in negotiation walk-throughs, not benchmarks.",
-      "source_url": "https://www.levels.fyi/t/software-engineer/locations/israel",
-      "raw_snippet": "We've helped people like you get $30k+ (sometimes $300k+) increases. Schedule a Session Schedule a Session Resume Review Resume Review Stop applying to jobs. Get recruiters to chase you instead. Book a Review Book a Review FAQ What is the salary of a Software Engineer in Israel? The average total compensation of a Software Engineer in Israel is ₪442,628. What is the minimum salary of a Software Engineer in Israel?",
+      "claim_id": "reference-source-urls",
+      "claim": "Authoritative source URLs cited in the skill (gov / btl / kolzchut / pensuni / supermarker / levels.fyi / globes). Covers these references: https://en.globes.co.il/en/article-revised-income-tax-brackets-boost-march-salary-1001539434 https://pensuni.com/?p=1532 https://pensuni.com/?p=827 https://www.btl.gov.il/ https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים https://www.cbs.gov.il/en/mediarelease/Pages/default.aspx https://www.cbs.gov.il/en/subjects/Pages/Wages-Income.aspx https://www.gov.il/en/departments/israel_tax_authority https://www.gov.il/he/departments/israel_tax_authority https://www.kolzchut.org.il/he/זיכוי_ממס_הכנסה_בגין_הפרשות_לביטוח_פנסיוני https://www.kolzchut.org.il/he/חופשה_שנתית https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה https://www.kolzchut.org.il/he/קרן_השתלמות https://www.levels.fyi/t/software-engineer/locations/israel https://www.supermarker.themarker.com/Gemel/HishtalmutFundTaxBenefits2017.aspx https://www.supermarker.themarker.com/Gemel/TaxBenefitsForKupatGemelAndHishtalmut.aspx",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/default.aspx",
+      "raw_snippet": "דף הבית, הביטוח הלאומי",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
@@ -141,20 +214,34 @@
         "references/gross-to-net-2026.md",
         "references/israeli-benefits-guide.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"300\"; snippet replaced with the page's own wording around it",
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
       "verified_at": "2026-08-18"
     },
     {
-      "claim_id": "salary-location-index-survey-derived",
-      "claim": "The location cost-of-living index and its salary-discount ranges, including the 0-8% remote band, are survey-derived market observations from the sources this reference file declares (levels.fyi Israel among them), not published statistics.",
-      "source_url": "https://www.levels.fyi/t/software-engineer/locations/israel",
-      "raw_snippet": "Software Engineer Salary in Israel",
-      "fetched_at": "2026-08-15",
-      "verified_via": "curl with a browser user agent (page title); cited as the declared provenance of survey data, not as the source of a specific percentage",
-      "verified_at": "2026-08-15",
+      "claim_id": "shovi-rechev-and-allowance-taxability",
+      "claim": "Benefits given in connection with employment are employment income unless specifically exempted, so a company car, a meal card and a phone allowance each carry an imputed taxable value that changes net pay. The guide's company-car grade table reflects the price-group method, which applies only to vehicles first registered before 01.01.2010; vehicles from that date use a linear formula on the manufacturer's list price. Both the car valuation method and the meal-card treatment are flagged in the guide as requiring verification against the current Tax Authority position before being used in a net comparison.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A9%D7%95%D7%95%D7%99_%D7%A9%D7%99%D7%9E%D7%95%D7%A9_%D7%91%D7%A8%D7%9B%D7%91_%D7%A6%D7%9E%D7%95%D7%93",
+      "raw_snippet": "שווי שימוש ברכב צמוד",
+      "fetched_at": "2026-08-27T14:45:00Z",
       "appears_in": [
-        "references/israeli-tech-salary-data.md"
-      ]
+        "references/israeli-benefits-guide.md"
+      ],
+      "verified_via": "flag-only entry: the guide now marks the grade table and the meal-card row as requiring verification rather than asserting a figure. The underlying valuation method is deferred to a future cycle and is recorded in optimization-log lessons.",
+      "verified_at": "2026-08-27T14:45:00Z"
+    },
+    {
+      "claim_id": "derived-arithmetic",
+      "claim": "Figures the skill derives arithmetically from other verified entries rather than quoting from a source. Net-to-bank of about 23,100 NIS on a 40,000 gross salary, computed from the verified 2026 brackets, the 242 NIS credit point, the 45a credit and the 4.27% / 12.17% NI-plus-health rates; about 22,450 NIS once the above-ceiling keren imputation is applied. The 9.5% gap between a 38,000 offer and the 42,000 median in the skill's own salary table. The 2.33% of gross difference between a 12.5% statutory employer stack and a 14.83% Section 14 stack. Also: 27,900 NIS/year of employer keren hishtalmut at 7.5% on the Haifa mid-level DevOps median of 31,000 NIS/month (31,000 x 7.5% x 12), replacing an earlier unsupported \"approximately 40K\" claim.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "560,281- 721,560 ₪",
+      "fetched_at": "2026-08-27T14:05:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gross-to-net-2026.md"
+      ],
+      "verified_via": "arithmetic derived from the verified bracket, credit-point, 45a and NI/health entries in this file; the cited page is the 2026 bracket table the derivation rests on, and the snippet is one of its rows",
+      "verified_at": "2026-08-27T14:05:00Z"
     }
   ]
 }

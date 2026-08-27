@@ -70,7 +70,9 @@ Income tax is computed on the salary after the employee pension contribution is 
 
 ## 2. National Insurance + 3. Health tax (employee side, 2026)
 
-Bituach Leumi and `mas briut` are collected together and have the **same two-tier structure**. The split point in 2026 is **7,703 NIS/month** (the "reduced collection bracket", 60% of the average wage, raised from 7,522 in 2025). 2026 rates are unchanged from 2025; the threshold and ceiling rise each year with the average wage.
+Bituach Leumi and `mas briut` are collected together and have the **same two-tier structure**. The split point in 2026 is **7,703 NIS/month** (the "reduced collection bracket", raised from 7,522 in 2025), and the maximum insurable income is **51,910 NIS/month**. 2026 rates are unchanged from 2025; the threshold and ceiling rise each year with the average wage.
+
+**These rates are ONE ROW of the official employee table, not the whole table.** The row below is the correct one for this skill's audience: an able-bodied Israeli-resident employee between 18 and retirement age who is not drawing an old-age pension and is not a controlling shareholder. Bituach Leumi publishes roughly fifteen employee rows, and several carry materially different rates: a controlling shareholder pays 4.25% / 11.96%; an employee over 70, or one drawing a disability pension, pays 3.23% / 5.17%; a 67-to-70-year-old not drawing an old-age pension pays 3.93% / 10.03%; a new resident aged over 62 and under retirement age pays 3.60% / 7.45%; and **an employee under 18, or one drawing an old-age pension, pays no employee contribution at all**. If the candidate is not in the standard row, read the full official table rather than applying the figures below. This warning exists because a sibling skill in this catalogue shipped a single rate row as if it were the whole table and produced a 100% over-charge for pensioners.
 
 | Salary portion | National Insurance | Health tax | Combined |
 |---|---|---|---|
@@ -102,7 +104,7 @@ For a male Senior Backend Engineer, 40,000 NIS/month gross, 2.25 credit points, 
 | Less: employee keren hishtalmut (2.5%) | -1,000.0 |
 | **Net to bank account** | **~23,101.1** |
 
-So a "40K offer" lands as roughly **23,000-23,500 NIS** in the bank, before factoring in any taxable benefits (`shovi rechev` for a company car, partially taxable meal allowances) that would push the tax up. Pension and keren are not lost money, they are forced savings, but they are not spendable take-home this month.
+So the headline calculation puts a "40K offer" at roughly **23,100 NIS** in the bank. **That figure is still too high for a standard tech package**, because it ignores taxable benefits that the package almost always contains. The largest and most-missed of these is the employer's keren hishtalmut deposit above the qualifying ceiling (15,712 NIS/month), which is imputed to the employee as taxable income at the moment of deposit: 7.5% x (40,000 - 15,712) = 1,822 NIS/month, costing about 638 NIS/month at the 35% marginal rate. That alone brings real net to roughly **22,450 NIS**. `Shovi rechev` for a company car and partially taxable meal allowances push it lower again. Pension and keren are not lost money, they are forced savings, but they are not spendable take-home this month.
 
 This is why an offer comparison should always show net, not just gross: two offers with the same gross can produce different net pay once company-car tax value, allowance taxability, and credit-point differences (for example a candidate with children) are factored in.
 
@@ -129,6 +131,6 @@ Use `scripts/salary-calculator.py` for the employer-cost and pre-tax effective-p
 ## Sources
 
 - Israel Tax Authority (income tax brackets, credit points): https://www.gov.il/en/departments/israel_tax_authority
-- Bituach Leumi, employee contribution rates: https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים שכירים.aspx
+- Bituach Leumi, employee contribution rates: https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx (the Hebrew path must be percent-encoded; written with a literal space it fails to fetch)
 - Kol-Zchut, credit points (`nekudot zikui`): https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה
 - Globes, April 2026 revised income tax brackets: https://en.globes.co.il/en/article-revised-income-tax-brackets-boost-march-salary-1001539434

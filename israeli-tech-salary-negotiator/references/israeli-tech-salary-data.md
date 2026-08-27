@@ -10,6 +10,8 @@ Comprehensive salary ranges for Israeli tech positions, organized by role, senio
 
 **Last updated**: Q1 2026
 
+**What these numbers are, and are not.** The percentile tables below are aggregated market observations compiled from the sources named above. They are **not** published statistics: no free authoritative source publishes Israeli tech salary by role, seniority and city, and none of the individual cells carries a per-figure citation or a sample size. The tables are internally consistent (no percentile, seniority or city inversions), but that is a structural property, not evidence that any single number is right. Treat every figure as a starting benchmark to calibrate, not as a citable statistic, and say so to the user rather than quoting a cell as fact in a negotiation. A figure a candidate can source themselves, from a recruiter or a peer, always beats one from this file. The data is also ageing: it is a Q1 2026 snapshot in a market this skill's own Gotchas describe as fast-moving, so by late 2026 treat the ranges as directional only.
+
 **Notes**:
 - Ranges represent base salary only (excludes bonuses, equity, and benefits)
 - Tel Aviv includes the greater Tel Aviv metropolitan area (Gush Dan)

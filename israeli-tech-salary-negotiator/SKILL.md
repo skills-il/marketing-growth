@@ -1,12 +1,16 @@
 ---
 name: israeli-tech-salary-negotiator
-description: Benchmark tech salaries in the Israeli market and craft data-driven negotiation strategies. Use when preparing for a salary negotiation, evaluating a job offer, or comparing total compensation packages at Israeli tech companies (startups, enterprises, multinational R&D centers). Covers base salary ranges by role and seniority, equity and options valuation, Israeli benefits analysis (pension, keren hishtalmut, car allowance, vacation), and counter-offer scripting with market data. Do NOT use for non-tech roles, freelance rate setting, or salary negotiations outside Israel.
+description: 'Not tax advice and not a filed return. Benchmark tech salaries in the Israeli market and craft data-driven negotiation strategies. Use when preparing for a salary negotiation, evaluating a job offer, or comparing total compensation packages at Israeli tech companies (startups, enterprises, multinational R&D centers). Covers base salary ranges by role and seniority, equity and options valuation, Israeli benefits analysis (pension, keren hishtalmut, car allowance, vacation), and counter-offer scripting with market data. Do NOT use for non-tech roles, freelance rate setting, or salary negotiations outside Israel.'
 license: MIT
 allowed-tools: Bash(python:*) WebFetch Read
 compatibility: Requires Claude Code or compatible AI coding agent
 ---
 
 # Israeli Tech Salary Negotiator
+
+## Legal notice
+
+This is a free information tool operated by an AI model. It benchmarks published Israeli tech salary data, computes a compensation package from figures you supply, and explains the tax and benefit rules that apply to it. All of its output is produced automatically, without the involvement, review, or approval of a licensed tax adviser or certified public accountant. Any net-pay, Section 45a, Section 47, or Section 102 figure it produces is an indicative estimate only: it does not know your full tax file, your other income, your credit-point entitlement, or your employer's actual payroll treatment, and Israeli thresholds change annually and sometimes mid-year. An AI model may err, omit data, or present a wrong conclusion. The responsibility for reporting and paying tax is yours, the binding calculation is the Tax Authority's, and representation before the Tax Authority is reserved to those permitted to do so by law. This is not a substitute for advice that takes account of the particular data and needs of each person.
 
 ## Instructions
 
@@ -76,8 +80,8 @@ The credit is applied on the payslip automatically when the employee files Tofes
 
 **Worked example**: Senior Backend Engineer comparing two offers, both nominally 40,000 NIS/month gross.
 
-- **Offer A** (standard Israeli tech package): base 40,000, employee pension 6%, full 45a credit. Employee pension contribution 40,000 x 6% = 2,400 NIS/month, but only the first 679 NIS/month is credit-qualifying. Monthly 45a credit = 679 x 35% = **238 NIS**. The remaining 1,721 NIS of contribution is neither credited nor deducted (it is above the 45a cap, and employees cannot claim a Section 47 deduction on this slice since 47 is scoped to self-employed contributions). Net-of-credit cost to the employee of the mandatory 6% pension: 2,400 - 238 = 2,162 NIS.
-- **Offer B** (foreign remote, "global" contract): base 40,000 paid as cash salary, no Israeli pension, no Section 14 severance. No 45a credit. The employee could open a voluntary pension plan on their own and claim a different tax benefit under Section 47 (deduction, not credit), but the employer contribution is gone. **Annual net-pay delta vs Offer A: 2,851 NIS from the lost 45a credit alone, plus ~71K/year of lost employer pension + severance.**
+- **Offer A** (standard Israeli tech package): base 40,000, employee pension 6%, full 45a credit. Employee pension contribution 40,000 x 6% = 2,400 NIS/month, but only the first 679 NIS/month is credit-qualifying. Monthly 45a credit = 679 x 35% = **238 NIS**. The remaining 1,721 NIS of contribution is above the 45a cap and generates no further credit on the insured-salary slice. **On the unpensioned slice there is a further route, but it is capped in a way that matters for exactly this audience.** An employee with unpensioned pay components (overtime, company-car imputed value, commissions, all common in tech) can deposit against that slice independently. Where insured salary is **at or below 24,250 NIS/month** that deposit earns a Section 47 deduction plus a further 45a credit. Where insured salary **exceeds 24,250 NIS/month, which is most of this skill's audience, the Section 47 deduction is not available at all** and only the credit remains: 5% of the unpensioned income, subject to the same 9,700 NIS qualifying ceiling. So for a 40,000 NIS earner the honest answer is "a credit on the unpensioned slice, not a deduction". Do not promise a deduction to a senior candidate. Net-of-credit cost to the employee of the mandatory 6% pension: 2,400 - 238 = 2,162 NIS.
+- **Offer B** (foreign remote, "global" contract): base 40,000 paid as cash salary, no Israeli pension, no Section 14 severance. No 45a credit. The employee could open a voluntary pension plan on their own, but at this salary the Section 47 deduction is out of reach (see above), so the offsetting benefit is small, and the employer contribution is gone entirely. **Annual net-pay delta vs Offer A: 2,851 NIS from the lost 45a credit alone, plus ~71K/year of lost employer pension + severance.**
 
 Run `scripts/salary-calculator.py` with `--pension-employee` set to the actual employee share, then manually subtract the 45a credit (238 NIS/month if contribution >= 679, or 35% of actual contribution if below) to get a net-pay comparison. Present both the gross and post-credit net numbers to the user so they understand what a "same base salary" offer really pays.
 
@@ -92,7 +96,9 @@ The single most common candidate question is "what will I actually take home?" A
 3. **Health tax** (`mas briut`), collected together with Bituach Leumi, also two-tier: 3.23% up to 7,703 NIS/month, 5.17% above.
 4. **Employee pension and keren contributions** are withheld too, but they are savings, not taxes (the calculator already reports "pre-tax effective pay" after these).
 
-For a 40,000 NIS/month gross offer (male, 2.25 credit points, standard contributions), net-to-bank lands around **23,000-23,500 NIS**. Always present **both** the gross figure and the net-to-bank estimate, because two offers with the same gross can produce different net pay once company-car tax value (`shovi rechev`), allowance taxability, and credit-point differences (a candidate with children claims more points) are factored in.
+For a 40,000 NIS/month gross offer (male, 2.25 credit points, standard contributions), net-to-bank lands around **23,100 NIS** on the headline calculation. **Then apply the keren hishtalmut ceiling, which this figure ignores and most calculators do too.** The employer's 7.5% keren deposit above the qualifying ceiling (15,712 NIS/month in 2026) is imputed to the employee as taxable income at the moment of deposit. On a 40,000 base that is 7.5% x (40,000 - 15,712) = 1,822 NIS/month of imputed income, costing roughly 638 NIS/month in tax at the 35% marginal rate and bringing real net-to-bank closer to **22,450 NIS**. That is a 650 NIS/month gap between what a naive gross-to-net gives and what actually lands, and it grows with the base salary.
+
+Always present **both** the gross figure and the net-to-bank estimate, because two offers with the same gross can produce different net pay once the keren ceiling, company-car tax value (`shovi rechev`), allowance taxability, and credit-point differences (a candidate with children claims more points) are factored in.
 
 Consult `references/gross-to-net-2026.md` for the full bracket table, the two-tier Bituach Leumi and health-tax rates, credit-point entitlements, and step-by-step worked examples. Verify the figures against the official sources before quoting a number, since Israeli thresholds update annually and sometimes mid-year.
 
@@ -111,9 +117,10 @@ Most Israeli tech equity is granted under **Section 102** (`Sa'if 102`) of the I
 
 - **Capital-gains track (`maslul revach hon`)** - the common, favorable track. The gain on the grant is taxed at the **25% capital-gains rate** instead of the employee's marginal income-tax rate (which tops out at 47% plus the 3% surtax). To qualify, the securities must be held by the trustee for a **24-month holding period** from the grant date. Selling before 24 months forfeits the capital-gains treatment and the whole gain is taxed as ordinary income.
 - **Ordinary-income track (`maslul hachnasat avoda`)** - the gain is taxed at the employee's marginal rate. Companies sometimes pick this because it lets the company deduct the expense; the employee almost always prefers the capital-gains track.
-- **The embedded-value catch**: even on the capital-gains track, if the grant has a "ready value" at the grant date (for example a discount-priced option on an already-valuable share, or RSUs which have no strike price), the **portion equal to the company's value at grant is taxed as ordinary income**, and only the appreciation above that is taxed at 25%. For RSUs this means a meaningful slice is ordinary income, not the headline 25%.
+- **The embedded-value catch, and its real scope**: on the capital-gains track, Section 102(b)(3) splits part of the benefit into ordinary income, but **this applies only where the company's shares are already traded, or are listed within 90 days of the grant.** The ordinary-income slice is then measured as the average share price over the 30 trading days before the grant, less anything the employee paid, and only the appreciation above that is taxed at 25%. **For a grant in a private startup, the entire benefit can be capital at 25%**, even if the company later goes public. This distinction decides the comparison between a big-tech RSU offer and a startup option grant, so do not apply the split to a private company.
+- **Two things that favour the employee and are routinely omitted**: a benefit on the 102 capital-gains track is not classified as employment income, so it carries **no Bituach Leumi and no health tax**, which is a real advantage over a cash bonus of the same size. Against that, 102 gains **do** count toward the surtax threshold, so a large exit can be taxed at 25% plus the 3% surtax.
 
-When evaluating an equity offer, ask the user: which Section 102 track, and what is the grant date (the 24-month clock starts then, not at vesting). RSUs under Section 102 capital-gains track still qualify for the 25% rate on appreciation, but expect the grant-date value to be ordinary income. For a deeper walk-through of Section 102 mechanics, exercise timing, and the trustee process, cross-reference the `israeli-stock-options-tax` skill.
+When evaluating an equity offer, ask the user: which Section 102 track, is the company already traded, and what is the grant date (the 24-month clock starts then, not at vesting). For a deeper walk-through of Section 102 mechanics, exercise timing, and the trustee process, cross-reference the `israeli-stock-options-tax` skill.
 
 #### Sign-On Equity vs RSU Refresh Grants
 
@@ -161,13 +168,13 @@ User says: "I got an offer for a Senior Backend Engineer role at a Series B star
 
 Actions:
 1. Look up Senior Backend Engineer salary ranges in Tel Aviv from `references/israeli-tech-salary-data.md`
-2. Compare 38K against the median (approximately 40-42K for Senior Backend in Tel Aviv)
+2. Compare 38K against the median, which `references/israeli-tech-salary-data.md` puts at 42K for Senior Backend in Tel Aviv (25th 35K, 75th 48K, 90th 55K). Quote the table's figure rather than a remembered band, and do the arithmetic: 38K is 9.5% below median, not "about 7%"
 3. Analyze benefits using `references/israeli-benefits-guide.md`
 4. Run `scripts/salary-calculator.py` with the offered package
 5. Evaluate 0.1% equity based on typical Series B valuations
 6. Draft a counter-offer strategy targeting 42-44K base with justification
 
-Result: Deliver a comprehensive analysis showing the offer is approximately 7% below median for the role and location, with a specific counter-offer email draft requesting 43K base, maintaining the equity grant, and suggesting a signing bonus of 10-15K NIS to bridge the gap.
+Result: Deliver a comprehensive analysis showing the offer is 9.5% below median for the role and location, with a specific counter-offer email draft requesting 43K base, maintaining the equity grant, and suggesting a signing bonus of 10-15K NIS to bridge the gap. Note the deliberate departure from Step 2's default anchor: the 75th percentile here is 48K, and countering at 43K is the softer play appropriate to the cooled 2025-2026 market described in Step 5. Say which anchor you chose and why, rather than silently splitting the difference.
 
 ### Example 2: Comparing Two Offers with Different Structures
 
@@ -191,10 +198,10 @@ Actions:
 1. Look up Mid DevOps salary ranges in Haifa
 2. Calculate the monetary value of upgrading pension to 6%+6.5% and adding keren hishtalmut at 2.5%+7.5%
 3. Run `scripts/salary-calculator.py` comparing current vs. desired benefits packages
-4. Quantify the annual difference (typically 30-50K NIS per year in additional employer contributions)
+4. Quantify the annual difference from the actual base, not a remembered band. Adding employer keren at 7.5% on the Haifa Mid DevOps median of 31K is 31,000 x 7.5% x 12 = 27,900 NIS/year; at the Haifa Mid 90th percentile of 40K it is 36,000. Compute it, do not quote a range
 5. Draft talking points for approaching HR about benefits upgrade
 
-Result: A clear breakdown showing that upgrading to full benefits adds approximately 40K NIS annually in employer contributions, with a script for the conversation framed as "bringing my package in line with market standard" rather than asking for a raise.
+Result: A clear breakdown showing that adding employer keren hishtalmut at 7.5% is worth about 27,900 NIS/year at the Haifa Mid DevOps median, with a script for the conversation framed as "bringing my package in line with market standard" rather than asking for a raise. Note that this employer is already at 6%+6.5% pension, which is the statutory floor, so the pension line is not the negotiating point here; the missing keren is.
 
 ## Bundled Resources
 
@@ -213,7 +220,7 @@ Result: A clear breakdown showing that upgrading to full benefits adds approxima
 - Stock options in Israeli startups typically use Section 102 trustee arrangements for favorable 25% capital gains tax treatment. Agents may apply US tax rates (which can be higher) when evaluating equity value.
 - Israeli tech salaries are quoted as gross monthly (bruto chodshi), not annual. An offer of "40K" means 40,000 NIS per month. Agents may interpret this as annual, drastically miscalculating the package.
 - The Israeli tech salary market shifts rapidly, especially in hot domains like AI/ML and cybersecurity. Salary benchmarks from even 12 months ago may be significantly outdated.
-- The Section 45a pension tax credit (35% on employee contributions, capped at 679 NIS/month in 2026) is easy to omit when comparing Israeli employment against foreign-remote "global" contracts. Agents that only compare gross salary miss roughly 2,851 NIS/year of net pay plus the entire employer pension and severance stack (about 14.83% of gross). Any comparison between an Israeli local contract and a foreign employer-of-record contract must account for 45a explicitly.
+- The Section 45a pension tax credit (35% on employee contributions, capped at 679 NIS/month in 2026) is easy to omit when comparing Israeli employment against foreign-remote "global" contracts. Agents that only compare gross salary miss roughly 2,851 NIS/year of net pay plus the entire employer pension and severance stack. Size that stack correctly: the **statutory** employer floor is 6.5% pension + 6% severance = 12.5% of gross, while the tech-market norm of a full Section 14 arrangement puts severance at 8.33% (one month per year) for 14.83% total. Use 12.5% when comparing against a bare statutory package and 14.83% only when the Israeli offer actually carries the 8.33% severance rate, or the comparison overstates the Israeli side by about 2.33% of gross. Any comparison between an Israeli local contract and a foreign employer-of-record contract must account for 45a explicitly.
 
 ## Reference Links
 
