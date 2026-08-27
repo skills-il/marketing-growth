@@ -12,6 +12,26 @@
         "MAJOR fixed (Expert): noted in the reference that Hebrew is indexed only in the IL storefront (no cross-localization carryover) and that the Play 80-char short description is a high-weight indexed field.",
         "Deferred (MINOR): reference line 'App revenue per user: higher than MENA average' is unsourced, source or drop next cycle. Also could note Google Play 2-screenshot minimum and 16:9/9:16 aspect ratios."
       ]
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-08-27",
+      "lessons": [
+        "Platform drift (type B) found in 6 places in 2 months: Google Play 'Store Listing Experiments' renamed to 'Run A/B tests on your store listing' AND restructured (default-graphics experiment cannot test text; localized experiment needed for Hebrew copy; 1 default OR 5 localized concurrent; up to 2 variants). Apple retired the separate 6.7\" screenshot class (1290x2796 and 1260x2736 now sit inside the 6.9\" class). Re-verify both every cycle.",
+        "BUG fixed: v1.2.0 relabelled DataReportal's INTERNET-user figure (8.72M / 91.3%) as 'smartphone users'. The mobile figure is 10.4M cellular connections = 109% of population. A prior cycle's own 'STALE fix' introduced the error. Never carry a penetration figure without its metric name.",
+        "CRITICAL fixed: SKILL.md and the bundled script told users to add plural variants to the Apple keyword field. Apple documents plurals of already-included words as DUPLICATES that waste the limit. Also corrected the 'no phrases' rule: Apple explicitly permits spaces inside a keyword phrase (its own example is Property,House,Real Estate). Both errors were introduced by v1.2.0's 'CRITICAL fix' to the script.",
+        "CRITICAL fixed (Expert): the app icon was absent for BOTH stores. Play requires 512x512 32-bit PNG WITH alpha, which INVERTS the no-alpha rule the skill states for the feature graphic and screenshots, so an agent following the skill would have stripped alpha and been rejected.",
+        "CRITICAL fixed (Expert): a localized listing is served by the user's LANGUAGE preference, not by country. Israeli users on English devices never see the Hebrew listing. This is the highest-consequence Israel-specific fact in the domain and the skill was silent on it.",
+        "CRITICAL fixed (Expert): added pre-publication gates (Apple App Privacy details, Play App content), a numbered end-to-end workflow, and a method for sourcing Hebrew keyword candidates without scraping. Every example previously began 'research Hebrew keywords' and then produced terms from nowhere.",
+        "CRITICAL fixed (Expert): references/israeli-app-market.md was advertised in both skill files as containing Hebrew keyword research data and NIS pricing benchmarks and contained neither. Added per-category Hebrew seed terms with the ktiv/prefix budget ranking, and replaced the pricing claim with what is actually true.",
+        "Evidence file grew 8 -> 34 claims, 28 source-verified. The 8-claim file passed the gate cleanly while the extractor found only 3 facts in a skill with ~20 numeric platform specs. A green gate on marketing content means nothing; the pixel dimensions and character limits are invisible to the extractor.",
+        "Two reviewer claims did NOT survive primary-source checking, both in the direction of a confident specific wrong: a research subagent said Google does not ban the word 'Free' (Google's preview-asset guidance names it verbatim), and the Expert repeated that misquote claim. Verified against answer/9866151 both times.",
+        "Legal: verify_legal.py fires level=3 on this skill from three scanner false positives (ניסוח = press wording, הצהרת/להגיש = Apple/Play submission prerequisites being explained, זכאות = Play promo screenshot threshold). Fresh-context legal-review returned CLEAR, Tier C. A proportionate '## Legal notice' was added because the skill now covers advertising copy and compliance gates. NOT because the scanner fired.",
+        "DEFERRED to next cycle: metadata.json display_description still says 'category-specific benchmarks' / 'נתוני ייחוס של קטגוריות ישראליות'. The reference now carries per-category keyword seeds so the claim is defensible, but 'benchmarks' overstates it. Changing it triggers the Phase 5.7 holdout gate, so it was left. Note the legal reviewer's correction: eval-gate cost is a valid reason to defer a WORDING nicety, and would never be a valid reason to omit a required legal prefix.",
+        "DEFERRED (Expert MAJOR): Apple app previews and Play preview video are still absent, yet the A/B section tells users to test app previews. Add per-store video specs next cycle.",
+        "DEFERRED (Expert MAJOR): Play custom store listings are unverified; the checklist row S5 is explicitly marked NOT YET VERIFIED. Verify the per-app cap before stating one.",
+        "DEFERRED (Expert MAJOR): Hebrew-specific depth is still narrow (ktiv, prefixes, RTL order, iw-IL, one transliteration). Mixed-script query behaviour and when an English brand name outranks its Hebrew transliteration remain uncovered."
+      ]
     }
   ]
 }

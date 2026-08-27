@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Analyze a Hebrew Apple App Store keyword field for Israeli ASO.
 
-The Apple keyword field is a single comma-separated list of BASE words, no
-spaces, max 100 characters PER LOCALIZATION. Apple's algorithm automatically
-combines the single words into phrases and ranks you on each word, so you should
-NOT pre-build phrases and you should NOT waste budget on low-value forms.
+The Apple keyword field is a single comma-separated list of terms, max 100
+characters PER LOCALIZATION. Apple separates TERMS with commas and no spaces, but
+spaces are allowed WITHIN a multi-word phrase; Apple's own documented example is
+"Property,House,Real Estate". The common advice that Apple auto-combines single
+words into phrases is practitioner convention, not something Apple documents, so
+this tool neither requires nor forbids phrases.
 
 What this tool does:
   - de-duplicates your base keywords,
@@ -12,10 +14,16 @@ What this tool does:
   - WARNS (does not silently truncate) when you exceed 100 characters, and tells
     you how many characters and which trailing keywords to cut.
 
-The Hebrew morphology that actually matters for the keyword field is SPELLING and
-INFLECTION variants you choose deliberately: ktiv maleh vs ktiv chaser (e.g.
-משלוח / מישלוח), singular vs plural (משלוח / משלוחים), and gender. Those cannot be
-auto-generated reliably, so supply them yourself as additional base keywords.
+The Hebrew morphology worth budget is SPELLING variance: ktiv maleh vs ktiv chaser
+(e.g. משלוח / מישלוח) produces genuinely different strings and cannot be
+auto-generated reliably, so supply those yourself.
+
+Plurals are a different matter. Apple documents that plurals of words you already
+included are treated as DUPLICATES ("climbs" and "climb") and waste the limit.
+That is stated for English, and Apple does not publish how its stemmer handles
+Hebrew, where משלוח and משלוחים are unrelated strings. Do not assume a Hebrew
+plural is free budget; treat it as a hypothesis to test against your own ranking
+data. This tool flags them rather than encouraging them.
 
 Attached stop-word prefixes (ה=the, ו=and, ב=in, ל=to, מ=from, ש=that) are NOT
 real user queries and usually waste the 100-char budget; the optional --prefixes
@@ -76,8 +84,12 @@ def main():
         print(f"  OK, {MAX_FIELD - length} characters to spare.")
 
     print("\nReminders:")
-    print("  - Use single base words; Apple auto-combines them, do NOT include phrases.")
-    print("  - Add ktiv maleh/chaser spelling and plural/gender variants yourself as base keywords.")
+    print("  - Multi-word phrases are allowed: commas separate TERMS, spaces may sit inside a phrase.")
+    print("  - Do not repeat words already in the app name, subtitle, or primary category.")
+    print("  - Add ktiv maleh/chaser spelling variants yourself; they are genuinely different strings.")
+    print("  - Apple treats plurals of included words as duplicates (documented for English, unpublished")
+    print("    for Hebrew). Do not spend budget on a Hebrew plural without evidence it ranks separately.")
+    print("  - Skip generic terms (app, game), filler words, and special characters unless brand.")
     print("  - Fill the Hebrew (he) localization field with Hebrew terms only; it is separate from English.")
 
     if args.prefixes:

@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-aso",
-  "generated_at": "2026-06-22T21:40:00Z",
+  "generated_at": "2026-08-27T04:38:54.943323+00:00",
   "claims": [
     {
       "claim_id": "israel-mobile-os-split-2026",
-      "claim": "Israel mobile OS split (2026): iOS ~33%, Android ~67% (StatCounter). Smartphone penetration ~91%, roughly 8.7M smartphone users.",
+      "claim": "Israel mobile OS split (July 2026): Android 67.56%, iOS 32.44% (StatCounter).",
       "source_url": "https://gs.statcounter.com/os-market-share/mobile/israel",
-      "raw_snippet": "Statcounter Global Stats Mobile Operating Systems Percentage Market Share Mobile Operating System Market Share in Israel - July 2026 Android 67.56 % iOS 32.44 % Linux 0 % Windows 0 % KaiOS 0 % Samsung 0 % Mobile Operating System Market Share Israel Edit Chart Data Sorry, JavaScript is required to view Global Stats charts. Save Chart Image (.png) Download Data (.csv) Embed HTML Source: Statcounter Global Stats - Browser Market Share '> Period: Set",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Mobile Operating System Market Share in Israel - July 2026 Android 67.56 % iOS 32.44 %",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -19,45 +19,41 @@
     },
     {
       "claim_id": "apple-metadata-limits",
-      "claim": "Apple App Store metadata limits (2026): app title 30 characters, subtitle 30 characters, keyword field 100 characters (per-localization, comma-separated, no spaces), promotional text 170 characters; the description is NOT indexed for search.",
-      "source_url": "https://developer.apple.com/app-store/product-page/",
-      "raw_snippet": "Less common terms drive lower traffic, but are less competitive. Keywords are limited to 100 characters total, with terms separated by commas and no spaces. (Note that you can use spaces to separate words within keyword phrases. For example: Property,House,Real Estate.",
-      "fetched_at": "2026-08-18",
+      "claim": "Apple App Store text-relevance inputs are the app name, subtitle, keywords and primary category. Keywords limited to 100 characters, terms separated by commas and no spaces; spaces allowed within a keyword phrase.",
+      "source_url": "https://developer.apple.com/app-store/search/",
+      "raw_snippet": "Search results are based on a number of factors, including text relevance (matches for your app’s title, subtitle, keywords, and primary category), as well as user behavior (downloads, ratings and reviews, and more).",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-app-market.md"
-      ],
-      "verified_via": "cited page fetched and confirmed to contain \"100\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      ]
     },
     {
       "claim_id": "google-play-metadata-limits-and-title-policy",
-      "claim": "Google Play limits (2026): title 30 characters, short description 80 characters, full description 4,000 characters; no separate keyword field. Play policy bans promotional words (best, #1, free, top), calls to action (Download now), emojis and ALL-CAPS in the app title, icon, and developer name.",
-      "source_url": "https://support.google.com/googleplay/android-developer/answer/9859455",
-      "raw_snippet": "Prepare your app for review - Play Console Help",
-      "fetched_at": "2026-08-19",
+      "claim": "Google Play store listing limits: app name 30 characters, short description 80 characters, full description 4000 characters.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9859152",
+      "raw_snippet": "App name Your app's name on Google Play. 30 character limit You can add one localized name per language.",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-app-market.md"
-      ],
-      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-19"
+      ]
     },
     {
       "claim_id": "screenshot-specs-2026",
-      "claim": "Screenshot specs (2026): Apple iPhone 6.9\" primary 1320x2868 portrait, 6.7\" 1290x2796, iPad 13\" 2064x2752; Google Play phone 1080x1920 minimum, up to 8 screenshots.",
-      "source_url": "https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/",
-      "raw_snippet": "nshot size 1260 x 2736 pixels (portrait) 2736 x 1260 pixels (landscape) 1290 x 2796 pixels (portrait) 2796 x 1290 pixels (landscape) 1320 x 2868 pixels (portrait) 2868 x 1320 pixels (landscape) 6.5\" Display iPhone 14 Plus iPhone 13 Pro Max iPhone 12 Pro Max iPhone 11 Pro Max iPhone 11 iPhone X S Max iPhone XR Screenshot size 1284 x 2778 pixels (portrait) 2778 x 1284 pixels (landscape) 1242 x 2688 pixels (portrait) 2688 x 1242 pixels (landscape) Requirement Required if app runs on iPhone and screenshots for 6.",
-      "fetched_at": "2026-08-18",
+      "claim": "Apple screenshot specs: one to 10 screenshots; iPhone 6.9\" class accepts 1320x2868, 1290x2796 and 1260x2736 portrait (no separate 6.7\" class); 6.5\" required only if 6.9\" not provided; iPad 13\" 2064x2752 or 2048x2732, required if the app runs on iPad.",
+      "source_url": "https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications",
+      "raw_snippet": "You can upload one to 10 screenshots in .jpeg , .jpg , and .png formats, with the following specifications.",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-app-market.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"1320\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T04:12:55.213599+00:00"
     },
     {
       "claim_id": "named-israeli-apps-operating",
@@ -87,16 +83,14 @@
     },
     {
       "claim_id": "native-ab-testing-tools",
-      "claim": "Store-native A/B testing (2026): Apple Product Page Optimization (PPO) tests up to 3 treatment variants vs the original for up to 90 days; Custom Product Pages allow up to 70 per app (Apple doubled the limit from 35 to 70 on 2025-10-29) and now surface in organic search. Google Play Store Listing Experiments test icon/screenshots/short+full description on a traffic slice.",
-      "source_url": "https://developer.apple.com/app-store/custom-product-pages/",
-      "raw_snippet": "Overview You can publish up to 70 additional versions of your product page on the App Store for iPhone and iPad. Vary the screenshots, promotional text, and/or app previews on each product page to showcase specific features or content. Highlight a particular sport, character, show, or gameplay feature — even seasonal or culturally relevant content.",
-      "fetched_at": "2026-08-18",
+      "claim": "Apple Product Page Optimization allows up to three treatments per test, running 90 days or until stopped.",
+      "source_url": "https://developer.apple.com/help/app-store-connect/create-product-page-optimization-tests/create-a-test",
+      "raw_snippet": "you can have up to three treatments per test",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ],
-      "verified_via": "source fetched and the passage copied verbatim from the cited page",
-      "verified_at": "2026-08-18"
+      ]
     },
     {
       "claim_id": "nis-pricing-guidance",
@@ -110,6 +104,307 @@
       ],
       "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
       "verified_at": "2026-08-18"
+    },
+    {
+      "claim_id": "israel-mobile-connections-2026",
+      "claim": "Israel had 10.4 million cellular mobile connections at end-2025 (109% of population) and 8.72 million internet users at 91.3% penetration (Oct 2025). The 8.72M/91.3% pair measures internet users, not smartphone users.",
+      "source_url": "https://datareportal.com/reports/digital-2026-israel",
+      "raw_snippet": "A total of 10.4 million cellular mobile connections were active in Israel in late 2025, with this figure equivalent to 109 percent of the total population.",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "israel-internet-users-2026",
+      "claim": "Israel had 8.72 million internet users at the end of 2025, online penetration 91.3 percent.",
+      "source_url": "https://datareportal.com/reports/digital-2026-israel",
+      "raw_snippet": "There were 8.72 million individuals using the internet in Israel at the end of 2025, when online penetration stood at 91.3 percent",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "play-ab-test-structure-2026",
+      "claim": "Google Play store-listing A/B tests: one default graphics experiment (icon, feature graphic, screenshots; no text) OR up to five localized experiments (icon, feature graphic, screenshots and/or descriptions, up to five languages) at a time, with up to 2 variants. Global experiments were renamed default graphics experiments.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9859351",
+      "raw_snippet": "For each app, you can run one default graphics experiment or up to five localized experiments at the same time.",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "play-ab-variant-cap-2026",
+      "claim": "Google Play experiments allow up to 2 variants against the current store listing.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9859351",
+      "raw_snippet": "Number of variants : The number of experimental variants to test against the current store listing (you can choose up to 2 variants).",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "play-screenshot-publication-minimum",
+      "claim": "Google Play publication minimum: at least two screenshots across device types, minimum dimension 320px, maximum 3840px, long side at most twice the short side; up to 8 screenshots per device type.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "raw_snippet": "You must provide a minimum of two screenshots across different device types to publish your store listing: JPEG or 24-bit PNG (no alpha) Minimum dimension: 320px Maximum dimension: 3840px",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "play-screenshot-promotion-bar",
+      "claim": "Google Play recommendation eligibility requires at least four screenshots at minimum 1080px, 16:9 landscape (1920x1080) or 9:16 portrait (1080x1920). This is not the publication minimum.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "raw_snippet": "For apps, you must provide at least four screenshots with minimum 1080px resolution. These should be 16:9 for landscape (minimum 1920x1080px) screenshots and 9:16 for portrait screenshots (minimum 1080x1920px).",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "play-feature-graphic-required",
+      "claim": "Google Play requires a feature graphic to publish a store listing: 1024x500px, JPEG or 24-bit PNG with no alpha.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "raw_snippet": "You must provide a feature graphic to publish your store listing.",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "play-feature-graphic-specs",
+      "claim": "Play feature graphic dimensions are 1024px by 500px, JPEG or 24-bit PNG (no alpha).",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "raw_snippet": "Requirements JPEG or 24-bit PNG (no alpha) Dimensions: 1024px by 500px",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "play-promo-word-ban-scope",
+      "claim": "Google Play bans text suggesting store performance, ranking, accolades, testimonials, or price/promotional information, naming Best, #1, Top, New, Free, Discount, Sale, Million Downloads, plus call-to-actions; the ban covers descriptions, screenshots and the feature graphic, not only the title.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "raw_snippet": "do not use words like “Best,” “#1,” “Top,” “New,” “Free,” “Discount,” “Sale,” or “Million Downloads.”",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "play-title-metadata-policy",
+      "claim": "Google Play metadata policy: app title 30 characters or less; no emojis, emoticons or repeated special characters in title, icon or developer name; avoid ALL CAPS unless part of the brand name.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9898842",
+      "raw_snippet": "Your app title must be 30 characters or less. Don’t use text or image in the app title, icon, or developer name that indicate store performance or ranking, price or promotional information",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "apple-keyword-no-repeat-rule",
+      "claim": "Apple instructs developers not to repeat words already included in the app name, subtitle or category in the keyword field.",
+      "source_url": "https://developer.apple.com/app-store/search/",
+      "raw_snippet": "Don’t repeat any words any words included in your app name, subtitle, or category.",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cibus-pluxee-rebrand",
+      "claim": "Cibus rebranded to Cibus Pluxee, published by Pluxee Israel LTD; the site is cibus.pluxee.co.il and cibus.co.il no longer resolves.",
+      "source_url": "https://itunes.apple.com/search?country=il&entity=software&limit=3&term=cibus",
+      "raw_snippet": "Cibus Pluxee",
+      "fetched_at": "2026-08-27T04:12:55.213599+00:00",
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T04:12:55.213599+00:00",
+      "appears_in": [
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "apple-custom-product-pages-70",
+      "claim": "Apple allows up to 70 additional custom product page versions per app, and keywords can be assigned so a custom product page appears in search results for those keywords.",
+      "source_url": "https://developer.apple.com/app-store/custom-product-pages/",
+      "raw_snippet": "You can publish up to 70 additional versions of your product page on the App Store for iPhone and iPad.",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "apple-keyword-phrases-allowed",
+      "claim": "Apple permits spaces within a keyword phrase; commas separate terms. Apple's documented example is Property,House,Real Estate.",
+      "source_url": "https://developer.apple.com/app-store/search/",
+      "raw_snippet": "You can use spaces to separate words within keyword phrases. For example: Property,House,Real Estate.",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/keyword_analyzer.py"
+      ]
+    },
+    {
+      "claim_id": "apple-keyword-avoid-plurals",
+      "claim": "Apple advises avoiding plurals of words already included (treated as duplicates), generic terms, filler words and special characters in the keyword field.",
+      "source_url": "https://developer.apple.com/app-store/search/",
+      "raw_snippet": "Plurals of words you’ve already included, such as “climbs” and “climb,” as these are considered duplicates.",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/keyword_analyzer.py"
+      ]
+    },
+    {
+      "claim_id": "apple-promotional-text-no-ranking",
+      "claim": "Apple promotional text does not affect search ranking.",
+      "source_url": "https://developer.apple.com/app-store/search/",
+      "raw_snippet": "promotional text doesn’t affect your app’s search ranking",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "apple-ratings-reviews-ranking-input",
+      "claim": "App Store search results factor in user behaviour including downloads, ratings and reviews.",
+      "source_url": "https://developer.apple.com/app-store/search/",
+      "raw_snippet": "as well as user behavior (downloads, ratings and reviews, and more)",
+      "fetched_at": "2026-08-27T04:21:27.413721+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "play-app-icon-specs",
+      "claim": "Google Play app icon must be a 32-bit PNG with alpha, 512x512 px, max 1024KB. Note this REQUIRES alpha, unlike the feature graphic and screenshots which forbid it.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "raw_snippet": "Requirements 32-bit PNG (with alpha) Dimensions: 512px by 512px Maximum file size: 1024KB",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "play-tablet-screenshot-specs",
+      "claim": "Google Play tablet and Chromebook screenshots require a minimum of 4, between 1,080 and 7,680 px, 16:9 landscape or 9:16 portrait, which differs from the phone spec.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9866151",
+      "raw_snippet": "Upload screenshots between 1,080 and 7,680px",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "apple-app-privacy-required-to-submit",
+      "claim": "Apple App Privacy details are required to submit new apps and app updates to the App Store.",
+      "source_url": "https://developer.apple.com/app-store/app-privacy-details/",
+      "raw_snippet": "This information is required to submit new apps and app updates to the App Store.",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "apple-privacy-policy-url-required",
+      "claim": "Apple requires a Privacy Policy URL for iOS and macOS apps.",
+      "source_url": "https://developer.apple.com/help/app-store-connect/reference/app-information",
+      "raw_snippet": "Privacy Policy URL A URL that links to your company’s privacy policy. Required for iOS and macOS apps.",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "apple-name-two-to-thirty",
+      "claim": "Apple app name must be at least two and no more than 30 characters, localized.",
+      "source_url": "https://developer.apple.com/help/app-store-connect/reference/app-information",
+      "raw_snippet": "The name must be at least two characters and no more than 30 characters.",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-app-market.md"
+      ]
+    },
+    {
+      "claim_id": "apple-editable-properties-model",
+      "claim": "App Store Connect distinguishes properties that can be localized and edited at any time without submitting a new version from those bound to an app version.",
+      "source_url": "https://developer.apple.com/help/app-store-connect/reference/required-localizable-and-editable-properties",
+      "raw_snippet": "The tables also indicate the properties that can be localized and edited at any time without submitt",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "play-app-content-gate",
+      "claim": "Google Play's App content page requires a privacy policy, content ratings, target audience and content details, and sensitive-permission declarations before review.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9859455",
+      "raw_snippet": "Add your privacy policy to share how you treat sensitive user and device data.",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "play-listing-served-by-language",
+      "claim": "A Google Play localized listing is served by the user's language preference, not by country. Israeli users on English devices see the default listing.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9844778",
+      "raw_snippet": "If a user's language preference matches the translation languages you've added, they'll see the translated version of your app.",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "play-hebrew-locale-code",
+      "claim": "Google Play's Hebrew locale code is iw-IL, the legacy ISO alias.",
+      "source_url": "https://support.google.com/googleplay/android-developer/answer/9844778",
+      "raw_snippet": "Hebrew – iw-IL",
+      "fetched_at": "2026-08-27T04:38:54.943323+00:00",
+      "appears_in": [
+        "references/israeli-app-market.md",
+        "references/domain-checklist.md"
+      ]
     }
   ]
 }
