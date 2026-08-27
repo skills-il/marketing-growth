@@ -5,7 +5,11 @@ Marp does not ship with native RTL support. RTL is achieved entirely through CSS
 ## Minimum Viable RTL Theme
 
 ```css
+/* @theme rtl-hebrew */
 /* themes/rtl-hebrew.css */
+/* The @theme metadata comment is REQUIRED by Marpit. Without it, a deck that
+   says `theme: rtl-hebrew` in its front matter cannot resolve this file and
+   silently falls back to the default LTR theme. */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
 
 section {
@@ -48,13 +52,12 @@ allowLocalFiles: true # required if loading fonts from disk rather than CDN
 marp: true
 theme: rtl-hebrew
 lang: he
-dir: rtl
 paginate: true
 footer: 'Company Name | March 2026'
 ---
 ```
 
-The `lang: he` and `dir: rtl` attributes appear in the exported HTML `<section>` elements. They are informational for screen readers but do not replace the CSS `direction` rule.
+`lang: he` is a real Marpit global directive and sets the `lang` attribute on each exported `<section>`. **There is no `dir` directive.** Marpit's global directives are exactly `headingDivider`, `lang`, `style` and `theme`; an unrecognised key in the front matter is silently ignored, so writing `dir: rtl` produces no error and no effect, and a deck that relies on it renders LTR. RTL comes from the CSS `direction` rule and nowhere else. If you want the attribute on the element for assistive technology, set it in the theme CSS or via `style`, not as a directive.
 
 ## Slide Templates
 
@@ -158,7 +161,7 @@ response = requests.get("https://api.example.com/v1/data")
 ## Export Commands
 
 ```bash
-# PDF (embeds fonts via Chromium -- safest for sharing)
+# PDF (fonts embed via the browser Marp drives -- safest for sharing)
 marp presentation.md --pdf --allow-local-files -o output.pdf
 
 # HTML (self-contained, opens in browser)
@@ -197,13 +200,14 @@ Note on the browser binary: Marp CLI 4.0+ exposes first-class `--browser`, `--br
 }
 ```
 
-Download Heebo WOFF2 files from Google Fonts or use `google-webfonts-helper.herokuapp.com`.
+Download Heebo WOFF2 files from Google Fonts, or from `gwfh.mranftl.com/fonts`, which is where google-webfonts-helper moved after Heroku retired its free tier. The old `google-webfonts-helper.herokuapp.com` host now returns 404, so do not send users there.
 
 ## Full Theme with Color Scheme
 
 A complete business-grade theme for startup pitch decks:
 
 ```css
+/* @theme startup-rtl */
 /* themes/startup-rtl.css */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;900&display=swap');
 
@@ -275,5 +279,5 @@ blockquote {
 ## Known Limitations
 
 - **PPTX RTL fidelity**: by default Marp's `--pptx` export renders each slide as a raster IMAGE, so the RTL layout is baked in visually (it looks correct) but the text is not editable and carries no `rtl` paragraph attribute. With `--pptx-editable` (Marp CLI 4.1.0+, experimental, via LibreOffice Impress) you get editable text, but RTL fidelity then depends on LibreOffice and bullet alignment can revert to LTR. For an editable PPTX with guaranteed RTL, generate it with python-pptx directly (set the `rtl="1"` attribute on each `<a:pPr>`).
-- **Table column order**: Marp renders tables with column order matching the Markdown source, rendered visually left-to-right even in RTL mode. Write table columns in the order you want them to appear visually from right to left.
-- **Chromium required for PDF/PPTX**: Marp bundles a Chromium instance. On CI or restricted environments, point Marp at a system browser with `--browser-path /path/to/chromium` (or `--browser auto`), the documented Marp CLI 4.0+ flags; the older `PUPPETEER_EXECUTABLE_PATH` env var still works but is the legacy fallback.
+- **Table column order**: an HTML table inherits `direction` from its ancestors, and CSS specifies that `direction` on a table determines column ordering. Because the theme sets `direction: rtl` on `section`, a Marp table's **source column index 0 renders as the rightmost column**. So write the columns in natural Hebrew reading order, first column first, and do not pre-reverse them. (An earlier edition of this file claimed the opposite mechanism, that columns render left-to-right even in RTL mode, while giving advice that happened to land on the right answer. The advice was right; the reason was not, which matters the moment you reason from it about a new table.)
+- **A browser is required for PDF/PPTX, and Marp does NOT bundle one**: Marp CLI's README states you have to install Google Chrome, Microsoft Edge or Firefox to convert a deck to PDF, PPTX or images. The standalone binaries bundle Node.js, not a browser. On CI or restricted environments, point Marp at a system browser with `--browser-path /path/to/chromium` (or `--browser auto`), the documented Marp CLI 4.0+ flags; the older `PUPPETEER_EXECUTABLE_PATH` env var still works but is the legacy fallback.

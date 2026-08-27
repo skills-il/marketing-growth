@@ -23,7 +23,7 @@ Follow these steps to produce a correct RTL Hebrew deck:
 
 ## When to Use
 
-- **Startup pitch deck**: Building a deck for Israeli VCs or accelerators (YotaVC, Grove, Pitango, OurCrowd) where the primary language is Hebrew.
+- **Startup pitch deck**: Building a deck for Israeli VCs or accelerators (Pitango, Grove Ventures, OurCrowd) where the primary language is Hebrew. Confirm the fund is still active and still investing at your stage before tailoring a deck to it; the Israeli VC roster turns over, and an earlier edition of this skill named a fund that does not exist.
 - **Quarterly business report**: Presenting KPIs, P&L, or operational metrics in Hebrew with NIS figures and Israeli fiscal calendar.
 - **Marketing campaign deck**: Internal or client-facing decks for campaigns, product launches, or brand presentations in Hebrew.
 - **Educational slides**: University lectures, school materials, training sessions, or workshops delivered in Hebrew.
@@ -67,7 +67,6 @@ Basic Marp file structure with RTL:
 marp: true
 theme: rtl-hebrew
 lang: he
-dir: rtl
 ---
 
 <!-- _class: title -->
@@ -87,7 +86,7 @@ Export commands:
 ```bash
 marp presentation.md --pdf          # Export to PDF
 marp presentation.md --html         # Export to HTML
-marp presentation.md --pptx         # Export to PPTX (requires Chromium)
+marp presentation.md --pptx         # Export to PPTX (requires an installed browser)
 ```
 
 ### python-pptx (Native PPTX)
@@ -103,7 +102,7 @@ See `scripts/create-presentation.py` for a complete working example with all RTL
 
 ### Google Slides API
 
-For Google Slides output, the Slides REST API can set paragraph text direction (check the current `batchUpdate` text-direction support in the API reference before relying on a specific field name, the API's RTL surface is narrower than PowerPoint's). This path is more involved and requires OAuth; in most cases it is simpler to generate the deck with python-pptx and import the `.pptx` into Google Slides.
+For Google Slides output, the Slides REST API sets paragraph direction through `ParagraphStyle.direction`, applied with an `UpdateParagraphStyleRequest` inside `batchUpdate`. The enum values are `LEFT_TO_RIGHT` and `RIGHT_TO_LEFT`, and the API documents that **direction is not inherited: if unset it defaults to `LEFT_TO_RIGHT`**, so every Hebrew paragraph must be set explicitly. The RTL surface is still narrower than PowerPoint's. This path is more involved and requires OAuth; in most cases it is simpler to generate the deck with python-pptx and import the `.pptx` into Google Slides.
 
 ## Hebrew RTL Configuration
 
@@ -258,7 +257,7 @@ In mixed Hebrew/English documents, place the ₪ symbol before the number even i
 
 ### Israeli Fiscal Year
 
-Israel's fiscal year runs January to December (same as calendar year), unlike the UK or US government fiscal years. Quarterly reports use Q1-Q4 with the following Hebrew labels:
+Israel's tax year runs January to December, the same as the calendar year, unlike the UK or US government fiscal years. The Income Tax Ordinance defines it as twelve consecutive months beginning 1 January, with one exception: a taxpayer may be assigned a special assessment period (`tkufat shuma meyuchedet`), so confirm with the client before labelling a quarterly deck if they are unusual in that way. Quarterly reports use Q1-Q4 with the following Hebrew labels:
 - Q1: רבעון ראשון (ינואר-מרץ)
 - Q2: רבעון שני (אפריל-יוני)
 - Q3: רבעון שלישי (יולי-ספטמבר)
@@ -266,7 +265,7 @@ Israel's fiscal year runs January to December (same as calendar year), unlike th
 
 ### Hebrew Date Format
 
-Standard Israeli date format: `DD/MM/YYYY` or `DD בחודש YYYY`. For slide footers, `מרץ 2026` is cleaner than `03/2026`.
+Standard Israeli date format: `DD/MM/YYYY` or `DD ב<שם החודש> YYYY`, where the placeholder is the Hebrew month name prefixed with ב, for example `27 באוגוסט 2026`. Do not emit the literal word `בחודש`. For slide footers, `מרץ 2026` is cleaner than `03/2026`.
 
 ### Education Slides
 
@@ -331,13 +330,13 @@ A common Israeli business pattern: Hebrew title on line one, English subtitle on
 
 The paragraph-level RTL attribute plus the bidi algorithm above handle Hebrew sentences with separate English words. The harder, and far more common, real-world bug is a single token that mixes scripts with no whitespace boundary: `B2B-חברות`, `חברת-SaaS`, a version string like `גרסה-2.0`, or a hashtag like `#עברית2026`. The bidi algorithm reorders the run at every script boundary inside the token, so `B2B-חברות` can display as `חברות-B2B` even though it is one visual word.
 
-This happens because a run break is a *direction* boundary, not a *word* boundary. Splitting `B2B-חברות` into an LTR run and an RTL run lets the bidi algorithm place each run independently, and the hyphen (a neutral character) attaches to whichever side the algorithm prefers, not where you typed it.
+This happens inside the Unicode Bidirectional Algorithm, which runs over the paragraph's **character stream**. A DrawingML `<a:r>` run boundary is a formatting artifact and is not an input to it, so `B2B-חברות` reorders identically whether you write it as one run or three. What actually reorders it is that the hyphen is a **neutral** character sitting between a strong LTR run (`B2B`) and a strong RTL run (`חברות`), so the algorithm resolves it toward the surrounding text rather than leaving it where you typed it. Splitting or merging runs will not change the outcome; only inserting directional characters will.
 
 Fixes, in order of reliability:
 
 1. **Anchor neutrals with bidi marks**. Wrap the Latin fragment in directional isolates so it cannot leak into the surrounding Hebrew: `⁦` (LRI, Left-to-Right Isolate) before and `⁩` (PDI, Pop Directional Isolate) after. For a single Latin run inside an RTL paragraph, `‎` (LRM) immediately after the Latin fragment pins the trailing neutral. Example: `f'⁦B2B⁩-חברות'`.
-2. **Keep the whole token in one run** with the paragraph direction set correctly, and let the marks above do the ordering, rather than splitting at the script change. One run with embedded isolates reorders predictably; two runs do not.
-3. **For version strings and identifiers**, treat the entire token as LTR: put `‎` before it and `‏` (RLM) after it so it sits as an LTR island inside the RTL line. `‏‎Ver 2.0‏` keeps `Ver 2.0` intact and correctly placed.
+2. **Do not try to fix this by restructuring runs.** Run boundaries are invisible to the bidi algorithm, so splitting or merging them changes nothing. Keeping a token in one run is good hygiene for font and colour, not a bidi fix.
+3. **For version strings and identifiers**, isolate them the same way: `⁦Ver 2.0⁩` with LRI before and PDI after. Do not reach for LRM or RLM here. Those are **strong** characters, not isolation: they pin an adjacent neutral to a direction but cannot make a span behave as a self-contained island, which is exactly what a mixed-script token needs. LRI/PDI is the mechanism that does.
 
 ```python
 def add_intratoken_run(paragraph, hebrew_part, latin_part, sep='-'):
@@ -369,7 +368,7 @@ When exporting to PPTX from tools that do not set RTL at the XML level, periods 
 
 **2. Default bullet alignment is LTR**
 
-Both Marp (without custom CSS) and python-pptx (without XML patches) default all bullet lists to LTR. You will see bullets flush to the left margin with text flowing left-to-right. This is the single most common Hebrew presentation bug. It must be overridden explicitly: CSS `direction: rtl; text-align: right` for Marp, and the `a:rtl` paragraph attribute for PPTX. There is no global toggle in either tool.
+Both Marp (without custom CSS) and python-pptx (without XML patches) default all bullet lists to LTR. You will see bullets flush to the left margin with text flowing left-to-right. This is the single most common Hebrew presentation bug. It must be overridden explicitly: CSS `direction: rtl; text-align: right` for Marp, and the `rtl` attribute on `<a:pPr>` for PPTX. There is no global toggle in either tool.
 
 **3. Number formatting ambiguity**
 
@@ -379,9 +378,18 @@ Israeli convention uses comma as the thousands separator for financial figures (
 
 If Heebo or David Libre are not installed on the rendering machine, Marp and PPTX viewers fall back to Arial or Times New Roman. Both support Hebrew but are visually inferior and may have different line-height metrics that break slide layouts. Always verify font availability before presenting. For Marp PDF export, fonts are embedded via Chromium, so the export is safe. For PPTX shared to other machines, embed fonts via File > Options > Save > Embed fonts in the file (PowerPoint). python-pptx 1.0.x does not expose a high-level `EmbedTrueTypeFonts` property; embedding via the library still requires direct XML edits to the .pptx package.
 
-**5. Mixed-direction tables flip column order**
+**5. Table column order needs its own attribute, and cell patches do not provide it**
 
-In RTL mode, table columns are displayed right to left. A table with columns [Date, Revenue, Growth] in a LTR Python array will render as [Growth, Revenue, Date] visually on an RTL slide. You must reverse the column order in your data structure before populating the table, so the visual left-to-right order matches what the reader expects. This is counterintuitive: in RTL, column index 0 is the rightmost column visually.
+Column order and cell-text direction are two different OOXML settings, and the one everybody reaches for is the wrong one. Patching each cell's `<a:pPr>` sets the direction of the text *inside* that cell and leaves the columns running left-to-right. Column order is governed by the `rtl` attribute on `<a:tblPr>`, which python-pptx does not expose, so it has to be set through the XML:
+
+```python
+tblPr = table._tbl.find(qn('a:tblPr'))
+if tblPr is None:
+    tblPr = etree.SubElement(table._tbl, qn('a:tblPr'))
+tblPr.set('rtl', '1')
+```
+
+Once it is set, **column index 0 is the rightmost column**, so populate your data in natural Hebrew reading order and do **not** pre-reverse it. Reversing the data as well is the classic double-reversal: through an earlier version of this skill the attribute was never set while the docs told you to reverse, so every generated table came out mirrored. Verify a table-heavy deck in PowerPoint; LibreOffice Impress ignores this attribute, so a LibreOffice render can show you a bug but cannot confirm the fix.
 
 ## Output Formats
 
@@ -389,7 +397,7 @@ In RTL mode, table columns are displayed right to left. A table with columns [Da
 |------|-------|---------------|-------------|
 | Marp CLI | `.md` | PDF, HTML, PPTX | Good (CSS-level) |
 | python-pptx | Python script | `.pptx` | Excellent (XML-level) |
-| Google Slides API | API calls | Google Slides, PDF | Partial (narrower RTL control than PPTX; verify in API docs) |
+| Google Slides API | API calls | Google Slides, PDF | Partial: `ParagraphStyle.direction` is documented, but the RTL surface is narrower than PPTX and direction is not inherited |
 | LibreOffice Impress | `.odp` / `.pptx` | PDF, PPTX | Partial (varies by version) |
 
 For maximum compatibility with Israeli business recipients (who almost universally use Windows + PowerPoint or Google Slides), prefer python-pptx output. Marp PDF export is best for read-only sharing (email attachments, pitch email).
@@ -417,10 +425,10 @@ Input: "Build a Hebrew quarterly business report. Slide 1 is a title, slide 2 sh
 Process:
 1. Choose Marp (text-based, version-controlled, PDF export for email distribution).
 2. Pick Heebo, loaded via `@import` in `themes/rtl-hebrew.css`.
-3. Write the deck markdown with `marp: true`, `theme: rtl-hebrew`, `dir: rtl`, `lang: he`.
+3. Write the deck markdown with `marp: true`, `theme: rtl-hebrew`, `lang: he`. There is no `dir` directive in Marpit, so do not add one; RTL comes from the theme CSS.
 4. Apply RTL via the theme CSS (`direction: rtl; text-align: right`). For the revenue chart, Marp has no native chart engine, so either embed a pre-rendered chart image or generate the chart slide with python-pptx and the `add_revenue_chart` pattern, then merge. Write the financial table with columns in right-to-left visual order in the Markdown source.
 5. Export via `marp report.md --pdf --allow-local-files -o report.pdf`.
-6. Open the PDF, confirm Hebrew renders with Heebo (fonts embed via Chromium), bullets and table columns flow right-to-left, and no slides are blank.
+6. Open the PDF, confirm Hebrew renders with Heebo (fonts embed via the browser Marp drives), bullets and table columns flow right-to-left, and no slides are blank.
 
 Output: a 3-slide PDF where the title slide is right-aligned, the revenue slide shows רבעון 1 through רבעון 4 with the first quarter on the right, and the financial table reads `מדד | ממוצע ענף | החברה שלנו | שינוי` from right to left.
 
@@ -451,7 +459,7 @@ Output: a 3-slide PDF where the title slide is right-aligned, the revenue slide 
 
 **Mixed Hebrew/English line breaks poorly**: Long English words in RTL paragraphs can cause unusual line breaks. Use `word-break: break-word` in Marp CSS, or break long English strings manually in PPTX.
 
-**Exported PDF has blank slides**: Marp PDF requires Chromium. Run `marp --allow-local-files presentation.md --pdf` if fonts are local. Check `marp --version` confirms Chromium is bundled.
+**Exported PDF has blank slides**: Marp drives a real browser for PDF, PPTX and image export, and **does not bundle one**. Install Google Chrome, Microsoft Edge or Firefox, or point Marp at an existing binary with `--browser-path`. Run `marp --allow-local-files presentation.md --pdf` if fonts are local. `marp --version` reports Marp's own version only and tells you nothing about the browser, so do not use it to check this; if export fails, confirm a supported browser is installed.
 
 **PPTX opens with font substitution warning**: The Hebrew font named in the PPTX is not installed on the recipient's machine. Either embed fonts or instruct recipients to install Heebo from Google Fonts before opening.
 

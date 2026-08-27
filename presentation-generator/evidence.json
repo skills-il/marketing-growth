@@ -1,14 +1,78 @@
 {
   "schemaVersion": "1.0",
   "skill": "presentation-generator",
-  "generated_at": "2026-06-26T14:00:00Z",
+  "generated_at": "2026-08-27T15:30:00Z",
   "claims": [
     {
+      "claim_id": "marp-cli-version-flags",
+      "claim": "Marp CLI's current release is 4.5.0, per the npm registry (GitHub tags it v4.5.0, published 2026-07-17). The skill previously named 4.4.0. The export flags it documents are unchanged.",
+      "source_url": "https://api.github.com/repos/marp-team/marp-cli/releases/latest",
+      "raw_snippet": "\"tag_name\": \"v4.5.0\", \"target_commitish\": \"main\", \"name\": \"v4.5.0\"",
+      "fetched_at": "2026-08-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/marp-rtl-guide.md"
+      ],
+      "verified_via": "GitHub releases API for marp-team/marp-cli",
+      "verified_at": "2026-08-18"
+    },
+    {
+      "claim_id": "marp-requires-installed-browser",
+      "claim": "Marp CLI does not bundle a browser. Converting a deck to PDF, PPTX or images requires an installed Google Chrome, Microsoft Edge or Mozilla Firefox. The standalone binaries bundle Node.js, not a browser.",
+      "source_url": "https://raw.githubusercontent.com/marp-team/marp-cli/main/README.md",
+      "raw_snippet": "You have to install any one of [Google Chrome], [Microsoft Edge], or [Mozilla Firefox] to convert slide deck into PDF, PPTX, and image(s).",
+      "fetched_at": "2026-08-27T15:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/marp-rtl-guide.md"
+      ]
+    },
+    {
+      "claim_id": "marpit-global-directives-no-dir",
+      "claim": "Marpit's global directives are exactly headingDivider, lang, style and theme. There is no `dir` directive; an unrecognised front-matter key is silently ignored, so `dir: rtl` has no effect and produces no error.",
+      "source_url": "https://raw.githubusercontent.com/marp-team/marpit/main/docs/directives.md",
+      "raw_snippet": "| `lang`           | Set the value of [`lang` attribute]",
+      "fetched_at": "2026-08-27T15:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/marp-rtl-guide.md"
+      ]
+    },
+    {
+      "claim_id": "marpit-theme-metadata-required",
+      "claim": "Marpit requires an `@theme` metadata comment in a theme CSS file for the theme to be referenced by name from a deck's front matter.",
+      "source_url": "https://raw.githubusercontent.com/marp-team/marpit/main/docs/theme-css.md",
+      "raw_snippet": "@theme",
+      "fetched_at": "2026-08-27T15:30:00Z",
+      "appears_in": [
+        "references/marp-rtl-guide.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T15:30:00Z"
+    },
+    {
+      "claim_id": "marp-no-native-rtl-css",
+      "claim": "Marp has no engine-level RTL support. RTL is achieved entirely through CSS in a custom theme: `direction: rtl` and `text-align: right` on `section`. There is no front-matter directive that does it; Marpit's global directives are only headingDivider, lang, style and theme. Confirmed against Marp CLI 4.5.0 (2026-07-17).",
+      "source_url": "https://github.com/orgs/marp-team/discussions/490",
+      "raw_snippet": "Adding RTL support · marp-team · Discussion #490 · GitHub",
+      "fetched_at": "2026-08-27T16:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/marp-rtl-guide.md"
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
+    },
+    {
       "claim_id": "python-pptx-version-no-native-rtl",
-      "claim": "python-pptx current stable is 1.0.2 (released 2024-08-07), installed via `pip install python-pptx`, MIT-licensed, Python 3.8+. Version 1.0.x still exposes no high-level RTL API, so RTL must be patched at the XML level. Verified: the bundled create-presentation.py runs cleanly under python-pptx 1.0.2 and produces a valid 5-slide RTL deck.",
-      "source_url": "https://pypi.org/project/python-pptx/",
-      "raw_snippet": "python-pptx 1.0.2 is the current stable release (Aug 2024); no newer release as of mid-2026; no native RTL paragraph API added.",
-      "fetched_at": "2026-06-26T13:30:00Z",
+      "claim": "python-pptx 1.0.2 (requires_python >=3.8) is the current release on PyPI. It exposes no paragraph RTL property, so the OOXML rtl attribute must be set through the XML layer.",
+      "source_url": "https://pypi.org/pypi/python-pptx/json",
+      "raw_snippet": "Create, read, and update PowerPoint 2007+ (.pptx) files.",
+      "fetched_at": "2026-08-27T15:40:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -32,39 +96,69 @@
       "verified_at": "2026-08-18"
     },
     {
-      "claim_id": "marp-cli-version-flags",
-      "claim": "Marp CLI's current release is 4.5.0, per the npm registry (GitHub tags it v4.5.0, published 2026-07-17). The skill previously named 4.4.0. The export flags it documents are unchanged.",
-      "source_url": "https://api.github.com/repos/marp-team/marp-cli/releases/latest",
-      "raw_snippet": "\"tag_name\": \"v4.5.0\", \"target_commitish\": \"main\", \"name\": \"v4.5.0\"",
-      "fetched_at": "2026-08-18",
+      "claim_id": "pptx-font-embedding-flag",
+      "claim": "python-pptx exposes no font-embedding API. The OOXML flag is embedTrueTypeFonts on the <p:presentation> root element, reachable as prs._element; there is no Presentation.presentation attribute, and <p:presentationPr> is the root of a separate part rather than a child of <p:presentation>.",
+      "source_url": "https://python-pptx.readthedocs.io/en/latest/",
+      "raw_snippet": "python-pptx",
+      "fetched_at": "2026-08-27T15:30:00Z",
       "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
-        "references/marp-rtl-guide.md"
+        "references/pptx-rtl-patches.md"
       ],
-      "verified_via": "GitHub releases API for marp-team/marp-cli",
-      "verified_at": "2026-08-18"
+      "verified_via": "executed against an installed python-pptx 1.0.2: prs._element.set('embedTrueTypeFonts','1') round-trips into ppt/presentation.xml, while prs.presentation raises AttributeError",
+      "verified_at": "2026-08-27T15:30:00Z"
     },
     {
-      "claim_id": "marp-no-native-rtl-css",
-      "claim": "Marp / Marp Core has no engine-level native RTL support as of CLI 4.4.0; RTL is achieved via a CSS theme (`direction: rtl; text-align: right`) and/or a per-slide `dir: rtl` front-matter / `dir=\"auto\"` attribute. Many built-in themes ignore RTL.",
-      "source_url": "https://github.com/orgs/marp-team/discussions/490",
-      "raw_snippet": "Adding RTL support · marp-team · Discussion #490 · GitHub",
-      "fetched_at": "2026-08-18",
+      "claim_id": "uax9-runs-are-not-bidi-input",
+      "claim": "The Unicode Bidirectional Algorithm operates on a paragraph's character stream. Rule P1 splits text into paragraphs and rule P2 finds the first character of type L, AL or R. A DrawingML run boundary is not an input to the algorithm, so splitting or merging runs cannot change reordering. LRM and LRM-class marks are strong characters whose ordering effect equals a strong directional character; isolation requires LRI/PDI.",
+      "source_url": "https://www.unicode.org/reports/tr9/",
+      "raw_snippet": "In each paragraph, find the first character of type L, AL, or R while skipping over any characters between an isolate initiator and its matching PDI",
+      "fetched_at": "2026-08-27T15:30:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md",
-        "references/marp-rtl-guide.md"
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-slides-paragraph-direction",
+      "claim": "The Google Slides API sets paragraph direction via ParagraphStyle.direction, with enum values LEFT_TO_RIGHT and RIGHT_TO_LEFT, applied through UpdateParagraphStyleRequest in batchUpdate. Direction is not inherited and defaults to LEFT_TO_RIGHT when unset.",
+      "source_url": "https://slides.googleapis.com/$discovery/rest?version=v1",
+      "raw_snippet": "If unset, the value defaults to LEFT_TO_RIGHT since text direction is not inherited.",
+      "fetched_at": "2026-08-27T15:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "israeli-vcs-named",
+      "claim": "Pitango, Grove Ventures and OurCrowd are live Israeli VC firms. An earlier edition of this skill also named 'YotaVC', which is not a real Israeli fund: yotavc.com, www.yotavc.com and yota.vc all fail to resolve in DNS. Grove's full name is Grove Ventures.",
+      "source_url": "https://www.grovevc.com/",
+      "raw_snippet": "Early-Stage Venture Capital (VC) in Israel | Grove Ventures",
+      "fetched_at": "2026-08-27T15:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
       ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-18"
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T15:30:00Z"
+    },
+    {
+      "claim_id": "israeli-tax-year",
+      "claim": "The Israeli tax year is twelve consecutive months beginning 1 January, unless a special assessment period has been set for the taxpayer.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "תקופה של שנים עשר חדשים רצופים, שתחילתה ב־1 בינואר",
+      "fetched_at": "2026-08-27T15:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "hebrew-google-fonts",
-      "claim": "Heebo (business/tech default), David Libre (formal), Assistant (education), and Rubik (bold/startup) are all current, actively-served Hebrew Google Fonts with full Hebrew subsets in 2026. Heebo is the de-facto default Hebrew sans.",
-      "source_url": "https://fonts.google.com/specimen/Heebo",
-      "raw_snippet": "Heebo, David Libre, Assistant, Rubik are Google Fonts with Hebrew subsets, actively served in 2026.",
-      "fetched_at": "2026-06-26T13:30:00Z",
+      "claim": "Heebo, David Libre, Assistant and Rubik are all live Google Fonts families whose css2 API responses each contain a Hebrew subset block, confirmed for each of the four family names as spelled in the skill.",
+      "source_url": "https://fonts.googleapis.com/css2?family=Heebo&display=swap",
+      "raw_snippet": "/* hebrew */",
+      "fetched_at": "2026-08-27T15:40:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",

@@ -141,11 +141,12 @@ text = f"קראתי על {LRI}B2B-SaaS{PDI} אתמול"  # isolate the mixed tok
 ```python
 def set_table_cell_rtl(cell):
     """
-    Set all paragraphs in a table cell to RTL.
+    Set the direction of the TEXT INSIDE one table cell.
 
-    Table cells have their own text frames. The column order in the
-    data source must be reversed relative to visual order in RTL mode
-    (column index 0 is the rightmost column visually).
+    This does NOT affect column order. Column order is governed by the rtl
+    attribute on <a:tblPr>; see set_table_rtl() below. Patching cells alone
+    was this skill's longest-lived bug: every generated table came out with
+    its columns mirrored while the text inside each cell read correctly.
     """
     set_text_frame_rtl(cell.text_frame)
     set_text_frame_right_aligned(cell.text_frame)
@@ -156,13 +157,29 @@ def set_table_cell_rtl(cell):
 ```python
 def set_table_rtl(table):
     """
-    Set all cells in a table to RTL.
+    Make a table right-to-left: BOTH the column order and the cell text.
 
-    IMPORTANT: Also reverse the column order in your data.
-    If your data is [col_a, col_b, col_c], the table columns should be
-    populated as [col_c, col_b, col_a] to appear in the correct
-    right-to-left visual order.
+    Two separate things have to happen, and only one of them is a python-pptx
+    API call:
+
+    1. The rtl attribute on <a:tblPr> reverses COLUMN ORDER. python-pptx does
+       not expose it, so it is set through the XML. Once it is set, column
+       index 0 is the rightmost column visually, and you populate your data in
+       natural reading order (Hebrew first column first).
+    2. set_table_cell_rtl() on each cell sets the direction of the text inside
+       that cell.
+
+    Do NOT pre-reverse your data as well. An earlier edition of this file told
+    you to, while never setting the attribute in (1). Doing both reverses the
+    table twice.
+
+    Verification note: PowerPoint honours the tblPr attribute; LibreOffice
+    Impress ignores it, so verify a table-heavy deck in PowerPoint.
     """
+    tblPr = table._tbl.find(qn('a:tblPr'))
+    if tblPr is None:
+        tblPr = etree.SubElement(table._tbl, qn('a:tblPr'))
+    tblPr.set('rtl', '1')
     for row in table.rows:
         for cell in row.cells:
             set_table_cell_rtl(cell)
@@ -237,6 +254,14 @@ def add_rtl_table(slide, headers_rtl_order, rows_data, left, top, width, height)
 
     table = slide.shapes.add_table(row_count, cols, left, top, width, height).table
 
+    # Reverse COLUMN ORDER. Without this the columns render left-to-right and
+    # index 0 is the leftmost column, i.e. the mirror image of what the
+    # headers_rtl_order contract promises.
+    tblPr = table._tbl.find(qn('a:tblPr'))
+    if tblPr is None:
+        tblPr = etree.SubElement(table._tbl, qn('a:tblPr'))
+    tblPr.set('rtl', '1')
+
     # Header row
     for col_idx, header in enumerate(headers_rtl_order):
         cell = table.cell(0, col_idx)
@@ -257,17 +282,24 @@ def add_rtl_table(slide, headers_rtl_order, rows_data, left, top, width, height)
     return table
 ```
 
-Usage example:
+Usage example. Note that the data is in **natural Hebrew reading order**: with
+`rtl="1"` set on `<a:tblPr>`, column index 0 is the rightmost column, so the
+first item you write is the first item the reader sees. Do not pre-reverse.
+
 ```python
-# Visual order right-to-left: [צמיחה, הכנסות, מדד]
-# Which maps to col_index:   [0,       1,       2] in the XML
-headers = ['שינוי', '₪ הכנסות', 'מדד']
+# With tblPr@rtl="1", index 0 is rightmost, so this reads (right to left):
+#   מדד | הכנסות ₪ | שינוי
+headers = ['מדד', '₪ הכנסות', 'שינוי']
 rows = [
-    ['+62%', '₪3.4M', 'Q1 2026'],
-    ['+41%', '₪2.9M', 'Q4 2025'],
+    ['Q1 2026', '₪3.4M', '+62%'],
+    ['Q4 2025', '₪2.9M', '+41%'],
 ]
 add_rtl_table(slide, headers, rows, ...)
 ```
+
+This matches the ordering `scripts/create-presentation.py` uses, so the script
+and this reference now agree. They did not before: the reference reversed its
+columns relative to the script under the same stated rule.
 
 ## Saving with Embedded Fonts
 
@@ -276,22 +308,23 @@ python-pptx does not have a built-in embed-fonts option (it is a PowerPoint sett
 ```python
 def enable_font_embedding(prs):
     """
-    Set the EmbedTrueTypeFonts flag in the presentation XML.
+    Set the embedTrueTypeFonts flag on the <p:presentation> root element.
 
-    This tells PowerPoint to embed fonts when the file is saved in PowerPoint.
-    Note: python-pptx does not itself embed font binary data -- the flag
-    instructs PowerPoint to embed on next Save As from the desktop application.
-    For truly embedded fonts from a script, use a post-processing step with
-    LibreOffice or a dedicated PPTX manipulation library.
+    This only sets a flag. python-pptx does NOT embed font binary data, so
+    the flag on its own does not make a deck portable: it tells PowerPoint to
+    embed fonts the next time the file is saved from the desktop application.
+    For genuinely embedded fonts from a script, post-process with LibreOffice
+    or export to PDF instead, which is the reliable path for Hebrew.
     """
-    prs_elem = prs.presentation
-    # Find or create the <p:embeddedFontLst> or set the flag on the root element
-    # The simpler approach: set embedTrueTypeFonts on <p:presentationPr>
-    presentationPr = prs_elem.find(qn('p:presentationPr'))
-    if presentationPr is None:
-        presentationPr = etree.SubElement(prs_elem, qn('p:presentationPr'))
-    presentationPr.set('embedTrueTypeFonts', '1')
+    prs._element.set('embedTrueTypeFonts', '1')
 ```
+
+Two things an earlier edition of this file got wrong, both of which crash or silently do nothing if you copy them:
+
+- There is **no `Presentation.presentation` attribute**. The `<p:presentation>` element is `prs._element`. Reaching for `prs.presentation` raises `AttributeError` on the first line.
+- `embedTrueTypeFonts` belongs on `<p:presentation>` itself. `<p:presentationPr>` is the **root of a different part** (`presProps.xml`), never a child of `<p:presentation>`, so creating one there writes a flag nothing reads.
+
+Verified against python-pptx 1.0.2: the one-liner above round-trips, and `embedTrueTypeFonts="1"` is present in `ppt/presentation.xml` after `prs.save()`.
 
 ## Debugging RTL Issues
 

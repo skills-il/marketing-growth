@@ -20,6 +20,7 @@ from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 from pptx.oxml.ns import qn
+from pptx.enum.shapes import MSO_SHAPE
 from pptx.util import Inches, Pt, Emu
 
 
@@ -129,7 +130,7 @@ def add_title_slide(prs, title, subtitle, accent_color):
 
     # Dark background rectangle
     bg = slide.shapes.add_shape(
-        1,  # MSO_SHAPE_TYPE.RECTANGLE
+        MSO_SHAPE.RECTANGLE,
         Inches(0), Inches(0),
         prs.slide_width, prs.slide_height
     )
@@ -313,6 +314,23 @@ def add_mixed_language_slide(prs, title_text, accent_color):
     return slide
 
 
+def set_table_rtl(table):
+    """Set the rtl attribute on <a:tblPr> so the table's COLUMNS run right-to-left.
+
+    This is distinct from set_paragraph_rtl(), which only affects text direction
+    inside a cell. Without this, column index 0 renders as the LEFTMOST column
+    and a deck built on the "index 0 is rightmost" convention comes out mirrored.
+
+    Verification note: PowerPoint honours this attribute. LibreOffice Impress
+    ignores it, so a LibreOffice render can show you a bug but cannot confirm
+    the fix. Check in PowerPoint before shipping a table-heavy deck.
+    """
+    tblPr = table._tbl.find(qn('a:tblPr'))
+    if tblPr is None:
+        tblPr = etree.SubElement(table._tbl, qn('a:tblPr'))
+    tblPr.set('rtl', '1')
+
+
 def add_table_slide(prs, title_text, accent_color):
     """
     Build a financial metrics table slide with RTL column order.
@@ -363,6 +381,12 @@ def add_table_slide(prs, title_text, accent_color):
         Inches(8.8), Inches(3.8)
     )
     table = table_shape.table
+
+    # Table direction is a SEPARATE attribute from cell text direction.
+    # Patching each cell's <a:pPr> sets the direction of text INSIDE a cell and
+    # does nothing to column order. Column order is governed by the rtl
+    # attribute on <a:tblPr>, which python-pptx does not expose.
+    set_table_rtl(table)
 
     # Style column widths
     col_widths = [Inches(2.5), Inches(1.8), Inches(1.8), Inches(1.8)]
