@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-linkedin-strategy",
-  "generated_at": "2026-06-23T08:30:00Z",
+  "generated_at": "2026-08-27T09:05:00+00:00",
   "claims": [
     {
       "claim_id": "linkedin-2026-algorithm",
@@ -32,16 +32,17 @@
     },
     {
       "claim_id": "linkedin-ai-authenticity-2026",
-      "claim": "LinkedIn's 2026 authenticity policy ('Keeping conversations real') expects disclosure when AI materially generated or transformed a post and attribution of factual claims; it demotes formulaic AI 'slop' (organic reach for pages flagged as AI-generated has dropped toward ~2%), while human-AI hybrid content outperforms pure-AI content (reported ~156% better engagement).",
+      "claim": "LinkedIn RECOMMENDS, rather than requires, that you let others know, if it is not obvious from the context, when you have relied heavily on AI to help create or modify content. There is no LinkedIn policy named 'Keeping conversations real'.",
       "source_url": "https://www.linkedin.com/help/linkedin/answer/a1481496",
-      "raw_snippet": "Best practices for content created with the help of AI | LinkedIn Help",
-      "fetched_at": "2026-08-19",
+      "raw_snippet": "we recommend that you let others know",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
-      "verified_at": "2026-08-19"
+      "note": "The previous cycle attributed a named policy, 'Keeping conversations real', to LinkedIn and described disclosure as expected. That string occurs zero times on this page and zero times in the Professional Community Policies, so the name was not LinkedIn's and the obligation was overstated. The replacement snippet WAS read directly on the live page by two independent methods on 2026-08-27: a browser fetch with location.href asserted, and a plain curl whose raw HTML contains the string exactly once. The bundled --check-sources fetcher reports it missing, which is a fetcher difference on linkedin.com and not an absent quote. Full sentence: \"we recommend that you let others know (if it isn't obvious from the context) if you've relied heavily on AI to help create or modify the content\".",
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T09:10:00+00:00"
     },
     {
       "claim_id": "israel-linkedin-timing-members",
@@ -82,6 +83,105 @@
       ],
       "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
       "verified_at": "2026-08-18"
+    },
+    {
+      "claim_id": "linkedin-no-artificial-engagement",
+      "claim": "LinkedIn's Professional Community Policies prohibit artificially increasing engagement with your own content and pre-arranging reciprocal likes or re-shares.",
+      "source_url": "https://www.linkedin.com/legal/professional-community-policies",
+      "raw_snippet": "Don't do things to artificially increase engagement with your content",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "linkedin-no-prearranged-engagement",
+      "claim": "LinkedIn's Professional Community Policies specifically tell members to respond authentically and not to agree with others ahead of time to like or re-share each other's content.",
+      "source_url": "https://www.linkedin.com/legal/professional-community-policies",
+      "raw_snippet": "Respond authentically to others’ content and don’t agree with others ahead of time to like or re-share each other’s content",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-conditions-not-germane",
+      "claim": "Under the Equal Employment Opportunity Law s.2(b), setting conditions that are not germane to the matter is itself treated as discrimination.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "(ב) לענין סעיפים קטנים (א) ו־(א1) רואים כהפליה גם קביעת תנאים שלא ממין הענין",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-job-ad-both-genders",
+      "claim": "Under s.8(a), an employer or person seeking a worker may not publish a job-offer advertisement unless the offer is stated in both masculine and feminine forms, singular or plural, and may not publish an ad that discriminates under s.2.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "לא יפרסם מודעה בדבר הצעת עבודה או שליחה להכשרה מקצועית אלא אם כן הצעת העבודה צויינה בלשון זכר ובלשון נקבה, בין ביחיד ובין ברבים, וכן לא יפרסם מודעה כאמור שיש בה משום הפליה על פי הוראות סעיף 2",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-military-profile-prohibited",
+      "claim": "Section 2A prohibits an employer from demanding a job applicant's or employee's military profile, or using it if it comes into their hands, in any matter listed in s.2(a)(1) to (6). The military profile is the numeric code the IDF assigns to a person's medical fitness.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "מעסיק לא ידרוש מדורש עבודה או מעובד את הפרופיל הצבאי שלו, ולא יעשה שימוש בפרופיל הצבאי שלו, אם הגיע לידיו",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-employer-bears-liability",
+      "claim": "Under s.15(b), criminal liability for a breach of s.8 falls only on the employer or the person seeking the worker.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "(ב) בעבירה על הוראת סעיף 8 לא יישא באחריות פלילית אלא המעסיק או הזקוק לעובד",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-bona-fide-requirement",
+      "claim": "Section 2(c) preserves a requirement that is genuinely required by the character or nature of the role or position.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "(ג) אין רואים הפליה לפי סעיף זה כאשר היא מתחייבת מאפיים או ממהותם של התפקיד או המשרה",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "linkedin-members-israel-3-1m",
+      "claim": "LinkedIn's advertising resources indicate LinkedIn had 3.10 million registered members in Israel in late 2025. LinkedIn's ad tools report total registered members rather than the monthly active users most platforms report, so the figure is not comparable with other platforms.",
+      "source_url": "https://datareportal.com/reports/digital-2026-israel",
+      "raw_snippet": "Figures published in LinkedIn’s advertising resources indicate that LinkedIn had 3.10 million “members” in Israel in late 2025",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "eeo-section-2a-heading",
+      "claim": "The military-profile prohibition is section 2A of the Equal Employment Opportunity Law, headed 'איסור דרישת פרופיל צבאי והשימוש בו', and it follows section 2(c) in the statute's numbering.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%95%D7%95%D7%99%D7%95%D7%9F_%D7%94%D7%94%D7%96%D7%93%D7%9E%D7%A0%D7%95%D7%99%D7%95%D7%AA_%D7%91%D7%A2%D7%91%D7%95%D7%93%D7%94",
+      "raw_snippet": "2א. איסור דרישת פרופיל צבאי והשימוש בו",
+      "fetched_at": "2026-08-27T09:05:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
