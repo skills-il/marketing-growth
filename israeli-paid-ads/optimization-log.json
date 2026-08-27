@@ -12,6 +12,31 @@
         "Fixed MINOR (Judge): Instagram Israel audience ~4.5M -> ~5M.",
         "Deferred (MINOR): bump Gush Dan to ~40-45% and Google search share to ~98% for precision; note the Amendment 13 DPO enforcement grace period ended Oct 31 2025."
       ]
+    },
+    {
+      "version": "1.4.0",
+      "date": "2026-08-27",
+      "lessons": [
+        "CRITICAL fixed (Expert): Target CPC was described as the strategy that 'occupies the slot ECPC vacated'. Google's own cited page says Target CPC 'is only available on Demand Gen campaigns', so it is NOT the Search-side ECPC replacement. This wrong line was ADDED earlier in this same cycle in response to an audit finding, which is the clearest possible case for keeping the Expert gate after the research pass.",
+        "CRITICAL fixed (Expert): the VAT/ROAS fix from v1.3.0 corrected the denominator only. Because the skill also requires VAT-inclusive advertised prices, the revenue the conversion tag reports is gross of output VAT, so dividing gross revenue by ex-VAT spend inflated ROAS by the VAT fraction of revenue. Added an explicit basis-symmetry rule.",
+        "CRITICAL fixed (Expert): the input-VAT section presumed the platform issues an Israeli tax invoice. Added a first step to establish which entity invoices you and in what form, with the imported-services branch stated, because if the VAT is not reclaimable the 1.18-divided ROAS is correct after all.",
+        "CRITICAL fixed (Expert): Google's own restricted-targeting policy was absent while the Meta equivalent was covered. Google lists Health and Negative financial status among sensitive interest categories and blocks advertiser-curated audiences (which is what Customer Match creates) for them, hitting exactly the verticals this skill steers to Google Search.",
+        "CRITICAL fixed (Expert): no conversion-measurement build step existed, so every bidding/CPA/ROAS instruction rested on tracking the skill never installed. Added Step 6 (tag + CAPI, value and currency, deduplication, offline import for leads, test before spend) ahead of the bidding step.",
+        "STALE fixed: Google Display Ads are moving to Demand Gen, with a June 2026 voluntary migration tool and later forced migration. The platform table treated Display as a standing campaign type.",
+        "BUG fixed: '>70% of Israeli web traffic is mobile' was wrong against the same source family the skill already used. StatCounter July 2026 has Israel at 53.62% mobile / 44.91% desktop. Nearly half the traffic is desktop.",
+        "STALE fixed: LinkedIn 'InMail' is retired terminology (now Sponsored Messaging); Outbrain's product is Outbrain Direct Response, a Teads subsidiary, still bought at my.outbrain.com and NOT through a Teads platform; Google IL search share 95% -> 98.17%.",
+        "Unsourced claims removed rather than hedged: a precise 'Call ads retired February 2026' date, an 'October 2024' ECPC date absent from the cited Google page, a 'המיזוג ב-2025' Teads date, a Taboola Realize 2025 replacement year, a Meta headline '40 max', and two dated July-2026 PPA events (gov.il is Cloudflare-blocked from this environment, so they could not be verified and were not shipped).",
+        "The v1.3.0 lookalike-deprecation claim was sourced to a MARKETING BLOG (stackmatix.com) while asserting what 'Meta's own documentation' says. Downgraded to practitioner judgment. Check the source type on any claim about what a platform documents.",
+        "CPC/CPM benchmark tables were sourced to WordStream US data and presented as Israeli benchmarks. Relabelled as illustrative planning defaults at every point of use including inside cpc_calculator.py, which is the artifact users actually run and where the hedge had not landed.",
+        "Example 3 contradicted its own bundled calculator (said ~10 leads at ~1,000 NIS; the script prints 12 at 833). Fixed in both languages. Re-run bundled scripts and diff against the worked example every cycle.",
+        "Word budget: both files were pushed to the 5,000 cap by this cycle's additions. Moved the CPC table, native networks, category restrictions, Amendment 13 detail, Hebrew morphology, budget minimums and long-form gotchas to references/ in both languages.",
+        "DEFERRED (Expert MAJOR): Arabic-language advertising is entirely absent, and it is the largest hole in the claim of Israeli-market specificity (separate ad groups, Arabic RTL copy, typically less competitive auctions). Add next cycle.",
+        "DEFERRED (Expert MAJOR): Russian-speaking and Haredi segments uncovered. The Haredi gap silently breaks the skill's Meta-first advice, since filtered-internet and low social penetration mean that inventory under-reaches the segment.",
+        "DEFERRED (Expert MAJOR): security-situation pacing and brand safety (escalation pauses, alert periods, creative that ages badly) is among the most distinctly Israeli parts of running paid media here and is missing.",
+        "DEFERRED (Expert MAJOR): account/billing setup (account currency is fixed at creation) and account structure conventions absent. Also the IS 5568 web-accessibility duty on landing pages.",
+        "DEFERRED (Expert MAJOR): the allocation-number threshold schedule rests on a single secondary Hebrew source (kolzchut). Re-source to the Israel Tax Authority page when gov.il is reachable.",
+        "DEFERRED (Expert MINOR): cpc_calculator.py silently shows the benchmark table when --vertical is given without --budget; should argparse-error instead."
+      ]
     }
   ]
 }

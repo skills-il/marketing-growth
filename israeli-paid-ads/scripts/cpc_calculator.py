@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """Calculate Israeli PPC campaign budgets and estimates.
 
-Provides CPC benchmarks by vertical and estimates campaign costs
+Provides ILLUSTRATIVE per-vertical CPC planning defaults and estimates campaign costs.
+The CPC figures are NOT measured Israeli benchmark data: there is no published Israeli
+CPC benchmark dataset, and the vertical ranking is derived from US benchmark data
+adjusted for a smaller, less saturated market. Never quote these to a client as Israeli
+benchmarks. The sourced path is a Google Keyword Planner forecast with location Israel
+and language Hebrew, then your own search-terms and auction-insights reports after launch.
 for the Israeli market.
 
 Usage:
@@ -12,7 +17,7 @@ Usage:
 
 import argparse
 
-# Israeli CPC benchmarks by vertical (NIS)
+# Illustrative CPC planning defaults by vertical (NIS). NOT measured Israeli data, see module docstring.
 CPC_BENCHMARKS = {
     "legal": {"min": 15, "max": 40, "avg": 25, "name_he": "משפטי"},
     "insurance": {"min": 10, "max": 30, "avg": 18, "name_he": "ביטוח"},
@@ -29,7 +34,9 @@ CPC_BENCHMARKS = {
 VAT_RATE = 0.18
 
 def show_benchmarks():
-    print("Israeli Google Ads CPC Benchmarks (NIS)")
+    print("Israeli Google Ads CPC PLANNING DEFAULTS (NIS)")
+    print("Illustrative only, NOT measured Israeli benchmarks. Use a Keyword Planner")
+    print("forecast (location Israel, language Hebrew) before quoting a client.")
     print("=" * 55)
     print(f"{'Vertical':<20} {'Min':<8} {'Avg':<8} {'Max':<8} {'Hebrew'}")
     print("-" * 55)

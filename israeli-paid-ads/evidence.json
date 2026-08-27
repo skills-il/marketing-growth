@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-paid-ads",
-  "generated_at": "2026-06-23T10:00:00Z",
+  "generated_at": "2026-08-27T05:26:40.527326+00:00",
   "claims": [
     {
       "claim_id": "taboola-realize-outbrain-teads-2026",
-      "claim": "As of 2026, Taboola's advertiser platform is 'Realize' (launched Feb 2025, replaced Taboola Ads, ads.realizeperformance.com; Realize+ launched Apr 2026). Outbrain acquired Teads (~$900M, closed Feb 2025) and the combined company rebranded to Teads; 'Outbrain' native is now bought via Teads. Taboola and Outbrain/Teads remain two SEPARATE competitors, the long-rumored Taboola-Outbrain merger never closed. Both are Israeli-founded.",
-      "source_url": "https://investors.teads.com/news-releases/news-release-details/outbrain-completes-change-corporate-name-teads",
-      "raw_snippet": "Outbrain completed its acquisition of Teads (closed February 2025) and changed its corporate name to Teads. Separately, Taboola launched its Realize performance platform in February 2025, replacing the Taboola Ads interface.",
-      "fetched_at": "2026-06-23T09:30:00Z",
+      "claim": "Taboola's advertiser platform is Realize (ads.realizeperformance.com), and Outbrain's performance product is Outbrain Direct Response, a Teads subsidiary. They remain separate competitors with separate buying platforms.",
+      "source_url": "https://www.outbrain.com/",
+      "raw_snippet": "Outbrain Direct Response is a subsidiary of the new Teads.",
+      "fetched_at": "2026-08-27T05:10:32.716958+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -45,10 +45,10 @@
     },
     {
       "claim_id": "google-search-share-israel",
-      "claim": "Google has roughly 95-98% of search market share in Israel (StatCounter ~98% in 2026).",
+      "claim": "Google search market share in Israel is 98.17% (StatCounter, July 2026).",
       "source_url": "https://gs.statcounter.com/search-engine-market-share/all/israel",
-      "raw_snippet": "FAQ About Feedback Statcounter Global Stats Search Engines Percentage Market Share Search Engine Market Share in Israel - July 2026 Google 98.17 % bing 1.13 % YANDEX 0.51 % DuckDuckGo 0.09 % Yahoo! 0.07 % Ecosia 0.02 % Search Engine Market Share Israel Edit Chart Data Sorry, JavaScript is required to view Global Stats charts. Save Chart Image (.png) Download Data (.csv) Embed HTML Source: Statcounter Global Stats - Browser Market Share '> Period: Set",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Search Engine Market Share in Israel - July 2026 Google 98.17 % bing 1.13 %",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -71,10 +71,10 @@
     },
     {
       "claim_id": "meta-google-platform-changes",
-      "claim": "Platform changes: Google removed Enhanced CPC (ECPC) for new Search/Display campaigns (October 2024, forced migration completed week of March 31 2025). Meta has effectively deprecated standalone Lookalike Audiences in favor of Advantage+ audience. Google ~95% search share. Israeli mobile web traffic is over 70%; Gush Dan holds roughly 40-45% of the population.",
-      "source_url": "https://www.stackmatix.com/blog/facebook-lookalike-audiences-strategy-2026",
-      "raw_snippet": "Facebook Lookalike Audiences in 2026: What Changed and What Works Now",
-      "fetched_at": "2026-08-19",
+      "claim": "Google removed Enhanced CPC (ECPC) for Search and Display campaigns; the forced migration completed the week of March 31 2025 and unmigrated campaigns defaulted to Manual CPC.",
+      "source_url": "https://support.google.com/google-ads/answer/2979071",
+      "raw_snippet": "Effective the week of March 31, 2025 Enhanced CPC (ECPC) is no longer available for Search and Display campaigns.",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -84,13 +84,14 @@
     },
     {
       "claim_id": "israeli-cpc-benchmarks",
-      "claim": "Illustrative Israeli Google Ads CPC benchmark ranges (NIS, directional, hedged as 'verify current'): legal 15-40 (avg 25), insurance 10-30 (avg 18), real-estate 8-25 (avg 15), finance 10-35 (avg 20), ecommerce 2-8 (avg 4), SaaS/B2B 5-20, education 3-12, food 2-6. Order-of-magnitude reasonable for a smaller, less-saturated market than the US.",
+      "claim": "The per-vertical CPC figures are ILLUSTRATIVE planning defaults derived from US benchmark data adjusted for a smaller market, explicitly NOT measured Israeli benchmarks. The skill and the reference file both label them as such at the point of use.",
       "source_url": "https://www.wordstream.com/blog/2025-google-ads-benchmarks",
       "raw_snippet": "Google Ads Benchmarks 2025: Competitive Data & Insights for Every Industry | WordStream",
-      "fetched_at": "2026-08-18",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
+        "references/israeli-ad-regulations.md",
         "scripts/cpc_calculator.py"
       ],
       "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
@@ -98,10 +99,10 @@
     },
     {
       "claim_id": "vat-input-recoverable-osek-murshe",
-      "claim": "For a VAT-registered business (osek murshe), input VAT (mas tashumot) on advertising/marketing is a recognized, recoverable expense, offset against output VAT on the bimonthly return; the business effectively bears only the ex-VAT base price. Therefore the 18% VAT on ad spend (e.g. 180 NIS on a 1,000 NIS ad invoice) must NOT be added to the ROAS denominator (true ROAS = Revenue / ex-VAT ad spend = 5.0x, not 5,000 / 1,180 = 4.24x). The 1.18 adjustment applies only to an osek patur (who cannot reclaim) or to short-term cash-flow modeling.",
+      "claim": "An osek murshe offsets input VAT (mas tashumot) on business purchases against output VAT, so VAT on ad spend is not a real cost. An osek patur does not charge VAT and correspondingly may not offset it.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%99%D7%96%D7%95%D7%96_%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%9E%D7%A2%22%D7%9E_%D7%A9%D7%9C_%D7%A2%D7%95%D7%A1%D7%A7_%D7%9E%D7%95%D7%A8%D7%A9%D7%94_(%D7%9E%D7%A1_%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA)",
-      "raw_snippet": "עוסק מורשה מנכה רק את מחיר הבסיס ששילם (ללא המע\"מ), שכן המע\"מ ששולם (מס תשומות) מקוזז מתשלומי המע\"מ שהוא מעביר לרשות המסים; הוצאות פרסום ושיווק הן הוצאה מוכרת שמס התשומות עליה ניתן לקיזוז.",
-      "fetched_at": "2026-06-23T09:30:00Z",
+      "raw_snippet": "עוסק פטור לא גובה מע\"מ מלקוחותיו ולכן אינו רשאי לקזז מע\"מ על רכישותיו והוצאותיו השוטפות.",
+      "fetched_at": "2026-08-27T05:10:32.716958+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -123,10 +124,10 @@
     },
     {
       "claim_id": "illustrative-campaign-math-and-geo",
-      "claim": "Non-regulatory illustrative figures (the skill's own worked examples and regional estimates, not external facts): worked budget examples of 1,000 NIS / 1,000 ש\"ח, 5,000 NIS / 5,000 ש\"ח, 10,000 NIS / 10,000 ש\"ח, 12,000 NIS / 12,000 ש\"ח, with a VAT-inclusive example of 1,180 NIS / 1,180 ש\"ח (1,000 + 18% VAT); example CPCs of NIS 5, 8 NIS / 8 ש\"ח, 25 NIS / 25 ש\"ח, 40 NIS / 40 ש\"ח; example CTR/conversion rates of 1%, 2%, 3%; and a regional ad-spend/population estimate of Gush Dan ~40%, Haifa and North ~20% / ~15%, Be'er Sheva and South ~15% / ~10%, with a ~12% example elsewhere. These are illustrative planning figures, hedged in the skill as estimates to verify.",
+      "claim": "Non-regulatory illustrative figures (the skill's own worked examples and regional estimates, not external facts): worked budget examples of 1,000 NIS / 1,000 ש\"ח, 5,000 NIS / 5,000 ש\"ח, 10,000 NIS / 10,000 ש\"ח, 12,000 NIS / 12,000 ש\"ח, with a VAT-inclusive example of 1,180 NIS / 1,180 ש\"ח (1,000 + 18% VAT); example CPCs of NIS 5, 8 NIS / 8 ש\"ח, 25 NIS / 25 ש\"ח, 40 NIS / 40 ש\"ח; example CTR/conversion rates of 1%, 2%, 3%; and a regional ad-spend/population estimate of Gush Dan ~40%, Haifa and North ~20% / ~15%, Be'er Sheva and South ~15% / ~10%, with a ~12% example elsewhere. These are illustrative planning figures, hedged in the skill as estimates to verify. Also includes the bundled calculator's own arithmetic outputs reproduced in Example 3: 400 clicks, 12 conversions at 3% CVR, and a CPA of 833 NIS / 833 ש\"ח (10,000 divided by 12), which are computed by scripts/cpc_calculator.py from the illustrative CPC defaults and are not external facts.",
       "source_url": "https://www.wordstream.com/blog/2025-google-ads-benchmarks",
-      "raw_snippet": "6.57% Dentists & Dental Services 5.44% Education & Instruction 5.74% Finance & Insurance 8.33% Furniture 6.11% Health & Fitness 7.18% Home & Home Improvement 6.37% Industrial & Commercial 6.23% Personal Services 7.69% Physicians & Surgeons 6.73% Real Estate 8.43% Restaurants & Food 7.58% Shopping, Collectibles & Gifts 8.92% Sports & Recreation 9.19% Travel 8.73% The industries with the highest average click-through rates were Arts & Entertainment at 13.10%, Sports & Recreation at 9.",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Google Ads Benchmarks 2025: Competitive Data & Insights for Every Industry | WordStream",
+      "fetched_at": "2026-08-27T05:40:48.987098+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -148,6 +149,187 @@
       ],
       "verified_via": "reference-coverage entry; snippet quoted from one of the covered sources",
       "verified_at": "2026-08-18"
+    },
+    {
+      "claim_id": "google-display-moving-to-demand-gen",
+      "claim": "Google Display Ads campaigns are moving to Demand Gen as the Google Display Network; from June 2026 eligible advertisers can voluntarily migrate with an in-account tool, and later new campaigns will only be creatable in Demand Gen.",
+      "source_url": "https://support.google.com/google-ads/answer/13695777",
+      "raw_snippet": "Google Display Ads campaigns are moving to Demand Gen as the Google Display Network (GDN).",
+      "fetched_at": "2026-08-27T05:10:32.716958+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T05:10:32.716958+00:00"
+    },
+    {
+      "claim_id": "demand-gen-surfaces",
+      "claim": "Demand Gen serves YouTube (including Shorts), Discover, Gmail, Maps and the Google Display Network.",
+      "source_url": "https://support.google.com/google-ads/answer/13695777",
+      "raw_snippet": "Maps, and the Google Display Network",
+      "fetched_at": "2026-08-27T05:10:32.716958+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T05:10:32.716958+00:00"
+    },
+    {
+      "claim_id": "linkedin-ad-format-names",
+      "claim": "LinkedIn's current ad terminology names single image ads, document ads, video ads, Lead Gen Forms, conversation ads and Sponsored Messaging. 'InMail' is not current LinkedIn ad terminology.",
+      "source_url": "https://www.linkedin.com/help/lms/answer/a424655",
+      "raw_snippet": "Engaged with your single image ad Engaged with your document ad Viewed your video ad Opened or submitted your Lead Gen Form",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "outbrain-direct-response-teads",
+      "claim": "Outbrain's performance product is branded Outbrain Direct Response (ODR), a Teads subsidiary, and is still bought in the Outbrain UI at my.outbrain.com rather than inside a Teads buying platform.",
+      "source_url": "https://www.outbrain.com/",
+      "raw_snippet": "Outbrain Direct Response (ODR) by Teads uses years of performance expertise to boost ROI across the open internet",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "outbrain-subsidiary-of-teads",
+      "claim": "Outbrain Direct Response is a subsidiary of Teads.",
+      "source_url": "https://www.outbrain.com/",
+      "raw_snippet": "Now, as part of Teads, we’re driving superior outcomes with greater scale and unmatched performance.",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "taboola-ads-redirects-to-realize",
+      "claim": "ads.taboola.com redirects to ads.realizeperformance.com, confirming Realize is the current Taboola advertiser platform.",
+      "source_url": "https://ads.realizeperformance.com/",
+      "raw_snippet": "ads.taboola.com redirects to ads.realizeperformance.com (HTTP 301 followed to 200)",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T05:07:37.021470+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "distance-sale-cancellation-windows",
+      "claim": "Israeli distance-sale cancellation is generally 14 days but varies by transaction type: goods 14 days from receipt or the transaction document (later of the two); a one-off service 14 days but no later than two days before the service; a continuing service 14 days from the transaction; Israeli tourism services 14 days but no later than seven business days before.",
+      "source_url": "https://www.kolzchut.org.il/he/ביטול_עסקת_מכר_מרחוק",
+      "raw_snippet": "הכלל הוא שאפשר לבטל עסקה שנעשתה מרחוק (באתרי האינטרנט או דרך שיחת טלפון) בתוך 14 ימים (שבועיים)",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-ad-regulations.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-four-month-cohort",
+      "claim": "A new immigrant (teudat oleh under five years old), a person with a disability, or a person aged 65 or over may cancel within four months rather than 14 days.",
+      "source_url": "https://www.kolzchut.org.il/he/ביטול_עסקת_מכר_מרחוק",
+      "raw_snippet": "עולה חדש, אדם עם מוגבלות או אדם שמלאו לו 65 שנה יוכלו לבטל את העסקה בתוך 4 חודשים במקום בתוך 14 ימים.",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "oleh-chadash-definition-cancellation",
+      "claim": "For the extended cancellation right, an oleh chadash is someone holding a teudat oleh or an olim-assistance eligibility certificate issued less than five years ago.",
+      "source_url": "https://www.kolzchut.org.il/he/ביטול_עסקת_מכר_מרחוק",
+      "raw_snippet": "כל מי שיש לו תעודת עולה או תעודת זכאות לסיוע כעולה, ועדיין לא עברו 5 שנים מאז שהתעודה ניתנה לו.",
+      "fetched_at": "2026-08-27T05:07:37.021470+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "israel-device-traffic-split-2026",
+      "claim": "Israeli web traffic is 53.62% mobile, 44.91% desktop, 1.47% tablet (StatCounter, July 2026). The commonly repeated 'over 70% mobile' figure is not supported for Israel.",
+      "source_url": "https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/israel",
+      "raw_snippet": "Desktop vs Mobile vs Tablet Market Share in Israel - July 2026 Mobile 53.62 % Desktop 44.91 % Tablet 1.47 %",
+      "fetched_at": "2026-08-27T05:08:29.717650+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-ad-regulations.md"
+      ]
+    },
+    {
+      "claim_id": "vat-allocation-number-2026",
+      "claim": "From 01.06.2026 input VAT may be offset only on invoices above 5,000 NIS that carry a Tax Authority allocation number; the threshold was 10,000 NIS for H1 2026 invoices, 20,000 NIS for 2025 and 25,000 NIS for 2024.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%99%D7%96%D7%95%D7%96_%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%9E%D7%A2%22%D7%9E_%D7%A9%D7%9C_%D7%A2%D7%95%D7%A1%D7%A7_%D7%9E%D7%95%D7%A8%D7%A9%D7%94_(%D7%9E%D7%A1_%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA)",
+      "raw_snippet": "מ-01.06.2026 ניתן לקזז מע\"מ מחשבוניות שמעל 5,000 ₪ רק אם ניתן להן מספר הקצאה מרשות המיסים",
+      "fetched_at": "2026-08-27T05:10:32.716958+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-rsa-text-limits",
+      "claim": "Responsive search ads allow up to 15 headlines and 4 descriptions; headlines support up to 30 characters, descriptions up to 90 characters each, and path fields up to 15 each.",
+      "source_url": "https://support.google.com/google-ads/answer/7684791",
+      "raw_snippet": "The headline fields for responsive search ads support up to 30 characters. The description fields support up to 90 characters each, and the path fields support up to 15 each.",
+      "fetched_at": "2026-08-27T05:26:40.527326+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T05:28:06.547562+00:00"
+    },
+    {
+      "claim_id": "google-rsa-asset-counts",
+      "claim": "A responsive search ad accepts up to 15 headlines and 4 descriptions.",
+      "source_url": "https://support.google.com/google-ads/answer/7684791",
+      "raw_snippet": "you can provide up to 15 headlines and 4 descriptions for a single responsive search ad",
+      "fetched_at": "2026-08-27T05:26:40.527326+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T05:28:06.547562+00:00"
+    },
+    {
+      "claim_id": "google-sitelink-char-limit",
+      "claim": "Sitelink text is limited to 25 characters in most languages (12 in double-width languages). Hebrew is single-width, so the 25-character limit applies.",
+      "source_url": "https://support.google.com/google-ads/answer/2375416",
+      "raw_snippet": "Sitelink text is limited to 25 characters in most languages, or 12 characters in double-width languages like Chinese, Japanese, and Korean.",
+      "fetched_at": "2026-08-27T05:26:40.527326+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T05:28:06.547562+00:00"
+    },
+    {
+      "claim_id": "google-callout-char-limit",
+      "claim": "Callout text is limited to 25 characters in most languages (12 in double-width languages).",
+      "source_url": "https://support.google.com/google-ads/answer/6079510",
+      "raw_snippet": "Callout text is limited to 25 characters in most languages, or 12 characters in double-width languages",
+      "fetched_at": "2026-08-27T05:26:40.527326+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T05:28:06.547562+00:00"
     }
   ]
 }

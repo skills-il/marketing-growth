@@ -15,12 +15,14 @@ Select the right platform based on business type, audience, and campaign objecti
 
 | Platform | Best For | Israeli Audience | Avg CPM (NIS) | Ad Formats |
 |----------|----------|------------------|---------------|------------|
-| Google Ads (Search) | High-intent traffic, lead gen | ~95% search market share in Israel | N/A (CPC model) | Text ads, responsive search ads |
+| Google Ads (Search) | High-intent traffic, lead gen | 98.17% search market share in Israel (StatCounter, July 2026) | N/A (CPC model) | Text ads, responsive search ads |
 | Google Ads (Display) | Brand awareness, retargeting | Google Display Network reach in IL | 5-15 | Banner, responsive display |
 | Meta (Facebook) | B2C, community, local business | ~7.6M Israeli users | 15-40 | Image, video, carousel, collection |
 | Instagram | Lifestyle, fashion, food, travel | ~5M Israeli users | 20-50 | Stories, reels, feed, shopping |
-| LinkedIn | B2B, SaaS, enterprise, recruiting | ~3M Israeli professionals | 40-120 | Sponsored content, InMail, lead gen |
+| LinkedIn | B2B, SaaS, enterprise, recruiting | ~3M Israeli professionals | 40-120 | Single image / document / video ads, Sponsored Messaging (Message and Conversation ads), Lead Gen Forms. "InMail" is retired as ad terminology, the messaging product is Sponsored Messaging |
 | TikTok | Gen Z, viral content, brand awareness | Growing Israeli user base (18-34) | 10-30 | In-feed video, branded effects |
+
+The audience sizes and CPM bands here are practitioner estimates with no published source; only the Google search-share figure is sourced (StatCounter). Rank platforms with them, do not build a media plan on them. Pull real CPMs from each platform's forecasting tool.
 
 **Campaign type selection guide:**
 
@@ -30,35 +32,20 @@ Select the right platform based on business type, audience, and campaign objecti
 - **Brand awareness**: YouTube pre-roll, Meta reach campaigns, TikTok
 - **Local business**: Google Local campaigns, Meta radius targeting around the business
 
-Recent Google campaign-type changes: Discovery campaigns and Video Action campaigns have been folded into **Demand Gen** (the Video Action migration completed by mid-2025). Standalone **Call ads** can no longer be created as of February 2026; use responsive search ads with call assets instead.
+Recent Google campaign-type changes: Discovery campaigns and Video Action campaigns have been folded into **Demand Gen**.
+
+**Google Display is being folded into Demand Gen too, and this invalidates the Display row above on a published timetable.** Google states that Display Ads campaigns are moving to Demand Gen as the Google Display Network, that from June 2026 eligible advertisers can voluntarily migrate existing campaigns with an in-account migration tool, and that later new campaigns will only be creatable within Demand Gen with remaining campaigns migrated automatically. Plan new Display work as Demand Gen. Demand Gen serves YouTube (including Shorts), Discover, Gmail, Maps, and the Display Network, so it reaches a local-search surface standalone Display never did.
+
+Standalone **Call ads** appear to be on the way out in favour of responsive search ads with call assets, but we could not confirm a deprecation date on any official Google page, so do not quote one. Build call campaigns as responsive search ads with call assets regardless, which is the configuration Google documents.
 - **B2B**: LinkedIn Sponsored Content + Google Search for branded/non-branded terms
 
-**Israeli publisher and native networks:**
-
-Beyond the global platforms, Israel has its own ad inventory worth considering, especially for brand reach and native content:
-
-| Platform | Type | Best For |
-|----------|------|----------|
-| Taboola (Realize) | Native content recommendation | Native ads on Ynet, Walla, Globes, and other major Israeli news sites. Israeli company. PPC model. Advertisers now buy through Taboola's performance platform "Realize" (ads.realizeperformance.com), which replaced the old Taboola Ads UI in 2025. |
-| Outbrain (now Teads) | Native content recommendation | Native ads on Haaretz, TheMarker, Calcalist, Mako, Times of Israel. Israeli-founded. PPC model. Outbrain merged with Teads (closed Feb 2025) and the company rebranded to Teads; the Outbrain native product is now bought through the Teads platform. |
-| Yad2 | Classifieds marketplace | Real estate, automotive, second-hand goods, local services; high-intent local audience. |
-| Walla, Ynet, Globes (direct) | Publisher display / sponsored content | Direct media buys and branded content on Israel's largest news properties; strong for brand campaigns and PR-adjacent content. |
-
-Taboola (now sold through its Realize platform) and Outbrain (now part of Teads after the 2025 merger) both run a pay-per-click model and cover most of the Israeli premium-publisher landscape between them. They remain two separate competitors, the long-rumored Taboola-Outbrain merger never closed, so do not treat them as one company, just expect the newer brand/platform names. Direct buys with a publisher's ad sales team make sense for larger brand budgets or sponsored-content campaigns. All Israeli-platform campaigns are still subject to the VAT-inclusive pricing and labeling rules in Step 5.
+**Israeli publisher and native networks:** Taboola (via Realize at `ads.realizeperformance.com`), Outbrain Direct Response (a Teads subsidiary, bought at `my.outbrain.com`), Yad2 for high-intent local classifieds, and direct buys with Ynet, Walla and Globes. Taboola and Outbrain remain separate competitors. Details in `references/israeli-ad-regulations.md`. Israeli-platform campaigns are still subject to the VAT-inclusive pricing and labeling rules in Step 5.
 
 ### Step 2: Hebrew Keyword Research
 
 Hebrew is a morphologically rich language with root-based word formation. A single root (shoresh) produces dozens of inflections, and keyword tools may not group them automatically. Thorough keyword research requires covering all variants.
 
-**Hebrew morphology considerations:**
-
-| Pattern | Example Root | Inflections to Target |
-|---------|-------------|----------------------|
-| Verb conjugations | ל.מ.ד (learn) | לומד, לומדת, לומדים, ללמוד, למד, ילמד |
-| Noun forms | ב.ט.ח (insure) | ביטוח, ביטוחים, מבוטח, מבוטחת |
-| Construct state (smichut) | | ביטוח רכב, ביטוח בריאות, ביטוח חיים |
-| With/without definite article | | ביטוח vs הביטוח |
-| Colloquial spelling | | אינטרנט vs אינטרנת |
+**Hebrew morphology considerations:** a single root produces many inflections that keyword tools do not group for you: verb conjugations, noun forms, construct state (smichut), with and without the definite article, and colloquial spellings. The worked table is in `references/israeli-ad-regulations.md` under "Hebrew keyword morphology". Cover the variants deliberately; missing one silently forfeits its search volume.
 
 **Keyword research process:**
 
@@ -68,12 +55,7 @@ Hebrew is a morphologically rich language with root-based word formation. A sing
 4. **Negative keywords in Hebrew**: Build a negative keyword list early. Common Hebrew negatives: "חינם" (free), "מה זה" (what is), "השוואה" (comparison, if not relevant).
 5. **Competitor analysis**: Search your main keywords on google.co.il and note which competitors are bidding. Check their ad copy for messaging angles you can differentiate from.
 
-**Tools for Hebrew keyword research:**
-
-- Google Keyword Planner (set region: Israel)
-- Google Trends (compare Hebrew vs English search volume for the same concept)
-- Google Search Console (existing site query data)
-- Ahrefs/Semrush (limited Hebrew support, but useful for competitor gap analysis)
+**Tools:** Google Keyword Planner (region Israel, language Hebrew) is the sourced number path; Google Trends for Hebrew-vs-English volume; Search Console for existing query data; Ahrefs/Semrush for competitor gaps (limited Hebrew support).
 
 ### Step 3: Write Hebrew Ad Copy
 
@@ -99,8 +81,8 @@ Hebrew ad copy requires attention to character limits, RTL formatting, register,
 
 **Meta (Facebook/Instagram) ad copy:**
 
-- Primary text: 125 chars visible before "See more" (Hebrew counts the same)
-- Headline: 27 chars visible in feed (40 max)
+- Primary text: roughly 125 characters visible before "See more", headline roughly 27 visible. These are practitioner rules of thumb, not published Meta limits: the truncation point varies by placement and device, so preview in Ads Manager for the placements you are actually buying rather than writing to a fixed number.
+- Headline: roughly 27 characters visible in feed. Treat any "maximum" you have seen quoted for this field as unverified and preview instead.
 - Use emojis strategically (they work well in Israeli Facebook ads)
 - Include a clear CTA in Hebrew: "הזמינו עכשיו", "קבלו הנחה", "הצטרפו אלינו"
 
@@ -110,39 +92,36 @@ Israeli audience targeting requires understanding the country's unique geographi
 
 **Geographic targeting:**
 
-| Region | Population Share | Ad Spend Share | Notes |
-|--------|-----------------|---------------|-------|
-| Gush Dan (Tel Aviv metro) | ~40% | ~40-45% | Highest competition, highest CPCs |
-| Haifa and North | ~20% | ~15% | Lower CPCs, more Hebrew-dominant |
-| Jerusalem | ~12% | ~10% | Mixed Hebrew/Arabic, unique demographics |
-| Be'er Sheva and South | ~15% | ~10% | Lower competition, lower CPCs |
-| Judea and Samaria | ~5% | ~5% | Requires careful geo-targeting |
+Directional planning estimates, not measured shares, and they do not sum to a whole. Use them to rank regions by competition, never to size a market.
+
+| Region | Population Share (approx) | Relative Competition | Notes |
+|--------|--------------------------|----------------------|-------|
+| Gush Dan (Tel Aviv metro) | ~40% | Highest | Highest CPCs; over-indexes on ad spend relative to population |
+| Haifa and North | ~20% | Lower | Lower CPCs, more Hebrew-dominant |
+| Jerusalem | ~12% | Moderate | Mixed Hebrew/Arabic, distinct demographics |
+| Be'er Sheva and South | ~15% | Lower | Lower competition, lower CPCs |
+| Judea and Samaria | ~5% | Lower | Requires careful geo-targeting |
+
+For real regional weighting use the campaign's own geographic report after two to four weeks.
 
 **Demographic targeting notes:**
 
 - **Military service gap**: Israelis serve in the IDF from age 18-21 (men) or 18-20 (women). Purchasing power and consumer behavior differ significantly from other countries in this age range. Adjust age targeting accordingly: the "young professional" segment starts at 22-23 in Israel, not 18.
 - **Shabbat scheduling**: Most Israeli consumers are inactive Friday afternoon (14:00) through Saturday evening (20:00). Pause or reduce bids during these hours to avoid wasted spend. Exception: secular audiences in Tel Aviv may still be active.
 - **Holiday calendar**: Israeli holidays (Rosh Hashana, Yom Kippur, Sukkot, Pesach) follow the Hebrew calendar and shift dates yearly. Pause campaigns on Yom Kippur. Adjust budgets before holidays (pre-holiday shopping spikes are common).
-- **Mobile-first**: Over 70% of Israeli web traffic is mobile. Design ads and landing pages for mobile first. Use vertical video formats for Meta and TikTok.
+- **Mobile-first, but not as lopsided as usually claimed**: Israeli web traffic is 53.62% mobile, 44.91% desktop, 1.47% tablet (StatCounter, July 2026). The widely repeated "over 70% mobile" figure does not hold for Israel. Still design ads and landing pages mobile-first and use vertical video for Meta and TikTok, but do not deprioritise desktop landing-page quality or desktop bid adjustments on the strength of a 70% number, because nearly half your traffic is desktop.
 
 **Behavioral targeting on Meta:**
 
 - Interest-based: Target Hebrew speakers, Israeli TV shows, local brands, Israeli news outlets
-- Custom audiences: Upload customer phone lists or emails only with documented consent (Israeli phone format: 05X-XXXXXXX). See "Consent for ad targeting under Amendment 13" below before any list upload.
-- Advantage+ audiences: Meta's predictive, AI-driven targeting. Meta is phasing out static Lookalike Audiences through 2026 in favor of Advantage+. In an Advantage+ campaign you can still feed a customer list or a former lookalike seed as an "audience suggestion," but Meta treats it as a soft signal and expands beyond it. Pair broad Advantage+ targeting with diverse creative rather than narrow interest stacks.
+- Custom audiences: Upload customer phone lists or emails only with documented consent (Israeli phone format: 05X-XXXXXXX). See "Consent for ad targeting under Amendment 13" below before any list upload. Two operational gates block a first upload regardless of consent: Meta requires the identifiers to be **hashed** before upload, and the **Custom Audience Terms of Service must be accepted** on the ad account or the upload errors out. Check Meta's current customer-list documentation for the exact hashing algorithm and per-batch record limit before your first upload rather than assuming; the hashing requirement is also worth naming in your Amendment 13 documentation, since it is a genuine technical mitigation.
+- Advantage+ audiences: Meta's predictive, AI-driven targeting. In an Advantage+ campaign you can feed a customer list or a lookalike seed as an "audience suggestion," which Meta treats as a soft signal and expands beyond. Pair broad Advantage+ targeting with diverse creative rather than narrow interest stacks.
 - Advantage+ Shopping campaigns (ASC): for e-commerce, the default Meta structure now; the algorithm handles audience discovery from the catalog and pixel/CAPI signals.
-- Lookalike audiences: still creatable but effectively deprecated. Meta's own documentation now points to Advantage+ audience instead. Treat any existing lookalike as a seed, not a hard constraint.
+- Lookalike audiences: still creatable, and **not** documented by Meta as deprecated. Marketing blogs widely claim a phase-out. We could not find a deprecation notice in Meta's own documentation, so do not tell a client lookalikes are being removed unless you can point at one. The defensible practitioner position is narrower: on most accounts broad Advantage+ targeting now performs at least as well as a narrow lookalike, so treat a lookalike as a seed to test against broad rather than as a default. That is judgment, not platform policy.
+- **Google restricts sensitive-category targeting too, and this is the gap most agents miss.** Google's personalized-advertising policy lists sensitive interest categories including Health, Negative financial status, Gambling, Race and ethnicity, Religious beliefs and Sexual orientation, and states that advertisers promoting products or services falling within them "are unable to use advertiser-curated audiences". Advertiser-curated audiences are exactly what a Customer Match upload creates. So for an Israeli health, debt-relief, insurance or legal advertiser, the Customer Match plan may be blocked on Google for the same reason the equivalent Meta audience is, and you will find out AFTER doing the Amendment 13 consent work. Check the policy for your vertical before promising a client a list-based campaign.
+- **Restricted custom audiences on Meta (this bites the same Israeli verticals).** Meta restricts audience definitions that imply sensitive attributes about people, and health and financial status are the long-standing examples. The highest-CPC verticals in Israel are Legal, Finance, Insurance and Health, so an audience built as "high income" or around a medical condition is the likely default an agent reaches for and a likely rejection. Check Meta's Advertising Standards (linked in Reference Links) for the current restricted categories before building one.
 
-**Consent for ad targeting under Amendment 13:**
-
-Amendment 13 to the Privacy Protection Law came into force on August 14, 2025. It directly affects how you can build ad audiences from personal data:
-
-- Uploading a customer phone or email list for Meta Custom Audiences (or Google Customer Match) requires explicit, informed, freely given consent from those contacts for that use. A generic "we may contact you" checkbox is not enough.
-- Consent must be granular. Bundled or pre-ticked consent is invalid. Marketing consent has to be separable from consent to the core service.
-- The same applies to using a customer list as a lookalike or Advantage+ seed, and to pixel / Conversions API (CAPI) tracking that builds remarketing audiences.
-- Keep documentation of when and how each contact consented. Large marketing databases (10,000+ records) and sensitive-data databases still carry registration and notification duties.
-- This is a compliance area, not advertising advice. Verify the current Privacy Protection Authority (PPA) guidance and have a privacy lawyer review your consent flow. See `references/israeli-ad-regulations.md`.
-- **Google Consent Mode v2** (required since March 2024) is a separate, technical obligation: if you target or measure users in the EEA/UK (common for Israeli companies selling to Europe), you must pass consent signals to Google via Consent Mode or you lose conversion measurement and remarketing for that traffic. It complements Amendment 13, it does not replace the documented consent you need for Israeli contacts.
+**Consent for ad targeting under Amendment 13 (gate 1, the DATA):** Amendment 13 to the Privacy Protection Law is in force. Uploading a customer list for Meta Custom Audiences or Google Customer Match, using that list as a lookalike or Advantage+ seed, and pixel/CAPI remarketing all require explicit, informed, freely given and GRANULAR consent for that specific use. A generic "we may contact you" checkbox is not enough, and bundled or pre-ticked consent is invalid. Keep documentation of when and how each contact consented; large and sensitive databases carry additional registration and notification duties. Treat consent and incident-reporting as live obligations and check the Privacy Protection Authority's current guidance, including its opinion on appointing a privacy protection officer, before running list-based or remarketing campaigns. This is a compliance area, not advertising advice; have a privacy lawyer review the consent flow. Google Consent Mode is a separate technical obligation for EEA/UK traffic, not a substitute. Full detail in `references/israeli-ad-regulations.md`.
 
 **Contacting the leads you collect (Spam Law):** Amendment 13 governs the DATA; Israel's Spam Law (Section 30A of the Communications Law) governs the MESSAGING. Before you SMS, email, or auto-call a lead captured from a Lead Ad or landing-page form, you need prior opt-in consent, the message must identify the sender and carry the word "פרסומת" (advertisement) with a working opt-out, and a violation carries statutory damages of up to about 1,000 NIS per message with no proof of harm. Treat list-building (Amendment 13) and lead-contacting (Spam Law) as two separate consent gates.
 
@@ -159,16 +138,7 @@ Israeli advertising is regulated primarily by the Consumer Protection Law (חו�
 | Accurate claims | No misleading statements about product/service | Criminal penalties possible |
 | Comparative advertising | Allowed only if claims are verifiable and accurate | Lawsuit + fine |
 
-**Category-specific restrictions:**
-
-| Category | Requirement |
-|----------|-------------|
-| Financial services | Must include risk disclaimers ("השקעה כרוכה בסיכון") |
-| Health/Medical | Cannot promise cures, must include disclaimers |
-| Alcohol | No targeting of minors, must include health warnings |
-| Gambling/Lottery | Requires license from Israeli authority |
-| Food | Nutrition and health claims must be verified |
-| Real estate | Must specify if prices exclude VAT for new construction |
+**Category-specific restrictions:** financial services, health/medical, alcohol, gambling, food and real estate each carry extra disclosure or licensing duties. The per-category table is in `references/israeli-ad-regulations.md`; check it before writing copy in any of those verticals.
 
 **Influencer marketing rules:**
 
@@ -178,25 +148,27 @@ Israeli law requires influencers to clearly disclose paid partnerships. Use #פ�
 
 - Landing page prices must match ad prices (both VAT-inclusive)
 - "Terms and conditions" links must be in Hebrew
-- Return/cancellation policy must be accessible (14-day cancellation right under Israeli law)
+- Return/cancellation policy must be accessible. For a distance sale (website or phone) the general right is 14 days, but the clock and the deadline vary by transaction type: a product runs 14 days from receipt of the goods or of the transaction document, whichever is later; a one-off service is 14 days but no later than two days before the service date; a continuing service is 14 days from the transaction even if service already started; an Israeli tourism service is 14 days but no later than seven business days before. Do not state a flat "14 days" without the type.
+- **A new immigrant (oleh chadash holding a teudat oleh less than five years old), a person with a disability, or a person aged 65 or over may cancel within FOUR MONTHS rather than 14 days**, where the transaction involved a conversation with the business. This materially changes a cancellation policy and an agent writing Israeli landing-page terms will otherwise omit it entirely.
 - Privacy policy required for any data collection
 
-### Step 6: Budget and Bidding
+### Step 6: Set Up Conversion Measurement (do this BEFORE Step 7)
 
-**Israeli CPC benchmarks by vertical (2025-2026 benchmarks, verify current rates):**
+Every bidding, CPA and ROAS instruction below assumes conversions are being counted correctly. If they are not, Smart Bidding optimizes toward noise and the budget math is fiction. Build this first:
 
-| Vertical | CPC Range (NIS) | Avg CPC (NIS) | Competition Level |
-|----------|----------------|---------------|-------------------|
-| Legal | 15-40 | 25 | Very High |
-| Finance | 10-35 | 20 | Very High |
-| Insurance | 10-30 | 18 | High |
-| Real Estate | 8-25 | 15 | High |
-| SaaS/Tech | 5-20 | 12 | Medium-High |
-| Health | 5-18 | 10 | Medium |
-| Travel | 3-15 | 8 | Medium |
-| Education | 3-12 | 7 | Medium |
-| E-commerce | 2-8 | 4 | Low-Medium |
-| Food | 2-6 | 3 | Low |
+1. Install the Google tag / Meta pixel AND the server-side Conversions API where available, then deduplicate the two with a shared event ID so one purchase is not counted twice.
+2. Pass a conversion **value** and an explicit **currency** (ILS), and decide the VAT basis of that value now (see "VAT and ROAS" below). The platform optimizes to whatever value you send.
+3. Define which action is the conversion. For Lead Ads a form fill is not a qualified lead; import the CRM outcome as an offline conversion so bidding optimizes on the lead you actually wanted.
+4. Fire a test conversion and confirm it appears in the platform before spending. Do not launch on untested tracking.
+5. Pass consent signals (see Step 5) so EEA/UK traffic remains measurable.
+
+### Step 7: Budget and Bidding
+
+**Israeli CPC planning defaults by vertical (illustrative, NOT measured Israeli data):**
+
+Order-of-magnitude planning defaults only. There is no published Israeli CPC benchmark dataset; the vertical ranking derives from US benchmark data adjusted for a smaller market. Do not quote these to a client as Israeli benchmarks. The sourced path is a Keyword Planner forecast (location Israel, language Hebrew) for your actual keywords, then your own search-terms and auction-insights reports.
+
+The full per-vertical table lives in `references/israeli-ad-regulations.md` under "CPC planning defaults", and the same numbers are encoded in `scripts/cpc_calculator.py`, so run the script rather than retyping them.
 
 **Budget planning with the bundled calculator:**
 
@@ -225,7 +197,9 @@ The calculator treats the entered budget as ex-VAT ad spend (the amount that buy
 | Scale (Month 3+) | Target ROAS | Sufficient revenue data, e-commerce focused |
 | Max performance | Maximize Conversions | High budget, broad targeting, trust the algorithm |
 
-Note: Enhanced CPC (ECPC) is no longer available for Search and Display campaigns. Google stopped offering it for new Search and Display campaigns in October 2024 and completed the forced migration the week of March 31, 2025. Campaigns not migrated proactively defaulted to Manual CPC. For the Learning stage, use Maximize Conversions (optionally with a Target CPA) instead. Verify against the Google Ads Help "About Smart Bidding" page.
+Google's current strategy list also includes **Maximize conversion value**, **Target impression share**, and **Target CPC**. Note the scope carefully: Google states Target CPC "is only available on Demand Gen campaigns". It is therefore NOT the Search-side replacement for ECPC, and an agent that reaches for it on a Search campaign will not find it. On Search, the replacement is Maximize Conversions, optionally with a Target CPA.
+
+Note: Enhanced CPC (ECPC) is no longer available for Search and Display campaigns. Google states that effective the week of March 31, 2025 ECPC is no longer available for Search and Display campaigns. Campaigns not migrated proactively defaulted to Manual CPC. For the Learning stage, use Maximize Conversions (optionally with a Target CPA) instead. Verify against the Google Ads Help "About Smart Bidding" page.
 
 **VAT and ROAS:**
 
@@ -233,20 +207,18 @@ For a VAT-registered business (osek murshe, the standard advertiser here), the 1
 
 - Ad spend (ex-VAT): 1,000 NIS (the amount billed for clicks)
 - VAT on the invoice: 180 NIS, reclaimed as input VAT, so the net cost stays 1,000 NIS
-- Revenue generated: 5,000 NIS
+- Revenue generated: 5,000 NIS **ex-VAT**
 - ROAS: 5,000 / 1,000 = 5.0x
 
-Only divide by 1.18 (5,000 / 1,180 = 4.24x) if you are an osek patur or otherwise cannot reclaim input VAT, or when you are explicitly modeling short-term cash flow (you front the VAT now and reclaim it on the next bimonthly return). Do not bake it into headline ROAS for a registered business.
+**Both sides of the ratio must use the same VAT basis.** This skill also requires you to advertise VAT-inclusive prices, so the revenue your conversion tag reports is normally GROSS of output VAT, which is not your money either. Dividing gross revenue by ex-VAT spend inflates ROAS by the VAT fraction of revenue, which is the same size of error as the one this section exists to prevent, just in the other direction. Use ex-VAT revenue over ex-VAT spend, or gross over gross, never one of each. Decide which basis your conversion tag sends before you set any Target ROAS goal, because the platform optimizes to whatever value you pass it.
 
-**Monthly budget minimums (recommended):**
+Only divide by 1.18 (5,000 / 1,180 = 4.24x) if you are an osek patur or otherwise cannot reclaim input VAT, or when you are explicitly modeling short-term cash flow (you front the VAT now and reclaim it on the next bimonthly return). Do not bake it into headline ROAS for a registered business. An osek patur does not charge VAT to customers and correspondingly may not offset VAT on purchases at all.
 
-| Platform | Minimum Monthly (NIS) | Recommended Monthly (NIS) |
-|----------|----------------------|--------------------------|
-| Google Search | 1,500 | 5,000-15,000 |
-| Google Display | 1,000 | 3,000-8,000 |
-| Meta (Facebook) | 1,000 | 3,000-10,000 |
-| LinkedIn | 3,000 | 8,000-20,000 |
-| TikTok | 1,500 | 4,000-10,000 |
+**First establish who invoices you and in what form.** The whole input-VAT mechanism below assumes the platform bills you through an entity that issues an Israeli tax invoice (חשבונית מס) with an Israeli VAT line. If your Google or Meta invoice is issued by a foreign entity instead, there is no Israeli tax invoice and no allocation number to look for, and the treatment is the one for imported services rather than the one below. We could not verify which applies to a given advertiser, so check an actual invoice with your accountant before building a ROAS model on it; if the VAT is not in fact reclaimable, the 1.18-divided figure is your real ROAS after all.
+
+**The reclaim is conditional, and one condition changed in 2026.** Input VAT is deductible only where the expense is for business use, is attributed to a taxable transaction, and is backed by a proper tax invoice (חשבונית מס כדין) issued in the business's name. On top of that, an allocation number (מספר הקצאה) from the Tax Authority is now required to offset VAT on larger invoices, and the threshold has been ratcheting down: invoices from 01.06.2026 need one above 5,000 NIS, first-half-2026 invoices above 10,000 NIS, 2025 invoices above 20,000 NIS, and 2024 invoices above 25,000 NIS. Monthly ad spend at the budgets in this skill clears 5,000 NIS easily, so check that your platform invoice is a proper Israeli tax invoice carrying an allocation number where one is required. If it is not reclaimable, the VAT stops being a wash and your real ROAS is the 1.18-divided figure after all.
+
+**Monthly budget minimums:** recommended starting budgets by platform are tabulated in `references/israeli-ad-regulations.md` under "Monthly budget minimums". They are planning defaults, not platform minimums.
 
 ## Examples
 
@@ -274,8 +246,8 @@ Result: Localized Facebook campaign targeting Israeli food audience
 User says: "How much should I spend on Google Ads for my Israeli law firm?"
 Actions:
 1. Run `python scripts/cpc_calculator.py --vertical legal --budget 10000` to estimate clicks and conversions
-2. Legal vertical CPC range: 15-40 NIS (avg 25 NIS), so a 10,000 NIS ex-VAT ad budget yields ~400 clicks (the 18% VAT is reclaimable, see Step 6)
-3. At 3% conversion rate: ~10 leads per month at ~1,000 NIS per lead
+2. Legal planning default CPC 15-40 NIS (avg 25 NIS), so a 10,000 NIS ex-VAT ad budget yields roughly 400 clicks (the 18% VAT is reclaimable, see Step 6). Replace this default with a Keyword Planner forecast for the firm's actual keywords before quoting it to the client
+3. At 3% conversion rate the script reports 12 conversions at a CPA of 833 NIS. Use the script's output, not a rounded figure
 4. Recommend starting with 8,000-12,000 NIS/month, scaling based on CPA targets
 5. Set up Manual CPC bidding initially, move to Target CPA after accumulating 30+ conversions
 Result: Data-driven budget recommendation with conversion estimates
@@ -296,7 +268,7 @@ Result: Data-driven budget recommendation with conversion estimates
 | Google Ads policies | https://support.google.com/google-ads/answer/6008942 | Advertising policies and restricted-content rules |
 | Meta Advertising Standards | https://transparency.meta.com/policies/ad-standards/ | Meta's ad content rules, applies to Israeli campaigns |
 | Privacy Protection Authority (Amendment 13) | https://www.gov.il/en/departments/the_privacy_protection_authority/govil-landing-page | Amendment 13 consent guidance for customer lists, lookalike seeds, pixel/CAPI tracking |
-| Consumer Protection (gov.il) | (link removed, this gov.il page now returns 404) | Consumer Protection Law, VAT-inclusive pricing, sponsored-content labeling |
+| Kol Zchut, cancelling a distance transaction | https://www.kolzchut.org.il/he/ביטול_עסקת_מכר_מרחוק | Cancellation windows by transaction type, and the four-month right for olim, people with disabilities and over-65s |
 | Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority/govil-landing-page | VAT rate (currently 18%) applied to ad spend and pricing |
 
 ## Recommended MCP Servers
@@ -307,16 +279,19 @@ Result: Data-driven budget recommendation with conversion estimates
 
 ## Gotchas
 
-- Israeli ad prices must include VAT (18%) by law under Chok Haganat HaTzarchan (Consumer Protection Law). Agents may generate ad copy with pre-VAT prices, which violates Israeli advertising regulations.
-- Do NOT inflate ROAS by 18% VAT for a VAT-registered business (osek murshe). The VAT on your ad invoice is reclaimable input VAT, so true ROAS uses ex-VAT spend (5,000 / 1,000 = 5.0x, not 5,000 / 1,180). Only an osek patur, who cannot reclaim it, or a cash-flow model adds the 18%. Agents often wrongly divide ad spend by 1.18.
-- The Gush Dan metropolitan area (Tel Aviv area) accounts for approximately 40% of Israeli digital ad spend. Agents may set nationwide targeting when the business only serves a specific region, wasting budget.
-- Israeli ad scheduling must avoid Shabbat (Friday afternoon through Saturday evening). Agents may run campaigns 24/7 and burn budget during zero-engagement hours.
-- Hebrew ad headlines have a 30-character limit in Google Ads, but Hebrew words are often shorter than English equivalents. Agents may not take advantage of the extra room available in Hebrew headlines.
-- Hebrew keyword research must account for morphological variants. A single root can produce dozens of word forms. Agents may target only one inflection and miss significant search volume from other forms.
-- Mixed Hebrew/English text in ads can reorder unexpectedly in RTL rendering. Always preview ads in the platform's ad preview tool before publishing.
-- Uploading customer phone or email lists for Meta Custom Audiences or Google Customer Match without explicit, granular, documented consent violates Amendment 13 to the Privacy Protection Law (in force since August 2025). Agents may suggest list uploads, lookalike seeds, or pixel/CAPI remarketing with no consent caveat.
-- Enhanced CPC (ECPC) is no longer a selectable bidding strategy for Search and Display campaigns. Agents trained on older Google Ads material may still recommend it; use Maximize Conversions or Target CPA instead.
-- Static Lookalike Audiences on Meta are being phased out through 2026 in favor of Advantage+ predictive targeting. Agents may present lookalikes as the current standard; treat them as soft seeds, not hard targeting.
+- Israeli ad prices must include VAT by law. Agents generate copy with pre-VAT prices, which breaches the Consumer Protection Law.
+- Agents divide ad spend by 1.18 when computing ROAS for a VAT-registered business. For an osek murshe the input VAT is reclaimable, so ROAS uses ex-VAT spend. Keep both sides of the ratio on the same VAT basis.
+- Agents set nationwide targeting for a business that only serves one region, wasting budget in the most expensive auctions.
+- Agents run campaigns 24/7 and burn budget through Shabbat and Yom Kippur, when engagement collapses.
+- Agents target only one Hebrew inflection and miss the search volume sitting on the other forms of the same root.
+- Mixed Hebrew/English/digit strings reorder unexpectedly in RTL. Always use the platform's ad preview before publishing.
+- Agents suggest customer-list uploads, lookalike seeds or pixel/CAPI remarketing with no consent caveat, breaching Amendment 13.
+- Agents recommend Enhanced CPC, which no longer exists for Search and Display. They also reach for Target CPC as its replacement, but Google states Target CPC is Demand Gen only.
+- Agents repeat the blogged claim that Meta is retiring Lookalike Audiences. Do not tell a client that without a Meta deprecation notice you can point at.
+- Agents build "high income" or condition-based audiences for Israeli finance, insurance, legal and health advertisers. Both Google and Meta restrict sensitive-category targeting, and Google blocks advertiser-curated audiences (which is what Customer Match creates) for those verticals.
+- Agents quote the CPC and CPM tables as measured Israeli benchmarks. They are illustrative planning defaults derived from US data.
+- Agents write a flat "14-day cancellation right" into landing-page terms, missing both the per-transaction-type variations and the four-month right for olim, people with disabilities and over-65s.
+- Agents set Target CPA or Target ROAS before conversion tracking is installed and tested, so bidding optimizes on noise.
 
 ## Troubleshooting
 
