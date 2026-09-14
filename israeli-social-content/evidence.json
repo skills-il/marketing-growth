@@ -45,10 +45,10 @@
     },
     {
       "claim_id": "israel-mobile-desktop-split",
-      "claim": "Israeli web traffic is 53.62% mobile, 44.91% desktop and 1.47% tablet (StatCounter, July 2026). No social-specific Israeli mobile share is published.",
+      "claim": "Israeli web traffic is 48.76% mobile, 49.79% desktop and 1.45% tablet (StatCounter, August 2026). No social-specific Israeli mobile share is published.",
       "source_url": "https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/israel",
-      "raw_snippet": "Desktop vs Mobile vs Tablet Market Share in Israel - July 2026 Mobile 53.62 % Desktop 44.91 % Tablet 1.47 %",
-      "fetched_at": "2026-08-27T13:00:00Z",
+      "raw_snippet": "Desktop vs Mobile vs Tablet Market Share in Israel - August 2026 Desktop 49.79 % Mobile 48.76 % Tablet 1.45 %",
+      "fetched_at": "2026-09-14T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -132,7 +132,7 @@
     },
     {
       "claim_id": "debunked-figures",
-      "claim": "Two figures the skill names ONLY in order to debunk them, both unsupported. (1) A 'roughly 15%' Instagram caption-link reach reduction attributed to Meta: Meta's published demotion list does not include external links or any percentage. (2) 'Over 70% mobile' for Israel: StatCounter puts Israeli mobile share at 53.62% for July 2026, and no social-specific Israeli mobile figure is published anywhere.",
+      "claim": "Two figures the skill names ONLY in order to debunk them, both unsupported. (1) A 'roughly 15%' Instagram caption-link reach reduction attributed to Meta: Meta's published demotion list does not include external links or any percentage. (2) 'Over 70% mobile' for Israel: StatCounter puts Israeli mobile share at 48.76% for August 2026, and no social-specific Israeli mobile figure is published anywhere.",
       "source_url": "https://transparency.meta.com/en-us/features/approach-to-ranking/types-of-content-we-demote/",
       "raw_snippet": "Reduced distribution may vary depending on the number of times the poster or commenter has violated our rules previously, the degree of confidence of our systems' predictions, among other things.",
       "fetched_at": "2026-08-27T13:05:00Z",

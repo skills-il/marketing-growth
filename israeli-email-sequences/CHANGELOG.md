@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1 - 2026-09-14
+
+Citation refresh: the DKIM2 spec draft is now revision -06 dated 28 August 2026, still an active Internet-Draft with no RFC. Updated the draft date in both languages and the evidence snippet.
+
 ## 1.3.0 - 2026-08-24
 
 Rebuilt the Chok HaSpam section around the actual text of section 30A. Added the mandatory "פרסומת" subject-line tag (30A(e)(1)(a)), which the skill had never stated in its body, the full name/address/contact disclosure list, the SMS carve-out in 30A(e)(2) that reduces that list to name plus refusal contact, the three-limb existing-customer exception in 30A(c), and the non-profit route in 30A(b1). Removed the "2 business days" opt-out deadline: the statute sets no period, and the 48-hour rule is Google's and Yahoo's, not Israeli law.

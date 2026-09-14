@@ -112,7 +112,7 @@ Requirements:
 - **One-click unsubscribe**: RFC 8058, both `List-Unsubscribe-Post: List-Unsubscribe=One-Click` and a `List-Unsubscribe` header pointing at an HTTPS endpoint. Google directs senders to follow the RFC 8058 specification itself, so the header must act on POST rather than hand the reader a preferences page. Required for marketing and promotional mail only; transactional mail is excluded. Honour requests within 48 hours.
 - **Spam rate**: Google states two distinct figures. Keep the Postmaster Tools rate below **0.10%**, and never reach **0.30%**. Above 0.3% you become ineligible for mitigation until you have stayed under it for 7 consecutive days.
 
-DKIM2 is an IETF Internet-Draft (`draft-ietf-dkim-dkim2-spec`, July 2026) with no RFC and no provider deployment; keep using standard DKIM and ignore advice to migrate.
+DKIM2 is an IETF Internet-Draft (`draft-ietf-dkim-dkim2-spec`, August 2026) with no RFC and no provider deployment; keep using standard DKIM and ignore advice to migrate.
 
 ### Sequence Types
 - **Welcome (5 emails over 10 days):** Day 0 brand intro, Day 2 value prop + lead magnet, Day 4 social proof with Israeli customers, Day 7 product showcase with NIS pricing, Day 10 limited offer.

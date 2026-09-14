@@ -569,10 +569,10 @@
     },
     {
       "claim_id": "dkim2-draft-only",
-      "claim": "DKIM2 is an IETF Internet-Draft with no RFC and no provider deployment; the current spec draft is dated July 2026.",
+      "claim": "DKIM2 is an IETF Internet-Draft with no RFC and no provider deployment; the current spec draft (-06) is dated August 2026.",
       "source_url": "https://datatracker.ietf.org/doc/draft-ietf-dkim-dkim2-spec/",
-      "raw_snippet": "draft-ietf-dkim-dkim2-spec-04 Network Working Group R. Clayton Internet-Draft Yahoo Intended status: Standards Track W. Chuang Expires: 6 January 2027 Google B. Gondwana Fastmail Pty Ltd 5 July 2026",
-      "fetched_at": "2026-08-24T00:00:00Z",
+      "raw_snippet": "draft-ietf-dkim-dkim2-spec-06 Network Working Group R. Clayton Internet-Draft Yahoo Intended status: Standards Track W. Chuang Expires: 1 March 2027 Google B. Gondwana Fastmail Pty Ltd 28 August 2026",
+      "fetched_at": "2026-09-14T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",

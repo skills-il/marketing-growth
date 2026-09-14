@@ -34,7 +34,7 @@ Write in spoken Hebrew (ivrit meduberet), not formal written Hebrew. Key rules:
 
 1. **Hook first.** The first line determines whether users stop scrolling. Lead with a bold claim, question, or personal story.
 2. **Use contractions naturally.** Write "אני לא" not "אינני". Write "יש לי" not "ברשותי".
-3. **Paragraph breaks for mobile.** Israeli web traffic is 53.62% mobile and 44.91% desktop (StatCounter, July 2026). The "over 70% mobile" figure that circulates is not supported for Israel, and no social-specific Israeli mobile share is published at all, so do not quote one. Write for a phone screen anyway, one idea per paragraph with blank lines between, but do not treat desktop as negligible when the same copy is reused on a landing page.
+3. **Paragraph breaks for mobile.** Israeli web traffic is 48.76% mobile and 49.79% desktop (StatCounter, August 2026). The "over 70% mobile" figure that circulates is not supported for Israel, and no social-specific Israeli mobile share is published at all, so do not quote one. Write for a phone screen anyway, one idea per paragraph with blank lines between, but do not treat desktop as negligible when the same copy is reused on a landing page.
 4. **Dugri tone wins.** Israeli audiences respond to direct, honest, personal content. Corporate-polished copy underperforms consistently.
 5. **Bilingual when relevant.** Tech and business terms stay in English (SaaS, ROI, B2B). Do not transliterate.
 

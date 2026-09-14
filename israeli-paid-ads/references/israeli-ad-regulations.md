@@ -28,7 +28,7 @@
 
 ## Israeli Audience Targeting Tips
 - Gush Dan: ~40% of digital ad spend
-- Traffic split: 53.62% mobile, 44.91% desktop, 1.47% tablet (StatCounter, July 2026). The commonly repeated "over 70% mobile" figure is NOT supported for Israel; nearly half of Israeli web traffic is desktop.
+- Traffic split: 48.76% mobile, 49.79% desktop, 1.45% tablet (StatCounter, August 2026). The commonly repeated "over 70% mobile" figure is NOT supported for Israel; about half of Israeli web traffic is desktop.
 - Peak hours: 9-10 AM, 12-1 PM, 8-10 PM (Sun-Thu)
 - Age demographics shift due to military service (18-21)
 
