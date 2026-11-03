@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "category": "marketing-growth",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Hebrew SEO & GEO Toolkit"
   },
   "display_description": {
-    "he": "קידום אתרים בעברית עם ניתוח מורפולוגי, אופטימיזציה למנועי חיפוש AI (ChatGPT, Perplexity, Gemini), שיטות GEO מבוססות מחקר פרינסטון, עקרונות EEAT, ונתונים מובנים לגוגל ישראל",
-    "en": "Optimize websites for Hebrew SEO and GEO (Generative Engine Optimization) on Google.co.il and AI search engines (ChatGPT, Perplexity, Gemini, Copilot, Claude). Use when user asks about Hebrew keyword research, Israeli SEO, .co.il domain optimization, Hebrew schema.org markup, AI search visibility, GEO optimization, EEAT, or asks about \"kidum atarim\", \"milot mafteach\", \"SEO\", \"GEO\", or Israeli search ranking. Includes Hebrew morphological analysis, Princeton GEO methods, platform-specific AI optimization, EEAT principles, JSON-LD structured data, and Israeli business schema (Shabbat hours, kosher certification). Do NOT use for paid advertising campaigns or social media marketing."
+    "he": "בדיקה ואופטימיזציה של אתרים ישראליים לקידום אתרים בעברית ול-GEO (אופטימיזציה למנועי חיפוש מבוססי AI) בגוגל ובמנועים כמו ChatGPT, Perplexity, Gemini, Copilot ו-Claude, שמסתיימת ברשימת תיקונים מתועדפת. מתאים כשרוצים לבדוק את ה-SEO או את הנראות ב-AI של אתר, למחקר מילות מפתח בעברית, להגדרת hreflang, לנתונים מובנים לעסק ישראלי, לבדיקת גישת סורקי AI ב-robots.txt, או כששואלים על \"קידום אתרים\", \"מילות מפתח\" ו-GEO. כולל סקריפט בדיקה חינמי שבודק כל סורק בנפרד, צורות של מילות מפתח בעברית מול נתוני Search Console, שיטות GEO ממחקר פרינסטון, ההנחיות של גוגל לתכונות AI, ושעות שבת וחג ב-schema.org. חוסך המלצות שגוגל כבר לא מתגמלת ואבחון שגוי של בעיות גישה. לא מתאים לקמפיינים ממומנים או לשיווק ברשתות חברתיות.",
+    "en": "Audit and optimize Israeli websites for Hebrew SEO and GEO (Generative Engine Optimization) on Google.co.il and AI search engines (ChatGPT, Perplexity, Gemini, Copilot, Claude), ending in a prioritized fix list. Use when user asks to audit a site's SEO or AI visibility, Hebrew keyword research, Israeli SEO, .co.il domain optimization, hreflang, Hebrew schema.org markup, AI crawler access in robots.txt, GEO optimization, EEAT, or asks about \"kidum atarim\", \"milot mafteach\", \"SEO\", \"GEO\", or Israeli search ranking. Includes a free audit script with per-crawler checks, Hebrew keyword variants checked against Search Console data, Princeton GEO methods, Google's AI-features guidance, and Israeli business schema (Shabbat and holiday hours, kosher certification). Do NOT use for paid advertising campaigns or social media marketing."
   },
   "supported_agents": [
     "claude-code",

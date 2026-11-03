@@ -1,6 +1,36 @@
 {
   "cycles": [
     {
+      "version": "2.4.0",
+      "date": "2026-11-03",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "p2",
+          "p4",
+          "n2",
+          "e3"
+        ]
+      },
+      "lessons": [
+        "Reshaped from knowledge to workflow: intake -> seo_audit.py (now P0/P1/P2 fix list) -> owner-account checks -> GSC-measured keyword coverage -> fix-list deliverable. The prior cycles verified facts but never asked whether the skill answers 'what do I fix first'.",
+        "All seven DataForSEO scripts hardcoded language 'en' and defaulted to US 2840; Labs rejects Israel+en. Three returned wrong data on the docs' own example responses (autocomplete empty, related_keywords volume 0, competitor_gap inverted). Nothing caught it because the scripts were never run against a response. LESSON: run every API script against the vendor's documented example response (fixtures from the docs page) every cycle.",
+        "seo_audit.py misdiagnosed the AUDITOR's own failures as site findings: a local Python without current root CAs reported a P0 'page down' for gov.il/agentskills; a WAF refusing scripted clients (gov.il 403) did the same. Now exit 2 / 'audit blocked'. LESSON: separate tool failure from site finding in any diagnostic script.",
+        "Expert CRITICAL: the robots.txt 'list bots explicitly' advice ignored Google's one-group-per-crawler rule and would have stripped existing Disallow rules for those bots. Also Google-Extended was grouped with training crawlers although it controls Gemini app grounding. Both fixed; Step 9 now says merge, don't paste.",
+        "FAQ rich results were removed by Google on 7 May 2026 but the 2026-08-11 cycle still described the 2023 restriction: the deprecation predated the last review. LESSON: read developers.google.com/search/updates back to the previous cycle date every cycle.",
+        "references/ files carried most of the folklore (Perplexity reranker layers, PaLM2/MUM, dwell time, FID, invented Princeton combination and domain tables, a fabricated-looking Sam Altman quote, US-shaped schema templates). Reference files need the same claim-by-claim read as the body.",
+        "Verifier stub heuristic cannot pass a CSV row (no whitespace): the DataForSEO Labs Israel rows are kept as a verbatim snippet with digit-free claim text so --check-sources still checks them.",
+        "Deferred MAJOR (lead decision): platform defaults and traps for Wix/WordPress/Shopify and Israeli accessibility overlay plugins (JS weight, INP). Example 1 now notes the Wix CDN is not owner-controlled.",
+        "Deferred minors: d.co.il and easy.co.il in the directory list (verify current relevance first); Kashrut (Prohibition of Deceit) Law note for kosher claims (needs legal sourcing); analyze_keywords.py emits העורך דין style article forms for smikhut keywords; the 200-without-text bot probe can false-positive on pages whose H1 rotates per request; utm_source=chatgpt.com segmentation (OpenAI help page was not readable to verify).",
+        "UNVERIFIED and deliberately not written: a 1,000-row cap on Search Console UI exports and anonymized-query omission (no primary source found this cycle); Google Ads language code 'he' (inferred from ISO 639-1, list truncated).",
+        "Round-3 expert minors left for next cycle so the tagged text equals the reviewed text: qualify Step 9's 'change nothing' with 'on the audited pages' and note training-crawler choices still apply; add '(or edit its existing group)' to the Step 10 example row."
+      ]
+    },
+    {
       "version": "2.3.2",
       "date": "2026-08-11",
       "lessons": [

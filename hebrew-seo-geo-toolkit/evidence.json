@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "hebrew-seo-geo-toolkit",
-  "generated_at": "2026-08-11T12:20:00Z",
+  "generated_at": "2026-11-03T20:00:00Z",
   "claims": [
     {
       "claim_id": "princeton-geo-paper",
@@ -40,13 +40,14 @@
     },
     {
       "claim_id": "perplexity-bots",
-      "claim": "Perplexity uses PerplexityBot (indexing) and Perplexity-User (on-demand fetch)",
+      "claim": "Perplexity documents two agents: PerplexityBot (search index) and Perplexity-User (user-triggered fetch).",
       "source_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
-      "raw_snippet": "PerplexityBot, Perplexity-User",
-      "fetched_at": "2026-05-25T20:10:00Z",
+      "raw_snippet": "Perplexity-User supports user actions within Perplexity.",
+      "fetched_at": "2026-11-03T18:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
       ]
     },
     {
@@ -105,17 +106,6 @@
       ]
     },
     {
-      "claim_id": "ref-keyword-planner",
-      "claim": "Google Keyword Planner is Google Ads' keyword research tool for campaign planning.",
-      "source_url": "https://ads.google.com/intl/en/home/tools/keyword-planner/",
-      "raw_snippet": "Research Keywords for Campaigns with Keyword Planner",
-      "fetched_at": "2026-08-10",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "ref-hebrew-academy",
       "claim": "The Academy of the Hebrew Language publishes at hebrew-academy.org.il.",
       "source_url": "https://hebrew-academy.org.il",
@@ -134,19 +124,8 @@
       "claim_id": "ref-bing-webmaster",
       "claim": "Bing Webmaster Tools reports when a site is cited in AI-generated answers across Microsoft Copilot and Bing AI summaries, which is why it matters for Copilot visibility.",
       "source_url": "https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview",
-      "raw_snippet": "Bing Webmaster Tools has long helped website owners understand indexing, crawl health, and search performance.",
-      "fetched_at": "2026-08-10",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "ref-brave-search",
-      "claim": "Brave Search runs an independent web index.",
-      "source_url": "https://brave.com/search/",
-      "raw_snippet": "An independent index delivering actually useful results",
-      "fetched_at": "2026-08-10",
+      "raw_snippet": "shows how publisher content appears across Microsoft Copilot, AI-generated summaries in Bing, and select partner integrations.",
+      "fetched_at": "2026-11-03T20:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -198,41 +177,6 @@
       "appears_in": [
         "references/schema-templates.md"
       ]
-    },
-    {
-      "claim_id": "url-opc-dev",
-      "claim": "opc.dev publishes agent skills for solopreneurs.",
-      "source_url": "https://opc.dev",
-      "raw_snippet": "AI Agent Skills for Solopreneurs | Claude Code & Cursor",
-      "fetched_at": "2026-08-09",
-      "appears_in": [
-        "SKILL.md"
-      ]
-    },
-    {
-      "claim_id": "url-opc-skills-repo",
-      "claim": "The opc-skills repository is at github.com/ReScienceLab/opc-skills.",
-      "source_url": "https://github.com/ReScienceLab/opc-skills",
-      "raw_snippet": "ReScienceLab/opc-skills: Agent Skills for Solopreneurs",
-      "fetched_at": "2026-08-09",
-      "appears_in": [
-        "SKILL.md"
-      ]
-    },
-    {
-      "claim_id": "url-google-search-status",
-      "claim": "Google publishes a Search Status Dashboard giving status information on the services that are part of Google Search. This page provides status information on the services that are part of Google Search.",
-      "source_url": "https://status.search.google.com",
-      "raw_snippet": "Google Search Status Dashboard Google Search Status Dashboard This page provides status information on the services that are part of Google Search.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "references/seo-checklist.md"
-      ],
-      "verified_via": "reference-coverage entry; snippet is a contiguous sentence from its source page",
-      "verified_at": "2026-08-18",
-      "archive_snapshot": "https://web.archive.org/web/20250112005313/https://status.search.google.com/",
-      "note": "Live dashboard is client-rendered, so a plain fetch returns a shell; confirmed against the 2025-01-12 Wayback capture. Claim is the dashboard's existence and purpose, not any status value."
     },
     {
       "claim_id": "geo-lower-ranked-115",
@@ -425,7 +369,7 @@
     },
     {
       "claim_id": "gsc-genai-impressions-metric",
-      "claim": "The Search Console generative AI reports expose impressions, pages, countries, devices and dates, with no click data in this version.",
+      "claim": "Google lists impressions by page, country, device and date for the Search Console generative AI reports; it documents no click, CTR, position or query data in them (an absence in the documentation, not a statement by Google).",
       "source_url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
       "raw_snippet": "Impressions: How often URLs from your site appeared in generative AI features in Search and Discover.",
       "fetched_at": "2026-08-11T12:20:00Z",
@@ -442,8 +386,6 @@
       "raw_snippet": "The format is intentionally minimal: a directory of markdown files with\nYAML frontmatter.",
       "fetched_at": "2026-08-11T12:20:00Z",
       "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
         "references/domain-checklist.md"
       ]
     },
@@ -466,6 +408,745 @@
       "source_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
       "raw_snippet": "or x-default to match any language not explicitly listed by an",
       "fetched_at": "2026-08-11T13:20:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "perplexity-propagation",
+      "claim": "Perplexity says robots.txt changes may take up to 24 hours to be reflected.",
+      "source_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "raw_snippet": "it may take up to 24 hours for our systems to reflect changes",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "google-faq-rich-result-deprecated",
+      "claim": "Google stopped showing FAQ rich results on 7 May 2026.",
+      "source_url": "https://developers.google.com/search/updates",
+      "raw_snippet": "This feature will no longer appear in Google Search starting May 7, 2026.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/schema-templates.md",
+        "references/seo-checklist.md",
+        "references/geo-research.md",
+        "references/domain-checklist.md",
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "google-howto-removed",
+      "claim": "Google removed HowTo rich results (September 2023 documentation update).",
+      "source_url": "https://developers.google.com/search/updates",
+      "raw_snippet": "Removed the How-to structured data documentation , as this rich result is no longer shown in search results, on both desktop and mobile devices.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/schema-templates.md",
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "google-genai-control-rollout",
+      "claim": "The Search generative AI control in Search Console was rolled out to all websites as of 31 August 2026.",
+      "source_url": "https://support.google.com/webmasters/answer/16908024?hl=en",
+      "raw_snippet": "As of August 31, 2026, we’ve rolled out this control to all websites worldwide.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-genai-control-training",
+      "claim": "The Search generative AI control does not affect AI training; Google-Extended governs training.",
+      "source_url": "https://support.google.com/webmasters/answer/16908024?hl=en",
+      "raw_snippet": "This control doesn't affect AI training; to limit training of the models used to generate responses in Search generative AI features, use Google-Extended .",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "references/aeo-considerations.md"
+      ]
+    },
+    {
+      "claim_id": "google-genai-control-timing",
+      "claim": "Exclusion via the Search generative AI control takes effect within 1-2 days.",
+      "source_url": "https://support.google.com/webmasters/answer/16908024?hl=en",
+      "raw_snippet": "Content will be excluded within 1-2 days after the control goes live",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "google-genai-eligibility",
+      "claim": "A site must be included in Search generative AI features in Search Console to be eligible for Google generative AI features.",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "raw_snippet": "a site must be included in Search generative AI features in Search Console to be eligible for display in generative AI features on Google Search.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-ai-guide-still-seo",
+      "claim": "Google: optimizing for generative AI search is still SEO.",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "raw_snippet": "optimizing for generative AI search is optimizing for the search experience, and thus still SEO",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/geo-research.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "google-ai-guide-fanout-spam",
+      "claim": "Creating pages for every query variation primarily to manipulate rankings or AI responses violates the scaled content abuse policy.",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "raw_snippet": "doing so primarily to manipulate rankings or generative AI responses in Google Search violates Google's scaled content abuse spam policy",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "google-ai-guide-no-schema",
+      "claim": "No special schema.org markup is needed for generative AI search.",
+      "source_url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "raw_snippet": "Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "references/schema-templates.md"
+      ]
+    },
+    {
+      "claim_id": "gsc-genai-all-sites",
+      "claim": "Search Console Generative AI performance reports reached all websites as of 31 August 2026.",
+      "source_url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "raw_snippet": "As of August 31, 2026, we've rolled out these insights to all websites worldwide.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/aeo-considerations.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "hreflang-language-only",
+      "claim": "Google allows a language code by itself in hreflang.",
+      "source_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "raw_snippet": "To simplify your labeling, you can specify a language code by itself.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "hreflang-three-methods",
+      "claim": "HTML, HTTP headers and sitemaps are equivalent hreflang methods; using all three gives no benefit.",
+      "source_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "raw_snippet": "The three methods are equivalent from Google's perspective and you can choose the method that's the most convenient for your site. While you can use all three methods at the same time, there's no benefit in Search",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "cctld-server-location",
+      "claim": "For a country-code domain Google lists server location as irrelevant.",
+      "source_url": "https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites",
+      "raw_snippet": "Country-specific domain example.de Pros: Clear geotargeting Server location irrelevant",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-seo.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "gsc-intl-targeting-gone",
+      "claim": "Search Console country targeting (International Targeting report) is no longer supported.",
+      "source_url": "https://support.google.com/webmasters/answer/12474899?hl=en",
+      "raw_snippet": "the ability to target search results to specific countries using Search Console country targeting was determined to have little value for the ecosystem, and is no longer supported.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-localbusiness-phone",
+      "claim": "Google: include the country code and area code in the telephone property.",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "raw_snippet": "Be sure to include the country code and area code in the phone number.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-seo.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-localbusiness-closed-day",
+      "claim": "Google: to show a business closed all day, set opens and closes to 00:00.",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "raw_snippet": "To show a business is closed all day, set both opens and closes properties to \"00:00\".",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-opening-hours-english",
+      "claim": "Google supports only standard schema.org enumeration values for opening hours, in English.",
+      "source_url": "https://developers.google.com/search/updates",
+      "raw_snippet": "Clarified that we only support standard schema.org enumeration values for local business opening hours , and these values must be in English per the schema.org specification.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "schema-special-opening-hours",
+      "claim": "schema.org specialOpeningHoursSpecification overrides general opening hours.",
+      "source_url": "https://schema.org/specialOpeningHoursSpecification",
+      "raw_snippet": "The special opening hours of a certain place.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/seo-checklist.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "schema-telephone-text",
+      "claim": "schema.org telephone expects Text.",
+      "source_url": "https://schema.org/telephone",
+      "raw_snippet": "The telephone number. Values expected to be one of these types Text",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-speakable-scope",
+      "claim": "Speakable works for US Google Home users set to English and English-language news publishers.",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/speakable",
+      "raw_snippet": "The speakable property works for users in the U.S. that have Google Home devices set to English, and publishers that publish content in English.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/schema-templates.md",
+        "references/geo-research.md",
+        "references/domain-checklist.md",
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "mistral-three-bots",
+      "claim": "Mistral documents MistralAI-User, MistralAI-Index and MistralAI-Training; Index feeds Mistral search in Vibe.",
+      "source_url": "https://docs.mistral.ai/robots",
+      "raw_snippet": "MistralAI-Index is for automated crawling of the web for indexing purposes only . It indexes content for Mistral search, which helps answer user questions in Vibe.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "references/aeo-considerations.md"
+      ]
+    },
+    {
+      "claim_id": "mistral-training-bot",
+      "claim": "MistralAI-Training crawls content for training Mistral models.",
+      "source_url": "https://docs.mistral.ai/robots",
+      "raw_snippet": "MistralAI-Training crawls web content to help build datasets for training Mistral generative AI models.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "google-extended-grounding",
+      "claim": "Google-Extended governs Gemini training and grounding in Gemini Apps and Vertex AI; it does not affect Search inclusion.",
+      "source_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "raw_snippet": "Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "references/aeo-considerations.md"
+      ]
+    },
+    {
+      "claim_id": "openai-chatgpt-user-robots",
+      "claim": "OpenAI: robots.txt rules may not apply to ChatGPT-User.",
+      "source_url": "https://developers.openai.com/api/docs/bots",
+      "raw_snippet": "Because these actions are initiated by a user, robots.txt rules may not apply.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "openai-propagation",
+      "claim": "OpenAI: about 24 hours from a robots.txt update for search.",
+      "source_url": "https://developers.openai.com/api/docs/bots",
+      "raw_snippet": "it can take ~24 hours from a site’s robots.txt update for our systems to adjust.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "openai-searchbot-optout",
+      "claim": "Sites opted out of OAI-SearchBot are not shown in ChatGPT search answers.",
+      "source_url": "https://developers.openai.com/api/docs/bots",
+      "raw_snippet": "Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "openai-searchbot-ua",
+      "claim": "OAI-SearchBot example user-agent string (used by seo_audit.py).",
+      "source_url": "https://developers.openai.com/api/docs/bots",
+      "raw_snippet": "compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "perplexitybot-ua",
+      "claim": "PerplexityBot example user-agent string (used by seo_audit.py).",
+      "source_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "raw_snippet": "Mozilla/5.0 (compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "googlebot-ua",
+      "claim": "Googlebot user-agent string (used by seo_audit.py).",
+      "source_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "raw_snippet": "compatible; Googlebot/2.1; +http://www.google.com/bot.html",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "anthropic-searchbot-visibility",
+      "claim": "Anthropic: disabling Claude-SearchBot may reduce visibility in search results.",
+      "source_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "raw_snippet": "Disabling Claude-SearchBot on your site prevents our system from indexing your content for search optimization, which may reduce your site's visibility and accuracy in user search results.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "apple-nosnippet",
+      "claim": "Apple: nosnippet opts content out of Apple broad world knowledge answers.",
+      "source_url": "https://support.apple.com/en-us/119829",
+      "raw_snippet": "Web publishers can opt out of their content being used in these broad world knowledge answers by applying the nosnippet meta tag to specific content.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "cloudflare-default-block",
+      "claim": "Cloudflare announced (1 July 2025) it was changing the default to block AI crawlers.",
+      "source_url": "https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/",
+      "raw_snippet": "is changing the default to block AI crawlers unless they pay creators for their content.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "inp-replaced-fid",
+      "claim": "INP replaced FID as a Core Web Vital.",
+      "source_url": "https://web.dev/blog/inp-cwv-launch?hl=en",
+      "raw_snippet": "Interaction to Next Paint is now a stable Core Web Vital metric, replacing First Input Delay.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "references/seo-checklist.md",
+        "references/hebrew-seo.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "cwv-inp-threshold",
+      "claim": "Good INP is 200 milliseconds or less.",
+      "source_url": "https://web.dev/articles/inp?hl=en",
+      "raw_snippet": "Good INP values are 200 milliseconds or less.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "references/platform-algorithms.md",
+        "references/seo-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "cwv-lcp-threshold",
+      "claim": "Good LCP is 2.5 seconds or less.",
+      "source_url": "https://web.dev/articles/lcp?hl=en",
+      "raw_snippet": "A good LCP value is 2.5 seconds or less.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "cwv-cls-threshold",
+      "claim": "Good CLS is 0.1 or less.",
+      "source_url": "https://web.dev/articles/cls?hl=en",
+      "raw_snippet": "Good CLS values are 0.1 or less.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "dfs-min-topup",
+      "claim": "DataForSEO: pay as you go with a $50 minimum top-up.",
+      "source_url": "https://dataforseo.com/pricing",
+      "raw_snippet": "$50 minimum top-up",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/tools-and-apis.md"
+      ]
+    },
+    {
+      "claim_id": "dfs-trial-credit",
+      "claim": "DataForSEO: $1 trial credit for new accounts.",
+      "source_url": "https://dataforseo.com/pricing",
+      "raw_snippet": "use your $1 trial credit available to new accounts",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/tools-and-apis.md"
+      ]
+    },
+    {
+      "claim_id": "dfs-sandbox",
+      "claim": "DataForSEO sandbox is free and returns dummy data; switch host to sandbox.dataforseo.com/v3.",
+      "source_url": "https://docs.dataforseo.com/v3/appendix/sandbox/",
+      "raw_snippet": "change the hostname in the URL when sending an API call from api.dataforseo.com/v3/ to sandbox.dataforseo.com/v3/",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/tools-and-apis.md",
+        "scripts/dataforseo_api.py"
+      ]
+    },
+    {
+      "claim_id": "dfs-google-ads-rate",
+      "claim": "DataForSEO Google Ads live endpoints: 12 requests per minute per account.",
+      "source_url": "https://docs.dataforseo.com/v3/keywords_data/google_ads/keywords_for_keywords/live/",
+      "raw_snippet": "you can send no more than 12 requests per minute per account using Google Ads Live endpoints.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/tools-and-apis.md",
+        "scripts/keyword_research.py"
+      ]
+    },
+    {
+      "claim_id": "dfs-labs-israel-languages",
+      "claim": "DataForSEO Labs lists Israel only with Hebrew and Arabic (the Israel location code and the he / ar language codes are the values in the official CSV rows quoted).",
+      "source_url": "https://cdn.dataforseo.com/v3/locations/locations_and_languages_dataforseo_labs_2026_11_02.csv",
+      "raw_snippet": "2376,Israel,,IL,Country,google,Hebrew,he,32408597,1736635\n2376,Israel,,IL,Country,google,Arabic,ar,20258715,527776",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/tools-and-apis.md",
+        "scripts/dataforseo_api.py"
+      ]
+    },
+    {
+      "claim_id": "geo-si-keyword-stuffing",
+      "claim": "On Subjective Impression (Table 1) keyword stuffing scores slightly above the 19.3 baseline; the word-count metric is below.",
+      "source_url": "https://arxiv.org/html/2311.09735v3",
+      "raw_snippet": "Keyword Stuffing 17.8 17.8 17.7 17.7 17.7 17.7 19.8 19.8 19.1 19.1 20.5 20.5 20.4 20.4 20.3 20.3 20.5 20.5 20.4 20.4 20.2 20.2",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/geo-research.md"
+      ]
+    },
+    {
+      "claim_id": "llmstxt-v2",
+      "claim": "The llms.txt proposal (Jeremy Howard) is at v2, modified 10 August 2026.",
+      "source_url": "https://llmstxt.org/changes.html",
+      "raw_snippet": "Changes v2 (August 2026) The original llms.txt proposal was published in September 2024",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "bing-ai-performance-copilot",
+      "claim": "Bing AI Performance shows how content appears across Microsoft Copilot, with sampled grounding queries.",
+      "source_url": "https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview",
+      "raw_snippet": "shows how publisher content appears across Microsoft Copilot, AI-generated summaries in Bing, and select partner integrations.",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "bing-topics-portfolio",
+      "claim": "Bing added a Topics Portfolio beta to AI Performance in October 2026.",
+      "source_url": "https://blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance/",
+      "raw_snippet": "Introducing Topics Portfolio (Beta) in AI Performance October 13, 2026",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "google-ai-mode-hebrew-israel",
+      "claim": "Google AI Mode lists Hebrew among supported languages.",
+      "source_url": "https://support.google.com/websearch/answer/16011537?hl=en",
+      "raw_snippet": "Hausa Hebrew Hindi",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "dfs-sandbox-host",
+      "claim": "DataForSEO sandbox endpoints live at https://sandbox.dataforseo.com/v3 (used when DATAFORSEO_SANDBOX=1).",
+      "source_url": "https://docs.dataforseo.com/v3/appendix/sandbox/",
+      "raw_snippet": "POST https://sandbox.dataforseo.com/v3/$path",
+      "fetched_at": "2026-11-03T18:00:00Z",
+      "appears_in": [
+        "scripts/dataforseo_api.py"
+      ]
+    },
+    {
+      "claim_id": "robots-one-group",
+      "claim": "Google: only one robots.txt group is valid for a crawler; the most specific matching group applies and others are ignored.",
+      "source_url": "https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec",
+      "raw_snippet": "Only one group is valid for a particular crawler.",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md",
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "robots-5xx",
+      "claim": "Google: if robots.txt returns a server error, it stops crawling the site for the first 12 hours, then uses the last good version for up to 30 days.",
+      "source_url": "https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec",
+      "raw_snippet": "For the first 12 hours, Google stops crawling the site but keeps trying to fetch the robots.txt file.",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "google-lang-not-used",
+      "claim": "Google does not use hreflang or the HTML lang attribute to detect page language.",
+      "source_url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+      "raw_snippet": "Google doesn't use hreflang or the HTML lang attribute to detect the language of a page",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/seo_audit.py"
+      ]
+    },
+    {
+      "claim_id": "google-url-utf8",
+      "claim": "Google URL guidance: words in the audience language, UTF-8 for non-ASCII characters.",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/url-structure",
+      "raw_snippet": "preferably in the audience's language, and utilizing UTF-8 encoding for non-ASCII characters",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-snippet-controls",
+      "claim": "Google: nosnippet, data-nosnippet, max-snippet or noindex limit the information shown from pages in Search (including AI features).",
+      "source_url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "raw_snippet": "To limit the information shown from your pages in Search, use nosnippet , data-nosnippet , max-snippet , or noindex controls.",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/seo_audit.py",
+        "references/seo-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-merchant-listing",
+      "claim": "Google merchant listings require an Offer with an active price greater than zero.",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+      "raw_snippet": "Unlike product snippets, merchant listing experiences require a price greater than zero.",
+      "fetched_at": "2026-11-03T21:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-mobile-friendly-test-retired",
+      "claim": "Google removed mentions of the Mobile Friendly Test from its documentation (December 2023) as the tool was going away.",
+      "source_url": "https://developers.google.com/search/updates",
+      "raw_snippet": "Removed mentions of the Mobile Friendly Test and the Mobile Usability report throughout our documentation, as they are going away .",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "references/seo-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "google-mobile-first",
+      "claim": "Google uses the mobile version of a site's content for indexing and ranking.",
+      "source_url": "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing",
+      "raw_snippet": "Google uses the mobile version of a site's content, crawled with the smartphone agent , for indexing and ranking.",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "references/hebrew-seo.md",
+        "references/seo-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "hebcal-pesach-2027",
+      "claim": "Pesach 5787 begins at sundown on Wednesday 21 April 2027 (first day 22 April 2027), used in the schema example.",
+      "source_url": "https://www.hebcal.com/holidays/pesach-2027",
+      "raw_snippet": "Pesach for Hebrew Year 5787 begins in the Diaspora at sundown on Wednesday, 21 April 2027",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/schema-templates.md"
+      ]
+    },
+    {
+      "claim_id": "geo-paper-authors",
+      "claim": "GEO paper authors are affiliated with IIT Delhi, Princeton University and independent researchers.",
+      "source_url": "https://arxiv.org/html/2311.09735v3",
+      "raw_snippet": "Pranjal Aggarwal Note: Equal Contribution Affiliation: Indian Institute of Technology Delhi",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "references/geo-research.md"
+      ]
+    },
+    {
+      "claim_id": "geo-paper-geval",
+      "claim": "Subjective Impression sub-metrics are scored by GPT-3.5 following G-Eval.",
+      "source_url": "https://arxiv.org/html/2311.09735v3",
+      "raw_snippet": "Each sub-metric is evaluated using GPT-3.5, following a methodology akin to that described in G-Eval",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "references/geo-research.md"
+      ]
+    },
+    {
+      "claim_id": "google-extended-grounding-text",
+      "claim": "Google-Extended also governs grounding in Gemini Apps and Grounding with Google Search on Vertex AI.",
+      "source_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "raw_snippet": "in Gemini Apps and Grounding with Google Search on Vertex AI",
+      "fetched_at": "2026-11-03T20:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/platform-algorithms.md"
+      ]
+    },
+    {
+      "claim_id": "wix-robots-dashboard",
+      "claim": "Wix owners edit robots.txt from the site dashboard (Wix help documents robots.txt and robots meta tags as the controls; it documents no owner-level CDN or firewall setting).",
+      "source_url": "https://support.wix.com/en/article/blocking-ai-crawlers-from-your-site",
+      "raw_snippet": "To set the robots.txt file to block AI crawlers: Go to SEO",
+      "fetched_at": "2026-11-03T21:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "google-merchant-availability-recommended",
+      "claim": "For merchant listings, Offer availability is a recommended (not required) property.",
+      "source_url": "https://developers.google.com/search/docs/appearance/structured-data/merchant-listing",
+      "raw_snippet": "Recommended properties availability ItemAvailability The possible product availability options.",
+      "fetched_at": "2026-11-03T21:30:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"

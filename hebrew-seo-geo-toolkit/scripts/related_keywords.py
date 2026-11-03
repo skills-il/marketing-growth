@@ -1,83 +1,61 @@
 #!/usr/bin/env python3
 """
-Related keywords from Google "searches related to" using DataForSEO API
-Get up to 4,680 keyword ideas from Google's related searches
+Related keywords from Google "searches related to" (DataForSEO Labs, paid).
+Endpoint: dataforseo_labs/google/related_keywords/live
 
-Usage: python3 scripts/related_keywords.py "AI agent" --depth 2 --limit 50
+Defaults to Israel (2376) and Hebrew (he). Volume is read from
+keyword_data.keyword_info.search_volume and organic difficulty (0-100) from
+keyword_data.keyword_properties.keyword_difficulty. Billed per task plus per
+returned item, so --limit is sent to the API rather than trimmed locally.
+
+Usage: python3 scripts/related_keywords.py "ביטוח רכב" --depth 2 --limit 50
 """
 import argparse
-from dataforseo_api import api_post, get_result, format_count
+from dataforseo_api import add_market_args, api_post, check_labs_market, format_count, get_result
+
+# Maximum keywords per depth level, as published in the DataForSEO docs.
+DEPTH_MAX = {0: 1, 1: 8, 2: 72, 3: 584, 4: 4680}
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Related keywords from Google")
+    parser = argparse.ArgumentParser(description="Related keywords (paid)")
     parser.add_argument("keyword", help="Seed keyword")
-    parser.add_argument("--location", "-loc", type=int, default=2840,
-                        help="Location code (default: 2840 = US)")
-    parser.add_argument("--depth", "-d", type=int, default=1,
-                        help="Search depth 1-3 (default: 1, max keywords: depth^3 * 10)")
-    parser.add_argument("--limit", "-l", type=int, default=50, 
-                        help="Max results to display (default: 50)")
+    add_market_args(parser)
+    parser.add_argument("--depth", "-d", type=int, default=1, choices=range(0, 5),
+                        help="Depth 0-4 (default 1)")
+    parser.add_argument("--limit", "-l", type=int, default=50, help="Max items, 1-1000 (default 50)")
     args = parser.parse_args()
-
-    # Validate depth
-    if args.depth < 1 or args.depth > 3:
-        print("Error: depth must be between 1 and 3")
-        return
+    check_labs_market(args.location, args.language)
 
     data = [{
         "keyword": args.keyword,
         "location_code": args.location,
-        "language_code": "en",
+        "language_code": args.language,
         "depth": args.depth,
-        "limit": 1000  # API limit, we'll filter in display
+        "limit": max(1, min(args.limit, 1000)),
     }]
-    
     response = api_post("dataforseo_labs/google/related_keywords/live", data)
     results = get_result(response)
-    
+
     print(f"keyword: {args.keyword}")
-    print(f"location: {args.location}")
-    print(f"depth: {args.depth}")
-    print()
-    
-    if results:
-        keywords = []
-        for result in results:
-            items = result.get("items", [])
-            for item in items:
-                kw_data = item.get("keyword_data", {})
-                keyword = kw_data.get("keyword", item.get("keyword", ""))
-                volume = kw_data.get("search_volume", item.get("search_volume", 0))
-                difficulty = kw_data.get("keyword_difficulty", item.get("keyword_difficulty", "N/A"))
-                
-                if keyword:
-                    keywords.append({
-                        "keyword": keyword,
-                        "volume": volume if volume is not None else 0,
-                        "difficulty": difficulty
-                    })
-        
-        # Sort by volume desc
-        keywords.sort(key=lambda x: x["volume"], reverse=True)
-        
-        # Display limited results
-        display_keywords = keywords[:args.limit]
-        print(f"related_keywords[{len(display_keywords)} of {len(keywords)}]{{keyword,volume,difficulty}}:")
-        for kw in display_keywords:
-            keyword = kw["keyword"]
-            volume = format_count(kw["volume"])
-            difficulty = kw["difficulty"]
-            print(f"  {keyword},{volume},{difficulty}")
-        
-        if len(keywords) > args.limit:
-            print(f"\n... and {len(keywords) - args.limit} more keywords (use --limit to show more)")
-    else:
+    print(f"location: {args.location} language: {args.language} depth: {args.depth}"
+          f" (up to {DEPTH_MAX[args.depth]} keywords)")
+    rows = []
+    for result in results:
+        for item in result.get("items") or []:
+            kd = item.get("keyword_data") or {}
+            info = kd.get("keyword_info") or {}
+            props = kd.get("keyword_properties") or {}
+            if kd.get("keyword"):
+                rows.append((kd["keyword"], info.get("search_volume") or 0,
+                             props.get("keyword_difficulty", "N/A")))
+    if not rows:
         print("No related keywords found")
-    
-    print()
-    print("Tip: Higher depth finds more keywords but costs more API credits")
-    print(f"  Depth 1: ~10 keywords, Depth 2: ~100, Depth 3: ~1,000+")
+        return
+    rows.sort(key=lambda r: r[1], reverse=True)
+    print(f"related_keywords[{len(rows)}]{{keyword,volume,difficulty_0_100}}:")
+    for keyword, volume, difficulty in rows:
+        print(f"  {keyword},{format_count(volume)},{difficulty}")
 
 
 if __name__ == "__main__":

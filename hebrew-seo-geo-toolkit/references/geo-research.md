@@ -3,7 +3,7 @@
 ## Paper Overview
 
 **Title:** GEO: Generative Engine Optimization  
-**Authors:** Princeton University, IIT Delhi, Georgia Tech, Allen Institute for AI  
+**Authors:** Aggarwal, Murahari, Rajpurohit, Kalyan, Narasimhan, Deshpande (IIT Delhi, Princeton University, independent researchers)  
 **Published:** November 2023 (arXiv:2311.09735)  
 **Accepted:** KDD 2024 (30th ACM SIGKDD Conference)  
 **Link:** https://arxiv.org/abs/2311.09735
@@ -21,6 +21,15 @@ Unlike traditional SEO (ranking in search results), GEO focuses on **being cited
 ### Core Results
 
 The methods below are listed in the paper's own order of effectiveness (Table 1): Quotation Addition, Statistics Addition, Fluency Optimization, Cite Sources, Technical Terms, Easy-to-Understand, Authoritative Tone, then Unique Words and Keyword Stuffing, which the paper groups as non-performing. Per-method percentage figures circulating online do not match the paper and are not reproduced here.
+
+**Two caveats before applying this to a Hebrew site:**
+
+1. The order above is from the Position-Adjusted Word Count metric. On the paper's Subjective Impression metric, Authoritative ranks near the top and Keyword Stuffing scores slightly above the baseline, so "keyword stuffing is worse than doing nothing" holds for word count only. Avoid it anyway: it violates Google's spam policies.
+2. The experiments used English queries against 2023-era engines (a research engine and Perplexity). The effect on Hebrew content in today's engines has not been measured. Treat the methods as a sound editing checklist, not a guaranteed lift.
+
+Google's own position, for its AI features, is that optimizing for generative AI search "is optimizing for the search experience, and thus still SEO" and that no special markup or chunking is required.
+
+**Never invent the inputs.** Statistics Addition and Quotation Addition work only with real, attributable numbers and quotes. The examples below use placeholders on purpose.
 
 | Metric | Result |
 |--------|--------|
@@ -52,8 +61,7 @@ The methods below are listed in the paper's own order of effectiveness (Table 1)
 "Studies show that AI improves productivity."
 
 # After
-"According to a 2024 Stanford University study, AI tools improve developer 
-productivity by <N>% on average (Author et al., <year>)."
+"According to <named study, institution, year>, <measured effect> (<link>)."
 ```
 
 **Best for:** All content types, especially academic/professional topics.
@@ -72,8 +80,8 @@ productivity by <N>% on average (Author et al., <year>)."
 "Many companies use AI for customer service."
 
 # After
-"67% of Fortune 500 companies now use AI chatbots for customer service, 
-handling an average of <N>% of routine inquiries without human intervention."
+"<N>% of <population> now <do X>, according to <named source, year>."
+(Fill every placeholder from a real, linkable source. Never invent the figure.)
 ```
 
 **Best for:** Business, finance, technology, health content.
@@ -92,9 +100,8 @@ handling an average of <N>% of routine inquiries without human intervention."
 "AI will transform the workforce."
 
 # After
-"'We're likely to see the first one-person billion-dollar company in the 
-next few years,' predicts Sam Altman, CEO of OpenAI. 'AI will be the 
-great equalizer for small businesses.'"
+"'<exact words, copied from the source>,' said <name>, <role>, in <publication, date>."
+(Quote only words you can link to. Never paraphrase into quotation marks.)
 ```
 
 **Best for:** Law, academic, news, thought leadership content.
@@ -113,9 +120,8 @@ great equalizer for small businesses.'"
 "This might help with SEO, I think."
 
 # After
-"This strategy demonstrably improves SEO performance. Based on our 
-analysis of 10,000 websites, implementing structured data increases 
-organic traffic by an average of 30%."
+"This strategy improves <outcome>. In our own data from <period>, <measured result> (<method, sample size>)."
+(Use your own measured data or a cited source; never a round number you cannot show.)
 ```
 
 **Best for:** Business, professional services, technical documentation.
@@ -202,7 +208,7 @@ indicating significant layout instability."
 
 **What:** Overloading content with target keywords.
 
-**Why it HURTS:** Unlike traditional SEO, keyword stuffing actively decreases AI visibility.
+**Why to avoid it:** In the paper it scored below the baseline on Position-Adjusted Word Count (on Subjective Impression it was slightly above), and it violates Google's spam policies. It earns nothing reliable and risks a penalty.
 
 **Avoid:**
 ```markdown
@@ -218,29 +224,9 @@ content development and technical improvements."
 
 ---
 
-## Best Combinations
+## Best Combination
 
-The Princeton research found that combining methods yields better results:
-
-| Combination | Effectiveness |
-|-------------|--------------|
-| **Fluency + Statistics** | Highest overall boost |
-| **Citations + Authoritative Tone** | Best for professional content |
-| **Easy Language + Statistics** | Best for consumer content |
-| **Technical Terms + Citations** | Best for academic/scientific |
-
----
-
-## Domain-Specific Recommendations
-
-| Domain | Best Methods | Avoid |
-|--------|-------------|-------|
-| **Technology** | Technical Terms, Citations, Statistics | Oversimplification |
-| **Business/Finance** | Statistics, Authoritative Tone, Citations | Vague claims |
-| **Healthcare** | Easy Language, Statistics, Citations | Jargon overload |
-| **Legal** | Citations, Quotations, Authoritative Tone | Informal language |
-| **Education** | Easy Language, Examples, Structure | Complexity |
-| **E-commerce** | Statistics, Social Proof, Clear Benefits | Feature dumps |
+The paper tested pairs of its four strongest methods (Quotation Addition, Statistics Addition, Fluency Optimization, Cite Sources) and reports one best pair: **Fluency Optimization + Statistics Addition**. It did not test combinations involving the other methods and gives no per-industry recommendations, so do not attribute any to it.
 
 ---
 
@@ -252,13 +238,13 @@ The paper introduces visibility metrics for evaluating GEO effectiveness:
 
 Measures how much of your content appears in AI responses, weighted by position (earlier = better).
 
-### Subjective Impression Score
+### Subjective Impression
 
-Human evaluation of how prominently your content is featured in responses.
+Seven sub-metrics (relevance, influence, uniqueness, subjective position, subjective count, click likelihood, diversity), each scored by an LLM evaluator (G-Eval with GPT-3.5), not by human raters.
 
-### Word Count Share
+### Word count and position
 
-Percentage of AI response that comes from your content vs. competitors.
+The two components of Position-Adjusted Word Count, also reported separately.
 
 ---
 
@@ -266,9 +252,9 @@ Percentage of AI response that comes from your content vs. competitors.
 
 ### Content Optimization
 
-- [ ] Add 2-3 authoritative citations per major section
-- [ ] Include at least 5 relevant statistics with sources
-- [ ] Add 1-2 expert quotes with attribution
+- [ ] Add authoritative citations where a claim needs one (house practice; the paper sets no count)
+- [ ] Add real statistics, each with its source
+- [ ] Add real expert quotes, each with attribution and a link
 - [ ] Use confident, authoritative language
 - [ ] Ensure content is accessible to general audience
 - [ ] Include appropriate technical terminology
@@ -282,15 +268,15 @@ Percentage of AI response that comes from your content vs. competitors.
 - [ ] Clear H1 > H2 > H3 hierarchy
 - [ ] Bullet points for lists
 - [ ] Tables for comparisons
-- [ ] Short paragraphs (2-3 sentences)
+- [ ] Short, focused paragraphs (practice, not a Google requirement)
 - [ ] Logical flow between sections
 
 ### Schema Optimization
 
-- [ ] Implement FAQPage schema
+- [ ] Q&A sections on the page for common questions (FAQPage markup gives no Google rich result since 7 May 2026)
 - [ ] Add Article schema with author info
 - [ ] Include datePublished and dateModified
-- [ ] Add SpeakableSpecification for voice search
+- [ ] Do not add SpeakableSpecification for a Hebrew site (Google limits it to English-language news publishers in the US)
 
 ---
 
@@ -300,17 +286,17 @@ The researchers validated GEO methods on **Perplexity.ai**, a commercial generat
 
 The paper reports that on Perplexity.ai the best-performing methods improved on the baseline by 22% on Position-Adjusted Word Count and 37% on Subjective Impression, with Statistics Addition and Quotation Addition strongest. An earlier per-method table printed here did not match the paper and has been removed.
 
-These results confirm that GEO methods work on real-world AI search engines, not just research benchmarks.
+This shows the methods moved results on one commercial engine in 2023. It does not establish the same effect on today's engines or on Hebrew content.
 
 ---
 
 ## Future of GEO
 
-The paper concludes that GEO is essential for:
+The paper argues that GEO matters for:
 
 1. **Content creators** - Maintain visibility in AI-dominated search
 2. **Businesses** - Ensure brand presence in AI responses
 3. **Publishers** - Adapt to the citation economy
 4. **SEO professionals** - Evolve practices for generative search
 
-As AI search engines become more prevalent, GEO will become as important as traditional SEO.
+Google's own view, for its AI features, is that this is still SEO; treat GEO as an extension of good SEO practice rather than a separate discipline.

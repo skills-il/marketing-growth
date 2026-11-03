@@ -21,7 +21,6 @@ Curated list of tools and APIs for SEO and GEO optimization.
 |------|-----|---------|
 | **Google Rich Results Test** | search.google.com/test/rich-results | Test schema markup |
 | **Schema.org Validator** | validator.schema.org | Validate any schema |
-| **Google Mobile-Friendly Test** | search.google.com/test/mobile-friendly | Mobile usability |
 | **PageSpeed Insights** | pagespeed.web.dev | Core Web Vitals |
 
 ### SEO Audit Tools
@@ -41,19 +40,19 @@ Curated list of tools and APIs for SEO and GEO optimization.
 
 | Tool | Price | Best For |
 |------|-------|----------|
-| **Ahrefs** | $99/mo+ | Backlink analysis, keyword research |
-| **Semrush** | $139/mo+ | All-in-one SEO + GEO toolkit |
-| **Moz Pro** | $99/mo+ | Domain authority, link building |
-| **SE Ranking** | $65/mo+ | Affordable all-in-one |
+| **Ahrefs** | Paid subscription | Backlink analysis, keyword research |
+| **Semrush** | Paid subscription | All-in-one SEO + GEO toolkit |
+| **Moz Pro** | Paid subscription | Domain authority, link building |
+| **SE Ranking** | Paid subscription | Affordable all-in-one |
 
 ### Content Optimization
 
 | Tool | Price | Best For |
 |------|-------|----------|
-| **Surfer SEO** | $89/mo+ | Content optimization for AI |
-| **Clearscope** | $170/mo+ | Enterprise content optimization |
-| **Frase** | $15/mo+ | AI content briefs |
-| **MarketMuse** | $149/mo+ | Content strategy |
+| **Surfer SEO** | Paid subscription | Content optimization for AI |
+| **Clearscope** | Paid subscription | Enterprise content optimization |
+| **Frase** | Paid subscription | AI content briefs |
+| **MarketMuse** | Paid subscription | Content strategy |
 
 ---
 
@@ -63,7 +62,7 @@ Curated list of tools and APIs for SEO and GEO optimization.
 
 | Tool | Price | Platforms |
 |------|-------|-----------|
-| **Profound** | $499/mo+ | ChatGPT, Perplexity, Claude, Gemini |
+| **Profound** | Paid subscription | ChatGPT, Perplexity, Claude, Gemini |
 | **Otterly.ai** | Free trial | ChatGPT, Perplexity, Google AIO |
 | **SE Ranking AI Toolkit** | Included | AI Overviews, ChatGPT |
 | **Semrush AI Visibility** | Included | Google AIO, ChatGPT |
@@ -96,7 +95,7 @@ Curated list of tools and APIs for SEO and GEO optimization.
 
 | API | Purpose | Pricing |
 |-----|---------|---------|
-| **DataForSEO** | Comprehensive SEO data | Pay-per-use |
+| **DataForSEO** | Comprehensive SEO data | Pay-as-you-go, $50 minimum top-up, $1 trial credit |
 | **Moz API** | DA, PA, link data | Included with Moz |
 | **Ahrefs API** | Backlinks, keywords | Included with Ahrefs |
 | **SE Ranking API** | Rankings, audits | Included with SE Ranking |
@@ -106,7 +105,7 @@ Curated list of tools and APIs for SEO and GEO optimization.
 
 | API | Purpose | Pricing |
 |-----|---------|---------|
-| **Apify Metadata Extractor** | Extract meta, sitemap, robots | $12/mo+ |
+| **Apify Metadata Extractor** | Extract meta, sitemap, robots | Paid subscription |
 | **Firecrawl** | Website crawling for SEO | Pay-per-use |
 
 ---
@@ -218,80 +217,55 @@ Sitemap: https://example.com/sitemap.xml
 
 ## Scripts
 
-Ready-to-use Python scripts in `scripts/` folder.
+Ready-to-use Python scripts in the `scripts/` folder. List prices change; check each vendor's pricing page before quoting one to a client.
 
-### Setup (DataForSEO scripts)
+### Free scripts
 
 ```bash
-export DATAFORSEO_LOGIN=your_login
-export DATAFORSEO_PASSWORD=your_password
+# Single-page SEO + GEO audit ending in a P0/P1/P2 fix list
+python3 scripts/seo_audit.py "https://example.co.il"
+python3 scripts/seo_audit.py "https://example.co.il" --json
+
+# Hebrew prefix and spelling variants, and coverage against a Search Console Queries export
+python3 scripts/analyze_keywords.py --keywords 'נדל"ן,דירה להשכרה'
+python3 scripts/analyze_keywords.py --keywords 'נדל"ן' --gsc-queries Queries.csv
 ```
 
-### seo_audit.py
+If `seo_audit.py` exits 2 with a TLS error, the local Python lacks current root certificates: run its "Install Certificates" step or set `SSL_CERT_FILE` to a current CA bundle.
 
-Full SEO audit - meta tags, robots.txt, sitemap, load time, schema, AI bot access. No API required.
+### DataForSEO scripts (paid)
+
+Set credentials as environment variables, never as arguments. Use the API password from the DataForSEO dashboard (it differs from the account password):
 
 ```bash
-python3 scripts/seo_audit.py "https://example.com"
+export DATAFORSEO_LOGIN=your_api_login
+export DATAFORSEO_PASSWORD=your_api_password
+export DATAFORSEO_SANDBOX=1   # optional: free sandbox, dummy data, real response shape
 ```
 
-### keyword_research.py
-
-Get keyword ideas, search volume, difficulty.
+Every script defaults to Israel (`--location 2376`) and Hebrew (`--language he`). The Labs scripts (`related_keywords.py`, `competitor_gap.py`, `domain_overview.py`) refuse English for Israel, because DataForSEO Labs holds only Hebrew and Arabic data for Israel. Google Ads endpoints allow 12 requests per minute per account.
 
 ```bash
-python3 scripts/keyword_research.py "seo tools" --limit 20
-python3 scripts/keyword_research.py "seo tools" --location 2826  # UK
-```
-
-### serp_analysis.py
-
-Analyze top 20 Google results for a keyword.
-
-```bash
-python3 scripts/serp_analysis.py "best seo tools" --depth 20
-```
-
-### backlinks.py
-
-Get backlink profile for a domain.
-
-```bash
-python3 scripts/backlinks.py "example.com" --limit 20
-```
-
-### domain_overview.py
-
-Get domain metrics - traffic, keywords, rankings.
-
-```bash
-python3 scripts/domain_overview.py "example.com"
+python3 scripts/keyword_research.py 'נדל"ן,דירה להשכרה' --limit 20   # Google Ads volume + paid-search competition
+python3 scripts/related_keywords.py 'ביטוח רכב' --depth 1 --limit 50   # Labs: volume + organic difficulty 0-100
+python3 scripts/autocomplete_ideas.py 'הנהלת חשבונות'                   # Google autocomplete
+python3 scripts/serp_analysis.py 'רואה חשבון בתל אביב' --depth 10        # top organic results (billed per 10)
+python3 scripts/competitor_gap.py my-site.co.il competitor.co.il       # keywords the competitor ranks for and you do not
+python3 scripts/domain_overview.py example.co.il                        # organic keyword count and estimated traffic
+python3 scripts/backlinks.py example.co.il --limit 20                   # backlinks, rank on a 0-1000 scale
 ```
 
 ---
 
 ## Workflow Integration
 
-### Using with OPC Skills
-
-```bash
-# Use twitter skill to find SEO tips
-python3 scripts/search_tweets.py "SEO tips 2026" --limit 20
-
-# Use reddit skill to find discussions
-python3 scripts/search_posts.py "GEO optimization" --subreddit SEO --limit 10
-
-# Use WebSearch for keyword research
-# (Built into agent)
-```
-
 ### Automation Ideas
 
-1. **Weekly SEO audit** - Crawl site with curl, check for errors
-2. **Schema monitoring** - Validate schema after deploys with Rich Results Test API
-3. **Ranking tracking** - Monitor AI visibility with Otterly.ai or Profound
-4. **Content freshness** - Flag outdated content based on dateModified
-5. **Competitor monitoring** - Track competitor changes with DataForSEO API
+1. **Recurring audit** - run `seo_audit.py --json` on key pages after each deploy and diff the findings
+2. **Schema monitoring** - validate structured data after deploys with the Rich Results Test
+3. **AI visibility tracking** - run a fixed query panel by hand, or with Otterly.ai or Profound
+4. **Content freshness** - flag pages whose dateModified is old relative to their topic
+5. **Competitor monitoring** - re-run `competitor_gap.py` monthly
 
 ---
 

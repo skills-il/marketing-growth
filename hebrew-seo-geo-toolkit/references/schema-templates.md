@@ -2,11 +2,13 @@
 
 Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
 
+**Google rich-result status (checked 2026-11-03):** FAQ rich results stopped appearing on 7 May 2026, HowTo rich results were removed in September 2023, and Speakable works only for English-language news publishers in the US. Those templates remain valid schema.org for other consumers, but promise no Google result from them. Google also says structured data is not required for generative AI search.
+
 ---
 
 ## 1. FAQPage Schema
 
-**Best for:** FAQ sections, knowledge base pages, product pages with Q&A.
+**Best for:** consumers other than Google. No Google rich result since 7 May 2026.
 
 ```json
 {
@@ -68,11 +70,11 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "[Page Title]",
-  "description": "[Page description, 150-160 characters]",
+  "description": "[Page description]",
   "url": "https://example.com/page",
   "datePublished": "2024-01-15",
   "dateModified": "2024-12-20",
-  "inLanguage": "en-US",
+  "inLanguage": "he",
   "isPartOf": {
     "@type": "WebSite",
     "name": "[Site Name]",
@@ -90,10 +92,6 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
       "@type": "ImageObject",
       "url": "https://example.com/logo.png"
     }
-  },
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", ".summary", ".key-points"]
   }
 }
 ```
@@ -108,7 +106,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "[Article Title - Max 110 characters]",
+  "headline": "[Article Title, concise]",
   "description": "[Article summary]",
   "image": [
     "https://example.com/image-1x1.jpg",
@@ -174,7 +172,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD",
+    "priceCurrency": "ILS",
     "availability": "https://schema.org/InStock"
   },
   "aggregateRating": {
@@ -217,8 +215,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "[City]",
-    "addressRegion": "[State]",
-    "addressCountry": "[Country]"
+    "addressCountry": "IL"
   },
   "contactPoint": {
     "@type": "ContactPoint",
@@ -257,9 +254,9 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
   "offers": {
     "@type": "Offer",
     "url": "https://example.com/product",
-    "priceCurrency": "USD",
+    "priceCurrency": "ILS",
     "price": "99.99",
-    "priceValidUntil": "2025-12-31",
+    "priceValidUntil": "[YYYY-MM-DD, a future date]",
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
@@ -293,7 +290,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
 
 ## 7. HowTo Schema
 
-**Best for:** Tutorials, guides, how-to articles.
+**Best for:** consumers other than Google. No Google rich result since September 2023.
 
 ```json
 {
@@ -305,7 +302,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
   "totalTime": "PT15M",
   "estimatedCost": {
     "@type": "MonetaryAmount",
-    "currency": "USD",
+    "currency": "ILS",
     "value": "0"
   },
   "supply": [
@@ -381,50 +378,66 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
 
 ---
 
-## 9. LocalBusiness Schema
+## 9. LocalBusiness Schema (Israeli business)
 
-**Best for:** Local business pages.
+**Best for:** Local business pages. Model the hours the owner actually keeps: many businesses open on Shabbat. To mark a day closed, Google says to set both `opens` and `closes` to "00:00". Keep `dayOfWeek` values in English.
 
 ```json
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "[Business Name]",
-  "description": "[Business description]",
-  "image": "https://example.com/business-image.jpg",
-  "url": "https://example.com",
-  "telephone": "+1-555-555-5555",
-  "email": "contact@example.com",
+  "description": "[Business description in Hebrew]",
+  "image": "https://example.co.il/business-image.jpg",
+  "url": "https://example.co.il",
+  "telephone": "+972-3-555-0000",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "[Street Address]",
+    "streetAddress": "[Street and number]",
     "addressLocality": "[City]",
-    "addressRegion": "[State]",
-    "postalCode": "[ZIP]",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 37.7749,
-    "longitude": -122.4194
+    "postalCode": "[7-digit postal code]",
+    "addressCountry": "IL"
   },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
       "opens": "09:00",
-      "closes": "17:00"
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "09:00",
+      "closes": "13:00"
     }
   ],
-  "priceRange": "$$"
+  "specialOpeningHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "validFrom": "2027-04-21",
+      "validThrough": "2027-04-21",
+      "opens": "09:00",
+      "closes": "12:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "validFrom": "2027-04-22",
+      "validThrough": "2027-04-22",
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ]
 }
 ```
 
+The two special entries are Erev Pesach (short day) and the first day of Pesach 2027 (closed). Set the same special hours in Google Business Profile.
+
 ---
 
-## 10. SpeakableSpecification (GEO Enhancement)
+## 10. SpeakableSpecification (English-language US news only)
 
-**Best for:** Voice search optimization, AI extraction.
+**Best for:** English-language news publishers in the US (Google Assistant). Not useful for a Hebrew business page; no AI engine documents reading it.
 
 ```json
 {
@@ -447,52 +460,36 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
 
 ## Combined Schema Example
 
-For a software product page with FAQ:
+For an Israeli business home page, link the entities with `@id` in one `@graph`:
 
 ```json
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "OPC Skills - AI Agent Skills for Solopreneurs",
-      "description": "10+ agent skills for Claude Code, Cursor, Codex. Domain hunting, social media research, logo creation.",
-      "url": "https://opc.dev",
-      "dateModified": "2024-12-20",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", ".hero-description", ".faq-answer"]
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "OPC Skills",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Cross-platform",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is OPC Skills?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "OPC Skills is a collection of 10+ AI agent skills for solopreneurs, supporting Claude Code, Cursor, and Codex."
-          }
-        }
-      ]
-    },
-    {
       "@type": "Organization",
-      "name": "OPC Skills",
-      "url": "https://opc.dev",
-      "sameAs": ["https://github.com/ReScienceLab/opc-skills"]
+      "@id": "https://example.co.il/#org",
+      "name": "[Business Name]",
+      "url": "https://example.co.il",
+      "logo": "https://example.co.il/logo.png",
+      "sameAs": ["[Google Business Profile URL]", "[Facebook page URL]"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://example.co.il/#website",
+      "url": "https://example.co.il",
+      "name": "[Site Name]",
+      "inLanguage": "he",
+      "publisher": {"@id": "https://example.co.il/#org"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example.co.il/#webpage",
+      "url": "https://example.co.il",
+      "name": "[Page Title]",
+      "inLanguage": "he",
+      "isPartOf": {"@id": "https://example.co.il/#website"},
+      "about": {"@id": "https://example.co.il/#org"}
     }
   ]
 }

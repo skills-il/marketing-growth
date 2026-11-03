@@ -40,7 +40,6 @@ Recognition as a go-to source in the field.
 **Signals:**
 - Backlinks from respected sites
 - Mentions in industry publications
-- Social proof and follower counts
 - Brand recognition
 
 **Implementation:**
@@ -63,59 +62,6 @@ Accuracy, transparency, and legitimacy.
 - Include publication and update dates
 - Provide contact information
 - Use HTTPS and maintain security
-
-## Sanity Implementation
-
-```typescript
-// Author schema with EEAT signals
-defineType({
-  name: 'author',
-  type: 'document',
-  fields: [
-    defineField({ name: 'name', type: 'string' }),
-    defineField({ name: 'role', type: 'string' }),
-    defineField({ name: 'bio', type: 'text' }),
-    defineField({ name: 'credentials', type: 'array', of: [{ type: 'string' }] }),
-    defineField({ name: 'image', type: 'image' }),
-    // sameAs: used for schema.org Person structured data output
-    defineField({ name: 'sameAs', type: 'array', of: [{ type: 'url' }],
-      description: 'Canonical profile URLs (LinkedIn, Twitter, etc.) for schema.org Person'
-    }),
-    // socialLinks: used for display purposes (platform icons, labels)
-    defineField({
-      name: 'socialLinks',
-      type: 'array',
-      of: [{ type: 'object', fields: [
-        defineField({ name: 'platform', type: 'string' }),
-        defineField({ name: 'url', type: 'url' })
-      ]}],
-      description: 'Social links for display in the UI. Use sameAs for structured data output.'
-    }),
-  ]
-})
-
-// Content with EEAT metadata
-defineType({
-  name: 'post',
-  fields: [
-    defineField({ name: 'author', type: 'reference', to: [{ type: 'author' }] }),
-    defineField({ name: 'publishedAt', type: 'datetime' }),
-    defineField({ name: 'updatedAt', type: 'datetime' }),
-    defineField({ 
-      name: 'reviewedBy', 
-      type: 'reference', 
-      to: [{ type: 'author' }],
-      description: 'Expert reviewer for fact-checking'
-    }),
-    defineField({
-      name: 'sources',
-      type: 'array',
-      of: [{ type: 'url' }],
-      description: 'Citations and references'
-    }),
-  ]
-})
-```
 
 ## YMYL Considerations
 

@@ -1,365 +1,124 @@
-# Platform Ranking Algorithms
+# AI Platforms and Crawlers: What Each Vendor Documents
 
-Detailed ranking factors for AI search engines and traditional search engines (2025-2026).
-
----
-
-## 1. ChatGPT Ranking Factors
-
-### Core Ranking System
-
-ChatGPT uses a **two-phase system**:
-1. **Pre-training Knowledge** - Built from diverse datasets (Wikipedia, books, web)
-2. **Real-time Retrieval** - Web browsing for current information
-
-### Ranking Factor Weights
-
-No published weighting for these factors is traceable to a named study, so treat the order as a rough priority, not a formula.
-
-| Factor | Priority | Details |
-|--------|----------|---------|
-| **Authority & Credibility** | Highest | Branded domains preferred over third-party |
-| **Content Quality & Utility** | High | Clear structure, comprehensive answers |
-| **Platform Trust** | Moderate | Wikipedia, Reddit, Forbes prioritized |
-
-### Directional Findings
-
-These are directional patterns reported across industry write-ups. We could not trace them to a study we can cite, so use them to prioritise work, not as targets.
-
-| Metric | Direction |
-|--------|-----------|
-| **Referring Domains** | Strongest single predictor of being cited |
-| **Domain Trust Score** | Higher trust score correlates with more citations |
-| **Content Recency** | Recently updated content is cited more often |
-| **Branded vs Third-party** | Branded domains are cited more than third-party pages |
-
-### ChatGPT Top Citation Sources
-
-Ordering only. We could not trace the underlying citation-share figures to a publishable source, so they are omitted rather than guessed.
-
-| Rank | Source |
-|------|--------|
-| 1 | Wikipedia |
-| 2 | Reddit |
-| 3 | Forbes |
-| 4 | Brand Official Sites |
-| 5 | Academic Sources |
-
-### Content-Answer Fit
-
-Ranked by observed importance. The weightings previously printed here were not traceable to a named study and have been removed.
-
-| Factor | Importance | Note |
-|--------|-----------|------|
-| **Content-Answer Fit** | Most important | Match ChatGPT's response style |
-| **On-Page Structure** | Secondary | Clear headings, formatting |
-| **Domain Authority** | Secondary | Helps retrieval, not citation |
-| **Query Relevance** | Secondary | Match user intent |
-| **Content Consensus** | Minor | Agreement among sources |
-
-### Optimization Checklist
-
-- [ ] Build strong backlink profile (quality > quantity)
-- [ ] Keep content substantively current (no vendor-published freshness threshold exists; treat any specific day-count you see quoted as folklore)
-- [ ] Use clear H1/H2/H3 structure
-- [ ] Include verifiable statistics with citations
-- [ ] Write in ChatGPT's conversational style
-- [ ] Ensure domain has high trust score
+Re-enumerated from each vendor's own page on 2026-11-03. This file states what the vendors publish. No vendor publishes internal ranking weights for its AI engine; write-ups that print them (citation-share percentages, "reranking layers", "visibility multipliers") could not be traced to a publisher and are deliberately left out. Do not reinstate them.
 
 ---
 
-## 2. Perplexity AI Ranking Factors
+## Crawler list
 
-### Architecture
+### OpenAI (developers.openai.com/api/docs/bots)
 
-Perplexity uses **Retrieval-Augmented Generation (RAG)** with a **3-layer reranking system**:
+| Token | Role | If you block it |
+|-------|------|-----------------|
+| `OAI-SearchBot` | Search index for ChatGPT search | "Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links." |
+| `GPTBot` | Training crawler | Content is not used to train OpenAI foundation models. Search is unaffected. |
+| `ChatGPT-User` | Fetches a page when a user asks | "Because these actions are initiated by a user, robots.txt rules may not apply." It is not used to decide search inclusion. |
+| `OAI-AdsBot` | Checks pages submitted as ChatGPT ads | Only relevant to advertisers. |
 
-1. **Layer 1 (L1)**: Basic relevance retrieval
-2. **Layer 2 (L2)**: Traditional ranking factors scoring
-3. **Layer 3 (L3)**: ML models for quality evaluation (can discard entire result sets)
+OpenAI says a robots.txt change can take about 24 hours to reach search results, and that if both `GPTBot` and `OAI-SearchBot` are allowed it may use one crawl for both purposes.
 
-### Core Ranking Factors
+### Anthropic (support.claude.com article 8896518)
 
-| Factor | Details |
-|--------|---------|
-| **Authoritative Domain Lists** | Manual lists: Amazon, GitHub, academic sites get inherent boost |
-| **Freshness Signals** | Time decay algorithm; new content evaluated quickly |
-| **Semantic Relevance** | Content similarity to query (not keyword matching) |
-| **Topical Weighting** | Tech, AI, Science topics get visibility multipliers |
-| **User Engagement** | Click rates, weekly performance metrics |
-| **New Post Performance** | Early clicks significantly boost visibility |
+| Token | Role | If you block it |
+|-------|------|-----------------|
+| `Claude-SearchBot` | Search index | Anthropic: it "may reduce your site's visibility and accuracy in user search results." |
+| `ClaudeBot` | Training crawler | The site's future materials "should be excluded from our AI model training datasets". |
+| `Claude-User` | Fetches a page when a user asks | May reduce visibility for user-directed web search. |
 
-### Perplexity Sonar Model Insights
+Anthropic says its bots honor robots.txt, supports `Crawl-delay`, and asks site owners to set the rule on every subdomain they want to opt out. It publishes the tokens but no full user-agent strings. `anthropic-ai` and `Claude-Web` are older names that still circulate in examples and appear nowhere on the current page.
 
-| Signal | Impact |
-|--------|--------|
-| **FAQ Schema (JSON-LD)** | Pages with FAQ blocks cited more often |
-| **PDF Documents** | Publicly hosted PDFs prioritized |
-| **Content Velocity** | Speed of publishing matters more than keyword density |
-| **Semantic Payloads** | Clear, atomic paragraphs preferred |
-| **YouTube Sync** | YouTube titles matching trending queries get boost |
+### Perplexity (docs.perplexity.ai, Perplexity Crawlers)
 
-### Technical Requirements
+| Token | Role | Note |
+|-------|------|------|
+| `PerplexityBot` | Search index | "It is not used to crawl content for AI foundation models." |
+| `Perplexity-User` | Fetches a page when a user asks | "Since a user requested the fetch, this fetcher generally ignores robots.txt rules." |
 
-```
-# robots.txt - Allow PerplexityBot
-User-agent: PerplexityBot
-Allow: /
+Perplexity says changes may take up to 24 hours to be reflected.
 
-# Provide clean sitemap
-Sitemap: https://example.com/sitemap.xml
-```
+### Google (developers.google.com/crawling)
 
-### Optimization Checklist
+- `Googlebot` crawls for Search. Google's AI-features page names Googlebot's robots.txt rules as the crawl control for Search, which includes AI Overviews and AI Mode.
+- `Google-Extended` is a robots.txt token, not a crawler. It governs whether crawled content may be used to train Gemini models and "for grounding" in Gemini Apps and Grounding with Google Search on Vertex AI. Google: it "does not impact a site's inclusion in Google Search nor is it used as a ranking signal".
+- To leave AI Overviews, AI Mode and Discover's generative features while staying in Search, use the **Search generative AI control** in Search Console settings (all websites as of 31 August 2026). Exclusion takes effect within 1-2 days; it does not affect training.
 
-- [ ] Allow PerplexityBot in robots.txt
-- [ ] Implement FAQ Schema markup
-- [ ] Create publicly accessible PDF resources
-- [ ] Use Article schema with timestamps
-- [ ] Focus on semantic relevance, not keywords
-- [ ] Build topical authority in your niche
+### Apple (support.apple.com/en-us/119829)
 
----
+- `Applebot` powers search in Spotlight, Siri and Safari, and its data may ground Apple's AI answers. Apple: publishers "can opt out of their content being used in these broad world knowledge answers by applying the nosnippet meta tag".
+- `Applebot-Extended` is the training opt-out token.
 
-## 3. Google AI Overviews and AI Mode Ranking Factors
+### Mistral (docs.mistral.ai/robots)
 
-### Architecture
+| Token | Role |
+|-------|------|
+| `MistralAI-Index` | Search index for Mistral search, used to answer questions in Vibe |
+| `MistralAI-Training` | Training crawler |
+| `MistralAI-User` | Fetches a page when a user asks in Vibe |
 
-Google AI Overviews use multiple AI models:
-- **PaLM2** - Language understanding
-- **MUM** - Multimodal understanding
-- **Gemini** - Advanced reasoning
+### Others
 
-### 5-Stage Source Prioritization Pipeline
+- `Meta-ExternalAgent`: Meta's crawler for its AI products. Meta documents further agents on its web-crawlers page; check it before writing a Meta-specific rule.
+- `CCBot`: Common Crawl, used downstream by many model trainers.
+- `Bingbot`: Bing's crawler. Bing's AI Performance report covers Copilot citations, so Bing indexing matters for Copilot.
 
-1. **Retrieval** - Identify candidate sources
-2. **Semantic Ranking** - Evaluate topical relevance
-3. **LLM Re-ranking** - Assess contextual fit (using Gemini)
-4. **E-E-A-T Evaluation** - Filter for expertise/authority/trust
-5. **Data Fusion** - Synthesize from multiple sources with citations
+### Three categories, one rule
 
-### What This Means in Practice
+1. **Search-index crawlers** (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, `MistralAI-Index`, plus `Googlebot` and `Bingbot`) decide whether you can be cited. Allow them.
+2. **Training crawlers and tokens** (`GPTBot`, `ClaudeBot`, `Applebot-Extended`, `MistralAI-Training`, `CCBot`) are a business decision. Blocking them does not remove you from AI search. **`Google-Extended` is the exception:** it also controls grounding in the Gemini app, so blocking it keeps you in Google Search, AI Overviews and AI Mode but removes your content as a grounding source in Gemini Apps.
+3. **User-triggered fetchers** (`ChatGPT-User`, `Claude-User`, `Perplexity-User`, `MistralAI-User`) run when someone asks. OpenAI and Perplexity say robots.txt may not apply to theirs.
 
-The percentages that used to sit here (AI Overview coverage, overlap with the traditional top ten, an SGE visibility multiplier) came from vendor write-ups we could not trace to a publisher, so they have been removed. The directional picture that survives:
+**One group per crawler.** Google's robots.txt spec: "Only one group is valid for a particular crawler." A crawler obeys the group that names it most specifically and ignores the `*` group entirely. So adding `User-agent: OAI-SearchBot` / `Allow: /` to a file whose `*` group holds Disallow rules exempts that bot from every one of those rules. Copy the `*` Disallow lines into each named group you add.
 
-- AI Overviews now appear on a large and growing share of Google queries.
-- The set of pages cited in an AI Overview overlaps only partly with the traditional top ten, so a strong classic ranking does not guarantee a citation.
-- Classic ranking signals still carry most of the weight, with newer AI-specific signals layered on top.
-- Pages written for AI answer formats can gain substantial visibility they would not get from classic ranking alone.
-
-### Ranking Factors
-
-| Factor | Details |
-|--------|---------|
-| **E-E-A-T** | Experience, Expertise, Authoritativeness, Trustworthiness |
-| **Structured Data** | Schema markup helps AI understand content |
-| **Knowledge Graph** | Being in Google's Knowledge Graph = boost |
-| **Topical Authority** | Content clusters + internal linking |
-| **Multimedia** | Images/videos in multi-modal responses |
-| **Authoritative Citations** | Trusted references are one of the strongest levers on whether you get cited |
-| **Authoritative Tone** | A confident, expert voice helps, though the Princeton GEO paper found the effect small on its own |
-
-### Content Requirements
-
-```
-Traditional SEO still matters:
-- Quality backlinks
-- Original, helpful content
-- Fast page speed
-- Mobile-friendly design
-- Secure (HTTPS)
-```
-
-### Optimization Checklist
-
-- [ ] Implement comprehensive Schema markup
-- [ ] Build topical authority with content clusters
-- [ ] Include authoritative citations and references
-- [ ] Use E-E-A-T signals (author bios, credentials)
-- [ ] Optimize for Google Merchant Center (e-commerce)
-- [ ] Target informational "how-to" queries
+robots.txt is not the only gate. A CDN or firewall can refuse a crawler that robots.txt allows; Cloudflare announced in July 2025 that it was "changing the default to block AI crawlers". `scripts/seo_audit.py` requests the page with the search crawlers' user agents to surface this.
 
 ---
 
-## 4. Microsoft Copilot / Bing AI Ranking Factors
+## Per platform
 
-### Architecture
+### Google AI Overviews and AI Mode
 
-Copilot is integrated into:
-- Microsoft Edge browser
-- Windows 11
-- Microsoft 365 apps
-- Bing Search
+- Two separate surfaces, both available in Hebrew and in Israel.
+- Google: "There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary." Both may use "query fan-out", issuing several related searches behind one query.
+- Google's AI optimization guide adds that this is "still SEO", that no special files, markup or chunking are needed, and that pages created for every query variation "primarily to manipulate rankings or generative AI responses" violate the scaled content abuse policy.
+- Eligibility also requires the Search generative AI control to be left on.
 
-Uses **Bing Index** as primary data source.
+### ChatGPT search
 
-### Ranking Factors
+- Inclusion is governed by `OAI-SearchBot`. OpenAI's crawler page does not say which third-party index, if any, supplements it, so do not tell a client it "uses Bing".
 
-| Factor | Details |
-|--------|---------|
-| **Bing Index** | Must be indexed by Bing to be cited |
-| **Microsoft Ecosystem** | LinkedIn, GitHub mentions provide boost |
-| **Crawlability** | `bingbot` must have access. The other Microsoft agents you can control in robots.txt are `adidxbot` (Bing Ads) and `MicrosoftPreview` |
-| **Page Speed** | < 2 seconds load time |
-| **Schema Markup** | Helps Copilot understand content |
-| **Entity Clarity** | Clear definitions of entities/concepts |
+### Perplexity
 
-### Technical Requirements
+- Inclusion is governed by `PerplexityBot`. Perplexity's crawler page names no other index.
 
-```
-# robots.txt
-User-agent: Bingbot
-Allow: /
+### Claude
 
-User-agent: adidxbot
-Allow: /
+- Inclusion is governed by `Claude-SearchBot`. Third-party reports attribute Claude's web search to Brave, but Anthropic's crawler documentation names no search provider. Treat it as reported, not confirmed, and do not state it to a client.
 
-# Submit to Bing Webmaster Tools
-# Use IndexNow for faster indexing
-```
+### Microsoft Copilot
 
-### Optimization Checklist
-
-- [ ] Submit site to Bing Webmaster Tools
-- [ ] Ensure Bingbot can crawl all pages
-- [ ] Use IndexNow for new content
-- [ ] Optimize page speed (< 2 seconds)
-- [ ] Clear entity definitions in content
-- [ ] Build presence on LinkedIn, GitHub
+- Verify the site in Bing Webmaster Tools and submit a sitemap; IndexNow speeds up discovery of new URLs.
+- Bing's **AI Performance** report (public preview since February 2026) shows how often content is cited across Copilot and Bing's AI summaries, with a sample of grounding queries. A Topics Portfolio beta was added in October 2026.
 
 ---
 
-## 5. Claude AI Ranking Factors
+## Classic Google ranking, briefly
 
-### Architecture
+What Google documents: helpful, people-first content; links as one of many signals; page experience including Core Web Vitals; mobile-friendly pages; HTTPS; spam policies. No Google documentation lists bounce rate or dwell time as ranking signals, so do not present them as such.
 
-**Important:** Anthropic operates its own search-index crawler, `Claude-SearchBot`, and that is what you optimize against. Separately, Brave is widely reported to supply Claude's web search (Brave sits on Anthropic's published subprocessor list, and a `BraveSearchParams` parameter appears in the web-search tool definition), but Anthropic has never officially named a provider. Treat Brave as strongly evidenced, not confirmed, and never state it as fact to a client.
-
-Claude decides when to search based on:
-- Query freshness requirements
-- Specificity of question
-- User intent
-
-### Ranking Factors
-
-| Factor | Details |
-|--------|---------|
-| **Crawler access** | `Claude-SearchBot` must be allowed in robots.txt. Allowing only `ClaudeBot` covers training and leaves you ineligible for search citations |
-| **Query Rewriting** | Claude reformulates queries for search |
-| **Factual Density** | Data-rich content preferred |
-| **Structural Clarity** | Easy to extract information |
-| **Source Authority** | Trustworthy, well-sourced content |
-
-### Key Statistic
-
-**Crawl-to-Refer Ratio: 38,065:1**
-- Claude consumes massive amounts of content
-- Very selective about what it cites
-- Quality and relevance are critical
-
-### Technical Requirements
-
-```
-# robots.txt -- Anthropic runs three separate bots
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-```
-
-### Optimization Checklist
-
-- [ ] Allow `Claude-SearchBot` in robots.txt (this is the one that governs citation eligibility)
-- [ ] Allow `ClaudeBot` if you also want training use, and `Claude-User` for user-triggered fetches
-- [ ] Create high factual density content
-- [ ] Use clear, extractable structure
-- [ ] Include verifiable data points
-- [ ] Cite authoritative sources
+| Metric | Good (web.dev) |
+|--------|------|
+| LCP (Largest Contentful Paint) | 2.5 seconds or less |
+| INP (Interaction to Next Paint, replaced FID) | 200 milliseconds or less |
+| CLS (Cumulative Layout Shift) | 0.1 or less |
 
 ---
 
-## 6. Traditional Google SEO Ranking Factors (2026)
+## Universal practice
 
-### Core Ranking Systems
-
-| System | Purpose |
-|--------|---------|
-| **PageRank** | Link-based authority (still relevant) |
-| **BERT** | Natural language understanding |
-| **RankBrain** | Machine learning ranking |
-| **Helpful Content** | Rewards people-first content |
-| **Spam Detection** | Filters low-quality content |
-
-### Top 10 Ranking Factors
-
-| Rank | Factor | Details |
-|------|--------|---------|
-| 1 | **Backlinks** | Quality referring domains (core ranking system) |
-| 2 | **E-E-A-T** | Experience, Expertise, Authority, Trust |
-| 3 | **Content Quality** | Original, comprehensive, helpful |
-| 4 | **Page Experience** | Core Web Vitals (LCP, FID, CLS) |
-| 5 | **Mobile-First** | Non-mobile sites may not be indexed |
-| 6 | **Search Intent Match** | Content matches user query intent |
-| 7 | **Content Freshness** | Regular updates signal activity |
-| 8 | **Technical SEO** | Crawlable, indexable, HTTPS |
-| 9 | **User Signals** | Dwell time, bounce rate, CTR |
-| 10 | **Structured Data** | Schema markup for rich results |
-
-### Core Web Vitals
-
-| Metric | Good | Needs Improvement | Poor |
-|--------|------|-------------------|------|
-| **LCP** (Largest Contentful Paint) | < 2.5s | 2.5-4s | > 4s |
-| **FID** (First Input Delay) | < 100ms | 100-300ms | > 300ms |
-| **CLS** (Cumulative Layout Shift) | < 0.1 | 0.1-0.25 | > 0.25 |
-
-### E-E-A-T Guidelines
-
-| Signal | How to Demonstrate |
-|--------|-------------------|
-| **Experience** | First-hand experience, case studies |
-| **Expertise** | Author credentials, detailed knowledge |
-| **Authoritativeness** | Backlinks, mentions, citations |
-| **Trustworthiness** | Accurate info, transparent, secure site |
-
-### Optimization Checklist
-
-- [ ] Build quality backlinks (guest posts, PR, original research)
-- [ ] Create comprehensive, original content
-- [ ] Optimize Core Web Vitals
-- [ ] Ensure mobile-friendly design
-- [ ] Use HTTPS
-- [ ] Implement Schema markup
-- [ ] Match content to search intent
-- [ ] Update content regularly
-- [ ] Add author bios with credentials
-- [ ] Include E-E-A-T signals
-
----
-
-## Cross-Platform Optimization Summary
-
-| Platform | Primary Index | Key Factor | Unique Requirement |
-|----------|--------------|------------|-------------------|
-| ChatGPT | Web (Bing-based) | Domain Authority | Content-Answer Fit |
-| Perplexity | Own + Google | Semantic Relevance | FAQ Schema |
-| Google AI Overviews | Google | E-E-A-T | Knowledge Graph |
-| Google AI Mode | Google | E-E-A-T | Cover sub-questions (query fan-out) |
-| Copilot | Bing | Bing Index | MS Ecosystem |
-| Claude | Anthropic `Claude-SearchBot` index | Factual Density | Allow `Claude-SearchBot` |
-| Google (traditional) | Google | Backlinks | Core Web Vitals |
-
-### Universal Best Practices
-
-1. **Allow all major bots** in robots.txt
-2. **Implement Schema markup** (FAQPage, Article, Organization)
-3. **Build authoritative backlinks**
-4. **Update content regularly** with substantive revisions, not date-stamp churn
-5. **Use clear structure** (H1 > H2 > H3, lists, tables)
-6. **Include statistics and citations**
-7. **Optimize page speed** (< 2 seconds)
-8. **Ensure mobile-friendly design**
+1. Allow the search-index crawlers in robots.txt and check the CDN does not refuse them.
+2. Keep the Search generative AI control on unless the owner chooses otherwise.
+3. Server-render the page text.
+4. Use structured data that Google still supports (Organization, LocalBusiness, Product, Article, BreadcrumbList).
+5. Include real statistics and quotes, each with its source.
+6. Update content substantively, not by changing the date.
+7. Verify in Bing Webmaster Tools for Copilot.

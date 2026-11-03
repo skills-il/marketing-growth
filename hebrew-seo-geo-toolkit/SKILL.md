@@ -1,8 +1,8 @@
 ---
 name: hebrew-seo-geo-toolkit
-description: Optimize websites for Hebrew SEO and GEO (Generative Engine Optimization) on Google.co.il and AI search engines (ChatGPT, Perplexity, Gemini, Copilot, Claude). Use when user asks about Hebrew keyword research, Israeli SEO, .co.il domain optimization, Hebrew schema.org markup, AI search visibility, GEO optimization, EEAT, or asks about "kidum atarim", "milot mafteach", "SEO", "GEO", or Israeli search ranking. Includes Hebrew morphological analysis, Princeton GEO methods, platform-specific AI optimization, EEAT principles, JSON-LD structured data, and Israeli business schema (Shabbat hours, kosher certification). Do NOT use for paid advertising campaigns or social media marketing.
+description: Audit and optimize Israeli websites for Hebrew SEO and GEO (Generative Engine Optimization) on Google.co.il and AI search engines (ChatGPT, Perplexity, Gemini, Copilot, Claude), ending in a prioritized fix list. Use when user asks to audit a site's SEO or AI visibility, Hebrew keyword research, Israeli SEO, .co.il domain optimization, hreflang, Hebrew schema.org markup, AI crawler access in robots.txt, GEO optimization, EEAT, or asks about "kidum atarim", "milot mafteach", "SEO", "GEO", or Israeli search ranking. Includes a free audit script with per-crawler checks, Hebrew keyword variants checked against Search Console data, Princeton GEO methods, Google's AI-features guidance, and Israeli business schema (Shabbat and holiday hours, kosher certification). Do NOT use for paid advertising campaigns or social media marketing.
 license: MIT
-compatibility: Requires network access for keyword analysis and audits. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex.
+compatibility: Requires network access for the audit and keyword scripts. Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCode, Codex. The DataForSEO scripts need a paid DataForSEO account.
 ---
 
 
@@ -10,244 +10,188 @@ compatibility: Requires network access for keyword analysis and audits. Works wi
 
 ## Instructions
 
-### Step 1: Audit Website (SEO + GEO)
+The deliverable is a **prioritized fix list** for the user's site (Step 10), not a tutorial. Steps 1-9 gather the evidence for it. Every finding you report must cite what you observed (script output, a URL, a Search Console screen), never a general best practice.
 
-Run a comprehensive audit covering both traditional SEO and AI search readiness.
+### Step 0: Intake
 
-**Quick SEO Audit (Free, no API needed):**
+Ask before auditing, because the fix-first order depends on the answers:
+
+1. The URL, and two or three important inner pages (a service page, a product page, an article).
+2. Site type: local service, e-commerce, content/publisher, or SaaS.
+3. Target area: specific cities, all of Israel, or international.
+4. Hebrew-only, or Hebrew plus English (or Arabic/Russian).
+5. The five searches they most want to win, in their own words.
+6. Access: Google Search Console, Google Business Profile, Bing Webmaster Tools, the CDN dashboard (yes/no each).
+7. Platform (Wix, WordPress, Shopify, custom) and whether a developer is available. This decides whether a fix is "owner can do it" or "needs a developer".
+8. Opening hours, including Shabbat and holidays. Do not assume the business closes on Shabbat.
+
+### Step 1: Run the Automated Audit
+
 ```bash
 python3 scripts/seo_audit.py "https://example.co.il"
+python3 scripts/seo_audit.py "https://example.co.il/service" --json
 ```
 
-**Manual checks:**
+Run it on the home page and on each inner page from intake. It audits one URL per run and does not crawl. It reports, already sorted P0 > P1 > P2:
+
+- page status and redirect chain; `noindex`, `nosnippet` or `max-snippet:0` in meta robots or `X-Robots-Tag`; canonical
+- title, description, H1, viewport, Open Graph, and `<html lang>` / `dir` (accessibility and rendering; Google says it does not use `lang` to detect a page's language)
+- hreflang on the page and whether it lists the page itself
+- JSON-LD types, blocks that fail to parse, and markup Google no longer rewards (FAQPage, HowTo, Speakable)
+- robots.txt evaluated per crawler **for the audited path**, with `*` and `$` wildcards; declared `Sitemap:` lines; a robots.txt that answers 5xx (Google then stops crawling the site for 12 hours and afterwards relies on its last good copy)
+- the same page requested with the Googlebot, OAI-SearchBot, PerplexityBot and Claude-SearchBot user agents, to catch a CDN or firewall refusing AI crawlers while robots.txt allows them
+- how much text sits in the raw HTML (JavaScript-injected text is invisible to crawlers that do not render)
+
+Read its limits before reporting:
+
+- **Exit 2** means this machine could not run the audit (usually Python without current root certificates). It is not a finding about the site.
+- **HTTP 401/403/429 to the script** usually means a firewall refused a scripted client. If the page opens in a browser, audit by hand instead of reporting downtime. A 503 can be either a firewall or a real outage: retry, and check in a browser and in Search Console.
+- A bot user agent getting 403 is a strong lead, not proof. CDNs verify real crawlers by IP, so confirm in the CDN dashboard or access logs. In July 2025 Cloudflare announced it was "changing the default to block AI crawlers", so check its bot settings on any Cloudflare site.
+
+**No-code route for a non-developer:** view-source in the browser (title, description, `lang`, canonical), the site address followed by /robots.txt in a browser tab, Google's Rich Results Test (structured data), PageSpeed Insights (Core Web Vitals on mobile), and Search Console URL Inspection (what Google actually indexed).
+
+### Step 2: Checks That Need the Owner's Accounts
+
+The script cannot see these. Ask the owner to open them, or to share screenshots:
+
+1. **Search Console > Security & Manual actions.** Any manual action or security issue (hacked pages are common on unpatched WordPress sites) goes to the top of the fix list, above everything else.
+2. **Search Console > Pages (indexing) and URL Inspection** on the key pages: excluded pages, the canonical Google chose, and crawl errors.
+3. **Search Console > Settings > Search generative AI control.** Google states that "a site must be included in Search generative AI features in Search Console to be eligible for display in generative AI features on Google Search". As of 31 August 2026 the control is rolled out to all websites. It is on by default, but if someone switched it off, the site disappears from AI Overviews, AI Mode and Discover's generative features within 1-2 days. It does not affect AI training; that is `Google-Extended`.
+4. **Google Business Profile** (local businesses): primary category, hours including holidays, Hebrew description, reviews, and that name, address and phone match the site exactly. For a local service business this often matters more than any on-page fix.
+5. **Google Merchant Center** (online shops): product feed status and errors. For merchant listings Google requires an `Offer` with an active price above zero (use `ILS`) and recommends availability (Google's merchant listing documentation).
+6. **Bing Webmaster Tools**: indexed by Bing (Copilot grounds on it), plus the AI Performance report.
+7. **Core Web Vitals** (PageSpeed Insights or Search Console): LCP, INP and CLS on mobile. INP replaced FID as a Core Web Vital; do not report FID.
+
+### Step 3: Hebrew Keyword Coverage
+
+Israelis search in Hebrew script, and the same concept surfaces in several written forms. Prefix forms (ה, ו, ב, כ, ל, מ, ש and clusters like וה, מה, כש) attach to the first word; after ב, כ or ל the article ה is not written (בבית, not בהבית). Acronyms appear with and without gershayim (נדל"ן, נדל״ן, נדלן). Plurals, construct state (smikhut), ktiv male versus ktiv haser (תוכנית / תכנית), and Hebrew versus English terms (קידום אתרים / SEO) also vary; those need judgment, not a script.
+
 ```bash
-# Check meta tags and schema markup
-curl -sL "https://example.co.il" | grep -E "<title>|<meta name=\"description\"|<meta property=\"og:|application/ld\+json" | head -20
-
-# Check robots.txt (verify AI bot access)
-curl -s "https://example.co.il/robots.txt"
-
-# Check sitemap
-curl -s "https://example.co.il/sitemap.xml" | head -50
+python3 scripts/analyze_keywords.py --keywords 'נדל"ן,דירה להשכרה'
+python3 scripts/analyze_keywords.py --keywords 'נדל"ן' --gsc-queries Queries.csv
 ```
 
-**Verify AI bot access in robots.txt:** Googlebot, Bingbot, GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User, ClaudeBot, Claude-SearchBot and Claude-User must all be allowed. The search-index crawlers (`OAI-SearchBot`, `Claude-SearchBot`) are the ones that govern citation eligibility, and they are the ones most often missing. See [references/seo-checklist.md](./references/seo-checklist.md) for the full prioritized audit checklist.
+The second form is the real check. Export Search Console > Performance > Queries as CSV, and the script reports which generated forms actually appear in the site's queries, with impressions, and which spelling searchers typed. Do not claim that missing prefix forms lose "most of the traffic": measure it from the export. Absence from the export is weak evidence, since rare queries may not appear in it; treat "not seen" as "not seen yet", not as zero.
 
-### Step 2: Analyze Hebrew Keyword Morphology
+**Free keyword sources:** the Search Console Queries export, Google Trends filtered to Israel, Google autocomplete and "People also ask" in a browser set to Hebrew.
 
-Hebrew is a root-based (shoresh) language where prefixes change meaning:
+**Paid, optional (DataForSEO):** `keyword_research.py`, `related_keywords.py`, `autocomplete_ideas.py`, `serp_analysis.py`, `competitor_gap.py`, `domain_overview.py`, `backlinks.py`. All default to Israel (`2376`) and Hebrew (`he`). DataForSEO is pay-as-you-go with a $50 minimum top-up and a $1 trial credit for new accounts; set `DATAFORSEO_SANDBOX=1` to test request shapes for free against dummy data. Labs endpoints hold only Hebrew and Arabic data for Israel, so the Labs scripts refuse `--language en` with Israel. Google Ads endpoints allow 12 requests per minute per account. Credentials are read from `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD` only; never put them in a command line.
 
-| Prefix | Hebrew | Meaning | Example |
-|--------|--------|---------|---------|
-| ha- | ה | the | habayit (the house) |
-| ve- | ו | and | vehabayit (and the house) |
-| be- | ב | in/at | babayit (in the house) |
-| le- | ל | to/for | labayit (to the house) |
-| me- | מ | from | mehbayit (from the house) |
-| she- | ש | that/which | shebabayit (that in the house) |
-
-For each target keyword:
-1. Extract the root (shoresh) using morphological analysis
-2. Generate all prefix combinations users might search
-3. Include construct state (smikhut) forms: "beit kafe" vs "habait shel hakafe"
-4. Account for male/female and singular/plural forms
-5. Run `scripts/analyze_keywords.py --keywords "nadlan,dira,bayit"` for full variant analysis
-
-Use **WebSearch** to research target keywords:
-```
-WebSearch: "{keyword} keyword difficulty site:ahrefs.com OR site:semrush.com"
-WebSearch: "{keyword} search volume 2026"
-```
-
-### Step 3: Configure .co.il Domain SEO
-
-| Setting | Value | Notes |
-|---------|-------|-------|
-| TLD priority | .co.il | Preferred for Israeli businesses |
-| Server location | Israel or nearby CDN | Improves local ranking |
-| Google Search Console | google.co.il property | Register separately from .com |
-| Sitemap | Include hreflang annotations | Required for bilingual sites |
-
-1. Register .co.il domain with an ISOC-IL accredited registrar
-2. Set up Google Search Console for the .co.il property
-3. Configure DNS with Israeli/nearby CDN endpoints (Cloudflare TLV)
-4. Verify RTL layout loads correctly
-5. Submit XML sitemap with hreflang annotations
-
-See [references/hebrew-seo.md](./references/hebrew-seo.md) for domain strategy and local citation directories.
-
-### Step 4: Implement hreflang Tags
+### Step 4: Language, Domain and hreflang
 
 ```html
-<link rel="alternate" hreflang="he-IL" href="https://example.co.il/page" />
+<link rel="alternate" hreflang="he" href="https://example.co.il/page" />
 <link rel="alternate" hreflang="en" href="https://example.co.il/en/page" />
-<link rel="alternate" hreflang="x-default" href="https://example.co.il/page" />
+<link rel="alternate" hreflang="x-default" href="https://example.co.il/en/page" />
 ```
 
-Rules for Israeli sites:
-1. Always use `he-IL` (not just `he`) for Israeli Hebrew content
-2. Point `x-default` at whichever version best serves a visitor whose language matches none of your variants. For an Israel-first site that is usually the Hebrew page; for a site whose Hebrew content is a localized branch of an English original it is usually the English page. Nothing in Google's spec requires `x-default` to be English, so decide it from your audience rather than by default
-3. Every page must link bidirectionally to its counterpart in all languages
-4. Use consistent absolute URLs across all hreflang declarations
+Rules, per Google's localized-versions documentation:
 
-### Step 5: Apply GEO Optimization (AI Search Engines)
+1. A language code alone is valid ("you can specify a language code by itself"). Use `he`; add a region (`he-IL`) only when you have more than one Hebrew version to distinguish. Either is correct for a single Hebrew site.
+2. Every version must list itself and every other version, or the pair is ignored.
+3. HTML tags, HTTP headers and the sitemap are three equivalent methods. Pick one; using several adds no benefit and makes mismatches more likely.
+4. `x-default` serves visitors whose browser language matches none of your versions, so on a Hebrew + English site they are by definition not matched by `he`. English is usually the better fallback for them; choose Hebrew only if most of those visitors are in Israel anyway (for example Israelis whose browsers are set to Russian or Arabic). Decide from the audience; Google's spec does not prescribe a language.
+5. Set `lang="he"` and `dir="rtl"` on Hebrew pages for rendering and screen readers. Google says it does not use the `lang` attribute (or hreflang) to detect a page's language, so this is not a ranking fix.
+6. **URL slugs:** Google recommends words in the audience's language and UTF-8 for non-ASCII characters, so Hebrew slugs are fine. They turn into long percent-encoded strings when pasted into messages, which is a usability trade-off, not an SEO one. Pick one style, keep slugs short, and 301-redirect if you ever change them.
 
-**GEO = Generative Engine Optimization.** AI search engines don't rank pages, they **cite sources**. Being cited is the new "ranking #1".
+**Domain and geography:** a `.co.il` domain is a strong country signal on its own. Google's multi-regional guide lists "Server location irrelevant" for a country-code domain, so do not move hosting to Israel for SEO (do it for speed if your users are slow). Search Console has no country targeting any more (the International Targeting report is no longer supported), and its properties are your own domains: if you own both `example.co.il` and `example.com`, verify each.
 
-Apply the **9 Princeton GEO Methods** (see [references/geo-research.md](./references/geo-research.md)):
+### Step 5: Apply GEO to Content
 
-Ordered by the paper's own Table 1, strongest first. A per-method percentage table circulates widely online (usually as "Cite Sources +40%"); it does not match the paper, which reports Quotation Addition as the strongest method and gives 40% as a headline ceiling for GEO overall, not a figure for any one method.
+Google's own AI optimization guide says that optimizing for generative AI search "is optimizing for the search experience, and thus still SEO", that no special files or markup are needed, and that creating separate pages for every query variation "primarily to manipulate rankings or generative AI responses" violates its scaled content abuse policy. Answer the adjacent sub-questions on the main page instead of spinning up one page per variation.
 
-| Method | Effect vs no optimization | How to Apply |
+The **Princeton GEO paper** (Aggarwal et al., KDD 2024) tested nine content edits on a research engine and on Perplexity. Its order, from Table 1 on Position-Adjusted Word Count:
+
+| Method | Effect vs no optimization | How to apply |
 |--------|--------------------------|--------------|
-| **Quotation Addition** | Strongest | Add expert quotes with attribution |
-| **Statistics Addition** | Very strong | Include specific numbers and data points |
+| **Quotation Addition** | Strongest | Add real expert quotes with attribution |
+| **Statistics Addition** | Very strong | Add specific numbers, each with its source |
 | **Fluency Optimization** | Strong | Improve readability and flow |
-| **Cite Sources** | Strong | Add authoritative citations and references |
-| **Technical Terms** | Moderate | Include domain-specific terminology |
+| **Cite Sources** | Strong | Link authoritative references |
+| **Technical Terms** | Moderate | Use the domain's real terminology |
 | **Easy-to-understand** | Moderate | Simplify complex concepts |
-| **Authoritative Tone** | Modest | Use confident, expert language |
-| **Unique Words** | Negligible | The paper groups this with the non-performing methods |
-| ~~Keyword Stuffing~~ | **Below baseline** | **AVOID: scores worse than doing nothing** |
+| **Authoritative Tone** | Modest | Confident, expert language |
+| **Unique Words** | Negligible | Grouped with the non-performing methods |
+| ~~Keyword Stuffing~~ | **Below baseline** | Avoid |
 
-The paper's headline: the best methods improve on the baseline by 41% on Position-Adjusted Word Count and 28% on Subjective Impression.
+The headline: the best methods improve on the baseline by 41% on Position-Adjusted Word Count and 28% on Subjective Impression, and the strongest pair was Fluency Optimization plus Statistics Addition. Two caveats to pass on: on the Subjective Impression metric Authoritative Tone ranks higher and keyword stuffing is not below baseline, so "worse than doing nothing" holds for word count only; and the paper tested English queries against 2023 engines, so its effect on Hebrew pages in today's engines is untested.
 
-**Best combination:** Fluency Optimization + Statistics Addition, which the paper reports as the strongest pairing.
+**Never invent a statistic or a quote** to apply these methods. Every number and every quotation must come from a real, linkable source. An invented figure on a YMYL page (health, finance, legal) is a trust problem and can be a legal one.
 
-**Content structure for AI extraction:**
-- Use "answer-first" format (direct answer at top of each section)
-- Clear H1 > H2 > H3 hierarchy
-- Bullet points, numbered lists, tables for comparison data
-- Short paragraphs (2-3 sentences max)
-- FAQ format for common questions
+**Structure that helps extraction** (practice, not a Google requirement): a direct answer at the top of each section, a clear H1 > H2 > H3 hierarchy, lists and tables for comparisons, and question-shaped headings for common questions.
 
-**FAQPage Schema:**
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is [topic]?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "According to [source], [answer with statistics]."
-    }
-  }]
-}
-```
+### Step 6: Know What Each AI Platform Documents
 
-### Step 6: Optimize for Each AI Platform
+| Platform | What the vendor documents | Action |
+|----------|---------------------------|--------|
+| Google AI Overviews / AI Mode | Google index; no extra requirements; may use "query fan-out"; both available in Hebrew and in Israel | Normal SEO, plus the Search generative AI control left on |
+| Gemini app | `Google-Extended` governs Gemini training AND grounding in Gemini Apps | Blocking `Google-Extended` does not affect Search |
+| ChatGPT search | `OAI-SearchBot` decides inclusion; sites opted out "will not be shown in ChatGPT search answers" | Allow `OAI-SearchBot` even if you block `GPTBot` |
+| Perplexity | `PerplexityBot` indexes for search and is "not used to crawl content for AI foundation models" | Allow `PerplexityBot` |
+| Claude | `Claude-SearchBot` indexes for search; blocking it "may reduce your site's visibility" | Allow `Claude-SearchBot` even if you block `ClaudeBot` |
+| Copilot | Grounds on Bing; Bing's AI Performance report shows Copilot citations | Allow Bingbot, verify in Bing Webmaster Tools |
 
-Each AI search engine has unique ranking factors. Snapshot for 2026:
+**On Claude's search backend:** third-party reports attribute Claude's web search to Brave, but Anthropic's crawler documentation names no search provider. Do not state it as fact to a client. Similarly, do not tell a client that ChatGPT or Perplexity "fall back" to Bing or Google: neither vendor's crawler documentation says so.
 
-| Platform | Primary Index | Key Factor | Critical Requirement |
-|----------|--------------|------------|---------------------|
-| ChatGPT (search) | Own crawler (`OAI-SearchBot`) + Bing fallback | Domain authority + content-answer fit | Allow `OAI-SearchBot` separately from `GPTBot` (training); keep content genuinely current |
-| Perplexity | Own crawler (`PerplexityBot`) + Google fallback | Semantic relevance | FAQ Schema, structured data, PDF/markdown sources |
-| Google AI Overview | Google index | E-E-A-T + Knowledge Graph | Available to all users in Israel and in Hebrew; structured data and clear answer paragraphs help |
-| Google AI Mode | Google index | E-E-A-T + sub-question coverage | A distinct surface from AI Overviews. Hebrew and Israel are both on Google's AI Mode availability list. Uses "query fan-out", so cover the related sub-questions on the page |
-| Gemini (Google) | Google index + real-time web | E-E-A-T + recency | Same as Google Search |
-| Copilot (Microsoft) | Bing index | Bing rank + MS ecosystem signals | Bing Webmaster Tools verified, LinkedIn/GitHub presence |
-| Claude (with web search) | Anthropic's own `Claude-SearchBot` index; a third-party search backend is also involved | Factual density + citations | Allow `Claude-SearchBot`, clean source URLs |
-
-**On Claude's search backend:** it is widely reported that Brave supplies Claude's web search, based on Brave appearing on Anthropic's published subprocessor list and a `BraveSearchParams` parameter in the web-search tool definition. Anthropic has never officially named a provider, so do not state it as fact to a client. What IS officially documented is `Claude-SearchBot`, so optimize against that rather than against a specific third-party index.
-
-**On Google AI Overviews vs AI Mode:** these are two different surfaces. Google's own guidance says "There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary", and ordinary indexable, helpful content is the entry ticket. Both may use a "query fan-out" technique, issuing multiple related searches behind one user query, which is the concrete reason to answer adjacent sub-questions on the same page rather than only the headline one.
-
-**Bot table (2026):**
-- `GPTBot`, OpenAI training crawler. Block if you do not want training; allow if you want broader OpenAI presence.
-- `OAI-SearchBot`, OpenAI's separate crawler for ChatGPT search results. Allow this even if you block `GPTBot`, otherwise ChatGPT search will not cite you.
-- `ChatGPT-User`, fired when a user invokes browsing during a chat. Allow.
-- `OAI-AdsBot`, OpenAI's crawler that validates the safety of pages submitted as ads on ChatGPT. Only relevant if you advertise there.
-- `PerplexityBot`, the search-index crawler. Allow. It respects robots.txt.
-- `Perplexity-User`, the on-demand fetch fired when a user asks a question. Allow. Note Perplexity documents that "Since a user requested the fetch, this fetcher generally ignores robots.txt rules", so disallowing it reduces your odds of being *indexed*, not of being fetched when someone pastes your URL.
-- `ClaudeBot`, Anthropic's training crawler. Allow if you want your content usable for training.
-- `Claude-SearchBot`, Anthropic's search-index crawler. **Allow this one even if you block `ClaudeBot`**, because it is what makes you eligible to be cited in Claude's search results. Same training-vs-search split as OpenAI's `GPTBot` / `OAI-SearchBot`.
-- `Claude-User`, fired when a Claude user asks a question that needs a page. Allow.
-- `anthropic-ai` and `Claude-Web` are older names that still circulate in robots.txt examples but appear nowhere in Anthropic's current documentation. Harmless to leave in; not worth adding.
-- `Google-Extended`, opt-out token for Gemini/Bard training (does NOT affect Google Search ranking or AI Overview citations).
-- `CCBot`, Common Crawl, used by many model trainers downstream.
-- `Applebot-Extended`, Apple Intelligence training opt-out.
-- `MistralAI-User`, circulated as the on-demand fetcher for Le Chat. We could not find it in Mistral's published docs, so verify before relying on it. Leaving it allowed in robots.txt costs nothing.
-- `Meta-ExternalAgent`, Meta's web crawler for Meta AI products. Block via robots.txt if you want to opt out.
-
-**llms.txt status (2026): optional, and NOT a ranking or citation signal.** Do not sell it to a client as one. Google's Search Relations team has said Search does not use llms.txt and has no plans to, and Google's AI-features documentation never mentions it while stating that no additional files or markup are needed for AI Overviews or AI Mode. No AI engine has announced reading it as a ranking input. Ship it if you want cheap protocol-layer registration on the chance the convention wins later, the same shape of bet Schema.org was a decade ago, but ship it AFTER the fundamentals and never instead of them. Place a short `/llms.txt` index per the llmstxt.org spec. A longer companion, commonly named llms-full.txt, is a tooling convention and is not part of that spec. Google Cloud's Open Knowledge Format (OKF, currently v0.2, a directory of Markdown files with YAML frontmatter) is a related emerging convention with the same caveat: nothing crawls the open web for it yet.
-
-**Universal requirements:** allow the search-time bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `Claude-SearchBot`, `Claude-User`) in robots.txt, keep content server-rendered and indexable, implement Schema markup (Article, Organization with sameAs, FAQPage), include statistics and citations, and keep content genuinely current. llms.txt is explicitly NOT on this list.
-
-See [references/platform-algorithms.md](./references/platform-algorithms.md) for detailed per-platform optimization checklists.
+The full crawler list (OpenAI, Anthropic, Perplexity, Google, Apple, Mistral, Meta, Common Crawl), with what blocking each one does, is in [references/platform-algorithms.md](./references/platform-algorithms.md).
 
 ### Step 7: Apply EEAT Principles
 
-Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) affects both traditional SEO and AI answer selection.
+Google's E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) applies to classic and AI results alike. Israeli signals:
 
-**Israeli-specific EEAT signals:**
-- **Experience:** Include real examples from the Israeli market, case studies with Israeli businesses
-- **Expertise:** Author credentials, Hebrew domain expertise, references to Israeli regulations
-- **Authoritativeness:** Backlinks from .co.il domains, mentions in Israeli publications (Globes, TheMarker, Calcalist)
-- **Trustworthiness:** HTTPS, clear Hebrew authorship, contact info with +972 numbers, privacy policy in Hebrew
+- **Experience:** real Israeli examples and case studies.
+- **Expertise:** named authors with credentials; references to the Israeli regulation that applies.
+- **Authoritativeness:** mentions and links from Israeli publications and .co.il sites.
+- **Trustworthiness:** HTTPS, a Hebrew contact page with a +972 number, a Hebrew privacy policy.
 
-For YMYL (Your Money or Your Life) content in Hebrew (medical, financial, legal), ensure content is reviewed by certified Israeli professionals and includes appropriate disclaimers.
+For YMYL pages in Hebrew (medical, financial, legal), have a licensed Israeli professional review the content. See [references/eeat-principles.md](./references/eeat-principles.md).
 
-See [references/eeat-principles.md](./references/eeat-principles.md) for implementation details.
-
-### Step 8: Build Hebrew Schema.org Structured Data
-
-Create JSON-LD markup optimized for Israeli businesses:
+### Step 8: Build Israeli Structured Data
 
 ```json
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Business Name / Shem HaEsek",
+  "name": "Business Name",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rehov Example 42",
     "addressLocality": "Tel Aviv-Yafo",
-    "addressRegion": "Tel Aviv District",
     "postalCode": "6100000",
     "addressCountry": "IL"
   },
-  "telephone": "+972-3-XXX-XXXX",
+  "telephone": "+972-3-555-0000",
   "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Friday",
-      "opens": "09:00",
-      "closes": "14:00"
-    }
+    {"@type": "OpeningHoursSpecification",
+     "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"],
+     "opens": "09:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Friday", "opens": "09:00", "closes": "14:00"}
+  ],
+  "specialOpeningHoursSpecification": [
+    {"@type": "OpeningHoursSpecification",
+     "validFrom": "2027-04-21", "validThrough": "2027-04-21",
+     "opens": "09:00", "closes": "12:00"},
+    {"@type": "OpeningHoursSpecification",
+     "validFrom": "2027-04-22", "validThrough": "2027-04-22",
+     "opens": "00:00", "closes": "00:00"}
   ]
 }
 ```
 
-**Israeli-specific considerations:**
-1. **Shabbat hours:** Friday closes early (14:00), Saturday closed
-2. **Kosher certification:** Use `additionalProperty` with certifying body (Rabbanut, Badatz)
-3. **Phone format:** Always use `+972` international prefix
-4. **Currency:** Set `priceCurrency` to `ILS`
+Israeli specifics:
 
-**GEO-enhanced schemas:** Add `SpeakableSpecification` for voice search and AI extraction:
-```json
-{
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", ".summary", ".faq-answer"]
-  }
-}
-```
+1. **Week:** model the hours the intake gave you. The example is the common Sunday-Thursday plus short Friday pattern. Many businesses open on Shabbat, so ask. To mark a day closed explicitly, Google says to "set both opens and closes properties to "00:00"".
+2. **Holidays:** use `specialOpeningHoursSpecification` (schema.org: it overrides the general hours) for Rosh Hashana, Yom Kippur, Pesach and so on (the example closes on the first day of Pesach 2027, 22 April, and opens a short Erev Pesach the day before), and set the same special hours in Google Business Profile. Keep `dayOfWeek` values in English: Google supports only the standard schema.org enumeration values, in English.
+3. **Phone:** Google's local-business documentation says "Be sure to include the country code and area code", so use `+972`. A local `03-` number is not a validation error, just weaker.
+4. **Kosher:** state the certifying body (Rabbanut, Badatz) in visible text; Google has no kosher-specific structured data.
+5. **Currency:** `ILS`. For an online shop, use `Product` with an `Offer` carrying the price in `ILS` and availability, and keep it consistent with the Merchant Center feed.
 
-See [references/schema-templates.md](./references/schema-templates.md) for complete JSON-LD templates (FAQ, Article, Product, HowTo, Organization, combined @graph patterns).
+**Markup not to recommend for Google benefit:** Google stopped showing FAQ rich results on 7 May 2026, removed HowTo rich results in September 2023, and limits Speakable to English-language news publishers in the US. FAQPage remains valid schema.org and other consumers may read it, but do not promise a client any Google result from it. Full templates: [references/schema-templates.md](./references/schema-templates.md).
 
-### Step 9: Configure AI Bot Access and llms.txt
+### Step 9: Set the Crawler Policy (robots.txt) and llms.txt
 
-Set up `robots.txt` to allow all major search-time and traditional bots:
+If the audit found no crawler blocked, change nothing here. Otherwise merge the relevant groups below into the existing file:
 
 ```
 User-agent: Googlebot
@@ -256,229 +200,199 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# OpenAI: separate bots for training vs search
-User-agent: GPTBot
-Allow: /
-
+# Search-index crawlers: these decide AI-search citation eligibility
 User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-# Perplexity
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-# Anthropic: three separate bots (training / search index / user fetch)
-User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-SearchBot
 Allow: /
 
-User-agent: Claude-User
+User-agent: PerplexityBot
 Allow: /
 
-# Common Crawl (used by many trainers)
-User-agent: CCBot
+# Training crawlers: allow or disallow as a business decision
+User-agent: GPTBot
 Allow: /
 
-# Mistral (Le Chat web search)
-User-agent: MistralAI-User
+User-agent: ClaudeBot
 Allow: /
 
-# Meta AI external agent (opt-out by setting Disallow if you don't want Meta AI presence)
-User-agent: Meta-ExternalAgent
+# Google-Extended: Gemini training AND Gemini app grounding (not Search)
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://example.co.il/sitemap.xml
 ```
 
-**Decisions to make:**
-- Allowing search-time crawlers (`OAI-SearchBot`, `Perplexity-User`, `ChatGPT-User`) increases chances of being cited in AI responses.
-- Blocking `Google-Extended` opts out of Gemini training without affecting Google Search ranking or AI Overview citations.
-- Blocking `GPTBot` opts out of OpenAI model training but keeps you eligible for ChatGPT search if `OAI-SearchBot` and `ChatGPT-User` remain allowed.
-- The same split applies at Anthropic: blocking `ClaudeBot` opts out of training while `Claude-SearchBot` keeps you eligible for citation in Claude's search results. Blocking `ClaudeBot` alone is NOT an opt-out of Claude entirely, and blocking all three is.
-- Review your policy regularly. This landscape evolves rapidly.
+**Decisions to make with the owner:**
 
-**Optionally add `/llms.txt`:** llms.txt (proposed by Jeremy Howard, 2024) is a convention, not a standard, and carries no confirmed ranking or citation effect. Place a short markdown file at `https://example.co.il/llms.txt` summarizing the site's purpose and key URLs if you want to register early. Do NOT let it displace server-rendered HTML, Schema.org, or a correct robots.txt, and do not report it to a client as an AI-visibility win.
+- Blocking a training crawler (`GPTBot`, `ClaudeBot`, `Applebot-Extended`, `MistralAI-Training`, `CCBot`) opts out of training without losing search citations, as long as the search crawler stays allowed.
+- `Google-Extended` is different: it also controls grounding in the Gemini app. Blocking it keeps the site in Google Search, AI Overviews and AI Mode, but removes it as a grounding source in Gemini Apps. Decide that separately.
+- **One group per crawler.** Google's spec says "Only one group is valid for a particular crawler": a crawler that has its own group ignores the `*` group completely. Before adding a named group, copy every `Disallow` line from `*` into it, or the named bot loses those restrictions. The template above has no `*` rules; merge it into the site's existing file, do not paste it over.
+- User-triggered fetchers (`ChatGPT-User`, `Claude-User`, `Perplexity-User`) are a third category: OpenAI says robots.txt "may not apply" to `ChatGPT-User`, and Perplexity says `Perplexity-User` "generally ignores robots.txt rules".
+- Changes are not instant: OpenAI says about 24 hours for search, Perplexity up to 24 hours.
 
-### Step 10: Validate and Monitor
+**llms.txt: optional, and NOT a ranking or citation signal.** Google says Search does not use it, and no AI engine has announced reading it as a ranking input. The proposal (Jeremy Howard, 2024, revised to v2 in August 2026) is cheap to ship, but ship it after the fundamentals and never sell it to a client as an AI-visibility win.
 
-**SEO Validation:**
-```bash
-# Schema validation
-open "https://search.google.com/test/rich-results?url={encoded_url}"
+### Step 10: Assemble the Fix List (the deliverable)
 
-# Check Google indexing
-open "https://www.google.com/search?q=site:{domain}"
+Merge the script output (Step 1), the account checks (Step 2), the keyword coverage (Step 3) and anything else observed into one table, ordered by this ladder:
 
-# Check Bing indexing (required for Copilot)
-open "https://www.bing.com/search?q=site:{domain}"
-```
+1. **Penalties and access blockers:** manual actions or security issues, page errors, `noindex`, unintended `nosnippet` / `max-snippet:0`, a robots.txt answering 5xx, robots.txt blocking Googlebot/Bingbot or a search-index AI crawler, CDN refusing AI crawlers, Search generative AI control switched off, text not in the raw HTML.
+2. **Local presence** (local businesses): Google Business Profile category, hours and NAP match.
+3. **Indexing hygiene:** canonicals, redirect chains, duplicate or doorway pages (one near-identical page per city is a named Google spam pattern).
+4. **Content versus the five target searches:** missing pages or sections, Hebrew forms seen in Search Console but not on the page.
+5. **Core Web Vitals on mobile** (LCP, INP, CLS).
+6. **Structured data** that is valid and useful (LocalBusiness with holiday hours, Organization, Product, Article).
+7. **GEO content edits:** real sourced statistics and quotes, answer-first sections.
+8. **Optional extras:** llms.txt.
 
-**GEO Monitoring: measure in four layers, in order.** GEO outcomes are delayed (an engine has to re-crawl before your edit can surface) and confounded (your number also moves when the engine or a competitor changes). So separate the fast proxy from the slow outcome instead of reading a raw before/after.
+| # | Finding | Evidence | Why it matters | Who fixes it | Fix | How to confirm |
+|---|---------|----------|----------------|--------------|-----|----------------|
+| 1 | robots.txt blocks Claude-SearchBot on /services | seo_audit.py line "robots.txt blocks Claude-SearchBot" | Not eligible for Claude search citations | Owner (robots.txt editor) | Add a Claude-SearchBot group that repeats the site's other `*` Disallow lines, except the one covering /services | Re-run seo_audit.py |
 
-| Layer | Question | Latency | Proxy or outcome |
-|-------|----------|---------|------------------|
-| 1. Crawler access | Can the bots fetch and parse the page at all? | Instant | Precondition |
-| 2. Citability | Given the page, is it extractable and answer-shaped? | Minutes | Proxy |
-| 3. Surfacing | Does an engine cite you for a bare query, unprompted? | Days to weeks | Outcome (GEO) |
-| 4. Rankings and clicks | Position, impressions, CTR | Weeks to months | Outcome (SEO) |
+Write the table in the user's language.
 
-**Always check layer 1 before concluding anything about content quality.** "Not crawled yet" and "crawled but not chosen" look identical in the answer box and have completely different fixes. Diagnosing a content problem when the real cause is a blocked `Claude-SearchBot` wastes weeks.
+End with a **"Do not spend on"** list where it applies: llms.txt as a ranking lever, FAQ rich results, Speakable on a Hebrew site, moving hosting to Israel for rankings, one page per city or per query variation.
 
-1. **Layer 1:** request the page as each bot user agent, confirm a 200 AND that the content is in the raw HTML rather than JS-injected. Evaluate robots.txt per user agent, not in aggregate. Check your own access logs for real bot hits per URL.
-2. **Layer 2:** hand a specific URL to an engine and ask the target question. This bypasses crawl lag on live-fetch paths, so it iterates in minutes, but it only proves extractability, not that you will be chosen.
-3. **Layer 3:** ask a FIXED panel of queries WITHOUT supplying the URL, and record citations over time against a control page you did not edit. This is the actual GEO outcome.
-4. **Layer 4:** Search Console and rank data, snapshotted over time against the same control.
+### Step 11: Monitor in Four Layers
 
-**Google Search Console generative AI reports:** Google launched dedicated Search Generative AI performance reports on 3 June 2026, covering AI Overviews, AI Mode, and generative AI features in Discover. They report **Impressions, Pages, Countries, Devices and Dates only**. There is no click, CTR, position, or query data in this version, and Google is rolling the reports out to a subset of websites rather than everyone, so do not promise a client this data until you have confirmed their property has it. Generative-AI traffic also continues to be counted inside the overall performance report.
+GEO outcomes lag and are confounded, so separate the fast proxy from the slow outcome:
 
-Third-party AI-citation trackers (Otterly.ai, Profound, SE Ranking AI Toolkit) automate layer 3. Also watch referral traffic from AI platforms and check citation accuracy by searching your brand in each assistant.
+| Layer | Question | Latency |
+|-------|----------|---------|
+| 1. Crawler access | Can the bots fetch and parse the page? | Instant |
+| 2. Citability | Given the page, is it extractable and answer-shaped? | Minutes |
+| 3. Surfacing | Does an engine cite you for a bare query, unprompted? | Days to weeks |
+| 4. Rankings and clicks | Position, impressions, CTR | Weeks to months |
 
-**Hebrew-specific checks:**
-1. Verify RTL rendering in all browsers
-2. Test hreflang bidirectional linking
-3. Confirm local directory listings are consistent (NAP: Name, Address, Phone)
-4. Run `scripts/analyze_keywords.py --audit` for keyword coverage
+Check layer 1 before concluding anything about content: "not crawled yet" and "crawled but not chosen" look identical in the answer box. For layer 3, ask a fixed panel of Hebrew and English queries in each assistant without giving the URL, and record citations over time against a page you did not edit.
 
-See [references/tools-and-apis.md](./references/tools-and-apis.md) for a full list of free and paid SEO/GEO tools.
+**Search Console Generative AI performance reports** (launched 3 June 2026, rolled out to all websites as of 31 August 2026) cover AI Overviews, AI Mode and Discover's generative features. Google lists impressions by page, country, device and date, and documents no click, CTR, position or query data in them. **Bing's AI Performance report** shows Copilot citations and a sample of grounding queries. Third-party trackers (Otterly.ai, Profound, SE Ranking) automate layer 3. Watch referral traffic from chatgpt.com, perplexity.ai, gemini.google.com and copilot.microsoft.com in analytics.
+
+See [references/tools-and-apis.md](./references/tools-and-apis.md) for tools.
 
 ## Examples
 
-### Example 1: Hebrew Keyword Research
-User says: "I need keywords for an Israeli real estate website"
+### Example 1: Audit and Fix List for a Local Business
+User says: "Audit my accounting firm's site in Ramat Gan and tell me what to fix first"
 Actions:
-1. Identify root keywords: nadlan (real estate), dira (apartment), bayit (house)
-2. Generate morphological variants: hanadlan, benadlan, dirot (plural), batim (plural)
-3. Include construct forms: sokhen nadlan (real estate agent), mehirei dirot (apartment prices)
-4. Run `scripts/analyze_keywords.py --keywords "nadlan,dira,bayit"` for full variant analysis
-5. Map variants to pages with search volume priority
-Result: Complete Hebrew keyword map with morphological variants and prefix combinations
+1. Intake: local service, Ramat Gan plus Tel Aviv, Hebrew only, five target searches, has Search Console and Google Business Profile, WordPress behind Cloudflare, closed on Shabbat and holidays.
+2. Run `seo_audit.py` on the home page and the two service pages. It reports Claude-SearchBot blocked by robots.txt and a 403 to OAI-SearchBot from the CDN.
+3. Owner checks Search Console: the generative AI control is on; two service pages are "Crawled, currently not indexed".
+4. Business Profile shows no holiday hours and a phone number that differs from the site.
+5. Search Console export shows "רואה חשבון ברמת גן" with impressions but no page targeting it.
+Note: the owner can change Cloudflare's bot settings here. On a hosted builder such as Wix, the owner edits robots.txt in the dashboard, but Wix documents no owner control over its own CDN or firewall, so a CDN-level 403 there is a request to the platform's support, not an owner fix.
+Result: a fix list with the robots.txt and CDN fixes first, then the profile NAP and holiday hours, then the two unindexed pages, then one new service section, plus a "do not spend on" note about FAQ schema.
 
-### Example 2: Bilingual Site hreflang Setup
+### Example 2: Bilingual hreflang
 User says: "Set up hreflang for my Hebrew/English .co.il site"
 Actions:
-1. Audit existing pages for language pairs
-2. Generate hreflang link tags for HTML head on each page
-3. Create XML sitemap with hreflang annotations
-4. Verify bidirectional linking between language versions
-Result: Complete hreflang implementation with he-IL and en targeting
+1. Pair each Hebrew page with its English version.
+2. Choose one method (HTML tags in the head), with each page listing itself and its counterpart.
+3. Set `x-default` to the English page, since visitors matched by neither `he` nor `en` are more likely to read English (Hebrew only if they are mostly Israelis on non-Hebrew browsers).
+4. Run `seo_audit.py` on one page of each pair to confirm self-reference, then open the counterpart to confirm the return link.
+Result: reciprocal `he` / `en` / `x-default` annotations in one method.
 
-### Example 3: GEO Optimization for Israeli SaaS
-User says: "Optimize my Israeli SaaS landing page for AI search engines"
+### Example 3: GEO for an Israeli SaaS Page
+User says: "Why doesn't ChatGPT or Claude mention our product?"
 Actions:
-1. Audit current AI visibility (search brand name in ChatGPT, Perplexity, Claude)
-2. Apply Princeton GEO methods: add statistics with sources, expert quotes, authoritative citations
-3. Implement FAQPage schema with bilingual Q&A pairs
-4. Add SpeakableSpecification to key content sections
-5. Verify all AI bots are allowed in robots.txt
-6. Structure content in answer-first format with clear H2/H3 hierarchy
-Result: Landing page optimized for both Google.co.il and AI search engine citations
+1. Layer 1 first: `seo_audit.py` shows the page text is injected by JavaScript (under 500 characters in the raw HTML) and the CDN returning 403 to OAI-SearchBot.
+2. Fix rendering and the CDN bot setting before touching copy.
+3. Then apply GEO edits using the company's own published benchmark numbers and a named customer quote, each linked.
+4. Set up a fixed query panel and re-check weekly against an unedited control page.
+Result: access fixed first, sourced content edits second, measurement in place.
 
-### Example 4: Israeli Restaurant Schema with GEO
+### Example 4: Kosher Restaurant Structured Data
 User says: "Create structured data for my kosher restaurant in Jerusalem"
 Actions:
-1. Build LocalBusiness/Restaurant JSON-LD with Israeli address format
-2. Add Shabbat-aware opening hours (Friday early close, Saturday closed)
-3. Include kosher certification with Rabbanut details
-4. Add FAQPage schema for common questions (menu, reservations, kashrut level)
-5. Add SpeakableSpecification for voice assistant queries
-6. Include Hebrew menu schema with NIS pricing
-Result: Complete JSON-LD markup optimized for Google Rich Results and AI citations
+1. Ask the actual hours, including Friday, Saturday night and holidays.
+2. Build Restaurant JSON-LD with Israeli address, +972 phone, `ILS`, and `specialOpeningHoursSpecification` for the holidays.
+3. State the kashrut certificate in visible text.
+4. Mirror the holiday hours in Google Business Profile.
+Result: valid LocalBusiness markup and a matching Business Profile, with no FAQ or Speakable markup promised as a Google feature.
 
-### Example 5: Full SEO + GEO Audit
-User says: "Audit my Israeli e-commerce site for SEO and AI visibility"
+### Example 5: Hebrew Keyword Coverage
+User says: "Which Hebrew keywords am I missing for my real estate site?"
 Actions:
-1. Run `python3 scripts/seo_audit.py "https://example.co.il"` for technical audit
-2. Check AI bot access in robots.txt
-3. Verify hreflang and Hebrew content quality
-4. Audit structured data (FAQPage, Product, BreadcrumbList schemas)
-5. Evaluate EEAT signals (author credentials, citations, Hebrew expertise)
-6. Test AI visibility by searching brand and product names in ChatGPT, Perplexity, Claude
-7. Review Google Search Console AI Overview data
-Result: Prioritized SEO + GEO improvement plan for the Israeli market
+1. Export Search Console Queries as CSV.
+2. Run `analyze_keywords.py --keywords 'נדל"ן,דירה להשכרה' --gsc-queries Queries.csv`.
+3. Note which forms and spellings searchers actually use, then check those words appear on the target pages.
+4. Optionally run `related_keywords.py 'דירה להשכרה'` (paid) for volume and difficulty.
+Result: a list of real query forms mapped to pages, measured rather than guessed.
 
 ## Bundled Resources
 
 ### Scripts
-- `scripts/seo_audit.py` -- Full website SEO audit: meta tags, robots.txt, sitemap, load time, schema markup, AI bot access. No API needed. Run: `python3 scripts/seo_audit.py "https://example.co.il"`
-- `scripts/analyze_keywords.py` -- Hebrew keyword morphological analysis: generates prefix variants (ha-, ve-, be-, le-, me-, she-), plural forms, and construct state combinations. Run: `python scripts/analyze_keywords.py --help`
-- `scripts/keyword_research.py` -- Keyword research with search volume and difficulty data. Requires DataForSEO API. Run: `python3 scripts/keyword_research.py "seo tools" --limit 20`
-- `scripts/serp_analysis.py` -- Analyze top Google results for a keyword. Requires DataForSEO API. Run: `python3 scripts/serp_analysis.py "best seo tools"`
-- `scripts/backlinks.py` -- Backlink profile analysis. Requires DataForSEO API. Run: `python3 scripts/backlinks.py "example.com"`
-- `scripts/domain_overview.py` -- Domain metrics: traffic, keywords, rankings. Requires DataForSEO API. Run: `python3 scripts/domain_overview.py "example.com"`
-- `scripts/autocomplete_ideas.py` -- Google autocomplete keyword suggestions. Requires DataForSEO API.
-- `scripts/related_keywords.py` -- Related keyword discovery. Requires DataForSEO API.
-- `scripts/competitor_gap.py` -- Competitor keyword gap analysis. Requires DataForSEO API.
+- `scripts/seo_audit.py`: single-page SEO + GEO audit ending in a P0/P1/P2 fix list; per-crawler robots.txt and user-agent checks; `--json` output. Free, no API. Exit 0 audit ran, 1 page unreachable, 2 this machine could not run it.
+- `scripts/analyze_keywords.py`: Hebrew prefix and spelling variants; with `--gsc-queries`, coverage against a Search Console Queries export. Free.
+- `scripts/keyword_research.py`, `serp_analysis.py`, `autocomplete_ideas.py`, `related_keywords.py`, `competitor_gap.py`, `domain_overview.py`, `backlinks.py`: DataForSEO (paid). Default Israel and Hebrew; `--location` / `--language` to change; `DATAFORSEO_SANDBOX=1` for free request testing.
+- `scripts/dataforseo_api.py`, `scripts/credential.py`: shared client; credentials from environment variables only.
 
 ### References
-- `references/hebrew-seo.md` -- Hebrew SEO best practices: .co.il domain strategy, RTL optimization, Israeli business directories, Google.co.il ranking factors. Consult when implementing or auditing Hebrew SEO.
-- `references/geo-research.md` -- Princeton GEO research (9 optimization methods with examples, best combinations, domain-specific recommendations). Consult when optimizing content for AI search engine citations.
-- `references/platform-algorithms.md` -- Detailed ranking factors for each AI platform (ChatGPT, Perplexity, Google AI Overview, Copilot, Claude) and traditional Google SEO. Consult when optimizing for a specific search platform.
-- `references/schema-templates.md` -- Ready-to-use JSON-LD templates: FAQPage, WebPage, Article, SoftwareApplication, Organization, Product, HowTo, BreadcrumbList, LocalBusiness, SpeakableSpecification, combined @graph patterns. Consult when implementing structured data.
-- `references/seo-checklist.md` -- Complete prioritized SEO/GEO audit checklist (P0/P1/P2 priorities) covering technical SEO, on-page SEO, schema markup, GEO optimization, off-page SEO, and monitoring. Consult when running a full site audit.
-- `references/tools-and-apis.md` -- Curated list of free and paid SEO/GEO tools, APIs, browser extensions, and command-line utilities. Consult when recommending tools or setting up automation.
-- `references/eeat-principles.md` -- Google's EEAT framework (Experience, Expertise, Authoritativeness, Trustworthiness) with implementation patterns and YMYL considerations. Consult when evaluating or improving content quality.
-- `references/aeo-considerations.md` -- Answer Engine Optimization (AEO) guide: how AI selects answers, content structure for AI, Google AI Overviews, AI crawler management, measuring AEO success. Consult when optimizing content for AI answer selection.
+- `references/platform-algorithms.md`: what each AI platform and crawler vendor documents, the full crawler list, and what blocking each one does. Consult before writing robots.txt or explaining AI visibility.
+- `references/seo-checklist.md`: prioritized checklist behind the Step 10 ladder. Consult for a full manual audit.
+- `references/hebrew-seo.md`: .co.il, RTL, Israeli directories and NAP, Hebrew search behaviour.
+- `references/geo-research.md`: the Princeton GEO methods with examples and caveats.
+- `references/schema-templates.md`: JSON-LD templates and which ones Google still rewards.
+- `references/aeo-considerations.md`: answer-engine content structure and AI crawler management.
+- `references/eeat-principles.md`: E-E-A-T and YMYL handling.
+- `references/tools-and-apis.md`: free and paid tools, including DataForSEO setup.
+- `references/domain-checklist.md`: coverage checklist for this skill.
 
 ## Gotchas
 
-- Hebrew morphology creates keyword variants that agents miss. The word "nadlan" (real estate) has prefixes like "hanadlan," "benadlan," "lenadlan" that are separate search queries. Agents may optimize for a single form and miss the majority of search traffic.
-- Israeli business hours in schema.org must reflect the Sunday-Thursday work week with Friday early close. Agents default to Monday-Friday schedules.
-- The hreflang tag for Israeli Hebrew must be `he-IL`, not just `he`. Agents often omit the country code, which affects Google's geo-targeting for google.co.il.
-- Israeli phone numbers in structured data must use the `+972` prefix. Agents may format numbers in local 0X-XXX-XXXX format, which fails schema validation.
-- GEO (Generative Engine Optimization) is a rapidly evolving field. AI platform ranking factors (which bots to allow, content freshness windows, citation formats) change frequently. Agents may recommend outdated GEO strategies from even 6 months ago. Google lists AI Overviews as available to all users in Israel and in Hebrew, but it does not appear on every query; treat AI Overview citation as an aspirational signal rather than a guaranteed lever.
-- AI Overview de-prioritizes content with stuffed H1/H2 keywords. Sites that rank well in classic Google can lose AI Overview citations to lower-traffic competitors that have a cleaner answer-first paragraph. The fix is structural (rewrite intro for direct-answer format), not more keywords.
-- Hebrew-language LLMs cite Hebrew content unevenly. Pure-Hebrew SaaS landing pages get cited less by ChatGPT/Claude than equivalent EN+HE pages. Maintain an English alternate URL with the same content for the AI surface, plus the Hebrew URL with proper hreflang for Google.co.il ranking.
-
+- Agents report a script failure as a site problem. A TLS error from a local Python, or a 403 from a firewall that refuses scripts, says nothing about the site. The audit script separates these (exit 2, "audit blocked"); keep the distinction in the report.
+- Agents still recommend FAQPage and Speakable "for rich results". Google stopped showing FAQ rich results on 7 May 2026 and Speakable is limited to English-language US news. Recommending them as a Google win is wrong.
+- Agents apply hreflang folklore: "always he-IL", "the sitemap is required", "x-default must be English". Google allows a bare `he`, treats the three methods as equivalent, and sets no language for `x-default`.
+- Agents assume Saturday closed and Monday-Friday hours. Ask; then model Sunday-Thursday, Friday, Shabbat and holidays as the business actually runs.
+- Agents allow `GPTBot` and `ClaudeBot` and think AI search is covered. Those are training crawlers; citation eligibility comes from `OAI-SearchBot`, `Claude-SearchBot` and `PerplexityBot`.
+- Agents invent statistics to "apply GEO". Every number and quote must have a real source.
+- Agents "fix" robots.txt by adding `User-agent: OAI-SearchBot` / `Allow: /`. A named group replaces the `*` group for that bot, so every existing Disallow stops applying to it. Copy the `*` rules into each named group.
+- Agents run DataForSEO with English for Israel. Labs has only Hebrew and Arabic data for Israel; the scripts default to `he` and refuse `en` there.
 
 ## Reference Links
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| Google Search Central | https://developers.google.com/search | Ranking factors, structured data, Core Web Vitals |
-| Google Search Status Dashboard | https://status.search.google.com | Active core updates, AI Overview rollout status |
-| Schema.org | https://schema.org | JSON-LD markup for LocalBusiness, FAQ, Article |
-| Google Keyword Planner | https://ads.google.com/intl/en/home/tools/keyword-planner/ | Hebrew search volumes, keyword ideas |
-| Academy of the Hebrew Language | https://hebrew-academy.org.il | Correct Hebrew terminology, spelling rules |
-| Princeton GEO paper (Aggarwal et al., 2023) | https://arxiv.org/abs/2311.09735 | GEO methods for AI search engines |
-| OpenAI bot docs | https://developers.openai.com/api/docs/bots | `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `OAI-AdsBot` behavior |
-| Anthropic crawler docs | https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot`, `Claude-SearchBot`, `Claude-User` and how to block each |
-| Perplexity crawler info | https://docs.perplexity.ai/docs/resources/perplexity-crawlers | `PerplexityBot`, `Perplexity-User`, and which one ignores robots.txt |
-| Google AI features guidance | https://developers.google.com/search/docs/appearance/ai-features | What is and is not required for AI Overviews and AI Mode |
-| Search Console generative AI reports | https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports | Which metrics the AI reports actually expose |
-| llms.txt proposal | https://llmstxt.org | Convention for AI-readable site index |
-| Bing Webmaster Tools AI Performance | https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview | AI Performance reporting shows when Copilot cites you |
-| Brave Search | https://brave.com/search/ | Independent index Claude relies on |
+| Google AI features guidance | https://developers.google.com/search/docs/appearance/ai-features | Requirements for AI Overviews and AI Mode |
+| Google AI optimization guide | https://developers.google.com/search/docs/fundamentals/ai-optimization-guide | Google's position on GEO, fan-out pages, special markup |
+| Search generative AI control | https://support.google.com/webmasters/answer/16908024?hl=en | Opt-out and eligibility for AI Overviews and AI Mode |
+| Search Console generative AI reports | https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports | Which metrics the AI reports expose |
+| Google Search documentation updates | https://developers.google.com/search/updates | Rich result deprecations (FAQ, HowTo) |
+| Google localized versions (hreflang) | https://developers.google.com/search/docs/specialty/international/localized-versions | Language codes, x-default, methods |
+| Google multi-regional sites | https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites | ccTLD and server location |
+| Google local business structured data | https://developers.google.com/search/docs/appearance/structured-data/local-business | Phone format, opening hours |
+| OpenAI bot docs | https://developers.openai.com/api/docs/bots | `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `OAI-AdsBot` |
+| Anthropic crawler docs | https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | `ClaudeBot`, `Claude-SearchBot`, `Claude-User` |
+| Perplexity crawler docs | https://docs.perplexity.ai/docs/resources/perplexity-crawlers | `PerplexityBot`, `Perplexity-User` |
+| Princeton GEO paper | https://arxiv.org/abs/2311.09735 | GEO methods and their measured effects |
+| Bing Webmaster Tools AI Performance | https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview | Copilot citation reporting |
+| DataForSEO docs | https://docs.dataforseo.com/v3/ | Endpoints, locations and languages |
+| llms.txt proposal | https://llmstxt.org | Convention for an AI-readable site index |
 
 ## Troubleshooting
 
-### Error: "hreflang mismatch detected"
-Cause: hreflang tags are not bidirectional (page A links to B but B does not link back to A)
-Solution: Ensure every hreflang declaration is reciprocal. Both the Hebrew and English versions must reference each other.
+### Error: "seo_audit.py exits 2 with a TLS failure"
+Cause: this machine's Python has no certificate store, or one older than the site's root CA (confirmed on gov.il with an outdated bundle). Verified not to be a site fault when other clients load the page.
+Solution: run your Python's "Install Certificates" step, or set `SSL_CERT_FILE` to a current CA bundle, and re-run. Only if a current store still fails, check the site's chain in an SSL checker.
 
-### Error: "RTL rendering issues"
-Cause: Missing dir="rtl" attribute or CSS conflicts with LTR defaults
-Solution: Set dir="rtl" on the html element for Hebrew pages. Use CSS logical properties (margin-inline-start instead of margin-left).
-
-### Error: "Schema validation failed"
-Cause: JSON-LD markup contains errors or missing required properties
-Solution: Test with Google Rich Results Test. Common Israeli issues: wrong phone format (must use +972), missing addressCountry: IL, or ILS currency code.
-
-### Error: "Keywords not ranking on google.co.il"
-Cause: Content may be machine-translated or missing morphological keyword variants
-Solution: Ensure Hebrew content includes natural prefix combinations. Use `scripts/analyze_keywords.py` to identify missing variants.
+### Error: "HTTP 403 to this script" but the site works in a browser
+Cause: the site's firewall refuses scripted clients regardless of user agent (gov.il does this).
+Solution: audit by hand: view-source, Rich Results Test, Search Console URL Inspection. Do not report downtime.
 
 ### Error: "Not appearing in AI search results"
-Cause: diagnose in order, because these look identical from the outside and have different fixes. (1) the search-time bot cannot fetch the page at all; (2) it fetched, but the content is JS-injected and not in the raw HTML; (3) it parsed fine but the content is not answer-shaped enough to be chosen.
-Solution: Check (1) FIRST by requesting the page as each bot user agent and confirming a 200 with the text present in the raw HTML. Confirm robots.txt allows `OAI-SearchBot`, `PerplexityBot`, and `Claude-SearchBot` specifically. Allowing only `GPTBot` and `ClaudeBot` covers training crawlers and leaves you ineligible for search citations on both platforms, which is the most common version of this bug. Only after access is green, apply GEO methods (quotes, statistics, citations) and restructure to answer-first.
+Cause: check in this order, because the symptoms look identical: (1) a manual action, or robots.txt or the CDN blocking the search-index crawler; (2) the Search generative AI control is off, or `nosnippet` / `max-snippet:0` limits what Google can show (Google surfaces only); (3) the text is injected by JavaScript; (4) the content is not answer-shaped enough to be chosen.
+Solution: run `seo_audit.py` and fix any P0 first. Check the Search Console control. Only after access is green, apply the GEO content edits.
 
-### Error: "AI citing competitors instead of my site"
-Cause: Competitor content has higher factual density, better structure, or more authoritative citations
-Solution: Apply the Princeton GEO methods in the order the paper found effective: expert quotes with attribution first, then specific statistics with sources, then fluency and citations. Use answer-first format and FAQPage schema. Build topical authority through content clusters.
+### Error: "hreflang ignored"
+Cause: the pair is not reciprocal, or a page does not list itself.
+Solution: make every version list itself and every other version, in one method.
+
+### Error: "Rich Results Test shows no FAQ result"
+Cause: Google no longer shows FAQ rich results for any site.
+Solution: nothing to fix. Keep the markup only if another consumer uses it.
+
+### Error: "DataForSEO script prints an error 40501 or no data for Israel"
+Cause: likeliest an unsupported location and language pair (Labs has no English for Israel) or an undocumented field; not verified against a live account.
+Solution: use `--language he`, and test with `DATAFORSEO_SANDBOX=1` before spending credit.
