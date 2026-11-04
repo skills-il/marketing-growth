@@ -52,7 +52,7 @@ Ready-to-use JSON-LD structured data templates for SEO and GEO optimization.
       "name": "How do I get started with [Product/Service]?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "[Installation/signup instructions. Run: curl -fsSL example.com/install.sh | bash]"
+        "text": "[Plain-language answer describing how to get started, for example the steps to sign up or contact you]"
       }
     }
   ]
