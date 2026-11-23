@@ -1,46 +1,46 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-market-fit",
-  "generated_at": "2026-08-18T19:41:54+00:00",
+  "generated_at": "2026-11-23T17:00:00+00:00",
   "claims": [
     {
       "claim_id": "population-2026",
-      "claim": "Israel's population was 10.244 million on the eve of the 78th Independence Day (April 2026), per CBS.",
-      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/117/11_26_117b.pdf",
-      "raw_snippet": "אוכלוסיית ישראל מונה ‪10.244‬מיליון נפשות",
-      "fetched_at": "2026-08-18T19:30:00+00:00",
+      "claim": "Israel's population was estimated at about 10.305 million on the eve of Rosh Hashana 5787 (CBS release 282/2026, 9 September 2026).",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/282/11_26_282b.pdf",
+      "raw_snippet": "אוכלוסיית ישראל נאמדת בכ-10.305 מיליון נפש",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "verified_via": "pdf",
-      "verified_at": "2026-08-18T19:30:00+00:00"
+      "verified_at": "2026-11-23T12:00:00+00:00"
     },
     {
       "claim_id": "population-split",
-      "claim": "On the eve of the 78th Independence Day: 7.790 million Jews and others (76%), 2.157 million Arabs (21.1%), 296 thousand foreigners (2.9%).",
-      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/117/11_26_117b.pdf",
-      "raw_snippet": "‫‪ 7.790‬מיליון יהודים ואחרים ‪(76%) 2‬",
-      "fetched_at": "2026-08-18T19:30:00+00:00",
+      "claim": "On the eve of Rosh Hashana 5787: about 7.828 million Jews and others (78.3% of Israelis), about 2.173 million Arabs (21.7% of Israelis), and about 304 thousand foreigners. As shares of all 10.305 million the groups are about 76%, 21.1% and about 3%, and 7.828 million minus 1,452,350 Haredim is about 6.375 million (6375000).",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/282/11_26_282b.pdf",
+      "raw_snippet": "כ-7.828 מיליון תושבים יהודים ואחרים (78.3% מכלל אוכלוסיית הישראלים)",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "verified_via": "pdf",
-      "verified_at": "2026-08-18T19:30:00+00:00"
+      "verified_at": "2026-11-23T12:00:00+00:00"
     },
     {
       "claim_id": "population-growth",
-      "claim": "Israel's population grew by 146 thousand (1.4%) since the previous Independence Day; the Israeli population grew 1.1%.",
-      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/117/11_26_117b.pdf",
-      "raw_snippet": "מיום העצמאות שעבר גדלה אוכלוסיית ישראל ב‪ 146-‬אלף איש",
-      "fetched_at": "2026-08-18T19:30:00+00:00",
+      "claim": "The Israeli population grew by about 124 thousand (1.2%) since the previous Rosh Hashana, and about 24 thousand new olim arrived.",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/282/11_26_282b.pdf",
+      "raw_snippet": "גדלה אוכלוסיית הישראלים בכ-124 אלף נפש",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "verified_via": "pdf",
-      "verified_at": "2026-08-18T19:30:00+00:00"
+      "verified_at": "2026-11-23T12:00:00+00:00"
     },
     {
       "claim_id": "haredi-share-a",
@@ -88,7 +88,7 @@
     },
     {
       "claim_id": "bit-users",
-      "claim": "Bit is the largest payment app in Israel, with roughly 3 million users, developed by Bank Hapoalim.",
+      "claim": "Bit, Bank Hapoalim's payment app, had about 3 million users as of the November 2024 Globes report.",
       "source_url": "https://en.globes.co.il/en/article-hapoalim-reveals-bit-app-charges-from-january-1001494038",
       "raw_snippet": "the fee is not relevant to 90% of the 3 million people who use the payment app",
       "fetched_at": "2026-06-02T00:00:00Z",
@@ -99,7 +99,7 @@
     },
     {
       "claim_id": "paybox-users",
-      "claim": "paybox is the rival payment app to Bit, with about 1.4 million customers and about 10% of transfer volume.",
+      "claim": "As of July 2024 paybox had 1.4 million customers and about 10% of transfer volume, leaving Bit with about 90%.",
       "source_url": "https://en.globes.co.il/en/article-payment-apps-bit-and-paybox-to-charge-fees-from-january-1001483104",
       "raw_snippet": "Paybox has 1.4 million customers but only 10% of the amount of transfers.",
       "fetched_at": "2026-06-02T00:00:00Z",
@@ -110,7 +110,7 @@
     },
     {
       "claim_id": "paybox-discount-bank",
-      "claim": "paybox is owned by Israel Discount Bank, which bought it from Shufersal (it was not launched by the bank).",
+      "claim": "paybox is owned by Israel Discount Bank.",
       "source_url": "https://en.globes.co.il/en/article-payment-apps-bit-and-paybox-to-charge-fees-from-january-1001483104",
       "raw_snippet": "Discount Bank completes buyout of PayBox from Shufersal",
       "fetched_at": "2026-06-02T00:00:00Z",
@@ -121,7 +121,7 @@
     },
     {
       "claim_id": "yad2",
-      "claim": "Yad2 is the dominant Israeli horizontal classifieds marketplace covering second-hand goods, cars, real estate, jobs and professionals.",
+      "claim": "Yad2 is an Israeli website that publishes ads for buying and selling second-hand products.",
       "source_url": "https://en.wikipedia.org/wiki/Yad2",
       "raw_snippet": "is an Israeli website that publishes ads for buying and selling second-hand products",
       "fetched_at": "2026-08-18T19:30:00+00:00",
@@ -138,12 +138,13 @@
       "fetched_at": "2026-06-02T00:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
       ]
     },
     {
       "claim_id": "hebrew-labeling",
-      "claim": "Every consumer-product package in Israel must include clear labeling in Hebrew, even if the product is imported (per the Consumer Protection (Goods Labeling) Order, 1983).",
+      "claim": "Per a law-firm summary of the Consumer Protection (Goods Labeling) Order 1983, product packaging must include clear Hebrew labeling even when imported.",
       "source_url": "https://weksler-davidovich.co.il/consumer-protection-labeling/",
       "raw_snippet": "על פי הצו, כל אריזת מוצר חייבת לכלול סימון ברור בעברית, אף אם מדובר במוצר שמקורו בייבוא.",
       "fetched_at": "2026-06-02T00:00:00Z",
@@ -167,10 +168,10 @@
     },
     {
       "claim_id": "antispam-consent",
-      "claim": "Israel's anti-spam law forbids sending advertising by fax, automated dialing, email or SMS without the recipient's prior express written consent.",
-      "source_url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D",
+      "claim": "Communications Law s.30א(ב) forbids sending advertising by fax, auto-dialer, electronic message or SMS without the recipient's prior express written consent.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
       "raw_snippet": "בלא קבלת הסכמה מפורשת מראש של הנמען, בכתב",
-      "fetched_at": "2026-08-18T20:15:00+00:00",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -178,10 +179,10 @@
     },
     {
       "claim_id": "antispam-damages",
-      "claim": "Under Israel's anti-spam law, a court may award the recipient of unlawful spam statutory damages of up to 1,000 NIS per message without proof of damage.",
-      "source_url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%A1%D7%A4%D7%90%D7%9D",
-      "raw_snippet": "פיצוי של עד 1,000 שקלים ללא הוכחת נזק",
-      "fetched_at": "2026-06-02T00:00:00Z",
+      "claim": "Communications Law s.30א(י): for a knowing breach a court may award exemplary damages of up to 1,000 NIS per message, independent of damage.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "בסכום שלא יעלה על 1,000 שקלים חדשים בשל כל דבר פרסומת",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -235,31 +236,31 @@
     },
     {
       "claim_id": "population-arab-share",
-      "claim": "Arab citizens of Israel numbered 2.157 million, 21.1% of the population, on the eve of the 78th Independence Day.",
-      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/117/11_26_117b.pdf",
-      "raw_snippet": "‫‪ 2.157‬מיליון ערבים ‪(21.1%) 3‬",
-      "fetched_at": "2026-08-18T19:30:00+00:00",
+      "claim": "Arabs numbered about 2.173 million, 21.7% of Israelis and about 21.1% of the total including foreigners, on the eve of Rosh Hashana 5787.",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/282/11_26_282b.pdf",
+      "raw_snippet": "כ-2.173 מיליון תושבים ערבים (21.7% מכלל אוכלוסיית הישראלים)",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/segments.md"
       ],
       "verified_via": "pdf",
-      "verified_at": "2026-08-18T19:30:00+00:00"
+      "verified_at": "2026-11-23T12:00:00+00:00"
     },
     {
       "claim_id": "population-foreigners-share",
-      "claim": "Foreign residents numbered 296 thousand, 2.9% of the population, on the eve of the 78th Independence Day.",
-      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/117/11_26_117b.pdf",
-      "raw_snippet": "‫‪ 296‬אלף זרים ‪(2.9%) 4‬",
-      "fetched_at": "2026-08-18T19:30:00+00:00",
+      "claim": "Foreign nationals numbered about 304 thousand on the eve of Rosh Hashana 5787, about 3% of the total.",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/282/11_26_282b.pdf",
+      "raw_snippet": "כ-304 אלף זרים",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/segments.md"
       ],
       "verified_via": "pdf",
-      "verified_at": "2026-08-18T19:30:00+00:00"
+      "verified_at": "2026-11-23T12:00:00+00:00"
     },
     {
       "claim_id": "haredi-median-age",
@@ -297,10 +298,10 @@
     },
     {
       "claim_id": "consumer-protection-price-exemptions",
-      "claim": "Consumer Protection Law סעיף 17ז exempts goods intended for sale outside Israel and First Schedule categories from the total-price display chapter.",
+      "claim": "Consumer Protection Law סעיף 17ז(א) disapplies the price chapter for goods for sale outside Israel, services performed wholly outside Israel, and First Schedule Part A (tourist hotel and self-drive rental services, on conditions). סעיף 17ז(ב) and Part B separately allow the total price of listed items, including international transport, port and airport charges, duty-free goods and outbound tourism, to be shown in foreign currency at a set rate.",
       "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
-      "raw_snippet": "17ז. (א) הוראות פרק זה לא יחולו – (1) על נכס המיועד להימכר מחוץ לישראל",
-      "fetched_at": "2026-08-18T19:30:00+00:00",
+      "raw_snippet": "על נכס המיועד להימכר מחוץ לישראל, או על שירות המיועד להתבצע במלואו מחוץ לישראל",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -308,10 +309,10 @@
     },
     {
       "claim_id": "personal-import-exemption-75usd",
-      "claim": "The VAT exemption ceiling on personal imports is 75 USD. The Knesset voted 59 to 23 on 01.06.2026 to cancel the order that had raised it to 130 USD, after rejecting an earlier order raising it to 150 USD.",
-      "source_url": "https://www.globes.co.il/news/article.aspx?did=1001544536",
-      "raw_snippet": "חברי הכנסת הצביעו ברוב של 59 אל מול 23 נגד הצו של שר האוצר, שהעלה את תקרת הפטור ממע\"מ על קניות מחו\"ל מ־75 דולר ל־130 דולר",
-      "fetched_at": "2026-08-18T19:50:00+00:00",
+      "claim": "The VAT exemption ceiling on personal imports is 75 USD. The Knesset voted 59 to 23 on 01.06.2026 to cancel the order that had raised it to 130 USD, after an earlier order to 150 USD.",
+      "source_url": "https://www.gadgety.co.il/363229/tax-break-back-to-75usd/",
+      "raw_snippet": "בהצבעה שנערכה במליאה, 59 חברי כנסת הצביעו נגד הצו, אל מול 23 בלבד שתמכו בו",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -320,10 +321,10 @@
     },
     {
       "claim_id": "knesset-election-date-2026",
-      "claim": "The election to the 26th Knesset is scheduled for 27 October 2026.",
+      "claim": "The election to the 26th Knesset was held on 27 October 2026.",
       "source_url": "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election",
       "raw_snippet": "27 October 2026",
-      "fetched_at": "2026-08-18T19:50:00+00:00",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -332,13 +333,11 @@
     },
     {
       "claim_id": "tiktok-israel-election-ad-rules",
-      "claim": "Ahead of the Knesset elections TikTok published rules for Israel centred on a ban on paid political advertising, restrictions on misleading election information, and mandatory labeling of realistic AI-generated content.",
+      "claim": "For the 2026 Knesset election TikTok published rules for Israel centred on a ban on paid political advertising, restrictions on misleading election information, and mandatory labeling of realistic AI-generated content.",
       "source_url": "https://www.jpost.com/israel-news/article-904060",
       "raw_snippet": "At the center of the policy are a ban on paid political advertising, restrictions on the spread of misleading election information, and a requirement to label realistic content created with AI.",
-      "fetched_at": "2026-08-18T19:50:00+00:00",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
         "references/domain-checklist.md"
       ]
     },
@@ -367,7 +366,7 @@
     },
     {
       "claim_id": "nonresident-vat-registration",
-      "claim": "A non-resident supplying goods or digital services to Israeli consumers has no low-turnover registration threshold and must appoint a local VAT representative; registration may be required from the first taxable supply.",
+      "claim": "Avalara reports that for non-resident digital service providers without a permanent establishment selling to Israeli consumers there is no official low-turnover threshold, and that a local VAT representative is part of foreign-trader registration. The Tax Authority's current position was not confirmed.",
       "source_url": "https://www.avalara.com/us/en/vatlive/country-guides/africa-and-middle-east/israel/israel-vat-registration.html",
       "raw_snippet": "there is no official low-turnover threshold",
       "fetched_at": "2026-08-18T20:15:00+00:00",
@@ -379,10 +378,10 @@
     },
     {
       "claim_id": "consumer-cancellation-distance-selling",
-      "claim": "Consumer Protection Law סעיף 14ג(ג) gives a distance-selling cancellation right: fourteen days from receipt for goods, and fourteen days from the transaction for a service.",
+      "claim": "Consumer Protection Law סעיף 14ג(ג): for goods, cancel until fourteen days after receipt of the goods or the disclosure document, whichever is later; for a service, within fourteen days of the transaction or the document, whichever is later, with a one-off service cancelled at least two non-rest days before it is due.",
       "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
-      "raw_snippet": "בעסקת מכר מרחוק רשאי הצרכן לבטל את העסקה",
-      "fetched_at": "2026-08-18T20:15:00+00:00",
+      "raw_snippet": "בנכס – מיום עשיית העסקה ועד ארבעה עשר ימים מיום קבלת הנכס או מיום קבלת המסמך המכיל את הפרטים האמורים בסעיף קטן (ב), לפי המאוחר מביניהם",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -390,10 +389,10 @@
     },
     {
       "claim_id": "consumer-cancellation-continuing",
-      "claim": "Consumer Protection Law סעיף 13ד: a continuing-transaction contract ends within three business days of the cancellation notice.",
+      "claim": "Consumer Protection Law סעיף 13ד(ג): a continuing-transaction contract ends within three business days of the cancellation notice, or six business days if sent by registered mail.",
       "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
-      "raw_snippet": "חוזה בעסקה מתמשכת יסתיים בתוך שלושה ימי עסקים מיום שנמסרה הודעת ביטול",
-      "fetched_at": "2026-08-18T20:15:00+00:00",
+      "raw_snippet": "חוזה בעסקה מתמשכת יסתיים בתוך שלושה ימי עסקים מיום שנמסרה הודעת ביטול לפי הוראות סעיף 14ט, ואם נמסרה הודעת הביטול באמצעות דואר רשום – בתוך שישה ימי עסקים",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -401,7 +400,7 @@
     },
     {
       "claim_id": "retail-concentration-chains",
-      "claim": "Shufersal is the largest supermarket chain in Israel, one of the concentrated retail gatekeepers to shelf space alongside Rami Levy and Super-Pharm.",
+      "claim": "Shufersal is the largest supermarket chain in Israel.",
       "source_url": "https://en.wikipedia.org/wiki/Shufersal",
       "raw_snippet": "is the largest supermarket chain in Israel",
       "fetched_at": "2026-08-18T20:20:00+00:00",
@@ -425,7 +424,7 @@
     },
     {
       "claim_id": "deepfake-election-disclosure-2026",
-      "claim": "Rules published in Reshumot on 26.7.2026 under the 26th-Knesset elections law impose a disclosure duty on election propaganda that is a deep fake, satisfied by stating the content was digitally generated or materially edited, or by carrying the Elections Committee's prescribed logo.",
+      "claim": "Election law imposes a disclosure duty on publishers of deep-fake election propaganda, and rules published in Reshumot on 26.7.2026 set how to comply, by stating the content was digitally generated or materially edited or by carrying the Elections Committee's prescribed logo.",
       "source_url": "https://www.isoc.org.il/regulation-digital-services/deep-fake-election-law",
       "raw_snippet": "כללי הבחירות (דרכי תעמולה) (עמידה בחובת הגילוי לגבי תעמולת בחירות שהיא נחזות עמוקה), התשפ\"ו–2026 , שפורסמו ברשומות ביום 26.7.2026",
       "fetched_at": "2026-08-18T20:35:00+00:00",
@@ -433,6 +432,406 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "consumer-definition",
+      "claim": "Consumer Protection Law s.1 defines a consumer as someone buying from a dealer for mainly personal, household or family use.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "מי שקונה נכס או מקבל שירות מעוסק במהלך עיסוקו לשימוש שעיקרו אישי, ביתי או משפחתי",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-four-months",
+      "claim": "Consumer Protection Law s.14ג1(ג): people with disabilities, consumers aged 65+ and new olim (within five years) may cancel a distance sale within four months if the sale included a conversation with the dealer.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "רשאי הצרכן לבטל את העסקה בתוך ארבעה חודשים מיום עשיית העסקה",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-exclusions",
+      "claim": "Consumer Protection Law s.14ג(ד) excludes perishables, certain hospitality/travel/leisure services within seven non-rest days, information under the Computers Law, made-to-order goods, and opened recordable goods.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "מידע כהגדרתו בחוק המחשבים, התשנ\"ה-1995",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-fee-cap",
+      "claim": "Consumer Protection Law סעיף 14ה(ב): cancellation fee capped at 5% of the price or 100 ₪ (100 NIS), whichever is lower; a consumer who cancels a started continuing service pays the proportional consideration (s.14ה(ב1)).",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "זולת דמי ביטול בשיעור שלא יעלה על 5% ממחיר הנכס נושא החוזה או העסקה, או 100 שקלים חדשים, לפי הנמוך מביניהם",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "renewal-clause-void",
+      "claim": "Consumer Protection Law סעיף 13א(ג)(1) voids a term continuing a fixed-term engagement past its end date, subject to the s.13א(ד) exceptions; the notice period under s.13א(a) runs between 60 and 30 days before the end date.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "לתנאי בחוזה הקובע כי ההתקשרות בין הצדדים תימשך לאחר מועד סיום העסקה או ההתחייבות, לא יהיה תוקף",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "renewal-notice-period",
+      "claim": "The s.13א notice period is between sixty and thirty days before the end of the fixed-term transaction.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "התקופה החלה בין שישים הימים שלפני מועד סיום העסקה או ההתחייבות, לבין שלושים הימים שלפני אותו מועד",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "fixed-term-any-time-fourth-schedule",
+      "claim": "Consumer Protection Law s.13א1(א): a consumer may cancel a fixed-term transaction at any time only for types listed in the Fourth Schedule.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "צרכן רשאי בכל עת לבטל עסקה לתקופה קצובה, מסוג המנוי בתוספת הרביעית",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-link",
+      "claim": "Consumer Protection Law סעיף 14ט(ב): for a transaction available online, the dealer must place a dedicated, prominent cancellation link on the website home page.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "ייצור עוסק בדף הראשי של אתר האינטרנט שלו קישור ייעודי",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "antispam-existing-customer",
+      "claim": "Communications Law סעיף 30א(ג): advertising may be sent without consent if the recipient gave details during a purchase or negotiation, was told they would be used for advertising, was given a chance to refuse, and the message concerns a similar product or service.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "הנמען מסר את פרטיו למפרסם במהלך רכישה של מוצר או שירות",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "antispam-business-one-time",
+      "claim": "Communications Law s.30א(ב): a one-time approach to a business recipient offering to agree to receive advertising is not a breach.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "פנייה חד־פעמית מטעם מפרסם לנמען שהוא בית עסק",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "antispam-marking",
+      "claim": "Communications Law s.30א(ה): an advertisement must be marked at its start, and in the subject of an electronic message, and carry refusal details; an SMS need state only the sender name and contact details for refusal.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "יופיעו בתחילת דבר הפרסומת, ואם דבר הפרסומת משוגר באמצעות הודעה אלקטרונית",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "antispam-continuing-end",
+      "claim": "Communications Law s.30א(ד)(2): when a continuing engagement ends, the recipient is treated as having given a refusal notice.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "יראו את הנמען כמי שנתן הודעת סירוב במועד סיום ההתקשרות",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cbs-average-wage-2025",
+      "claim": "CBS: the 2025 average monthly wage per employee post for Israeli workers was 13,884 NIS (13,884 ₪) at current prices.",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/282/11_26_282b.pdf",
+      "raw_snippet": "עובדים ישראלים – 13,884 ש\"ח",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-11-23T12:00:00+00:00"
+    },
+    {
+      "claim_id": "coalition-status-2026-11",
+      "claim": "As of the 22-23 November 2026 reports, the Likud and Yashar parties had ended a round of coalition talks without an agreement and no new government had been formed.",
+      "source_url": "https://www.brecorder.com/news/40450285/netanyahu-eisenkot-parties-end-talks-without-deal-on-forming-govt",
+      "raw_snippet": "concluded a new round of talks on Sunday without reaching an agreement on a possible coalition government",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "grow-bit-checkout",
+      "claim": "A gateway can offer Bit at checkout: the Grow service via Green Invoice lists credit, Bit, Google Pay and Apple Pay in one place.",
+      "source_url": "https://www.greeninvoice.co.il/market/clearing/meshulam",
+      "raw_snippet": "אשראי, bit, גוגל פיי ואפל פיי במקום אחד",
+      "fetched_at": "2026-11-23T12:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "dnc-register",
+      "claim": "Consumer Protection Law סעיף 16ג(א): a dealer or anyone on its behalf may not make a marketing call to a consumer whose number is in the register; סעיף 16ב defines a call to include electronic communication; סעיף 16ג(ג) requires verifying the number and (ד) attributes an outsourced call to the dealer; the Sixth Schedule holds exceptions.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "עוסק או מי מטעמו לא יפנה בפנייה שיווקית לצרכן שמספר הטלפון שלו רשום במאגר",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cancellation-no-fee-on-breach",
+      "claim": "Consumer Protection Law סעיף 14ה(א): on cancellation for a defect, mismatch, non-delivery or dealer breach, no cancellation fee may be charged.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "ולא יגבה מהצרכן דמי ביטול כלשהם",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "fixed-term-discount-period",
+      "claim": "Consumer Protection Law סעיף 13א: a period at a discounted price or with another benefit counts as a fixed-term transaction even if the transaction is indefinite, except a transaction in which the dealer lowered the price or offered a benefit for a limited period and without any condition. The end date must appear on invoices in the last three months and, if the consumer gave a mobile number, in an SMS 21 days before it; s.13א(ד)(2)(ב) removes the notice in some deals ending within four months.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/70305.htm",
+      "raw_snippet": "למעט עסקה שבמהלכה, לתקופה מוגבלת ובלא כל תנאי, הוזיל העוסק את מחיר הטובין או השירותים",
+      "fetched_at": "2026-11-23T16:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "antispam-electronic-message",
+      "claim": "Communications Law סעיף 30א(א) defines an electronic message as a coded communication sent over the internet to a recipient or group and storable by computer. Applying it to WhatsApp is a cautious reading, not a cited ruling.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "מסר בזק מקודד המועבר ברשת האינטרנט אל נמען או קבוצה של נמענים",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "antispam-knowing-presumption",
+      "claim": "Communications Law סעיף 30א(י)(5): a sender in breach is presumed to have acted knowingly unless it proves otherwise.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA_(%D7%91%D7%96%D7%A7_%D7%95%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99%D7%9D)",
+      "raw_snippet": "חזקה על מפרסם ששיגר דבר פרסומת בניגוד להוראות סעיף זה",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "class-action-no-exemplary",
+      "claim": "Class Actions Law סעיף 20(ה): a court shall not award exemplary damages in a class action. Spam claims are class-eligible under Second Schedule item 12.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%AA%D7%95%D7%91%D7%A2%D7%A0%D7%95%D7%AA_%D7%99%D7%99%D7%A6%D7%95%D7%92%D7%99%D7%95%D7%AA",
+      "raw_snippet": "בית המשפט לא יפסוק בתובענה ייצוגית פיצויים לדוגמה",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cosmetics-register",
+      "claim": "Ministry of Health: all dealers who make, import, export or wholesale cosmetics must register in the cosmetics dealers register.",
+      "source_url": "https://www.gov.il/he/service/cosmetics-business",
+      "raw_snippet": "כל העוסקים בתמרוקים שמייצרים, מייבאים, מייצאים או עוסקים באחסון סיטונאי של תמרוק, חייבים ברישום במרשם העוסקים",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T15:00:00+00:00"
+    },
+    {
+      "claim_id": "food-importer-registration",
+      "claim": "An importer registration certificate is a necessary first condition for importing non-animal food into Israel, handled by the National Food Service.",
+      "source_url": "https://www.gov.il/he/service/non-animal-derived-food-importer-registration",
+      "raw_snippet": "תעודת רישום יבואן, שהיא תנאי הכרחי וראשוני ליבוא מזון לישראל",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T15:00:00+00:00"
+    },
+    {
+      "claim_id": "personal-import-bands",
+      "claim": "Goods up to 75 USD are exempt from import taxes, except tobacco and alcoholic drinks.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%9B%D7%95%D7%AA%D7%95%D7%9F_%D7%91%D7%A0%D7%95%D7%A9%D7%90_%D7%99%D7%91%D7%95%D7%90_%D7%90%D7%99%D7%A9%D7%99_(%D7%97%D7%91%D7%99%D7%9C%D7%95%D7%AA_%D7%9E%D7%97%D7%95%22%D7%9C)",
+      "raw_snippet": "הפטור לא ניתן על מוצרי טבק ומשקאות אלכוהוליים",
+      "fetched_at": "2026-11-23T16:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T16:00:00+00:00"
+    },
+    {
+      "claim_id": "cbs-household-size",
+      "claim": "CBS: Israel has 3,029,300 private households averaging 3.17 people. 6.375 million divided by 3.17 is about 2 million (2000000) households, a rough figure. A VAT-inclusive price at 18% divides by 1.18 to give the net price.",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/282/11_26_282b.pdf",
+      "raw_snippet": "משקי בית פרטיים – 3,029,300",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-11-23T15:00:00+00:00"
+    },
+    {
+      "claim_id": "cbs-foreign-definition",
+      "claim": "CBS population estimates of foreigners cover foreign workers, students, clergy, volunteers, infiltrators, accompanying family, and tourists without a valid permit who entered from 2008 with no recorded exit.",
+      "source_url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2026/117/11_26_117b.pdf",
+      "raw_snippet": "קבוצה זו כוללת: עובדים זרים, סטודנטים, אנשי דת, מתנדבים",
+      "fetched_at": "2026-11-23T15:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-11-23T15:00:00+00:00"
+    },
+    {
+      "claim_id": "east-jerusalem-citizenship",
+      "claim": "Only about 5% of Palestinians in East Jerusalem were Israeli citizens in 2022.",
+      "source_url": "https://en.wikipedia.org/wiki/Arab_citizens_of_Israel",
+      "raw_snippet": "only 5% of Palestinians in East Jerusalem were Israeli citizens in 2022",
+      "fetched_at": "2026-11-23T15:30:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "personal-import-500-band",
+      "claim": "A shipment above 75 and up to 500 USD is exempt from customs duty only.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%9B%D7%95%D7%AA%D7%95%D7%9F_%D7%91%D7%A0%D7%95%D7%A9%D7%90_%D7%99%D7%91%D7%95%D7%90_%D7%90%D7%99%D7%A9%D7%99_(%D7%97%D7%91%D7%99%D7%9C%D7%95%D7%AA_%D7%9E%D7%97%D7%95%22%D7%9C)",
+      "raw_snippet": "פטור מתשלום מכס בלבד",
+      "fetched_at": "2026-11-23T16:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T16:00:00+00:00"
+    },
+    {
+      "claim_id": "cosmetics-notification",
+      "claim": "Marketing a cosmetic through the notification track requires a responsible representative and a product file, and an imported product requires a Free Sale Certificate.",
+      "source_url": "https://www.gov.il/he/service/cosmetics-marketing",
+      "raw_snippet": "לתמרוק מיובא – תעודת Free Sale Certificate",
+      "fetched_at": "2026-11-23T16:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T16:00:00+00:00"
+    },
+    {
+      "claim_id": "animal-food-preapproval",
+      "claim": "A shipment of animal-derived food may not be sent to Israel without a prior import approval.",
+      "source_url": "https://www.gov.il/he/service/animal-derived-food-product-importation",
+      "raw_snippet": "אין להוציא משלוח לישראל ללא קבלת אישור ייבוא מקדמי",
+      "fetched_at": "2026-11-23T16:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T16:00:00+00:00"
+    },
+    {
+      "claim_id": "personal-import-72-hours",
+      "claim": "Two or more parcels from the same supplier to the same customer within 72 hours count as one split shipment, taxed on their combined value.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%9B%D7%95%D7%AA%D7%95%D7%9F_%D7%91%D7%A0%D7%95%D7%A9%D7%90_%D7%99%D7%91%D7%95%D7%90_%D7%90%D7%99%D7%A9%D7%99_(%D7%97%D7%91%D7%99%D7%9C%D7%95%D7%AA_%D7%9E%D7%97%D7%95%22%D7%9C)",
+      "raw_snippet": "שתי חבילות או יותר שיישלחו מאותו ספק לאותו לקוח בהפרש של עד 72 שעות",
+      "fetched_at": "2026-11-23T17:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T17:00:00+00:00"
+    },
+    {
+      "claim_id": "personal-import-shipping-condition",
+      "claim": "The goods value excludes shipping and insurance only when they are priced separately; otherwise the total counts.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%9B%D7%95%D7%AA%D7%95%D7%9F_%D7%91%D7%A0%D7%95%D7%A9%D7%90_%D7%99%D7%91%D7%95%D7%90_%D7%90%D7%99%D7%A9%D7%99_(%D7%97%D7%91%D7%99%D7%9C%D7%95%D7%AA_%D7%9E%D7%97%D7%95%22%D7%9C)",
+      "raw_snippet": "חישוב ערך המוצרים לא כולל הובלה וביטוח, בתנאי שהם מחושבים בנפרד מערך המוצרים",
+      "fetched_at": "2026-11-23T17:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T17:00:00+00:00"
+    },
+    {
+      "claim_id": "exempt-dealer-no-vat",
+      "claim": "An exempt dealer (עוסק פטור) generally does not charge VAT to customers, except in certain cases.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
+      "raw_snippet": "עוסק פטור הוא עצמאי שאינו גובה מס ערך מוסף",
+      "fetched_at": "2026-11-23T17:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-11-23T17:00:00+00:00"
+    },
+    {
+      "claim_id": "average-above-typical-wage",
+      "claim": "National Insurance Institute data for the first half of 2025 show the median monthly wage per employee well below the average, so an average wage is higher than what a typical earner makes.",
+      "source_url": "https://www.btl.gov.il/English%20Homepage/About/PressReleases/Pages/dovrotdohsachar2025.aspx",
+      "raw_snippet": "The average gap between the median monthly wage per employee and the average monthly wage per salaried employee",
+      "fetched_at": "2026-11-23T18:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
       ]
     }
   ]

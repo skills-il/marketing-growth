@@ -3,17 +3,18 @@
 market-sizing.py - bottom-up TAM/SAM/SOM estimator for the Israeli market.
 
 The point of this script is discipline, not precision: it forces a market-fit
-estimate to be built from a real segment population, a defensible adoption
-fraction, and a per-buyer annual spend, instead of a hand-waved "the Israeli
-market is huge" number. Israel's whole population is about 10.244 million, so
+estimate to be built from a real count of buying units, a defensible adoption
+fraction, and an annual spend per unit, instead of a hand-waved "the Israeli
+market is huge" number. Israel's whole population is about 10.305 million, so
 the serviceable number is usually much smaller than founders expect.
 
-All monetary inputs and outputs are in shekels. Adoption and serviceable shares
+Use one buying unit throughout (person, adult, household, or business account).
+All monetary inputs and outputs are in shekels, and spend should be net of VAT. Adoption and serviceable shares
 are fractions between 0 and 1 (e.g. 0.05 for one in twenty), NOT figures with a
 percent sign, on purpose: it keeps you honest about the actual ratio.
 
 Usage:
-    python market-sizing.py --segment-pop 7790000 --adoption 0.04 \
+    python market-sizing.py --segment-pop 2000000 --adoption 0.04 \
         --annual-spend 240 --serviceable 0.15
 
     # interactive prompts if no flags are given:
@@ -26,7 +27,7 @@ import sys
 
 def estimate(segment_pop: float, adoption: float, annual_spend: float, serviceable: float) -> dict:
     """TAM = whole segment if everyone bought. SAM = realistic adopters.
-    SOM = the slice you can actually win in the first few years."""
+    SOM = the annual revenue from the slice you can actually win early."""
     if not (0 <= adoption <= 1):
         raise ValueError("adoption must be a fraction between 0 and 1")
     if not (0 <= serviceable <= 1):
@@ -51,19 +52,19 @@ def fmt_ratio(value: float) -> str:
 
 def main() -> int:
     p = argparse.ArgumentParser(description="Bottom-up TAM/SAM/SOM for an Israeli market segment.")
-    p.add_argument("--segment-pop", type=float, help="population of the segment you target")
-    p.add_argument("--adoption", type=float, help="fraction of the segment that would realistically buy (0-1)")
-    p.add_argument("--annual-spend", type=float, help="annual spend per buyer, in shekels")
+    p.add_argument("--segment-pop", type=float, help="buying units in the segment: people, adults, households, or business accounts")
+    p.add_argument("--adoption", type=float, help="fraction of those units that would realistically buy (0-1)")
+    p.add_argument("--annual-spend", type=float, help="annual spend per unit, in shekels, net of VAT")
     p.add_argument("--serviceable", type=float, help="fraction of adopters you can win early (0-1)")
     args = p.parse_args()
 
     def ask(prompt: str) -> float:
         return float(input(prompt).strip())
 
-    seg = args.segment_pop if args.segment_pop is not None else ask("Segment population: ")
+    seg = args.segment_pop if args.segment_pop is not None else ask("Buying units in the segment: ")
     adoption = args.adoption if args.adoption is not None else ask("Adoption fraction (0-1): ")
-    spend = args.annual_spend if args.annual_spend is not None else ask("Annual spend per buyer (shekels): ")
-    serviceable = args.serviceable if args.serviceable is not None else ask("Serviceable fraction (0-1): ")
+    spend = args.annual_spend if args.annual_spend is not None else ask("Annual spend per unit, net of VAT (shekels): ")
+    serviceable = args.serviceable if args.serviceable is not None else ask("Fraction of adopters you can win early (0-1): ")
 
     try:
         r = estimate(seg, adoption, spend, serviceable)
@@ -75,11 +76,11 @@ def main() -> int:
     print("Early-win assumption: " + fmt_ratio(serviceable))
     print("TAM (whole segment): " + shekels(r["tam"]))
     print("SAM (realistic adopters): " + shekels(r["sam"]))
-    print("SOM (early winnable revenue): " + shekels(r["som"]))
+    print("SOM (annual revenue once won): " + shekels(r["som"]))
     print("Estimated early buyers: " + format(round(r["buyers"]), ","))
     print()
-    print("Reality check: compare SOM against your fixed costs. In a market of about")
-    print("10.244 million people, a narrow segment can be too small to clear a revenue floor.")
+    print("Reality check: SOM x gross margin, minus acquisition cost, must cover fixed costs. In a market of about")
+    print("10.305 million people, a narrow segment can be too small to clear the cost floor.")
     return 0
 
 
